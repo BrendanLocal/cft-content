@@ -6,7 +6,7 @@ export default function Home() {
   const cms = useCMS();
   const pageData = {
     title: 'Tina is not a CMS',
-    body: 'It is a toolkit for creating a custom CMS.',
+    body: 'It is a toolkit for creating a custom CMS. Or is it.',
   }
   const formConfig = {
     id: 'tina-tutorial-index',
