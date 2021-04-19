@@ -1,36 +1,12 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
+import { GetStaticProps } from 'next'
 
-import { TinaProvider, TinaCMS, useCMS, useForm, usePlugin } from 'tinacms';
-export default function Home() {
-  const cms = useCMS();
-  const pageData = {
-    title: 'Tina is not a CMS',
-    body: 'It is a toolkit for creating a custom CMS. Or is it.',
-  }
-  const formConfig = {
-    id: 'tina-tutorial-index',
-    label: 'Edit Page',
-    fields: [
-      {
-        name: 'title',
-        label: 'Title',
-        component: 'text',
-      },
-      {
-        name: 'body',
-        label: 'Body',
-        component: 'textarea',
-      },
-    ],
-    initialValues: pageData,
-    onSubmit: async () => {
-      window.alert('Saved!')
-    },
-  }
-
-  const [editableData, form] = useForm(formConfig)
-  usePlugin(form)
+export default function Home({ file }) {
+  const data = file.data
+  
+  
 
   return (
     <div className={styles.container}>
@@ -41,12 +17,9 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-        {editableData.title}
+        {data.title}
         </h1>
 
-        <p className={styles.description}>
-        {editableData.body}
-        </p>
 
       
       </main>
@@ -61,10 +34,35 @@ export default function Home() {
           <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
         </a> 
 
-        <button onClick={() => cms.toggle()}>
-          {cms.enabled ? 'Exit Edit Mode' : 'Edit This Site'}
-        </button>
       </footer>
     </div>
   )
 }
+
+
+/**
+ * Fetch data with getStaticProps based on 'preview' mode
+ */
+ export const getStaticProps: GetStaticProps = async function({
+  preview,
+  previewData,
+  }) {
+  if (preview) {
+    return getGithubPreviewProps({
+      ...previewData,
+      fileRelativePath: 'content/home.json',
+      parse: parseJson,
+    })
+  }
+  return {
+    props: {
+      sourceProvider: null,
+      error: null,
+      preview: false,
+      file: {
+        fileRelativePath: 'content/home.json',
+        data: (await import('../content/home.json')).default,
+      },
+    },
+  }
+  }
