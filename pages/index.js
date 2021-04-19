@@ -1,7 +1,37 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
+import { TinaProvider, TinaCMS, useCMS, useForm, usePlugin } from 'tinacms';
 export default function Home() {
+  const cms = useCMS();
+  const pageData = {
+    title: 'Tina is not a CMS',
+    body: 'It is a toolkit for creating a custom CMS.',
+  }
+  const formConfig = {
+    id: 'tina-tutorial-index',
+    label: 'Edit Page',
+    fields: [
+      {
+        name: 'title',
+        label: 'Title',
+        component: 'text',
+      },
+      {
+        name: 'body',
+        label: 'Body',
+        component: 'textarea',
+      },
+    ],
+    initialValues: pageData,
+    onSubmit: async () => {
+      window.alert('Saved!')
+    },
+  }
+
+  const [editableData, form] = useForm(formConfig)
+  usePlugin(form)
+
   return (
     <div className={styles.container}>
       <Head>
@@ -11,43 +41,14 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+        {editableData.title}
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
+        {editableData.body}
         </p>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+      
       </main>
 
       <footer className={styles.footer}>
@@ -58,7 +59,11 @@ export default function Home() {
         >
           Powered by{' '}
           <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
+        </a> 
+
+        <button onClick={() => cms.toggle()}>
+          {cms.enabled ? 'Exit Edit Mode' : 'Edit This Site'}
+        </button>
       </footer>
     </div>
   )

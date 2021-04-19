@@ -2,10 +2,11 @@ import '../styles/globals.css'
 
 import React from 'react'
 import App from 'next/app'
-import { TinaProvider, TinaCMS } from 'tinacms'
+import { TinaProvider, TinaCMS, useCMS, useForm, usePlugin } from 'tinacms'
 import { GitClient, GitMediaStore } from '@tinacms/git-client'
 
 class MyApp extends App {
+  
   constructor() {
     super()
 
@@ -25,6 +26,9 @@ class MyApp extends App {
 
   render() {
     const { Component, pageProps } = this.props
+    const cms = new TinaCMS({
+     sidebar: true,
+     });
     return (
       <TinaProvider cms={this.cms}>
         <Component {...pageProps} />
