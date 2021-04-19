@@ -1,9 +1,7 @@
 import '../styles/globals.css'
 
-import React from 'react'
 import App from 'next/app'
-import { TinaProvider, TinaCMS, useCMS, useForm, usePlugin } from 'tinacms'
-import { GitClient, GitMediaStore } from '@tinacms/git-client'
+import { TinaCMS, TinaProvider } from 'tinacms'
 import {
   GithubClient,
   TinacmsGithubProvider,
