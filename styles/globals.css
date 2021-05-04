@@ -1,9 +1,29 @@
+@font-face {
+  font-family: 'GT-America';
+  src:
+    url("./fonts/GT-America-Extended-Light.woff") format("woff");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'GT-America';
+  src:
+    url("./fonts/GT-America-Extended-Bold.woff") format("woff");
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'GT-America';
+  src:
+    url("./fonts/GT-America-Extended-Medium.woff") format("woff");
+  font-weight: 700;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'GT-America', Helvetica Neue, sans-serif;
 }
 
 a {
@@ -13,4 +33,13 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+
+
+.parallaxLayers {
+  position: absolute;
+  min-height: 100vh;
+  width: 100vw;
+  z-index: -90;
 }
