@@ -8,6 +8,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "@tinacms/api-git": "^0.39.0",
     "@tinacms/git-client": "^0.39.0",
     "bootstrap": "^4.6.0",
@@ -22,6 +25,7 @@
     "react-bootstrap": "^1.5.2",
     "react-dom": "17.0.2",
     "react-tinacms-github": "^0.40.0",
+    "rellax": "^1.12.1",
     "styled-components": "^5.2.3",
     "tinacms": "^0.39.0"
   },
