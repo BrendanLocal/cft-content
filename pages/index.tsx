@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Head from 'next/head'
 import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { GetStaticProps } from 'next'
@@ -9,9 +9,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import styles from '../styles/Home.module.css'
-
 import Image from 'next/image'
 
+import Rellax from "rellax";
 export default function Home({ file }) {
 const formOptions = {
 label: 'Home Page',
@@ -21,6 +21,10 @@ fields: [{ name: 'title', component: 'text' }],
 const [data, form] = useGithubJsonForm(file, formOptions)
 usePlugin(form)
 useGithubToolbarPlugins()
+
+useEffect(() => {
+  new Rellax(".rellax");
+}, []);
 
 
 return (
