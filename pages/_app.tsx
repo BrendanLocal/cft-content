@@ -1,4 +1,9 @@
-import '../styles/globals.css'
+
+import '../styles/bootstrap.min.css';
+import '../styles/globals.css';
+import '../assets/js/jquery-3.6.0.min.js';
+import '../assets/js/rellax.min.js';
+import '../assets/js/custom.js';
 import App from 'next/app'
 import { TinaCMS, TinaProvider } from 'tinacms'
 import {
