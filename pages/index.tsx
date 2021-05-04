@@ -9,7 +9,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import styles from '../styles/Home.module.css'
-import Image from 'next/image'
 
 import Rellax from "rellax";
 export default function Home({ file }) {
