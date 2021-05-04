@@ -2,6 +2,7 @@
 import '../styles/bootstrap.min.css';
 import '../styles/globals.css';
 import '../assets/js/jquery-3.6.0.min.js';
+import $ from 'jquery';
 import App from 'next/app'
 import { TinaCMS, TinaProvider } from 'tinacms'
 import {
@@ -62,8 +63,9 @@ export default class Site extends App {
           {/**
            * 6. Add a button for entering Preview/Edit Mode
            */}
-          <EditLink cms={this.cms} />
+         
           <Component {...pageProps} />
+          <EditLink cms={this.cms} />
         </TinacmsGithubProvider>
       </TinaProvider>
     )

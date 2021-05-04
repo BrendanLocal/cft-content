@@ -9,8 +9,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import styles from '../styles/Home.module.css'
+import $ from 'jquery';
 
 import Rellax from "rellax";
+import Header from "../components/header";
+
 export default function Home({ file }) {
 const formOptions = {
 label: 'Home Page',
@@ -27,7 +30,9 @@ useEffect(() => {
 
 
 return (
+  
 <div className={styles.homeParallax}>
+<Header />
 
   <Head>
     <title>Canada's Forest Trust</title>
@@ -44,7 +49,7 @@ return (
       data-rellax-speed="-5"></img>
     <img className="rellax parallaxLayers" src="/forestv3_layer1.png" alt="Wide image of the forest, layered to imply depth"
       data-rellax-speed="-2"></img>
-    <Container className={styles.container}>
+    <Container className="v-full d-flex flex-column justify-content-center align-items-center">
       <Row>
         <Col>
         <h1 className={styles.title}>
@@ -54,7 +59,7 @@ return (
         </Col>
       </Row>
     </Container>
-    <Container className={styles.container}>
+    <Container fluid className=" v-full bg-green">
       <Row>
         <Col>
 

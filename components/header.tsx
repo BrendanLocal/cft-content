@@ -1,9 +1,53 @@
-import React, { useState, useRef, useEffect } from 'react';
-import Head from 'next/head'
-import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
-import { GetStaticProps } from 'next'
-import { usePlugin } from 'tinacms'
-import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import React, { useState } from 'react';
+
+const Header = ()=> {
+
+  const [isActive, setActive] = useState(false);
+
+  const toggleClass = () => {
+    setActive(!isActive);
+  };
+
+return(
+  <React.Fragment>
+
+
+<div id="sidebar" className={isActive ? 'open': null}><div className="container-fluid v-full sidebar bg-brown">
+  
+  </div>
+  </div>
+
+  
+<div className="container-fluid header">
+  <div className="row justify-content-between">
+    <div className="col-6 col-md-4">
+      <img className="logo" src="/cft-logo-white.svg" />
+    </div>
+    <div className="col-6 col-md-2 ">
+      
+      <div className="row">
+      <div className="col  d-flex align-items-center justify-content-end">
+      <a className="loginButton" href="#">Login</a>
+      <div id="menuIcon" className={isActive ? 'open': null} 
+      onClick={toggleClass} >
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+</div>
+      </div>
+      
+        
+
+    </div>
+  </div>
+</div>
+
+
+  
+  </React.Fragment>
+)
+}
+
+export default Header
