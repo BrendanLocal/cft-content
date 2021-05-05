@@ -36,6 +36,15 @@ a {
   box-sizing: border-box;
 }
 
+/*Text*/
+
+.smallCaps {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  z-index:999;
+}
 
 
 .parallaxLayers {
@@ -79,13 +88,7 @@ height: 90px;
 max-height: 100%;
 }
 
-.loginButton {
-  text-transform: uppercase;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 700;
-  z-index:999;
-}
+
 
 #menuIcon{
   width: 25px;
@@ -102,6 +105,14 @@ max-height: 100%;
   transition: .5s ease-in-out;
   cursor: pointer;
   z-index:999;
+
+  transform: scale(1);
+  transition: transform 1s;
+}
+
+#menuIcon:hover {
+  transform: scale(1.2);
+  transition: transform 1s;
 }
 
 #menuIcon span {
@@ -161,20 +172,87 @@ max-height: 100%;
   left: 50%;
 }
 
+.menuInterface {
+  position: relative;
+  z-index:99;
+}
+
+/* Details */
+
+.slimlineBottom {
+  border-bottom: solid 1px #fff;
+}
+
+
 /* Sidebar */
 
 
 #sidebar {
-  position: absolute;
+  position: fixed;
   left: 110vw;
   transition: left 1500ms;
   z-index:0;
   width: 100%;
+  box-shadow: -10px 0 10px rgba(0,0,0,.5);
 }
 
 #sidebar.open {
-  left: 10vw;
+  left: 3vw;
   transition: left 1500ms;
 
   width: 100%;
+}
+
+.sidebar {
+  padding: 20px;
+  z-index:10;
+}
+
+
+/* Menu */
+
+.sidebar li {
+  color: #fff;
+  list-style: none;
+}
+
+.sidebar li a {
+  font-size: 2.2em;
+  font-weight:100;
+  line-height: 2em;
+  position: relative;
+display: inline-block;
+  transform: translateX(0px);
+
+  transition: transform 2s;
+}
+
+.sidebar li a:after {
+  content: url("/navArrow.svg");
+  margin-left: 20px;
+  width: 50px;
+  display: inline-block;
+  color: #fff;
+  transform: translate(0, -7px);
+
+  transition: transform 2s;
+}
+
+.sidebar .smallCaps {
+  margin-bottom: 1em;
+  position: relative;
+  display: block;
+}
+
+.sidebar li a:hover {
+  color: #fff;
+
+  transition: transform 600ms;
+  transform: translateX(30px);
+  cursor: pointer;
+}
+
+.sidebar li a:hover:after {
+  transform: translate(30px, -7px);
+  transition: transform 1s;
 }
