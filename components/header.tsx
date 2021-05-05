@@ -66,7 +66,7 @@ path: "#"
 
 const useAudio = url => {
   const [audio] = useState(typeof Audio !== "undefined" && new Audio(url));
-  const [playing, setPlaying] = useState(false);
+  const [playing, setPlaying] = useState(true);
 
   const toggleSound = () => setPlaying(!playing);
 
@@ -89,6 +89,7 @@ const useAudio = url => {
 
   return [playing, toggleSound];
 };
+
 
 const [playing, toggleSound] = useAudio("/forest-sounds.mp3");
 
