@@ -77,9 +77,9 @@ const useAudio = url => {
   );
 
   useEffect(() => {
-    audio.addEventListener('ended', () => setPlaying(true));
+    audio.addEventListener('ended', () => setPlaying(false));
     return () => {
-      audio.removeEventListener('ended', () => setPlaying(true));
+      audio.removeEventListener('ended', () => setPlaying(false));
     };
   }, []);
 
