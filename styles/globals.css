@@ -54,6 +54,10 @@ a {
   z-index: -90;
 }
 
+a:hover {
+color: #fff;
+}
+
 /* Containers */
 
 .v-full {
@@ -208,6 +212,77 @@ max-height: 100%;
   z-index:10;
 }
 
+.sidebar li {
+transform: translateX(200px);
+  opacity: 0;
+  transition: all 1s;
+}
+
+.open .sidebar li {
+
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 1.5s .2s;
+}
+
+.open .sidebar li:nth-child(1) {
+  transition-delay: .3s;
+}
+.open .sidebar li:nth-child(2) {
+  transition-delay: .4s;
+}
+.open .sidebar li:nth-child(3) {
+  transition-delay: .5s;
+}
+.open .sidebar li:nth-child(4) {
+  transition-delay: .6s;
+}
+.open .sidebar li:nth-child(5) {
+  transition-delay: .7s;
+}
+.open .sidebar li:nth-child(6) {
+  transition-delay: .8s;
+}
+.open .sidebar li:nth-child(7) {
+  transition-delay: .9s;
+}
+.open .sidebar li:nth-child(8) {
+  transition-delay: 1s;
+}
+
+/* Social icon sidebar */
+.socialIcons img:hover, .controlIcons img:hover {
+transform: scale(1.2);
+transition: transform .5s;
+}
+
+.socialIcons li, .controlIcons li {
+  list-style: none;
+}
+
+.socialIcons img {
+  width: 30px;
+  padding: 10px 0;
+
+transform: scale(1);
+transition: transform .5s;
+}
+
+.controlIcons img {
+  width: 25px;
+  padding: 10px 0;
+
+transform: scale(1);
+transition: transform .5s;
+}
+
+.socialIcons {
+  margin-bottom: 50px;
+}
+
+.controlIcons {
+  margin-top: 15px;
+}
 
 /* Menu */
 
