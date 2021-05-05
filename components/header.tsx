@@ -160,7 +160,7 @@ return(
                   <a href=""><img src="/searchIcon.svg"></img></a>
                 </li>
                 <li>
-                  <a  className={playing ? null : 'mute'} onClick={toggleSound}><img className="soundPlaying" src="/soundIcon.svg"></img><img className="soundMute" src="/muteIcon.svg"></img></a>
+                  <a  className={playing ? null : 'mute'} onClick={() => toggleSound}><img className="soundPlaying" src="/soundIcon.svg"></img><img className="soundMute" src="/muteIcon.svg"></img></a>
                   
                   
                 </li>
