@@ -284,6 +284,17 @@ transition: transform .5s;
   margin-top: 15px;
 }
 
+.soundMute {
+  display: none;
+}
+.mute .soundMute {
+  display: block;
+}
+
+.mute .soundPlaying {
+  display: none;
+}
+
 /* Menu */
 
 .sidebar li {

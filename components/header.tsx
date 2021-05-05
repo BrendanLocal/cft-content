@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
-
-
-
+import React, { useState, useEffect } from 'react';
 
 const Header = ()=> {
+
 
 const [isActive, setActive] = useState(false);
 
@@ -65,6 +63,30 @@ path: "#"
 }
 ]
 
+
+const useAudio = url => {
+  const [audio] = useState(typeof Audio !== "undefined" && new Audio(url));
+  const [playing, setPlaying] = useState(false);
+
+  const toggleSound = () => setPlaying(!playing);
+
+  useEffect(() => {
+      playing ? audio.pause() : audio.play() ;
+    },
+    [playing]
+  );
+
+  useEffect(() => {
+    audio.addEventListener('ended', () => setPlaying(true));
+    return () => {
+      audio.removeEventListener('ended', () => setPlaying(true));
+    };
+  }, []);
+
+  return [playing, toggleSound];
+};
+
+const [playing, toggleSound] = useAudio("/forest-sounds.mp3");
 
 const NavItems = props => (
 <div className="row slimlineBottom">
@@ -138,7 +160,9 @@ return(
                   <a href=""><img src="/searchIcon.svg"></img></a>
                 </li>
                 <li>
-                  <a href=""><img src="/soundIcon.svg"></img></a>
+                  <a  className={playing ? null : 'mute'} onClick={toggleSound}><img className="soundPlaying" src="/soundIcon.svg"></img><img className="soundMute" src="/muteIcon.svg"></img></a>
+                  
+                  
                 </li>
               </ul>
             </div>
