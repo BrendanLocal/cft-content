@@ -71,12 +71,16 @@ const useAudio = url => {
   const toggleSound = () => setPlaying(!playing);
 
   useEffect(() => {
-      playing ? audio.pause() : audio.play() ;
+      playing ? audio.play() : audio.pause()  ;
     },
     [playing]
   );
 
   useEffect(() => {
+    audio.addEventListener('ended', function () {
+      this.currentTime = 0;
+      this.play();
+    }, false);
     audio.addEventListener('ended', () => setPlaying(false));
     return () => {
       audio.removeEventListener('ended', () => setPlaying(false));
@@ -160,7 +164,7 @@ return(
                   <a href=""><img src="/searchIcon.svg"></img></a>
                 </li>
                 <li>
-                  <a  className={playing ? null : 'mute'} onClick={() => toggleSound}><img className="soundPlaying" src="/soundIcon.svg"></img><img className="soundMute" src="/muteIcon.svg"></img></a>
+                  <a  className={playing ? null : 'mute'} onClick={toggleSound}><img className="soundPlaying" src="/soundIcon.svg"></img><img className="soundMute" src="/muteIcon.svg"></img></a>
                   
                   
                 </li>
