@@ -75,10 +75,12 @@ const [audio] = useState(typeof Audio !== "undefined" && new Audio(url));
 const [playing, setPlaying] = useState(true);
 
 
-const toggleSound = (event: MouseEvent) => setPlaying(!playing);
+const toggleSound = () => setPlaying(!playing);
+   
+
 
 useEffect(() => {
-playing ? audio.play() : audio.pause() ;
+playing ? audio.pause() : audio.play() ;
 },
 [playing]
 );
@@ -163,7 +165,7 @@ return(
                 <a href=""><img src="/searchIcon.svg"></img></a>
               </li>
               <li>
-                 <a  className={playing ? null : 'mute'} onClick={() => toggleSound()}><img className="soundPlaying" src="/soundIcon.svg"></img><img className="soundMute" src="/muteIcon.svg"></img></a>
+                 <a  className={playing ? null : 'mute'} onClick={toggleSound}><img className="soundPlaying" src="/soundIcon.svg"></img><img className="soundMute" src="/muteIcon.svg"></img></a>
 
 
               </li>
