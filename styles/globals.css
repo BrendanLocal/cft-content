@@ -281,7 +281,7 @@ transition: transform .5s;
 }
 
 .socialIcons {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .controlIcons {
@@ -362,3 +362,34 @@ box-shadow: 10px 0 10px rgba(0,0,0,.5) inset;
   background: #00823B;
 text-align: center;
 }
+
+.tickerTitle {
+  top: -0.3em;
+  position: relative;
+  line-height: 1em;
+}
+
+.newsItem {
+  display: inline-block;
+    color: #fff;
+    line-height: 100%;
+    white-space: nowrap;
+}
+
+.newsItem:before {
+  content:"";
+  background: url("/cft-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1em;
+  height: 1em;
+  position: relative;
+  display: inline-block;
+  margin: 0 15px 0;
+  top:2px;
+}
+
+.ticker p {
+  white-space:nowrap;
+}
+

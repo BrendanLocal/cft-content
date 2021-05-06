@@ -1,20 +1,68 @@
 import React from 'react';
 
-const Ticker = ()=> {
+import Ticker from 'react-ticker'
 
-  return(
-    <div id="ticker" className="container-fluid">
-<div className="row v-10 ">
-  <div className="tickerHead col-2 d-flex align-items-center justify-content-center">
-    <span className="tickerTitle smallCaps">Latest News</span>
-  </div>
-  <div className="tickerMain col">
 
+const newsItems = [
+  {
+  key: "newsItem1",
+  label: "The quick brown fox jumps over the lazy dog",
+  path: "/#"
+  },
+  {
+    key: "newsItem2",
+  label: "The quick brown fox jumps over the lazy dog",
+  path: "/#"
+  },
+  {
+    key: "newsItem3",
+  label: "The quick brown fox jumps over the lazy dog",
+  path: "/#"
+  },
+  {
+    key: "newsItem4",
+  label: "The quick brown fox jumps over the lazy dog",
+  path: "/#"
+  },
+  {
+    key: "newsItem5",
+  label: "The quick brown fox jumps over the lazy dog",
+  path: "/#"
+  }
+  ]
+
+
+
+
+const NewsTicker = ()=> {
+
+return(
+<div id="ticker" className="container-fluid">
+  <div className="row">
+    <div className="tickerHead col-1 d-flex align-items-center justify-content-center">
+      <span className="tickerTitle smallCaps">Latest News</span>
+    </div>
+    <div className="tickerMain col p-0">
+    <Ticker>
+      
+    {({ index }) => (
+              <><p className=" d-flex align-items-center v-10 justify-content-center">
+              {newsItems.map(function(item){
+                return (
+                  
+                  <a key={item.key} href={item.path} className="newsItem">{item.label}</a>
+                  
+                )
+                })}
+                </p>
+              </>
+          )}
+    </Ticker>
+    </div>
   </div>
 </div>
-      </div>
-    )
+)
 }
 
 
-export default Ticker
+export default NewsTicker

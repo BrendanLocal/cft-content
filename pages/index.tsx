@@ -13,7 +13,7 @@ import styles from '../styles/Home.module.css'
 import Rellax from "rellax";
 import Header from "../components/header";
 
-import Ticker from "../components/newsTicker";
+import NewsTicker from "../components/newsTicker";
 
 export default function Home({ file }) {
 const formOptions = {
@@ -69,7 +69,7 @@ return (
     </Container>
 
   </main>
-  <Ticker />
+  <NewsTicker />
 
   <footer className={styles.footer}>
 

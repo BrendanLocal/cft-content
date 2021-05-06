@@ -10,30 +10,37 @@ setActive(!isActive);
 
 const navItems = [
 {
+  key: "navItem1",
 label: "Power of the forest",
 path: "/power-of-the-forest"
 },
 {
+  key: "navItem2",
 label: "Unlock the forest",
 path: "/unlock-the-forest"
 },
 {
+  key: "navItem3",
 label: "Build your forest",
 path: "/build-your-forest"
 },
 {
+  key: "navItem4",
 label: "Carbon calculator",
 path: "/carbon-calculator"
 },
 {
+  key: "navItem5",
 label: "Forest calculator",
 path: "/forest-calculator"
 },
 {
+  key: "navItem6",
 label: "About",
 path: "/about"
 },
 {
+  key: "navItem7",
 label: "Contact",
 path: "/contact"
 }
@@ -92,14 +99,7 @@ const useAudio = url => {
 
 const [playing, toggleSound] = useAudio("/forest-sounds.mp3");
 
-const NavItems = props => (
-<div className="row slimlineBottom">
-  <div className="col">
 
-    <span className="Label">{props.label}</span>
-  </div>
-</div>
-);
 
 return(
 <React.Fragment>
@@ -126,13 +126,11 @@ return(
                 Menu
               </span>
             </li>
-            {navItems.map(function(item){
-            return (
-            <li className="slimlineBottom">
+            {navItems.map(item =>
+            <li key={item.key} className="slimlineBottom">
               <a href={item.path}>{item.label}</a>
             </li>
-            )
-            })}
+            )}
           </ul>
 
 
@@ -174,13 +172,11 @@ return(
           <div className="row mt-auto align-self-bottom">
             <div className="col col d-flex align-items-end justify-content-end menuInterface">
               <ul className="socialIcons">
-                {socialIcons.map(function(item){
-                return (
-                <li>
+                {socialIcons.map(item =>
+                <li key={item.label}>
                   <a href={item.path}><img src={item.icon}></img></a>
                 </li>
-                )
-                })}
+                )}
               </ul>
             </div>
           </div>
