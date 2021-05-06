@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, MouseEvent} from 'react';
 
 const Header = ()=> {
 
@@ -70,18 +70,12 @@ path: "#"
 ]
 
 
-
-
 const useAudio = url => {
 const [audio] = useState(typeof Audio !== "undefined" && new Audio(url));
 const [playing, setPlaying] = useState(true);
 
 
-function toggleSound(e){
-  e.preventDefault();
-  setPlaying(!playing);
-}
-
+const toggleSound = (event: MouseEvent) => setPlaying(!playing);
 
 useEffect(() => {
 playing ? audio.play() : audio.pause() ;
@@ -169,7 +163,7 @@ return(
                 <a href=""><img src="/searchIcon.svg"></img></a>
               </li>
               <li>
-              <a className={playing ? null : 'mute'} onClick={toggleSound}><img className="soundPlaying" src="/soundIcon.svg"></img><img className="soundMute" src="/muteIcon.svg"></img></a>
+                 <a  className={playing ? null : 'mute'} onClick={toggleSound}><img className="soundPlaying" src="/soundIcon.svg"></img><img className="soundMute" src="/muteIcon.svg"></img></a>
 
 
               </li>
