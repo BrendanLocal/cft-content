@@ -50,7 +50,7 @@ return (
       data-rellax-speed="-5"></img>
     <img className="rellax parallaxLayers" src="/forestv3_layer1.png" alt="Wide image of the forest, layered to imply depth"
       data-rellax-speed="-2"></img>
-    <Container className="v-full d-flex flex-column justify-content-center align-items-center">
+    <Container className="v-full d-flex flex-column justify-content-center align-items-center text-white">
       <Row>
         <Col>
         <h1 className={styles.title}>

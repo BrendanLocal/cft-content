@@ -39,7 +39,7 @@ const NewsTicker = ()=> {
 return(
 <div id="ticker" className="container-fluid">
   <div className="row">
-    <div className="tickerHead col-1 d-flex align-items-center justify-content-center">
+    <div className="tickerHead v-10 col-3 col-sm-2 col-md-2 col-lg-1 px-4">
       <span className="tickerTitle smallCaps">Latest News</span>
     </div>
     <div className="tickerMain col p-0">

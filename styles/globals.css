@@ -46,16 +46,12 @@ a {
   z-index:999;
 }
 
-
-.parallaxLayers {
-  position: absolute;
-  min-height: 90vh;
-  width: 100vw;
-  z-index: -90;
-}
-
 a:hover {
 color: #fff;
+}
+
+.text-white {
+  color: #fff;
 }
 
 /* Containers */
@@ -67,6 +63,16 @@ color: #fff;
 
 .v-10 {
   height: 10vh;
+}
+
+/* Parallax */
+
+.parallaxLayers {
+  position: absolute;
+  min-height: 90vh;
+  width: 100vw;
+  z-index: -90;
+  object-fit: cover;
 }
 
 
@@ -94,6 +100,7 @@ color: #fff;
 .logo {
 height: 90px;
 max-height: 100%;
+max-width: 100%;
 }
 
 
@@ -309,7 +316,7 @@ transition: transform .5s;
 .sidebar li a {
   font-size: 2.2em;
   font-weight:100;
-  line-height: 2em;
+  padding: .3em 0;
   position: relative;
 display: inline-block;
   transform: translateX(0px);
@@ -360,13 +367,14 @@ box-shadow: 10px 0 10px rgba(0,0,0,.5) inset;
 
 .tickerHead {
   background: #00823B;
-text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .tickerTitle {
-  top: -0.3em;
   position: relative;
-  line-height: 1em;
+  line-height: 1.2em;
 }
 
 .newsItem {
@@ -393,3 +401,59 @@ text-align: center;
   white-space:nowrap;
 }
 
+
+/* Tablet */
+
+@media screen and (max-width: 1024px) and (min-width: 577px){
+  .parallaxLayers {
+
+    min-height: 95vh;
+  }
+
+  .v-full {
+    min-height: 95vh;
+  }
+
+  #ticker {
+    height: 5vh;
+  }
+
+  .v-10 {
+height: 5vh;
+  }
+}
+
+
+/* Mobile */
+
+@media screen and (max-width: 576px){
+.smallCaps {
+font-size: .9em;
+}
+
+.logo {
+  height: 100%;
+}
+
+#sidebar.open {
+  left: 6vw;
+  transition: left 1500ms;
+
+  width: 100%;
+}
+
+.sidebar ul {
+  padding-left: 0;
+}
+.sidebar li a {
+  font-size: 1.2em;
+}
+
+.sidebar li a:after {
+  width: 20px;
+  margin-left: 10px;
+  transform: translate(0, 0px);
+  position: absolute;
+}
+
+}

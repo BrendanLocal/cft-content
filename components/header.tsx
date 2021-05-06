@@ -118,10 +118,10 @@ return(
     <div className="container-fluid v-full sidebar bg-brown">
 
       <div className="row">
-        <div className="col-11 col-md-9">
+        <div className="col-10 col-md-9">
 
-          <ul>
-            <li className="slimlineBottom">
+          <ul className="py-5 py-sm-0">
+            <li className="slimlineBottom d-sm-block d-none">
               <span className="smallCaps">
                 Menu
               </span>
@@ -142,10 +142,10 @@ return(
 
   <div className="container-fluid header">
     <div className="row justify-content-end">
-      <div className="d-flex flex-column col-6 col-md-2 v-full">
+      <div className="col-6 col-md-2 d-flex flex-column v-full gx-1 gx-lg-3">
         <div className="row align-self-top">
           <div className="col d-flex align-items-center justify-content-end menuInterface">
-            <a className="smallCaps" href="#">Login</a>
+            <a className="smallCaps " href="#">Login</a>
             <div id="menuIcon" className={isActive ? 'open' : null} onClick={toggleClass}>
               <span></span>
               <span></span>
