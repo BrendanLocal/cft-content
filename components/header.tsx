@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 const Header = ()=> {
 
-
 const [isActive, setActive] = useState(false);
 
 const toggleClass = () => {

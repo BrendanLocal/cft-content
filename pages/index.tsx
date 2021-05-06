@@ -9,10 +9,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import styles from '../styles/Home.module.css'
-import $ from 'jquery';
 
 import Rellax from "rellax";
 import Header from "../components/header";
+
+import Ticker from "../components/newsTicker";
 
 export default function Home({ file }) {
 const formOptions = {
@@ -68,6 +69,7 @@ return (
     </Container>
 
   </main>
+  <Ticker />
 
   <footer className={styles.footer}>
 
