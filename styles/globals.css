@@ -27,6 +27,9 @@ body {
   overflow-x: hidden;
 }
 
+html {
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -57,7 +60,6 @@ color: #fff;
 /* Containers */
 
 .v-full {
-
   min-height: 90vh;
 }
 
@@ -65,14 +67,20 @@ color: #fff;
   height: 10vh;
 }
 
+.v-100 {
+  height: 100vh;
+}
+
 /* Parallax */
 
 .parallaxLayers {
   position: absolute;
   min-height: 90vh;
+
   width: 100vw;
   z-index: -90;
   object-fit: cover;
+  
 }
 
 
@@ -102,8 +110,6 @@ height: 90px;
 max-height: 100%;
 max-width: 100%;
 }
-
-
 
 #menuIcon{
   width: 25px;
@@ -262,6 +268,13 @@ transform: translateX(200px);
 }
 
 /* Social icon sidebar */
+
+.align-bottom-social {
+  position: fixed;
+    bottom: 11vh;
+    right: 0;
+}
+
 .socialIcons img:hover, .controlIcons img:hover {
 transform: scale(1.2);
 transition: transform .5s;
@@ -288,7 +301,7 @@ transition: transform .5s;
 }
 
 .socialIcons {
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 
 .controlIcons {
@@ -420,6 +433,10 @@ box-shadow: 10px 0 10px rgba(0,0,0,.5) inset;
 
   .v-10 {
 height: 5vh;
+  }
+
+  .align-bottom-social {
+    bottom: 6vh;
   }
 }
 

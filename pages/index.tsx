@@ -38,6 +38,7 @@ return (
   <Head>
     <title>Canada's Forest Trust</title>
     <link rel="icon" href="/favicon.ico" />
+    <meta name="theme-color" content="#054218"></meta>
   </Head>
 
   <main className={styles.main}>
