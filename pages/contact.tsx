@@ -9,7 +9,6 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import Animate from 'animate.css';
 import Header from "../components/header";
 import Footer from "../components/footer";
 
