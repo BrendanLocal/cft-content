@@ -8,11 +8,15 @@
     "start": "next start"
   },
   "dependencies": {
+    "@formspree/react": "^2.2.3",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
     "@tinacms/api-git": "^0.39.0",
     "@tinacms/git-client": "^0.39.0",
+    "animate.css": "^4.1.1",
+    "animate.css-react": "^1.1.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",

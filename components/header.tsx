@@ -1,4 +1,5 @@
 import React, { useState, useEffect, MouseEvent} from 'react';
+import { render } from 'react-dom';
 
 const Header = ()=> {
 
@@ -75,10 +76,10 @@ const [audio] = useState(typeof Audio !== "undefined" && new Audio(url));
 const [playing, setPlaying] = useState(true);
 
 
-const toggleSound = () => setPlaying(!playing);
+const toggleSound = () => {
+  setPlaying(!playing);
+  };
    
-
-
 useEffect(() => {
 playing ? audio.pause() : audio.play() ;
 },
@@ -99,9 +100,7 @@ audio.removeEventListener('ended', () => setPlaying(false));
 return [playing, toggleSound];
 };
 
-
 const [playing, toggleSound] = useAudio("/forest-sounds.mp3");
-
 
 
 return(
@@ -110,7 +109,9 @@ return(
   <div className="container-fluid header">
     <div className="row ">
       <div className="col-6 col-md-4">
+        <a href="/">
         <img className="logo" src="/cft-logo-white.svg" />
+        </a>
       </div>
     </div>
   </div>
@@ -118,17 +119,12 @@ return(
 
 
   <div id="sidebar" className={isActive ? 'open' : null}>
-    <div className="container-fluid v-full sidebar bg-brown">
+    <div className="container-fluid v-full sidebar bg-green text-orange">
 
       <div className="row">
         <div className="col-10 col-md-9">
 
           <ul className="py-5 py-sm-0">
-            <li className="slimlineBottom d-sm-block d-none">
-              <span className="smallCaps">
-                Menu
-              </span>
-            </li>
             {navItems.map(item =>
             <li key={item.key} className="slimlineBottom">
               <a href={item.path}>{item.label}</a>
@@ -143,9 +139,9 @@ return(
   </div>
 
 
-  <div className="container-fluid header">
+  <div className="container-fluid header headerNav">
     <div className="row justify-content-end">
-      <div className="col-6 col-md-2 d-flex flex-column v-100 gx-1 gx-lg-3">
+      <div className="col-6 col-md-2 d-flex flex-column v-100 gx-1 gx-lg-3 fixed">
         <div className="row align-self-top">
           <div className="col d-flex align-items-center justify-content-end menuInterface">
             <a className="smallCaps " href="#">Login</a>
@@ -165,7 +161,7 @@ return(
                 <a href=""><img src="/searchIcon.svg"></img></a>
               </li>
               <li>
-                 <a  className={playing ? null : 'mute'} onClick={toggleSound}><img className="soundPlaying" src="/soundIcon.svg"></img><img className="soundMute" src="/muteIcon.svg"></img></a>
+                 <div  className={playing ? null : 'mute'} onClick={toggleSound}><img className="soundPlaying" src="/soundIcon.svg"></img><img className="soundMute" src="/muteIcon.svg"></img></div>
 
 
               </li>
