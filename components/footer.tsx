@@ -59,8 +59,9 @@ return(
     <Col>
     <h3>About CFT</h3>
     <ul className="py-5 py-sm-0">
+      
             {navItems.map(item =>
-            <li key={item.key} className="">
+            <li className="">
               <a href={item.path}>{item.label}</a>
             </li>
             )}
