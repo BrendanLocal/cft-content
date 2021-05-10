@@ -190,6 +190,11 @@ img {
   max-width: 100%;
 }
 
+main {
+  position: relative;
+  z-index:-99;
+}
+
 /* Parallax */
 
 .parallaxLayers {
@@ -205,6 +210,9 @@ img {
  .pos-absolute {
    position: absolute;
  }
+.rellax {
+  z-index: -99;
+}
 
 
 /* Backgrounds */
@@ -385,7 +393,7 @@ transform: translateX(200px);
 
 .open .sidebar li {
 
-  transform: translateX(0);
+  transform: translateX(10px);
   opacity: 1;
   transition: all 1.5s .2s;
 }
