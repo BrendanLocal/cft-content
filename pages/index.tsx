@@ -11,12 +11,8 @@ import Button from 'react-bootstrap/Button';
 import styles from '../styles/Home.module.css'
 
 import Rellax from "rellax";
-import Header from "../components/header";
-
-import Footer from "../components/footer";
 
 
-import NewsTicker from "../components/newsTicker";
 
 export default function Home({ file }) {
 const formOptions = {
@@ -36,7 +32,6 @@ useEffect(() => {
 return (
   
 <div className={styles.homeParallax}>
-<Header />
 
   <Head>
     <title>Canada's Forest Trust</title>
@@ -73,10 +68,7 @@ return (
     </Container>
 
   </main>
-  <NewsTicker />
 
-  
-  <Footer/>
 </div>
 )
 }

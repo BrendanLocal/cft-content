@@ -10,9 +10,6 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import styles from '../styles/Home.module.css'
 import Rellax from "rellax";
-import Header from "../components/header";
-import Footer from "../components/footer";
-import NewsTicker from "../components/newsTicker";
 export default function Build({ file }) {
 const formOptions = {
 label: 'Build Your Forest',
@@ -31,7 +28,6 @@ useEffect(() => {
 return (
   
 <div className={styles.homeParallax}>
-<Header />
 
   <Head>
     <title>Canada's Forest Trust</title>
@@ -82,10 +78,6 @@ return (
    
 
   </main>
-  <NewsTicker />
-
-  
-  <Footer/>
 </div>
 )
 }

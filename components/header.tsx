@@ -1,5 +1,6 @@
 import React, { useState, useEffect, MouseEvent} from 'react';
 import { render } from 'react-dom';
+import Link from 'next/link'
 
 const Header = ()=> {
 
@@ -114,9 +115,9 @@ return(
   <div className="container-fluid header">
     <div className="row ">
       <div className="col-6 col-md-4">
-        <a href="/">
+        <Link href="/">
         <img className="logo" src="/cft-logo-white.svg" />
-        </a>
+        </Link>
       </div>
     </div>
   </div>
@@ -131,8 +132,8 @@ return(
 
           <ul className="py-5 py-sm-0">
             {navItems.map(item =>
-            <li key={item.key} className="slimlineBottom">
-              <a href={item.path}>{item.label}</a>
+            <li key={item.key} className="slimlineBottom" onClick={toggleClass}>
+              <Link href={item.path} >{item.label}</Link>
             </li>
             )}
           </ul>
@@ -149,7 +150,7 @@ return(
       <div className="col-6 col-md-2 d-flex flex-column v-100 gx-1 gx-lg-3 fixed">
         <div className="row align-self-top">
           <div className="col d-flex align-items-center justify-content-end menuInterface">
-            <a className="smallCaps " href="#">Login</a>
+            <Link className="smallCaps" href="/">Login</Link>
             <div id="menuIcon" className={isActive ? 'open' : null} onClick={toggleClass}>
               <span></span>
               <span></span>
@@ -163,7 +164,7 @@ return(
             <ul className="controlIcons">
 
               <li>
-                <a href=""><img src="/searchIcon.svg"></img></a>
+                <Link href=""><img src="/searchIcon.svg"></img></Link>
               </li>
               <li>
                  <div  className={playing ? null : 'mute'} ><img className="soundPlaying" src="/soundIcon.svg"></img><img className="soundMute" src="/muteIcon.svg"></img></div>
@@ -186,7 +187,7 @@ return(
             <ul className="socialIcons">
               {socialIcons.map(item =>
               <li key={item.label}>
-                <a href={item.path}><img src={item.icon}></img></a>
+                <Link href={item.path}><img src={item.icon}></img></Link>
               </li>
               )}
             </ul>

@@ -3,7 +3,8 @@ import '../styles/bootstrap.min.css';
 import '../styles/globals.css';
 import '../assets/js/jquery-3.6.0.min.js';
 import $ from 'jquery';
-import App from 'next/app'
+import React, { useState, useEffect, MouseEvent} from 'react';
+import App,  { AppProps } from 'next/app'
 import { TinaCMS, TinaProvider } from 'tinacms'
 import {
   GithubClient,
@@ -11,10 +12,21 @@ import {
   GithubMediaStore,
 } from 'react-tinacms-github'
 
+import Header from "../components/header";
+import Footer from "../components/footer";
+
+import NewsTicker from "../components/newsTicker";
+
+
+import { Flipper, Flipped } from 'react-flip-toolkit'
+
 export default class Site extends App {
+
   cms: TinaCMS
 
+  
   constructor(props) {
+    
     super(props)
 
     const github = new GithubClient({
@@ -24,6 +36,7 @@ export default class Site extends App {
       baseRepoFullName: process.env.REPO_FULL_NAME, // e.g: tinacms/tinacms.org,
       baseBranch: process.env.BASE_BRANCH, // e.g. 'master' or 'main' on newer repos
     })
+    
 
     /**
      * 1. Create the TinaCMS instance
@@ -49,22 +62,25 @@ export default class Site extends App {
   }
 
   render() {
-    const { Component, pageProps } = this.props
+    const { Component, pageProps, router } = this.props
     return (
-      /**
-       * 5. Wrap the page Component with the Tina and Github providers
-       */
       <TinaProvider cms={this.cms}>
         <TinacmsGithubProvider
           onLogin={onLogin}
           onLogout={onLogout}
           error={pageProps.error}
         >
-          {/**
-           * 6. Add a button for entering Preview/Edit Mode
-           */}
-         
+
+<Header />
+<Flipper flipKey={router.asPath}>
+<Flipped flipId="page">
           <Component {...pageProps} />
+</Flipped>
+  </Flipper>
+
+
+          <NewsTicker />
+  <Footer/>
           <EditLink cms={this.cms} />
         </TinacmsGithubProvider>
       </TinaProvider>
