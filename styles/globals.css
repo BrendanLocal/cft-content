@@ -192,7 +192,7 @@ img {
 
 main {
   position: relative;
-  z-index:-99;
+  z-index:0;
 }
 
 /* Parallax */
@@ -245,12 +245,14 @@ main {
   padding: 20px;
   top: 0;
   left:0;
+  z-index: 99;
   }
 
   .headerNav {
     left: initial;
     right: 0;
     width: 50vw;
+    z-index: 101;
   }
 
 .logo {
@@ -368,7 +370,7 @@ max-width: 100%;
   position: fixed;
   left: 110vw;
   transition: left 1500ms;
-  z-index:0;
+  z-index:100;
   width: 100%;
   box-shadow: -10px 0 10px rgba(0,0,0,.5);
 }
