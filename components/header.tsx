@@ -67,6 +67,11 @@ path: "#"
 icon: "/instaIcon.svg",
 label: "Instagram",
 path: "#"
+},
+{
+icon: "/tiktokIcon.svg",
+label: "TikTok",
+path: "#"
 }
 ]
 
