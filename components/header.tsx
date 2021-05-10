@@ -161,7 +161,7 @@ return(
                 <a href=""><img src="/searchIcon.svg"></img></a>
               </li>
               <li>
-                 <div  className={playing ? null : 'mute'} onClick={toggleSound}><img className="soundPlaying" src="/soundIcon.svg"></img><img className="soundMute" src="/muteIcon.svg"></img></div>
+                 <div  className={playing ? null : 'mute'} ><img className="soundPlaying" src="/soundIcon.svg"></img><img className="soundMute" src="/muteIcon.svg"></img></div>
 
 
               </li>

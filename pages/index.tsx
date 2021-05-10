@@ -13,6 +13,9 @@ import styles from '../styles/Home.module.css'
 import Rellax from "rellax";
 import Header from "../components/header";
 
+import Footer from "../components/footer";
+
+
 import NewsTicker from "../components/newsTicker";
 
 export default function Home({ file }) {
@@ -72,10 +75,8 @@ return (
   </main>
   <NewsTicker />
 
-  <footer className={styles.footer}>
-
-
-  </footer>
+  
+  <Footer/>
 </div>
 )
 }
