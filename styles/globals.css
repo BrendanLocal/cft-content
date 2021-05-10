@@ -28,6 +28,7 @@ body {
 }
 
 html {
+  font-size: 14px;
 }
 
 a {
@@ -41,8 +42,21 @@ a {
 
 
 /*Text*/
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
 h1, .h1  {
   font-size: calc(4rem + 1.5vw);
+}
+
+h2, .h2 {
+  font-size: calc(2rem + .9vw);
 }
 
 .smallCaps {
@@ -51,6 +65,10 @@ h1, .h1  {
   font-size: 16px;
   font-weight: 700;
   z-index:999;
+}
+
+.bold {
+  font-weight: 700;
 }
 
 a:hover {
@@ -71,6 +89,24 @@ font-weight: 700;
 letter-spacing: .2em;
 text-transform: uppercase;
 margin-bottom: 8px;
+}
+
+li {
+  list-style: none;
+  padding: .2rem 0;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li a {
+  text-decoration: underline;
+}
+
+p.large {
+  font-size: 22px;
+  font-weight: 700;
 }
 
 /* Buttons */
@@ -94,7 +130,7 @@ margin-bottom: 8px;
 }
 
 .btn-orange {
-  border: solid 3px #FF4D24;
+  border: solid 2px #FF4D24;
   color: #fff;
 }
 
@@ -104,7 +140,7 @@ margin-bottom: 8px;
 }
 
 .btn-white {
-  border: solid 3px #ffffff;
+  border: solid 2px #ffffff;
   color: #fff;
 }
 
@@ -116,6 +152,16 @@ margin-bottom: 8px;
   transition: all .5s;
 }
 
+
+.sectionLink {
+  color:#FF4D24;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-bottom: solid 1px #FF4D24;
+  display: inline-block;
+  margin-bottom: 15px;
+  position: relative;
+}
 
 
 /* Containers */
@@ -140,6 +186,10 @@ margin-bottom: 8px;
   width: 100%;
 }
 
+img {
+  max-width: 100%;
+}
+
 /* Parallax */
 
 .parallaxLayers {
@@ -151,6 +201,10 @@ margin-bottom: 8px;
   object-fit: cover;
   
 }
+
+ .pos-absolute {
+   position: absolute;
+ }
 
 
 /* Backgrounds */
@@ -165,6 +219,10 @@ margin-bottom: 8px;
 
 .roundedBox {
   border-radius: 20px;
+}
+
+.roundedBoxLarge {
+  border-radius: 100px;
 }
 
 .innerShadow {
@@ -423,7 +481,7 @@ transition: transform .5s;
   position: relative;
 display: inline-block;
   transform: translateX(0px);
-
+text-decoration: none;
   transition: all 2s;
 }
 
@@ -517,6 +575,24 @@ input[type=text], textarea {
   padding: 8px;;
   font-size: 12px;
 }
+
+/* Build Page */
+
+.dotsRow {
+  display: block;
+  width: 100%;
+}
+
+.dotsRow span {
+  border-radius: 100px;
+  background:#00823B;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  display: inline-block;
+margin: 5px;
+}
+
 
 /* Tablet */
 
