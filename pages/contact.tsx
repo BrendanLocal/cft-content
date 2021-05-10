@@ -71,7 +71,7 @@ return (
   <Row className="">
     <Col>
   <label htmlFor="message"  className="labelCaps"> Your Message</label><br/>
-  <textarea id="message" name="message" rows="6" className="w-full" placeholder="Tell us about yourself, the organization, school, or community that you represent, and the impact you would like to make..."/>
+  <textarea id="message" name="message" rows={6} className="w-full" placeholder="Tell us about yourself, the organization, school, or community that you represent, and the impact you would like to make..."/>
   <ValidationError 
         prefix="Message" 
         field="message"
