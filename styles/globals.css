@@ -457,7 +457,7 @@ footer {
 #sidebar {
   position: fixed;
   left: 110vw;
-  transition: left 1000ms;
+  transition: left 1500ms;
   z-index:100;
   width: 100%;
   box-shadow: -10px 0 10px rgba(0,0,0,.5);

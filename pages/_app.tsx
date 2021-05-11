@@ -82,9 +82,10 @@ export default class Site extends App {
         >
 
 <Header />
-<PageTransition timeout={1000}
+<PageTransition timeout={800}
   classNames="page-transition"
-  loadingClassNames="loading-indicator">
+  loadingClassNames="loading-indicator"
+  skipInitialTransition="true">
 
   <div>
           <Component {...pageProps} />
@@ -93,12 +94,10 @@ export default class Site extends App {
           <style jsx global>{`
           .page-transition-enter {
             opacity: 0;
-            transform: translateX(100vw);
           }
           .page-transition-enter-active {
             opacity: 1;
-            transition: all 1200ms;
-            transform: translateX(0vw);
+            transition: opacity 1200ms;
           }
           .page-transition-exit {
             opacity: 1;
@@ -108,8 +107,7 @@ export default class Site extends App {
           .page-transition-exit-active {
             opacity: 0;
             
-            transform: translateX(-100vw);
-            transition: all 600ms;
+            transition:  opacity 1200ms;
           }
         `}</style>
 
