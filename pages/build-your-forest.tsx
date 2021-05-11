@@ -8,8 +8,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import styles from '../styles/Home.module.css'
 import Rellax from "rellax";
+import Parallax from 'parallax-js'
 export default function Build({ file }) {
 const formOptions = {
 label: 'Build Your Forest',
@@ -22,12 +22,14 @@ useGithubToolbarPlugins()
 
 useEffect(() => {
   new Rellax(".rellax");
+  var scene = document.getElementById('scene');
+var parallaxInstance = new Parallax(scene);
 }, []);
 
 
 return (
   
-<div className={styles.homeParallax}>
+<div>
 
   <Head>
     <title>Canada's Forest Trust</title>
@@ -37,18 +39,15 @@ return (
 
   <main className="bg-green py-5">
     <Container className="bg-green py-5">
-      <Row className=" justify-content-center"> 
-        <Col className="col-xl-5 p-5">
-<div className="sticky-top px-5">
-<img className="rellax pos-absolute" src="/buildTemp_layer3.svg"
-      data-rellax-speed="-5"></img>
-        <img className="rellax pos-absolute" src="/buildTemp_layer1.svg"
-      data-rellax-speed="-1"></img>
-      <img className="rellax pos-absolute" src="/buildTemp_layer2.svg"
-      data-rellax-speed="-3"></img>
+      <Row className="justify-content-center d-flex pb-5 mb-5"> 
+       <Col className="col-xl-5 p-5 stickyTop">
+<div className="px-5" data-relative-input="true" id="scene">
+<img className="pos-absolute" data-depth="-0.7" src="/buildTemp_layer3.svg"></img>
+        <img className="pos-absolute" data-depth="-0.2" src="/buildTemp_layer1.svg"></img>
+      <img className="pos-absolute" data-depth=".5" src="/buildTemp_layer2.svg"></img>
           </div>
         </Col>
-        <Col className="col-xl-5 text-white p-5">
+        <Col className="col-xl-5 text-white p-5 pb-0">
         <h1 className="text-orange mb-5">
           <span className="bold">Build</span><br/>Your<br/>Forest
         </h1>

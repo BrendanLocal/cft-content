@@ -2,8 +2,6 @@
 import '../styles/bootstrap.min.css';
 import '../styles/globals.css';
 import '../assets/js/jquery-3.6.0.min.js';
-
-import '../assets/js/parallax.js';
 import $ from 'jquery';
 import React, { useState, useEffect, MouseEvent} from 'react';
 import App,  { AppProps } from 'next/app'

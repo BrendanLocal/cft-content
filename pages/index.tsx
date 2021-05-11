@@ -9,7 +9,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import styles from '../styles/Home.module.css'
-
+import Parallax from 'parallax-js'
 import Rellax from "rellax";
 
 
@@ -54,7 +54,7 @@ return (
     <Container className="v-full d-flex flex-column text-white">
       <Row className="v-full justify-content-center align-items-center ">
         <Col className="col-lg-7">
-        <h1 className="firstBold mb-5">
+        <h1 className="firstBold mb-5 drop">
           <span class="bold">Unlock</span> the power of forests.
         </h1>
         <Button variant="white btn-solid btn-large">
