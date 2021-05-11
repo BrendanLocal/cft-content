@@ -55,7 +55,7 @@ return (
       <Row className="v-full justify-content-center align-items-center ">
         <Col className="col-lg-7">
         <h1 className="firstBold mb-5 drop">
-          <span class="bold">Unlock</span> the power of forests.
+          <span className="bold">Unlock</span> the power of forests.
         </h1>
         <Button variant="white btn-solid btn-large">
 Call to action
