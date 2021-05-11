@@ -40,7 +40,7 @@ return (
   <main className="bg-green py-5">
     <Container className="bg-green py-5">
       <Row className="justify-content-center d-flex pb-5 mb-5"> 
-       <Col className="col-xl-5 p-5 stickyTop">
+       <Col className="col-xl-5 p-5 stickyTop mb-5">
          <div className="rellax" data-rellax-speed="1">
 <div className="px-5 " data-relative-input="true" id="scene">
 <img className="pos-absolute" data-depth="-0.7" src="/buildTemp_layer3.svg"></img>

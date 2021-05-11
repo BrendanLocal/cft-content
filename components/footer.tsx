@@ -41,22 +41,22 @@ return(
 <footer className="bg-brown">
   <Container fluid className="bg-brown text-white p-5">
     <Row >
-      <Col className="p-3">
+      <Col className="col-12 col-md-3 p-3">
       <img src="/cft-logo-greenwhite.svg"></img>
       </Col>
-      <Col className="p-3">
+      <Col className="col-12 col-md-3 p-3">
       <h3>Calculators</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
       <Button variant="white btn-full my-2">Carbon Calculator</Button>
       <Button variant="white btn-full my-2">Forest Calculator</Button>
       </Col>
-      <Col className="p-3">
+      <Col className="col-12 col-md-3 p-3">
       <h3>Account</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
       <Button variant="white btn-full my-2">Login</Button>
       <Button variant="white btn-full my-2">Start an account</Button>
       </Col>
-    <Col className="p-3">
+    <Col className="col-12 col-md-3 p-3">
     <h3>About CFT</h3>
     <ul className="py-5 py-sm-0">
       

@@ -44,19 +44,14 @@ return (
 
   <main>
   
-    <img className="rellax parallaxLayers" src="/forestv3_layer6.jpg" alt="Wide image of the forest"
-      data-rellax-speed="-10"></img>
-    <img className="rellax parallaxLayers" src="/forestv3_layer5.png" alt="Wide image of the forest, layered to imply depth"
-      data-rellax-speed="-8"></img>
-    <img className="rellax parallaxLayers" src="/forestv3_layer3.png" alt="Wide image of the forest, layered to imply depth"
-      data-rellax-speed="-5"></img>
-    <img className="rellax parallaxLayers" src="/forestv3_layer1.png" alt="Wide image of the forest, layered to imply depth"
-      data-rellax-speed="-2"></img>
+    
       <img className="rellax parallaxLayers" src="/landingTemp.jpg" alt="Wide image of the forest"
-      data-rellax-speed="5"></img>
-    <Container className="v-full d-flex flex-column text-white">
+      data-rellax-speed="4"></img>
+      <img className="rellax parallaxLayers t-40 z-0" src="/forestv3_layer1.png" alt="Wide image of the forest, layered to imply depth"
+      data-rellax-speed="6"></img>
+    <Container className="v-full d-flex flex-column text-white z-0">
       <Row className="v-full justify-content-center align-items-center ">
-        <Col className="col-lg-7">
+        <Col className="col-lg-7 p-3 p-md-1">
         <h1 className="firstBold mb-5 drop">
           <span className="bold">Unlock</span><br/>the power<br/>of forests.
         </h1>
@@ -66,9 +61,9 @@ Call to action
         </Col>
       </Row>
     </Container>
-    <Container fluid className="py-5 bg-brown align-items-center">
+    <Container fluid className="py-5 z-999 bg-brown align-items-center">
       <Row className="py-5 align-items-center justify-content-center ">
-        <Col className="col-4 p-5">
+        <Col className="col-12 col-md-4 p-5">
         
 <div className="p-5 whiteFloat" data-relative-input="true" id="scene">
 <img className="op-0" data-depth="-1" src="/cft-c.svg"></img>
@@ -83,7 +78,7 @@ Call to action
 <img className="" data-depth=".5" src="/cft-c.svg"></img>
 </div>
         </Col>
-        <Col className="p-5 col-5 text-white">
+        <Col className="col-12 p-5 col-md-5 text-white">
         <h2><span className="bold">Power</span> of the forest</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non commodo diam. Curabitur faucibus tempor nisl, ac semper nibh pellentesque non. Nunc lobortis sapien erat, et bibendum odio efficitur sit amet.</p>
         <Button variant="white btn-solid btn-large">

@@ -126,7 +126,7 @@ font-weight: 700;
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: .2rem;
-  font-weight: 700;
+  font-weight: 700 !important;
   margin-bottom: 10px;
   box-shadow: 0px 0px 0px rgba(255,255,255,0);
   transition: all .5s;
@@ -191,6 +191,10 @@ font-weight: 700;
 
 .v-full {
   min-height: 90vh;
+}
+
+.v-120 {
+  min-height: 120vh !important;
 }
 
 .v-10 {
@@ -272,6 +276,25 @@ main {
 
 .op-7 {
   opacity: .7;
+}
+
+.t-30 {
+  top: 30vh;
+}
+
+.t-40 {
+  top: 40vh;
+}
+.t-50 {
+  top: 50vh;
+}
+
+.z-0 {
+  z-index: 0;
+}
+.z-999 {
+  z-index: 999;
+  position: relative;
 }
 
 
@@ -500,7 +523,9 @@ transform: translateX(200px);
 
 .socialIcons img:hover, .controlIcons img:hover {
 transform: scale(1.2);
-transition: transform .5s;
+transition: all .5s;
+opacity: 1;
+cursor: pointer;
 }
 
 .socialIcons li, .controlIcons li {
@@ -513,7 +538,7 @@ transition: transform .5s;
   opacity: .4;
 
 transform: scale(1);
-transition: transform .5s;
+transition: all .5s;
 }
 
 .controlIcons img {
@@ -645,7 +670,7 @@ input[type=checkbox] {
   margin-right: 10px;
 }
 
-input[type=text], textarea {
+input[type=text], input[type=email], textarea {
   border-radius: 8px;
   border: none;
   padding: 8px;;
@@ -726,6 +751,11 @@ font-size: .9em;
   margin-left: 10px;
   transform: translate(0, 0px);
   position: absolute;
+}
+
+.stickyTop {
+  position: relative;
+  top:0;
 }
 
 }
