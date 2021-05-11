@@ -9,8 +9,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import styles from '../styles/Home.module.css'
-import Parallax from 'parallax-js'
 import Rellax from "rellax";
+import Parallax from 'parallax-js'
 
 
 
@@ -24,8 +24,11 @@ const [data, form] = useGithubJsonForm(file, formOptions)
 usePlugin(form)
 useGithubToolbarPlugins()
 
+
 useEffect(() => {
   new Rellax(".rellax");
+  var scene = document.getElementById('scene');
+var parallaxInstance = new Parallax(scene);
 }, []);
 
 
@@ -55,7 +58,7 @@ return (
       <Row className="v-full justify-content-center align-items-center ">
         <Col className="col-lg-7">
         <h1 className="firstBold mb-5 drop">
-          <span className="bold">Unlock</span> the power of forests.
+          <span className="bold">Unlock</span><br/>the power<br/>of forests.
         </h1>
         <Button variant="white btn-solid btn-large">
 Call to action
@@ -63,11 +66,42 @@ Call to action
         </Col>
       </Row>
     </Container>
+    <Container fluid className="py-5 bg-brown align-items-center">
+      <Row className="py-5 align-items-center justify-content-center ">
+        <Col className="col-4 p-5">
+        
+<div className="p-5 whiteFloat" data-relative-input="true" id="scene">
+<img className="op-0" data-depth="-1" src="/cft-c.svg"></img>
+<img className="op-3" data-depth="-.5" src="/cft-c.svg"></img>
+
+<img className="op-5" data-depth="-.3" src="/cft-c.svg"></img>
+
+<img className="op-7" data-depth="0" src="/cft-c.svg"></img>
+
+<img className="" data-depth=".3" src="/cft-c.svg"></img>
+
+<img className="" data-depth=".5" src="/cft-c.svg"></img>
+</div>
+        </Col>
+        <Col className="p-5 col-5 text-white">
+        <h2><span className="bold">Power</span> of the forest</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non commodo diam. Curabitur faucibus tempor nisl, ac semper nibh pellentesque non. Nunc lobortis sapien erat, et bibendum odio efficitur sit amet.</p>
+        <Button variant="white btn-solid btn-large">
+Call to action
+        </Button>
+        </Col>
+
+      </Row>
+    </Container>
     <Container fluid className=" v-full bg-green">
       <Row>
         <Col>
-
+        
         </Col>
+        <Col>
+        
+        </Col>
+
       </Row>
     </Container>
 

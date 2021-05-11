@@ -41,11 +41,12 @@ return (
     <Container className="bg-green py-5">
       <Row className="justify-content-center d-flex pb-5 mb-5"> 
        <Col className="col-xl-5 p-5 stickyTop">
-<div className="px-5" data-relative-input="true" id="scene">
+         <div className="rellax" data-rellax-speed="1">
+<div className="px-5 " data-relative-input="true" id="scene">
 <img className="pos-absolute" data-depth="-0.7" src="/buildTemp_layer3.svg"></img>
         <img className="pos-absolute" data-depth="-0.2" src="/buildTemp_layer1.svg"></img>
       <img className="pos-absolute" data-depth=".5" src="/buildTemp_layer2.svg"></img>
-          </div>
+          </div></div>
         </Col>
         <Col className="col-xl-5 text-white p-5 pb-0">
         <h1 className="text-orange mb-5">

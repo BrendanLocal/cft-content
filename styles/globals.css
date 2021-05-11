@@ -248,10 +248,30 @@ main {
   align-self: flex-start;
 }
 
-
 .stickyContainer {
   position: relative;
   overflow: auto;
+}
+
+.whiteFloat img {
+  color: #fff;
+  position: absolute;
+}
+
+.op-0 {
+  opacity: 0;
+}
+
+.op-3 {
+  opacity: .3;
+}
+
+.op-5 {
+  opacity: .5
+}
+
+.op-7 {
+  opacity: .7;
 }
 
 
