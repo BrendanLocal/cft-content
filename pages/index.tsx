@@ -39,8 +39,8 @@ return (
     <meta name="theme-color" content="#054218"></meta>
   </Head>
 
-  <main className={styles.main}>
-
+  <main>
+  
     <img className="rellax parallaxLayers" src="/forestv3_layer6.jpg" alt="Wide image of the forest"
       data-rellax-speed="-10"></img>
     <img className="rellax parallaxLayers" src="/forestv3_layer5.png" alt="Wide image of the forest, layered to imply depth"
@@ -49,13 +49,17 @@ return (
       data-rellax-speed="-5"></img>
     <img className="rellax parallaxLayers" src="/forestv3_layer1.png" alt="Wide image of the forest, layered to imply depth"
       data-rellax-speed="-2"></img>
-    <Container className="v-full d-flex flex-column justify-content-center align-items-center text-white">
-      <Row>
-        <Col>
-        <h1 className={styles.title}>
-          {data.title}
+      <img className="rellax parallaxLayers" src="/landingTemp.jpg" alt="Wide image of the forest"
+      data-rellax-speed="5"></img>
+    <Container className="v-full d-flex flex-column text-white">
+      <Row className="v-full justify-content-center align-items-center ">
+        <Col className="col-lg-7">
+        <h1 className="firstBold mb-5">
+          <span class="bold">Unlock</span> the power of forests.
         </h1>
-        <h2>{data.subtitle}</h2>
+        <Button variant="white btn-solid btn-large">
+Call to action
+        </Button>
         </Col>
       </Row>
     </Container>

@@ -150,7 +150,7 @@ return(
       <div className="col-6 col-md-2 d-flex flex-column v-100 gx-1 gx-lg-3 fixed">
         <div className="row align-self-top">
           <div className="col d-flex align-items-center justify-content-end menuInterface">
-            <Link className="smallCaps" href="/">Login</Link>
+            <a className="smallCaps" href="/">Login</a>
             <div id="menuIcon" className={isActive ? 'open' : null} onClick={toggleClass}>
               <span></span>
               <span></span>

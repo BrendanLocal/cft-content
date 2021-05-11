@@ -73,8 +73,10 @@ export default class Site extends App {
 
 <Header />
 <Flipper flipKey={router.asPath}>
-<Flipped flipId="page">
+<Flipped flipId="page" scale>
+  <div>
           <Component {...pageProps} />
+          </div>
 </Flipped>
   </Flipper>
 
