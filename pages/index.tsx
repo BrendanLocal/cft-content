@@ -63,7 +63,7 @@ Call to action
     </Container>
     <Container fluid className="py-5 z-999 bg-brown align-items-center">
       <Row className="py-5 align-items-center justify-content-center ">
-        <Col className="col-md-4 p-5">
+        <Col className="col-12 col-md-4 p-5">
         
 <div className="p-5 whiteFloat" data-relative-input="true" id="scene">
 <img className="op-0" data-depth="-1" src="/cft-c.svg"></img>
@@ -78,7 +78,7 @@ Call to action
 <img className="" data-depth=".5" src="/cft-c.svg"></img>
 </div>
         </Col>
-        <Col className="p-5 col-md-5 text-white">
+        <Col className="col-12 p-5 col-md-5 text-white">
         <h2><span className="bold">Power</span> of the forest</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non commodo diam. Curabitur faucibus tempor nisl, ac semper nibh pellentesque non. Nunc lobortis sapien erat, et bibendum odio efficitur sit amet.</p>
         <Button variant="white btn-solid btn-large">
