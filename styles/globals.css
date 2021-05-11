@@ -193,6 +193,10 @@ font-weight: 700;
   min-height: 90vh;
 }
 
+.v-120 {
+  min-height: 120vh;
+}
+
 .v-10 {
   height: 10vh;
 }
@@ -272,6 +276,17 @@ main {
 
 .op-7 {
   opacity: .7;
+}
+
+.t-30 {
+  top: 30vh;
+}
+.z-0 {
+  z-index: 0;
+}
+.z-999 {
+  z-index: 999;
+  position: relative;
 }
 
 
