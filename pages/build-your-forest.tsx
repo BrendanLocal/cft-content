@@ -9,8 +9,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Rellax from "rellax";
-
-import MainLayout from "../layouts/mainlayout"
 import Parallax from 'parallax-js'
 export default function Build({ file }) {
 const formOptions = {
