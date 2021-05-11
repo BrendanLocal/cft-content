@@ -523,7 +523,9 @@ transform: translateX(200px);
 
 .socialIcons img:hover, .controlIcons img:hover {
 transform: scale(1.2);
-transition: transform .5s;
+transition: all .5s;
+opacity: 1;
+cursor: pointer;
 }
 
 .socialIcons li, .controlIcons li {
@@ -536,7 +538,7 @@ transition: transform .5s;
   opacity: .4;
 
 transform: scale(1);
-transition: transform .5s;
+transition: all .5s;
 }
 
 .controlIcons img {
