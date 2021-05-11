@@ -14,6 +14,8 @@ import Parallax from 'parallax-js'
 
 
 
+
+
 export default function Home({ file }) {
 const formOptions = {
 label: 'Home Page',
@@ -33,7 +35,6 @@ var parallaxInstance = new Parallax(scene);
 
 
 return (
-  
 <div className={styles.homeParallax}>
 
   <Head>

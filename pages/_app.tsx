@@ -3,7 +3,7 @@ import '../styles/bootstrap.min.css';
 import '../styles/globals.css';
 import '../assets/js/jquery-3.6.0.min.js';
 import $ from 'jquery';
-import React, { useState, useEffect, MouseEvent} from 'react';
+import React, { useState, useEffect, MouseEvent, Fragment} from 'react';
 import App,  { AppProps } from 'next/app'
 import { TinaCMS, TinaProvider } from 'tinacms'
 import {
@@ -20,12 +20,18 @@ import NewsTicker from "../components/newsTicker";
 
 import { Flipper, Flipped } from 'react-flip-toolkit'
 
+import { PageTransition } from 'next-page-transitions'
+
+
+
 export default class Site extends App {
 
+  
   cms: TinaCMS
 
   
   constructor(props) {
+
     
     super(props)
 
@@ -62,8 +68,12 @@ export default class Site extends App {
   }
 
   render() {
-    const { Component, pageProps, router } = this.props
+    
+    
+    const { Component, pageProps, router} = this.props
     return (
+
+    
       <TinaProvider cms={this.cms}>
         <TinacmsGithubProvider
           onLogin={onLogin}
@@ -72,14 +82,36 @@ export default class Site extends App {
         >
 
 <Header />
-<Flipper flipKey={router.asPath}>
-<Flipped flipId="page" >
+<PageTransition timeout={1000}
+  classNames="page-transition"
+  loadingClassNames="loading-indicator">
+
   <div>
           <Component {...pageProps} />
           </div>
-</Flipped>
-  </Flipper>
+          </PageTransition>
+          <style jsx global>{`
+          .page-transition-enter {
+            opacity: 0;
+            transform: translateX(100vw);
+          }
+          .page-transition-enter-active {
+            opacity: 1;
+            transition: all 1200ms;
+            transform: translateX(0vw);
+          }
+          .page-transition-exit {
+            opacity: 1;
 
+            transform: translateX(0vw);
+          }
+          .page-transition-exit-active {
+            opacity: 0;
+            
+            transform: translateX(-100vw);
+            transition: all 600ms;
+          }
+        `}</style>
 
           <NewsTicker />
   <Footer/>
