@@ -194,7 +194,7 @@ font-weight: 700;
 }
 
 .v-120 {
-  min-height: 120vh;
+  min-height: 120vh !important;
 }
 
 .v-10 {
@@ -281,6 +281,14 @@ main {
 .t-30 {
   top: 30vh;
 }
+
+.t-40 {
+  top: 40vh;
+}
+.t-50 {
+  top: 50vh;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -660,7 +668,7 @@ input[type=checkbox] {
   margin-right: 10px;
 }
 
-input[type=text], textarea {
+input[type=text], input[type=email], textarea {
   border-radius: 8px;
   border: none;
   padding: 8px;;
@@ -741,6 +749,11 @@ font-size: .9em;
   margin-left: 10px;
   transform: translate(0, 0px);
   position: absolute;
+}
+
+.stickyTop {
+  position: relative;
+  top:0;
 }
 
 }

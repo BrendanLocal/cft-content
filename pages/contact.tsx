@@ -49,13 +49,13 @@ return (
       Your Interest(s)
     </label>
     <Row>
-      <Col>
+      <Col className="col-12 col-sm-6">
       <input type="checkbox" id="corporate" name="corporate" value="corporate" />
       <label htmlFor="corporate"> Corporate Forests</label><br/>
       <input type="checkbox" id="legacy" name="legacy" value="legacy" />
       <label htmlFor="legacy"> Legacy Forests</label>
       </Col>
-      <Col>
+      <Col className="col-12 col-sm-6">
       <input type="checkbox" id="school" name="school" value="school" />
       <label htmlFor="school"> School Forests</label><br/>
       <input type="checkbox" id="communal" name="communal" value="communal" />
@@ -109,7 +109,7 @@ return (
         </Col>
       </Row>
       <Row className="justify-content-center">
-<Col className="col-sm-3 col-xl-2 p2 d-flex align-items-stretch">
+<Col className="col-12 col-sm-3 col-xl-2 p2 mb-3 d-flex align-items-stretch">
   <div className="roundedBox bg-brown innerShadow text-white p-4">
 <h3>{data.name}</h3>
 <p className="large">{data.address}</p>
@@ -122,7 +122,7 @@ Phone TBD
 </Button>
 </div>
 </Col>
-<Col className="col-sm-7 col-xl-5 p2">
+<Col className="col-12 col-sm-7 col-xl-5 p2">
 
   <div className=" roundedBox innerShadow text-white p-4">
 
