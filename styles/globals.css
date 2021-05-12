@@ -89,6 +89,10 @@ color: #fff;
   color: #FF4D24;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .labelCaps {
 font-size: 10px;
 font-weight: 700;
@@ -250,6 +254,12 @@ main {
 .stickyTop {
   position: sticky;
   top: 100px;
+  align-self: flex-start;
+}
+
+.stickyCalc {
+top:0;
+  position: sticky;
   align-self: flex-start;
 }
 
@@ -699,7 +709,11 @@ margin: 5px;
 /* Calculator */
 
 .card {
-  border-radius: 
+  margin-bottom: 25px;
+}
+
+.card .row {
+padding: 5px 0;
 }
 
 /* Tablet */
