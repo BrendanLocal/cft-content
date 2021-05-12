@@ -215,13 +215,13 @@ return (
 <div>
   <Container className="py-5">
     <Row className="justify-content-center">
-      <Col className="col-lg-10 pt-5">
+      <Col className="col-11 col-lg-10 pt-5">
       
       <h1 className="text-white pt-5">Carbon Calculator</h1>
       </Col>
     </Row>
     <Row className="justify-content-center">
-      <Col className="p-3 col-12 col-lg-6">
+      <Col className="p-3 col-11 col-lg-6">
       <div className="card roundedBox p-5">
         <Row>
           <Col>
@@ -283,7 +283,7 @@ return (
           <Col>
           <h5>Cars</h5>
           <Row>
-            <Col>
+            <Col className="col-12 col-sm-3">
             Gas
             </Col>
             <Col>
@@ -322,7 +322,7 @@ return (
           <Col>
           <h5>Pickups/SUVs</h5>
           <Row>
-            <Col>
+            <Col className="col-12 col-sm-3">
             Gas
             </Col>
             <Col>
@@ -361,7 +361,7 @@ return (
           <Col>
           <h5>Delivery Trucks/Vans (Up to 3.5 tonnes)</h5>
           <Row>
-            <Col>
+            <Col className="col-12 col-sm-3">
             Gas
             </Col>
             <Col>
@@ -436,7 +436,7 @@ return (
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col className="col-12 col-sm-3">
           Car
           </Col>
           <Col>
@@ -448,7 +448,7 @@ return (
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col className="col-12 col-sm-3">
           Bus
           </Col>
           <Col>
@@ -483,10 +483,10 @@ return (
         </Row>
         <hr/>
         <Row>
-          <Col className="col-md-4">
+          <Col className="col-10 col-md-4">
           Employees that fly
           </Col>
-          <Col>
+          <Col className="col-2 col-md-4">
           </Col>
           <Col>
           <input onChange={calculateEmp} name="flyEmployees" type="number"
@@ -495,12 +495,12 @@ return (
         </Row>
         <hr/>
         <Row>
-          <Col className="col-md-4">
+          <Col className="col-10 col-md-4">
           Short (&lt;2 hrs)
           </Col>
           <Col>
           <Row>
-            <Col>
+            <Col className="col-10 col-md-4">
             All
             </Col>
             <Col>
@@ -562,7 +562,7 @@ return (
             </Row>
             <Row>
               <Col>
-              Business
+              Business Class
               </Col>
               <Col>
               <input onChange={calculateFlightCount} name="flyLongBus" type="number"
@@ -571,7 +571,7 @@ return (
             </Row>
             <Row>
               <Col>
-              First
+              First Class
               </Col>
               <Col>
               <input onChange={calculateFlightCount} name="flyLongFirst" type="number"
@@ -582,10 +582,10 @@ return (
           </Row>
           <hr/>
           <Row>
-            <Col className="col-md-4">
+            <Col className="col-10 col-md-4">
             Nights spent in hotels
             </Col>
-            <Col>
+            <Col  className="col-2 col-md-4">
             </Col>
             <Col>
             <input onChange={calculateFlightCount} name="flyHotels" type="number"
