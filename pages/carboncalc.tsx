@@ -5,8 +5,6 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
 const App = () => {
-
-
 const [selectBuild, setBuild] = React.useState("");
 const [selectSize, setSize] = React.useState("");
 const [selectNum, setNum] = React.useState("");
@@ -25,15 +23,28 @@ const [vehicleArray, setVehicleArray] = React.useState({
   semiFrig: {mult:1.0142,count: null, miles: null},
   jetNum: {mult:2.9237,count: null, miles: null}});
 const [transitArray, setTransitArray] = React.useState({
-    car: {mult:0.1743,count: null, miles: null},
-    bus: {mult:0.06214,count: null, miles: null},
-    train: {mult:0.06214,count: null, miles: null}});
+    transitCar: {mult:0.1743,count: null, miles: null},
+    transitBus: {mult:0.06214,count: null, miles: null},
+    transitTrain: {mult:0.06214,count: null, miles: null}});
+const [transitSub, setTransit] = React.useState(0);
+const [flightArray, setFlightArray] = React.useState({
+  flyEmployees: {count: null},
+    flyShort: {mult:122.15,count: null, miles: null},
+    flyMediumEco: {mult:305.96,count: null, miles: null},
+    flyMediumBus: {mult:458.94,count: null, miles: null},
+    flyLongEco: {mult:696.225,count: null, miles: null},
+    flyLongEcoPlus: {mult:1113.9,count: null, miles: null},
+    flyLongBus: {mult:2018.95,count: null, miles: null},
+    flyLongFirst: {mult:2784.75,count: null, miles: null},
+    flyHotels: {mult:17.4, count: null}});
+const [flightSub, setFlight] = React.useState(0);
 
 
 let buildType = null;
 let buildSize = null;
 let buildNum = 1;
 let subtotalVehicle = 0;
+let subtotalTransit = 0;
 let subtotalBuild = 0;
 
 
@@ -91,16 +102,20 @@ if (buildType && buildNum && buildSize) {
 }
 
 const calculateVehicle=()=> {
-  let i = 0;
+  subtotalVehicle = 0
   for (let x of Object.keys(vehicleArray)) {
+  let i = 0;
     if (vehicleArray[x].count && vehicleArray[x].miles){
-    i += Number(vehicleArray[x].count * vehicleArray[x].mult * vehicleArray[x].miles)/1000
+    i += Number((vehicleArray[x].count * vehicleArray[x].mult * vehicleArray[x].miles).toFixed(2))/1000
+
   }
   subtotalVehicle += i
   }
 
   setVehicle(Number(subtotalVehicle.toFixed(2)))
 }
+
+
 
 const calculateCount=(e)=>{
   vehicleArray[e.target.name].count = Number(e.target.value) 
@@ -112,7 +127,59 @@ const calculateMiles=(e)=>{
   calculateVehicle()
 }
 
-let total = vehicleSub + subtotalBuild;
+
+const calculateTransit=()=> {
+  subtotalTransit = 0
+  for (let x of Object.keys(transitArray)) {
+  let i = 0;
+    if (transitArray[x].count && transitArray[x].miles){
+    i += Number((transitArray[x].count * transitArray[x].mult * transitArray[x].miles * 231).toFixed(2))/1000
+
+  }
+  subtotalTransit += i
+  }
+
+  setTransit(Number(subtotalTransit.toFixed(2)))
+}
+
+const calculateTransitCount=(e)=>{
+  transitArray[e.target.name].count = Number(e.target.value) 
+  calculateTransit()
+}
+
+const calculateTransitMiles=(e)=>{
+  transitArray[e.target.name].miles = Number(e.target.value) 
+  calculateTransit()
+}
+
+
+const calculateFlight=()=> {
+  subtotalTransit = 0
+  for (let x of Object.keys(flightArray)) {
+  let i = 0;
+    if (flightArray[x].count && flightArray[x].miles){
+    i += Number((flightArray[x].count * flightArray[x].mult * flightArray[x].miles * 231).toFixed(2))/1000
+
+  }
+  subtotalTransit += i
+  }
+
+  setTransit(Number(subtotalTransit.toFixed(2)))
+}
+
+const calculateTransitCount=(e)=>{
+  transitArray[e.target.name].count = Number(e.target.value) 
+  calculateTransit()
+}
+
+const calculateTransitMiles=(e)=>{
+  transitArray[e.target.name].miles = Number(e.target.value) 
+  calculateTransit()
+}
+
+
+
+let total = vehicleSub + subtotalBuild + transitSub;
 
 
 return (
@@ -135,7 +202,7 @@ return (
           <Col>
           <label htmlFor="building">Which type of commercial space is the building?</label><br/>
           <select name="building" value="Select a building type" onChange={changeBuild}>
-
+          <option value="" hidden selected >Select...</option>
             <option value='Office'>Office Building (Non-Medical)</option>
             <option value='Medical'>Medical Office Building</option>
             <option value='School'>Elementary/Secondary School</option>
@@ -153,7 +220,7 @@ return (
           <Col>
           <label htmlFor="size">How many square feet is the building?</label><br/>
           <select name="size"  value="Select a building size" onChange={changeSize}>
-           
+          <option value="" hidden selected >Select...</option>
             <option value='5000'>&lt;5000</option>
             <option value='10000'>5000-10,000</option>
             <option value='50000'>10,000-50,000</option>
@@ -314,7 +381,6 @@ return (
           <h5>Private Jet</h5>
           <Row>
             <Col>
-            Lucky you
             </Col>
             <Col>
             <input onChange={calculateCount} name="jetNum" type="number" placeholder="# of vehicles"/>
@@ -326,14 +392,162 @@ return (
           </Col>
         </Row>
       </div>
+      <div className="card roundedBox p-5">
+        <Row>
+          <Col>
+          <h3>
+          Employee Commute
+          </h3>
+          <p>Please input the following information for your employees' daily commute:</p>
+          </Col>
+        </Row>
+          <Row>
+            <Col>
+            Car
+            </Col>
+            <Col>
+            <input onChange={calculateTransitCount} name="transitCar" type="number" placeholder="# of vehicles"/>
+            </Col>
+            <Col>
+            <input onChange={calculateTransitMiles} name="transitCar" type="number" placeholder="Average Annual Km/vehicle"/>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+            Bus
+            </Col>
+            <Col>
+            <input onChange={calculateTransitCount} name="transitBus" type="number" placeholder="# of employees"/>
+            </Col>
+            <Col>
+            <input onChange={calculateTransitMiles} name="transitBus" type="number" placeholder="Average km/day"/>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+            Train
+            </Col>
+            <Col>
+            <input onChange={calculateTransitCount} name="transitTrain" type="number" placeholder="# of employees"/>
+            </Col>
+            <Col>
+            <input onChange={calculateTransitMiles} name="transitTrain" type="number" placeholder="Average km/day"/>
+            </Col>
+          </Row>
+        
+      </div>
+
+      <div className="card roundedBox p-5">
+        <Row>
+          <Col>
+          <h3>
+          Employee Travel
+          </h3>
+          <p>Please input the following information for your employees:</p>
+          </Col>
+        </Row>
+        <Row>
+            <Col>
+            Employees that fly
+            </Col>
+            <Col>
+            </Col>
+            <Col>
+            <input onChange={calculateFlight} name="flyEmployees" type="number" placeholder="# of employees who fly"/>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+            Short (&lt;2 hrs)
+            </Col>
+            <Col>
+            All
+            </Col>
+            <Col>
+            <input onChange={calculateFlight} name="flyShort" type="number" placeholder="Average # of flights per employee"/>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+            Medium (2-4hrs) 
+            </Col>
+            <Row>
+            <Col>
+            Economy
+            </Col>
+            <Col>
+            <input onChange={calculateFlight} name="flyMediumEco" type="number" placeholder="Average # of flights per employee"/>
+            </Col>
+            </Row>
+            <Row>
+            <Col>
+            Business/First
+            </Col>
+            <Col>
+            <input onChange={calculateFlight} name="flyMediumBus" type="number" placeholder="Average # of flights per employee"/>
+            </Col>
+            </Row>
+          </Row>
+          <Row>
+            <Col>
+            Long (4+ hrs)
+            </Col>
+            <Row>
+            <Col>
+            Economy
+            </Col>
+            <Col>
+            <input onChange={calculateFlight} name="flyLongEco" type="number" placeholder="Average # of flights per employee"/>
+            </Col>
+            </Row>
+            <Row>
+            <Col>
+            Economy +
+            </Col>
+            <Col>
+            <input onChange={calculateFlight} name="flyLongEcoPlus" type="number" placeholder="Average # of flights per employee"/>
+            </Col>
+            </Row>
+            <Row>
+            <Col>
+            Business
+            </Col>
+            <Col>
+            <input onChange={calculateFlight} name="flyLongBus" type="number" placeholder="Average # of flights per employee"/>
+            </Col>
+            </Row>
+            <Row>
+            <Col>
+            First
+            </Col>
+            <Col>
+            <input onChange={calculateFlight} name="flyLongFirst" type="number" placeholder="Average # of flights per employee"/>
+            </Col>
+            </Row>
+          </Row>
+          <Row>
+            <Col>
+            Nights spent in hotels
+            </Col>
+            <Col>
+            </Col>
+            <Col>
+            <input onChange={calculateFlight} name="flyHotels" type="number" placeholder="# of nights per employee"/>
+            </Col>
+          </Row>
+          
+          
+        
+      </div>
       </Col>
       <Col className="text-white p-3  col-12 col-lg-4">
       <h4>Subtotals (Metric Tonnes C02):</h4>
       <p>Heating & Electricity: {subtotalBuild}</p>
-      
       <p>Vehicle Fleet: {vehicleSub}</p>
+      <p>Employee Commute: {transitSub}</p>
       <h4>Total (Metric Tonnes C02):</h4>
       <h5>{total}</h5>
+
       </Col>
     </Row>
   </Container>
