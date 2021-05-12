@@ -85,7 +85,7 @@ export default class Site extends App {
 <PageTransition timeout={800}
   classNames="page-transition"
   loadingClassNames="loading-indicator"
-  skipInitialTransition="true">
+  skipInitialTransition={true}>
 
   <div>
           <Component {...pageProps} />
