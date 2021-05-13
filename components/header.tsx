@@ -147,7 +147,7 @@ return(
 
   <div className="container-fluid header headerNav">
     <div className="row justify-content-end">
-      <div className="col-6 col-md-2 d-flex flex-column v-100 gx-1 gx-lg-3 fixed">
+      <div className="col-6 col-md-2 d-flex flex-column gx-1 gx-lg-3 fixed">
         <div className="row align-self-top">
           <div className="col d-flex align-items-center justify-content-end menuInterface">
             <a className="smallCaps" href="/">Login</a>

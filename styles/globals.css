@@ -680,12 +680,20 @@ z-index:999;
 input[type=checkbox] {
   margin-right: 10px;
 }
+input[type=text], input[type=email], textarea, input[type=number] {
+  width: 100%;
+}
 
 input[type=text], input[type=email], textarea {
+
   border-radius: 8px;
   border: none;
   padding: 8px;;
   font-size: 12px;
+}
+
+select {
+  width: 100%;
 }
 
 /* Build Page */
