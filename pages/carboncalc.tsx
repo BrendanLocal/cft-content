@@ -235,7 +235,7 @@ return (
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col> 
           <label htmlFor="building">Which type of commercial space is the building?</label><br />
           <select name="building" onChange={changeBuild} value={selectBuild}>
             <option value="" hidden selected>Select...</option>
