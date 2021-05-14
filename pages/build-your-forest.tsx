@@ -56,7 +56,7 @@ return (
         <p>As we envision a multi-generational transformation, we are prioritizing environmental education and engagement among high school students as part of our efforts.</p>
         <p>When fully operative, our project is expected to engage thousands of employees across the country annually.</p>
         <p className="pt-3"><a className="sectionLink" href="#">Our 5-Phase Approach</a><br/>
-        <a className="sectionLink" href="#">Our Smart Forests<sup>™</sup></a><br/></p>
+        <a className="sectionLink" href="#">Our Smart Forests™</a><br/></p>
 
         </Col>
       </Row>

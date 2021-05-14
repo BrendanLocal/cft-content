@@ -18,6 +18,12 @@
     url("./fonts/GT-America-Extended-Medium.woff") format("woff");
   font-weight: 700;
 }
+@font-face {
+  font-family: 'GT-America';
+  src:
+    url("./fonts/GT-America-Extended-Thin.woff") format("woff");
+  font-weight: 200;
+}
 
 html,
 body {
@@ -25,7 +31,7 @@ body {
   margin: 0;
   font-family: 'GT-America', Helvetica Neue, sans-serif;
   background: #054217;
-  
+  font-weight: normal;
 }
 
 html {
@@ -54,6 +60,7 @@ p {
 
 h1, .h1  {
   font-size: calc(4rem + 1.5vw);
+  font-weight: 200;
 }
 
 h1.drop, .h1.drop {
@@ -71,6 +78,10 @@ h2, .h2 {
   font-size: 16px;
   font-weight: 700;
   z-index:999;
+}
+
+.text-small {
+  font-size: 12px;
 }
 
 .bold {
@@ -121,6 +132,10 @@ p.large {
 
 .firstBold::first-word {
 font-weight: 700;
+}
+
+hr {
+  background-color: #00823B;
 }
 
 /* Buttons */
@@ -320,15 +335,22 @@ top:0;
 }
 
 .roundedBox {
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 .roundedBoxLarge {
   border-radius: 100px;
 }
+.cardShadow {
+  box-shadow: 0 2px 24px rgba(0,0,0,.7);
+}
 
 .innerShadow {
   box-shadow: 0 2px 24px rgba(0,0,0,.3) inset;
+}
+
+.bg-offwhite {
+  background-color: #F9F9F8;
 }
 
 /* Header */
@@ -696,6 +718,14 @@ select {
   width: 100%;
 }
 
+button, input, optgroup, select, textarea {
+
+  border-radius: 5px;
+  border: solid 1px #bbb;
+  padding: 5px 10px;
+  margin: 5px 0;
+}
+
 /* Build Page */
 
 .dotsRow {
@@ -723,6 +753,8 @@ margin: 5px;
 .card .row {
 padding: 5px 0;
 }
+
+
 
 /* Tablet */
 

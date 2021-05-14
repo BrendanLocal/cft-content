@@ -112,7 +112,7 @@ Retail:2446129.79207279, Other:1848813.90303718
 
 if (buildType && buildNum && buildSize) {
 
-subtotalBuild = Number((buildArray[buildSize][buildType] * buildNum /1000).toFixed(2))
+subtotalBuild = Number((buildArray[buildSize][buildType] * buildNum /1000))
 
 }
 
@@ -121,13 +121,13 @@ subtotalVehicle = 0
 for (let x of Object.keys(vehicleArray)) {
 let i = 0;
 if (vehicleArray[x].count && vehicleArray[x].miles){
-i += Number((vehicleArray[x].count * vehicleArray[x].mult * vehicleArray[x].miles).toFixed(2))/1000
+i += Number((vehicleArray[x].count * vehicleArray[x].mult * vehicleArray[x].miles))/1000
 
 }
 subtotalVehicle += i
 }
 
-setVehicle(Number(subtotalVehicle.toFixed(2)))
+setVehicle(Number(subtotalVehicle))
 }
 
 
@@ -148,13 +148,13 @@ subtotalTransit = 0
 for (let x of Object.keys(transitArray)) {
 let i = 0;
 if (transitArray[x].count && transitArray[x].miles){
-i += Number((transitArray[x].count * transitArray[x].mult * transitArray[x].miles * 231).toFixed(2))/1000
+i += Number((transitArray[x].count * transitArray[x].mult * transitArray[x].miles * 231))/1000
 
 }
 subtotalTransit += i
 }
 
-setTransit(Number(subtotalTransit.toFixed(2)))
+setTransit(Number(subtotalTransit))
 }
 
 const calculateTransitCount=(e)=>{
@@ -175,7 +175,7 @@ let i = 0;
 i += Number((flightArray[x].count * flightArray[x].mult * flightEmp))/1000
 subtotalFlight += i
 }
-setFlight(Number(subtotalFlight.toFixed(2)))
+setFlight(Number(subtotalFlight))
 }
 
 const calculateFlightCount=(e)=>{
@@ -195,7 +195,7 @@ const calculateFreight=()=> {
   i += Number((freightArray[x].count * freightArray[x].mult * freightArray[x].miles))/1000
   subtotalFreight += i
   }
-  setFreight(Number(subtotalFreight.toFixed(2)))
+  setFreight(Number(subtotalFreight))
   }
 
 const calculateFreightNum=(e)=>{
@@ -221,24 +221,27 @@ return (
     <Row className="justify-content-center">
       <Col className="col-11 col-lg-10 pt-5">
       
-      <h1 className="text-white pt-5">Carbon Calculator</h1>
+      <h1 className="text-orange text-center pt-5">Carbon Calculator</h1>
       </Col>
     </Row>
     <Row className="justify-content-center">
       <Col className="p-3 col-11 col-lg-6">
-      <div className="card roundedBox p-5">
+      <div className="card roundedBox bg-offwhite p-4 cardShadow">
         <Row>
           <Col>
-          <h3>
+          <h4>
             Heating & Electricity
-          </h3>
+          </h4>
+
+        <hr/>
           </Col>
+
         </Row>
         <Row>
           <Col> 
           <label htmlFor="building">Which type of commercial space is the building?</label><br />
           <select name="building" onChange={changeBuild} value={selectBuild}>
-            <option value="" hidden selected>Select...</option>
+            <option value="" hidden>Select...</option>
             <option value='Office'>Office Building (Non-Medical)</option>
             <option value='Medical'>Medical Office Building</option>
             <option value='School'>Elementary/Secondary School</option>
@@ -256,7 +259,7 @@ return (
           <Col>
           <label htmlFor="size">How many square feet is the building?</label><br />
           <select name="size" value={selectSize} onChange={changeSize}>
-            <option value="" hidden selected>Select...</option>
+            <option value="" hidden>Select...</option>
             <option value='5000'>&lt;5000</option>
             <option value='10000'>5000-10,000</option>
             <option value='50000'>10,000-50,000</option>
@@ -273,7 +276,7 @@ return (
           </Col>
         </Row>
       </div>
-      <div className="card roundedBox p-5">
+      <div className="card roundedBox bg-offwhite p-4 cardShadow">
         <Row>
           <Col>
           <h3>
@@ -392,7 +395,7 @@ return (
         <hr/>
         <Row>
           <Col>
-          <h5>Semi</h5>
+          <h5>Semi Trailer</h5>
           <Row>
             <Col className="col-10 col-xl-4">
             Refrigerated
@@ -406,7 +409,7 @@ return (
           </Row>
           <Row>
             <Col className="col-10 col-xl-4">
-            Non-Refridgerated
+            Non-Refrigerated
             </Col>
             <Col className="col-6 col-xl-4">
             <input onChange={calculateCount} name="semiNonFrig" type="number" placeholder="# of vehicles" />
@@ -425,12 +428,12 @@ return (
             <Col className="col-6 col-xl-4">
             <input onChange={calculateCount} name="jetNum" type="number" placeholder="# of vehicles" />
             </Col>
-            <Col className="col-6">
+            <Col className="col-6 col-xl-4">
             <input onChange={calculateMiles} name="jetNum" type="number" placeholder="Average Annual Km/vehicle" />
             </Col>
         </Row>
       </div>
-      <div className="card roundedBox p-5">
+      <div className="card roundedBox bg-offwhite p-4 cardShadow">
         <Row>
           <Col>
           <h3>
@@ -476,7 +479,7 @@ return (
 
       </div>
 
-      <div className="card roundedBox p-5">
+      <div className="card roundedBox bg-offwhite p-4 cardShadow">
         <Row>
           <Col>
           <h3>
@@ -545,7 +548,7 @@ return (
             <Col className="col-10 col-xl-4">
             Long (4+ hrs)
             </Col>
-            <Col className="col-12">
+            <Col className="col-12 col-xl-8">
             <Row>
               <Col>
               Economy
@@ -591,14 +594,14 @@ return (
             </Col>
             <Col  className="col-2 col-sm-1 col-xl-4">
             </Col>
-            <Col className="col-sm-6">
+            <Col className="col-sm-6 col-xl-4">
             <input onChange={calculateFlightCount} name="flyHotels" type="number"
               placeholder="# of nights per employee" />
             </Col>
           </Row>
       </div>
 
-      <div className="card roundedBox p-5">
+      <div className="card roundedBox bg-offwhite p-4 cardShadow">
         <Row>
           <Col>
           <h3>
@@ -691,24 +694,34 @@ return (
       </div>
       
       </Col>
-      <Col className="text-white p-5  col-12 col-lg-4 stickyCalc">
+      <Col className=" p-3  col-12 col-lg-4 stickyCalc ">
+        <div className="text-white p-5 innerShadow roundedBox">
       <h4 className="mb-0">Subtotals</h4>
-      <p>(Metric Tonnes C02)</p>
       <hr/>
-      <Row><Col>Heating & Electricity</Col><Col className="text-right">{subtotalBuild > 0 ? subtotalBuild : "--"}</Col></Row>
+      <Row><Col>Heating & Electricity</Col><Col className="text-right bold">{subtotalBuild > 0 ? subtotalBuild.toFixed(2) : "--"}</Col></Row>
       <hr/>
-      <Row><Col>Vehicle Fleet</Col><Col className="text-right">{vehicleSub > 0 ? vehicleSub : "--"}</Col></Row>
+      <Row><Col>Vehicle Fleet</Col><Col className="text-right bold">{vehicleSub > 0 ? vehicleSub.toFixed(2) : "--"}</Col></Row>
       <hr/>
-      <Row><Col>Employee Commute</Col><Col className="text-right">{transitSub > 0 ? transitSub : "--"}</Col></Row>
+      <Row><Col>Employee Commute</Col><Col className="text-right bold">{transitSub > 0 ? transitSub.toFixed(2) : "--"}</Col></Row>
       <hr/>
-      <Row><Col>Employee Travel</Col><Col className="text-right">{flightSub > 0 ? flightSub : "--"}</Col></Row>
+      <Row><Col>Employee Travel</Col><Col className="text-right bold">{flightSub > 0 ? flightSub.toFixed(2) : "--"}</Col></Row>
       <hr/>
-      <Row><Col>Freight Shipments</Col><Col className="text-right">{freightSub > 0 ? freightSub : "--"}</Col></Row>
+      <Row><Col>Freight Shipments</Col><Col className="text-right bold">{freightSub > 0 ? freightSub.toFixed(2) : "--"}</Col></Row>
       <hr/>
-      <h4>Your total C02 emissions</h4>
-      <span className="h3">{total > 0 ? total : "--"}</span>
-      <p>{total > 0 ? "(Metric Tonnes/yr)" : ""}</p>
+      <span className="smallCaps text-small">Total</span><br/>
+      <span className="h2 bold">{total > 0 ? total.toFixed(2) : "--"}</span>
+      <p>{total > 0 ? "(Metric Tonnes of CO2 per Year)" : ""}</p>
+      </div>
 
+      </Col>
+    </Row>
+    <Row className="justify-content-center">
+      <Col className="col-md-10">
+      <div className="bg-brown text-white p-5 innerShadow roundedBox">
+      <h4 className="mb-0">Conclusion</h4>
+      <hr/>
+      <Button variant="green">Smart Forest™ Calculator</Button>
+      </div>
       </Col>
     </Row>
   </Container>
