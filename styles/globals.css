@@ -104,6 +104,10 @@ color: #fff;
   text-align: right;
 }
 
+.text-green {
+  color: #00823B;
+}
+
 .labelCaps {
 font-size: 10px;
 font-weight: 700;

@@ -222,10 +222,15 @@ return (
       <Col className="col-11 col-lg-10 pt-5">
       
       <h1 className="text-orange text-center pt-5">Carbon Calculator</h1>
+      
       </Col>
     </Row>
     <Row className="justify-content-center">
       <Col className="p-3 col-11 col-lg-6">
+      <div className="card roundedBox bg-offwhite p-4 cardShadow">
+      <p className="large">Business Calculator</p>
+      <p>No matter if you are a hospital, a school, a large business, etc. Basic introduction.</p>
+      </div>
       <div className="card roundedBox bg-offwhite p-4 cardShadow">
         <Row>
           <Col>
@@ -236,6 +241,13 @@ return (
         <hr/>
           </Col>
 
+        </Row>
+        <Row>
+          <Col>
+          <label htmlFor="number">How many buildings of this type are in the organization?</label><br />
+          <input onChange={changeNum} type="number" placeholder="Number of buildings of this type" />
+
+          </Col>
         </Row>
         <Row>
           <Col> 
@@ -268,27 +280,21 @@ return (
           </select>
           </Col>
         </Row>
-        <Row>
-          <Col>
-          <label htmlFor="number">How many buildings of this type are in the organization?</label><br />
-          <input onChange={changeNum} type="number" placeholder="Number of buildings of this type" />
-
-          </Col>
-        </Row>
+        
       </div>
       <div className="card roundedBox bg-offwhite p-4 cardShadow">
         <Row>
-          <Col>
+          <Col className="col-12">
           <h3>
             Vehicle Fleet
           </h3>
           <p>Please input the following information for all company-owned fleet vehicles:</p>
-          </Col>
-        </Row>
+
         <hr/>
-        <Row>
+          </Col>
+        
           <Col>
-          <h5>Cars</h5>
+          <h5 className="smallCaps text-small text-green">Cars</h5>
           <Row>
             <Col className="col-12 col-xl-4">
             Gas
@@ -327,7 +333,7 @@ return (
         <hr/>
         <Row>
           <Col>
-          <h5>Pickups/SUVs</h5>
+           <h5 className="smallCaps text-small text-green">Pickups/SUVs</h5>
           <Row>
             <Col className="col-12 col-xl-4">
             Gas
@@ -366,7 +372,7 @@ return (
         <hr/>
         <Row>
           <Col>
-          <h5>Delivery Trucks/Vans (Up to 3.5 tonnes)</h5>
+           <h5 className="smallCaps text-small text-green">Delivery Trucks/Vans (Up to 3.5 tonnes)</h5>
           <Row>
             <Col className="col-10 col-xl-4">
             Gas
@@ -395,7 +401,7 @@ return (
         <hr/>
         <Row>
           <Col>
-          <h5>Semi Trailer</h5>
+           <h5 className="smallCaps text-small text-green">Semi Trailer</h5>
           <Row>
             <Col className="col-10 col-xl-4">
             Refrigerated
@@ -423,7 +429,7 @@ return (
         <hr/>
         <Row>
             <Col className="col-10 col-xl-4">
-            <h5>Private Jet</h5>
+             <h5 className="smallCaps text-small text-green">Private Jet</h5>
             </Col>
             <Col className="col-6 col-xl-4">
             <input onChange={calculateCount} name="jetNum" type="number" placeholder="# of vehicles" />
@@ -711,6 +717,7 @@ return (
       <span className="smallCaps text-small">Total</span><br/>
       <span className="h2 bold">{total > 0 ? total.toFixed(2) : "--"}</span>
       <p>{total > 0 ? "(Metric Tonnes of CO2 per Year)" : ""}</p>
+      <p>This is only an estimate etc</p>
       </div>
 
       </Col>
@@ -718,7 +725,7 @@ return (
     <Row className="justify-content-center">
       <Col className="col-md-10">
       <div className="bg-brown text-white p-5 innerShadow roundedBox">
-      <h4 className="mb-0">Conclusion</h4>
+      <h4 className="mb-0">Next Steps</h4>
       <hr/>
       <Button variant="green">Smart Forest™ Calculator</Button>
       </div>
