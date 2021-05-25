@@ -6,10 +6,16 @@ import Button from 'react-bootstrap/Button';
 
 const App = () => {
 
-  
-const [selectBuild, setBuild] = React.useState("");
 const [selectSize, setSize] = React.useState("");
 const [selectNum, setNum] = React.useState("");
+const [selectYear, setYear] = React.useState("");
+const [selectHeat, setHeat] = React.useState("");
+const [selectEnergy, setEnergy] = React.useState("");
+const [selectNumTwo, setNumTwo] = React.useState("");
+const [selectYearTwo, setYearTwo] = React.useState("");
+const [selectSizeTwo, setSizeTwo] = React.useState("");
+const [selectHeatTwo, setHeatTwo] = React.useState("");
+const [selectEnergyTwo, setEnergyTwo] = React.useState("");
 const [buildSub, setBuildSub] = React.useState(0);
 
 
@@ -17,116 +23,215 @@ let buildType = null;
 let buildSize = null;
 let buildNum = 1;
 let subtotalBuild = 0;
-
-
-const [vehicleSub, setVehicle] = React.useState(0);
-const [vehicleArray, setVehicleArray] = React.useState({
-carGas: {mult:0.15179,count: null, miles: null},
-carDiesel: {mult:0.16748,count: null, miles: null},
-carHybrid: {mult:0.10487,count: null, miles: null},
-truckGas: {mult:0.27807,count: null, miles: null},
-truckDiesel: {mult:0.20419,count: null, miles: null},
-truckHybrid: {mult:0.11518,count: null, miles: null},
-deliveryGas: {mult:0.21962,count: null, miles: null},
-deliveryDiesel: {mult:0.2471,count: null, miles: null},
-semiNonFrig: {mult:0.8654,count: null, miles: null},
-semiFrig: {mult:1.0142,count: null, miles: null},
-jetNum: {mult:2.9237,count: null, miles: null}});
-
-
-
+let heatType = null;
+let buildYear = 1;
+let energyType = null;
+let buildNumTwo = 1;
+let buildYearTwo = 1;
+let buildSizeTwo = null;
+let heatTypeTwo = null;
+let energyTypeTwo = null;
 let subtotalVehicle = 0;
+let subtotalFlight = 0;
+let subtotalPublicTransport = 0;
+let subtotalBuildTwo = 0;
+let totalBuild = 0;
 
-
-buildType = selectBuild;
 buildSize = Number(selectSize);
 buildNum = Number(selectNum);
+buildYear = Number(selectYear);
+heatType = selectHeat;
+energyType = selectEnergy;
+buildNumTwo = Number(selectNumTwo);
+buildYearTwo = Number(selectYearTwo);
+buildSizeTwo = Number(selectSizeTwo);
+heatTypeTwo = selectHeatTwo;
+energyTypeTwo = selectEnergyTwo;
 
+//vehicle multiplier
+const [vehicleSub, setVehicle] = React.useState(0);
+const [vehicleArray, setVehicleArray] = React.useState({
+  carGas: {mult:0.14836,count: null, miles: null},
+  carDiesel: {mult:0.13721,count: null, miles: null},
+  carHybrid: {mult:0.10275,count: null, miles: null},
+  truckGas: {mult:0.18659,count: null, miles: null},
+  truckDiesel: {mult:0.16637,count: null, miles: null},
+  truckHybrid: {mult:0.10698,count: null, miles: null},
+  deliveryGas: {mult:0.27087,count: null, miles: null},
+  deliveryDiesel: {mult:0.20419,count: null, miles: null},
+  deliveryHybrid: {mult:0.1448,count: null, miles: null},
+  semiNonFrig: {mult:0.8654,count: null, miles: null},
+  semiFrig: {mult:1.0142,count: null, miles: null},
+  jetNum: {mult:2.9237,count: null, miles: null}
+});
 
-const changeBuild = (event) => {
-setBuild(event.target.value);
-};
+//flight multiplier
+const [flightArray, setFlightArray] = React.useState({
+  flyShort: {mult:122.15,count: null},
+  flyMediumEco: {mult:305.96,count: null},
+  flyMediumBus: {mult:458.94,count: null},
+  flyLongEco: {mult:696.225,count: null},
+  flyLongEcoPlus: {mult:1113.9,count: null},
+  flyLongBus: {mult:2018.95,count: null},
+  flyLongFirst: {mult:2784.75,count: null},
+  flyHotels: {mult:17.4, count: null}
+});
+const [flightSub, setFlight] = React.useState(0);
 
+  //public transportation
+const [publicTransportArray, setPublicTransportArray] = React.useState({
+  publicCar: {mult:0.06214, count:null},
+  publicTaxi: {mult:0.1743, count:null},
+  publicSubway: {mult:0.06214, count:null}
+});
+const [publicTransportSub, setPublicTransport] = React.useState(0);
+
+//onchange methods
 const changeSize = (event) => {
-setSize(event.target.value);
+  setSize(event.target.value);
 }
 
 const changeNum = (event) => {
-setNum(event.target.value);
+  setNum(event.target.value);
+}
+
+const changeYear = (event) => {
+  setYear(event.target.value);
+}
+
+const changeHeat = (event) => {
+  setHeat(event.target.value);
+}
+
+const changeEnergy = (event) => {
+  setEnergy(event.target.value);
+}
+
+const changeNumTwo = (event) => {
+  setNumTwo(event.target.value);
+}
+
+const changeSizeTwo = (event) => {
+  setSizeTwo(event.target.value);
+}
+
+const changeYearTwo = (event) => {
+  setYearTwo(event.target.value);
+}
+
+const changeHeatTwo = (event) => {
+  setHeatTwo(event.target.value);
+}
+
+const changeEnergyTwo = (event) => {
+  setEnergyTwo(event.target.value);
 }
 
 /* array using data from the spreadsheet, including multipliers */
 
 const buildArray = {
-"5000":{
-Office:17364.7272966102, Medical:11745.2006980804, School:4757.66316027602, Care:12771.2658005338,
-Warehouse:9099.64324928882, Hotel:9690.54436545558, Hospital:37996.8383017167, Food:31883.4665465874,
-Retail:14238.4420898752, Other:21150.1136386494
-},
-"10000":{
-Office:36410.3314832734, Medical:31652.8432142392, School:50910.7964173328, Care:38785.1544490552,
-Warehouse:33615.6982670747, Hotel:40569.5408950621, Hospital:37996.8383017167, Food:69291.7802772103,
-Retail:34880.9486788779, Other:41842.7553285601
-},
-"50000":{
-Office:107974.850039479, Medical:121467.615511552, School:126421.429416638, Care:135848.999758979,
-Warehouse:86165.0149485114, Hotel:110204.71235101, Hospital:378941.441441445, Food:336771.355336677,
-Retail:130500.101484575, Other:87631.4688550379
-},
-"200000":{
-Office:512724.873119453, Medical:505494.939911453, School:342315.840255058, Care:579775.620791251,
-Warehouse:285542.673700571, Hotel:591931.842049994, Hospital:1264876.401631, Food:868870.950206574,
-Retail:297789.023649549, Other:338731.643770728
-},
-"200001":{
-Office:2234861.05228483, Medical:5452546.29629634, School:1112764.55026456, Care:1377046.13095239,
-Warehouse:1092785.89654373, Hotel:1861523.06967986, Hospital:5946424.34988185, Food:1439977.47747749,
-Retail:2446129.79207279, Other:1848813.90303718
+  "1000":{
+  gas:1072, oil:1562, electric:758, wood:91
+  },
+  "1500":{
+    gas:3473, oil:5059, electric:2456, wood:295
+  },
+  "2000":{
+    gas:4188, oil:6100, electric:2961, wood:356
+  },
+  "2500":{
+    gas:5464, oil:7960, electric:3864, wood:465
+  },
+  "2501":{
+    gas:6179, oil:9002, electric:4369, wood:525
+  }
+  }
+
+const energySavingsMult = {
+  none: 1,
+  light: 0.85,
+  moderate: 0.6,
+  extensive: 0.4
 }
+    
+if (buildSize && heatType && energyType)
+{
+  subtotalBuild = Number((buildArray[buildSize][heatType] * energySavingsMult[energyType] * (buildYear/12 * 100)))
 }
 
-/* checks to see if all 3 numbers are present in the row*/
-if (buildType && buildNum && buildSize) {
-
-subtotalBuild = Number((buildArray[buildSize][buildType] * buildNum /1000))
-
+if (buildSizeTwo && heatTypeTwo && energyTypeTwo) 
+{
+  subtotalBuildTwo = Number((buildArray[buildSizeTwo][heatTypeTwo] * energySavingsMult[energyTypeTwo] * (buildYearTwo/12 * 100))) 
 }
+
+totalBuild = Number(subtotalBuild + subtotalBuildTwo)
 
 /* function to calculate the 'vehicle' section */
 const calculateVehicle=()=> {
-subtotalVehicle = 0
-for (let x of Object.keys(vehicleArray)) {
-let i = 0;
-if (vehicleArray[x].count && vehicleArray[x].miles){
-i += Number((vehicleArray[x].count * vehicleArray[x].mult * vehicleArray[x].miles))/1000
-
-}
-subtotalVehicle += i
-}
-
-setVehicle(Number(subtotalVehicle))
+  subtotalVehicle = 0
+  for (let x of Object.keys(vehicleArray))
+  {
+    let i = 0;
+    if (vehicleArray[x].count && vehicleArray[x].miles)
+    {
+      i += Number((vehicleArray[x].count * vehicleArray[x].mult * vehicleArray[x].miles))
+    }
+    subtotalVehicle += i
+  }
+  setVehicle(Number(subtotalVehicle))
 }
 
 /* function to calculate the number of vehicles */
 const calculateCount=(e)=>{
-vehicleArray[e.target.name].count = Number(e.target.value)
-calculateVehicle()
+  vehicleArray[e.target.name].count = Number(e.target.value)
+  calculateVehicle()
 }
 /* function to calculate the vehicle mileage */
 const calculateMiles=(e)=>{
-vehicleArray[e.target.name].miles = Number(e.target.value)
-calculateVehicle()
+  vehicleArray[e.target.name].miles = Number(e.target.value)
+  calculateVehicle()
 }
 
+const calculateFlight=()=> {
+  subtotalFlight = 0
+  for (let x of Object.keys(flightArray)) 
+  {
+    let i = 0;
+    i += Number((flightArray[x].count * flightArray[x].mult))
+    subtotalFlight += i
+  }
+  setFlight(Number(subtotalFlight))
+}
+  
+const calculateFlightCount=(e)=>{
+  flightArray[e.target.name].count = Number(e.target.value)
+  calculateFlight()
+}
+  
+const calculatePublicTransport=()=> {
+  subtotalPublicTransport = 0
+  for (let x of Object.keys(publicTransportArray))
+  {
+    let i = 0;
+    if (publicTransportArray[x].count)
+    {
+      i += Number((publicTransportArray[x].count * publicTransportArray[x].mult))
+    }
+    subtotalPublicTransport += i
+  }    
+  setPublicTransport(Number(subtotalPublicTransport))
+}
 
+const calculateTransitMiles=(e)=>{
+  publicTransportArray[e.target.name].count = Number(e.target.value)
+  calculatePublicTransport()
+}
 
 /* calculate the 'total' here by adding on the other subtotals */
-
-let total = vehicleSub + subtotalBuild ;
+let total = vehicleSub + subtotalBuild + flightSub + publicTransportSub + subtotalBuildTwo;
 
 
 return (
-
 
 <div>
   <Container className="py-5">
@@ -152,48 +257,137 @@ return (
 
         <hr/>
           </Col>
-
+          <h5 className="smallCaps text-small text-green">Residence 1</h5>
         </Row>
         <Row>
           <Col>
-          <label htmlFor="number">How many buildings of this type are in the organization?</label><br />
-          <input onChange={changeNum} type="number" placeholder="Number of buildings of this type" />
+          <label htmlFor="number">How many people live in your household?</label><br />
+          <input onChange={changeNum} type="number" placeholder="# of people in your household" />
+          </Col>
+        </Row>
 
-          </Col>
-        </Row>
-        <Row>
-          <Col> 
-          <label htmlFor="building">Which type of commercial space is the building?</label><br />
-          <select name="building" onChange={changeBuild} value={selectBuild}>
-            <option value="" hidden>Select...</option>
-            <option value='Office'>Office Building (Non-Medical)</option>
-            <option value='Medical'>Medical Office Building</option>
-            <option value='School'>Elementary/Secondary School</option>
-            <option value='Care'>Assisted Daily/ Residential Care Facility</option>
-            <option value='Warehouse'>Warehouse</option>
-            <option value='Hotel'>Hotel/Motel/Lodge</option>
-            <option value='Hospital'>Hospital</option>
-            <option value='Food'>Food and Beverage Store</option>
-            <option value='Retail'>Non-Food Retail</option>
-            <option value='Other'>Other</option>
-          </select>
-          </Col>
-        </Row>
         <Row>
           <Col>
-          <label htmlFor="size">How many square feet is the building?</label><br />
+          <label htmlFor="number">Month(s) spent living at this residence?</label><br />
+          <input onChange={changeYear} type="number" placeholder="Month(s) in residence" />
+          </Col>
+        </Row>
+
+        <Row>
+          <Col>
+          <label htmlFor="size">How many square feet is your home?</label><br />
           <select name="size" value={selectSize} onChange={changeSize}>
             <option value="" hidden>Select...</option>
-            <option value='5000'>&lt;5000</option>
-            <option value='10000'>5000-10,000</option>
-            <option value='50000'>10,000-50,000</option>
-            <option value='200000'>50,000-200,000</option>
-            <option value='200001'>200,000+</option>
+            <option value='1000'> 0-1000 </option>
+            <option value='1500'> 1000-1500 </option>
+            <option value='2000'> 1500-2000 </option>
+            <option value='2500'> 2000-2500 </option>
+            <option value='2501'> 2500+ </option>
           </select>
           </Col>
         </Row>
+
+        <Row>
+          <Col>
+          <label htmlFor="heat">What is the main source of heat for your home?</label><br />
+          <select name="heat" value={selectHeat} onChange={changeHeat}>
+            <option value="" hidden>Select...</option>
+            <option value='gas'> Natural Gas </option>
+            <option value='oil'> Furnace Oil </option>
+            <option value='electric'> Electric </option>
+            <option value='wood'> Wood/Pellets </option>
+          </select>
+          </Col>
+        </Row>
+
+      <Row>
+          <Col>
+          <label htmlFor="energy">Energy Savings: Have you retrofitted your house, 
+          or built your house with any of the following energy-saving features?
+          </label><br />
+          <select name="energy" value={selectEnergy} onChange={changeEnergy}>
+            <option value="" hidden>Select...</option>
+            <option value='none'> None </option>
+            <option value='light'> Light - Recommissioning, LED Lightbulbs, Weatherization </option>
+            <option value='moderate'> Moderate - Lighting Retrofit, Automated Thermostats, Window Replacement </option>
+            <option value='extensive'>Extensive - Air Sealing and Re-Insulating, Conversion to District Energy and Ground Source Heat Pumps </option>
+          </select>
+          </Col>
+        </Row> 
         
       </div>
+
+
+      <div className="card roundedBox bg-offwhite p-4 cardShadow">
+        <Row>
+          <Col>
+          <h4>
+            Heating & Electricity
+          </h4>
+
+        <hr/>
+          </Col>
+          <h5 className="smallCaps text-small text-green">Residence 2</h5>
+        </Row>
+        <Row>
+          <Col>
+          <label htmlFor="number">How many people live in your household?</label><br />
+          <input onChange={changeNumTwo} type="number" placeholder="# of people in your household" />
+          </Col>
+        </Row>
+
+        <Row>
+          <Col>
+          <label htmlFor="number">Month(s) spent living at this residence?</label><br />
+          <input onChange={changeYearTwo} type="number" placeholder="Month(s) in residence" />
+          </Col>
+        </Row>
+
+        <Row>
+          <Col>
+          <label htmlFor="size">How many square feet is your home?</label><br />
+          <select name="size" value={selectSizeTwo} onChange={changeSizeTwo}>
+            <option value="" hidden>Select...</option>
+            <option value='1000'> 0-1000 </option>
+            <option value='1500'> 1000-1500 </option>
+            <option value='2000'> 1500-2000 </option>
+            <option value='2500'> 2000-2500 </option>
+            <option value='2501'> 2500+ </option>
+          </select>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col>
+          <label htmlFor="heat">What is the main source of heat for your home?</label><br />
+          <select name="heat" value={selectHeatTwo} onChange={changeHeatTwo}>
+            <option value="" hidden>Select...</option>
+            <option value='gas'> Natural Gas </option>
+            <option value='oil'> Furnace Oil </option>
+            <option value='electric'> Electric </option>
+            <option value='wood'> Wood/Pellets </option>
+          </select>
+          </Col>
+        </Row>
+
+      <Row>
+          <Col>
+          <label htmlFor="energy">Energy Savings: Have you retrofitted your house, 
+          or built your house with any of the following energy-saving features?
+          </label><br />
+          <select name="energy" value={selectEnergyTwo} onChange={changeEnergyTwo}>
+            <option value="" hidden>Select...</option>
+            <option value='none'> None </option>
+            <option value='light'> Light - Recommissioning, LED Lightbulbs, Weatherization </option>
+            <option value='moderate'> Moderate - Lighting Retrofit, Automated Thermostats, Window Replacement </option>
+            <option value='extensive'>Extensive - Air Sealing and Re-Insulating, Conversion to District Energy and Ground Source Heat Pumps </option>
+          </select>
+          </Col>
+        </Row> 
+        
+      </div> 
+
+
       <div className="card roundedBox bg-offwhite p-4 cardShadow">
         <Row>
           <Col className="col-12">
@@ -308,7 +502,31 @@ return (
               placeholder="Average Annual Km/vehicle" />
             </Col>
           </Row>
+          <Row>
+            <Col className="col-10 col-xl-4">
+            Hybrid
+            </Col>
+            <Col className="col-6 col-xl-4">
+            <input onChange={calculateCount} name="deliveryHybrid" type="number" placeholder="# of vehicles" />
+            </Col>
+            <Col className="col-6 col-xl-4">
+            <input onChange={calculateMiles} name="deliveryHybrid" type="number"
+              placeholder="Average Annual Km/vehicle" />
+            </Col>
+          </Row>
           </Col>
+        </Row>
+        <hr/>
+        <Row>
+            <Col className="col-10 col-xl-4">
+             <h5 className="smallCaps text-small text-green">Motorbike</h5>
+            </Col>
+            <Col className="col-6 col-xl-4">
+            <input onChange={calculateCount} name="bikeGas" type="number" placeholder="# of motorbikes" />
+            </Col>
+            <Col className="col-6 col-xl-4">
+            <input onChange={calculateMiles} name="bikeGas" type="number" placeholder="Average Annual Km/motorbike" />
+            </Col>
         </Row>
         <hr/>
         <Row>
@@ -352,15 +570,169 @@ return (
         </Row>
       </div>
       
-      
+      <div className="card roundedBox bg-offwhite p-4 cardShadow">
+        <Row>
+          <Col>
+          <h3>
+            Flight
+          </h3>
+          <p>Please input the amount of flights you have taken this year, 
+            and which class your seats were in. All flights are assumed to be round-trip. 
+            For any one-way flights, use a value of 0.5.		
+          </p>
+          </Col>
+        </Row>
+        <hr/>
+        <Row>
+          <Col className="col-12 col-xl-4">
+          Short (&lt;2 hrs)
+          </Col>
+          <Col>
+          <Row>
+            <Col className="col-6 col-md-6">
+            All
+            </Col>
+            <Col className="col-6 col-xl-6">
+            <input onChange={calculateFlightCount} name="flyShort" type="number"
+              placeholder="Average # of flights per employee" />
+            </Col>
+          </Row>
+          </Col>
+          </Row>
+          <hr/>
+        <Row>
+            <Col className="col-10 col-xl-4">
+            Medium (2-4hrs)
+            </Col>
+            <Col>
+            <Row>
+              <Col className="col-6">
+              Economy
+              </Col>
+              <Col className="col-6">
+              <input onChange={calculateFlightCount} name="flyMediumEco" type="number"
+                placeholder="Average # of flights per employee" />
+              </Col>
+            </Row>
+            <Row>
+              <Col className="col-6 ">
+              Business/First
+              </Col>
+              <Col className="col-6">
+              <input onChange={calculateFlightCount} name="flyMediumBus" type="number"
+                placeholder="Average # of flights per employee" />
+              </Col>
+            </Row>
+            </Col>
+          </Row>
+          <hr/>
+          <Row>
+            <Col className="col-10 col-xl-4">
+            Long (4+ hrs)
+            </Col>
+            <Col className="col-12 col-xl-8">
+            <Row>
+              <Col>
+              Economy
+              </Col>
+              <Col>
+              <input onChange={calculateFlightCount} name="flyLongEco" type="number"
+                placeholder="Average # of flights per employee" />
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+              Economy +
+              </Col>
+              <Col>
+              <input onChange={calculateFlightCount} name="flyLongEcoPlus" type="number"
+                placeholder="Average # of flights per employee" />
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+              Business Class
+              </Col>
+              <Col>
+              <input onChange={calculateFlightCount} name="flyLongBus" type="number"
+                placeholder="Average # of flights per employee" />
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+              First Class
+              </Col>
+              <Col>
+              <input onChange={calculateFlightCount} name="flyLongFirst" type="number"
+                placeholder="Average # of flights per employee" />
+              </Col>
+            </Row>
+            </Col>
+          </Row>
+          <hr/>
+          <Row>
+            <Col className="col-10 col-sm-5 col-xl-4">
+            Nights spent in hotels
+            </Col>
+            <Col  className="col-2 col-sm-1 col-xl-4">
+            </Col>
+            <Col className="col-sm-6 col-xl-4">
+            <input onChange={calculateFlightCount} name="flyHotels" type="number"
+              placeholder="# of nights per employee" />
+            </Col>
+          </Row>
+      </div>
+
+      <div className="card roundedBox bg-offwhite p-4 cardShadow">
+        <Row>
+          <Col>
+          <h3>
+            Public Transportation
+          </h3>
+          <p>Please input the approximate distance you have travelled on each type of public transportation:</p>
+          <hr/>
+          </Col>
+        </Row>
+        <Row>
+          <Col className="col-12 col-xl-4">
+          Bus
+          </Col>
+          <Col className="col-xl-4">
+          <input onChange={calculateTransitMiles} name="publicCar" type="number"
+            placeholder="Average Km/day" />
+          </Col>
+        </Row>
+        <Row>
+          <Col className="col-12 col-xl-4">
+          Taxi/Rideshare
+          </Col>
+          <Col className="col-xl-4">
+          <input onChange={calculateTransitMiles} name="publicTaxi" type="number" placeholder="Average km/day" />
+          </Col>
+        </Row>
+        <Row>
+          <Col className="col-10 col-xl-4">
+          Metro/Subway
+          </Col>
+          <Col className="col-6 col-xl-4">
+          <input onChange={calculateTransitMiles} name="publicSubway" type="number" placeholder="Average km/day" />
+          </Col>
+        </Row>
+
+      </div>
+
       </Col>
       <Col className=" p-3  col-12 col-lg-4 stickyCalc ">
         <div className="text-white p-5 innerShadow roundedBox">
       <h4 className="mb-0">Subtotals</h4>
       <hr/>
-      <Row><Col>Heating & Electricity</Col><Col className="text-right bold">{subtotalBuild > 0 ? subtotalBuild.toFixed(2) : "--"}</Col></Row>
+      <Row><Col>Heating & Electricity</Col><Col className="text-right bold">{totalBuild > 0 ? totalBuild.toFixed(2) : "--"}</Col></Row>
       <hr/>
       <Row><Col>Vehicle Fleet</Col><Col className="text-right bold">{vehicleSub > 0 ? vehicleSub.toFixed(2) : "--"}</Col></Row>
+      <hr/>
+      <Row><Col>Flight</Col><Col className="text-right bold">{flightSub > 0 ? flightSub.toFixed(2) : "--"}</Col></Row>
+      <hr/>
+      <Row><Col>Public Transportation</Col><Col className="text-right bold">{publicTransportSub > 0 ? publicTransportSub.toFixed(2) : "--"}</Col></Row>
       <hr/>
       <span className="smallCaps text-small">Total</span><br/>
       <span className="h2 bold">{total > 0 ? total.toFixed(2) : "--"}</span>
