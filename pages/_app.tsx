@@ -22,13 +22,14 @@ import { Flipper, Flipped } from 'react-flip-toolkit'
 
 import { PageTransition } from 'next-page-transitions'
 
+import { Provider } from 'next-auth/client'
+import { MarkdownFieldPlugin, HtmlFieldPlugin } from 'react-tinacms-editor'
 
 
 export default class Site extends App {
 
   
   cms: TinaCMS
-
   
   constructor(props) {
 
@@ -64,7 +65,9 @@ export default class Site extends App {
        */
       sidebar: props.pageProps.preview,
       toolbar: props.pageProps.preview,
+      
     })
+    
   }
 
   render() {
@@ -79,7 +82,8 @@ export default class Site extends App {
           onLogin={onLogin}
           onLogout={onLogout}
           error={pageProps.error}
-        >
+        > 
+        <Provider session={pageProps.session}>
 
 <Header />
 <PageTransition timeout={800}
@@ -91,6 +95,8 @@ export default class Site extends App {
           <Component {...pageProps} />
           </div>
           </PageTransition>
+
+          </Provider>
           <style jsx global>{`
           .page-transition-enter {
             opacity: 0;

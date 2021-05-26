@@ -1,8 +1,10 @@
 import React, { useState, useEffect, MouseEvent} from 'react';
 import { render } from 'react-dom';
 import Link from 'next/link'
+import { signIn, signOut, useSession } from 'next-auth/client'
 
 const Header = ()=> {
+  const [ session, loading ] = useSession()
 
 const [isActive, setActive] = useState(false);
 
@@ -150,7 +152,14 @@ return(
       <div className="col-6 col-md-2 d-flex flex-column gx-1 gx-lg-3 fixed">
         <div className="row align-self-top">
           <div className="col d-flex align-items-center justify-content-end menuInterface">
-            <a className="smallCaps" href="/">Login</a>
+          {!session && <>
+      <button className="smallCaps" onClick={() => signIn()}>Sign in</button>
+    </>}
+    {session && <>
+      Signed in as {session.user.email} <button onClick={() => signOut()}>Sign out</button> <a className="smallCaps" href="/portal">Portal</a>
+      
+    </>}
+            
             <div id="menuIcon" className={isActive ? 'open' : null} onClick={toggleClass}>
               <span></span>
               <span></span>
