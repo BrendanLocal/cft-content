@@ -60,7 +60,7 @@ return (
     <Container className="v-full d-flex pt-5 flex-column z-0">
       <Row className="justify-content-center pt-5 align-items-center">
         <Col className="col-lg-6 p-3 pt-5 p-md-1">
-        <h1 className="mb-5 pt-5 text-white ">
+        <h1 className="mb-5 pt-5 text-white drop">
         {editingdata.heading}
         </h1>
         <p className="large py-5 text-white bold">{editingdata.paragraph1}</p>
