@@ -95,7 +95,7 @@ return (
     </meta>
   </Head>
 
-  <main className="bg-green py-5">
+  <main className="bg-green">
     <Container className="bg-green py-5">
       <Row className="justify-content-center d-flex">
         <Col className="col-xl-10 ">
