@@ -59,7 +59,7 @@ return (
       data-rellax-speed="-12"></img>
     <Container className="v-full d-flex pt-5 flex-column z-0">
       <Row className="justify-content-center pt-5 align-items-center">
-        <Col className="col-lg-6 p-3 pt-5 p-md-1">
+        <Col className="col-12 col-lg-6 p-3 pt-5 p-md-1">
         <h1 className="mb-5 pt-5 text-white drop">
         {editingdata.heading}
         </h1>
@@ -67,12 +67,12 @@ return (
         </Col><Col className="col-lg-2"></Col>
         </Row>
         <Row className="justify-content-center  py-5">
-          <Col className="p-3 col-lg-4">
+          <Col className="p-3 col-12 col-lg-4">
           <p className="large text-white bold">
           {editingdata.paragraph2}
           </p>
           </Col>
-          <Col className="p-3 col-lg-4">
+          <Col className="p-3 col-12 col-lg-4">
           <div className="roundedBox card bg-white text-center p-4">
             <h3 className="text-orange bold">
             {editingdata.impactCardTitle}
@@ -84,30 +84,30 @@ return (
           </Col>
       </Row>
       <Row className="justify-content-center  py-5">
-<Col className="col-lg-8">
+<Col className="col-12 col-lg-8">
   <h2 className="text-center text-white mb-0">{editingdata.foresttrust}</h2>
 </Col>
       </Row>
       <Row className="justify-content-center  pb-5 align-items-stretch">
-<Col className="col-lg-3">
+<Col className="col-12 col-lg-3">
   <div className="roundedBox card bg-white p-4 h-100">
     <p className="large">
   {editingdata.card1}</p>
   </div>
 </Col>
-<Col className="col-lg-3">
+<Col className="col-12 col-lg-3">
   <div className="roundedBox card bg-white p-4 h-100">
   <p className="large">
   {editingdata.card2}</p>
   </div>
 </Col>
-<Col className="col-lg-3">
+<Col className="col-12 col-lg-3">
   <div className="roundedBox card bg-white p-4 h-100">
   <p className="large">
   {editingdata.card3}</p>
   </div>
 </Col>
-<Col className="col-lg-9 py-3">
+<Col className="col-12 col-lg-9 py-3">
 <hr className="thick"/></Col>
 <Col className="text-center col-lg-12 pb-5">
 <h3 className="text-white mb-5">{editingdata.buildyourforest}</h3>
@@ -119,14 +119,14 @@ return (
     <Container fluid className="py-5 z-999 bg-green align-items-center">
       <Row className="py-5 align-items-center justify-content-center ">
         
-        <Col className="col-12 p-5 col-md-4 text-white">
+        <Col className="order-2 order-lg-1 col-12 p-5 col-md-4 text-white">
         <h2 className="text-orange bold">{editingdata.powertitle}</h2>
         <p className="pb-3">{editingdata.powerpara}</p>
         <Button variant="green">
 {editingdata.unlockbutton}
         </Button>
         </Col>
-        <Col className="col-12 col-md-4 p-5">
+        <Col className="order-1 order-lg-2 col-12 col-md-4 p-5">
         
 <div className="p-5 whiteFloat" data-relative-input="true" id="scene">
 <img className="op-0" data-depth="-1" src="/cft-c.svg"></img>
