@@ -63,16 +63,16 @@ return (
         <h1 className="mb-5 pt-5 text-white drop">
         {editingdata.heading}
         </h1>
-        <p className="large py-5 text-white bold">{editingdata.paragraph1}</p>
+        <p className="large py-5 text-white bold pe-5 pe-lg-0">{editingdata.paragraph1}</p>
         </Col><Col className="col-lg-2"></Col>
         </Row>
         <Row className="justify-content-center  py-5">
-          <Col className="p-3 col-12 col-lg-4">
+          <Col className="p-3 col-12 col-lg-4 pe-5 pe-lg-3">
           <p className="large text-white bold">
           {editingdata.paragraph2}
           </p>
           </Col>
-          <Col className="p-3 col-12 col-lg-4">
+          <Col className="p-3 col-12 col-lg-4 pe-5 pe-lg-3">
           <div className="roundedBox card bg-white text-center p-4">
             <h3 className="text-orange bold">
             {editingdata.impactCardTitle}
@@ -84,32 +84,32 @@ return (
           </Col>
       </Row>
       <Row className="justify-content-center  py-5">
-<Col className="col-12 col-lg-8">
+<Col className="col-12 col-lg-8  pe-5 pe-lg-0">
   <h2 className="text-center text-white mb-0">{editingdata.foresttrust}</h2>
 </Col>
       </Row>
       <Row className="justify-content-center  pb-5 align-items-stretch">
-<Col className="col-12 col-lg-3">
+<Col className="col-12 col-lg-3 pe-5 pe-lg-0">
   <div className="roundedBox card bg-white p-4 h-100">
     <p className="large">
   {editingdata.card1}</p>
   </div>
 </Col>
-<Col className="col-12 col-lg-3">
+<Col className="col-12 col-lg-3 pe-5 pe-lg-0">
   <div className="roundedBox card bg-white p-4 h-100">
   <p className="large">
   {editingdata.card2}</p>
   </div>
 </Col>
-<Col className="col-12 col-lg-3">
+<Col className="col-12 col-lg-3 pe-5 pe-lg-0">
   <div className="roundedBox card bg-white p-4 h-100">
   <p className="large">
   {editingdata.card3}</p>
   </div>
 </Col>
-<Col className="col-12 col-lg-9 py-3">
+<Col className="col-12 col-lg-9 py-3 pe-5 pe-lg-0">
 <hr className="thick"/></Col>
-<Col className="text-center col-lg-12 pb-5">
+<Col className="text-center col-lg-12 pb-5 pe-5 pe-lg-0">
 <h3 className="text-white mb-5">{editingdata.buildyourforest}</h3>
 <Button variant="green">{editingdata.buildbutton}</Button>
 </Col>
