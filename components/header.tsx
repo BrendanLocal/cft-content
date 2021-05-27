@@ -114,9 +114,9 @@ const [playing, toggleSound] = useAudio("/forest-sounds.mp3");
 return(
 <React.Fragment>
 
-  <div className="container-fluid header">
+  <div className="container-fluid header logoHeader">
     <div className="row ">
-      <div className="col-6 col-md-4">
+      <div className="col">
         <Link href="/">
         <img className="logo" src="/cft-logo-white.svg" />
         </Link>
@@ -153,7 +153,7 @@ return(
         <div className="row align-self-top">
           <div className="col d-flex align-items-center justify-content-end menuInterface">
           {!session && <>
-      <button className="smallCaps" onClick={() => signIn()}>Sign in</button>
+      <button className="smallCaps textButton" onClick={() => signIn()}>Sign in</button>
     </>}
     {session && <>
       Signed in as {session.user.email} <button onClick={() => signOut()}>Sign out</button> <a className="smallCaps" href="/portal">Portal</a>
