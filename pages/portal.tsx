@@ -11,8 +11,6 @@ import Col from 'react-bootstrap/Col';
 import Map from '../components/portalMap'
 
 import Button from 'react-bootstrap/Button';
-import Rellax from "rellax";
-import Parallax from 'parallax-js';
 
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
@@ -139,7 +137,7 @@ return (
             <Col className="col-lg-9 p-5">
             <TabPanel>
               <h2 className="panelHead text-center text-grey">My Smart Forest<sup>™</sup></h2>
-              <Map lat={userData.lat} long={userData.long}/>
+              <Map/>
               <Row className="borderGrid pt-3">
                 <Col>
                 <Row>

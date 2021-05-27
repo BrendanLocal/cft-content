@@ -1,12 +1,12 @@
 import { useState } from "react";
 import ReactMapGL, { Marker } from "react-map-gl";
-export default function Map({lat, long}) {
+export default function Map() {
   const [viewport, setViewport] = useState({
     width: "100%",
     height: "300px",
     // The latitude and longitude of the center of London
-    latitude: 22,
-    longitude: 22,
+    latitude: 47.185414,
+    longitude: -66.314062,
     zoom: 5
   });
 return <ReactMapGL
@@ -16,8 +16,6 @@ return <ReactMapGL
   onViewportChange={(nextViewport) => setViewport(nextViewport)}
   
   >
-  {lat}
-  {long}
 
     <div >
       <Marker
