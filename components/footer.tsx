@@ -42,33 +42,31 @@ return(
   <Container fluid className="bg-brown text-white p-5">
     <Row >
       <Col className="col-12 col-md-3 p-3">
-      <img src="/cft-logo-greenwhite.svg"></img>
+      <h4>Canada's Forest Trust</h4>
+      <Button className="text-orange textButton text-left d-block">Contact Us</Button>
+      <Button className="text-orange textButton text-left d-block">About CFT</Button>
+      <Button className="text-orange textButton text-left d-block">FAQ</Button>
+      <Button className="text-orange textButton text-left d-block">Annual Reports</Button>
+      <Button className="text-orange textButton text-left d-block">Financial Statements</Button>
       </Col>
       <Col className="col-12 col-md-3 p-3">
-      <h3>Calculators</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-      <Button variant="white btn-full my-2">Carbon Calculator</Button>
-      <Button variant="white btn-full my-2">Forest Calculator</Button>
+      <h4>Calculators</h4>
+      <Button className="text-orange textButton text-left d-block">Carbon Offset Calculator</Button>
+      <Button className="text-orange textButton text-left d-block">Smart Forest™ Calculator</Button>
       </Col>
-      <Col className="col-12 col-md-3 p-3">
-      <h3>Account</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-      <Button variant="white btn-full my-2">Login</Button>
-      <Button variant="white btn-full my-2">Start an account</Button>
+      <Col className="col-12 col-md-2 p-3">
+      <h4>Portal</h4>
+      <Button className="text-orange textButton text-left d-block">Log In</Button>
+      <Button className="text-orange textButton text-left d-block">Sign Up</Button>
       </Col>
-    <Col className="col-12 col-md-3 p-3">
-    <h3>About CFT</h3>
-    <ul className="py-5 py-sm-0">
-      
-            {navItems.map(item =>
-            <li className="">
-              <a href={item.path}>{item.label}</a>
-            </li>
-            )}
-          </ul>
-    </Col>
+      <Col className="col-12 col-md-4 p-3">
+      <h4>Join Our Newsletter</h4>
+      <p>Provide your email to receive regular updates and the latest Canada’s Forest Trust news...</p>
+      <input className="mb-3" type="text" placeholder="Your Email"></input>
+      <Button variant="green btn-full">Subscribe</Button>
+      </Col>
     </Row>
-    <Row className="pt-3 pb-5 text-center">
+    <Row className="pt-3 pb-5">
       <Col>
       <span>©{(new Date().getFullYear())} Canada's Forest Trust Corporation</span>
       </Col>
