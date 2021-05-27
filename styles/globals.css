@@ -245,7 +245,7 @@ font-weight: 700;
 }
 
 .textButton.text-orange {
-  border-bottom: solid 1px #FF4D24;
+text-decoration: underline;
 }
 
 .textButton:hover {
