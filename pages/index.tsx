@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useRouter } from 'next/router'
 import Head from 'next/head'
 import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { GetStaticProps } from 'next'
@@ -17,6 +18,12 @@ import Parallax from 'parallax-js'
 
 
 export default function Home({ file }) {
+
+
+  const router = useRouter();
+  const {query} = router.query;
+
+
 const formOptions = {
 label: 'Home Page',
 fields: [{ name: 'title', component: 'text' }],
@@ -192,6 +199,7 @@ return (
 * Fetch data with getStaticProps based on 'preview' mode
 */
 export const getStaticProps: GetStaticProps = async function({
+
 preview,
 previewData,
 }) {

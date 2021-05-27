@@ -226,7 +226,7 @@ return (
     </Row>
     <Row className="justify-content-center">
       <Col className="p-3 col-11 col-lg-6">
-      <div className="card roundedBox p-5">
+      <div className="card mb-3 roundedBox p-5">
         <Row>
           <Col>
           <h3>
@@ -273,7 +273,7 @@ return (
           </Col>
         </Row>
       </div>
-      <div className="card roundedBox p-5">
+      <div className="card mb-3 roundedBox p-5">
         <Row>
           <Col>
           <h3>
@@ -430,7 +430,7 @@ return (
             </Col>
         </Row>
       </div>
-      <div className="card roundedBox p-5">
+      <div className="card mb-3 roundedBox p-5">
         <Row>
           <Col>
           <h3>
@@ -476,7 +476,7 @@ return (
 
       </div>
 
-      <div className="card roundedBox p-5">
+      <div className="card mb-3 roundedBox p-5">
         <Row>
           <Col>
           <h3>
@@ -598,7 +598,7 @@ return (
           </Row>
       </div>
 
-      <div className="card roundedBox p-5">
+      <div className="card mb-3 roundedBox p-5">
         <Row>
           <Col>
           <h3>
