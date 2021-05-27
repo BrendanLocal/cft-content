@@ -59,7 +59,7 @@ return(
       <Button className="text-orange textButton text-left d-block">Log In</Button>
       <Button className="text-orange textButton text-left d-block">Sign Up</Button>
       </Col>
-      <Col className="col-12 col-md-4 p-3">
+      <Col className="col-12 col-md-4 p-3 pe-5">
       <h4>Join Our Newsletter</h4>
       <p>Provide your email to receive regular updates and the latest Canada’s Forest Trust news...</p>
       <input className="mb-3" type="text" placeholder="Your Email"></input>
