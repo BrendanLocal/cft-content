@@ -17,7 +17,7 @@ import Parallax from 'parallax-js'
 const Lang = async() => {
 var language = "en";
   const router = useRouter();
-  if(router.query.lang){
+  if(router.query.lang){ 
 
   language = router.query.lang;
   }

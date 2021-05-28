@@ -161,6 +161,7 @@ p.large {
 
 .large, .large * {
   font-size: 22px !important;
+}
 p.lead {
   font-size: 30px
 }
