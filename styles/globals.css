@@ -18,6 +18,12 @@
     url("./fonts/GT-America-Extended-Medium.woff") format("woff");
   font-weight: 700;
 }
+@font-face {
+  font-family: 'GT-America';
+  src:
+    url("./fonts/GT-America-Extended-Thin.woff") format("woff");
+  font-weight: 100;
+}
 
 html,
 body {
@@ -48,9 +54,9 @@ hr.thick {
 }
 
 
-/* Bootstrap Overrides */
+/* Bootstrap Additions */
 
-.py-5 {
+.py-6 {
   padding-top: 5rem!important;
   padding-bottom: 5rem!important;
 }
@@ -67,7 +73,6 @@ p {
 
 h1, .h1  {
   font-size: calc(5rem + 1.5vw);
-  font-weight: 700;
 }
 
 h1.drop, .h1.drop {
@@ -150,6 +155,18 @@ li a {
 
 p.large {
   font-size: 22px;
+}
+
+.large, .large * {
+  font-size: 22px !important;
+}
+
+.medium, .medium * {
+  font-size: 18px !important;
+}
+
+.thin, .thin * {
+  font-weight: 200;
 }
 
 p.bold {
@@ -241,7 +258,7 @@ font-weight: 700;
   position: relative;
 }
 
-.textButton {
+.textButton, .btn-text {
   -webkit-appearance: initial;
     border: none;
     background: none;
@@ -250,17 +267,30 @@ font-weight: 700;
     border-radius: 0;
 }
 
-.textButton.text-orange {
+.textButton.text-orange, .btn-text.text-orange {
 text-decoration: underline;
 }
 
-.textButton:hover {
+.textButton:hover, .btn-text:hover {
   background: none;
   box-shadow: none;
 }
 
 .text-left {
   text-align: left;
+}
+
+.arrow-after:after {
+  content: url("../public/orange-arrow.svg");
+  position: absolute;
+  right: -40px;
+  width: 25px;
+  top: 3px;
+
+}
+
+.arrow-after {
+  position: relative;
 }
 
 
@@ -366,13 +396,34 @@ padding: 10%;
   opacity: 0;
 }
 
+.op-1 {
+  opacity: .1;
+}
+
+.op-2 {
+  opacity: .2;
+}
+
+
 .op-3 {
   opacity: .3;
 }
 
+
+.op-4 {
+  opacity: .4;
+}
+
+
 .op-5 {
   opacity: .5
 }
+
+
+.op-6 {
+  opacity: .6
+}
+
 
 .op-7 {
   opacity: .7;
@@ -474,6 +525,10 @@ padding: 10%;
 height: 65px;
 max-height: 100%;
 max-width: initial;
+}
+
+.logo:hover {
+  cursor: pointer;
 }
 
 #menuIcon{
@@ -902,6 +957,25 @@ border-left: solid 1px #00823B;
   padding: 2%;
 }
 
+
+
+
+
+
+/* Power of the Forest */
+
+ul.checkMark li{
+  position: relative;
+left: 1.5em;
+padding: 15px 0;
+}
+
+ul.checkMark li:before {
+  content: url("../public/checkmark-green.svg");
+  position: absolute;
+  width: 1em;
+  left: -2em;
+}
 
 
 
