@@ -132,7 +132,7 @@ return(
       <div className="row">
         <div className="col-10 col-md-9">
 
-          <ul className="py-4 py-sm-0">
+          <ul className="py-5 py-sm-0">
             {navItems.map(item =>
             <li key={item.key} className="slimlineBottom" onClick={toggleClass}>
               <Link href={item.path} >{item.label}</Link>
