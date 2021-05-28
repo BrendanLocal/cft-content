@@ -62,79 +62,80 @@ return (
   <main>
   
     
-      <img className="rellax parallaxLayers" src="/landing_layer1.jpg" alt="Wide image of the forest"
+      <img className="rellax parallaxLayers" src="/landingSKY.png" alt="SKY"
       data-rellax-speed="-15"></img>
     
 
-<img className="rellax parallaxLayers" src="/landing_layer3.png" alt="Wide image of the forest, layered to imply depth"
+<img className="rellax parallaxLayers" src="/landingLAND.png" alt="LAND"
       data-rellax-speed="-12"></img>
     <Container className="v-full d-flex pt-5 flex-column z-0">
       <Row className="justify-content-center pt-5 align-items-center">
         <Col className="col-12 col-lg-6 p-3 pt-5 p-md-1">
         <h1 className="mb-5 pt-5 text-white drop">
-        {editingdata.en.heading}
+        {editingdata.heading}
         </h1>
-        <p className="large py-6 text-white bold pe-5 pe-lg-0">{editingdata.en.paragraph1}</p>
-        </Col><Col className="col-lg-2"></Col>
+        <p className="lead py-5 text-white bold pe-5 pe-lg-0 tight-drop">{editingdata.paragraph1}</p>
+        <hr class="thick mt-4 mb-4"></hr>
+        </Col>
         </Row>
-        <Row className="justify-content-center  py-6">
+        
+        <Row className="justify-content-center  py-5 d-none">
           <Col className="p-3 col-12 col-lg-4 pe-5 pe-lg-3">
           <p className="large text-white bold">
-          {editingdata.en.paragraph2}
+          {editingdata.paragraph2}
           </p>
           </Col>
           <Col className="p-3 col-12 col-lg-4 pe-5 pe-lg-3">
           <div className="roundedBox card bg-white text-center p-4">
             <h3 className="text-orange bold">
-            {editingdata.en.impactCardTitle}
+            {editingdata.impactCardTitle}
             </h3>
-<span className="smallCaps small text-green letterspace pb-3">{editingdata.en.try}</span>
+<span className="smallCaps small text-green letterspace pb-3">{editingdata.try}</span>
 <Button variant="green">Carbon Offset Calculator</Button>
 <Button variant="green">Smart Forest Calculator</Button>
           </div>
           </Col>
       </Row>
-      <Row className="justify-content-center  py-5">
-<Col className="col-12 col-lg-8  pe-5 pe-lg-0">
-  <h2 className="text-center text-white mb-0">{editingdata.en.foresttrust}</h2>
+      <Row className="justify-content-center  py-4">
+<Col className="col-12 col-lg-8 pe-lg-0 mb-0">
+  <h2 className="text-center text-white mb-0 bold tight-drop">{editingdata.foresttrust}</h2>
 </Col>
       </Row>
-      <Row className="justify-content-center  pb-5 align-items-stretch">
-<Col className="col-12 col-lg-3 pe-5 pe-lg-0">
+      <Row className="justify-content-center  pb-5 align-items-stretch mb-4">
+<Col className="col-12 col-lg-2 pe-5 pe-lg-0 m-3">
   <div className="roundedBox card bg-white p-4 h-100">
-    <p className="large">
-  {editingdata.en.card1}</p>
+    <p className="large text-green">
+  {editingdata.card1}</p>
   </div>
 </Col>
-<Col className="col-12 col-lg-3 pe-5 pe-lg-0">
+<Col className="col-12 col-lg-2 pe-5 pe-lg-0 m-3">
   <div className="roundedBox card bg-white p-4 h-100">
-  <p className="large">
-  {editingdata.en.card2}</p>
+  <p className="large text-green">
+  {editingdata.card2}</p>
   </div>
 </Col>
-<Col className="col-12 col-lg-3 pe-5 pe-lg-0">
+<Col className="col-12 col-lg-2 pe-5 pe-lg-0 m-3">
   <div className="roundedBox card bg-white p-4 h-100">
-  <p className="large">
-  {editingdata.en.card3}</p>
+  <p className="large text-green">
+  {editingdata.card3}</p>
   </div>
 </Col>
-<Col className="col-12 col-lg-9 py-3 pe-5 pe-lg-0">
-<hr className="thick"/></Col>
+
 <Col className="text-center col-lg-12 pb-5 pe-5 pe-lg-0">
-<h3 className="text-white mb-5">{editingdata.en.buildyourforest}</h3>
-<Button variant="green">{editingdata.en.buildbutton}</Button>
+<h3 className="text-white mt-4 mb-5 tight-drop">{editingdata.buildyourforest}</h3>
+<Button variant="green">{editingdata.buildbutton}</Button>
 </Col>
       </Row>
 
     </Container>
-    <Container fluid className="py-6 z-999 bg-green align-items-center">
-      <Row className="py-6 align-items-center justify-content-center ">
+    <Container fluid className="py-5 z-999 bg-green align-items-center">
+      <Row className="py-5 align-items-center justify-content-center ">
         
         <Col className="order-2 order-lg-1 col-12 p-5 col-md-4 text-white">
-        <h2 className="text-orange bold">{editingdata.en.powertitle}</h2>
-        <p className="pb-3">{editingdata.en.powerpara}</p>
+        <h2 className="text-orange bold">{editingdata.powertitle}</h2>
+        <p className="pb-3">{editingdata.powerpara}</p>
         <Button variant="green">
-{editingdata.en.unlockbutton}
+{editingdata.unlockbutton}
         </Button>
         </Col>
         <Col className="order-1 order-lg-2 col-12 col-md-4 p-5">
@@ -197,33 +198,30 @@ return (
 )
 }
 
-
-
 /**
 * Fetch data with getStaticProps based on 'preview' mode
 */
 export const getStaticProps: GetStaticProps = async function({
+
 preview,
 previewData,
 }) {
-
-
-if (preview ) {
+if (preview) {
 return getGithubPreviewProps({
 ...previewData,
-fileRelativePath: "content/home.json",
+fileRelativePath: 'content/home.json',
 parse: parseJson,
 })
 }
-  return {
-    props: {
-    sourceProvider: null,
-    error: null,
-    preview: false,
-    file: {
-    fileRelativePath: "content/home.json",
-    data: (await import("../content/home.json")).default,
-    },
-    },
-    }
+return {
+props: {
+sourceProvider: null,
+error: null,
+preview: false,
+file: {
+fileRelativePath: 'content/home.json',
+data: (await import('../content/home.json')).default,
+},
+},
+}
 }
