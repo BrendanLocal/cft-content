@@ -48,9 +48,9 @@ hr.thick {
 }
 
 
-/* Bootstrap Overrides */
+/* Bootstrap Additions */
 
-.py-5 {
+.py-6 {
   padding-top: 5rem!important;
   padding-bottom: 5rem!important;
 }
@@ -474,6 +474,10 @@ padding: 10%;
 height: 65px;
 max-height: 100%;
 max-width: initial;
+}
+
+.logo:hover {
+  cursor: pointer;
 }
 
 #menuIcon{
