@@ -58,11 +58,11 @@ return (
   <main>
   
     
-      <img className="rellax parallaxLayers" src="/landing_layer1.jpg" alt="Wide image of the forest"
+      <img className="rellax parallaxLayers" src="/landingSKY.png" alt="SKY"
       data-rellax-speed="-15"></img>
     
 
-<img className="rellax parallaxLayers" src="/landing_layer3.png" alt="Wide image of the forest, layered to imply depth"
+<img className="rellax parallaxLayers" src="/landingLAND.png" alt="LAND"
       data-rellax-speed="-12"></img>
     <Container className="v-full d-flex pt-5 flex-column z-0">
       <Row className="justify-content-center pt-5 align-items-center">
@@ -70,10 +70,12 @@ return (
         <h1 className="mb-5 pt-5 text-white drop">
         {editingdata.heading}
         </h1>
-        <p className="large py-5 text-white bold pe-5 pe-lg-0">{editingdata.paragraph1}</p>
-        </Col><Col className="col-lg-2"></Col>
+        <p className="lead py-5 text-white bold pe-5 pe-lg-0 tight-drop">{editingdata.paragraph1}</p>
+        <hr class="thick mt-4 mb-4"></hr>
+        </Col>
         </Row>
-        <Row className="justify-content-center  py-5">
+        
+        <Row className="justify-content-center  py-5 d-none">
           <Col className="p-3 col-12 col-lg-4 pe-5 pe-lg-3">
           <p className="large text-white bold">
           {editingdata.paragraph2}
@@ -90,34 +92,33 @@ return (
           </div>
           </Col>
       </Row>
-      <Row className="justify-content-center  py-5">
-<Col className="col-12 col-lg-8  pe-5 pe-lg-0">
-  <h2 className="text-center text-white mb-0">{editingdata.foresttrust}</h2>
+      <Row className="justify-content-center  py-4">
+<Col className="col-12 col-lg-8 pe-lg-0 mb-0">
+  <h2 className="text-center text-white mb-0 bold tight-drop">{editingdata.foresttrust}</h2>
 </Col>
       </Row>
-      <Row className="justify-content-center  pb-5 align-items-stretch">
-<Col className="col-12 col-lg-3 pe-5 pe-lg-0">
+      <Row className="justify-content-center  pb-5 align-items-stretch mb-4">
+<Col className="col-12 col-lg-2 pe-5 pe-lg-0 m-3">
   <div className="roundedBox card bg-white p-4 h-100">
-    <p className="large">
+    <p className="large text-green">
   {editingdata.card1}</p>
   </div>
 </Col>
-<Col className="col-12 col-lg-3 pe-5 pe-lg-0">
+<Col className="col-12 col-lg-2 pe-5 pe-lg-0 m-3">
   <div className="roundedBox card bg-white p-4 h-100">
-  <p className="large">
+  <p className="large text-green">
   {editingdata.card2}</p>
   </div>
 </Col>
-<Col className="col-12 col-lg-3 pe-5 pe-lg-0">
+<Col className="col-12 col-lg-2 pe-5 pe-lg-0 m-3">
   <div className="roundedBox card bg-white p-4 h-100">
-  <p className="large">
+  <p className="large text-green">
   {editingdata.card3}</p>
   </div>
 </Col>
-<Col className="col-12 col-lg-9 py-3 pe-5 pe-lg-0">
-<hr className="thick"/></Col>
+
 <Col className="text-center col-lg-12 pb-5 pe-5 pe-lg-0">
-<h3 className="text-white mb-5">{editingdata.buildyourforest}</h3>
+<h3 className="text-white mt-4 mb-5 tight-drop">{editingdata.buildyourforest}</h3>
 <Button variant="green">{editingdata.buildbutton}</Button>
 </Col>
       </Row>
