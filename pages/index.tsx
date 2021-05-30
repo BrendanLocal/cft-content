@@ -14,11 +14,10 @@ import Rellax from "rellax";
 import Parallax from 'parallax-js'
 
 
-const Lang = async() => {
+const Lang = () => {
 var language = "en";
   const router = useRouter();
   if(router.query.lang){ 
-
   language = router.query.lang;
   }
 
@@ -44,9 +43,6 @@ useEffect(() => {
   new Rellax(".rellax");
   var scene = document.getElementById('scene');
 var parallaxInstance = new Parallax(scene);
-
-
-
 }, []);
 
 
@@ -70,27 +66,27 @@ return (
       data-rellax-speed="-12"></img>
     <Container className="v-full d-flex pt-5 flex-column z-0">
       <Row className="justify-content-center pt-5 align-items-center">
-        <Col className="col-12 col-lg-6 p-3 pt-5 p-md-1">
+        <Col className="col-12 col-lg-8 col-xl-6 p-3 pt-5 p-md-1">
         <h1 className="mb-5 pt-5 text-white drop">
-        {editingdata.heading}
+        {editingdata[Lang()].heading}
         </h1>
-        <p className="lead py-5 text-white bold pe-5 pe-lg-0 tight-drop">{editingdata.paragraph1}</p>
-        <hr class="thick mt-4 mb-4"></hr>
+        <p className="lead py-5 text-white bold pe-5 pe-lg-0 tight-drop">{editingdata[Lang()].paragraph1}</p>
+        <hr className="thick mt-4 mb-4"></hr>
         </Col>
         </Row>
         
         <Row className="justify-content-center  py-5 d-none">
           <Col className="p-3 col-12 col-lg-4 pe-5 pe-lg-3">
           <p className="large text-white bold">
-          {editingdata.paragraph2}
+          {editingdata[Lang()].paragraph2}
           </p>
           </Col>
           <Col className="p-3 col-12 col-lg-4 pe-5 pe-lg-3">
           <div className="roundedBox card bg-white text-center p-4">
             <h3 className="text-orange bold">
-            {editingdata.impactCardTitle}
+            {editingdata[Lang()].impactCardTitle}
             </h3>
-<span className="smallCaps small text-green letterspace pb-3">{editingdata.try}</span>
+<span className="smallCaps small text-green letterspace pb-3">{editingdata[Lang()].try}</span>
 <Button variant="green">Carbon Offset Calculator</Button>
 <Button variant="green">Smart Forest Calculator</Button>
           </div>
@@ -98,32 +94,32 @@ return (
       </Row>
       <Row className="justify-content-center  py-4">
 <Col className="col-12 col-lg-8 pe-lg-0 mb-0">
-  <h2 className="text-center text-white mb-0 bold tight-drop">{editingdata.foresttrust}</h2>
+  <h2 className="text-center text-white mb-0 bold tight-drop">{editingdata[Lang()].foresttrust}</h2>
 </Col>
       </Row>
       <Row className="justify-content-center  pb-5 align-items-stretch mb-4">
-<Col className="col-12 col-lg-2 pe-5 pe-lg-0 m-3">
+<Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3">
   <div className="roundedBox card bg-white p-4 h-100">
     <p className="large text-green">
-  {editingdata.card1}</p>
+  {editingdata[Lang()].card1}</p>
   </div>
 </Col>
-<Col className="col-12 col-lg-2 pe-5 pe-lg-0 m-3">
+<Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3">
   <div className="roundedBox card bg-white p-4 h-100">
   <p className="large text-green">
-  {editingdata.card2}</p>
+  {editingdata[Lang()].card2}</p>
   </div>
 </Col>
-<Col className="col-12 col-lg-2 pe-5 pe-lg-0 m-3">
+<Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3">
   <div className="roundedBox card bg-white p-4 h-100">
   <p className="large text-green">
-  {editingdata.card3}</p>
+  {editingdata[Lang()].card3}</p>
   </div>
 </Col>
 
 <Col className="text-center col-lg-12 pb-5 pe-5 pe-lg-0">
-<h3 className="text-white mt-4 mb-5 tight-drop">{editingdata.buildyourforest}</h3>
-<Button variant="green">{editingdata.buildbutton}</Button>
+<h3 className="text-white mt-4 mb-5 tight-drop">{editingdata[Lang()].buildyourforest}</h3>
+<Button variant="green">{editingdata[Lang()].buildbutton}</Button>
 </Col>
       </Row>
 
@@ -132,10 +128,10 @@ return (
       <Row className="py-5 align-items-center justify-content-center ">
         
         <Col className="order-2 order-lg-1 col-12 p-5 col-md-4 text-white">
-        <h2 className="text-orange bold">{editingdata.powertitle}</h2>
-        <p className="pb-3">{editingdata.powerpara}</p>
+        <h2 className="text-orange bold">{editingdata[Lang()].powertitle}</h2>
+        <p className="pb-3">{editingdata[Lang()].powerpara}</p>
         <Button variant="green">
-{editingdata.unlockbutton}
+{editingdata[Lang()].unlockbutton}
         </Button>
         </Col>
         <Col className="order-1 order-lg-2 col-12 col-md-4 p-5">
@@ -165,10 +161,10 @@ return (
           </div>
                 </Col>
         <Col className="col-12 p-5 col-md-4 text-white">
-        <h2 className="text-orange bold">{editingdata.en.buildtitle}</h2>
-        <p className="pb-3">{editingdata.en.buildpara}</p>
+        <h2 className="text-orange bold">{editingdata[Lang()].buildtitle}</h2>
+        <p className="pb-3">{editingdata[Lang()].buildpara}</p>
         <Button variant="green">
-{editingdata.en.buildbutton2}
+{editingdata[Lang()].buildbutton2}
         </Button>
         </Col>
         
@@ -179,10 +175,10 @@ return (
     <Row className="py-6 align-items-center justify-content-center  align-items-stretch protorow">
     
         <Col className="col-12 p-5 col-md-4 text-white">
-        <h2 className="text-orange bold">{editingdata.en.portaltitle}</h2>
-        <p className="pb-3">{editingdata.en.portalpara}</p>
+        <h2 className="text-orange bold">{editingdata[Lang()].portaltitle}</h2>
+        <p className="pb-3">{editingdata[Lang()].portalpara}</p>
         <Button variant="green">
-{editingdata.en.portalbutton}
+{editingdata[Lang()].portalbutton}
         </Button>
         </Col>
         <Col className="col-12 col-md-4 p-5">
