@@ -25,7 +25,6 @@ usePlugin(form)
 useGithubToolbarPlugins()
 
 const slideProperties = {
-  indicators: true,
   indicators: i => (<span className="sliderDot"/>)
 }
 
