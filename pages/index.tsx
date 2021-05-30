@@ -71,7 +71,7 @@ return (
         {editingdata.heading}
         </h1>
         <p className="lead py-5 text-white bold pe-5 pe-lg-0 tight-drop">{editingdata.paragraph1}</p>
-        <hr class="thick mt-4 mb-4"></hr>
+        <hr class="thick my-4"></hr>
         </Col>
         </Row>
         
@@ -98,19 +98,19 @@ return (
 </Col>
       </Row>
       <Row className="justify-content-center  pb-5 align-items-stretch mb-4">
-<Col className="col-12 col-lg-2 pe-5 pe-lg-0 m-3">
+<Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3">
   <div className="roundedBox card bg-white p-4 h-100">
     <p className="large text-green">
   {editingdata.card1}</p>
   </div>
 </Col>
-<Col className="col-12 col-lg-2 pe-5 pe-lg-0 m-3">
+<Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3">
   <div className="roundedBox card bg-white p-4 h-100">
   <p className="large text-green">
   {editingdata.card2}</p>
   </div>
 </Col>
-<Col className="col-12 col-lg-2 pe-5 pe-lg-0 m-3">
+<Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3">
   <div className="roundedBox card bg-white p-4 h-100">
   <p className="large text-green">
   {editingdata.card3}</p>
