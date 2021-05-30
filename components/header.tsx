@@ -15,36 +15,36 @@ setActive(!isActive);
 const navItems = [
 {
 key: "navItem1",
-label: "Power of the forest",
+label: "The Power of Smart Forests™",
 path: "/power-of-the-forest"
 },
 {
 key: "navItem2",
-label: "Unlock the forest",
-path: "/unlock-the-forest"
-},
-{
-key: "navItem3",
-label: "Build your forest",
+label: "Build a Smart Forest™",
 path: "/build-your-forest"
 },
 {
 key: "navItem4",
-label: "Carbon calculator",
-path: "/carbon-calculator"
+label: "Your Smart Forest™",
+path: "/portal"
 },
 {
 key: "navItem5",
-label: "Forest calculator",
-path: "/forest-calculator"
+label: "Carbon offset calculator",
+path: "/carbon-calculator"
 },
 {
 key: "navItem6",
+label: "Smart Forest™ calculator",
+path: "/smart-forest-calculator"
+},
+{
+key: "navItem7",
 label: "About",
 path: "/about"
 },
 {
-key: "navItem7",
+key: "navItem8",
 label: "Contact",
 path: "/contact"
 }

@@ -152,6 +152,33 @@ return (
         <div className="roundedBox bg-brown v-100"></div>
         </Col>
       </Row>
+
+      <Row className="text-center py-6">
+        <Col>
+        <h3 className="text-orange">{editingdata.decreasetitle}</h3>
+        <Button variant="green">{editingdata.offsetbutton}</Button>
+        </Col>
+      </Row>
+
+      <Row className="justify-content-center">
+        <Col className="col-lg-4 p-5">
+        <h3 className="h2 text-orange bold">
+          {editingdata.unlocktitle}
+        </h3>
+        <p className="text-white">{editingdata.unlockpara}</p>
+        </Col>
+        <Col className="col-lg-4 p-5"><img src="/unlock-standin.png"/></Col>
+        <Col className="col-8">
+        <hr className="thick"/></Col>
+      </Row>
+      <Row className="py-6">
+        <Col className="text-center">
+        <h3 className="text-white">
+          {editingdata.buildctatitle}
+        </h3>
+        <Button variant="green">{editingdata.buildctabutton}</Button>
+        </Col>
+      </Row>
     </Container>
     
    
