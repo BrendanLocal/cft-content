@@ -18,10 +18,10 @@ const Lang = () => {
 var language = "en";
   const router = useRouter();
   if(router.query.lang){ 
-  language = router.query.lang;
+  language = JSON.stringify(router.query.lang);
   }
 
-  return (language)
+  return (JSON.parse(language))
 }
 
 
@@ -68,6 +68,7 @@ return (
       <Row className="justify-content-center pt-5 align-items-center">
         <Col className="col-12 col-lg-8 col-xl-6 p-3 pt-5 p-md-1">
         <h1 className="mb-5 pt-5 text-white drop">
+         
         {editingdata[Lang()].heading}
         </h1>
         <p className="lead py-5 text-white bold pe-5 pe-lg-0 tight-drop">{editingdata[Lang()].paragraph1}</p>
