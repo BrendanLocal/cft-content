@@ -25,6 +25,8 @@
   font-weight: 100;
 }
 
+@import "react-slideshow-image/dist/styles.css";
+
 html,
 body {
   padding: 0;
@@ -300,6 +302,29 @@ text-decoration: underline;
   position: relative;
 }
 
+/* Slider */
+
+.sliderDot {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  border: solid 2px #aaa;
+  margin: 0 10px;
+}
+
+.sliderDot:hover {
+  cursor: pointer;
+}
+
+.sliderDot.active:hover {
+  cursor: initial;
+}
+
+.sliderDot.active {
+  background:#FF4D24;
+}
+
 
 /* Containers */
 
@@ -317,6 +342,9 @@ text-decoration: underline;
 
 .v-100 {
   height: 100vh;
+}
+.v-50 {
+  height: 50vh;
 }
 
 .fixed {
