@@ -1,4 +1,5 @@
-{ "en": {
+{ 
+  "en": {
   "heading": "Never Plant a Single Tree Again.",
   "paragraph1": "When faced with the greatest global threat of the 21st century, nothing short of large-scale, immediate action will do. It’s time to value forests for more than just a single tree and harness their power to clean our air, purify our waters and protect our wildlife, all while creating green jobs for generations to come.",
   "paragraph2": "CFT sees the forest despite the trees. We are harnessing the power of Smart Forests™ – a nature-based solution with meaningful, measurable impacts.",
@@ -20,8 +21,7 @@
   "portalpara":"CFT provides 24/7 access to an exclusive client portal that offers a number of options to engage with the progress of their Smart Forests TM growth as they measure and track its impact on the environment, economy and society. This forest learning hub will help you navigate how your Smart Forests TM are growing a cleaner, greener and more resilient Canada.",
   "portalbutton":"Explore Your Smart Forest™"
 },
-"fr" :
-  {
+"fr": {
     "heading":"Ne plantez plus jamais un seul arbre.",
     "paragraph1":"Face à la plus grande menace mondiale du 21e siècle, rien de moins qu'une action immédiate à grande échelle fera l'affaire. Il est temps de valoriser les forêts pour plus qu’un seul arbre et d’exploiter leur pouvoir pour assainir notre air, purifier nos eaux et protéger notre faune, tout en créant des emplois verts pour les générations à venir.",
     "paragraph2": "CFT sees the forest despite the trees. We are harnessing the power of Smart Forests™ – a nature-based solution with meaningful, measurable impacts.",

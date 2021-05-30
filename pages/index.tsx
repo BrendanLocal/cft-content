@@ -18,10 +18,11 @@ const Lang = () => {
 var language = "en";
   const router = useRouter();
   if(router.query.lang){ 
-  language = JSON.stringify(router.query.lang);
+  const lan = JSON.stringify(router.query.lang);
+  language = JSON.parse(lan)
   }
 
-  return (JSON.parse(language))
+  return (language)
 }
 
 
