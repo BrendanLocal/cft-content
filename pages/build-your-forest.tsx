@@ -10,13 +10,16 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Rellax from "rellax";
 import Parallax from 'parallax-js'
+
+
 export default function Build({ file }) {
+
 const formOptions = {
 label: 'Build Your Forest',
 fields: [{ name: 'title', component: 'text' }],
 }
 
-const [data, form] = useGithubJsonForm(file, formOptions)
+const [editingdata, form] = useGithubJsonForm(file, formOptions)
 usePlugin(form)
 useGithubToolbarPlugins()
 
@@ -25,7 +28,6 @@ useEffect(() => {
   var scene = document.getElementById('scene');
 var parallaxInstance = new Parallax(scene);
 }, []);
-
 
 return (
   
@@ -50,11 +52,11 @@ return (
         </Col>
         <Col className="col-xl-5 text-white p-5 pb-0">
         <h1 className="text-orange mb-5">
-          <span className="bold">Build</span><br/>Your<br/>Forest
+         {editingdata.heading}
         </h1>
-        <p className="large">Canada’s Forest Trust engages and empowers youth, families, farmers, landowners, Indigenous communities and corporate Canada to work together to build a better environment and meet our country’s global commitment to a net-zero future.</p>
-        <p>As we envision a multi-generational transformation, we are prioritizing environmental education and engagement among high school students as part of our efforts.</p>
-        <p>When fully operative, our project is expected to engage thousands of employees across the country annually.</p>
+        <p className="large">{editingdata.leadpara}</p>
+        <p>{editingdata.para2}</p>
+        <p>{editingdata.para3}</p>
         <p className="pt-3"><a className="sectionLink" href="#">Our 5-Phase Approach</a><br/>
         <a className="sectionLink" href="#">Our Smart Forests<sup>™</sup></a><br/></p>
 
@@ -70,10 +72,47 @@ return (
         </Col>
         </Row>
         <Row className="justify-content-center">
-          <Col className="col-lg-10 d-flex bg-brown roundedBoxLarge p-5 justify-content-center">
+          <Col className="col-lg-10 d-flex bg-brown roundedBox p-5 justify-content-center">
           <img className="p-3" src="/sliderTemp.png"></img>
           </Col>
         </Row>
+    </Container>
+    <Container className="bg-green py-6">
+    <Row className="justify-content-center pt-5">
+        <Col className=" col-6">
+        <h2 className="text-center text-orange bold">{editingdata.smarttitle}</h2>
+        <p className="text-center text-white medium thin">{editingdata.smartpara}</p></Col>
+      </Row>
+      <Row className="py-5 align-items-stretch ">
+        <Col>
+        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
+        <h4 className="thin text-green">{editingdata.card1title}</h4>
+        <p className="flex-fill pb-3">{editingdata.card1para}</p>
+        <Button variant="text text-left">{editingdata.learnmore}</Button>
+        </div>
+        </Col>
+        <Col>
+        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
+        <h4 className="thin text-green">{editingdata.card2title}</h4>
+        <p className="flex-fill pb-3">{editingdata.card2para}</p>
+        <Button variant="text text-left">{editingdata.learnmore}</Button>
+        </div>
+        </Col>
+        <Col>
+        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
+        <h4 className="thin text-green">{editingdata.card3title}</h4>
+        <p className="flex-fill pb-3">{editingdata.card3para}</p>
+        <Button variant="text text-left">{editingdata.learnmore}</Button>
+        </div>
+        </Col>
+        <Col>
+        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
+        <h4 className="thin text-green">{editingdata.card4title}</h4>
+        <p className="flex-fill pb-3">{editingdata.card4para}</p>
+        <Button variant="text text-left">{editingdata.learnmore}</Button>
+        </div>
+        </Col>
+      </Row>
     </Container>
    
 
