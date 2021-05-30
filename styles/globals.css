@@ -63,6 +63,10 @@ hr.thick {
   padding-bottom: 5rem!important;
 }
 
+.overflow-hide {
+  overflow: hidden;
+}
+
 /*Text*/
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
@@ -994,8 +998,31 @@ border-left: solid 1px #00823B;
 
 
 
+/* About */
 
+.horizTab li {
+  display: inline-block;
+  margin: 0 10px;
+  text-align: center;
+}
 
+.horizTab:hover {
+  cursor: pointer;
+  color: #fff;
+}
+
+.horizTab {
+  text-align: center;
+  border-bottom: solid 1px rgba(255,255,255,.5);
+}
+
+.horizTab .react-tabs__tab--selected {
+  border-left: none;
+  border-bottom: solid 3px #FF4D24;
+  text-decoration: initial;
+  color: white;
+  padding: 5px;
+}
 
 /* Power of the Forest */
 

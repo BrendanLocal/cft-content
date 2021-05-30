@@ -11,6 +11,7 @@ import Button from 'react-bootstrap/Button';
 import Rellax from "rellax";
 import Parallax from 'parallax-js'
 import { Slide } from 'react-slideshow-image';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 export default function Power({ file }) {
 
@@ -38,8 +39,8 @@ return (
     <meta name="theme-color" content="#054218"></meta>
   </Head>
 
-  <main className="bg-green py-5">
-    <Container className="bg-green py-5">
+  <main className="">
+    <Container fluid className="bg-green py-5">
       <Row className="justify-content-center align-items-center d-flex py-6"> 
 
       <Col className="col-xl-4 p-5 stickyTop">
@@ -99,7 +100,119 @@ return (
         </Slide>
         </Col>
       </Row>
-      
+    </Container>
+    <Container fluid className="bg-brown py-6">
+      <Row className="justify-content-center">
+        <Col className="col-5 text-center">
+        <h2 className="text-orange bold">{editingdata.meetteam}</h2>
+        </Col>
+      </Row>
+      <Row className="justify-content-center">
+        <Col className="col-8">
+        <Tabs>
+        <TabList className="horizTab">
+        <Tab className="text-orange btn-text smallCaps small letterspace">
+{editingdata.tabtitle1}
+        </Tab>
+        <Tab className="text-orange btn-text smallCaps small letterspace">
+        {editingdata.tabtitle2}
+        </Tab>
+        <Tab className="text-orange btn-text smallCaps small letterspace">
+          {editingdata.tabtitle3}
+        </Tab>
+        </TabList>
+        <TabPanel>
+
+        {/* First panel starts here */}
+          <Row>
+            <Col className="col-4 p-3">
+              <div className="roundedBox overflow-hide">
+              <Row><Col><img src="/placeholder-forest.jpg"></img></Col></Row>
+              <Row className="bg-white p-3 text-center"><Col><span>Person Name</span></Col></Row>
+              </div>
+            </Col>
+            <Col className="col-4 p-3">
+              <div className="roundedBox overflow-hide">
+              <Row><Col><img src="/placeholder-forest.jpg"></img></Col></Row>
+              <Row className="bg-white p-3 text-center"><Col><span>Person Name</span></Col></Row>
+              </div>
+            </Col>
+            <Col className="col-4 p-3">
+              <div className="roundedBox overflow-hide">
+              <Row><Col><img src="/placeholder-forest.jpg"></img></Col></Row>
+              <Row className="bg-white p-3 text-center"><Col><span>Person Name</span></Col></Row>
+              </div>
+            </Col>
+            <Col className="col-4 p-3">
+              <div className="roundedBox overflow-hide">
+              <Row><Col><img src="/placeholder-forest.jpg"></img></Col></Row>
+              <Row className="bg-white p-3 text-center"><Col><span>Person Name</span></Col></Row>
+              </div>
+            </Col>
+            <Col className="col-4 p-3">
+              <div className="roundedBox overflow-hide">
+              <Row><Col><img src="/placeholder-forest.jpg"></img></Col></Row>
+              <Row className="bg-white p-3 text-center"><Col><span>Person Name</span></Col></Row>
+              </div>
+            </Col>
+            <Col className="col-4 p-3">
+              <div className="roundedBox overflow-hide">
+              <Row><Col><img src="/placeholder-forest.jpg"></img></Col></Row>
+              <Row className="bg-white p-3 text-center"><Col><span>Person Name</span></Col></Row>
+              </div>
+            </Col>
+          </Row>
+
+        </TabPanel>
+        <TabPanel>
+          <Row>
+        {/* Second panel starts here */}
+        <Col className="col-4 p-3">
+              <div className="roundedBox overflow-hide">
+              <Row><Col><img src="/placeholder-forest.jpg"></img></Col></Row>
+              <Row className="bg-white p-3 text-center"><Col><span>Person Name</span></Col></Row>
+              </div>
+            </Col>
+            <Col className="col-4 p-3">
+              <div className="roundedBox overflow-hide">
+              <Row><Col><img src="/placeholder-forest.jpg"></img></Col></Row>
+              <Row className="bg-white p-3 text-center"><Col><span>Person Name</span></Col></Row>
+              </div>
+            </Col>
+            <Col className="col-4 p-3">
+              <div className="roundedBox overflow-hide">
+              <Row><Col><img src="/placeholder-forest.jpg"></img></Col></Row>
+              <Row className="bg-white p-3 text-center"><Col><span>Person Name</span></Col></Row>
+              </div>
+            </Col>
+            </Row>
+        </TabPanel>
+        <TabPanel>
+        {/* Third panel starts here */}
+        <Row>
+             <Col className="col-4 p-3">
+              <div className="roundedBox overflow-hide">
+              <Row><Col><img src="/placeholder-forest.jpg"></img></Col></Row>
+              <Row className="bg-white p-3 text-center"><Col><span>Person Name</span></Col></Row>
+              </div>
+            </Col>
+            <Col className="col-4 p-3">
+              <div className="roundedBox overflow-hide">
+              <Row><Col><img src="/placeholder-forest.jpg"></img></Col></Row>
+              <Row className="bg-white p-3 text-center"><Col><span>Person Name</span></Col></Row>
+              </div>
+            </Col>
+            <Col className="col-4 p-3">
+              <div className="roundedBox overflow-hide">
+              <Row><Col><img src="/placeholder-forest.jpg"></img></Col></Row>
+              <Row className="bg-white p-3 text-center"><Col><span>Person Name</span></Col></Row>
+              </div>
+            </Col>
+            </Row>
+        </TabPanel>
+        </Tabs>
+        </Col>
+      </Row>
     </Container>
     
    
