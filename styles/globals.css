@@ -164,14 +164,15 @@ p.large {
 }
 
 .large, .large * {
-  font-size: 22px !important;
+  font-size: 18px !important;
 }
 
 .large, .large * {
-  font-size: 22px !important;
+  font-size: 18px !important;
 }
+
 p.lead {
-  font-size: 33px
+  font-size: 30px
 }
 
 .medium, .medium * {
