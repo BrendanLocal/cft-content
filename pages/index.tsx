@@ -222,7 +222,7 @@ return (
   <p className="text-center large text-white thin">{editingdata[Lang()].calculatepara}</p>
   </Col>
       </Row>
-      <Row className="justify-content-center  pb-5 align-items-stretch mb-3">
+      <Row className="justify-content-center  pb-5 align-items-stretch mb-5">
         <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
           <div className="card bg-green p-4 h-100">
             <p className="h6 text-orange bold">
