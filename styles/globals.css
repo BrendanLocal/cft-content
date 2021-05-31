@@ -130,6 +130,10 @@ color: #fff;
   color: #054217;
 }
 
+.text-mildgreen {
+  color: #00823B;
+}
+
 .text-grey {
   color: #362B26;
 }
@@ -284,6 +288,14 @@ font-weight: 700;
 .textButton.text-orange, .btn-text.text-orange {
 text-decoration: underline;
 }
+
+.textButton.text-mildgreen, .btn-text.text-mildgreen {
+  color: #00823B;
+  }
+
+  .textButton.text-mildgreen:hover, .btn-text.text-mildgreen:hover {
+    color: #00823B;
+    }
 
 .textButton:hover, .btn-text:hover {
   background: none;
@@ -541,10 +553,6 @@ padding: 10%;
 
 /* Borders */
 
-.border-mildgreen {
-  border-radius: 1px solid #00823B!important; 
-}
-
 
 /* Header */
 
@@ -681,7 +689,9 @@ footer {
 
 /* Details */
 
-
+.no-border {
+  border: 0px!important;
+}
 
 
 .slimlineBottom {
