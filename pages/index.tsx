@@ -67,10 +67,10 @@ return (
     <Container className="v-full d-flex pt-5 flex-column z-0">
       <Row className="justify-content-center pt-5 align-items-center">
         <Col className="col-12 col-lg-6 p-3 pt-5 p-md-1">
-        <h1 className="mb-5 pt-5 text-white drop">
+        <h1 className="my-5 pt-5 text-white drop bold">
         {editingdata.heading}
         </h1>
-        <p className="lead py-5 text-white bold pe-5 pe-lg-0 tight-drop">{editingdata.paragraph1}</p>
+        <p className="lead py-5 text-white bold pe-5 pe-lg-0 big-drop">{editingdata.paragraph1}</p>
         <hr class="thick my-4"></hr>
         </Col>
         </Row>
@@ -98,19 +98,19 @@ return (
 </Col>
       </Row>
       <Row className="justify-content-center  pb-5 align-items-stretch mb-4">
-<Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3">
+<Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3 drop">
   <div className="roundedBox card bg-white p-4 h-100">
     <p className="large text-green">
   {editingdata.card1}</p>
   </div>
 </Col>
-<Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3">
+<Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3 drop">
   <div className="roundedBox card bg-white p-4 h-100">
   <p className="large text-green">
   {editingdata.card2}</p>
   </div>
 </Col>
-<Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3">
+<Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3 drop">
   <div className="roundedBox card bg-white p-4 h-100">
   <p className="large text-green">
   {editingdata.card3}</p>
@@ -189,6 +189,61 @@ return (
 
       </Row>
     </Container>
+    
+    <Container fluid className="z-999 bg-green py-5 mb-4">
+    <Row className="pt-5 align-items-center justify-content-center ">
+  <Col className="col-12 col-lg-5 pe-lg-0 mb-4">
+  <h2 className="text-center text-orange mb-2 bold">{editingdata.calculateheader}</h2>
+  <p className="text-center large text-white">{editingdata.calculatepara}</p>
+  </Col>
+      </Row>
+      <Row className="justify-content-center  pb-5 align-items-stretch mb-3">
+        <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
+          <div className="card bg-green border-mildgreen p-4 h-100">
+            <p className="h6 text-orange bold">
+              STEP 1
+            </p>
+            <p className="large text-white mb-3">
+          {editingdata.step1header}</p>
+          <p className="text-white mb-5">
+          {editingdata.step1para}</p>
+          <Button variant="green">      
+              {editingdata.calculatebutton1}
+        </Button>
+          </div>
+        </Col>
+        <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
+          <div className="card bg-green border-mildgreen p-4 h-100">
+            <p className="h6 text-orange bold">
+              STEP 2
+            </p>
+            <p className="large text-white mb-3">
+          {editingdata.step2header}</p>
+          <p className="text-white mb-5">
+          {editingdata.step2para}</p>
+          <Button variant="green">      
+              {editingdata.calculatebutton2}
+        </Button>
+          </div>
+        </Col>
+        <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
+          <div className="card bg-green border-mildgreen p-4 h-100">
+            <p className="h6 text-orange bold">
+              STEP 3
+            </p>
+            <p className="large text-white mb-3">
+          {editingdata.step3header}</p>
+          <p className="text-white mb-5">
+          {editingdata.step3para}</p>
+          <Button variant="green">      
+              {editingdata.calculatebutton3}
+        </Button>
+          </div>
+        </Col>
+
+        </Row>
+    </Container>
+    
 
   </main>
 
