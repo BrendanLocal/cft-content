@@ -86,19 +86,19 @@ return (
       <Row className="justify-content-center  pb-5 align-items-stretch mb-5">
         <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3">
           <div className="roundedBox card no-border bg-white p-4 h-100">
-            <p className="large text-green">
+            <p className="large text-green thin">
           {editingdata[Lang()].card1}</p>
           </div>
         </Col>
         <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3 ">
           <div className="roundedBox card no-border bg-white p-4 h-100">
-          <p className="large text-green">
+          <p className="large text-green thin">
           {editingdata[Lang()].card2}</p>
           </div>
         </Col>
         <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3">
           <div className="roundedBox card no-border bg-white p-4 h-100">
-          <p className="large text-green">
+          <p className="large text-green thin">
           {editingdata[Lang()].card3}</p>
           </div>
         </Col>
