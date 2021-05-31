@@ -193,8 +193,8 @@ return (
     <Container fluid className="z-999 bg-green py-5 mb-4">
     <Row className="pt-5 align-items-center justify-content-center ">
   <Col className="col-12 col-lg-5 pe-lg-0 mb-4">
-  <h2 className="text-center text-orange mb-2 bold">{editingdata.calculateheader}</h2>
-  <p className="text-center large text-white">{editingdata.calculatepara}</p>
+  <h2 className="text-center text-orange mb-2 bold">{editingdata[Lang()].calculateheader}</h2>
+  <p className="text-center large text-white">{editingdata[Lang()].calculatepara}</p>
   </Col>
       </Row>
       <Row className="justify-content-center  pb-5 align-items-stretch mb-3">
@@ -204,11 +204,11 @@ return (
               STEP 1
             </p>
             <p className="large text-white mb-3">
-          {editingdata.step1header}</p>
+          {editingdata[Lang()].step1header}</p>
           <p className="text-white mb-5">
-          {editingdata.step1para}</p>
+          {editingdata[Lang()].step1para}</p>
           <Button variant="green">      
-              {editingdata.calculatebutton1}
+              {editingdata[Lang()].calculatebutton1}
         </Button>
           </div>
         </Col>
@@ -218,11 +218,11 @@ return (
               STEP 2
             </p>
             <p className="large text-white mb-3">
-          {editingdata.step2header}</p>
+          {editingdata[Lang()].step2header}</p>
           <p className="text-white mb-5">
-          {editingdata.step2para}</p>
+          {editingdata[Lang()].step2para}</p>
           <Button variant="green">      
-              {editingdata.calculatebutton2}
+              {editingdata[Lang()].calculatebutton2}
         </Button>
           </div>
         </Col>
@@ -232,11 +232,11 @@ return (
               STEP 3
             </p>
             <p className="large text-white mb-3">
-          {editingdata.step3header}</p>
+          {editingdata[Lang()].step3header}</p>
           <p className="text-white mb-5">
-          {editingdata.step3para}</p>
+          {editingdata[Lang()].step3para}</p>
           <Button variant="green">      
-              {editingdata.calculatebutton3}
+              {editingdata[Lang()].calculatebutton3}
         </Button>
           </div>
         </Col>
