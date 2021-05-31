@@ -68,7 +68,7 @@ p {
 
 h1, .h1  {
   font-size: calc(5rem + 1.5vw);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 h1.drop, .h1.drop {
@@ -154,7 +154,7 @@ p.large {
 }
 
 p.lead {
-  font-size: 30px
+  font-size: 33px
 }
 
 
@@ -228,7 +228,7 @@ font-weight: 700;
 .btn:hover {
   color: #fff;
   transform: scale(1.05);
-  box-shadow: 2px 2px 8px rgba(54, 43, 38, 0.3);
+  box-shadow: 2px 2px 10px rgba(54, 43, 38, 0.4);
   transition: all .5s;
 }
 
@@ -454,6 +454,13 @@ padding: 10%;
 }
 
 
+/* Borders */
+
+.border-mildgreen {
+  border-radius: 1px solid #00823B!important; 
+}
+
+
 /* Header */
 
 .header {
@@ -474,12 +481,14 @@ padding: 10%;
 
 .logoHeader {
   width: 10vw;
+  text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.6);
 }
 
 .logo {
 height: 65px;
 max-height: 100%;
 max-width: initial;
+text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.6);
 }
 
 #menuIcon{
@@ -583,6 +592,9 @@ footer {
 
 /* Details */
 
+
+
+
 .slimlineBottom {
   border-bottom: solid 1px #00823B
 }
@@ -590,6 +602,11 @@ footer {
 .tight-drop {
   text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.6);
 }
+
+.big-drop {
+  text-shadow: 0px 1px 30px rgba(0, 0, 0, 100);
+}
+
 
 
 /* Sidebar */
@@ -950,6 +967,7 @@ font-size: .9em;
 
 .logo {
   height: 100%;
+  text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.6);
 }
 
 #sidebar.open {
