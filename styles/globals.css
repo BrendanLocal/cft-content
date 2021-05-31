@@ -945,6 +945,30 @@ select {
 margin: 5px;
 }
 
+.outlineBox {
+  border: solid 1px #00823B;
+}
+
+span.authorLine {
+  margin-left: 100px;
+  display: block;
+  font-weight: 200;
+  font-size: 1.5rem;
+  position: relative;
+}
+
+span.authorLine:before {
+  content: "-";
+  position: absolute;
+  left: -20px;
+  color: #fff;
+}
+
+span.authorTitle {
+  margin-left: 100px;
+  display: block;
+  font-weight: 200;
+}
 
 /* Calculator */
 

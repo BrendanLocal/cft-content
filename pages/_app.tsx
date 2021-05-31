@@ -25,6 +25,8 @@ import { PageTransition } from 'next-page-transitions'
 import { Provider } from 'next-auth/client'
 import { MarkdownFieldPlugin, HtmlFieldPlugin } from 'react-tinacms-editor'
 
+import 'swiper/swiper-bundle.css';
+
 
 export default class Site extends App {
 

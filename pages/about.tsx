@@ -85,8 +85,8 @@ return (
           <Row className="justify-content-center each-slide">
             <Col className="col-4 p-5 bg-white roundedBox">
               <p className="text-center thin">
-{editingdata.slide1}
-</p>
+              {editingdata.slide1}
+              </p>
 </Col>
           </Row>
           <Row className="justify-content-center each-slide">
