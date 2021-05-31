@@ -18,6 +18,17 @@
   "buildbutton2":"Build Your Smart Forest™",
   "portaltitle":"Your Smart Forest™",
   "portalpara":"CFT provides 24/7 access to an exclusive client portal that offers a number of options to engage with the progress of their Smart Forests TM growth as they measure and track its impact on the environment, economy and society. This forest learning hub will help you navigate how your Smart Forests TM are growing a cleaner, greener and more resilient Canada.",
-  "portalbutton":"Explore Your Smart Forest™"
+  "portalbutton":"Explore Your Smart Forest™",
+  "calculateheader":"Calculate Your Impact",
+  "calculatepara":"Try our unparalled calculator software to see what your impact could look like!",
+  "step1header":"Calculate Your Carbon",
+  "step1para":"Calculate how much carbon your corporation must offset to reach net-zero.",
+  "calculatebutton1":"ACTION",
+  "step2header":"Get to Net-Zero",
+  "step2para":"Calculate how much carbon your corporation must offset to reach net-zero.",
+  "calculatebutton2":"ACTION",
+  "step3header":"Go Net Negative",
+  "step3para":"Calculate how much carbon your corporation must offset to reach net-zero.",
+  "calculatebutton3":"ACTION"
 
 }
