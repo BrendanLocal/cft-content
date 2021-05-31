@@ -198,8 +198,8 @@ return (
 
       </Row>
     </Container>
-    <Container fluid className="z-999 bg-green pt-5">
-    <Row className="pt-5 pb-5 align-items-center justify-content-center  align-items-stretch protorow">
+    <Container fluid className="z-999 bg-green py-5">
+    <Row className="py-5 align-items-center justify-content-center  align-items-stretch protorow">
     
         <Col className="col-12 p-5 col-md-4 text-white">
         <h2 className="text-orange bold">{editingdata[Lang()].portaltitle}</h2>
