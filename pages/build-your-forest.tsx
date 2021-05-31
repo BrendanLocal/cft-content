@@ -522,6 +522,399 @@ return (
       </Row>
     </Container>
 
+{/* Legacy Forests */}
+
+<Container className="py-6">
+      <Row className="text-center justify-content-center">
+        <Col className="col-lg-6">
+        <h2 className="text-white bold py-3">
+          {editingdata.legacytitle}</h2>
+        </Col>
+      </Row>
+      <Row className=" text-center  justify-content-center">
+        <Col className="col-lg-7">
+        <Row className=" horizTab  justify-content-center">
+          <Col>
+          <Button variant="text text-orange smallCaps letterspace">{editingdata.schoolabout}</Button>
+          </Col>
+          <Col>
+          <Button variant="text text-orange smallCaps letterspace">{editingdata.schoolgrow}</Button>
+          </Col>
+          <Col>
+          <Button variant="text text-orange smallCaps letterspace">{editingdata.schooltesti}</Button>
+          </Col>
+          <Col>
+          <Button variant="text text-orange smallCaps letterspace">{editingdata.schoolbenefits}</Button>
+          </Col>
+        </Row>
+        </Col>
+      </Row>
+      <Row className="text-center justify-content-center">
+        <Col className="col-lg-7 py-5">
+        <p className="lead text-white bold">
+          {editingdata.schoolpara}
+        </p>
+        </Col>
+      </Row>
+
+      <Swiper spaceBetween={50} slidesPerView={3} navigation pagination={{ clickable: true }} onSlideChange={()=>
+        console.log('slide change')}
+        onSwiper={(swiper) => console.log(swiper)}
+        >
+
+        <Row className="py-5 align-items-stretch px-5">
+          <SwiperSlide>
+            <Col className="h-100">
+            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
+              <h4 className="thin text-green">{editingdata.corpcard1title}</h4>
+              <p className="flex-fill pb-3">{editingdata.corpcard1para}</p>
+              <Button variant="text text-left">{editingdata.corpcard1button}</Button>
+            </div>
+            </Col>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Col className="h-100">
+            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
+              <h4 className="thin text-green">{editingdata.corpcard2title}</h4>
+              <p className="flex-fill pb-3">{editingdata.corpcard2para}</p>
+              <Button variant="text text-left">{editingdata.corpcard2button}</Button>
+            </div>
+            </Col>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Col className="h-100">
+            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
+              <h4 className="thin text-green">{editingdata.corpcard3title}</h4>
+              <p className="flex-fill pb-3">{editingdata.corpcard3para}</p>
+              <Button variant="text text-left">{editingdata.corpcard3button}</Button>
+            </div>
+            </Col>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Col className="h-100">
+            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
+              <h4 className="thin text-green">{editingdata.corpcard4title}</h4>
+              <p className="flex-fill pb-3">{editingdata.corpcard4para}</p>
+              <Button variant="text text-left">{editingdata.corpcard4button}</Button>
+            </div>
+            </Col>
+          </SwiperSlide>
+
+        </Row>
+      </Swiper>
+
+
+
+      <Row>
+        <Col className="text-center py-5">
+        <Button variant="green">{editingdata.buildbutton}</Button></Col>
+      </Row>
+
+    </Container>
+    <Container className="py-6">
+      <Row className="justify-content-center">
+        <Col className="col-lg-4">
+        <h3 className="text-center text-orange bold">{editingdata.growtitle}</h3>
+        <p className="text-center text-white medium">{editingdata.growpara}</p>
+        </Col>
+      </Row>
+      <Row className="justify-content-center py-4">
+        <Col className="outlineBox text-white p-4 col-lg-3">
+        <span className="smallCaps small text-orange letterspace">
+          {editingdata.step1}
+        </span>
+        <h4 className="thin py-3">{editingdata.step1title}</h4>
+        <p>{editingdata.step1para}</p>
+        <Button variant="green">{editingdata.step1button}</Button>
+        </Col>
+        <Col className="outlineBox text-white p-4 col-lg-3">
+        <span className="smallCaps small text-orange letterspace">
+          {editingdata.step2}
+        </span>
+        <h4 className="thin py-3">{editingdata.step2title}</h4>
+        <p>{editingdata.step2para}</p>
+        <Button variant="green">{editingdata.step2button}</Button>
+        </Col>
+        <Col className="outlineBox text-white p-4 col-lg-3">
+        <span className="smallCaps small text-orange letterspace">
+          {editingdata.step3}
+        </span>
+        <h4 className="thin py-3">{editingdata.step3title}</h4>
+        <p>{editingdata.step3para}</p>
+        <Button variant="green">{editingdata.step3button}</Button>
+        </Col>
+      </Row>
+    </Container>
+    <Container fluid className="py-6">
+      <Row>
+        <Col className="text-center py-5">
+        <span className="smallCaps small text-white letterspace">{editingdata.corptesti}</span>
+        </Col>
+      </Row>
+      <Row className="justify-content-center">
+        <Col className="col-lg-8 bg-brown roundedBox p-5">
+        <Slide easing="ease" {...slideProperties}>
+        <Row className="justify-content-center each-slide px-5">
+            <Col className="p-5 text-white">
+              
+            <p className="text-orange large">
+              {editingdata.testi1para}
+            </p>
+            <span className="authorLine">{editingdata.testi1author}</span>
+            <span className="authorTitle">{editingdata.testi1authortitle}</span>
+</Col>
+          </Row>
+          <Row className="justify-content-center each-slide px-5">
+            <Col className="p-5 text-white">
+              
+            <p className="text-orange large">
+              {editingdata.testi2para}
+            </p>
+            <span className="authorLine">{editingdata.testi2author}</span>
+            <span className="authorTitle">{editingdata.testi2authortitle}</span>
+</Col>
+          </Row>
+
+        </Slide>
+        </Col>
+      </Row>
+
+    </Container>
+    <Container fluid className="py-6">
+    <Row>
+        <Col className="text-center py-3">
+        <span className="smallCaps small text-white letterspace">{editingdata.schoolbenefits}</span>
+        </Col>
+      </Row>
+    <Row className="justify-content-center">
+        <Col className=" col-6">
+        <p className="text-center text-orange large bold">{editingdata.schoolbenefitspara}</p></Col>
+      </Row>
+      <Row className="py-5 align-items-stretch justify-content-center">
+        <Col className="col-2">
+        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
+        <p className="flex-fill pb-3  medium">{editingdata.corpbenefits1para}</p>
+        </div>
+        </Col>
+        <Col className="col-2">
+        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
+        <p className="flex-fill pb-3 medium">{editingdata.corpbenefits2para}</p>
+        </div>
+        </Col>
+        <Col className="col-2">
+        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
+        <p className="flex-fill pb-3 medium">{editingdata.corpbenefits3para}</p>
+        </div>
+        </Col>
+        <Col className="col-2">
+        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
+        <p className="flex-fill pb-3  medium">{editingdata.corpbenefits4para}</p>
+        </div>
+        </Col>
+      </Row>
+      <Row>
+        <Col className="text-center">
+          <Button variant="green">{editingdata.schoolbuildbutton}</Button>
+        </Col>
+      </Row>
+    </Container>
+
+    {/* Communal Forests */}
+
+<Container className="py-6">
+      <Row className="text-center justify-content-center">
+        <Col className="col-lg-6">
+        <h2 className="text-white bold py-3">
+          {editingdata.communaltitle}</h2>
+        </Col>
+      </Row>
+      <Row className=" text-center  justify-content-center">
+        <Col className="col-lg-7">
+        <Row className=" horizTab  justify-content-center">
+          <Col>
+          <Button variant="text text-orange smallCaps letterspace">{editingdata.schoolabout}</Button>
+          </Col>
+          <Col>
+          <Button variant="text text-orange smallCaps letterspace">{editingdata.schoolgrow}</Button>
+          </Col>
+          <Col>
+          <Button variant="text text-orange smallCaps letterspace">{editingdata.schooltesti}</Button>
+          </Col>
+          <Col>
+          <Button variant="text text-orange smallCaps letterspace">{editingdata.schoolbenefits}</Button>
+          </Col>
+        </Row>
+        </Col>
+      </Row>
+      <Row className="text-center justify-content-center">
+        <Col className="col-lg-7 py-5">
+        <p className="lead text-white bold">
+          {editingdata.communalpara}
+        </p>
+        </Col>
+      </Row>
+
+      <Swiper spaceBetween={50} slidesPerView={3} navigation pagination={{ clickable: true }} onSlideChange={()=>
+        console.log('slide change')}
+        onSwiper={(swiper) => console.log(swiper)}
+        >
+
+        <Row className="py-5 align-items-stretch px-5">
+          <SwiperSlide>
+            <Col className="h-100">
+            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
+              <h4 className="thin text-green">{editingdata.corpcard1title}</h4>
+              <p className="flex-fill pb-3">{editingdata.corpcard1para}</p>
+              <Button variant="text text-left">{editingdata.corpcard1button}</Button>
+            </div>
+            </Col>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Col className="h-100">
+            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
+              <h4 className="thin text-green">{editingdata.corpcard2title}</h4>
+              <p className="flex-fill pb-3">{editingdata.corpcard2para}</p>
+              <Button variant="text text-left">{editingdata.corpcard2button}</Button>
+            </div>
+            </Col>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Col className="h-100">
+            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
+              <h4 className="thin text-green">{editingdata.corpcard3title}</h4>
+              <p className="flex-fill pb-3">{editingdata.corpcard3para}</p>
+              <Button variant="text text-left">{editingdata.corpcard3button}</Button>
+            </div>
+            </Col>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Col className="h-100">
+            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
+              <h4 className="thin text-green">{editingdata.corpcard4title}</h4>
+              <p className="flex-fill pb-3">{editingdata.corpcard4para}</p>
+              <Button variant="text text-left">{editingdata.corpcard4button}</Button>
+            </div>
+            </Col>
+          </SwiperSlide>
+
+        </Row>
+      </Swiper>
+
+
+
+      <Row>
+        <Col className="text-center py-5">
+        <Button variant="green">{editingdata.buildbutton}</Button></Col>
+      </Row>
+
+    </Container>
+    <Container className="py-6">
+      <Row className="justify-content-center">
+        <Col className="col-lg-4">
+        <h3 className="text-center text-orange bold">{editingdata.growtitle}</h3>
+        <p className="text-center text-white medium">{editingdata.growpara}</p>
+        </Col>
+      </Row>
+      <Row className="justify-content-center py-4">
+        <Col className="outlineBox text-white p-4 col-lg-3">
+        <span className="smallCaps small text-orange letterspace">
+          {editingdata.step1}
+        </span>
+        <h4 className="thin py-3">{editingdata.step1title}</h4>
+        <p>{editingdata.step1para}</p>
+        <Button variant="green">{editingdata.step1button}</Button>
+        </Col>
+        <Col className="outlineBox text-white p-4 col-lg-3">
+        <span className="smallCaps small text-orange letterspace">
+          {editingdata.step2}
+        </span>
+        <h4 className="thin py-3">{editingdata.step2title}</h4>
+        <p>{editingdata.step2para}</p>
+        <Button variant="green">{editingdata.step2button}</Button>
+        </Col>
+        <Col className="outlineBox text-white p-4 col-lg-3">
+        <span className="smallCaps small text-orange letterspace">
+          {editingdata.step3}
+        </span>
+        <h4 className="thin py-3">{editingdata.step3title}</h4>
+        <p>{editingdata.step3para}</p>
+        <Button variant="green">{editingdata.step3button}</Button>
+        </Col>
+      </Row>
+    </Container>
+    <Container fluid className="py-6">
+      <Row>
+        <Col className="text-center py-5">
+        <span className="smallCaps small text-white letterspace">{editingdata.corptesti}</span>
+        </Col>
+      </Row>
+      <Row className="justify-content-center">
+        <Col className="col-lg-8 bg-brown roundedBox p-5">
+        <Slide easing="ease" {...slideProperties}>
+        <Row className="justify-content-center each-slide px-5">
+            <Col className="p-5 text-white">
+              
+            <p className="text-orange large">
+              {editingdata.testi1para}
+            </p>
+            <span className="authorLine">{editingdata.testi1author}</span>
+            <span className="authorTitle">{editingdata.testi1authortitle}</span>
+</Col>
+          </Row>
+          <Row className="justify-content-center each-slide px-5">
+            <Col className="p-5 text-white">
+              
+            <p className="text-orange large">
+              {editingdata.testi2para}
+            </p>
+            <span className="authorLine">{editingdata.testi2author}</span>
+            <span className="authorTitle">{editingdata.testi2authortitle}</span>
+</Col>
+          </Row>
+
+        </Slide>
+        </Col>
+      </Row>
+
+    </Container>
+    <Container fluid className="py-6">
+    <Row>
+        <Col className="text-center py-3">
+        <span className="smallCaps small text-white letterspace">{editingdata.schoolbenefits}</span>
+        </Col>
+      </Row>
+    <Row className="justify-content-center">
+        <Col className=" col-6">
+        <p className="text-center text-orange large bold">{editingdata.schoolbenefitspara}</p></Col>
+      </Row>
+      <Row className="py-5 align-items-stretch justify-content-center">
+        <Col className="col-2">
+        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
+        <p className="flex-fill pb-3  medium">{editingdata.corpbenefits1para}</p>
+        </div>
+        </Col>
+        <Col className="col-2">
+        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
+        <p className="flex-fill pb-3 medium">{editingdata.corpbenefits2para}</p>
+        </div>
+        </Col>
+        <Col className="col-2">
+        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
+        <p className="flex-fill pb-3 medium">{editingdata.corpbenefits3para}</p>
+        </div>
+        </Col>
+        <Col className="col-2">
+        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
+        <p className="flex-fill pb-3  medium">{editingdata.corpbenefits4para}</p>
+        </div>
+        </Col>
+      </Row>
+      <Row>
+        <Col className="text-center">
+          <Button variant="green">{editingdata.schoolbuildbutton}</Button>
+        </Col>
+      </Row>
+    </Container>
 
   </main>
 </div>
