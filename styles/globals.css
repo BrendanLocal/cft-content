@@ -349,14 +349,51 @@ text-decoration: underline;
   font-size: 10px!important;
     position: fixed; 
     z-index: 1; 
-    top: 36%; 
-    left: 15px;
+    top: 37%; 
+    left: 14px;
     overflow-x: hidden;
   }
 
-.left-sidenav-header {
+.left-sidenav p {
   font-size: 12px!important;
 }
+
+.left-sidenav a {
+  display: block;
+  text-indent: -9999px;
+  width: 17px;
+  height: 17px;
+  background-size: 17px 17px;
+  background: url("/left-nav-circle.svg");
+  margin: 5px;
+  white-space: nowrap;
+  opacity: 45%;
+}
+
+.left-sidenav a:hover {
+  display: block;
+  text-indent: 22px;
+  width: 17px;
+  height: 17px;
+  background-size: 17px 17px;
+  background: url("/left-nav-circle-hover.svg");
+  margin: 5px;
+  white-space: nowrap;
+  opacity: 60%;
+}
+
+.left-sidenav a.active {
+  display: block;
+  text-indent: 22px;
+  width: 17px;
+  height: 17px;
+  background-size: 17px 17px;
+  background: url("/left-nav-circle-active.svg");
+  margin: 5px;
+  white-space: nowrap;
+  opacity: 100%;
+}
+
 
 
 

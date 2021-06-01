@@ -56,55 +56,37 @@ return (
     <meta name="theme-color" content="#054218"></meta>
   </Head>
 
-  <Row className="justify-content-left p-0 m-0">
+  <Row className="justify-content-left p-0 m-0 d-none d-lg-block">
         <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
-          <p className="text-white m-2 bold op-6 left-sidenav-header">HOME</p>
+          <p className="text-white m-2 bold op-6 ">HOME</p>
           <ul>
-            <li id="active" className="p-0">
-              <svg className="m-1" width="17" height="17" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M11.5 23C17.8513 23 23 17.8513 23 11.5C23 5.14873 17.8513 0 11.5 0C5.14873 0 0 5.14873 0 11.5C0 17.8513 5.14873 23 11.5 23Z" fill="#FF4D24"/>
-              </svg>
-              <a href="#intro" className="text-white bold no-underline">
+            <li className="p-0">
+              <a href="#intro" className="text-white bold no-underline active">
                INTRO
               </a>
             </li>
-            <li id="hover" className="p-0">
-              <svg className="op-6 m-1" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="8.5" cy="8.5" r="7" fill="white" stroke="white" stroke-width="3"/>
-              </svg>
-              <a href="#our-smart-forests" className="text-white bold no-underline op-6">
+            <li className="p-0">              
+              <a href="#our-smart-forests" className="text-white bold no-underline">
                 OUR SMART FORESTS
               </a>
-            </li >
-            <li id="inactive" className="p-0">
-              <svg className="op-4 m-1" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M8.5 14C11.5376 14 14 11.5376 14 8.5C14 5.46243 11.5376 3 8.5 3C5.46243 3 3 5.46243 3 8.5C3 11.5376 5.46243 14 8.5 14ZM8.5 17C13.1944 17 17 13.1944 17 8.5C17 3.80558 13.1944 0 8.5 0C3.80558 0 0 3.80558 0 8.5C0 13.1944 3.80558 17 8.5 17Z" fill="white"/>
-              </svg>
-              <a href="#unlock-the-forest" className="text-white bold no-underline op-0">
+            </li>
+            <li className="p-0">
+              <a href="#unlock-the-forest" className="text-white bold no-underline ">
                 UNLOCK THE FOREST
               </a>
             </li>
-            <li id="inactive" className="p-0">
-              <svg className="op-4 m-1" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M8.5 14C11.5376 14 14 11.5376 14 8.5C14 5.46243 11.5376 3 8.5 3C5.46243 3 3 5.46243 3 8.5C3 11.5376 5.46243 14 8.5 14ZM8.5 17C13.1944 17 17 13.1944 17 8.5C17 3.80558 13.1944 0 8.5 0C3.80558 0 0 3.80558 0 8.5C0 13.1944 3.80558 17 8.5 17Z" fill="white"/>
-              </svg>
-              <a href="#build-a-forest" className="text-white bold no-underline op-0">
+            <li className="p-0">             
+              <a href="#build-a-forest" className="text-white bold no-underline ">
                 BUILD A FOREST
               </a>
             </li>
-            <li id="inactive" className="p-0">
-              <svg className="op-4 m-1" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M8.5 14C11.5376 14 14 11.5376 14 8.5C14 5.46243 11.5376 3 8.5 3C5.46243 3 3 5.46243 3 8.5C3 11.5376 5.46243 14 8.5 14ZM8.5 17C13.1944 17 17 13.1944 17 8.5C17 3.80558 13.1944 0 8.5 0C3.80558 0 0 3.80558 0 8.5C0 13.1944 3.80558 17 8.5 17Z" fill="white"/>
-              </svg>
-              <a href="#explore-your-forest" className="text-white bold no-underline op-0">
+            <li className="p-0">              
+              <a href="#explore-your-forest" className="text-white bold no-underline ">
                 EXPLORE YOUR FOREST
               </a>
             </li>
-            <li id="inactive" className="p-0">
-              <svg className="op-4 m-1" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M8.5 14C11.5376 14 14 11.5376 14 8.5C14 5.46243 11.5376 3 8.5 3C5.46243 3 3 5.46243 3 8.5C3 11.5376 5.46243 14 8.5 14ZM8.5 17C13.1944 17 17 13.1944 17 8.5C17 3.80558 13.1944 0 8.5 0C3.80558 0 0 3.80558 0 8.5C0 13.1944 3.80558 17 8.5 17Z" fill="white"/>
-              </svg>
-              <a href="#calculate-impact" className="text-white bold no-underline op-0">
+            <li className="p-0">  
+              <a href="#calculate-impact" className="text-white bold no-underline ">
                 CALCULATE YOUR IMPACT
               </a>
             </li>
@@ -113,10 +95,10 @@ return (
       </Row>
 
 
-  <main>
+  <main id="intro">
   
     
-      <img id="intro" className="rellax parallaxLayers" src="/landingSKY.png" alt="SKY"
+      <img className="rellax parallaxLayers" src="/landingSKY.png" alt="SKY"
       data-rellax-speed="-15"></img>
     
 
