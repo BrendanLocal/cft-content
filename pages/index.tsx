@@ -26,19 +26,6 @@ var language = "en";
 }
 
 
-/** LEFT SIDE NAV
- * see 'build a smart forest' figma prototype for detail/interaction
- * 
- * id="intro"
- * id="our-smart-forests" 
- * id="unlock-the-forest"
- * id="build-a-forest"
- * id="explore-your-forest"
- * id="calculate-impact" 
-
-
-*/  
-
 
 export default function Home({ file }) {
 
@@ -123,6 +110,63 @@ return (
         <Button variant="green">{editingdata[Lang()].buildbutton}</Button>
         </Col>
       </Row>
+
+      <Row className="justify-content-left p-0 m-0">
+        <Col className="col-lg-2 pe-lg-0 p-0 m-0">
+          <h6 className="text-white mb-3 bold">HOME</h6>
+          <ul className="left-side-nav">
+            <li id="active" className="m-1">
+              <svg width="17" height="17" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M11.5 23C17.8513 23 23 17.8513 23 11.5C23 5.14873 17.8513 0 11.5 0C5.14873 0 0 5.14873 0 11.5C0 17.8513 5.14873 23 11.5 23Z" fill="#FF4D24"/>
+              </svg>
+              <a href="#intro" className="text-white bold no-underline m-2">
+               INTRO
+              </a>
+            </li>
+            <li id="hover" className="m-1">
+              <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="8.5" cy="8.5" r="7" fill="white" stroke="white" stroke-width="3"/>
+              </svg>
+              <a href="#our-smart-forests" className="text-white bold no-underline m-2 op-4">
+                OUR SMART FORESTS
+              </a>
+            </li>
+            <li id="inactive" className="m-1">
+              <svg className="op-4" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M8.5 14C11.5376 14 14 11.5376 14 8.5C14 5.46243 11.5376 3 8.5 3C5.46243 3 3 5.46243 3 8.5C3 11.5376 5.46243 14 8.5 14ZM8.5 17C13.1944 17 17 13.1944 17 8.5C17 3.80558 13.1944 0 8.5 0C3.80558 0 0 3.80558 0 8.5C0 13.1944 3.80558 17 8.5 17Z" fill="white"/>
+              </svg>
+              <a href="#unlock-the-forest" className="text-white bold no-underline m-2 op-0">
+                UNLOCK THE FOREST
+              </a>
+            </li>
+            <li id="inactive" className="m-1">
+              <svg className="op-4" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M8.5 14C11.5376 14 14 11.5376 14 8.5C14 5.46243 11.5376 3 8.5 3C5.46243 3 3 5.46243 3 8.5C3 11.5376 5.46243 14 8.5 14ZM8.5 17C13.1944 17 17 13.1944 17 8.5C17 3.80558 13.1944 0 8.5 0C3.80558 0 0 3.80558 0 8.5C0 13.1944 3.80558 17 8.5 17Z" fill="white"/>
+              </svg>
+              <a href="#build-a-forest" className="text-white bold no-underline m-2 op-0">
+                BUILD A FOREST
+              </a>
+            </li>
+            <li id="inactive" className="m-1">
+              <svg className="op-4" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M8.5 14C11.5376 14 14 11.5376 14 8.5C14 5.46243 11.5376 3 8.5 3C5.46243 3 3 5.46243 3 8.5C3 11.5376 5.46243 14 8.5 14ZM8.5 17C13.1944 17 17 13.1944 17 8.5C17 3.80558 13.1944 0 8.5 0C3.80558 0 0 3.80558 0 8.5C0 13.1944 3.80558 17 8.5 17Z" fill="white"/>
+              </svg>
+              <a href="#explore-your-forest" className="text-white bold no-underline m-2 op-0">
+                EXPLORE YOUR FOREST
+              </a>
+            </li>
+            <li id="inactive" className="m-1">
+              <svg className="op-4" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M8.5 14C11.5376 14 14 11.5376 14 8.5C14 5.46243 11.5376 3 8.5 3C5.46243 3 3 5.46243 3 8.5C3 11.5376 5.46243 14 8.5 14ZM8.5 17C13.1944 17 17 13.1944 17 8.5C17 3.80558 13.1944 0 8.5 0C3.80558 0 0 3.80558 0 8.5C0 13.1944 3.80558 17 8.5 17Z" fill="white"/>
+              </svg>
+              <a href="#calculate-impact" className="text-white bold no-underline m-2 op-0">
+                CALCULATE YOUR IMPACT
+              </a>
+            </li>
+          </ul>        
+        </Col>
+      </Row>
+      
 
     </Container>
 

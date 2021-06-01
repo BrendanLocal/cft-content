@@ -343,6 +343,13 @@ text-decoration: underline;
 }
 
 
+/* Left Side Nav */
+
+.left-side-nav {
+  font-size: 11px!important;
+}
+
+
 /* Containers */
 
 .v-full {
@@ -693,6 +700,9 @@ footer {
   border: 0px!important;
 }
 
+.no-underline {
+  text-decoration: none!important;
+}
 
 .slimlineBottom {
   border-bottom: solid 1px #00823B
