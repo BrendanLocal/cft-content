@@ -345,9 +345,19 @@ text-decoration: underline;
 
 /* Left Side Nav */
 
-.left-side-nav {
-  font-size: 11px!important;
+.left-sidenav {
+  font-size: 10px!important;
+    position: fixed; 
+    z-index: 1; 
+    top: 36%; 
+    left: 15px;
+    overflow-x: hidden;
+  }
+
+.left-sidenav-header {
+  font-size: 12px!important;
 }
+
 
 
 /* Containers */
