@@ -26,6 +26,19 @@ var language = "en";
 }
 
 
+/** LEFT SIDE NAV
+ * see 'build a smart forest' figma prototype for detail/interaction
+ * 
+ * id="intro"
+ * id="our-smart-forests" 
+ * id="unlock-the-forest"
+ * id="build-a-forest"
+ * id="explore-your-forest"
+ * id="calculate-impact" 
+
+
+*/  
+
 
 export default function Home({ file }) {
 
@@ -59,12 +72,15 @@ return (
   <main>
   
     
-      <img className="rellax parallaxLayers" src="/landingSKY.png" alt="SKY"
+      <img id="intro" className="rellax parallaxLayers" src="/landingSKY.png" alt="SKY"
       data-rellax-speed="-15"></img>
     
 
-<img className="rellax parallaxLayers" src="/landingLAND.png" alt="LAND"
+      <img className="rellax parallaxLayers" src="/landingLAND.png" alt="LAND"
       data-rellax-speed="-12"></img>
+ 
+
+
     <Container className="v-full d-flex py-5 flex-column z-0">
       <Row className="justify-content-center pt-5 align-items-center">
         <Col className="col-12 col-lg-8 col-xl-6 p-3 pt-5 p-md-1">
@@ -111,7 +127,7 @@ return (
     </Container>
 
     
-    <Container fluid className="z-999 bg-green py-5">
+    <Container id="our-smart-forests" fluid className="z-999 bg-green py-5">
       <Row className="pt-5 align-items-center justify-content-center">
         <Col className="col-12 col-lg-6 pe-lg-0 mt-5">
           <h2 className="text-center text-orange bold">{editingdata[Lang()].smarttitle}</h2>
@@ -150,7 +166,7 @@ return (
       </Row>
     </Container>
 
-    <Container fluid className="py-5 z-999 bg-green align-items-center">
+    <Container id="unlock-the-forest"  fluid className="py-5 z-999 bg-green align-items-center">
       <Row className="py-5 align-items-center justify-content-center ">
         
         <Col className="order-2 order-lg-1 col-12 p-5 col-md-4 text-white">
@@ -179,7 +195,7 @@ return (
       </Row>
     </Container>
 
-    <Container fluid className="z-999 bg-green pb-5">
+    <Container id="build-a-forest" fluid className="z-999 bg-green pb-5">
     <Row className="py-5 align-items-center justify-content-center ">
     <Col className="col-12 col-md-4 p-5">
         
@@ -198,7 +214,7 @@ return (
 
       </Row>
     </Container>
-    <Container fluid className="z-999 bg-green py-5">
+    <Container id="explore-your-forest" fluid className="z-999 bg-green py-5">
     <Row className="py-5 align-items-center justify-content-center  align-items-stretch protorow">
     
         <Col className="col-12 p-5 col-md-4 text-white">
@@ -215,7 +231,7 @@ return (
       </Row>
     </Container>
     
-    <Container fluid className="z-999 bg-green py-5 mb-4">
+    <Container id="calculate-impact" fluid className="z-999 bg-green py-5 mb-4">
     <Row className="pt-5 align-items-center justify-content-center ">
   <Col className="col-12 col-lg-5 pe-lg-0 mb-4">
   <h2 className="text-center text-orange mb-2 bold">{editingdata[Lang()].calculateheader}</h2>
