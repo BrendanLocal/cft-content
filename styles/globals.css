@@ -1107,7 +1107,7 @@ span.authorTitle {
 
 .corporate-card button:hover {
   transform: translateX(3px);
-  transition: all .3s ease;
+  transition: all .5s ease;
 }
 
 .school-card {
@@ -1137,7 +1137,7 @@ span.authorTitle {
 
 .school-card button:hover {
 transform: translateX(3px);
-transition: all .3s ease;
+transition: all .5s ease;
 }
 
 
@@ -1168,7 +1168,7 @@ transition: all .3s ease;
 
 .legacy-card button:hover {
 transform: translateX(3px);
-transition: all .3s ease;
+transition: all .5s ease;
 }
 
 
@@ -1200,7 +1200,7 @@ transition: all .3s ease;
 
 .communal-card button:hover {
 transform: translateX(3px);
-transition: all .3s ease;
+transition: all .5s ease;
 }
 
 
