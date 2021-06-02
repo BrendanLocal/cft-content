@@ -167,30 +167,30 @@ return (
       <Row className="justify-content-center pb-5 align-items-stretch">
       <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
-        <h4 className="text-white">{editingdata[Lang()].card1title}<span className="text-orange">™</span></h4>
-        <p className="flex-fill pb-3 text-white">{editingdata[Lang()].card1para}</p>
-        <Button variant="text text-left text-orange bold no-underline">{editingdata[Lang()].learnmore}</Button>
+        <h4 className="text-white tight-drop-light">{editingdata[Lang()].card1title}<span className="text-orange">™</span></h4>
+        <p className="flex-fill pb-3 text-white tight-drop">{editingdata[Lang()].card1para}</p>
+        <Button variant="text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</Button>
         </div>
         </Col>
         <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
-        <h4 className="text-white">{editingdata[Lang()].card2title}<span className="text-orange">™</span></h4>
-        <p className="flex-fill pb-3 text-white">{editingdata[Lang()].card2para}</p>
-        <Button variant="text text-left text-orange bold no-underline">{editingdata[Lang()].learnmore}</Button>
+        <h4 className="text-white tight-drop-light">{editingdata[Lang()].card2title}<span className="text-orange">™</span></h4>
+        <p className="flex-fill pb-3 text-white tight-drop">{editingdata[Lang()].card2para}</p>
+        <Button variant="text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</Button>
         </div>
         </Col>
         <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
-        <h4 className="text-white">{editingdata[Lang()].card3title}<span className="text-orange">™</span></h4>
-        <p className="flex-fill pb-3 text-white">{editingdata[Lang()].card3para}</p>
-        <Button variant="text text-left text-orange bold no-underline">{editingdata[Lang()].learnmore}</Button>
+        <h4 className="text-white tight-drop-light">{editingdata[Lang()].card3title}<span className="text-orange">™</span></h4>
+        <p className="flex-fill pb-3 text-white tight-drop">{editingdata[Lang()].card3para}</p>
+        <Button variant="text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</Button>
         </div>
         </Col>
         <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop communal-card">
-        <h4 className="text-white">{editingdata[Lang()].card4title}<span className="text-orange">™</span></h4>
-        <p className="flex-fill pb-3 text-white">{editingdata[Lang()].card4para}</p>
-        <Button variant="text text-left text-orange bold no-underline">{editingdata[Lang()].learnmore}</Button>
+        <h4 className="text-white tight-drop-light">{editingdata[Lang()].card4title}<span className="text-orange">™</span></h4>
+        <p className="flex-fill pb-3 text-white tight-drop">{editingdata[Lang()].card4para}</p>
+        <Button variant="text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</Button>
         </div>
         </Col>
       </Row>
@@ -273,7 +273,7 @@ return (
             <p className="h6 text-orange bold">
               STEP 1
             </p>
-            <p className="large text-white mb-3 thin">
+            <p className="large text-white mb-3 bold">
           {editingdata[Lang()].step1header}</p>
           <p className="text-white mb-5">
           {editingdata[Lang()].step1para}</p>
@@ -287,7 +287,7 @@ return (
             <p className="h6 text-orange bold">
               STEP 2
             </p>
-            <p className="large text-white mb-3 thin">
+            <p className="large text-white mb-3 bold">
           {editingdata[Lang()].step2header}</p>
           <p className="text-white mb-5">
           {editingdata[Lang()].step2para}</p>
@@ -301,7 +301,7 @@ return (
             <p className="h6 text-orange bold">
               STEP 3
             </p>
-            <p className="large text-white mb-3 thin">
+            <p className="large text-white mb-3 bold">
           {editingdata[Lang()].step3header}</p>
           <p className="text-white mb-5">
           {editingdata[Lang()].step3para}</p>

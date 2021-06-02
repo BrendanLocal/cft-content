@@ -114,6 +114,8 @@ font-weight: 600;
   font-weight: 700;
 }
 
+.
+
 a:hover {
 color: #fff;
 }
@@ -758,6 +760,10 @@ footer {
 
 .tight-drop {
   text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+.tight-drop-light {
+  text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.3);
 }
 
 .big-drop {
