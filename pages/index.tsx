@@ -27,9 +27,11 @@ var language = "en";
 
 
 
-export default function Home({ file }) {
+export default function Home({ file, href, children}) {
 
+  const router = useRouter();
 
+  
 const formOptions = {
 label: 'Home Page',
 fields: [{ name: 'title', component: 'text' }],
@@ -44,7 +46,9 @@ useEffect(() => {
   new Rellax(".rellax");
   var scene = document.getElementById('scene');
 var parallaxInstance = new Parallax(scene);
+
 }, []);
+
 
 
 return (
@@ -61,7 +65,7 @@ return (
           <p className="text-white m-2 bold op-6 ">HOME</p>
           <ul>
             <li className="p-0">
-              <a href="#intro" className="text-white bold no-underline active">
+              <a href="#intro" className="active text-white bold no-underline">
                INTRO
               </a>
             </li>
@@ -224,10 +228,9 @@ return (
     <Container id="build-a-forest" fluid className="z-999 bg-green pb-5">
     <Row className="py-5 align-items-center justify-content-center ">
     <Col className="col-12 col-md-4 p-5">
+
         
-<div className="px-5 whiteFloat" data-relative-input="true">
-      <img className="pos-absolute" data-depth=".2" src="/BUILD-animated.svg"></img>
-          </div>
+      <img className="h-100" src="/build-svg.svg"></img>
                 </Col>
         <Col className="col-12 p-5 col-md-4 text-white">
         <h2 className="text-orange bold">{editingdata[Lang()].buildtitle}</h2>
