@@ -13,6 +13,8 @@ import styles from '../styles/Home.module.css'
 import Rellax from "rellax";
 import Parallax from 'parallax-js'
 
+import Fade from 'react-reveal/Fade';
+
 
 const Lang = () => {
 var language = "en";
@@ -44,8 +46,26 @@ useGithubToolbarPlugins()
 
 useEffect(() => {
   new Rellax(".rellax");
-  var scene = document.getElementById('scene');
-var parallaxInstance = new Parallax(scene);
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const id = entry.target.getAttribute('id');
+    if (entry.intersectionRatio >= 0.01 ) {
+      if (document.querySelector(`.left-sidenav a[href="#${id}"]`)){
+      document.querySelector(`.left-sidenav a[href="#${id}"]`).classList.add('active');
+      }
+    } else {
+      if (document.querySelector(`.left-sidenav a[href="#${id}"]`)){
+      document.querySelector(`.left-sidenav a[href="#${id}"]`).classList.remove('active');
+      }
+    }
+  });
+});
+
+// Track all div containers that have an `id` applied
+document.querySelectorAll('div[id]').forEach((section) => {
+  observer.observe(section);
+});
 
 }, []);
 
@@ -65,7 +85,7 @@ return (
           <p className="text-white m-2 bold op-6 ">HOME</p>
           <ul>
             <li className="p-0">
-              <a href="#intro" className="active text-white bold no-underline">
+              <a href="#intro" className="text-white bold no-underline">
                INTRO
               </a>
             </li>
@@ -111,7 +131,7 @@ return (
  
 
 
-    <Container className="v-full d-flex py-5 flex-column z-0">
+    <Container fluid id="intro" className="v-full d-flex py-5 flex-column z-0">
       <Row className="justify-content-center pt-5 align-items-center">
         <Col className="col-12 col-lg-8 col-xl-6 p-3 pt-5 p-md-1">
         <h1 className="my-5 pt-5 text-white drop bold">
@@ -157,7 +177,7 @@ return (
     </Container>
 
     
-    <Container id="our-smart-forests" fluid className="z-999 bg-green py-5">
+    <Container id="our-smart-forests" fluid className="v-full z-999 bg-green py-5">
       <Row className="pt-5 align-items-center justify-content-center">
         <Col className="col-12 col-lg-6 pe-lg-0 mt-5">
           <h2 className="text-center text-orange bold">{editingdata[Lang()].smarttitle}</h2>
@@ -196,7 +216,7 @@ return (
       </Row>
     </Container>
 
-    <Container id="unlock-the-forest"  fluid className="py-5 z-999 bg-green align-items-center">
+    <Container id="unlock-the-forest"  fluid className="v-full py-5 z-999 bg-green align-items-center">
       <Row className="py-5 align-items-center justify-content-center ">
         
         <Col className="order-2 order-lg-1 col-12 p-5 col-md-4 text-white">
@@ -208,29 +228,19 @@ return (
         </Col>
         <Col className="order-1 order-lg-2 col-12 col-md-4 p-5">
         
-<div className="p-5 whiteFloat" data-relative-input="true" id="scene">
-<img className="op-0" data-depth="-1" src="/cft-c.svg"></img>
-<img className="op-3" data-depth="-.5" src="/cft-c.svg"></img>
-
-<img className="op-5" data-depth="-.3" src="/cft-c.svg"></img>
-
-<img className="op-7" data-depth="0" src="/cft-c.svg"></img>
-
-<img className="" data-depth=".3" src="/cft-c.svg"></img>
-
-<img className="" data-depth=".5" src="/cft-c.svg"></img>
-</div>
+        <object type="image/svg+xml" data="/power-svg.svg"/>
         </Col>
 
       </Row>
     </Container>
 
-    <Container id="build-a-forest" fluid className="z-999 bg-green pb-5">
+    <Container id="build-a-forest" fluid className="v-full z-999 bg-green pb-5">
     <Row className="py-5 align-items-center justify-content-center ">
     <Col className="col-12 col-md-4 p-5">
 
-        
-      <img className="h-100" src="/build-svg.svg"></img>
+    <Fade up>
+    <object type="image/svg+xml" data="/build-svg-js.svg"/>
+      </Fade>
                 </Col>
         <Col className="col-12 p-5 col-md-4 text-white">
         <h2 className="text-orange bold">{editingdata[Lang()].buildtitle}</h2>
@@ -243,7 +253,7 @@ return (
 
       </Row>
     </Container>
-    <Container id="explore-your-forest" fluid className="z-999 bg-green py-5">
+    <Container id="explore-your-forest" fluid className="v-full z-999 bg-green py-5">
     <Row className="py-5 align-items-center justify-content-center  align-items-stretch protorow">
     
         <Col className="col-12 p-5 col-md-4 text-white">
@@ -260,8 +270,8 @@ return (
       </Row>
     </Container>
     
-    <Container id="calculate-impact" fluid className="z-999 bg-green py-5 mb-4">
-    <Row className="pt-5 align-items-center justify-content-center">
+    <Container id="calculate-impact" fluid className="v-full z-999 bg-green py-5 mb-4">
+    <Row className="pt-5 align-items-center justify-content-center ">
   <Col className="col-12 col-lg-5 pe-lg-0 mb-4">
   <h2 className="text-center text-orange mb-2 bold">{editingdata[Lang()].calculateheader}</h2>
   <p className="text-center large text-white thin">{editingdata[Lang()].calculatepara}</p>
