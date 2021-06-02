@@ -261,7 +261,7 @@ return (
     </Container>
     
     <Container id="calculate-impact" fluid className="z-999 bg-green py-5 mb-4">
-    <Row className="pt-5 align-items-center justify-content-center ">
+    <Row className="pt-5 align-items-center justify-content-center">
   <Col className="col-12 col-lg-5 pe-lg-0 mb-4">
   <h2 className="text-center text-orange mb-2 bold">{editingdata[Lang()].calculateheader}</h2>
   <p className="text-center large text-white thin">{editingdata[Lang()].calculatepara}</p>
@@ -269,7 +269,7 @@ return (
       </Row>
       <Row className="justify-content-center  pb-5 align-items-stretch mb-5">
         <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
-          <div className="card bg-green p-4 h-100">
+          <div className="card bg-green p-4 h-100 calculate-card">
             <p className="h6 text-orange bold">
               STEP 1
             </p>
@@ -283,7 +283,7 @@ return (
           </div>
         </Col>
         <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
-          <div className="card bg-green p-4 h-100">
+          <div className="card bg-green p-4 h-100 calculate-card">
             <p className="h6 text-orange bold">
               STEP 2
             </p>
@@ -297,7 +297,7 @@ return (
           </div>
         </Col>
         <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
-          <div className="card bg-green p-4 h-100">
+          <div className="card bg-green p-4 h-100 calculate-card">
             <p className="h6 text-orange bold">
               STEP 3
             </p>
