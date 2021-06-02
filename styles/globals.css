@@ -257,7 +257,7 @@ font-weight: 700;
 .btn:hover {
   color: #fff;
   transform: scale(1.05);
-  box-shadow: 2px 2px 10px rgba(54, 43, 38, 0.4);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
   transition: all .5s;
 }
 
@@ -393,7 +393,6 @@ text-decoration: underline;
   white-space: nowrap;
   opacity: 100%;
 }
-
 
 
 
@@ -603,6 +602,8 @@ padding: 10%;
 .outerShadow {
   box-shadow: 0 2px 24px rgba(0,0,0,.3);
 }
+
+
 
 
 /* Borders */
@@ -1057,6 +1058,106 @@ span.authorTitle {
   margin-left: 100px;
   display: block;
   font-weight: 200;
+}
+
+/* Card Details */
+
+.card-drop {
+  box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-drop-heavy {
+  box-shadow: 0px 2px 20px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Our Smart Forests Cards */
+
+.corporate-card {
+    background: url('/corporate-smart-forest-lopacity.png');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
+}
+
+.corporate-card button {
+  font-weight: 900!important;
+}
+
+.corporate-card button:hover {
+  transform: translateX(0px);
+  transition: all .2s;
+}
+
+.corporate-card:hover {
+  box-shadow: 0px 2px 20px 6px rgba(0, 0, 0, 0.2);
+  transition: all .5s;
+}
+
+.school-card {
+  background: url('/school-smart-forest-lopacity.png');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
+
+}
+
+.school-card button {
+  font-weight: 900!important;
+}
+
+.school-card button:hover {
+  transform: translateX(0px);
+  transition: all .2s;
+}
+
+.school-card:hover {
+  box-shadow: 0px 2px 20px 6px rgba(0, 0, 0, 0.2);
+  transition: all .5s;
+}
+
+.legacy-card {
+  background: url('/legacy-smart-forest-lopacity.png');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
+
+}
+
+.legacy-card button {
+  font-weight: 900!important;
+}
+
+.legacy-card button:hover {
+  transform: translateX(0px);
+  transition: all .2s;
+}
+
+.legacy-card:hover {
+  box-shadow: 0px 2px 20px 6px rgba(0, 0, 0, 0.2);
+  transition: all .5s;
+}
+
+.communal-card {
+  background: url('/communal-smart-forest-lopacity.png');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
+  
+}
+
+.communal-card button {
+  font-weight: 900!important;
+}
+
+.communal-card button:hover {
+  transform: translateX(0px);
+  transition: all .2s;
+}
+
+.communal-card:hover {
+  box-shadow: 0px 2px 20px 6px rgba(0, 0, 0, 0.2);
+  transition: all .5s;
 }
 
 /* Calculator */

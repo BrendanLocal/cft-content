@@ -131,19 +131,19 @@ return (
       </Row>
       <Row className="justify-content-center  pb-5 align-items-stretch mb-5">
         <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3">
-          <div className="roundedBox card no-border bg-white p-4 h-100">
+          <div className="roundedBox card no-border bg-white p-4 h-100 card-drop-heavy">
             <p className="large text-green thin">
           {editingdata[Lang()].card1}</p>
           </div>
         </Col>
         <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3 ">
-          <div className="roundedBox card no-border bg-white p-4 h-100">
+          <div className="roundedBox card no-border bg-white p-4 h-100 card-drop-heavy">
           <p className="large text-green thin">
           {editingdata[Lang()].card2}</p>
           </div>
         </Col>
         <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3">
-          <div className="roundedBox card no-border bg-white p-4 h-100">
+          <div className="roundedBox card no-border bg-white p-4 h-100 card-drop-heavy">
           <p className="large text-green thin">
           {editingdata[Lang()].card3}</p>
           </div>
@@ -165,32 +165,32 @@ return (
         </Col>
       </Row>
       <Row className="justify-content-center pb-5 align-items-stretch">
-      <Col className="col-12 col-lg-3 col-xl-2 pe-lg-0 m-3">
-        <div className="roundedBox card bg-white no-border p-4 h-100 d-flex flex-column drop">
-        <h4 className="thin text-green">{editingdata[Lang()].card1title}</h4>
-        <p className="flex-fill pb-3">{editingdata[Lang()].card1para}</p>
-        <Button variant="text text-left text-mildgreen">{editingdata[Lang()].learnmore}</Button>
+      <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
+        <h4 className="text-white">{editingdata[Lang()].card1title}<span className="text-orange">™</span></h4>
+        <p className="flex-fill pb-3 text-white">{editingdata[Lang()].card1para}</p>
+        <Button variant="text text-left text-orange bold no-underline">{editingdata[Lang()].learnmore}</Button>
         </div>
         </Col>
-        <Col className="col-12 col-lg-3 col-xl-2 pe-lg-0 m-3">
-        <div className="roundedBox card bg-white no-border p-4 h-100 d-flex flex-column drop">
-        <h4 className="thin text-green">{editingdata[Lang()].card2title}</h4>
-        <p className="flex-fill pb-3">{editingdata[Lang()].card2para}</p>
-        <Button variant="text text-left text-mildgreen">{editingdata[Lang()].learnmore}</Button>
+        <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
+        <h4 className="text-white">{editingdata[Lang()].card2title}<span className="text-orange">™</span></h4>
+        <p className="flex-fill pb-3 text-white">{editingdata[Lang()].card2para}</p>
+        <Button variant="text text-left text-orange bold no-underline">{editingdata[Lang()].learnmore}</Button>
         </div>
         </Col>
-        <Col className="col-12 col-lg-3 col-xl-2 pe-lg-0 m-3">
-        <div className="roundedBox card bg-white no-border p-4 h-100 d-flex flex-column drop">
-        <h4 className="thin text-green">{editingdata[Lang()].card3title}</h4>
-        <p className="flex-fill pb-3">{editingdata[Lang()].card3para}</p>
-        <Button variant="text text-left text-mildgreen">{editingdata[Lang()].learnmore}</Button>
+        <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
+        <h4 className="text-white">{editingdata[Lang()].card3title}<span className="text-orange">™</span></h4>
+        <p className="flex-fill pb-3 text-white">{editingdata[Lang()].card3para}</p>
+        <Button variant="text text-left text-orange bold no-underline">{editingdata[Lang()].learnmore}</Button>
         </div>
         </Col>
-        <Col className="col-12 col-lg-3 col-xl-2 pe-lg-0 m-3">
-        <div className="roundedBox card bg-white no-border p-4 h-100 d-flex flex-column drop">
-        <h4 className="thin text-green">{editingdata[Lang()].card4title}</h4>
-        <p className="flex-fill pb-3">{editingdata[Lang()].card4para}</p>
-        <Button variant="text text-left text-mildgreen">{editingdata[Lang()].learnmore}</Button>
+        <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop communal-card">
+        <h4 className="text-white">{editingdata[Lang()].card4title}<span className="text-orange">™</span></h4>
+        <p className="flex-fill pb-3 text-white">{editingdata[Lang()].card4para}</p>
+        <Button variant="text text-left text-orange bold no-underline">{editingdata[Lang()].learnmore}</Button>
         </div>
         </Col>
       </Row>
