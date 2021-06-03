@@ -367,18 +367,6 @@ text-decoration: underline;
 
 
 
-.left-sidenav li:hover {
-  display: block;
-  text-indent: 22px;
-  width: 120px;
-  height: 17px;
-  background-size: 17px 17px;
-  background: url("/left-nav-circle-hover.svg");
-  margin: 5px;
-  white-space: nowrap;
-  opacity: 60%;
-  background-repeat: no-repeat;
-}
 
 
 .left-sidenav li.active {
@@ -392,6 +380,7 @@ text-decoration: underline;
   white-space: nowrap;
   opacity: 100%;
   background-repeat: no-repeat;
+  transition: opacity .5s;
 }
 
 
@@ -407,7 +396,23 @@ text-decoration: underline;
   white-space: nowrap;
   opacity: 45%;
   background-repeat: no-repeat;
+  transition: opacity .5s;
 }
+
+.left-sidenav li:hover, .left-sidenav li.active:hover {
+  display: block !important;
+  text-indent: 22px !important;
+  width: 120px !important;
+  height: 17px !important;
+  background-size: 17px 17px !important;
+  background: url("/left-nav-circle-hover.svg") !important;
+  margin: 5px !important;
+  white-space: nowrap !important;
+  opacity: 60% !important;
+  background-repeat: no-repeat !important;
+  transition: opacity .5s !important;
+}
+
 
 
 /* Containers */

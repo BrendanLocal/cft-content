@@ -131,8 +131,8 @@ return (
  
 
 
-    <Container fluid className="v-full d-flex py-5 flex-column z-0">
-      <Row id="intro" className="justify-content-center pt-5 align-items-center my-5">
+    <Container  id="intro" fluid className="v-full d-flex py-5 flex-column z-0">
+      <Row className="justify-content-center pt-5 align-items-center my-5">
         <Col className="col-12 col-lg-8 col-xl-6 p-3 pt-5 p-md-1">
         <h1 className="my-5 pt-5 text-white drop bold">
          
@@ -177,9 +177,9 @@ return (
     </Container>
 
     
-    <Container fluid className="v-full z-999 bg-green py-5 ">
+    <Container id="our-smart-forests" fluid className="v-full z-999 bg-green py-5 ">
     <Fade bottom>
-      <Row id="our-smart-forests" className="pt-5 align-items-center justify-content-center">
+      <Row  className="pt-5 align-items-center justify-content-center">
         <Col className="col-12 col-lg-6 pe-lg-0 mt-5">
           <h2 className="text-center text-orange bold">{editingdata[Lang()].smarttitle}</h2>
           <p className="text-center text-white medium thin mb-4">{editingdata[Lang()].smartpara}</p>
@@ -218,9 +218,9 @@ return (
     </Fade>
     </Container>
 
-    <Container fluid className="v-full z-999 bg-green align-items-center py-5 ">
+    <Container id="unlock-the-forest"  fluid className="v-full z-999 bg-green align-items-center py-5 ">
       <Fade bottom>
-      <Row id="unlock-the-forest" className="py-5 align-items-center justify-content-center">
+      <Row className="py-5 align-items-center justify-content-center">
         
         <Col className="order-2 order-lg-1 col-12 p-5 col-md-4 text-white">
         <h2 className="text-orange bold">{editingdata[Lang()].powertitle}</h2>
@@ -239,9 +239,9 @@ return (
       </Fade>
     </Container>
 
-    <Container fluid className="v-full z-999 bg-green py-5 mb-5">
+    <Container id="build-a-forest" fluid className="v-full z-999 bg-green py-5 mb-5">
     <Fade bottom>
-    <Row id="build-a-forest" className="py-5 align-items-center justify-content-center ">
+    <Row  className="py-5 align-items-center justify-content-center ">
     <Col className="col-12 col-md-4 p-5 mx-5">
 
     <object type="image/svg+xml" data="/build-svg.svg"/>
@@ -261,9 +261,9 @@ return (
     </Fade>
     </Container>
 
-    <Container fluid className="v-full z-999 bg-green py-5 my-5">
+    <Container  id="explore-your-forest" fluid className="v-full z-999 bg-green py-5 my-5">
     <Fade bottom>
-    <Row id="explore-your-forest" className="py-5 align-items-center justify-content-center  align-items-stretch protorow">
+    <Row className="py-5 align-items-center justify-content-center  align-items-stretch protorow">
     
         <Col className="col-12 p-5 col-md-4 text-white">
         <h2 className="text-orange bold">{editingdata[Lang()].portaltitle}</h2>
@@ -280,9 +280,9 @@ return (
       </Fade>
     </Container>
     
-    <Container fluid className="v-full z-999 bg-green py-5 mb-2">
+    <Container id="calculate-impact" fluid className="v-full z-999 bg-green py-5 mb-2">
     <Fade bottom>
-    <Row id="calculate-impact" className="pt-5 align-items-center justify-content-center ">
+    <Row className="pt-5 align-items-center justify-content-center ">
       <Col className="col-12 col-lg-5 pe-lg-0 mb-4">
       <h2 className="text-center text-orange mb-2 bold">{editingdata[Lang()].calculateheader}</h2>
       <p className="text-center large text-white thin">{editingdata[Lang()].calculatepara}</p>
