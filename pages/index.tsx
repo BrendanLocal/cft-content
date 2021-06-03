@@ -50,13 +50,13 @@ useEffect(() => {
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     const id = entry.target.getAttribute('id');
-    if (entry.intersectionRatio >= 0.01 ) {
+    if (entry.intersectionRatio > 0 ) {
       if (document.querySelector(`.left-sidenav a[href="#${id}"]`)){
-      document.querySelector(`.left-sidenav a[href="#${id}"]`).classList.add('active');
+      document.querySelector(`.left-sidenav a[href="#${id}"]`).parentNode.classList.add('active');
       }
     } else {
       if (document.querySelector(`.left-sidenav a[href="#${id}"]`)){
-      document.querySelector(`.left-sidenav a[href="#${id}"]`).classList.remove('active');
+      document.querySelector(`.left-sidenav a[href="#${id}"]`).parentNode.classList.remove('active');
       }
     }
   });
