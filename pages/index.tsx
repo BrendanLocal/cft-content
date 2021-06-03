@@ -269,7 +269,7 @@ return (
       </Row>
     </Container>
     
-    <Container fluid className="v-full z-999 bg-green py-5 mt-5">
+    <Container fluid className="v-full z-999 bg-green py-5 mb-2">
     <Row id="calculate-impact" className="pt-5 align-items-center justify-content-center ">
       <Col className="col-12 col-lg-5 pe-lg-0 mb-4">
       <h2 className="text-center text-orange mb-2 bold">{editingdata[Lang()].calculateheader}</h2>
