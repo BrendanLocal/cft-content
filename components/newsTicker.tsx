@@ -31,7 +31,7 @@ const newsItems = [
   },
   {
     key: "newsItem6",
-  label: "“B.C. announces plans to redistribute forest tenures to small operators, Indigenous communities”",
+  label: "B.C. announces plans to redistribute forest tenures to small operators, Indigenous communities",
   path: "https://www.cbc.ca/news/canada/british-columbia/b-c-announces-plans-to-update-and-modernize-forestry-policy-1.6049137"
   }
   ]
