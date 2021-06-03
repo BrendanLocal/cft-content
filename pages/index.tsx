@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 import Head from 'next/head'
 import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { GetStaticProps } from 'next'
@@ -174,7 +175,7 @@ return (
         </Col>
 
         <Col className="text-center col-lg-12 pb-5 pe-5 mt-5 pe-lg-0">
-        <Button variant="green">{editingdata[Lang()].buildbutton}</Button>
+        <Link href="/contact" ><a className="btn btn-green">{editingdata[Lang()].buildbutton}</a></Link>
         </Col>
       </Row>   
       </Fade>
@@ -195,29 +196,28 @@ return (
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
         <h4 className="text-white tight-drop-light">{editingdata[Lang()].card1title}<span className="text-orange">™</span></h4>
         <p className="flex-fill pb-3 text-white tight-drop">{editingdata[Lang()].card1para}</p>
-        <Button variant="text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</Button>
+       
+        <Link href="/build-your-forest#corporate" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</a></Link>
         </div>
         </Col>
         <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
         <h4 className="text-white tight-drop-light">{editingdata[Lang()].card2title}<span className="text-orange">™</span></h4>
         <p className="flex-fill pb-3 text-white tight-drop">{editingdata[Lang()].card2para}</p>
-        <Button variant="text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</Button>
+        <Link href="/build-your-forest#school" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</a></Link>
         </div>
         </Col>
         <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
         <h4 className="text-white tight-drop-light">{editingdata[Lang()].card3title}<span className="text-orange">™</span></h4>
         <p className="flex-fill pb-3 text-white tight-drop">{editingdata[Lang()].card3para}</p>
-        <Button variant="text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</Button>
-        </div>
+        <Link href="/build-your-forest#legacy" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</a></Link></div>
         </Col>
         <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop communal-card">
         <h4 className="text-white tight-drop-light">{editingdata[Lang()].card4title}<span className="text-orange">™</span></h4>
         <p className="flex-fill pb-3 text-white tight-drop">{editingdata[Lang()].card4para}</p>
-        <Button variant="text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</Button>
-        </div>
+        <Link href="/build-your-forest#communal" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</a></Link> </div>
         </Col>
       </Row>
     </Fade>
@@ -230,9 +230,8 @@ return (
         <Col className="order-2 order-lg-1 col-12 p-5 col-md-4 text-white">
         <h2 className="text-orange bold">{editingdata[Lang()].powertitle}</h2>
         <p className="pb-3 thin">{editingdata[Lang()].powerpara}</p>
-        <Button variant="green">
-        {editingdata[Lang()].unlockbutton}
-        </Button>
+        <Link href="/power-of-the-forest" ><a className="btn btn-green">{editingdata[Lang()].unlockbutton}</a></Link>
+      
         </Col>
         <Col className="order-1 order-lg-2 col-12 col-md-4 p-5">
         
@@ -256,9 +255,9 @@ return (
         <Col className="col-12 p-5 col-md-4 text-white">
         <h2 className="text-orange bold">{editingdata[Lang()].buildtitle}</h2>
         <p className="pb-3 thin">{editingdata[Lang()].buildpara}</p>
-        <Button variant="green">
-{editingdata[Lang()].buildbutton2}
-        </Button>
+        <Link href="/build-your-forest" ><a className="btn btn-green">
+{editingdata[Lang()].buildbutton2}</a></Link>
+      
         </Col>
         
 
@@ -273,9 +272,9 @@ return (
         <Col className="col-12 p-5 col-md-4 text-white">
         <h2 className="text-orange bold">{editingdata[Lang()].portaltitle}</h2>
         <p className="pb-3 thin">{editingdata[Lang()].portalpara}</p>
-        <Button variant="green">
-{editingdata[Lang()].portalbutton}
-        </Button>
+     
+        <Link href="/portal" ><a className="btn btn-green">
+        {editingdata[Lang()].portalbutton}</a></Link>
         </Col>
         <Col className="col-12 col-md-4 p-5 hover-grow">
                       
