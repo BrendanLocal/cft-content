@@ -218,7 +218,7 @@ return (
     </Fade>
     </Container>
 
-    <Container fluid className="v-full z-999 bg-green align-items-center py-5 mb-5">
+    <Container fluid className="v-full z-999 bg-green align-items-center py-5 ">
       <Fade bottom>
       <Row id="unlock-the-forest" className="py-5 align-items-center justify-content-center">
         
@@ -232,18 +232,20 @@ return (
         <Col className="order-1 order-lg-2 col-12 col-md-4 p-5">
         
         <object type="image/svg+xml" data="/power-svg.svg"/>
+        <p className="text-center smallCaps x-small text-white op-5 py-0 my-0">HOVER</p>
         </Col>
 
       </Row>
       </Fade>
     </Container>
 
-    <Container fluid className="v-full z-999 bg-green py-5 my-5">
+    <Container fluid className="v-full z-999 bg-green py-5 mb-5">
     <Fade bottom>
     <Row id="build-a-forest" className="py-5 align-items-center justify-content-center ">
     <Col className="col-12 col-md-4 p-5 mx-5">
 
     <object type="image/svg+xml" data="/build-svg.svg"/>
+    <p className="text-center smallCaps x-small text-white op-5 py-0 my-0">HOVER</p>
     
     </Col>
         <Col className="col-12 p-5 col-md-4 text-white">
