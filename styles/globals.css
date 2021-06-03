@@ -365,19 +365,9 @@ text-decoration: underline;
   font-size: 12px!important;
 }
 
-.left-sidenav a {
-  display: block;
-  text-indent: -9999px;
-  width: 17px;
-  height: 17px;
-  background-size: 17px 17px;
-  background: url("/left-nav-circle.svg");
-  margin: 5px;
-  white-space: nowrap;
-  opacity: 45%;
-}
 
-.left-sidenav a:hover {
+
+.left-sidenav li:hover {
   display: block;
   text-indent: 22px;
   width: 17px;
@@ -389,7 +379,7 @@ text-decoration: underline;
   opacity: 60%;
 }
 
-.left-sidenav a.active {
+.left-sidenav li.active {
   display: block;
   text-indent: 22px;
   width: 17px;
@@ -401,6 +391,17 @@ text-decoration: underline;
   opacity: 100%;
 }
 
+.left-sidenav li, .left-sidenav li.active ~ li.active {
+  display: block;
+  text-indent: -9999px;
+  width: 17px;
+  height: 17px;
+  background-size: 17px 17px;
+  background: url("/left-nav-circle.svg");
+  margin: 5px;
+  white-space: nowrap;
+  opacity: 45%;
+}
 
 
 /* Containers */
