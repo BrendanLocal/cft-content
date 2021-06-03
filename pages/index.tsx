@@ -231,8 +231,8 @@ return (
         </Col>
         <Col className="order-1 order-lg-2 col-12 col-md-4 p-5">
         
-        <object type="image/svg+xml" data="/power-svg.svg"/>
-        <p className="text-center smallCaps x-small text-white op-5 py-0 my-0">HOVER</p>
+          <object type="image/svg+xml" data="/power-svg.svg"/>
+          <p className="text-center smallCaps x-small text-white op-1 py-0 my-0">HOVER</p>
         </Col>
 
       </Row>
@@ -245,7 +245,7 @@ return (
     <Col className="col-12 col-md-4 p-5 mx-5">
 
     <object type="image/svg+xml" data="/build-svg.svg"/>
-    <p className="text-center smallCaps x-small text-white op-5 py-0 my-0">HOVER</p>
+    <p className="text-center smallCaps x-small text-white op-1 py-0 my-0">HOVER</p>
     
     </Col>
         <Col className="col-12 p-5 col-md-4 text-white">
