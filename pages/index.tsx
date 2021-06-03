@@ -177,7 +177,7 @@ return (
     </Container>
 
     
-    <Container fluid className="v-full z-999 bg-green py-5 mt-5">
+    <Container fluid className="v-full z-999 bg-green py-5 ">
       <Row id="our-smart-forests" className="pt-5 align-items-center justify-content-center">
         <Col className="col-12 col-lg-6 pe-lg-0 mt-5">
           <h2 className="text-center text-orange bold">{editingdata[Lang()].smarttitle}</h2>
@@ -238,7 +238,7 @@ return (
     <Row id="build-a-forest" className="py-5 align-items-center justify-content-center ">
     <Col className="col-12 col-md-4 p-5">
 
-    <object type="image/svg+xml" data="/build-svg-js.svg"/>    
+    <object type="image/svg+xml" data="/build-svg-js.svg"/>
     
     </Col>
         <Col className="col-12 p-5 col-md-4 text-white">

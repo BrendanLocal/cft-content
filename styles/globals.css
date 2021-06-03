@@ -1106,11 +1106,11 @@ span.authorTitle {
   transition: all .5s ease;
 }
 
-.corporate-card a {
+.corporate-card button {
   font-weight: 900!important;
 }
 
-.corporate-card a:after {
+.corporate-card button:after {
     content: url(/navArrow.svg);
     margin-left: 5px;
     width: 20px;
@@ -1118,7 +1118,7 @@ span.authorTitle {
     color: #fff;
 }
 
-.corporate-card a:hover {
+.corporate-card button:hover {
   transform: translateX(3px);
   transition: all .5s ease;
 }
@@ -1136,11 +1136,11 @@ span.authorTitle {
   transition: all .5s ease;
 }
 
-.school-card a {
+.school-card button {
   font-weight: 900!important;
 }
 
-.school-card a:after {
+.school-card button:after {
   content: url(/navArrow.svg);
   margin-left: 5px;
   width: 20px;
@@ -1148,7 +1148,7 @@ span.authorTitle {
   color: #fff;
 }
 
-.school-card a:hover {
+.school-card button:hover {
 transform: translateX(3px);
 transition: all .5s ease;
 }
@@ -1167,11 +1167,11 @@ transition: all .5s ease;
   transition: all .5s;
 }
 
-.legacy-card a {
+.legacy-card button {
   font-weight: 900!important;
 }
 
-.legacy-card a:after {
+.legacy-card button:after {
   content: url(/navArrow.svg);
   margin-left: 5px;
   width: 20px;
@@ -1179,7 +1179,7 @@ transition: all .5s ease;
   color: #fff;
 }
 
-.legacy-card a:hover {
+.legacy-card button:hover {
 transform: translateX(3px);
 transition: all .5s ease;
 }
@@ -1199,11 +1199,11 @@ transition: all .5s ease;
   transition: all .5s;
 }
 
-.communal-card a {
+.communal-card button  {
   font-weight: 900!important;
 }
 
-.communal-card a:after {
+.communal-card button:after {
   content: url(/navArrow.svg);
   margin-left: 5px;
   width: 20px;
@@ -1211,7 +1211,7 @@ transition: all .5s ease;
   color: #fff;
 }
 
-.communal-card a:hover {
+.communal-card button:hover {
 transform: translateX(3px);
 transition: all .5s ease;
 }
