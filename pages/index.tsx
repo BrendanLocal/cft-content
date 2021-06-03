@@ -27,9 +27,11 @@ var language = "en";
 
 
 
-export default function Home({ file }) {
+export default function Home({ file, href, children}) {
 
+  const router = useRouter();
 
+  
 const formOptions = {
 label: 'Home Page',
 fields: [{ name: 'title', component: 'text' }],
@@ -44,7 +46,9 @@ useEffect(() => {
   new Rellax(".rellax");
   var scene = document.getElementById('scene');
 var parallaxInstance = new Parallax(scene);
+
 }, []);
+
 
 
 return (
@@ -56,84 +60,150 @@ return (
     <meta name="theme-color" content="#054218"></meta>
   </Head>
 
-  <main>
+  <Row className="justify-content-left p-0 m-0 d-none d-lg-block">
+        <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
+          <p className="text-white m-2 bold op-6 ">HOME</p>
+          <ul>
+            <li className="p-0">
+              <a href="#intro" className="active text-white bold no-underline">
+               INTRO
+              </a>
+            </li>
+            <li className="p-0">              
+              <a href="#our-smart-forests" className="text-white bold no-underline">
+                OUR SMART FORESTS
+              </a>
+            </li>
+            <li className="p-0">
+              <a href="#unlock-the-forest" className="text-white bold no-underline ">
+                UNLOCK THE FOREST
+              </a>
+            </li>
+            <li className="p-0">             
+              <a href="#build-a-forest" className="text-white bold no-underline ">
+                BUILD A FOREST
+              </a>
+            </li>
+            <li className="p-0">              
+              <a href="#explore-your-forest" className="text-white bold no-underline ">
+                EXPLORE YOUR FOREST
+              </a>
+            </li>
+            <li className="p-0">  
+              <a href="#calculate-impact" className="text-white bold no-underline ">
+                CALCULATE YOUR IMPACT
+              </a>
+            </li>
+          </ul>        
+        </Col>
+      </Row>
+
+
+  <main id="intro">
   
     
       <img className="rellax parallaxLayers" src="/landingSKY.png" alt="SKY"
       data-rellax-speed="-15"></img>
     
 
-<img className="rellax parallaxLayers" src="/landingLAND.png" alt="LAND"
+      <img className="rellax parallaxLayers" src="/landingLAND.png" alt="LAND"
       data-rellax-speed="-12"></img>
-    <Container className="v-full d-flex pt-5 flex-column z-0">
+ 
+
+
+    <Container className="v-full d-flex py-5 flex-column z-0">
       <Row className="justify-content-center pt-5 align-items-center">
         <Col className="col-12 col-lg-8 col-xl-6 p-3 pt-5 p-md-1">
-        <h1 className="mb-5 pt-5 text-white drop">
+        <h1 className="my-5 pt-5 text-white drop bold">
          
         {editingdata[Lang()].heading}
         </h1>
-        <p className="lead py-5 text-white bold pe-5 pe-lg-0 tight-drop">{editingdata[Lang()].paragraph1}</p>
-        <hr className="thick mt-4 mb-4"></hr>
+        <p className="lead py-5 text-white bold pe-5 pe-lg-0 big-drop tight-drop">{editingdata[Lang()].paragraph1}</p>
+        <hr className="thick my-4"></hr>
         </Col>
         </Row>
         
-        <Row className="justify-content-center  py-5 d-none">
-          <Col className="p-3 col-12 col-lg-4 pe-5 pe-lg-3">
-          <p className="large text-white bold">
-          {editingdata[Lang()].paragraph2}
-          </p>
-          </Col>
-          <Col className="p-3 col-12 col-lg-4 pe-5 pe-lg-3">
-          <div className="roundedBox card bg-white text-center p-4">
-            <h3 className="text-orange bold">
-            {editingdata[Lang()].impactCardTitle}
-            </h3>
-<span className="smallCaps small text-green letterspace pb-3">{editingdata[Lang()].try}</span>
-<Button variant="green">Carbon Offset Calculator</Button>
-<Button variant="green">Smart Forest Calculator</Button>
+        
+      <Row className="justify-content-center  py-5">
+        <Col className="col-12 col-lg-8 pe-lg-0 mb-0">
+          <h2 className="text-center text-white mb-0 bold tight-drop">{editingdata[Lang()].foresttrust}</h2>
+        </Col>
+      </Row>
+      <Row className="justify-content-center  pb-5 align-items-stretch mb-5">
+        <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3">
+          <div className="roundedBox card no-border bg-white p-4 h-100">
+            <p className="large text-green thin">
+          {editingdata[Lang()].card1}</p>
           </div>
-          </Col>
-      </Row>
-      <Row className="justify-content-center  py-4">
-<Col className="col-12 col-lg-8 pe-lg-0 mb-0">
-  <h2 className="text-center text-white mb-0 bold tight-drop">{editingdata[Lang()].foresttrust}</h2>
-</Col>
-      </Row>
-      <Row className="justify-content-center  pb-5 align-items-stretch mb-4">
-<Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3 drop">
-  <div className="roundedBox card bg-white p-4 h-100">
-    <p className="large text-green">
-  {editingdata[Lang()].card1}</p>
-  </div>
-</Col>
-<Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3 drop">
-  <div className="roundedBox card bg-white p-4 h-100">
-  <p className="large text-green">
-  {editingdata[Lang()].card2}</p>
-  </div>
-</Col>
-<Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3 drop">
-  <div className="roundedBox card bg-white p-4 h-100">
-  <p className="large text-green">
-  {editingdata[Lang()].card3}</p>
-  </div>
-</Col>
+        </Col>
+        <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3 ">
+          <div className="roundedBox card no-border bg-white p-4 h-100">
+          <p className="large text-green thin">
+          {editingdata[Lang()].card2}</p>
+          </div>
+        </Col>
+        <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3">
+          <div className="roundedBox card no-border bg-white p-4 h-100">
+          <p className="large text-green thin">
+          {editingdata[Lang()].card3}</p>
+          </div>
+        </Col>
 
-<Col className="text-center col-lg-12 pb-5 pe-5 pe-lg-0">
-<h3 className="text-white mt-4 mb-5 tight-drop">{editingdata[Lang()].buildyourforest}</h3>
-<Button variant="green">{editingdata[Lang()].buildbutton}</Button>
-</Col>
-      </Row>
+        <Col className="text-center col-lg-12 pb-5 pe-5 mt-5 pe-lg-0">
+        <Button variant="green">{editingdata[Lang()].buildbutton}</Button>
+        </Col>
+      </Row>   
 
     </Container>
-    <Container fluid className="py-5 z-999 bg-green align-items-center">
+
+    
+    <Container id="our-smart-forests" fluid className="z-999 bg-green py-5">
+      <Row className="pt-5 align-items-center justify-content-center">
+        <Col className="col-12 col-lg-6 pe-lg-0 mt-5">
+          <h2 className="text-center text-orange bold">{editingdata[Lang()].smarttitle}</h2>
+          <p className="text-center text-white medium thin mb-4">{editingdata[Lang()].smartpara}</p>
+        </Col>
+      </Row>
+      <Row className="justify-content-center pb-5 align-items-stretch">
+      <Col className="col-12 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <div className="roundedBox card bg-white no-border p-4 h-100 d-flex flex-column drop">
+        <h4 className="thin text-green">{editingdata[Lang()].card1title}</h4>
+        <p className="flex-fill pb-3">{editingdata[Lang()].card1para}</p>
+        <Button variant="text text-left text-mildgreen">{editingdata[Lang()].learnmore}</Button>
+        </div>
+        </Col>
+        <Col className="col-12 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <div className="roundedBox card bg-white no-border p-4 h-100 d-flex flex-column drop">
+        <h4 className="thin text-green">{editingdata[Lang()].card2title}</h4>
+        <p className="flex-fill pb-3">{editingdata[Lang()].card2para}</p>
+        <Button variant="text text-left text-mildgreen">{editingdata[Lang()].learnmore}</Button>
+        </div>
+        </Col>
+        <Col className="col-12 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <div className="roundedBox card bg-white no-border p-4 h-100 d-flex flex-column drop">
+        <h4 className="thin text-green">{editingdata[Lang()].card3title}</h4>
+        <p className="flex-fill pb-3">{editingdata[Lang()].card3para}</p>
+        <Button variant="text text-left text-mildgreen">{editingdata[Lang()].learnmore}</Button>
+        </div>
+        </Col>
+        <Col className="col-12 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <div className="roundedBox card bg-white no-border p-4 h-100 d-flex flex-column drop">
+        <h4 className="thin text-green">{editingdata[Lang()].card4title}</h4>
+        <p className="flex-fill pb-3">{editingdata[Lang()].card4para}</p>
+        <Button variant="text text-left text-mildgreen">{editingdata[Lang()].learnmore}</Button>
+        </div>
+        </Col>
+      </Row>
+    </Container>
+
+    <Container id="unlock-the-forest"  fluid className="py-5 z-999 bg-green align-items-center">
       <Row className="py-5 align-items-center justify-content-center ">
         
         <Col className="order-2 order-lg-1 col-12 p-5 col-md-4 text-white">
         <h2 className="text-orange bold">{editingdata[Lang()].powertitle}</h2>
-        <p className="pb-3">{editingdata[Lang()].powerpara}</p>
+        <p className="pb-3 thin">{editingdata[Lang()].powerpara}</p>
         <Button variant="green">
-{editingdata[Lang()].unlockbutton}
+        {editingdata[Lang()].unlockbutton}
         </Button>
         </Col>
         <Col className="order-1 order-lg-2 col-12 col-md-4 p-5">
@@ -154,17 +224,17 @@ return (
 
       </Row>
     </Container>
-    <Container fluid className="z-999 bg-green">
-    <Row className="py-6 align-items-center justify-content-center ">
+
+    <Container id="build-a-forest" fluid className="z-999 bg-green pb-5">
+    <Row className="py-5 align-items-center justify-content-center ">
     <Col className="col-12 col-md-4 p-5">
+
         
-<div className="px-5 whiteFloat" data-relative-input="true">
-      <img className="pos-absolute" data-depth=".2" src="/BUILD-animated.svg"></img>
-          </div>
+      <img className="h-100" src="/build-svg.svg"></img>
                 </Col>
         <Col className="col-12 p-5 col-md-4 text-white">
         <h2 className="text-orange bold">{editingdata[Lang()].buildtitle}</h2>
-        <p className="pb-3">{editingdata[Lang()].buildpara}</p>
+        <p className="pb-3 thin">{editingdata[Lang()].buildpara}</p>
         <Button variant="green">
 {editingdata[Lang()].buildbutton2}
         </Button>
@@ -173,12 +243,12 @@ return (
 
       </Row>
     </Container>
-    <Container fluid className="z-999 bg-green">
-    <Row className="py-6 align-items-center justify-content-center  align-items-stretch protorow">
+    <Container id="explore-your-forest" fluid className="z-999 bg-green py-5">
+    <Row className="py-5 align-items-center justify-content-center  align-items-stretch protorow">
     
         <Col className="col-12 p-5 col-md-4 text-white">
         <h2 className="text-orange bold">{editingdata[Lang()].portaltitle}</h2>
-        <p className="pb-3">{editingdata[Lang()].portalpara}</p>
+        <p className="pb-3 thin">{editingdata[Lang()].portalpara}</p>
         <Button variant="green">
 {editingdata[Lang()].portalbutton}
         </Button>
@@ -190,20 +260,20 @@ return (
       </Row>
     </Container>
     
-    <Container fluid className="z-999 bg-green py-5 mb-4">
+    <Container id="calculate-impact" fluid className="z-999 bg-green py-5 mb-4">
     <Row className="pt-5 align-items-center justify-content-center ">
   <Col className="col-12 col-lg-5 pe-lg-0 mb-4">
   <h2 className="text-center text-orange mb-2 bold">{editingdata[Lang()].calculateheader}</h2>
-  <p className="text-center large text-white">{editingdata[Lang()].calculatepara}</p>
+  <p className="text-center large text-white thin">{editingdata[Lang()].calculatepara}</p>
   </Col>
       </Row>
-      <Row className="justify-content-center  pb-5 align-items-stretch mb-3">
+      <Row className="justify-content-center  pb-5 align-items-stretch mb-5">
         <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
-          <div className="card bg-green border-mildgreen p-4 h-100">
+          <div className="card bg-green p-4 h-100">
             <p className="h6 text-orange bold">
               STEP 1
             </p>
-            <p className="large text-white mb-3">
+            <p className="large text-white mb-3 thin">
           {editingdata[Lang()].step1header}</p>
           <p className="text-white mb-5">
           {editingdata[Lang()].step1para}</p>
@@ -213,11 +283,11 @@ return (
           </div>
         </Col>
         <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
-          <div className="card bg-green border-mildgreen p-4 h-100">
+          <div className="card bg-green p-4 h-100">
             <p className="h6 text-orange bold">
               STEP 2
             </p>
-            <p className="large text-white mb-3">
+            <p className="large text-white mb-3 thin">
           {editingdata[Lang()].step2header}</p>
           <p className="text-white mb-5">
           {editingdata[Lang()].step2para}</p>
@@ -227,11 +297,11 @@ return (
           </div>
         </Col>
         <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
-          <div className="card bg-green border-mildgreen p-4 h-100">
+          <div className="card bg-green p-4 h-100">
             <p className="h6 text-orange bold">
               STEP 3
             </p>
-            <p className="large text-white mb-3">
+            <p className="large text-white mb-3 thin">
           {editingdata[Lang()].step3header}</p>
           <p className="text-white mb-5">
           {editingdata[Lang()].step3para}</p>

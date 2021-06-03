@@ -56,7 +56,7 @@ return(
       </Col>
       <Col className="col-12 col-md-2 col-xl-2 p-3">
       <h4>Portal</h4>
-      <Button className="text-orange textButton text-left d-block">Log In</Button>
+      <Button className="text-orange textButton text-left d-block">Sign In</Button>
       </Col>
       <Col className="col-12 col-md-4 col-xl-3 p-3 pe-5">
       <h4>Join Our Newsletter</h4>
