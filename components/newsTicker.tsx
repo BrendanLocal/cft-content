@@ -55,7 +55,7 @@ return(
               {newsItems.map(function(item){
                 return (
                   
-                  <a key={item.key} href={item.path} className="newsItem">{item.label}</a>
+                  <a key={item.key} href={item.path} target="_blank" className="newsItem" >{item.label}</a>
                   
                 )
                 })}

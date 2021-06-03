@@ -968,6 +968,13 @@ z-index:999;
     white-space: nowrap;
 }
 
+
+.newsItem:hover {
+
+    color: #FF4D24;
+
+}
+
 .newsItem:before {
   content:"";
   background: url("/cft-icon.svg");
