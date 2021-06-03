@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 import Head from 'next/head'
 import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { GetStaticProps } from 'next'
@@ -64,8 +63,8 @@ const observer = new IntersectionObserver(entries => {
 });
 
 // Track all div containers that have an `id` applied
-document.querySelectorAll('div[id]').forEach((section) => {
-  observer.observe(section);
+document.querySelectorAll('div[id]').forEach((id) => {
+  observer.observe(id);
 });
 
 }, []);
@@ -97,7 +96,7 @@ return (
             </li>
             <li className="p-0">
               <a href="#unlock-the-forest" className="text-white bold no-underline ">
-                UNLOCK THE FOREST
+                POWER OF FORESTS
               </a>
             </li>
             <li className="p-0">             
@@ -132,8 +131,8 @@ return (
  
 
 
-    <Container fluid id="intro" className="v-full d-flex py-5 flex-column z-0">
-      <Row className="justify-content-center pt-5 align-items-center">
+    <Container fluid className="v-full d-flex py-5 flex-column z-0">
+      <Row id="intro" className="justify-content-center pt-5 align-items-center my-5">
         <Col className="col-12 col-lg-8 col-xl-6 p-3 pt-5 p-md-1">
         <h1 className="my-5 pt-5 text-white drop bold">
          
@@ -171,15 +170,15 @@ return (
         </Col>
 
         <Col className="text-center col-lg-12 pb-5 pe-5 mt-5 pe-lg-0">
-        <Link href="/contact" ><a className="btn btn-green">{editingdata[Lang()].buildbutton}</a></Link>
+        <Button variant="green">{editingdata[Lang()].buildbutton}</Button>
         </Col>
       </Row>   
 
     </Container>
 
     
-    <Container id="our-smart-forests" fluid className="v-full z-999 bg-green py-5">
-      <Row className="pt-5 align-items-center justify-content-center">
+    <Container fluid className="v-full z-999 bg-green py-5 mt-5">
+      <Row id="our-smart-forests" className="pt-5 align-items-center justify-content-center">
         <Col className="col-12 col-lg-6 pe-lg-0 mt-5">
           <h2 className="text-center text-orange bold">{editingdata[Lang()].smarttitle}</h2>
           <p className="text-center text-white medium thin mb-4">{editingdata[Lang()].smartpara}</p>
@@ -190,40 +189,42 @@ return (
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
         <h4 className="text-white tight-drop-light">{editingdata[Lang()].card1title}<span className="text-orange">™</span></h4>
         <p className="flex-fill pb-3 text-white tight-drop">{editingdata[Lang()].card1para}</p>
-       
-        <Link href="/build-your-forest#corporate" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</a></Link>
+        <Button variant="text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</Button>
         </div>
         </Col>
         <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
         <h4 className="text-white tight-drop-light">{editingdata[Lang()].card2title}<span className="text-orange">™</span></h4>
         <p className="flex-fill pb-3 text-white tight-drop">{editingdata[Lang()].card2para}</p>
-        <Link href="/build-your-forest#school" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</a></Link>
+        <Button variant="text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</Button>
         </div>
         </Col>
         <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
         <h4 className="text-white tight-drop-light">{editingdata[Lang()].card3title}<span className="text-orange">™</span></h4>
         <p className="flex-fill pb-3 text-white tight-drop">{editingdata[Lang()].card3para}</p>
-        <Link href="/build-your-forest#legacy" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</a></Link></div>
+        <Button variant="text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</Button>
+        </div>
         </Col>
         <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop communal-card">
         <h4 className="text-white tight-drop-light">{editingdata[Lang()].card4title}<span className="text-orange">™</span></h4>
         <p className="flex-fill pb-3 text-white tight-drop">{editingdata[Lang()].card4para}</p>
-        <Link href="/build-your-forest#communal" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</a></Link> </div>
+        <Button variant="text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</Button>
+        </div>
         </Col>
       </Row>
     </Container>
 
-    <Container id="unlock-the-forest"  fluid className="v-full py-5 z-999 bg-green align-items-center">
-      <Row className="py-5 align-items-center justify-content-center ">
+    <Container fluid className="v-full z-999 bg-green align-items-center py-5 mb-5">
+      <Row id="unlock-the-forest" className="py-5 align-items-center justify-content-center">
         
         <Col className="order-2 order-lg-1 col-12 p-5 col-md-4 text-white">
         <h2 className="text-orange bold">{editingdata[Lang()].powertitle}</h2>
         <p className="pb-3 thin">{editingdata[Lang()].powerpara}</p>
-        <Link href="/power-of-the-forest" ><a className="btn btn-green">{editingdata[Lang()].unlockbutton}</a></Link>
-      
+        <Button variant="green">
+        {editingdata[Lang()].unlockbutton}
+        </Button>
         </Col>
         <Col className="order-1 order-lg-2 col-12 col-md-4 p-5">
         
@@ -233,34 +234,33 @@ return (
       </Row>
     </Container>
 
-    <Container id="build-a-forest" fluid className="v-full z-999 bg-green pb-5">
-    <Row className="py-5 align-items-center justify-content-center ">
+    <Container fluid className="v-full z-999 bg-green py-5 my-5">
+    <Row id="build-a-forest" className="py-5 align-items-center justify-content-center ">
     <Col className="col-12 col-md-4 p-5">
 
-    <Fade up>
-    <object type="image/svg+xml" data="/build-svg-js.svg"/>
-      </Fade>
-                </Col>
+    <object type="image/svg+xml" data="/build-svg-js.svg"/>    
+    
+    </Col>
         <Col className="col-12 p-5 col-md-4 text-white">
         <h2 className="text-orange bold">{editingdata[Lang()].buildtitle}</h2>
         <p className="pb-3 thin">{editingdata[Lang()].buildpara}</p>
-        <Link href="/build-your-forest" ><a className="btn btn-green">
-{editingdata[Lang()].buildbutton2}</a></Link>
-      
+        <Button variant="green">
+{editingdata[Lang()].buildbutton2}
+        </Button>
         </Col>
         
 
       </Row>
     </Container>
-    <Container id="explore-your-forest" fluid className="v-full z-999 bg-green py-5">
-    <Row className="py-5 align-items-center justify-content-center  align-items-stretch protorow">
+    <Container fluid className="v-full z-999 bg-green py-5 my-5">
+    <Row id="explore-your-forest" className="py-5 align-items-center justify-content-center  align-items-stretch protorow">
     
         <Col className="col-12 p-5 col-md-4 text-white">
         <h2 className="text-orange bold">{editingdata[Lang()].portaltitle}</h2>
         <p className="pb-3 thin">{editingdata[Lang()].portalpara}</p>
-     
-        <Link href="/portal" ><a className="btn btn-green">
-        {editingdata[Lang()].portalbutton}</a></Link>
+        <Button variant="green">
+{editingdata[Lang()].portalbutton}
+        </Button>
         </Col>
         <Col className="col-12 col-md-4 p-5">
                 </Col>
@@ -269,12 +269,12 @@ return (
       </Row>
     </Container>
     
-    <Container id="calculate-impact" fluid className="v-full z-999 bg-green py-5 mb-4">
-    <Row className="pt-5 align-items-center justify-content-center ">
-  <Col className="col-12 col-lg-5 pe-lg-0 mb-4">
-  <h2 className="text-center text-orange mb-2 bold">{editingdata[Lang()].calculateheader}</h2>
-  <p className="text-center large text-white thin">{editingdata[Lang()].calculatepara}</p>
-  </Col>
+    <Container fluid className="v-full z-999 bg-green py-5 mt-5">
+    <Row id="calculate-impact" className="pt-5 align-items-center justify-content-center ">
+      <Col className="col-12 col-lg-5 pe-lg-0 mb-4">
+      <h2 className="text-center text-orange mb-2 bold">{editingdata[Lang()].calculateheader}</h2>
+      <p className="text-center large text-white thin">{editingdata[Lang()].calculatepara}</p>
+      </Col>
       </Row>
       <Row className="justify-content-center  pb-5 align-items-stretch mb-5">
         <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
