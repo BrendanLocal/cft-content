@@ -143,7 +143,7 @@ return (
         </Col>
         </Row>
         
-        
+      <Fade bottom>
       <Row className="justify-content-center  py-5">
         <Col className="col-12 col-lg-8 pe-lg-0 mb-0">
           <h2 className="text-center text-white mb-0 bold tight-drop">{editingdata[Lang()].foresttrust}</h2>
@@ -173,11 +173,12 @@ return (
         <Button variant="green">{editingdata[Lang()].buildbutton}</Button>
         </Col>
       </Row>   
-
+      </Fade>
     </Container>
 
     
     <Container fluid className="v-full z-999 bg-green py-5 ">
+    <Fade bottom>
       <Row id="our-smart-forests" className="pt-5 align-items-center justify-content-center">
         <Col className="col-12 col-lg-6 pe-lg-0 mt-5">
           <h2 className="text-center text-orange bold">{editingdata[Lang()].smarttitle}</h2>
@@ -214,9 +215,11 @@ return (
         </div>
         </Col>
       </Row>
+    </Fade>
     </Container>
 
-    <Container fluid className="v-full z-999 bg-green align-items-center py-5 mb-5">
+    <Container fluid className="v-full z-999 bg-green align-items-center py-5 ">
+      <Fade bottom>
       <Row id="unlock-the-forest" className="py-5 align-items-center justify-content-center">
         
         <Col className="order-2 order-lg-1 col-12 p-5 col-md-4 text-white">
@@ -229,16 +232,20 @@ return (
         <Col className="order-1 order-lg-2 col-12 col-md-4 p-5">
         
         <object type="image/svg+xml" data="/power-svg.svg"/>
+        <p className="text-center smallCaps x-small text-white op-5 py-0 my-0">HOVER</p>
         </Col>
 
       </Row>
+      </Fade>
     </Container>
 
-    <Container fluid className="v-full z-999 bg-green py-5 my-5">
+    <Container fluid className="v-full z-999 bg-green py-5 mb-5">
+    <Fade bottom>
     <Row id="build-a-forest" className="py-5 align-items-center justify-content-center ">
-    <Col className="col-12 col-md-4 p-5">
+    <Col className="col-12 col-md-4 p-5 mx-5">
 
-    <object type="image/svg+xml" data="/build-svg-js.svg"/>
+    <object type="image/svg+xml" data="/build-svg.svg"/>
+    <p className="text-center smallCaps x-small text-white op-5 py-0 my-0">HOVER</p>
     
     </Col>
         <Col className="col-12 p-5 col-md-4 text-white">
@@ -251,8 +258,11 @@ return (
         
 
       </Row>
+    </Fade>
     </Container>
+
     <Container fluid className="v-full z-999 bg-green py-5 my-5">
+    <Fade bottom>
     <Row id="explore-your-forest" className="py-5 align-items-center justify-content-center  align-items-stretch protorow">
     
         <Col className="col-12 p-5 col-md-4 text-white">
@@ -267,16 +277,18 @@ return (
         
 
       </Row>
+      </Fade>
     </Container>
     
     <Container fluid className="v-full z-999 bg-green py-5 mb-2">
+    <Fade bottom>
     <Row id="calculate-impact" className="pt-5 align-items-center justify-content-center ">
       <Col className="col-12 col-lg-5 pe-lg-0 mb-4">
       <h2 className="text-center text-orange mb-2 bold">{editingdata[Lang()].calculateheader}</h2>
       <p className="text-center large text-white thin">{editingdata[Lang()].calculatepara}</p>
       </Col>
       </Row>
-      <Row className="justify-content-center  pb-5 align-items-stretch mb-5">
+      <Row className="justify-content-center  pb-5 align-items-stretch mb-5 mx-5">
         <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
           <div className="card bg-green p-4 h-100 calculate-card">
             <p className="h6 text-orange bold">
@@ -321,6 +333,7 @@ return (
         </Col>
 
         </Row>
+      </Fade>
     </Container>
     
 

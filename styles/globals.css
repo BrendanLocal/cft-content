@@ -110,6 +110,11 @@ font-weight: 600;
   font-size: 12px;
 }
 
+.smallCaps.x-small {
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
 .bold {
   font-weight: 700;
 }
@@ -612,6 +617,12 @@ padding: 10%;
   box-shadow: 0 2px 24px rgba(0,0,0,.3);
 }
 
+/* Animations */
+
+.hover-grow:hover {
+  transform: scale(1.3);
+  transition: all 2s ease;
+}
 
 
 
