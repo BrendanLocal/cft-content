@@ -365,37 +365,43 @@ text-decoration: underline;
 .left-sidenav li:hover {
   display: block;
   text-indent: 22px;
-  width: 17px;
+  width: 120px;
   height: 17px;
   background-size: 17px 17px;
   background: url("/left-nav-circle-hover.svg");
   margin: 5px;
   white-space: nowrap;
   opacity: 60%;
+  background-repeat: no-repeat;
 }
+
 
 .left-sidenav li.active {
   display: block;
   text-indent: 22px;
-  width: 17px;
+  width: 120px;
   height: 17px;
   background-size: 17px 17px;
   background: url("/left-nav-circle-active.svg");
   margin: 5px;
   white-space: nowrap;
   opacity: 100%;
+  background-repeat: no-repeat;
 }
+
+
 
 .left-sidenav li, .left-sidenav li.active ~ li.active {
   display: block;
   text-indent: -9999px;
-  width: 17px;
+  width: 120px;
   height: 17px;
   background-size: 17px 17px;
   background: url("/left-nav-circle.svg");
   margin: 5px;
   white-space: nowrap;
   opacity: 45%;
+  background-repeat: no-repeat;
 }
 
 

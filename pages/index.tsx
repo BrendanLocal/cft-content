@@ -50,7 +50,7 @@ useEffect(() => {
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     const id = entry.target.getAttribute('id');
-    if (entry.intersectionRatio > 0 ) {
+    if (entry.intersectionRatio > 0.0 ) {
       if (document.querySelector(`.left-sidenav a[href="#${id}"]`)){
       document.querySelector(`.left-sidenav a[href="#${id}"]`).parentNode.classList.add('active');
       }
