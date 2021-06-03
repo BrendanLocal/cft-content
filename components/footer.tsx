@@ -1,6 +1,7 @@
 import React, { useState, useEffect, MouseEvent} from 'react';
 import { render } from 'react-dom';
 
+import Link from 'next/link'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -43,20 +44,21 @@ return(
     <Row >
       <Col className="col-12 col-md-3 p-3">
       <h4>Canada's Forest Trust</h4>
-      <Button className="text-orange textButton text-left d-block">Contact Us</Button>
-      <Button className="text-orange textButton text-left d-block">About CFT</Button>
-      <Button className="text-orange textButton text-left d-block">FAQ</Button>
-      <Button className="text-orange textButton text-left d-block">Annual Reports</Button>
-      <Button className="text-orange textButton text-left d-block">Financial Statements</Button>
+      <Link href="/contact"><a className="btn text-orange textButton text-left d-block">Contact Us</a></Link>
+      <Link href="/about"><a className="btn text-orange textButton text-left d-block">About CFT</a></Link>
+      <Link href="/FAQ"><a className="btn text-orange textButton text-left d-block">FAQ</a></Link>
+      <Link href="/annual-reports"><a className="btn text-orange textButton text-left d-block">Annual Reports</a></Link>
+      <Link href="/financial-statements"><a className="btn text-orange textButton text-left d-block">Financial Statements</a></Link>
       </Col>
       <Col className="col-12 col-md-3 p-3">
       <h4>Calculators</h4>
-      <Button className="text-orange textButton text-left d-block">Carbon Offset Calculator</Button>
-      <Button className="text-orange textButton text-left d-block">Smart Forest™ Calculator</Button>
+
+      <Link href="/carbon-calculator"><a className="btn text-orange textButton text-left d-block">Carbon Offset Calculator</a></Link>
+      <Link href="/smart-forest-calculator"><a className="btn text-orange textButton text-left d-block">Smart Forest™ Calculator</a></Link>
       </Col>
       <Col className="col-12 col-md-2 col-xl-2 p-3">
       <h4>Portal</h4>
-      <Button className="text-orange textButton text-left d-block">Sign In</Button>
+      <Link href="/portal"><a className="btn text-orange textButton text-left d-block">Portal</a></Link>
       </Col>
       <Col className="col-12 col-md-4 col-xl-3 p-3 pe-5">
       <h4>Join Our Newsletter</h4>

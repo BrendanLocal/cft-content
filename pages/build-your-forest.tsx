@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Head from 'next/head'
+
+import Link from 'next/link'
 import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { GetStaticProps } from 'next'
 import { usePlugin } from 'tinacms'
@@ -69,13 +71,13 @@ return (
         <p className="large">{editingdata.leadpara}</p>
         <p>{editingdata.para2}</p>
         <p>{editingdata.para3}</p>
-        <p className="pt-3"><a className="sectionLink" href="#">Our 5-Phase Approach</a><br />
-          <a className="sectionLink" href="#">Our Smart Forests<sup>™</sup></a><br /></p>
+        <p className="pt-3"><a className="sectionLink" href="#5-phase">Our 5-Phase Approach</a><br />
+          <a className="sectionLink" href="#smart-forests">Our Smart Forests<sup>™</sup></a><br /></p>
 
         </Col>
       </Row>
     </Container>
-    <Container className="v-full bg-green">
+    <Container id="5-phase" className="v-full bg-green">
       <Row>
         <Col className="text-center">
         <h2 className="text-orange mb-5">
@@ -89,48 +91,49 @@ return (
         </Col>
       </Row>
     </Container>
-    <Container className="bg-green py-6">
-      <Row className="justify-content-center pt-5">
-        <Col className=" col-6">
-        <h2 className="text-center text-orange bold">{editingdata.smarttitle}</h2>
-        <p className="text-center text-white medium thin">{editingdata.smartpara}</p>
+    
+    <Container id="smart-forests" fluid className="v-full z-999 bg-green py-5">
+      <Row className="pt-5 align-items-center justify-content-center">
+        <Col className="col-12 col-lg-6 pe-lg-0 mt-5">
+          <h2 className="text-center text-orange bold">{editingdata.smarttitle}</h2>
+          <p className="text-center text-white medium thin mb-4">{editingdata.smartpara}</p>
         </Col>
       </Row>
-      <Row className="py-5 align-items-stretch ">
-        <Col>
-        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-          <h4 className="thin text-green">{editingdata.card1title}</h4>
-          <p className="flex-fill pb-3">{editingdata.card1para}</p>
-          <Button variant="text text-left">{editingdata.learnmore}</Button>
+      <Row className="justify-content-center pb-5 align-items-stretch">
+      <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
+        <h4 className="text-white tight-drop-light">{editingdata.card1title}<span className="text-orange">™</span></h4>
+        <p className="flex-fill pb-3 text-white tight-drop">{editingdata.card1para}</p>
+       
+        <a href="#corporate" className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a>
         </div>
         </Col>
-        <Col>
-        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-          <h4 className="thin text-green">{editingdata.card2title}</h4>
-          <p className="flex-fill pb-3">{editingdata.card2para}</p>
-          <Button variant="text text-left">{editingdata.learnmore}</Button>
+        <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
+        <h4 className="text-white tight-drop-light">{editingdata.card2title}<span className="text-orange">™</span></h4>
+        <p className="flex-fill pb-3 text-white tight-drop">{editingdata.card2para}</p>
+        <a href="#school" className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a>
         </div>
         </Col>
-        <Col>
-        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-          <h4 className="thin text-green">{editingdata.card3title}</h4>
-          <p className="flex-fill pb-3">{editingdata.card3para}</p>
-          <Button variant="text text-left">{editingdata.learnmore}</Button>
+        <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
+        <h4 className="text-white tight-drop-light">{editingdata.card3title}<span className="text-orange">™</span></h4>
+        <p className="flex-fill pb-3 text-white tight-drop">{editingdata.card3para}</p>
+        <a href="#legacy" className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a>
         </div>
         </Col>
-        <Col>
-        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-          <h4 className="thin text-green">{editingdata.card4title}</h4>
-          <p className="flex-fill pb-3">{editingdata.card4para}</p>
-          <Button variant="text text-left">{editingdata.learnmore}</Button>
-        </div>
+        <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop communal-card">
+        <h4 className="text-white tight-drop-light">{editingdata.card4title}<span className="text-orange">™</span></h4>
+        <p className="flex-fill pb-3 text-white tight-drop">{editingdata.card4para}</p>
+        <a href="#communal" className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a> </div>
         </Col>
       </Row>
     </Container>
 
     {/* Coporate Forests */}
 
-    <Container className="py-6">
+    <Container id="corporate" className="py-6">
       <Row className="text-center justify-content-center">
         <Col className="col-lg-6">
         <h2 className="text-white bold py-3">
@@ -231,7 +234,9 @@ return (
         </span>
         <h4 className="thin py-3">{editingdata.step1title}</h4>
         <p>{editingdata.step1para}</p>
+        <Link href="/smart-forest-calculator">
         <Button variant="green">{editingdata.step1button}</Button>
+        </Link>
         </Col>
         <Col className="outlineBox text-white p-4 col-lg-3">
         <span className="smallCaps small text-orange letterspace">
@@ -239,7 +244,10 @@ return (
         </span>
         <h4 className="thin py-3">{editingdata.step2title}</h4>
         <p>{editingdata.step2para}</p>
+
+        <Link href="/carbon-calculator">
         <Button variant="green">{editingdata.step2button}</Button>
+        </Link>
         </Col>
         <Col className="outlineBox text-white p-4 col-lg-3">
         <span className="smallCaps small text-orange letterspace">
@@ -320,14 +328,16 @@ return (
       </Row>
       <Row>
         <Col className="text-center">
+          <Link href="/contact">
           <Button variant="green">{editingdata.buildbutton}</Button>
+          </Link>
         </Col>
       </Row>
     </Container>
 
     {/* School Forests */}
 
-    <Container className="py-6">
+    <Container id="school" className="py-6">
       <Row className="text-center justify-content-center">
         <Col className="col-lg-6">
         <h2 className="text-white bold py-3">
@@ -410,7 +420,10 @@ return (
 
       <Row>
         <Col className="text-center py-5">
-        <Button variant="green">{editingdata.buildbutton}</Button></Col>
+
+        <Link href="/contact">
+        <Button variant="green">{editingdata.buildbutton}</Button>
+        </Link></Col>
       </Row>
 
     </Container>
@@ -428,7 +441,10 @@ return (
         </span>
         <h4 className="thin py-3">{editingdata.step1title}</h4>
         <p>{editingdata.step1para}</p>
+
+        <Link href="/smart-forest-calculator">
         <Button variant="green">{editingdata.step1button}</Button>
+        </Link>
         </Col>
         <Col className="outlineBox text-white p-4 col-lg-3">
         <span className="smallCaps small text-orange letterspace">
@@ -436,7 +452,9 @@ return (
         </span>
         <h4 className="thin py-3">{editingdata.step2title}</h4>
         <p>{editingdata.step2para}</p>
+        <Link href="/carbon-calculator">
         <Button variant="green">{editingdata.step2button}</Button>
+        </Link>
         </Col>
         <Col className="outlineBox text-white p-4 col-lg-3">
         <span className="smallCaps small text-orange letterspace">
@@ -517,14 +535,16 @@ return (
       </Row>
       <Row>
         <Col className="text-center">
+          <Link href="/contact">
           <Button variant="green">{editingdata.schoolbuildbutton}</Button>
+          </Link>
         </Col>
       </Row>
     </Container>
 
 {/* Legacy Forests */}
 
-<Container className="py-6">
+<Container id="legacy" className="py-6">
       <Row className="text-center justify-content-center">
         <Col className="col-lg-6">
         <h2 className="text-white bold py-3">
@@ -607,7 +627,9 @@ return (
 
       <Row>
         <Col className="text-center py-5">
-        <Button variant="green">{editingdata.buildbutton}</Button></Col>
+          <Link href="/contact">
+        <Button variant="green">{editingdata.buildbutton}</Button>
+        </Link></Col>
       </Row>
 
     </Container>
@@ -625,7 +647,9 @@ return (
         </span>
         <h4 className="thin py-3">{editingdata.step1title}</h4>
         <p>{editingdata.step1para}</p>
+        <Link href="/smart-forest-calculator">
         <Button variant="green">{editingdata.step1button}</Button>
+        </Link>
         </Col>
         <Col className="outlineBox text-white p-4 col-lg-3">
         <span className="smallCaps small text-orange letterspace">
@@ -633,7 +657,9 @@ return (
         </span>
         <h4 className="thin py-3">{editingdata.step2title}</h4>
         <p>{editingdata.step2para}</p>
+        <Link href="carbon-calculator">
         <Button variant="green">{editingdata.step2button}</Button>
+        </Link>
         </Col>
         <Col className="outlineBox text-white p-4 col-lg-3">
         <span className="smallCaps small text-orange letterspace">
@@ -714,14 +740,16 @@ return (
       </Row>
       <Row>
         <Col className="text-center">
+          <Link href="/contact">
           <Button variant="green">{editingdata.schoolbuildbutton}</Button>
+          </Link>
         </Col>
       </Row>
     </Container>
 
     {/* Communal Forests */}
 
-<Container className="py-6">
+<Container id="communal" className="py-6">
       <Row className="text-center justify-content-center">
         <Col className="col-lg-6">
         <h2 className="text-white bold py-3">
@@ -804,7 +832,9 @@ return (
 
       <Row>
         <Col className="text-center py-5">
-        <Button variant="green">{editingdata.buildbutton}</Button></Col>
+          <Link href="/contact">
+        <Button variant="green">{editingdata.buildbutton}</Button>
+        </Link></Col>
       </Row>
 
     </Container>
@@ -822,7 +852,9 @@ return (
         </span>
         <h4 className="thin py-3">{editingdata.step1title}</h4>
         <p>{editingdata.step1para}</p>
+        <Link href="/smart-forest-calculator">
         <Button variant="green">{editingdata.step1button}</Button>
+        </Link>
         </Col>
         <Col className="outlineBox text-white p-4 col-lg-3">
         <span className="smallCaps small text-orange letterspace">
@@ -830,7 +862,9 @@ return (
         </span>
         <h4 className="thin py-3">{editingdata.step2title}</h4>
         <p>{editingdata.step2para}</p>
+        <Link href="/carbon-calculator">
         <Button variant="green">{editingdata.step2button}</Button>
+        </Link>
         </Col>
         <Col className="outlineBox text-white p-4 col-lg-3">
         <span className="smallCaps small text-orange letterspace">
@@ -911,7 +945,9 @@ return (
       </Row>
       <Row>
         <Col className="text-center">
+          <Link href="/contact">
           <Button variant="green">{editingdata.schoolbuildbutton}</Button>
+          </Link>
         </Col>
       </Row>
     </Container>

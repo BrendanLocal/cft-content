@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import Head from 'next/head'
 import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { GetStaticProps } from 'next'
+
+import Link from 'next/link'
 import { usePlugin } from 'tinacms'
 import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
 import Container from 'react-bootstrap/Container';
@@ -83,11 +85,9 @@ return (
             {editingdata.list12}
           </li>
         </ul>
-
-        <Button variant="text text-orange arrow-after medium d-block text-left py-3">{editingdata.smarttitle}</Button>
-        <Button variant="text text-orange arrow-after medium d-block text-left py-3">{editingdata.canadacontribution}</Button>
-        <Button variant="text text-orange arrow-after medium d-block text-left py-3">{editingdata.unlock}</Button>
-
+        <a href="#smart-forests" className="btn btn-text text-orange arrow-after medium d-block text-left py-3">{editingdata.smarttitle}</a>
+        <a href="#contribution" className="btn btn-text text-orange arrow-after medium d-block text-left py-3">{editingdata.canadacontribution}</a>
+       <a href="#unlock" className="btn btn-text text-orange arrow-after medium d-block text-left py-3">{editingdata.unlock}</a>
 
         </Col>
 
@@ -108,42 +108,46 @@ return (
         </Col>
         
       </Row>
-      <Row className="justify-content-center pt-5">
-        <Col className=" col-6">
-        <h2 className="text-center text-orange bold">{editingdata.smarttitle}</h2>
-        <p className="text-center text-white medium thin">{editingdata.smartpara}</p></Col>
-      </Row>
-      <Row className="py-5 align-items-stretch ">
-        <Col>
-        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-        <h4 className="thin text-green">{editingdata.card1title}</h4>
-        <p className="flex-fill pb-3">{editingdata.card1para}</p>
-        <Button variant="text text-left">{editingdata.learnmore}</Button>
-        </div>
-        </Col>
-        <Col>
-        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-        <h4 className="thin text-green">{editingdata.card2title}</h4>
-        <p className="flex-fill pb-3">{editingdata.card2para}</p>
-        <Button variant="text text-left">{editingdata.learnmore}</Button>
-        </div>
-        </Col>
-        <Col>
-        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-        <h4 className="thin text-green">{editingdata.card3title}</h4>
-        <p className="flex-fill pb-3">{editingdata.card3para}</p>
-        <Button variant="text text-left">{editingdata.learnmore}</Button>
-        </div>
-        </Col>
-        <Col>
-        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-        <h4 className="thin text-green">{editingdata.card4title}</h4>
-        <p className="flex-fill pb-3">{editingdata.card4para}</p>
-        <Button variant="text text-left">{editingdata.learnmore}</Button>
-        </div>
-        </Col>
-      </Row>
+</Container>
 
+    <Container id="smart-forests" fluid className="v-full z-999 bg-green py-5">
+      <Row className="pt-5 align-items-center justify-content-center">
+        <Col className="col-12 col-lg-6 pe-lg-0 mt-5">
+          <h2 className="text-center text-orange bold">{editingdata.smarttitle}</h2>
+          <p className="text-center text-white medium thin mb-4">{editingdata.smartpara}</p>
+        </Col>
+      </Row>
+      <Row className="justify-content-center pb-5 align-items-stretch">
+      <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
+        <h4 className="text-white tight-drop-light">{editingdata.card1title}<span className="text-orange">™</span></h4>
+        <p className="flex-fill pb-3 text-white tight-drop">{editingdata.card1para}</p>
+       
+        <Link href="/build-your-forest#corporate" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a></Link>
+        </div>
+        </Col>
+        <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
+        <h4 className="text-white tight-drop-light">{editingdata.card2title}<span className="text-orange">™</span></h4>
+        <p className="flex-fill pb-3 text-white tight-drop">{editingdata.card2para}</p>
+        <Link href="/build-your-forest#school" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a></Link>
+        </div>
+        </Col>
+        <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
+        <h4 className="text-white tight-drop-light">{editingdata.card3title}<span className="text-orange">™</span></h4>
+        <p className="flex-fill pb-3 text-white tight-drop">{editingdata.card3para}</p>
+        <Link href="/build-your-forest#legacy" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a></Link></div>
+        </Col>
+        <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop communal-card">
+        <h4 className="text-white tight-drop-light">{editingdata.card4title}<span className="text-orange">™</span></h4>
+        <p className="flex-fill pb-3 text-white tight-drop">{editingdata.card4para}</p>
+        <Link href="/build-your-forest#communal" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a></Link> </div>
+        </Col>
+      </Row>
+    </Container>
+<Container id="conribution">
       <Row>
         <Col>
         <h2 className="text-center text-orange bold">{editingdata.carboncount}</h2>
@@ -152,11 +156,14 @@ return (
         <div className="roundedBox bg-brown v-100"></div>
         </Col>
       </Row>
-
+      
+    </Container>
+<Container id="unlock">
       <Row className="text-center py-6">
         <Col>
         <h3 className="text-orange">{editingdata.decreasetitle}</h3>
-        <Button variant="green">{editingdata.offsetbutton}</Button>
+        <Link href="/carbon-calculator" ><a className="btn btn-green">{editingdata.offsetbutton}</a></Link>
+        
         </Col>
       </Row>
 
@@ -176,7 +183,8 @@ return (
         <h3 className="text-white">
           {editingdata.buildctatitle}
         </h3>
-        <Button variant="green">{editingdata.buildctabutton}</Button>
+        <Link href="/build-your-forest" ><a className="btn btn-green">{editingdata.buildctabutton}</a></Link>
+        
         </Col>
       </Row>
     </Container>

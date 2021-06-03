@@ -152,13 +152,9 @@ return(
       <div className="col-6 col-md-2 d-flex flex-column gx-1 gx-lg-3 fixed">
         <div className="row align-self-top">
           <div className="col d-flex align-items-center justify-content-end menuInterface">
-          {!session && <>
-      <button className="smallCaps textButton" onClick={() => signIn()}>Sign in</button>
-    </>}
-    {session && <>
-      Signed in as {session.user.email} <button onClick={() => signOut()}>Sign out</button> <a className="smallCaps" href="/portal">Portal</a>
-      
-    </>}
+          
+      <Link href="/portal" ><a className="smallCaps textButton">Sign in</a></Link>
+    
             
             <div id="menuIcon" className={isActive ? 'open' : null} onClick={toggleClass}>
               <span></span>
