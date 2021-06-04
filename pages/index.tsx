@@ -123,7 +123,7 @@ return (
   <Parallax
         bgImage='/landingSKY.png'
         bgImageAlt="SKY"
-        strength={300}
+        strength={500}
         
     >
    <Parallax
