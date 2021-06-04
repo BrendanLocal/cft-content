@@ -175,7 +175,6 @@ return (
         </Col>
 
         <Col className="text-center col-lg-12 pb-5 pe-5 mt-5 pe-lg-0"> 
-        <Col className="text-center col-lg-12 pb-5 pe-5 mt-5 pe-lg-0">
         <Button variant="green">{editingdata[Lang()].buildbutton}</Button>
         </Col>
       </Row>   
