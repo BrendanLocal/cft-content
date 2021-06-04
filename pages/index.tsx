@@ -10,11 +10,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import styles from '../styles/Home.module.css'
-import Rellax from "rellax";
-import Parallax from 'parallax-js'
-
 import Fade from 'react-reveal/Fade';
-
+import { Parallax, Background } from 'react-parallax';
 
 const Lang = () => {
 var language = "en";
@@ -44,8 +41,10 @@ usePlugin(form)
 useGithubToolbarPlugins()
 
 
+
 useEffect(() => {
-  new Rellax(".rellax");
+
+
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -73,6 +72,7 @@ document.querySelectorAll('div[id]').forEach((id) => {
 
 return (
 <div className={styles.homeParallax}>
+  
 
   <Head>
     <title>Canada's Forest Trust</title>
@@ -120,14 +120,17 @@ return (
 
 
   <main id="intro">
-  
-    
-      <img className="rellax parallaxLayers" src="/landingSKY.png" alt="SKY"
-      data-rellax-speed="-15"></img>
-    
+  <Parallax
+        bgImage='/landingSky.png'
+        bgImageAlt="SKY"
+        strength={700}
+    >
+   <Parallax
+        bgImage='/landingLAND.png'
+        bgImageAlt="SKY"
+        strength={500}
+    >
 
-      <img className="rellax parallaxLayers" src="/landingLAND.png" alt="LAND"
-      data-rellax-speed="-12"></img>
  
 
 
@@ -175,9 +178,10 @@ return (
       </Row>   
       </Fade>
     </Container>
-
+    </Parallax>
+    </Parallax>
     
-    <Container id="our-smart-forests" fluid className="v-full z-999 bg-green py-5 container-drop-heavy">
+    <Container id="our-smart-forests" fluid className="v-full z-999 bg-green py-5">
     <Fade bottom>
       <Row  className="pt-5 align-items-center justify-content-center">
         <Col className="col-12 col-lg-6 pe-lg-0 mt-5">

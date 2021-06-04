@@ -24,13 +24,13 @@ import { PageTransition } from 'next-page-transitions'
 
 import { Provider } from 'next-auth/client'
 import { MarkdownFieldPlugin, HtmlFieldPlugin } from 'react-tinacms-editor'
-
 import 'swiper/swiper-bundle.css';
 
 
 export default class Site extends App {
 
   
+
   cms: TinaCMS
   
   constructor(props) {
@@ -85,20 +85,22 @@ export default class Site extends App {
           onLogout={onLogout}
           error={pageProps.error}
         > 
+
         <Provider session={pageProps.session}>
 
 <Header />
+
 <PageTransition timeout={800}
   classNames="page-transition"
   loadingClassNames="loading-indicator"
   skipInitialTransition={true}>
-
   <div>
           <Component {...pageProps} />
           </div>
           </PageTransition>
 
           </Provider>
+
           <style jsx global>{`
           .page-transition-enter {
             opacity: 0;

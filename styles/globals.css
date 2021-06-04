@@ -380,7 +380,6 @@ text-decoration: underline;
   white-space: nowrap;
   opacity: 100%;
   background-repeat: no-repeat;
-  transition: opacity .5s;
 }
 
 
@@ -396,7 +395,6 @@ text-decoration: underline;
   white-space: nowrap;
   opacity: 45%;
   background-repeat: no-repeat;
-  transition: opacity .5s;
 }
 
 .left-sidenav li:hover, .left-sidenav li.active:hover {
@@ -410,7 +408,6 @@ text-decoration: underline;
   white-space: nowrap !important;
   opacity: 60% !important;
   background-repeat: no-repeat !important;
-  transition: opacity .5s !important;
 }
 
 
@@ -472,7 +469,7 @@ main {
 
 /* Parallax */
 
-.parallaxLayers {
+.parallaxLayer {
   position: absolute;
   min-height: 90vh;
 
@@ -575,6 +572,9 @@ padding: 10%;
 
 /* Backgrounds */
 
+.react-parallax-bgimage {
+  object-fit: cover;
+}
 .bg-green {
   background-color: #054217;
 }
@@ -585,6 +585,10 @@ padding: 10%;
 
 .bg-offwhite {
   background-color: #F3F3F1;
+}
+
+#intro {
+  position: relative;
 }
 
 
