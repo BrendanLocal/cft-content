@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 import Head from 'next/head'
 import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { GetStaticProps } from 'next'
@@ -50,12 +51,12 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     const id = entry.target.getAttribute('id');
     if (entry.intersectionRatio > 0.0 ) {
-      if (document.querySelector(`.left-sidenav a[href="#${id}"]`)){
-      document.querySelector(`.left-sidenav a[href="#${id}"]`).parentNode.classList.add('active');
+      if (document.querySelector(`.left-sidenav li[data-dest="#${id}"]`)){
+      document.querySelector(`.left-sidenav li[data-dest="#${id}"]`).classList.add('active');
       }
     } else {
-      if (document.querySelector(`.left-sidenav a[href="#${id}"]`)){
-      document.querySelector(`.left-sidenav a[href="#${id}"]`).parentNode.classList.remove('active');
+      if (document.querySelector(`.left-sidenav li[data-dest="#${id}"]`)){
+      document.querySelector(`.left-sidenav li[data-dest="#${id}"]`).classList.remove('active');
       }
     }
   });
@@ -84,32 +85,32 @@ return (
         <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
           <p className="text-white m-2 bold op-6 ">HOME</p>
           <ul>
-            <li className="p-0">
+            <li className="p-0" data-dest="#intro">
               <a href="#intro" className="text-white bold no-underline">
                INTRO
               </a>
             </li>
-            <li className="p-0">              
+            <li className="p-0" data-dest="#our-smart-forests" >              
               <a href="#our-smart-forests" className="text-white bold no-underline">
                 OUR SMART FORESTS
               </a>
             </li>
-            <li className="p-0">
+            <li className="p-0" data-dest="#unlock-the-forest">
               <a href="#unlock-the-forest" className="text-white bold no-underline ">
                 POWER OF FORESTS
               </a>
             </li>
-            <li className="p-0">             
+            <li className="p-0" data-dest="#build-a-forest">             
               <a href="#build-a-forest" className="text-white bold no-underline ">
                 BUILD A FOREST
               </a>
             </li>
-            <li className="p-0">              
+            <li className="p-0" data-dest="#explore-your-forest">              
               <a href="#explore-your-forest" className="text-white bold no-underline ">
                 EXPLORE YOUR FOREST
               </a>
             </li>
-            <li className="p-0">  
+            <li className="p-0" data-dest="#calculate-impact" >  
               <a href="#calculate-impact" className="text-white bold no-underline ">
                 CALCULATE YOUR IMPACT
               </a>
@@ -121,14 +122,15 @@ return (
 
   <main id="intro">
   <Parallax
-        bgImage='/landingSky.png'
+        bgImage='/landingSKY.png'
         bgImageAlt="SKY"
-        strength={700}
+        strength={500}
+        
     >
    <Parallax
         bgImage='/landingLAND.png'
-        bgImageAlt="SKY"
-        strength={500}
+        bgImageAlt="LAND"
+        strength={200}
     >
 
  
@@ -173,7 +175,7 @@ return (
         </Col>
 
         <Col className="text-center col-lg-12 pb-5 pe-5 mt-5 pe-lg-0">
-        <Button variant="green">{editingdata[Lang()].buildbutton}</Button>
+        <Link href="/contact" ><a className="btn btn-green">{editingdata[Lang()].buildbutton}</a></Link>
         </Col>
       </Row>   
       </Fade>
@@ -181,7 +183,7 @@ return (
     </Parallax>
     </Parallax>
     
-    <Container id="our-smart-forests" fluid className="v-full z-999 bg-green py-5 container-drop-heavy">
+    <Container id="our-smart-forests" fluid className="v-full z-999 bg-green py-5 container-drop-heavy ">
     <Fade bottom>
       <Row  className="pt-5 align-items-center justify-content-center">
         <Col className="col-12 col-lg-6 pe-lg-0 mt-5">
@@ -194,29 +196,28 @@ return (
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
         <h4 className="text-white tight-drop-light">{editingdata[Lang()].card1title}<span className="text-orange">™</span></h4>
         <p className="flex-fill pb-3 text-white tight-drop">{editingdata[Lang()].card1para}</p>
-        <Button variant="text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</Button>
+       
+        <Link href="/build-your-forest#corporate" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</a></Link>
         </div>
         </Col>
         <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
         <h4 className="text-white tight-drop-light">{editingdata[Lang()].card2title}<span className="text-orange">™</span></h4>
         <p className="flex-fill pb-3 text-white tight-drop">{editingdata[Lang()].card2para}</p>
-        <Button variant="text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</Button>
+        <Link href="/build-your-forest#school" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</a></Link>
         </div>
         </Col>
         <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
         <h4 className="text-white tight-drop-light">{editingdata[Lang()].card3title}<span className="text-orange">™</span></h4>
         <p className="flex-fill pb-3 text-white tight-drop">{editingdata[Lang()].card3para}</p>
-        <Button variant="text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</Button>
-        </div>
+        <Link href="/build-your-forest#legacy" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</a></Link></div>
         </Col>
         <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop communal-card">
         <h4 className="text-white tight-drop-light">{editingdata[Lang()].card4title}<span className="text-orange">™</span></h4>
         <p className="flex-fill pb-3 text-white tight-drop">{editingdata[Lang()].card4para}</p>
-        <Button variant="text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</Button>
-        </div>
+        <Link href="/build-your-forest#communal" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</a></Link> </div>
         </Col>
       </Row>
     </Fade>
@@ -229,9 +230,8 @@ return (
         <Col className="order-2 order-lg-1 col-12 p-5 col-md-4 text-white">
         <h2 className="text-orange bold">{editingdata[Lang()].powertitle}</h2>
         <p className="pb-3 thin">{editingdata[Lang()].powerpara}</p>
-        <Button variant="green">
-        {editingdata[Lang()].unlockbutton}
-        </Button>
+        <Link href="/power-of-the-forest" ><a className="btn btn-green">{editingdata[Lang()].unlockbutton}</a></Link>
+      
         </Col>
         <Col className="order-1 order-lg-2 col-12 col-md-4 p-5">
         
@@ -255,9 +255,9 @@ return (
         <Col className="col-12 p-5 col-md-4 text-white">
         <h2 className="text-orange bold">{editingdata[Lang()].buildtitle}</h2>
         <p className="pb-3 thin">{editingdata[Lang()].buildpara}</p>
-        <Button variant="green">
-{editingdata[Lang()].buildbutton2}
-        </Button>
+        <Link href="/build-your-forest" ><a className="btn btn-green">
+{editingdata[Lang()].buildbutton2}</a></Link>
+      
         </Col>
         
 
@@ -272,9 +272,9 @@ return (
         <Col className="col-12 p-5 col-md-4 text-white">
         <h2 className="text-orange bold">{editingdata[Lang()].portaltitle}</h2>
         <p className="pb-3 thin">{editingdata[Lang()].portalpara}</p>
-        <Button variant="green">
-{editingdata[Lang()].portalbutton}
-        </Button>
+     
+        <Link href="/portal" ><a className="btn btn-green">
+        {editingdata[Lang()].portalbutton}</a></Link>
         </Col>
         <Col className="col-12 col-md-4 p-5 hover-grow">
                       
