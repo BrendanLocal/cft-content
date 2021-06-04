@@ -121,7 +121,7 @@ return (
 
   <main id="intro">
   <Parallax
-        bgImage='/landingSky.png'
+        bgImage='/landingSKY.png'
         bgImageAlt="SKY"
         strength={300}
         
