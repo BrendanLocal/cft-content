@@ -39,7 +39,7 @@ useEffect(() => {
 
 return(
 <React.Fragment>
-<footer className="bg-brown">
+<footer className="bg-brown container-drop-heavy">
   <Container fluid className="bg-brown text-white p-5">
     <Row >
       <Col className="col-12 col-md-3 p-3">
