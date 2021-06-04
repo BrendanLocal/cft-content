@@ -177,7 +177,7 @@ return (
     </Container>
 
     
-    <Container id="our-smart-forests" fluid className="v-full z-999 bg-green py-5 ">
+    <Container id="our-smart-forests" fluid className="v-full z-999 bg-green py-5 container-drop-heavy">
     <Fade bottom>
       <Row  className="pt-5 align-items-center justify-content-center">
         <Col className="col-12 col-lg-6 pe-lg-0 mt-5">
@@ -272,10 +272,9 @@ return (
 {editingdata[Lang()].portalbutton}
         </Button>
         </Col>
-        <Col className="col-12 col-md-4 p-5">
-                </Col>
-        
-
+        <Col className="col-12 col-md-4 p-5 hover-grow">
+                      
+        </Col>
       </Row>
       </Fade>
     </Container>
