@@ -50,12 +50,12 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     const id = entry.target.getAttribute('id');
     if (entry.intersectionRatio > 0.0 ) {
-      if (document.querySelector(`.left-sidenav a[href="#${id}"]`)){
-      document.querySelector(`.left-sidenav a[href="#${id}"]`).parentNode.classList.add('active');
+      if (document.querySelector(`.left-sidenav li[data-dest="#${id}"]`)){
+      document.querySelector(`.left-sidenav li[data-dest="#${id}"]`).classList.add('active');
       }
     } else {
-      if (document.querySelector(`.left-sidenav a[href="#${id}"]`)){
-      document.querySelector(`.left-sidenav a[href="#${id}"]`).parentNode.classList.remove('active');
+      if (document.querySelector(`.left-sidenav li[data-dest="#${id}"]`)){
+      document.querySelector(`.left-sidenav li[data-dest="#${id}"]`).classList.remove('active');
       }
     }
   });
@@ -84,32 +84,32 @@ return (
         <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
           <p className="text-white m-2 bold op-6 ">HOME</p>
           <ul>
-            <li className="p-0">
+            <li className="p-0" data-dest="#intro">
               <a href="#intro" className="text-white bold no-underline">
                INTRO
               </a>
             </li>
-            <li className="p-0">              
+            <li className="p-0" data-dest="#our-smart-forests" >              
               <a href="#our-smart-forests" className="text-white bold no-underline">
                 OUR SMART FORESTS
               </a>
             </li>
-            <li className="p-0">
+            <li className="p-0" data-dest="#unlock-the-forest">
               <a href="#unlock-the-forest" className="text-white bold no-underline ">
                 POWER OF FORESTS
               </a>
             </li>
-            <li className="p-0">             
+            <li className="p-0" data-dest="#build-a-forest">             
               <a href="#build-a-forest" className="text-white bold no-underline ">
                 BUILD A FOREST
               </a>
             </li>
-            <li className="p-0">              
+            <li className="p-0" data-dest="#explore-your-forest">              
               <a href="#explore-your-forest" className="text-white bold no-underline ">
                 EXPLORE YOUR FOREST
               </a>
             </li>
-            <li className="p-0">  
+            <li className="p-0" data-dest="#calculate-impact" >  
               <a href="#calculate-impact" className="text-white bold no-underline ">
                 CALCULATE YOUR IMPACT
               </a>
@@ -123,12 +123,13 @@ return (
   <Parallax
         bgImage='/landingSky.png'
         bgImageAlt="SKY"
-        strength={700}
+        strength={300}
+        
     >
    <Parallax
         bgImage='/landingLAND.png'
-        bgImageAlt="SKY"
-        strength={500}
+        bgImageAlt="LAND"
+        strength={200}
     >
 
  
