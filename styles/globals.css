@@ -219,10 +219,10 @@ font-weight: 700;
 .btn {
   padding: 10px 20px 10px 20px;
   border-radius: 6px;
-  font-size: 12px;
+  font-size: 13px;
   text-transform: uppercase;
   letter-spacing: .2rem;
-  font-weight: 700 !important;
+  font-weight: 900 !important;
   margin-bottom: 10px;
   transition: all .5s;
 }
@@ -807,7 +807,7 @@ footer {
 #sidebar {
   position: fixed;
   left: 110vw;
-  transition: left 1500ms;
+  transition: left 900ms;
   z-index:100;
   width: 100%;
   box-shadow: -8px -2px 8px rgb(0 0 0 / 50%);
@@ -815,7 +815,7 @@ footer {
 
 #sidebar.open {
   left: 3vw;
-  transition: left 1500ms;
+  transition: left 900ms;
 
   width: 100%;
 }
@@ -987,7 +987,8 @@ z-index:999;
 
 .tickerTitle {
   position: relative;
-  line-height: 1.2em;
+  line-height: 1.1em;
+  font-size: 17px;
 }
 
 .newsItem {
@@ -995,6 +996,8 @@ z-index:999;
     color: #fff;
     line-height: 100%;
     white-space: nowrap;
+    font-size: 18px;
+    font-weight: 100;
 }
 
 

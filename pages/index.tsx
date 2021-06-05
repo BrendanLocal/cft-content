@@ -150,7 +150,7 @@ return (
         
       <Fade bottom>
       <Row className="justify-content-center  py-5">
-        <Col className="col-12 col-lg-8 pe-lg-0 mb-0">
+        <Col className="col-12 col-lg-8 pe-lg-0 mb-0 p-0">
           <h2 className="text-center text-white mb-0 bold tight-drop">{editingdata[Lang()].foresttrust}</h2>
         </Col>
       </Row>
