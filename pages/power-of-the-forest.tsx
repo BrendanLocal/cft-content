@@ -23,10 +23,31 @@ usePlugin(form)
 useGithubToolbarPlugins()
 
 useEffect(() => {
-  new Rellax(".rellax");
-  var scene = document.getElementById('scene');
-var parallaxInstance = new Parallax(scene);
-}, []);
+
+
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const id = entry.target.getAttribute('id');
+      if (entry.intersectionRatio > 0.0 ) {
+        if (document.querySelector(`.left-sidenav li[data-dest="#${id}"]`)){
+        document.querySelector(`.left-sidenav li[data-dest="#${id}"]`).classList.add('active');
+        }
+      } else {
+        if (document.querySelector(`.left-sidenav li[data-dest="#${id}"]`)){
+        document.querySelector(`.left-sidenav li[data-dest="#${id}"]`).classList.remove('active');
+        }
+      }
+    });
+  });
+  
+  // Track all div containers that have an `id` applied
+  document.querySelectorAll('div[id]').forEach((id) => {
+    observer.observe(id);
+  });
+  
+  }, []);
+
 
 
 return (
@@ -39,14 +60,43 @@ return (
     <meta name="theme-color" content="#054218"></meta>
   </Head>
 
+
+  <Row className="justify-content-left p-0 m-0 d-none d-lg-block">
+        <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
+          <p className="text-white m-2 bold op-6 ">THE POWER OF FORESTS</p>
+          <ul>
+            <li className="p-0" data-dest="#intro">
+              <a href="#intro" className="text-white bold no-underline">
+               INTRO
+              </a>
+            </li>
+            <li className="p-0" data-dest="#smart-forests" >              
+              <a href="#smart-forests" className="text-white bold no-underline">
+                OUR SMART FORESTS
+              </a>
+            </li>
+            <li className="p-0" data-dest="#countdown">
+              <a href="#countdown" className="text-white bold no-underline ">
+                CARBON COUNTDOWN
+              </a>
+            </li>
+            <li className="p-0" data-dest="#unlock">             
+              <a href="#unlock" className="text-white bold no-underline ">
+                UNLOCK THE POWER
+              </a>
+            </li>
+          </ul>        
+        </Col>
+      </Row>
+
   <main className="bg-green py-5">
-    <Container className="bg-green py-5">
-      <Row className="justify-content-center d-flex pb-5 mb-5"> 
+    <Container className="bg-green py-5 px-5">
+      <Row className="justify-content-center d-flex pb-5 mb-5 py-5 px-5"> 
       <Col className="col-xl-5 text-white p-5 pb-0">
-        <h1 className="text-orange mb-5">
+        <h1 className="text-orange mb-5 bold">
          {editingdata.heading}
         </h1>
-        <p className="large">Smart Forests™ have the ability to:</p>
+        <p className="large bold">Smart Forests™ have the ability to:</p>
         <ul className="checkMark large thin pb-5">
           <li>
             {editingdata.list1}
@@ -85,26 +135,17 @@ return (
             {editingdata.list12}
           </li>
         </ul>
-        <a href="#smart-forests" className="btn btn-text text-orange arrow-after medium d-block text-left py-3">{editingdata.smarttitle}</a>
-        <a href="#contribution" className="btn btn-text text-orange arrow-after medium d-block text-left py-3">{editingdata.canadacontribution}</a>
-       <a href="#unlock" className="btn btn-text text-orange arrow-after medium d-block text-left py-3">{editingdata.unlock}</a>
+
+        <p className="text-white text-left smallcaps intro-links-header op-2">ON THIS PAGE</p>
+        <a href="#smart-forests" className="btn btn-text text-left intro-links text-orange bold no-underline ">{editingdata.smarttitle}</a>
+        <a href="#countdown" className="btn btn-text text-left intro-links text-orange bold no-underline ">{editingdata.canadacontribution}</a>
+       <a href="#unlock" className="btn btn-text text-left intro-links text-orange bold no-underline ">{editingdata.unlock}</a>
 
         </Col>
 
        <Col className="col-xl-5 p-5 stickyTop mb-5">
          
-<div className="p-5 whiteFloat" data-relative-input="true" id="scene">
-<img className="op-0" data-depth="-1" src="/cft-c.svg"></img>
-<img className="op-1" data-depth="-.2" src="/cft-c.svg"></img>
-
-<img className="op-2" data-depth="-.1" src="/cft-c.svg"></img>
-
-<img className="" data-depth="0" src="/cft-c.svg"></img>
-
-<img className="op-2" data-depth=".1" src="/cft-c.svg"></img>
-
-<img className="op-1" data-depth=".3" src="/cft-c.svg"></img>
-</div>
+       <object type="image/svg+xml" data="/power-svg.svg"/>
         </Col>
         
       </Row>
@@ -147,26 +188,43 @@ return (
         </Col>
       </Row>
     </Container>
-<Container id="conribution">
-      <Row>
+
+    <Container id="countdown" className="py-5 mb-5">
+      
+      <Row className="mb-3">
         <Col>
         <h2 className="text-center text-orange bold">{editingdata.carboncount}</h2>
-        </Col></Row><Row>
+        </Col>
+      </Row>
+        
+      <Row className="justify-content-center">
+        <Col className="col-12 col-lg-7">
+        <Row className="roundedBox bg-brown canada-carbon-graphic innerShadow p-5">
+            <Col className="col-12 col-lg-6 p-3">
+              <img src="/countdown-igraphic-left.png"></img>
+            
+            </Col>
+            <Col className="col-12 col-lg-6 p-3">
+               <img src="/countdown-igraphic-right.png"></img>
+
+            </Col>
+        </Row>
+        </Col>
+      </Row>
+      
+      <Row className="text-center mt-4">
         <Col>
-        <div className="roundedBox bg-brown v-100"></div>
+        <h4 className="text-orange pb-3">{editingdata.decreasetitle}</h4>
+        <Link href="/carbon-calculator" ><a className="btn btn-green mb-5">{editingdata.offsetbutton}</a></Link>
+        
         </Col>
       </Row>
       
     </Container>
-<Container id="unlock">
-      <Row className="text-center py-6">
-        <Col>
-        <h3 className="text-orange">{editingdata.decreasetitle}</h3>
-        <Link href="/carbon-calculator" ><a className="btn btn-green">{editingdata.offsetbutton}</a></Link>
-        
-        </Col>
-      </Row>
 
+    
+<Container id="unlock" className="py-5 my-5">
+    
       <Row className="justify-content-center">
         <Col className="col-lg-4 p-5">
         <h3 className="h2 text-orange bold">
@@ -175,15 +233,15 @@ return (
         <p className="text-white">{editingdata.unlockpara}</p>
         </Col>
         <Col className="col-lg-4 p-5"><img src="/unlock-standin.png"/></Col>
-        <Col className="col-8">
+        <Col className="col-8 px-5">
         <hr className="thick"/></Col>
       </Row>
-      <Row className="py-6">
+      <Row className="my-4">
         <Col className="text-center">
-        <h3 className="text-white">
+        <h3 className="text-white pb-4">
           {editingdata.buildctatitle}
         </h3>
-        <Link href="/build-your-forest" ><a className="btn btn-green">{editingdata.buildctabutton}</a></Link>
+        <Link href="/build-your-forest" ><a className="btn btn-green mb-5">{editingdata.buildctabutton}</a></Link>
         
         </Col>
       </Row>

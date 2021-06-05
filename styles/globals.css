@@ -363,6 +363,7 @@ text-decoration: underline;
 
 .left-sidenav p {
   font-size: 12px!important;
+  width: 100px;
 }
 
 
@@ -567,6 +568,15 @@ padding: 10%;
 .z-999 {
   z-index: 999;
   position: relative;
+}
+
+
+/* Infographic */
+
+.canada-carbon-graphic {
+  background: url('/CANADA-graphic-dark.svg');
+  background-position: 30% 85%;
+  background-repeat: no-repeat;
 }
 
 
@@ -797,6 +807,33 @@ footer {
 
 .big-drop {
   text-shadow: 0px 1px 30px rgba(0, 0, 0, 100);
+}
+
+
+.intro-links{
+  margin: 10px 0px 10px 28px;
+  font-size: 16px;
+  letter-spacing: 0.2px!important;
+}
+
+.intro-links:after {
+  content: url(/navArrow.svg);
+  transform: rotate(90deg);
+  margin-left: 5px;
+  width: 16px;
+  display: inline-block;
+  color: #fff;
+}
+
+.intro-links:hover {
+transform: translateY(3px);
+transition: all .5s ease;
+}
+
+.intro-links-header {
+  margin-left: 28px;
+  font-size: 12px;
+  font-weight: 700;
 }
 
 
@@ -1333,6 +1370,8 @@ border-left: solid 1px #00823B;
 
 /* Power of the Forest */
 
+
+
 ul.checkMark li{
   position: relative;
 left: 1.5em;
@@ -1342,7 +1381,8 @@ padding: 15px 0;
 ul.checkMark li:before {
   content: url("../public/checkmark-green.svg");
   position: absolute;
-  width: 1em;
+  margin-right: 10px;
+  width: 1.5em;
   left: -2em;
 }
 
