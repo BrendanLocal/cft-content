@@ -90,22 +90,19 @@ return (
       </Row>
 
   <main className="bg-green py-5">
-    <Container className="bg-green py-5 px-5">
+    <Container id="intro" className="bg-green py-5 px-5">
       <Row className="justify-content-center d-flex pb-5 mb-5 py-5 px-5"> 
       <Col className="col-xl-5 text-white p-5 pb-0">
         <h1 className="text-orange mb-5 bold">
          {editingdata.heading}
         </h1>
-        <p className="large bold">Smart Forests™ have the ability to:</p>
+        <p className="large bold mt-5">Smart Forests™ have the ability to:</p>
         <ul className="checkMark large thin pb-5">
           <li>
             {editingdata.list1}
           </li>
           <li>
             {editingdata.list2}
-          </li>
-          <li>
-            {editingdata.list3}
           </li>
           <li>
             {editingdata.list4}
@@ -145,7 +142,7 @@ return (
 
        <Col className="col-xl-5 p-5 stickyTop mb-5">
          
-       <object type="image/svg+xml" data="/power-svg.svg"/>
+       <object type="image/svg+xml" data="/power2-svg.svg"/>
         </Col>
         
       </Row>
@@ -199,7 +196,7 @@ return (
         
       <Row className="justify-content-center">
         <Col className="col-12 col-lg-7">
-        <Row className="roundedBox bg-brown canada-carbon-graphic innerShadow p-5">
+        <Row className="roundedBox bg-brown canada-carbon-graphic innerShadow p-4">
             <Col className="col-12 col-lg-6 p-3">
               <img src="/countdown-igraphic-left.png"></img>
             
@@ -223,31 +220,22 @@ return (
     </Container>
 
     
-<Container id="unlock" className="py-5 my-5">
+  <Container id="unlock" className="py-5 my-5">
     
       <Row className="justify-content-center">
+        <Col className="col-lg-4 roundedBox innerShadow p-0">
+          <object type="image/svg+xml" data="/unlock-svg.svg"/>
+        </Col>
         <Col className="col-lg-4 p-5">
-        <h3 className="h2 text-orange bold">
-          {editingdata.unlocktitle}
-        </h3>
-        <p className="text-white">{editingdata.unlockpara}</p>
-        </Col>
-        <Col className="col-lg-4 p-5"><img src="/unlock-standin.png"/></Col>
-        <Col className="col-8 px-5">
-        <hr className="thick"/></Col>
-      </Row>
-      <Row className="my-4">
-        <Col className="text-center">
-        <h3 className="text-white pb-4">
-          {editingdata.buildctatitle}
-        </h3>
-        <Link href="/build-your-forest" ><a className="btn btn-green mb-5">{editingdata.buildctabutton}</a></Link>
-        
-        </Col>
-      </Row>
-    </Container>
-    
-   
+          <h3 className="h2 text-orange bold">
+            {editingdata.unlocktitle}
+          </h3>
+          <p className="text-white mb-3">{editingdata.unlockpara}</p>
+         <Link href="/build-your-forest" ><a className="btn btn-green mt-3">{editingdata.buildctabutton}</a></Link>
+        </Col>   
+      </Row> 
+
+  </Container> 
 
   </main>
 </div>
