@@ -313,6 +313,12 @@ text-decoration: underline;
   text-align: left;
 }
 
+.down-arrow {
+  fill: #fff;
+  transform: rotate(90deg);
+  width: 30px;
+}
+
 .arrow-after:after {
   content: url("../public/orange-arrow.svg");
   position: absolute;
@@ -1288,7 +1294,7 @@ transition: all .5s ease;
 
 .forest-choice {
   text-transform: none!important;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 500!important;
   letter-spacing: 0px!important;
   line-height: 37px!important;
