@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import Head from 'next/head'
 import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { GetStaticProps } from 'next'
-
+import Fade from 'react-reveal/Fade';
 import Link from 'next/link'
 import { usePlugin } from 'tinacms'
 import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
@@ -147,8 +147,9 @@ return (
         
       </Row>
 </Container>
-
+    
     <Container id="smart-forests" fluid className="v-full z-999 bg-green py-5">
+    <Fade bottom>
       <Row className="pt-5 align-items-center justify-content-center">
         <Col className="col-12 col-lg-6 pe-lg-0 mt-5">
           <h2 className="text-center text-orange bold">{editingdata.smarttitle}</h2>
@@ -184,10 +185,11 @@ return (
         <Link href="/build-your-forest#communal" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a></Link> </div>
         </Col>
       </Row>
+      </Fade>
     </Container>
 
     <Container id="countdown" className="py-5 mb-5">
-      
+    <Fade bottom>
       <Row className="mb-3">
         <Col>
         <h2 className="text-center text-orange bold">{editingdata.carboncount}</h2>
@@ -216,12 +218,13 @@ return (
         
         </Col>
       </Row>
-      
+
+      </Fade>
     </Container>
 
     
   <Container id="unlock" className="py-5 my-5">
-    
+    <Fade bottom>
       <Row className="justify-content-center">
         <Col className="col-lg-4 roundedBox innerShadow p-0">
           <object type="image/svg+xml" data="/unlock-svg.svg"/>
@@ -234,7 +237,7 @@ return (
          <Link href="/build-your-forest" ><a className="btn btn-green mt-3">{editingdata.buildctabutton}</a></Link>
         </Col>   
       </Row> 
-
+    </Fade>
   </Container> 
 
   </main>
