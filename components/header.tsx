@@ -15,27 +15,27 @@ setActive(!isActive);
 const navItems = [
 {
 key: "navItem1",
-label: "The Power of Smart Forests™",
-path: "/power-of-the-forest"
+label: "What is a Smart Forest",
+path: "/what-is-a-smart-forest"
 },
 {
 key: "navItem2",
-label: "Build a Smart Forest™",
+label: "Build a Smart Forest",
 path: "/build-your-forest"
 },
 {
 key: "navItem4",
-label: "Your Smart Forest™",
+label: "Your Smart Forest",
 path: "/portal"
 },
 {
 key: "navItem5",
-label: "Carbon offset calculator",
+label: "Net-Zero Carbon Calculator",
 path: "/carbon-calculator"
 },
 {
 key: "navItem6",
-label: "Smart Forest™ calculator",
+label: "Smart Forest Calculator",
 path: "/smart-forest-calculator"
 },
 {
