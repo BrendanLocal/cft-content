@@ -223,12 +223,12 @@ return (
 
     <Container  id="explore-your-forest" fluid className="v-full z-999 bg-green pt-5 pb-0">
     <Fade bottom>
-    <Row className="py-5 align-items-center justify-content-center  align-items-stretch protorow">
+    <Row className="pt-5 align-items-center justify-content-center  align-items-stretch protorow">
     
-        <Col className="col-12 p-5 col-md-4 text-white">
+        <Col className="col-12 p-5 col-md-4 text-white mb-5">
         <h2 className="text-orange bold">Who can support a Smart Forest?</h2>
         <p className="mb-4 thin">If you care about the future of our planet and the health of our natural ecosystems, you belong here. We invite youth, families, farmers, landowners, indigenous communities and Canada’s corporate leaders to collaborate on this resilient, long-term climate solution.</p>
-        <svg className="down-arrow p-0 d-none" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74 29.46"><path d="M73.41,13.59,60.69.86a2,2,0,0,0-2.83,2.83L67.17,13H0v4H67.17l-9.31,9.31a2,2,0,1,0,2.83,2.83L73.41,16.41A2,2,0,0,0,73.41,13.59Z"/></svg>
+        <svg className="down-arrow d-none" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74 29.46"><path d="M73.41,13.59,60.69.86a2,2,0,0,0-2.83,2.83L67.17,13H0v4H67.17l-9.31,9.31a2,2,0,1,0,2.83,2.83L73.41,16.41A2,2,0,0,0,73.41,13.59Z"/></svg>
         
         </Col>
         <Col className="col-12 col-md-4 p-1">
@@ -238,42 +238,42 @@ return (
       </Fade>
     </Container>
 
-    <Container id="our-smart-forests" fluid className="v-full z-999 bg-green">
+    <Container id="our-smart-forests" fluid className="v-full z-999 bg-green p-0">
     <Fade bottom>
-      <Row  className="align-items-center justify-content-center">
-        <Col className="col-12 col-lg-6 pe-lg-0 my-5">
+      <Row  className="align-items-center justify-content-center p-0">
+        <Col className="col-12 col-lg-6 pe-lg-0 mb-5">
           <h2 className="text-center text-orange bold">I would like to… </h2>
         </Col>
       </Row>
       <Row className="justify-content-center align-items-stretch">
       <Col className="col-12 col-md-6 col-lg-3 col-xl-2 pe-lg-0 m-3">
-        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card p-3">
+        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card ">
        
-        <Link href="/build-your-forest#corporate" ><a className="forest-choice btn btn-text text-left text-white no-underline tight-drop">Meet my corporate ESG obligations</a></Link>
+        <Link href="/build-your-forest#corporate" ><a className="forest-choice btn btn-text text-left text-white no-underline tight-drop smallcaps">Meet my corporate ESG obligations</a></Link>
         </div>
         </Col>
         <Col className="col-12 col-md-6 col-lg-3 col-xl-2 pe-lg-0 m-3 ">
-        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card p-3">
+        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card ">
         
-        <Link href="/build-your-forest#school" ><a className="forest-choice btn btn-text text-left text-white no-underline tight-drop">Get my school involved</a></Link>
+        <Link href="/build-your-forest#school" ><a className="forest-choice btn btn-text text-left text-white no-underline tight-drop smallcaps">Get my school involved</a></Link>
         </div>
         </Col>
         <Col className="col-12 col-md-6 col-lg-3 col-xl-2 pe-lg-0 m-3">
-        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card p-3">
+        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
         
-        <Link href="/build-your-forest#legacy" ><a className="forest-choice btn btn-text text-left text-white no-underline tight-drop">Establish a legacy forest</a></Link></div>
+        <Link href="/build-your-forest#legacy" ><a className="forest-choice btn btn-text text-left text-white no-underline tight-drop smallcaps">Establish a legacy forest</a></Link></div>
         </Col>
         <Col className="col-12 col-md-6 col-lg-3 col-xl-2 pe-lg-0 m-3">
-        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop communal-card p-3">
-        <Link href="/build-your-forest#communal" ><a className="forest-choice btn btn-text text-left text-white no-underline tight-drop">Contribute to a communal forest</a></Link> </div>
+        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop communal-card ">
+        <Link href="/build-your-forest#communal" ><a className="forest-choice btn btn-text text-left text-white no-underline tight-drop smallcaps">Contribute to a communal forest</a></Link> </div>
         </Col>
       </Row>
     </Fade>
     </Container>
     
-    <Container id="calculate-impact" fluid className="v-full z-999 bg-green pb-5 mb-3">
+    <Container id="calculate-impact" fluid className="v-full z-999 bg-green pt-0 mt-0 pb-5 mb-3">
     <Fade bottom>
-    <Row className="align-items-center justify-content-center ">
+    <Row className="align-items-center justify-content-center pt-0 mt-0">
       <Col className="col-12 col-lg-7 pe-lg-0 mb-4">
       <h2 className="text-center text-orange mb-2 bold">What difference can I make?</h2>
       <p className="text-center large text-white thin">Use our custom-built net-zero carbon calculator and forest calculator to understand exactly how your investment in Smart Forests will offset your climate impact.</p>
