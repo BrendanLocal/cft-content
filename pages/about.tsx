@@ -7,6 +7,7 @@ import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Fade from 'react-reveal/Fade';
 import Button from 'react-bootstrap/Button';
 import Rellax from "rellax";
 import Parallax from 'parallax-js'
@@ -40,16 +41,16 @@ return (
 
   <main className="">
     <Container fluid className="bg-green py-5">
-      <Row className="justify-content-center align-items-center d-flex py-6"> 
+      <Row className="justify-content-center align-items-center d-flex py-5"> 
 
-      <Col className="col-xl-4 p-5 stickyTop">
+      <Col className="col-xl-4 p-5 stickyTop ">
          <img className="roundedBox" src="/placeholder-forest.jpg"/>
         </Col>
-      <Col className="col-xl-4 text-white p-5 pb-0">
-        <h1 className="text-orange mb-5">
+      <Col className="col-xl-4 text-white px-5 pb-0">
+        <h1 className="text-orange mb-5 bold">
          {editingdata.heading}
         </h1>
-        <p>{editingdata.aboutpara}</p>
+        <p className="h3">{editingdata.aboutpara}</p>
         
         </Col>
 
