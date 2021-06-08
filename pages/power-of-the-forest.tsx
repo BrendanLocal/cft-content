@@ -196,7 +196,7 @@ return (
         
       <Row className="justify-content-center">
         <Col className="col-12 col-lg-7">
-        <Row className="roundedBox bg-brown canada-carbon-graphic innerShadow p-4">
+        <Row className="roundedBox bg-brown canada-carbon-graphic innerShadow px-4 py-2">
             <Col className="col-12 col-lg-6 p-3">
               <img src="/countdown-igraphic-left.png"></img>
             
