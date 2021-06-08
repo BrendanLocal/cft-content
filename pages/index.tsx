@@ -15,54 +15,64 @@ import Fade from 'react-reveal/Fade';
 import { Parallax, Background } from 'react-parallax';
 
 
-
-
-
-export default function Home({ file, href, children}) {
-
-  const router = useRouter();
-
-  
-const formOptions = {
-label: 'Home Page',
-fields: [{ name: 'title', component: 'text' }],
-}
-
-const [editingdata, form] = useGithubJsonForm(file, formOptions)
-usePlugin(form)
-useGithubToolbarPlugins()
-
-
-
-useEffect(() => {
-
-
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    const id = entry.target.getAttribute('id');
-    if (entry.intersectionRatio > 0.0 ) {
-      if (document.querySelector(`.left-sidenav li[data-dest="#${id}"]`)){
-      document.querySelector(`.left-sidenav li[data-dest="#${id}"]`).classList.add('active');
-      }
-    } else {
-      if (document.querySelector(`.left-sidenav li[data-dest="#${id}"]`)){
-      document.querySelector(`.left-sidenav li[data-dest="#${id}"]`).classList.remove('active');
-      }
+const Lang = () => {
+  var language = "en";
+    const router = useRouter();
+    if(router.query.lang){ 
+    const lan = JSON.stringify(router.query.lang);
+    language = JSON.parse(lan)
     }
+  
+    return (language)
+  }
+  
+  
+  
+  export default function Home({ file, href, children}) {
+  
+    const router = useRouter();
+  
+    
+  const formOptions = {
+  label: 'Home Page',
+  fields: [{ name: 'title', component: 'text' }],
+  }
+  
+  const [editingdata, form] = useGithubJsonForm(file, formOptions)
+  usePlugin(form)
+  useGithubToolbarPlugins()
+  
+  
+  
+  useEffect(() => {
+  
+  
+  
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const id = entry.target.getAttribute('id');
+      if (entry.intersectionRatio > 0.0 ) {
+        if (document.querySelector(`.left-sidenav li[data-dest="#${id}"]`)){
+        document.querySelector(`.left-sidenav li[data-dest="#${id}"]`).classList.add('active');
+        }
+      } else {
+        if (document.querySelector(`.left-sidenav li[data-dest="#${id}"]`)){
+        document.querySelector(`.left-sidenav li[data-dest="#${id}"]`).classList.remove('active');
+        }
+      }
+    });
   });
-});
-
-// Track all div containers that have an `id` applied
-document.querySelectorAll('div[id]').forEach((id) => {
-  observer.observe(id);
-});
-
-}, []);
-
-
-
-return (
+  
+  // Track all div containers that have an `id` applied
+  document.querySelectorAll('div[id]').forEach((id) => {
+    observer.observe(id);
+  });
+  
+  }, []);
+  
+  
+  
+  return (
 <div className={styles.homeParallax}>
   
 
@@ -82,27 +92,27 @@ return (
               </a>
             </li>
             <li className="p-0" data-dest="#what" >              
-              <a href="#our-smart-forests" className="text-white bold no-underline">
+              <a href="#what" className="text-white bold no-underline">
                 WHAT
               </a>
             </li>
-            <li className="p-0" data-dest="#unlock-the-forest">
-              <a href="#unlock-the-forest" className="text-white bold no-underline ">
+            <li className="p-0" data-dest="#how">
+              <a href="#how" className="text-white bold no-underline ">
                 HOW
               </a>
             </li>
-            <li className="p-0" data-dest="#build-a-forest">             
-              <a href="#build-a-forest" className="text-white bold no-underline ">
+            <li className="p-0" data-dest="#who">             
+              <a href="#who" className="text-white bold no-underline ">
                 WHO
               </a>
             </li>
-            <li className="p-0" data-dest="#explore-your-forest">              
-              <a href="#explore-your-forest" className="text-white bold no-underline ">
+            <li className="p-0" data-dest="#you">              
+              <a href="#you" className="text-white bold no-underline ">
                 YOU
               </a>
             </li>
-            <li className="p-0" data-dest="#calculate-impact" >  
-              <a href="#calculate-impact" className="text-white bold no-underline ">
+            <li className="p-0" data-dest="#calculate" >  
+              <a href="#calculate" className="text-white bold no-underline ">
                 CALCULATE
               </a>
             </li>
@@ -199,7 +209,7 @@ return (
       </Fade>
     </Container>
 
-    <Container id="build-a-forest" fluid className="v-full z-999 bg-green py-5">
+    <Container id="how" fluid className="v-full z-999 bg-green py-5">
     <Fade bottom>
     <Row  className="py-5 align-items-center justify-content-center ">
     <Col className="col-12 col-md-4 p-5 mx-3">
@@ -221,11 +231,11 @@ return (
     </Fade>
     </Container>
 
-    <Container  id="explore-your-forest" fluid className="v-full z-999 bg-green pt-5 pb-0 mb-0">
+    <Container  id="who" fluid className="v-full z-999 bg-green pt-5 pb-0 mb-0">
     <Fade bottom>
     <Row className="pt-5 align-items-center justify-content-center  align-items-stretch protorow pb-0 mb-0">
     
-        <Col className="col-12 col-md-4 text-white mb-5 py-5 px-5">
+        <Col className="col-12 col-md-3 text-white mb-5 py-5 px-5">
         <h2 className="text-orange bold">Who can support a Smart Forest?</h2>
         <p className="mb-4 thin">If you care about the future of our planet and the health of our natural ecosystems, you belong here. We invite youth, families, farmers, landowners, indigenous communities and Canada’s corporate leaders to collaborate on this resilient, long-term climate solution.</p>
         <svg className="down-arrow d-none" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74 29.46"><path d="M73.41,13.59,60.69.86a2,2,0,0,0-2.83,2.83L67.17,13H0v4H67.17l-9.31,9.31a2,2,0,1,0,2.83,2.83L73.41,16.41A2,2,0,0,0,73.41,13.59Z"/></svg>
@@ -238,10 +248,10 @@ return (
       </Fade>
     </Container>
 
-    <Container id="our-smart-forests" fluid className="v-full z-999 bg-green pt-0 mt-0">
+    <Container id="you" fluid className="v-full z-999 bg-green pt-0 mt-0">
     <Fade bottom>
       <Row  className="align-items-center justify-content-center pt-0 mt-0">
-        <Col className="col-12 col-lg-6 pe-lg-0 mb-4 pt-0 mt-0">
+        <Col className="col-12 col-lg-6 pe-lg-0 mb-2 pt-0 mt-0">
           <h2 className="text-center text-orange bold pt-0 mt-0">I would like to… </h2>
         </Col>
       </Row>
@@ -271,7 +281,7 @@ return (
     </Fade>
     </Container>
     
-    <Container id="calculate-impact" fluid className="v-full z-999 bg-green pt-0 mt-0 pb-5 mb-3">
+    <Container id="calculate" fluid className="v-full z-999 bg-green pt-0 mt-0">
     <Fade bottom>
     <Row className="align-items-center justify-content-center pt-0 mt-0">
       <Col className="col-12 col-lg-7 pe-lg-0 mb-4">
@@ -279,7 +289,7 @@ return (
       <p className="text-center large text-white thin op-8">Use our custom-built net-zero carbon calculator and forest calculator to understand exactly how your investment in Smart Forests will offset your climate impact.</p>
       </Col>
       </Row>
-      <Row className="justify-content-center  pb-5 align-items-stretch mb-5 mx-5">
+      <Row className="justify-content-center  align-items-stretch mx-5">
         <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
           <div className="card bg-green p-4 h-100 calculate-card">
             <p className="h6 text-orange bold">
