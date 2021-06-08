@@ -14,16 +14,7 @@ import styles from '../styles/Home.module.css'
 import Fade from 'react-reveal/Fade';
 import { Parallax, Background } from 'react-parallax';
 
-const Lang = () => {
-var language = "en";
-  const router = useRouter();
-  if(router.query.lang){ 
-  const lan = JSON.stringify(router.query.lang);
-  language = JSON.parse(lan)
-  }
 
-  return (language)
-}
 
 
 
@@ -90,29 +81,29 @@ return (
                INTRO
               </a>
             </li>
-            <li className="p-0" data-dest="#our-smart-forests" >              
+            <li className="p-0" data-dest="#what" >              
               <a href="#our-smart-forests" className="text-white bold no-underline">
-                OUR SMART FORESTS
+                WHAT
               </a>
             </li>
             <li className="p-0" data-dest="#unlock-the-forest">
               <a href="#unlock-the-forest" className="text-white bold no-underline ">
-                POWER OF FORESTS
+                HOW
               </a>
             </li>
             <li className="p-0" data-dest="#build-a-forest">             
               <a href="#build-a-forest" className="text-white bold no-underline ">
-                BUILD A FOREST
+                WHO
               </a>
             </li>
             <li className="p-0" data-dest="#explore-your-forest">              
               <a href="#explore-your-forest" className="text-white bold no-underline ">
-                EXPLORE YOUR FOREST
+                YOU
               </a>
             </li>
             <li className="p-0" data-dest="#calculate-impact" >  
               <a href="#calculate-impact" className="text-white bold no-underline ">
-                CALCULATE YOUR IMPACT
+                CALCULATE
               </a>
             </li>
           </ul>        
@@ -137,13 +128,17 @@ return (
 
 
     <Container  id="intro" fluid className="v-full d-flex py-5 flex-column z-0">
-      <Row className="justify-content-center pt-5 align-items-center my-5">
-        <Col className="col-12 col-lg-8 col-xl-6 p-3 pt-5 p-md-1">
-        <h1 className="my-5 pt-5 text-white drop bold">
-         
-        {editingdata[Lang()].heading}
+      <Row className="justify-content-center align-items-center py-5">
+        <Col className="col-12 col-lg-8 col-xl-6 py-5 p-md-1">
+        <h1 className=" text-white drop mt-3 mb-5">
+         Simply planting trees won’t save our planet.
         </h1>
-        <p className="lead py-5 text-white bold pe-5 pe-lg-0 big-drop tight-drop">{editingdata[Lang()].paragraph1}</p>
+
+
+        <h2 className="h1 mb-5 mt-3 text-white drop bold"> 
+        Building forests will.
+        </h2>
+        <p className="lead py-5 mt-3 text-white bold pe-5 pe-lg-0 big-drop tight-drop">With your help, we will reforest 10 million acres of Canadian land and protect it forever. </p>
         <hr className="thick my-4"></hr>
         </Col>
         </Row>
@@ -151,31 +146,31 @@ return (
       <Fade bottom>
       <Row className="justify-content-center  py-5">
         <Col className="col-12 col-lg-8 pe-lg-0 mb-0 p-0">
-          <h2 className="text-center text-white mb-0 bold tight-drop">{editingdata[Lang()].foresttrust}</h2>
+          <h2 className="text-center text-white mb-0 bold tight-drop">Canada's Forest Trust:</h2>
         </Col>
       </Row>
       <Row className="justify-content-center  pb-5 align-items-stretch mb-5">
         <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3">
           <div className="roundedBox card no-border bg-white p-4 h-100 card-drop-heavy">
             <p className="large text-green thin">
-          {editingdata[Lang()].card1}</p>
+            <span className="bold">Recognizes</span> that we need bold, long-term solutions to reverse the damage caused by deforestation and emissions in Canada.</p>
           </div>
         </Col>
         <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3 ">
           <div className="roundedBox card no-border bg-white p-4 h-100 card-drop-heavy">
           <p className="large text-green thin">
-          {editingdata[Lang()].card2}</p>
+          <span className="bold">Leverages</span> data-driven technologies and advanced analytics to support healthy, sustainable and biodiverse Smart Forests™.</p>
           </div>
         </Col>
         <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3">
           <div className="roundedBox card no-border bg-white p-4 h-100 card-drop-heavy">
           <p className="large text-green thin">
-          {editingdata[Lang()].card3}</p>
+          <span className="bold">Guarantees</span> protection and preservation through forest management practices that are based in science and designed for longevity.</p>
           </div>
         </Col>
 
         <Col className="text-center col-lg-12 pb-5 pe-5 mt-5 pe-lg-0">
-        <Link href="/contact" ><a className="btn btn-green">{editingdata[Lang()].buildbutton}</a></Link>
+        <Link href="/what-is-a-smart-forest" ><a className="btn btn-green">Discover the Smart Forest initiative</a></Link>
         </Col>
       </Row>   
       </Fade>
@@ -183,60 +178,21 @@ return (
     </Parallax>
     </Parallax>
     
-    <Container id="our-smart-forests" fluid className="v-full z-999 bg-green py-5 container-drop-heavy ">
-    <Fade bottom>
-      <Row  className="pt-5 align-items-center justify-content-center">
-        <Col className="col-12 col-lg-6 pe-lg-0 mt-5">
-          <h2 className="text-center text-orange bold">{editingdata[Lang()].smarttitle}</h2>
-          <p className="text-center text-white medium thin mb-4">{editingdata[Lang()].smartpara}</p>
-        </Col>
-      </Row>
-      <Row className="justify-content-center pb-5 align-items-stretch">
-      <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
-        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
-        <h4 className="text-white tight-drop-light">{editingdata[Lang()].card1title}<span className="text-orange">™</span></h4>
-        <p className="flex-fill pb-3 text-white tight-drop">{editingdata[Lang()].card1para}</p>
-       
-        <Link href="/build-your-forest#corporate" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</a></Link>
-        </div>
-        </Col>
-        <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
-        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
-        <h4 className="text-white tight-drop-light">{editingdata[Lang()].card2title}<span className="text-orange">™</span></h4>
-        <p className="flex-fill pb-3 text-white tight-drop">{editingdata[Lang()].card2para}</p>
-        <Link href="/build-your-forest#school" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</a></Link>
-        </div>
-        </Col>
-        <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
-        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
-        <h4 className="text-white tight-drop-light">{editingdata[Lang()].card3title}<span className="text-orange">™</span></h4>
-        <p className="flex-fill pb-3 text-white tight-drop">{editingdata[Lang()].card3para}</p>
-        <Link href="/build-your-forest#legacy" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</a></Link></div>
-        </Col>
-        <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
-        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop communal-card">
-        <h4 className="text-white tight-drop-light">{editingdata[Lang()].card4title}<span className="text-orange">™</span></h4>
-        <p className="flex-fill pb-3 text-white tight-drop">{editingdata[Lang()].card4para}</p>
-        <Link href="/build-your-forest#communal" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata[Lang()].learnmore}</a></Link> </div>
-        </Col>
-      </Row>
-    </Fade>
-    </Container>
 
-    <Container id="unlock-the-forest"  fluid className="v-full z-999 bg-green align-items-center py-5 ">
+    <Container id="what"  fluid className="v-full z-999 bg-green align-items-center py-5 container-drop-heavy">
       <Fade bottom>
-      <Row className="py-5 align-items-center justify-content-center">
+      <Row className="py-5 align-items-center justify-content-center mt-5">
         
         <Col className="order-2 order-lg-1 col-12 p-5 col-md-4 text-white">
-        <h2 className="text-orange bold">{editingdata[Lang()].powertitle}</h2>
-        <p className="pb-3 thin">{editingdata[Lang()].powerpara}</p>
-        <Link href="/power-of-the-forest" ><a className="btn btn-green">{editingdata[Lang()].unlockbutton}</a></Link>
+        <h2 className="text-orange bold">What is a Smart Forest™?</h2>
+        <p className="pb-3 thin">A Smart Forest combines the resilience of a natural ecosystem, developed over millennia, with the predictive capabilities of today’s technologies. Inside a Smart Forest, life thrives; outside of it, scientists, students, investors and conservationists use digital instruments to understand and activate the forest’s role in cleaning our water, purifying our air, and replenishing our lost resources.</p>
+        <Link href="/what-is-a-smart-forest" ><a className="btn btn-green">Learn more about Smart Forests</a></Link>
       
         </Col>
         <Col className="order-1 order-lg-2 col-12 col-md-4 p-5">
         
-          <object type="image/svg+xml" data="/power-svg.svg"/>
-          <p className="text-center smallCaps x-small text-white op-1 py-0 my-0">HOVER</p>
+          <object type="image/svg+xml" data="/power2-svg.svg"/>
+         
         </Col>
 
       </Row>
@@ -248,15 +204,15 @@ return (
     <Row  className="py-5 align-items-center justify-content-center ">
     <Col className="col-12 col-md-4 p-5 mx-5">
 
-    <object type="image/svg+xml" data="/build-svg.svg"/>
-    <p className="text-center smallCaps x-small text-white op-1 py-0 my-0">HOVER</p>
+    <object type="image/svg+xml" data="/power2-svg.svg"/>
+    
     
     </Col>
         <Col className="col-12 p-5 col-md-4 text-white">
-        <h2 className="text-orange bold">{editingdata[Lang()].buildtitle}</h2>
-        <p className="pb-3 thin">{editingdata[Lang()].buildpara}</p>
+        <h2 className="text-orange bold">How does a Smart Forest happen?</h2>
+        <p className="pb-3 thin">To plant a tree, you need a shovel. To build a Smart Forest, you need a five-phase strategic action plan, validated by modern science and calibrated to address the needs of a healthy, thriving forest, now and for decades to come.</p>
         <Link href="/build-your-forest" ><a className="btn btn-green">
-{editingdata[Lang()].buildbutton2}</a></Link>
+        Explore our Smart Forest action plan</a></Link>
       
         </Col>
         
@@ -270,11 +226,10 @@ return (
     <Row className="py-5 align-items-center justify-content-center  align-items-stretch protorow">
     
         <Col className="col-12 p-5 col-md-4 text-white">
-        <h2 className="text-orange bold">{editingdata[Lang()].portaltitle}</h2>
-        <p className="pb-3 thin">{editingdata[Lang()].portalpara}</p>
+        <h2 className="text-orange bold">Who can support a Smart Forest?</h2>
+        <p className="pb-3 thin">If you care about the future of our planet and the health of our natural ecosystems, you belong here. We invite youth, families, farmers, landowners, indigenous communities and Canada’s corporate leaders to collaborate on this resilient, long-term climate solution.</p>
      
-        <Link href="/portal" ><a className="btn btn-green">
-        {editingdata[Lang()].portalbutton}</a></Link>
+        
         </Col>
         <Col className="col-12 col-md-4 p-5 hover-grow">
                       
@@ -282,13 +237,46 @@ return (
       </Row>
       </Fade>
     </Container>
+
+    <Container id="our-smart-forests" fluid className="v-full z-999 bg-green py-5">
+    <Fade bottom>
+      <Row  className="pt-5 align-items-center justify-content-center">
+        <Col className="col-12 col-lg-6 pe-lg-0 mt-5 mb-3">
+          <h2 className="text-center text-orange bold">I would like to… </h2>
+        </Col>
+      </Row>
+      <Row className="justify-content-center pb-5 align-items-stretch">
+      <Col className="col-12 col-md-6 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
+       
+        <Link href="/build-your-forest#corporate" ><a className="forest-choice btn btn-text text-left text-white no-underline tight-drop">Meet my corporate ESG obligations</a></Link>
+        </div>
+        </Col>
+        <Col className="col-12 col-md-6 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
+        
+        <Link href="/build-your-forest#school" ><a className="forest-choice btn btn-text text-left text-white no-underline tight-drop">Get my school involved</a></Link>
+        </div>
+        </Col>
+        <Col className="col-12 col-md-6 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
+        
+        <Link href="/build-your-forest#legacy" ><a className="forest-choice btn btn-text text-left text-white no-underline tight-drop">Establish a legacy forest</a></Link></div>
+        </Col>
+        <Col className="col-12 col-md-6 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop communal-card">
+        <Link href="/build-your-forest#communal" ><a className="forest-choice btn btn-text text-left text-white no-underline tight-drop">Contribute to a communal forest</a></Link> </div>
+        </Col>
+      </Row>
+    </Fade>
+    </Container>
     
     <Container id="calculate-impact" fluid className="v-full z-999 bg-green py-5 mb-2">
     <Fade bottom>
     <Row className="pt-5 align-items-center justify-content-center ">
-      <Col className="col-12 col-lg-5 pe-lg-0 mb-4">
-      <h2 className="text-center text-orange mb-2 bold">{editingdata[Lang()].calculateheader}</h2>
-      <p className="text-center large text-white thin">{editingdata[Lang()].calculatepara}</p>
+      <Col className="col-12 col-lg-7 pe-lg-0 mb-4">
+      <h2 className="text-center text-orange mb-2 bold">What difference can I make?</h2>
+      <p className="text-center large text-white thin">Use our custom-built net-zero carbon calculator and forest calculator to understand exactly how your investment in Smart Forests will offset your climate impact.</p>
       </Col>
       </Row>
       <Row className="justify-content-center  pb-5 align-items-stretch mb-5 mx-5">
@@ -298,11 +286,13 @@ return (
               STEP 1
             </p>
             <p className="large text-white mb-3 bold">
-          {editingdata[Lang()].step1header}</p>
-          <p className="text-white mb-5">
-          {editingdata[Lang()].step1para}</p>
-          <Button variant="green">      
-              {editingdata[Lang()].calculatebutton1}
+            What is your carbon footprint?
+            </p>
+          <p className="text-white mb-5 op-7">
+          Calculate how much carbon you, your family, your corporation, or your school generates in an average year.
+          </p>
+          <Button variant="green mt-4">      
+          Calculate your carbon footprint
         </Button>
           </div>
         </Col>
@@ -312,11 +302,11 @@ return (
               STEP 2
             </p>
             <p className="large text-white mb-3 bold">
-          {editingdata[Lang()].step2header}</p>
-          <p className="text-white mb-5">
-          {editingdata[Lang()].step2para}</p>
+          Your “net zero” Smart Forest target</p>
+          <p className="text-white mb-5 op-7">
+          Calculate how many hectares you, your family, your corporation, or your school must invest in to reach a net-zero emissions target. </p>
           <Button variant="green">      
-              {editingdata[Lang()].calculatebutton2}
+          Calculate your NET ZERO target
         </Button>
           </div>
         </Col>
@@ -326,11 +316,11 @@ return (
               STEP 3
             </p>
             <p className="large text-white mb-3 bold">
-          {editingdata[Lang()].step3header}</p>
-          <p className="text-white mb-5">
-          {editingdata[Lang()].step3para}</p>
+            Your “net negative” Smart Forest target</p>
+          <p className="text-white mb-5 op-7">
+          Calculate how many hectares you, your corporation, or your school must invest in to reach a net-negative emissions target.</p>
           <Button variant="green">      
-              {editingdata[Lang()].calculatebutton3}
+          Calculate your NET NEGATIVE target
         </Button>
           </div>
         </Col>

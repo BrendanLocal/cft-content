@@ -14,7 +14,7 @@ import Rellax from "rellax";
 import Parallax from 'parallax-js'
 export default function Power({ file }) {
 const formOptions = {
-label: 'Power of the Forest',
+label: 'What is a Smart Forest',
 fields: [{ name: 'title', component: 'text' }],
 }
 
@@ -63,7 +63,7 @@ return (
 
   <Row className="justify-content-left p-0 m-0 d-none d-lg-block">
         <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
-          <p className="text-white m-2 bold op-6 ">THE POWER OF FORESTS</p>
+          <p className="text-white m-2 bold op-6 ">WHAT IS A SMART FOREST</p>
           <ul>
             <li className="p-0" data-dest="#intro">
               <a href="#intro" className="text-white bold no-underline">

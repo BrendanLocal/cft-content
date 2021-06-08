@@ -78,7 +78,7 @@ p {
 }
 
 h1, .h1  {
-  font-size: calc(4.2rem + 1.5vw);
+  font-size: calc(4rem + 1.5vw);
 }
 
 h1.drop, .h1.drop {
@@ -483,6 +483,7 @@ main {
  .pos-absolute {
    position: absolute;
  }
+
 .rellax {
   z-index: -99;
 }
@@ -632,6 +633,10 @@ padding: 10%;
 
 .innerShadow {
   box-shadow: 0 2px 24px rgba(0,0,0,.3) inset;
+}
+
+.innerShadow-heavy {
+  box-shadow: 0 2px 24px rgba(0,0,0,.9) inset;
 }
 
 .outerShadow {
@@ -1178,9 +1183,7 @@ span.authorTitle {
   transition: all .5s ease;
 }
 
-.corporate-card a {
-  font-weight: 900!important;
-}
+
 
 .corporate-card a:after {
     content: url(/navArrow.svg);
@@ -1208,9 +1211,7 @@ span.authorTitle {
   transition: all .5s ease;
 }
 
-.school-card a {
-  font-weight: 900!important;
-}
+
 
 .school-card a:after {
   content: url(/navArrow.svg);
@@ -1239,9 +1240,7 @@ transition: all .5s ease;
   transition: all .5s;
 }
 
-.legacy-card a {
-  font-weight: 900!important;
-}
+
 
 .legacy-card a:after {
   content: url(/navArrow.svg);
@@ -1271,9 +1270,7 @@ transition: all .5s ease;
   transition: all .5s;
 }
 
-.communal-card a {
-  font-weight: 900!important;
-}
+
 
 .communal-card a:after {
   content: url(/navArrow.svg);
@@ -1288,6 +1285,23 @@ transform: translateX(3px);
 transition: all .5s ease;
 }
 
+
+.forest-choice {
+  text-transform: none!important;
+  font-size: 30px;
+  font-weight: 500!important;
+  letter-spacing: 0px!important;
+  line-height: 37px!important;
+}
+
+
+.forest-choice::after {
+  content: url(/navArrow.svg);
+  margin-left: 5px;
+  width: 20px;
+  display: inline-block;
+  color: #FF4D24!important;
+}
 
 
 /* Calculator */
