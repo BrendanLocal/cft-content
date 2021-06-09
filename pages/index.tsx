@@ -35,8 +35,10 @@ const Lang = () => {
     
   const formOptions = {
   label: 'Home Page',
-  fields: [{ name: 'title', component: 'markdown' }],
+  fields: [{ name: 'heading1', component: 'markdown' },
+{name: 'heading2', component: 'markdown'}]
   }
+  
   
   const [editingdata, form] = useGithubJsonForm(file, formOptions)
   usePlugin(form)
@@ -146,7 +148,7 @@ const Lang = () => {
 
 
         <h2 className="h1 mb-5 mt-3 text-white drop bold"> 
-        Building forests will.
+        {editingdata.heading2}
         </h2>
         <p className="lead py-5 mt-3 text-white bold pe-5 pe-lg-0 big-drop tight-drop">With your help, we will reforest 10 million acres of Canadian land and protect it forever. </p>
         <hr className="thick my-4"></hr>
