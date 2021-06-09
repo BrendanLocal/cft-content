@@ -63,26 +63,31 @@ return (
 
   <Row className="justify-content-left p-0 m-0 d-none d-lg-block">
         <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
-          <p className="text-white m-2 bold op-6 ">WHAT IS A SMART FOREST</p>
+          <p className="text-white m-2 bold op-6 ">SMART FORESTS</p>
           <ul>
             <li className="p-0" data-dest="#intro">
               <a href="#intro" className="text-white bold no-underline">
                INTRO
               </a>
             </li>
-            <li className="p-0" data-dest="#smart-forests" >              
-              <a href="#smart-forests" className="text-white bold no-underline">
-                OUR SMART FORESTS
+            <li className="p-0" data-dest="#commitment" >              
+              <a href="#commitment" className="text-white bold no-underline">
+                COMMITMENT
               </a>
             </li>
-            <li className="p-0" data-dest="#countdown">
-              <a href="#countdown" className="text-white bold no-underline ">
-                CARBON COUNTDOWN
+            <li className="p-0" data-dest="#forever">
+              <a href="#forever" className="text-white bold no-underline ">
+                FOREVER
               </a>
             </li>
-            <li className="p-0" data-dest="#unlock">             
-              <a href="#unlock" className="text-white bold no-underline ">
-                UNLOCK THE POWER
+            <li className="p-0" data-dest="#smart-forests">             
+              <a href="#smart-forests" className="text-white bold no-underline ">
+                ANYONE
+              </a>
+            </li>
+            <li className="p-0" data-dest="#everyday">             
+              <a href="#everyday" className="text-white bold no-underline ">
+                EVERYDAY
               </a>
             </li>
           </ul>        
@@ -92,153 +97,120 @@ return (
   <main className="bg-green py-5">
     <Container id="intro" className="bg-green py-5 px-5">
       <Row className="justify-content-center d-flex pb-5 mb-5 py-5 px-5"> 
-      <Col className="col-xl-5 text-white p-5 pb-0">
+      <Col className="col-12 col-lg-5 text-white p-5 pb-0">
         <h1 className="text-orange mb-5 bold">
-         {editingdata.heading}
+         What is a Smart Forest?
         </h1>
-        <p className="large bold mt-5">Smart Forests™ have the ability to:</p>
-        <ul className="checkMark large thin pb-5">
-          <li>
-            {editingdata.list1}
-          </li>
-          <li>
-            {editingdata.list2}
-          </li>
-          <li>
-            {editingdata.list4}
-          </li>
-          <li>
-            {editingdata.list5}
-          </li>
-          <li>
-            {editingdata.list6}
-          </li>
-          <li>
-            {editingdata.list7}
-          </li>
-          <li>
-            {editingdata.list8}
-          </li>
-          <li>
-            {editingdata.list9}
-          </li>
-          <li>
-            {editingdata.list10}
-          </li>
-          <li>
-            {editingdata.list11}
-          </li>
-          <li>
-            {editingdata.list12}
-          </li>
-        </ul>
+        <p className="large my-5 op-8">Smart Forests™ have a significant impact on climate change. They provide ecosystems for diverse wildlife. They create jobs for generations of Canadians. And they show us exactly how they restore our planet via their own digital tools.</p>
+        
 
-        <p className="text-white text-left smallcaps intro-links-header op-2">ON THIS PAGE</p>
-        <a href="#smart-forests" className="btn btn-text text-left intro-links text-orange bold no-underline ">{editingdata.smarttitle}</a>
-        <a href="#countdown" className="btn btn-text text-left intro-links text-orange bold no-underline ">{editingdata.canadacontribution}</a>
-       <a href="#unlock" className="btn btn-text text-left intro-links text-orange bold no-underline ">{editingdata.unlock}</a>
+        <p className="text-white text-left smallcaps intro-links-header op-2 mt-4">ON THIS PAGE</p>
+        <a href="#commitment" className="btn btn-text text-left intro-links text-orange bold no-underline ">Our Commitment</a>
+        <a href="#forever" className="btn btn-text text-left intro-links text-orange bold no-underline ">Smart Forests Last Forever</a>
+       <a href="#smart-forests" className="btn btn-text text-left intro-links text-orange bold no-underline ">Anyone can Build a Smart Forest</a>
+       <a href="#unlock" className="btn btn-text text-left intro-links text-orange bold no-underline ">Every day is Earth Day</a>
 
         </Col>
 
-       <Col className="col-xl-5 p-5 stickyTop mb-5">
+       <Col className="col-12 col-lg-5 p-2 stickyTop mb-5">
          
        <object type="image/svg+xml" data="/power2-svg.svg"/>
         </Col>
         
       </Row>
-</Container>
+    </Container>
+    
+
+
+    <Container id="commitment" fluid className="v-full z-999 bg-green py-5">
+    <Fade bottom>
+      <Row className="pt-5 align-items-center justify-content-center">
+        <Col className="col-12 col-lg-8 pt-3">
+          <h2 className="text-center text-orange bold mb-2">Our commitment:</h2>
+          <p className="h1 text-center text-white bold mb-3 op-9">NEVER PLANT A SINGLE TREE AGAIN.</p>
+          <p className="text-center text-white thin op-9">It’s now or never. Canada’s Forest Trust will plant 10 million acres of Smart Forests across Canada by 2040. This is the bold action needed to tackle the enormous challenge facing our planet.</p>
+
+          
+        </Col>
+      </Row>
+    </Fade>
+    <Fade bottom>
+      <Row className="justify-content-center d-flex pb-5 mx-5 px-5">  
+        <Col className="col-12 col-lg-5 bg-green roundedBox innerShadow px-5 pt-5 pb-4 m-4">
+          
+              <h3 className="text-orange">A Forest</h3>
+              <ul className="text-white checkMark">
+                <li>Mitigates climate change by sequestering carbon</li>
+                <li>Purifies the air and improves soil quality</li>
+                <li>Regulates, filters, and moderates water flow</li>
+                <li>Supports wildlife and plant species that would otherwise disappear</li>
+                <li>Helps mitigate and prevent natural disasters</li>
+              </ul>
+          
+          </Col>
+
+          <Col className="col-12 col-lg-5 bg-green roundedBox innerShadow px-5 pt-5 pb-4 m-4">
+          
+              <h3 className="text-orange">A Smart Forest</h3>
+              <ul className="text-white plus">
+                <li>Is a forest <span className="bold italic">and</span> an investment in the health of our planet</li>
+                <li>Offers a tangible way to offset a large carbon footprints</li>
+                <li>Maximizes its impact through expert forest management</li>
+                <li>Proves its effectiveness via proprietary digital tools</li>
+                <li>Boosts the green economy</li>
+                <li>Is protected forever with a no-harvest guarantee</li>
+              </ul>
+
+        </Col>
+      </Row>
+      
+      </Fade>
+    </Container>
+
+
+      
     
     <Container id="smart-forests" fluid className="v-full z-999 bg-green py-5">
     <Fade bottom>
       <Row className="pt-5 align-items-center justify-content-center">
-        <Col className="col-12 col-lg-6 pe-lg-0 mt-5">
-          <h2 className="text-center text-orange bold">{editingdata.smarttitle}</h2>
-          <p className="text-center text-white medium thin mb-4">{editingdata.smartpara}</p>
+        <Col className="col-12 col-lg-8 pe-lg-0 p-3">
+          <h2 className="text-center text-orange bold">Anyone can build a Smart Forest. Across generations. Across Canada.</h2>
+          
         </Col>
       </Row>
       <Row className="justify-content-center pb-5 align-items-stretch">
       <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
-        <h4 className="text-white tight-drop-light">{editingdata.card1title}<span className="text-orange">™</span></h4>
-        <p className="flex-fill pb-3 text-white tight-drop">{editingdata.card1para}</p>
+        <h4 className="text-white tight-drop-light">Corporate Forests Grow</h4>
+        <p className="flex-fill pb-3 text-white tight-drop">A turnkey and sustainable solution to meet ESG goals</p>
        
         <Link href="/build-your-forest#corporate" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a></Link>
         </div>
         </Col>
         <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
-        <h4 className="text-white tight-drop-light">{editingdata.card2title}<span className="text-orange">™</span></h4>
-        <p className="flex-fill pb-3 text-white tight-drop">{editingdata.card2para}</p>
+        <h4 className="text-white tight-drop-light">School Forests Teach</h4>
+        <p className="flex-fill pb-3 text-white tight-drop">A tangible opportunity for schools and students to combat climate change</p>
         <Link href="/build-your-forest#school" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a></Link>
         </div>
         </Col>
         <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
-        <h4 className="text-white tight-drop-light">{editingdata.card3title}<span className="text-orange">™</span></h4>
-        <p className="flex-fill pb-3 text-white tight-drop">{editingdata.card3para}</p>
+        <h4 className="text-white tight-drop-light">Legacy Forests Last</h4>
+        <p className="flex-fill pb-3 text-white tight-drop">A unique way to leave a healthy planet for future generations</p>
         <Link href="/build-your-forest#legacy" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a></Link></div>
         </Col>
         <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop communal-card">
-        <h4 className="text-white tight-drop-light">{editingdata.card4title}<span className="text-orange">™</span></h4>
-        <p className="flex-fill pb-3 text-white tight-drop">{editingdata.card4para}</p>
+        <h4 className="text-white tight-drop-light">Communal Forests Unite</h4>
+        <p className="flex-fill pb-3 text-white tight-drop">An opportunity for every Canadian to participate</p>
         <Link href="/build-your-forest#communal" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a></Link> </div>
         </Col>
       </Row>
       </Fade>
     </Container>
 
-    <Container id="countdown" className="py-5 mb-5">
-    <Fade bottom>
-      <Row className="mb-3">
-        <Col>
-        <h2 className="text-center text-orange bold">{editingdata.carboncount}</h2>
-        </Col>
-      </Row>
-        
-      <Row className="justify-content-center">
-        <Col className="col-12 col-lg-7">
-        <Row className="roundedBox bg-brown canada-carbon-graphic innerShadow px-4 py-2">
-            <Col className="col-12 col-lg-6 p-3">
-              <img src="/countdown-igraphic-left.png"></img>
-            
-            </Col>
-            <Col className="col-12 col-lg-6 p-3">
-               <img src="/countdown-igraphic-right.png"></img>
-
-            </Col>
-        </Row>
-        </Col>
-      </Row>
-      
-      <Row className="text-center mt-4">
-        <Col>
-        <h4 className="text-orange pb-3">{editingdata.decreasetitle}</h4>
-        <Link href="/carbon-calculator" ><a className="btn btn-green mb-5">{editingdata.offsetbutton}</a></Link>
-        
-        </Col>
-      </Row>
-
-      </Fade>
-    </Container>
-
     
-  <Container id="unlock" className="py-5 my-5">
-    <Fade bottom>
-      <Row className="justify-content-center">
-        <Col className="col-lg-4 roundedBox innerShadow p-0">
-          <object type="image/svg+xml" data="/unlock-svg.svg"/>
-        </Col>
-        <Col className="col-lg-4 p-5">
-          <h3 className="h2 text-orange bold">
-            {editingdata.unlocktitle}
-          </h3>
-          <p className="text-white mb-3">{editingdata.unlockpara}</p>
-         <Link href="/build-your-forest" ><a className="btn btn-green mt-3">{editingdata.buildctabutton}</a></Link>
-        </Col>   
-      </Row> 
-    </Fade>
-  </Container> 
 
   </main>
 </div>
