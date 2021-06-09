@@ -141,7 +141,7 @@ const Lang = () => {
       <Row className="justify-content-center align-items-center py-5">
         <Col className="col-12 col-lg-8 col-xl-6 py-5 p-md-1">
         <h1 className=" text-white drop mt-3 mb-5">
-         {editingdata[Lang()].heading1}
+         {editingdata.heading1}
         </h1>
 
 
