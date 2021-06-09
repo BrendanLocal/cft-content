@@ -227,15 +227,11 @@ return (
     </Row>
     <Row className="justify-content-center">
       <Col className="p-3 col-11 col-lg-6">
-<<<<<<< HEAD:pages/carbon-calculator.tsx
-      <div className="card mb-3 roundedBox p-5">
-=======
       <div className="card roundedBox bg-offwhite p-4 cardShadow">
       <p className="large">Business Calculator</p>
       <p>No matter if you are a hospital, a school, a large business, etc. Basic introduction.</p>
       </div>
       <div className="card roundedBox bg-offwhite p-4 cardShadow">
->>>>>>> carboncalculators-john:pages/carboncalc-business.tsx
         <Row>
           <Col>
           <h4>
@@ -286,11 +282,7 @@ return (
         </Row>
         
       </div>
-<<<<<<< HEAD:pages/carbon-calculator.tsx
-      <div className="card mb-3 roundedBox p-5">
-=======
       <div className="card roundedBox bg-offwhite p-4 cardShadow">
->>>>>>> carboncalculators-john:pages/carboncalc-business.tsx
         <Row>
           <Col className="col-12">
           <h3>
@@ -447,11 +439,7 @@ return (
             </Col>
         </Row>
       </div>
-<<<<<<< HEAD:pages/carbon-calculator.tsx
-      <div className="card mb-3 roundedBox p-5">
-=======
       <div className="card roundedBox bg-offwhite p-4 cardShadow">
->>>>>>> carboncalculators-john:pages/carboncalc-business.tsx
         <Row>
           <Col>
           <h3>
@@ -497,11 +485,7 @@ return (
 
       </div>
 
-<<<<<<< HEAD:pages/carbon-calculator.tsx
-      <div className="card mb-3 roundedBox p-5">
-=======
       <div className="card roundedBox bg-offwhite p-4 cardShadow">
->>>>>>> carboncalculators-john:pages/carboncalc-business.tsx
         <Row>
           <Col>
           <h3>
@@ -623,11 +607,7 @@ return (
           </Row>
       </div>
 
-<<<<<<< HEAD:pages/carbon-calculator.tsx
-      <div className="card mb-3 roundedBox p-5">
-=======
       <div className="card roundedBox bg-offwhite p-4 cardShadow">
->>>>>>> carboncalculators-john:pages/carboncalc-business.tsx
         <Row>
           <Col>
           <h3>

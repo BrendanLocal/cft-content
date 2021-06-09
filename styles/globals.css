@@ -33,7 +33,7 @@ body {
   margin: 0;
   font-family: 'GT-America', Helvetica Neue, sans-serif;
   background: #054217;
-  
+  font-weight: normal;
 }
 
 html {
@@ -80,6 +80,7 @@ p {
 h1, .h1  {
   font-size: calc(4rem + 1.5vw);
   line-height: calc(4.1rem + 1.5vw);
+  font-weight: 200;
 }
 
 h1.drop, .h1.drop {
@@ -111,7 +112,9 @@ font-weight: 600;
   font-weight: 700;
   z-index:999;
 }
-
+ .text-small {
+  font-size: 12px;
+}
 .smallCaps.small {
   font-size: 12px;
 }
@@ -153,6 +156,10 @@ color: #fff;
 
 .text-right {
   text-align: right;
+}
+
+.text-green {
+  color: #00823B;
 }
 
 .labelCaps {
@@ -220,6 +227,10 @@ font-weight: 700;
 .letterspace {
   letter-spacing: 2px;
 }
+hr {
+  background-color: #00823B;
+}
+
 
 /* Buttons */
 .btn {
@@ -637,6 +648,9 @@ padding: 10%;
 .roundedBoxLarge {
   border-radius: 100px;
 }
+.cardShadow {
+  box-shadow: 0 2px 24px rgba(0,0,0,.7);
+}
 
 .roundedBoxLargeLeft {
   border-radius: 100px 0 0 100px;
@@ -644,6 +658,9 @@ padding: 10%;
 
 .innerShadow {
   box-shadow: 0 2px 24px rgba(0,0,0,.3) inset;
+}
+.bg-offwhite {
+  background-color: #F9F9F8;
 }
 
 .innerShadow-heavy {
@@ -1097,6 +1114,13 @@ input[type=text], input[type=email], textarea {
 
 select {
   width: 100%;
+}
+button, input, optgroup, select, textarea {
+
+  border-radius: 5px;
+  border: solid 1px #bbb;
+  padding: 5px 10px;
+  margin: 5px 0;
 }
 
 /* Landing Page */
