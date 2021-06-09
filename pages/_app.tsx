@@ -67,6 +67,7 @@ export default class Site extends App {
        */
       sidebar: props.pageProps.preview,
       toolbar: props.pageProps.preview,
+      plugins: [MarkdownFieldPlugin],
       
     })
     
