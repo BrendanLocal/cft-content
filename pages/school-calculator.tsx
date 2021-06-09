@@ -4,6 +4,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
+import Link from 'next/link'
+
 const App = () => {
 
 const [selectSize, setSize] = React.useState("");
@@ -262,16 +264,24 @@ return (
       <Col className="col-11 col-lg-10 pt-5">
       
       <h1 className="text-orange text-center pt-5">Carbon Calculator</h1>
-      
+      <Row className=" horizTab  justify-content-center pb-5">
+          <Col>
+          <Link href="personal-calculator"><Button variant="text text-orange smallCaps letterspace">Personal Calculator</Button></Link>
+          </Col>
+          
+          <Col>
+          <Link href="business-calculator"><Button variant="text text-orange smallCaps letterspace">Business Calculator</Button></Link>
+          </Col>
+        </Row>
       </Col>
     </Row>
     <Row className="justify-content-center">
       <Col className="p-3 col-11 col-lg-6">
-      <div className="card roundedBox bg-offwhite p-4 cardShadow">
+      <div className="card roundedBox bg-offwhite p-4 cardShadow cardSpacing">
       <p className="large">School Calculator</p>
       <p>Estimated Carbon Emission used in Schools.</p>
       </div>
-      <div className="card roundedBox bg-offwhite p-4 cardShadow">
+      <div className="card roundedBox bg-offwhite p-4 cardShadow cardSpacing">
         <Row>
           <Col>
           <h4>
@@ -339,7 +349,7 @@ return (
       </div>
 
 
-      <div className="card roundedBox bg-offwhite p-4 cardShadow">
+      <div className="card roundedBox bg-offwhite p-4 cardShadow cardSpacing">
         <Row>
           <Col>
           <h3>
@@ -384,7 +394,7 @@ return (
         </Row>
       </div>
 
-      <div className="card roundedBox bg-offwhite p-4 cardShadow">
+      <div className="card roundedBox bg-offwhite p-4 cardShadow cardSpacing">
         <Row>
           <Col>
           <h3>
@@ -462,7 +472,7 @@ return (
         </Row>
       </div>
 
-      <div className="card roundedBox bg-offwhite p-4 cardShadow">
+      <div className="card roundedBox bg-offwhite p-4 cardShadow cardSpacing">
         <Row>
           <Col className="col-12">
           <h3>
@@ -502,7 +512,7 @@ return (
         </Row>
        </div>
       
-       <div className="card roundedBox bg-offwhite p-4 cardShadow">
+       <div className="card roundedBox bg-offwhite p-4 cardShadow cardSpacing">
         <Row>
           <Col className="col-12">
           <h3>
@@ -531,7 +541,7 @@ return (
        </div>
 
 
-       <div className="card roundedBox bg-offwhite p-4 cardShadow">
+       <div className="card roundedBox bg-offwhite p-4 cardShadow cardSpacing">
         <Row>
           <Col className="col-12">
           <p>Extracurricular Activities (Any school endorsed activity outside of regular school hours such as sports teams,
@@ -568,7 +578,7 @@ return (
         </Row>
        </div>
 
-       <div className="card roundedBox bg-offwhite p-4 cardShadow">
+       <div className="card roundedBox bg-offwhite p-4 cardShadow cardSpacing">
         <Row>
           <Col className="col-12">
           <h3>
@@ -596,7 +606,7 @@ return (
        </div>
 
 
-      <div className="card roundedBox bg-offwhite p-4 cardShadow">
+      <div className="card roundedBox bg-offwhite p-4 cardShadow cardSpacing">
         <Row>
           <Col>
           <h3>
