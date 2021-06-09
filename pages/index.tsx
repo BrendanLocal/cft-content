@@ -35,7 +35,7 @@ const Lang = () => {
     
   const formOptions = {
   label: 'Home Page',
-  fields: [{ name: 'title', component: 'text' }],
+  fields: [{ name: 'title', component: 'markdown' }],
   }
   
   const [editingdata, form] = useGithubJsonForm(file, formOptions)
