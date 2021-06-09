@@ -647,6 +647,10 @@ padding: 10%;
   box-shadow: 0 2px 24px rgba(0,0,0,.7);
 }
 
+.cardSpacing {
+  margin-bottom: 50px;
+}
+
 .roundedBoxLargeLeft {
   border-radius: 100px 0 0 100px;
 }

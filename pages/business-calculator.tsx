@@ -4,6 +4,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
+import Link from 'next/link'
+
 
 
 
@@ -222,16 +224,24 @@ return (
       <Col className="col-11 col-lg-10 pt-5">
       
       <h1 className="text-orange text-center pt-5">Carbon Calculator</h1>
-      
+      <Row className=" horizTab  justify-content-center pb-5">
+          <Col>
+          <Link href="personal-calculator"><Button variant="text text-orange smallCaps letterspace">Personal Calculator</Button></Link>
+          </Col>
+          
+          <Col>
+          <Link href="school-calculator"><Button variant="text text-orange smallCaps letterspace">School Calculator</Button></Link>
+          </Col>
+        </Row>
       </Col>
     </Row>
     <Row className="justify-content-center">
       <Col className="p-3 col-11 col-lg-6">
-      <div className="card roundedBox bg-offwhite p-4 cardShadow">
+      <div className="card roundedBox bg-offwhite p-4 cardShadow cardSpacing">
       <p className="large">Business Calculator</p>
       <p>No matter if you are a hospital, a school, a large business, etc. Basic introduction.</p>
       </div>
-      <div className="card roundedBox bg-offwhite p-4 cardShadow">
+      <div className="card roundedBox bg-offwhite p-4 cardShadow cardSpacing">
         <Row>
           <Col>
           <h4>
@@ -282,7 +292,7 @@ return (
         </Row>
         
       </div>
-      <div className="card roundedBox bg-offwhite p-4 cardShadow">
+      <div className="card roundedBox bg-offwhite p-4 cardShadow cardSpacing">
         <Row>
           <Col className="col-12">
           <h3>
@@ -439,7 +449,7 @@ return (
             </Col>
         </Row>
       </div>
-      <div className="card roundedBox bg-offwhite p-4 cardShadow">
+      <div className="card roundedBox bg-offwhite p-4 cardShadow cardSpacing">
         <Row>
           <Col>
           <h3>
@@ -485,7 +495,7 @@ return (
 
       </div>
 
-      <div className="card roundedBox bg-offwhite p-4 cardShadow">
+      <div className="card roundedBox bg-offwhite p-4 cardShadow cardSpacing">
         <Row>
           <Col>
           <h3>
@@ -607,7 +617,7 @@ return (
           </Row>
       </div>
 
-      <div className="card roundedBox bg-offwhite p-4 cardShadow">
+      <div className="card roundedBox bg-offwhite p-4 cardShadow cardSpacing">
         <Row>
           <Col>
           <h3>

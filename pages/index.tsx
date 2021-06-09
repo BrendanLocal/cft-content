@@ -303,9 +303,10 @@ const Lang = () => {
           <p className="text-white mb-5 op-8">
           Calculate how much carbon you, your family, your corporation, or your school generates in an average year.
           </p>
+          <Link href="carbon-calculator">
           <Button variant="green mt-4">      
           Calculate your carbon footprint
-        </Button>
+        </Button></Link>
           </div>
         </Col>
         <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
