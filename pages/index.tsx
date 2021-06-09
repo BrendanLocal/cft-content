@@ -170,19 +170,19 @@ const Lang = () => {
         </Col>
       </Row>
       <Row className="justify-content-center  pb-5 align-items-stretch mb-5">
-        <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3">
+        <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 mx-3">
           <div className="roundedBox card no-border bg-white p-4 h-100 ">
             <p className="large text-green">
             <span className="bold">Recognizes</span> <span className="thin">that we need bold, long-term solutions to reverse the damage caused by deforestation and emissions in Canada</span></p>
           </div>
         </Col>
-        <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3 ">
+        <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 mx-3 ">
           <div className="roundedBox card no-border bg-white p-4 h-100 ">
           <p className="large text-green">
           <span className="bold">Leverages</span> <span className="thin">data-driven technologies and advanced analytics to support healthy, sustainable and biodiverse Smart Forests™</span></p>
           </div>
         </Col>
-        <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3">
+        <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 mx-3">
           <div className="roundedBox card no-border bg-white p-4 h-100 ">
           <p className="large text-green">
           <span className="bold">Guarantees</span> <span className="thin">protection and preservation through forest management practices that are based in science and designed for longevity</span></p>
@@ -305,13 +305,13 @@ const Lang = () => {
             <p className="h6 text-orange bold">
               STEP 1
             </p>
-            <p className="large text-green mb-3 ">
+            <p className="large text-green mb-2 ">
             What is your carbon footprint?
             </p>
-          <p className="text-grey mb-5 op-8">
+          <p className="text-grey mb-3 op-8">
           Calculate how much carbon you, your family, your corporation, or your school generates in an average year.
           </p>
-          <Button variant="green" className="mt-4">      
+          <Button variant="green" className="mt-5">      
           Calculate your carbon footprint
         </Button>
           </div>
@@ -321,11 +321,11 @@ const Lang = () => {
             <p className="h6 text-orange bold">
               STEP 2
             </p>
-            <p className="large text-green mb-3 ">
+            <p className="large text-green mb-2 ">
           Your “net zero” Smart Forest target</p>
-          <p className="text-grey mb-5 op-8">
+          <p className="text-grey mb-4 op-8">
           Calculate how many hectares you, your family, your corporation, or your school must invest in to reach a net-zero emissions target. </p>
-          <Button variant="green">      
+          <Button variant="green mt-3">      
           Calculate your NET ZERO target
         </Button>
           </div>
@@ -335,11 +335,11 @@ const Lang = () => {
             <p className="h6 text-orange bold">
               STEP 3
             </p>
-            <p className="large text-green mb-3 ">
+            <p className="large text-green mb-2 ">
             Your “net negative” Smart Forest target</p>
-          <p className="text-grey mb-5 op-8">
+          <p className="text-grey mb-3 op-8">
           Calculate how many hectares you, your corporation, or your school must invest in to reach a net-negative emissions target.</p>
-          <Button variant="green" className="mt-4">      
+          <Button variant="green" className="mt-5">      
           Calculate your NET NEGATIVE target
         </Button>
           </div>
