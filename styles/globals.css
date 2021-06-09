@@ -173,7 +173,7 @@ ul {
   padding-left: 0;
 }
 
-li a {
+li a, a.underline {
   text-decoration: underline;
 }
 
@@ -648,7 +648,7 @@ padding: 10%;
 }
 
 .cardSpacing {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 
 .roundedBoxLargeLeft {
