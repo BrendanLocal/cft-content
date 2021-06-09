@@ -171,19 +171,19 @@ const Lang = () => {
       </Row>
       <Row className="justify-content-center  pb-5 align-items-stretch mb-5">
         <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 mx-3">
-          <div className="roundedBox card no-border bg-white p-4 h-100 ">
+          <div className="roundedBox card no-border bg-white p-4 h-100">
             <p className="large text-green">
             <span className="bold">Recognizes</span> <span className="thin">that we need bold, long-term solutions to reverse the damage caused by deforestation and emissions in Canada</span></p>
           </div>
         </Col>
         <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 mx-3 ">
-          <div className="roundedBox card no-border bg-white p-4 h-100 ">
+          <div className="roundedBox card no-border bg-white p-4 h-100">
           <p className="large text-green">
           <span className="bold">Leverages</span> <span className="thin">data-driven technologies and advanced analytics to support healthy, sustainable and biodiverse Smart Forests™</span></p>
           </div>
         </Col>
         <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 mx-3">
-          <div className="roundedBox card no-border bg-white p-4 h-100 ">
+          <div className="roundedBox card no-border bg-white p-4 h-100">
           <p className="large text-green">
           <span className="bold">Guarantees</span> <span className="thin">protection and preservation through forest management practices that are based in science and designed for longevity</span></p>
           </div>
@@ -209,9 +209,9 @@ const Lang = () => {
         <Link href="/what-is-a-smart-forest" ><a className="btn btn-green  ">Learn more about Smart Forests</a></Link>
       
         </Col>
-        <Col className="order-1 order-lg-2 col-12 col-md-4 p-5 roundedBox innerShadow">
+        <Col className="order-1 order-lg-2 col-12 col-md-4 p-5 bg-brown roundedBox innerShadow">
         
-          <object type="image/svg+xml" data="/power2-svg.svg"/>
+          <object className="" type="image/svg+xml" data="/power2-svg.svg"/>
          
         </Col>
 
@@ -224,7 +224,7 @@ const Lang = () => {
     <Row  className="py-5 align-items-center justify-content-center ">
     <Col className="col-12 col-md-4 p-5 roundedBox innerShadow bg-brown">
 
-    <object type="image/svg+xml" data="/build2-svg.svg"/>
+    <object className="" type="image/svg+xml" data="/build2-svg.svg"/>
     
     
     </Col>
@@ -296,12 +296,12 @@ const Lang = () => {
     <Row className="align-items-center justify-content-center pt-0 mt-0 mb-0">
       <Col className="col-12 col-lg-7 pe-lg-0 mb-4">
       <h2 className="text-center text-orange mb-2 bold ">What difference can I make?</h2>
-      <p className="text-center large text-white thin op-8">Use our custom-built net-zero carbon calculator and forest calculator to understand exactly how your investment in Smart Forests will offset your climate impact.</p>
+      <p className="text-center large text-white thin op-9">Use our custom-built net-zero carbon calculator and forest calculator to understand exactly how your investment in Smart Forests will offset your climate impact.</p>
       </Col>
       </Row>
       <Row className="justify-content-center  align-items-stretch mx-5">
         <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
-          <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card op-8">
+          <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card op-9">
             <p className="h6 text-orange bold">
               STEP 1
             </p>
@@ -317,7 +317,7 @@ const Lang = () => {
           </div>
         </Col>
         <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
-          <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card op-8">
+          <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card op-9">
             <p className="h6 text-orange bold">
               STEP 2
             </p>
@@ -331,7 +331,7 @@ const Lang = () => {
           </div>
         </Col>
         <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
-          <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card op-8">
+          <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card op-9">
             <p className="h6 text-orange bold">
               STEP 3
             </p>
