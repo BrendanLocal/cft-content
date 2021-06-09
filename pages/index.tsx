@@ -138,49 +138,51 @@ const Lang = () => {
 
 
     <Container  id="intro" fluid className="v-full d-flex py-5 flex-column z-0">
-      <Row className="justify-content-center align-items-center py-5">
-        <Col className="col-12 col-lg-8 col-xl-6 py-5 p-md-1">
-        <h1 className=" text-white drop mt-3 mb-5">
+      <Row className="justify-content-center align-items-center py-5 my-5">
+        <Col className="col-12 col-lg-8 col-xl-6 py-5 p-md-1 mb-5 ">
+        <h1 className=" text-white mb-5 tight-drop-light">
          Simply planting trees won’t save our planet.
         </h1>
 
-
-        <h2 className="h1 mb-5 mt-3 text-white drop bold"> 
+        <h2 className="h1 mb-5 mt-3 text-white bold pb-5"> 
         Building forests will.
         </h2>
-        <p className="lead py-5 mt-3 text-white bold pe-5 pe-lg-0 big-drop tight-drop">With your help, we will reforest 10 million acres of Canadian land and protect it forever. </p>
-        <hr className="thick my-4"></hr>
+
+        <Fade bottom>
+        <p className="pt-5 pb-3 intro-par text-white bold pe-5 pe-lg-0 ">With your help, we will reforest 10 million acres of Canadian land and protect it forever. </p>
+       </Fade>
+        <hr className="thick my-4 d-none"></hr>
         </Col>
         </Row>
         
       <Fade bottom>
-      <Row className="justify-content-center  py-5">
+      <Row className="justify-content-center  pb-5">
         <Col className="col-12 col-lg-8 pe-lg-0 mb-0 p-0">
-          <h2 className="text-center text-white mb-0 bold tight-drop">Canada's Forest Trust:</h2>
+          <h2 className="intro-par text-center text-white mb-0 bold ">Canada's Forest Trust</h2>
         </Col>
       </Row>
       <Row className="justify-content-center  pb-5 align-items-stretch mb-5">
         <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3">
-          <div className="roundedBox card no-border bg-white p-4 h-100 card-drop-heavy">
+          <div className="roundedBox card no-border bg-white p-4 h-100 ">
             <p className="large text-green">
             <span className="bold">Recognizes</span> <span className="thin">that we need bold, long-term solutions to reverse the damage caused by deforestation and emissions in Canada</span></p>
           </div>
         </Col>
         <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3 ">
-          <div className="roundedBox card no-border bg-white p-4 h-100 card-drop-heavy">
+          <div className="roundedBox card no-border bg-white p-4 h-100 ">
           <p className="large text-green">
           <span className="bold">Leverages</span> <span className="thin">data-driven technologies and advanced analytics to support healthy, sustainable and biodiverse Smart Forests™</span></p>
           </div>
         </Col>
         <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 m-3">
-          <div className="roundedBox card no-border bg-white p-4 h-100 card-drop-heavy">
+          <div className="roundedBox card no-border bg-white p-4 h-100 ">
           <p className="large text-green">
           <span className="bold">Guarantees</span> <span className="thin">protection and preservation through forest management practices that are based in science and designed for longevity</span></p>
           </div>
         </Col>
 
         <Col className="text-center col-lg-12 pb-5 pe-5 mt-5 pe-lg-0">
-        <Link href="/what-is-a-smart-forest" ><a className="btn btn-green">Discover the Smart Forest initiative</a></Link>
+        <Link href="/what-is-a-smart-forest" ><a className="btn btn-large btn-green">Discover the Smart Forest initiative</a></Link>
         </Col>
       </Row>   
       </Fade>
@@ -189,17 +191,17 @@ const Lang = () => {
     </Parallax>
     
 
-    <Container id="what"  fluid className="v-full z-999 bg-green align-items-center py-5 container-drop-heavy">
+    <Container id="what"  fluid className="v-full z-999 bg-green align-items-center p-5 container-drop-heavy">
       <Fade bottom>
       <Row className="py-5 align-items-center justify-content-center mt-5">
         
         <Col className="order-2 order-lg-1 col-12 p-5 col-md-4 text-white">
-        <h2 className="text-orange bold">What is a Smart Forest™?</h2>
+        <h2 className="text-orange bold">What is a Smart Forest?</h2>
         <p className="pb-3 thin">A Smart Forest combines the resilience of a natural ecosystem, developed over millennia, with the predictive capabilities of today’s technologies. Inside a Smart Forest, life thrives; outside of it, scientists, students, investors and conservationists use digital instruments to understand and activate the forest’s role in cleaning our water, purifying our air, and replenishing our lost resources.</p>
-        <Link href="/what-is-a-smart-forest" ><a className="btn btn-green">Learn more about Smart Forests</a></Link>
+        <Link href="/what-is-a-smart-forest" ><a className="btn btn-green  ">Learn more about Smart Forests</a></Link>
       
         </Col>
-        <Col className="order-1 order-lg-2 col-12 col-md-4 p-5">
+        <Col className="order-1 order-lg-2 col-12 col-md-4 p-5 roundedBox innerShadow">
         
           <object type="image/svg+xml" data="/power2-svg.svg"/>
          
@@ -209,10 +211,10 @@ const Lang = () => {
       </Fade>
     </Container>
 
-    <Container id="how" fluid className="v-full z-999 bg-green py-5">
+    <Container id="how" fluid className="v-full z-999 bg-green p-5">
     <Fade bottom>
     <Row  className="py-5 align-items-center justify-content-center ">
-    <Col className="col-12 col-md-4 p-5 mx-3">
+    <Col className="col-12 col-md-4 p-5 roundedBox innerShadow bg-brown">
 
     <object type="image/svg+xml" data="/build2-svg.svg"/>
     
@@ -231,7 +233,7 @@ const Lang = () => {
     </Fade>
     </Container>
 
-    <Container  id="who" fluid className="v-full z-999 bg-green pt-5 pb-0 mb-0">
+    <Container  id="who" fluid className="v-full z-999 bg-green pt-3 pb-5 mb-4">
     <Fade bottom>
     <Row className="pt-5 align-items-center justify-content-center  align-items-stretch protorow pb-0 mb-0">
     
@@ -259,31 +261,31 @@ const Lang = () => {
       <Col className="col-12 col-md-6 col-lg-6 pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border py-4 d-flex flex-column drop corporate-card ">
        
-        <Link href="/build-your-forest#corporate" ><a className="forest-choice btn btn-text text-center text-white no-underline tight-drop pt-1">Meet my corporate ESG obligations</a></Link>
+        <Link href="/build-your-forest#corporate" ><a className="forest-choice btn btn-text text-center text-white no-underline tight-drop py-1">Meet my corporate ESG obligations</a></Link>
         </div>
         </Col>
         <Col className="col-12 col-md-6 col-lg-6  pe-lg-0 m-3 ">
         <div className="roundedBox card bg-green no-border py-4 d-flex flex-column drop school-card ">
         
-        <Link href="/build-your-forest#school" ><a className="forest-choice btn btn-text text-center text-white no-underline tight-drop pt-1">Get my school involved</a></Link>
+        <Link href="/build-your-forest#school" ><a className="forest-choice btn btn-text text-center text-white no-underline tight-drop py-1">Get my school involved</a></Link>
         </div>
         </Col>
         <Col className="col-12 col-md-6 col-lg-6  pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border py-4 d-flex flex-column drop legacy-card">
         
-        <Link href="/build-your-forest#legacy" ><a className="forest-choice btn btn-text text-center text-white no-underline tight-drop pt-1">Establish a legacy forest</a></Link></div>
+        <Link href="/build-your-forest#legacy" ><a className="forest-choice btn btn-text text-center text-white no-underline tight-drop py-1">Establish a legacy forest</a></Link></div>
         </Col>
         <Col className="col-12 col-md-6 col-lg-6 pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border py-4 d-flex flex-column drop communal-card ">
-        <Link href="/build-your-forest#communal" ><a className="forest-choice btn btn-text text-center text-white no-underline tight-drop pt-1">Contribute to a communal forest</a></Link> </div>
+        <Link href="/build-your-forest#communal" ><a className="forest-choice btn btn-text text-center text-white no-underline tight-drop py-1">Contribute to a communal forest</a></Link> </div>
         </Col>
       </Row>
     </Fade>
     </Container>
     
-    <Container id="calculate" fluid className="v-full z-999 bg-green pt-0 mt-0">
+    <Container id="calculate" fluid className="v-full z-999 bg-green pt-0 mt-0 mb-0">
     <Fade bottom>
-    <Row className="align-items-center justify-content-center pt-0 mt-0">
+    <Row className="align-items-center justify-content-center pt-0 mt-0 mb-0">
       <Col className="col-12 col-lg-7 pe-lg-0 mb-4">
       <h2 className="text-center text-orange mb-2 bold ">What difference can I make?</h2>
       <p className="text-center large text-white thin op-8">Use our custom-built net-zero carbon calculator and forest calculator to understand exactly how your investment in Smart Forests will offset your climate impact.</p>
@@ -291,29 +293,29 @@ const Lang = () => {
       </Row>
       <Row className="justify-content-center  align-items-stretch mx-5">
         <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
-          <div className="card bg-green p-4 h-100 calculate-card">
+          <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card op-8">
             <p className="h6 text-orange bold">
               STEP 1
             </p>
-            <p className="large text-white mb-3 bold">
+            <p className="large text-green mb-3 ">
             What is your carbon footprint?
             </p>
-          <p className="text-white mb-5 op-8">
+          <p className="text-grey mb-5 op-8">
           Calculate how much carbon you, your family, your corporation, or your school generates in an average year.
           </p>
-          <Button variant="green mt-4">      
+          <Button variant="green" className="mt-4">      
           Calculate your carbon footprint
         </Button>
           </div>
         </Col>
         <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
-          <div className="card bg-green p-4 h-100 calculate-card">
+          <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card op-8">
             <p className="h6 text-orange bold">
               STEP 2
             </p>
-            <p className="large text-white mb-3 bold">
+            <p className="large text-green mb-3 ">
           Your “net zero” Smart Forest target</p>
-          <p className="text-white mb-5 op-8">
+          <p className="text-grey mb-5 op-8">
           Calculate how many hectares you, your family, your corporation, or your school must invest in to reach a net-zero emissions target. </p>
           <Button variant="green">      
           Calculate your NET ZERO target
@@ -321,15 +323,15 @@ const Lang = () => {
           </div>
         </Col>
         <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
-          <div className="card bg-green p-4 h-100 calculate-card">
+          <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card op-8">
             <p className="h6 text-orange bold">
               STEP 3
             </p>
-            <p className="large text-white mb-3 bold">
+            <p className="large text-green mb-3 ">
             Your “net negative” Smart Forest target</p>
-          <p className="text-white mb-5 op-8">
+          <p className="text-grey mb-5 op-8">
           Calculate how many hectares you, your corporation, or your school must invest in to reach a net-negative emissions target.</p>
-          <Button variant="green">      
+          <Button variant="green" className="mt-4">      
           Calculate your NET NEGATIVE target
         </Button>
           </div>
