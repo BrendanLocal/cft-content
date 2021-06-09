@@ -138,22 +138,30 @@ const Lang = () => {
 
 
     <Container  id="intro" fluid className="v-full d-flex py-5 flex-column z-0">
-      <Row className="justify-content-center align-items-center py-5 my-5">
-        <Col className="col-12 col-lg-8 col-xl-6 py-5 p-md-1 mb-5 ">
+      <Row className="justify-content-center align-items-center pt-5 my-5">
+        <Col className="col-12 col-lg-8 col-xl-6 pt-5 p-md-1">
         <h1 className=" text-white mb-5 tight-drop-light">
          Simply planting trees won’t save our planet.
         </h1>
 
-        <h2 className="h1 mb-5 mt-3 text-white bold pb-5"> 
+        <h2 className="h1 mb-5 mt-3 text-white bold"> 
         Building forests will.
         </h2>
+        </Col>
+      </Row>
 
-        <Fade bottom>
-        <p className="pt-5 pb-3 intro-par text-white bold pe-5 pe-lg-0 ">With your help, we will reforest 10 million acres of Canadian land and protect it forever. </p>
-       </Fade>
-        <hr className="thick my-4 d-none"></hr>
+    <Fade bottom>
+        
+        <Row className="justify-content-center align-items-center mb-5 py-5">
+        <Col className="col-12 col-lg-8 col-xl-6 p-md-1 mb-5 py-5">
+        <p className="intro-par text-white bold pe-5 pe-lg-0 py-3">With your help, we will reforest 10 million acres of Canadian land and protect it forever. </p>
+       
+        
         </Col>
         </Row>
+        
+    </Fade>
+        
         
       <Fade bottom>
       <Row className="justify-content-center  pb-5">
