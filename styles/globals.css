@@ -179,7 +179,7 @@ ul {
   padding-left: 0;
 }
 
-li a {
+li a, a.underline {
   text-decoration: underline;
 }
 
@@ -681,6 +681,10 @@ padding: 10%;
 }
 .cardShadow {
   box-shadow: 0 2px 24px rgba(0,0,0,.7);
+}
+
+.cardSpacing {
+  margin-bottom: 25px;
 }
 
 .roundedBoxLargeLeft {

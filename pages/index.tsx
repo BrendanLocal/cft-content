@@ -35,8 +35,10 @@ const Lang = () => {
     
   const formOptions = {
   label: 'Home Page',
-  fields: [{ name: 'title', component: 'text' }],
+  fields: [{ name: 'heading1', component: 'markdown' },
+{name: 'heading2', component: 'markdown'}]
   }
+  
   
   const [editingdata, form] = useGithubJsonForm(file, formOptions)
   usePlugin(form)
@@ -138,14 +140,15 @@ const Lang = () => {
 
 
     <Container  id="intro" fluid className="v-full d-flex py-5 flex-column z-0">
-      <Row className="justify-content-center align-items-center pt-5 my-5">
-        <Col className="col-12 col-lg-8 col-xl-6 pt-5 p-md-1">
-        <h1 className=" text-white mb-5 tight-drop-light">
-         Simply planting trees won’t save our planet.
+      <Row className="justify-content-center align-items-center py-5">
+        <Col className="col-12 col-lg-8 col-xl-6 py-5 p-md-1">
+        <h1 className=" text-white drop mt-3 mb-5">
+         {editingdata.heading1}
         </h1>
 
-        <h2 className="h1 mb-5 mt-3 text-white bold"> 
-        Building forests will.
+
+        <h2 className="h1 mb-5 mt-3 text-white drop bold"> 
+        {editingdata.heading2}
         </h2>
         </Col>
       </Row>
@@ -311,9 +314,10 @@ const Lang = () => {
           <p className="text-grey mb-3 op-8">
           Calculate how much carbon you, your family, your corporation, or your school generates in an average year.
           </p>
-          <Button variant="green" className="mt-5">      
+          <Link href="carbon-calculator">
+          <Button variant="green mt-4">      
           Calculate your carbon footprint
-        </Button>
+        </Button></Link>
           </div>
         </Col>
         <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
