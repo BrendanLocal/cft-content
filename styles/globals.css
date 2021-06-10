@@ -87,7 +87,7 @@ h1.drop, .h1.drop {
   text-shadow: 0px 2px 10px rgb(0 0 0 / 30%);
 }
 
-.emphasis  {
+.emphasis {
   font-size: calc(3rem + 1.5vw);
   line-height: calc(3rem + 1.5vw);
   font-weight: 900;
@@ -1378,6 +1378,34 @@ transition: all .5s ease;
 }
 
 .communal-card a:hover {
+transform: translateX(3px);
+transition: all .5s ease;
+}
+
+.communal-button {
+  background: url('/communal-smart-forest-lopacity.png');
+    background-size: cover;
+    background-position: 50% 85%;
+    box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
+  
+}
+
+.communal-button:hover {
+  box-shadow: 0px 2px 20px 6px rgba(0, 0, 0, 0.2);
+  transition: all .5s;
+}
+
+
+
+.communal-button a:after {
+  content: url(/navArrow.svg);
+  margin-left: 5px;
+  width: 20px;
+  display: inline-block;
+  color: #fff;
+}
+
+.communal-button a:hover {
 transform: translateX(3px);
 transition: all .5s ease;
 }

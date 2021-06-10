@@ -227,7 +227,7 @@ const Lang = () => {
         <Link href="/what-is-a-smart-forest" ><a className="btn btn-green  ">Learn more about Smart Forests</a></Link>
       
         </Col>
-        <Col className="order-1 order-lg-2 col-12 col-md-4 px-2 py-2 roundedBox innerShadow">
+        <Col className="order-1 order-lg-2 col-12 col-md-4 px-3 py-3 roundedBox innerShadow">
         
           <object className="op-6" type="image/svg+xml" data="/power2-svg.svg"/>
          
@@ -259,7 +259,7 @@ const Lang = () => {
     </Fade>
     </Container>
 
-    <Container  id="who" fluid className="v-full z-999 bg-green pt-3 pb-5 mb-4">
+    <Container  id="who" fluid className="v-full z-999 bg-green pt-3 py-5 mb-4">
     <Fade bottom>
     <Row className="pt-5 align-items-center justify-content-center  align-items-stretch protorow pb-0 mb-0">
     
@@ -302,7 +302,7 @@ const Lang = () => {
         <Link href="/build-your-forest#legacy" ><a className="forest-choice btn btn-text text-center text-white no-underline tight-drop py-1">Establish a legacy forest</a></Link></div>
         </Col>
         <Col className="col-12 col-md-6 col-lg-6 pe-lg-0 m-3">
-        <div className="roundedBox card bg-green no-border py-4 d-flex flex-column drop communal-card ">
+        <div className="roundedBox card bg-green no-border py-4 d-flex flex-column drop communal-button ">
         <Link href="/build-your-forest#communal" ><a className="forest-choice btn btn-text text-center text-white no-underline tight-drop py-1">Contribute to a communal forest</a></Link> </div>
         </Col>
       </Row>
