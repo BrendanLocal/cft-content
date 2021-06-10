@@ -87,7 +87,7 @@ return (
             </li>
             <li className="p-0" data-dest="#everyday">             
               <a href="#everyday" className="text-white bold no-underline ">
-                EVERYDAY
+                EARTH
               </a>
             </li>
           </ul>        
@@ -106,15 +106,15 @@ return (
 
         <p className="text-white text-left smallcaps intro-links-header op-2 mt-4">ON THIS PAGE</p>
         <a href="#commitment" className="btn btn-text text-left intro-links text-orange bold no-underline ">Our Commitment</a>
-        <a href="#forever" className="btn btn-text text-left intro-links text-orange bold no-underline ">Smart Forests Last Forever</a>
-       <a href="#smart-forests" className="btn btn-text text-left intro-links text-orange bold no-underline ">Anyone can Build a Smart Forest</a>
-       <a href="#unlock" className="btn btn-text text-left intro-links text-orange bold no-underline ">Every day is Earth Day</a>
+        <a href="#forever" className="btn btn-text text-left intro-links text-orange bold no-underline ">Here for good</a>
+       <a href="#smart-forests" className="btn btn-text text-left intro-links text-orange bold no-underline ">Anyone can do it</a>
+       <a href="#earth" className="btn btn-text text-left intro-links text-orange bold no-underline ">Everyday is Earth Day</a>
 
         </Col>
 
        <Col className="col-12 col-lg-5 p-2 stickyTop mb-5">
          
-       <object className="op-7" type="image/svg+xml" data="/power2-svg.svg"/>
+       <object className="op-8" type="image/svg+xml" data="/power2-svg.svg"/>
         </Col>
         
       </Row>
@@ -168,6 +168,32 @@ return (
     </Container>
 
 
+    <Container id="forever" fluid className="v-full z-999 bg-green py-5">
+    <Fade bottom>
+      <Row className="pt-5 align-items-center justify-content-center">
+        <Col className="col-12 col-lg-8 pt-3">
+          <h2 className="text-center text-orange bold mb-2">Smart Forests are here for good.</h2>
+          <p className="text-center text-white lead op-9">Once we build a Smart Forest, it’s protected. <span className="bold">Forever.</span></p>
+
+          
+        </Col>
+      </Row>
+    </Fade>
+    <Fade bottom>
+      <Row className="justify-content-center d-flex pb-5 mx-5">  
+        <Col className="col-12 col-lg-8 bg-brown roundedBox innerShadow p-5 m-4 blockquote-bg">
+          
+              <h3 className="text-left blockquote text-orange p-5">“Time is much shorter than we think. Failure means disaster. The changes required are enormous and we must all contribute in every part of our daily life. Especially us in the rich countries where no nation is doing nearly enough.”</h3>
+              <p className="text-left text-white my-0 mx-5 bold">— Greta Thunberg</p>
+              <p className="text-left text-white mx-5 px-3 italic op-6">Climate activist</p>
+
+        </Col>
+      </Row>
+      
+      </Fade>
+    </Container>
+
+
       
     
     <Container id="smart-forests" fluid className="v-full z-999 bg-green py-5">
@@ -208,6 +234,39 @@ return (
         </Col>
       </Row>
       </Fade>
+    </Container>
+
+
+    <Container id="earth" fluid className="v-full z-999 bg-green">
+    <Fade bottom>
+      <Row className="pt-5 align-items-center justify-content-center">
+      <Col className="col-12 p-5 col-md-4">
+      <h2 className="text-left text-orange bold ">Let’s live in a country where every day is Earth day.</h2>
+          <p className="text-left text-white ">Canada’s Forest Trust will build Smart Forests on deforested or unused land, located in ecologically diverse regions across the country, and will protect some of our nation’s most imperilled plants and animals.</p>
+        
+      
+      </Col>
+
+        <Col className="col-12 col-md-4 p-5 roundedBox innerShadow forest-callout">
+          
+              <h3 className="text-left text-white p-3">Planting 500 hectares of land has the potential to sequester about 41,245 tonnes of carbon by 2050 and 75,300 tonnes by 2070. </h3>
+              
+
+        </Col>
+      </Row>
+    </Fade>
+    <Fade bottom>
+      <Row className="align-items-center justify-content-center">
+      <Col className="col-12 col-lg-7 px-5"> 
+      <p className="large text-center text-orange bold op-9 my-0">See your carbon footprint and learn what you can do to get to net-zero.</p> 
+
+        </Col>
+        <Col className="text-center col-lg-7 pb-5 pe-5 mt-5 pe-lg-0">
+        <Link href="/what-is-a-smart-forest" ><a className="btn btn-large btn-green">WHAT'S YOUR IMPACT?</a></Link>
+        </Col>   
+      </Row>
+    </Fade>
+   
     </Container>
 
     

@@ -94,8 +94,23 @@ h1.drop, .h1.drop {
   letter-spacing: -3px;
 }
 
+.blockquote {
+  font-size: calc(1.3rem + .7vw);
+  line-height: calc(1.8rem + .7vw);
+  font-weight: 600;
+}
+
+.blockquote-bg {
+  background: url('/blockquote-bg.svg');
+    background-size: cover;
+    background-position: 85% 40%;
+    background-size: 52%;
+    background-repeat: no-repeat;
+}
+
 h2, .h2 {
   font-size: calc(2rem + .9vw);
+  line-height: calc(2.3rem + .9vw);
 }
 
 .intro-par {
@@ -897,7 +912,7 @@ footer {
 
 
 .intro-links{
-  margin: 10px 0px 10px 0px;
+  margin: 10px 20px 10px 0px;
   font-size: 16px;
   letter-spacing: 0.2px!important;
 }
