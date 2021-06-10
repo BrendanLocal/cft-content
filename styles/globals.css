@@ -389,6 +389,13 @@ text-decoration: underline;
 }
 
 
+.left-sidenav a {
+
+    padding-left: 20px;
+    margin-left: -20px; 
+
+}
+
 
 
 
@@ -580,6 +587,10 @@ padding: 10%;
 
 .op-9 {
   opacity: .9;
+}
+
+.op-95 {
+  opacity: .95;
 }
 
 .t-30 {

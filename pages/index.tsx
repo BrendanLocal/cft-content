@@ -88,36 +88,51 @@ const Lang = () => {
         <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
           <p className="text-white m-2 bold op-6 ">HOME</p>
           <ul>
+
             <li className="p-0" data-dest="#intro">
               <a href="#intro" className="text-white bold no-underline">
+                
                INTRO
+                
               </a>
             </li>
-            <li className="p-0" data-dest="#what" >              
+            <li className="p-0" data-dest="#what">             
               <a href="#what" className="text-white bold no-underline">
+                 
                 WHAT
+                
               </a>
             </li>
             <li className="p-0" data-dest="#how">
               <a href="#how" className="text-white bold no-underline ">
+                
                 HOW
+                
               </a>
-            </li>
+            </li> 
             <li className="p-0" data-dest="#who">             
               <a href="#who" className="text-white bold no-underline ">
+                 
                 WHO
-              </a>
-            </li>
-            <li className="p-0" data-dest="#you">              
+                
+              </a>      
+            </li> 
+            <li className="p-0" data-dest="#you">             
               <a href="#you" className="text-white bold no-underline ">
+                
                 YOU
+                
               </a>
             </li>
-            <li className="p-0" data-dest="#calculate" >  
-              <a href="#calculate" className="text-white bold no-underline ">
+            
+              
+              <li className="p-0" data-dest="#calculate" >
+                <a href="#calculate" className="text-white bold no-underline ">  
                 CALCULATE
-              </a>
-            </li>
+                </a>
+              </li>
+              
+            
           </ul>        
         </Col>
       </Row>
@@ -147,7 +162,7 @@ const Lang = () => {
         </h1>
 
 
-        <h2 className="h1 mb-5 mt-3 text-white drop bold"> 
+        <h2 className="h1 mb-5 mt-3 text-white bold"> 
         {editingdata.heading2}
         </h2>
         </Col>
@@ -214,7 +229,7 @@ const Lang = () => {
         </Col>
         <Col className="order-1 order-lg-2 col-12 col-md-4 p-5 bg-brown roundedBox innerShadow">
         
-          <object className="" type="image/svg+xml" data="/power2-svg.svg"/>
+          <object className="op-4" type="image/svg+xml" data="/power2-svg.svg"/>
          
         </Col>
 
@@ -225,7 +240,7 @@ const Lang = () => {
     <Container id="how" fluid className="v-full z-999 bg-green p-5">
     <Fade bottom>
     <Row  className="py-5 align-items-center justify-content-center ">
-    <Col className="col-12 col-md-4 p-5 roundedBox innerShadow bg-brown">
+    <Col className="col-12 col-md-4 p-5 roundedBox innerShadow bg-green">
 
     <object className="" type="image/svg+xml" data="/build2-svg.svg"/>
     
@@ -304,30 +319,30 @@ const Lang = () => {
       </Row>
       <Row className="justify-content-center  align-items-stretch mx-5">
         <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
-          <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card op-9">
+          <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card ">
             <p className="h6 text-orange bold">
               STEP 1
             </p>
             <p className="large text-green mb-2 ">
             What is your carbon footprint?
             </p>
-          <p className="text-grey mb-3 op-8">
+          <p className="text-grey mb-3">
           Calculate how much carbon you, your family, your corporation, or your school generates in an average year.
           </p>
           <Link href="carbon-calculator">
-          <Button variant="green mt-4">      
+          <Button variant="green " className="mt-5">      
           Calculate your carbon footprint
         </Button></Link>
           </div>
         </Col>
         <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
-          <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card op-9">
+          <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card ">
             <p className="h6 text-orange bold">
               STEP 2
             </p>
             <p className="large text-green mb-2 ">
           Your “net zero” Smart Forest target</p>
-          <p className="text-grey mb-4 op-8">
+          <p className="text-grey mb-4 ">
           Calculate how many hectares you, your family, your corporation, or your school must invest in to reach a net-zero emissions target. </p>
           <Button variant="green mt-3">      
           Calculate your NET ZERO target
@@ -335,13 +350,13 @@ const Lang = () => {
           </div>
         </Col>
         <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
-          <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card op-9">
+          <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card ">
             <p className="h6 text-orange bold">
               STEP 3
             </p>
             <p className="large text-green mb-2 ">
             Your “net negative” Smart Forest target</p>
-          <p className="text-grey mb-3 op-8">
+          <p className="text-grey mb-3">
           Calculate how many hectares you, your corporation, or your school must invest in to reach a net-negative emissions target.</p>
           <Button variant="green" className="mt-5">      
           Calculate your NET NEGATIVE target
