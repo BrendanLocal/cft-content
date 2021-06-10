@@ -152,7 +152,7 @@ return (
           <Col className="col-12 col-lg-5 roundedBox card card-drop px-5 pt-5 pb-4 m-4">
           
               <h3 className="text-orange">A Smart Forest</h3>
-              <ul className="text-green plus">
+              <ul className="text-grey plus">
                 <li>Is a forest <span className="bold italic">and</span> an investment in the health of our planet</li>
                 <li>Offers a tangible way to offset a large carbon footprints</li>
                 <li>Maximizes its impact through expert forest management</li>
