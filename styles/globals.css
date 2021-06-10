@@ -418,7 +418,9 @@ text-decoration: underline;
 
 }
 
-
+.intro-order {
+  z-index: 2;
+}
 
 
 .left-sidenav li.active {
@@ -543,6 +545,7 @@ main {
   position: sticky;
   top: 100px;
   align-self: flex-start;
+  z-index: 1;
 }
 
 .stickyCalc {
@@ -732,7 +735,7 @@ padding: 10%;
 }
 
 .innerShadow-heavy {
-  box-shadow: 0 2px 24px rgba(0,0,0,.9) inset;
+  box-shadow: 0 2px 40px rgba(0, 0, 0, 0.6) inset;
 }
 
 .outerShadow {
@@ -1365,6 +1368,12 @@ transition: all .5s ease;
 .legacy-card a:hover {
 transform: translateX(3px);
 transition: all .5s ease;
+}
+
+
+.callout {
+  font-size: 22px
+  
 }
 
 

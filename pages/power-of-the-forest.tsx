@@ -85,8 +85,8 @@ return (
                 ANYONE
               </a>
             </li>
-            <li className="p-0" data-dest="#everyday">             
-              <a href="#everyday" className="text-white bold no-underline ">
+            <li className="p-0" data-dest="#earth">             
+              <a href="#earth" className="text-white bold no-underline ">
                 EARTH
               </a>
             </li>
@@ -97,7 +97,7 @@ return (
   <main className="bg-green py-5">
     <Container id="intro" className="bg-green py-5 px-5">
       <Row className="justify-content-center d-flex pb-5 mb-5 py-5 px-5"> 
-      <Col className="col-12 col-lg-5 text-white p-5 pb-0">
+      <Col className="order-2 order-lg-1 col-12 col-lg-5 text-white p-5 pb-0 intro-order">
         <h1 className="text-orange mb-5 bold">
          What is a Smart Forest?
         </h1>
@@ -112,7 +112,7 @@ return (
 
         </Col>
 
-       <Col className="col-12 col-lg-5 p-2 stickyTop mb-5">
+       <Col className="order-1 order-lg-2 col-12 col-lg-5 p-2 stickyTop mb-5">
          
        <object className="op-8" type="image/svg+xml" data="/power2-svg.svg"/>
         </Col>
@@ -247,9 +247,9 @@ return (
       
       </Col>
 
-        <Col className="col-12 col-md-4 p-5 roundedBox innerShadow forest-callout">
+        <Col className="col-12 col-md-4 p-3 roundedBox innerShadow">
           
-              <h3 className="text-left text-white p-3">Planting 500 hectares of land has the potential to sequester about 41,245 tonnes of carbon by 2050 and 75,300 tonnes by 2070. </h3>
+              <p className="text-white callout text-green p-5 ">Planting <span className="bold">500 hectares of land</span> has the potential to sequester about <span className="bold">41,245 tonnes of carbon by 2050</span> and <span className="bold">75,300 tonnes by 2070.</span></p>
               
 
         </Col>

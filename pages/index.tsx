@@ -280,7 +280,7 @@ const Lang = () => {
     <Fade bottom>
       <Row  className="align-items-center justify-content-center pt-0 mt-0">
         <Col className="col-12 col-lg-6 pe-lg-0 mb-2 pt-0 mt-0">
-          <h2 className="text-center text-orange bold pt-0 mt-0">I would like to… </h2>
+          <h2 className="text-center text-orange bold pt-0 mt-0">I would like to…</h2>
         </Col>
       </Row>
       <Row className="justify-content-center align-items-stretch">
@@ -319,7 +319,7 @@ const Lang = () => {
       </Row>
       <Row className="justify-content-center  align-items-stretch mx-5">
         <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
-          <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card ">
+          <div className="card bg-white p-4 mx-2 h-100 calculate-card ">
             <p className="h6 text-orange bold">
               STEP 1
             </p>
@@ -336,7 +336,7 @@ const Lang = () => {
           </div>
         </Col>
         <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
-          <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card ">
+          <div className="card bg-white p-4 mx-2 h-100 calculate-card ">
             <p className="h6 text-orange bold">
               STEP 2
             </p>
@@ -350,7 +350,7 @@ const Lang = () => {
           </div>
         </Col>
         <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
-          <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card ">
+          <div className="card bg-white p-4 mx-2 h-100 calculate-card ">
             <p className="h6 text-orange bold">
               STEP 3
             </p>
