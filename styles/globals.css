@@ -97,7 +97,7 @@ h1.drop, .h1.drop {
 .blockquote {
   font-size: calc(1.3rem + .7vw);
   line-height: calc(1.8rem + .7vw);
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .blockquote-bg {
@@ -1018,7 +1018,7 @@ cursor: pointer;
 
 .socialIcons img {
   width: 30px;
-  padding: 10px 0;
+  padding: 7px 0;
   opacity: .4;
 
 transform: scale(1);
@@ -1363,9 +1363,11 @@ transition: all .5s ease;
 }
 
 
-.callout {
-  font-size: 22px
-  
+.callout-box {
+  font-size: 22px;
+  background: url('/legacy-smart-forest-lopacity.png');
+  background-size: cover;
+  background-position: center;
 }
 
 

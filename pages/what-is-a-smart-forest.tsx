@@ -101,10 +101,10 @@ return (
         <h1 className="text-orange mb-5 bold">
          What is a Smart Forest?
         </h1>
-        <p className="large my-5 op-8">Smart Forests™ have a significant impact on climate change. They provide ecosystems for diverse wildlife. They create jobs for generations of Canadians. And they show us exactly how they restore our planet via their own digital tools.</p>
+        <p className="large my-5 op-9">Smart Forests™ have a significant impact on climate change. They provide ecosystems for diverse wildlife. They create jobs for generations of Canadians. And they show us exactly how they restore our planet via their own digital tools.</p>
         
 
-        <p className="text-white text-left smallcaps intro-links-header op-2 mt-4">ON THIS PAGE</p>
+        <p className="text-white text-left smallcaps intro-links-header op-5 mt-4">ON THIS PAGE</p>
         <a href="#commitment" className="btn btn-text text-left intro-links text-orange bold no-underline ">Our Commitment</a>
         <a href="#forever" className="btn btn-text text-left intro-links text-orange bold no-underline ">Here for good</a>
        <a href="#smart-forests" className="btn btn-text text-left intro-links text-orange bold no-underline ">Anyone can do it</a>
@@ -247,9 +247,9 @@ return (
       
       </Col>
 
-        <Col className="col-12 col-md-4 p-3 roundedBox innerShadow">
+        <Col className="col-12 col-md-4 p-3 roundedBox innerShadow-heavy callout-box">
           
-              <p className="text-white callout text-green p-5 ">Planting <span className="bold">500 hectares of land</span> has the potential to sequester about <span className="bold">41,245 tonnes of carbon by 2050</span> and <span className="bold">75,300 tonnes by 2070.</span></p>
+              <p className="text-white text-green p-5 tight-drop">Planting <span className="bold">500 hectares of land</span> has the potential to sequester about <span className="bold">41,245 tonnes of carbon by 2050</span> and <span className="bold">75,300 tonnes by 2070.</span></p>
               
 
         </Col>
@@ -286,7 +286,7 @@ previewData,
 if (preview) {
 return getGithubPreviewProps({
 ...previewData,
-fileRelativePath: 'content/power.json',
+fileRelativePath: 'content/what-is-sf.json',
 parse: parseJson,
 })
 }
@@ -296,8 +296,8 @@ sourceProvider: null,
 error: null,
 preview: false,
 file: {
-fileRelativePath: 'content/power.json',
-data: (await import('../content/power.json')).default,
+fileRelativePath: 'content/what-is-sf.json',
+data: (await import('../content/what-is-sf.json')).default,
 },
 },
 }
