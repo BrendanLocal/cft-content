@@ -87,6 +87,13 @@ h1.drop, .h1.drop {
   text-shadow: 0px 2px 10px rgb(0 0 0 / 30%);
 }
 
+.emphasis  {
+  font-size: calc(3rem + 1.5vw);
+  line-height: calc(3rem + 1.5vw);
+  font-weight: 900;
+  letter-spacing: -3px;
+}
+
 h2, .h2 {
   font-size: calc(2rem + .9vw);
 }
