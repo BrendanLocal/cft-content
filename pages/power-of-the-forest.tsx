@@ -114,7 +114,7 @@ return (
 
        <Col className="col-12 col-lg-5 p-2 stickyTop mb-5">
          
-       <object type="image/svg+xml" data="/power2-svg.svg"/>
+       <object className="op-7" type="image/svg+xml" data="/power2-svg.svg"/>
         </Col>
         
       </Row>
@@ -125,9 +125,9 @@ return (
     <Container id="commitment" fluid className="v-full z-999 bg-green py-5">
     <Fade bottom>
       <Row className="pt-5 align-items-center justify-content-center">
-        <Col className="col-12 col-lg-8 pt-3">
+        <Col className="col-12 col-lg-7 pt-3">
           <h2 className="text-center text-orange bold mb-2">Our commitment:</h2>
-          <p className="h1 text-center text-white bold mb-3 op-9">NEVER PLANT A SINGLE TREE AGAIN.</p>
+          <p className="emphasis text-center text-white bold mb-3 op-9">NEVER PLANT A SINGLE TREE AGAIN.</p>
           <p className="text-center text-white thin op-9">It’s now or never. Canada’s Forest Trust will plant 10 million acres of Smart Forests across Canada by 2040. This is the bold action needed to tackle the enormous challenge facing our planet.</p>
 
           
