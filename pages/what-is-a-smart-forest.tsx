@@ -127,7 +127,7 @@ return (
       <Row className="pt-5 align-items-center justify-content-center">
         <Col className="col-12 col-lg-7 pt-3">
           <h2 className="text-center text-orange bold mb-2">Our commitment:</h2>
-          <p className="emphasis text-center text-white bold mb-3 op-9">NEVER PLANT A SINGLE TREE AGAIN.</p>
+          <p className="emphasis text-center text-white bold mb-3 ">NEVER PLANT A SINGLE TREE AGAIN.</p>
           <p className="text-center text-white thin op-9">It’s now or never. Canada’s Forest Trust will plant 10 million acres of Smart Forests across Canada by 2040. This is the bold action needed to tackle the enormous challenge facing our planet.</p>
 
           
@@ -136,7 +136,7 @@ return (
     </Fade>
     <Fade bottom>
       <Row className="justify-content-center d-flex pb-5 mx-5 px-5">  
-        <Col className="col-12 col-lg-5 bg-green roundedBox innerShadow px-5 pt-5 pb-4 m-4">
+        <Col className="col-12 col-lg-5 bg-brown roundedBox innerShadow px-5 pt-5 pb-4 m-4">
           
               <h3 className="text-orange">A Forest</h3>
               <ul className="text-white checkMark">
@@ -149,10 +149,10 @@ return (
           
           </Col>
 
-          <Col className="col-12 col-lg-5 bg-green roundedBox innerShadow px-5 pt-5 pb-4 m-4">
+          <Col className="col-12 col-lg-5 roundedBox card card-drop px-5 pt-5 pb-4 m-4">
           
               <h3 className="text-orange">A Smart Forest</h3>
-              <ul className="text-white plus">
+              <ul className="text-green plus">
                 <li>Is a forest <span className="bold italic">and</span> an investment in the health of our planet</li>
                 <li>Offers a tangible way to offset a large carbon footprints</li>
                 <li>Maximizes its impact through expert forest management</li>
