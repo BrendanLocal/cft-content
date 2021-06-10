@@ -638,6 +638,7 @@ padding: 10%;
 }
 
 
+
 /* Infographic */
 
 .canada-carbon-graphic {
@@ -706,6 +707,7 @@ padding: 10%;
 .roundedBoxMedium {
   border-radius: 40px;
 }
+
 
 .roundedBoxMediumLeft {
 
@@ -1590,6 +1592,13 @@ height: 5vh;
 @media screen and (max-width: 576px){
 .smallCaps {
 font-size: .9em;
+}
+
+.protorow {
+  background-image: url('/landing-proto.png');
+  background-size: 140%;
+  background-position: -56% 300%;
+  background-repeat: no-repeat;
 }
 
 .logo {

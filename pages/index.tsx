@@ -156,7 +156,7 @@ const Lang = () => {
 
     <Container  id="intro" fluid className="v-full d-flex py-5 flex-column z-0">
       <Row className="justify-content-center align-items-center py-5">
-        <Col className="col-12 col-lg-8 col-xl-6 py-5 p-md-1">
+        <Col className="col-11 col-lg-8 col-xl-6 py-5 p-md-1">
         <h1 className=" text-white drop mt-3 mb-5">
          {editingdata.heading1}
         </h1>
@@ -171,7 +171,7 @@ const Lang = () => {
     <Fade bottom>
         
         <Row className="justify-content-center align-items-center mb-5 py-5">
-        <Col className="col-12 col-lg-8 col-xl-6 p-md-1 mb-5 py-5">
+        <Col className="col-11 col-lg-8 col-xl-6 p-md-1 mb-5 py-5">
         <p className="intro-par text-white bold pe-5 pe-lg-0 py-3">With your help, we will reforest 10 million acres of Canadian land and protect it forever. </p>
        
         
@@ -183,31 +183,31 @@ const Lang = () => {
         
       <Fade bottom>
       <Row className="justify-content-center  pb-5">
-        <Col className="col-12 col-lg-8 pe-lg-0 mb-0 p-0">
+        <Col className="col-11 col-lg-8 pe-lg-0 mb-0 p-0">
           <h2 className="intro-par text-center text-white mb-0 bold ">Canada's Forest Trust</h2>
         </Col>
       </Row>
       <Row className="justify-content-center  pb-5 align-items-stretch mb-5">
-        <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 mx-3">
+        <Col className="col-11 col-lg-3 col-xl-2  mx-3 mb-4">
           <div className="roundedBox card no-border bg-white p-4 h-100">
             <p className="large text-green">
             <span className="bold">Recognizes</span> <span className="thin">that we need bold, long-term solutions to reverse the damage caused by deforestation and emissions in Canada</span></p>
           </div>
         </Col>
-        <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 mx-3 ">
+        <Col className="col-11 col-lg-3 col-xl-2  mx-3 mb-4">
           <div className="roundedBox card no-border bg-white p-4 h-100">
           <p className="large text-green">
           <span className="bold">Leverages</span> <span className="thin">data-driven technologies and advanced analytics to support healthy, sustainable and biodiverse Smart Forests™</span></p>
           </div>
         </Col>
-        <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 mx-3">
+        <Col className="col-11 col-lg-3 col-xl-2  mx-3 mb-4">
           <div className="roundedBox card no-border bg-white p-4 h-100">
           <p className="large text-green">
           <span className="bold">Guarantees</span> <span className="thin">protection and preservation through forest management practices that are based in science and designed for longevity</span></p>
           </div>
         </Col>
 
-        <Col className="text-center col-lg-12 pb-5 pe-5 mt-5 pe-lg-0">
+        <Col className="text-center col-11 col-lg-12 pb-5 mt-3 ">
         <Link href="/what-is-a-smart-forest" ><a className="btn btn-large btn-green">Discover the Smart Forest initiative</a></Link>
         </Col>
       </Row>   
@@ -259,11 +259,11 @@ const Lang = () => {
     </Fade>
     </Container>
 
-    <Container  id="who" fluid className="v-full z-999 bg-green pt-3 py-5 mb-4">
+    <Container  id="who" fluid className="v-full z-999 bg-green py-5 mb-4">
     <Fade bottom>
-    <Row className="pt-5 align-items-center justify-content-center  align-items-stretch protorow pb-0 mb-0">
+    <Row className="pe-5 align-items-center justify-content-center  align-items-stretch protorow pb-0 mb-0">
     
-        <Col className="col-12 col-md-3 text-white mb-5 py-5 px-5">
+        <Col className="col-10 col-md-3 text-white mb-5 py-5 px-5 me-5">
         <h2 className="text-orange bold">Who can support a Smart Forest?</h2>
         <p className="mb-4 thin">If you care about the future of our planet and the health of our natural ecosystems, you belong here. We invite youth, families, farmers, landowners, indigenous communities and Canada’s corporate leaders to collaborate on this resilient, long-term climate solution.</p>
         <svg className="down-arrow d-none" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74 29.46"><path d="M73.41,13.59,60.69.86a2,2,0,0,0-2.83,2.83L67.17,13H0v4H67.17l-9.31,9.31a2,2,0,1,0,2.83,2.83L73.41,16.41A2,2,0,0,0,73.41,13.59Z"/></svg>
@@ -279,29 +279,29 @@ const Lang = () => {
     <Container id="you" fluid className="v-full z-999 bg-green pt-0 mt-0">
     <Fade bottom>
       <Row  className="align-items-center justify-content-center pt-0 mt-0">
-        <Col className="col-12 col-lg-6 pe-lg-0 mb-2 pt-0 mt-0">
+        <Col className="col-10 col-lg-6 pe-lg-0 mb-2 pt-0 mt-0">
           <h2 className="text-center text-orange bold pt-0 mt-0">I would like to…</h2>
         </Col>
       </Row>
       <Row className="justify-content-center align-items-stretch">
-      <Col className="col-12 col-md-6 col-lg-6 pe-lg-0 m-3">
+      <Col className="col-11 col-md-6 col-lg-6 pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border py-4 d-flex flex-column drop corporate-card ">
        
         <Link href="/build-your-forest#corporate" ><a className="forest-choice btn btn-text text-center text-white no-underline tight-drop py-1">Meet my corporate ESG obligations</a></Link>
         </div>
         </Col>
-        <Col className="col-12 col-md-6 col-lg-6  pe-lg-0 m-3 ">
+        <Col className="col-11 col-md-6 col-lg-6  pe-lg-0 m-3 ">
         <div className="roundedBox card bg-green no-border py-4 d-flex flex-column drop school-card ">
         
         <Link href="/build-your-forest#school" ><a className="forest-choice btn btn-text text-center text-white no-underline tight-drop py-1">Get my school involved</a></Link>
         </div>
         </Col>
-        <Col className="col-12 col-md-6 col-lg-6  pe-lg-0 m-3">
+        <Col className="col-11 col-md-6 col-lg-6  pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border py-4 d-flex flex-column drop legacy-card">
         
         <Link href="/build-your-forest#legacy" ><a className="forest-choice btn btn-text text-center text-white no-underline tight-drop py-1">Establish a legacy forest</a></Link></div>
         </Col>
-        <Col className="col-12 col-md-6 col-lg-6 pe-lg-0 m-3">
+        <Col className="col-11 col-md-6 col-lg-6 pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border py-4 d-flex flex-column drop communal-button ">
         <Link href="/build-your-forest#communal" ><a className="forest-choice btn btn-text text-center text-white no-underline tight-drop py-1">Contribute to a communal forest</a></Link> </div>
         </Col>
@@ -312,13 +312,13 @@ const Lang = () => {
     <Container id="calculate" fluid className="v-full z-999 bg-green pt-0 mt-0 mb-0">
     <Fade bottom>
     <Row className="align-items-center justify-content-center pt-0 mt-0 mb-0">
-      <Col className="col-12 col-lg-7 pe-lg-0 mb-4">
+      <Col className="col-10 col-lg-7 pe-lg-0 mb-4">
       <h2 className="text-center text-orange mb-2 bold ">What difference can I make?</h2>
       <p className="text-center large text-white thin op-9">Use our custom-built net-zero carbon calculator and forest calculator to understand exactly how your investment in Smart Forests will offset your climate impact.</p>
       </Col>
       </Row>
       <Row className="justify-content-center  align-items-stretch mx-5">
-        <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
+        <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0 mb-4">
           <div className="card bg-white p-4 mx-2 h-100 calculate-card ">
             <p className="h6 text-orange bold">
               STEP 1
@@ -335,7 +335,7 @@ const Lang = () => {
         </Button></Link>
           </div>
         </Col>
-        <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
+        <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0 mb-4">
           <div className="card bg-white p-4 mx-2 h-100 calculate-card ">
             <p className="h6 text-orange bold">
               STEP 2
@@ -349,7 +349,7 @@ const Lang = () => {
         </Button>
           </div>
         </Col>
-        <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
+        <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0 mb-4">
           <div className="card bg-white p-4 mx-2 h-100 calculate-card ">
             <p className="h6 text-orange bold">
               STEP 3
