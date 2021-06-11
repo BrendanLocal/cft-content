@@ -57,6 +57,7 @@
     "react-multi-carousel": "^2.6.2",
     "react-native": "^0.64.1",
     "react-parallax": "^3.3.0",
+    "react-player": "^2.9.0",
     "react-reveal": "^1.2.2",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
@@ -79,7 +80,7 @@
     "styled-components": "^5.3.0",
     "swiper": "^6.6.2",
     "tinacms": "^0.39.0",
-    "use-sound": "^3.0.1"
+    "use-sound": "^4.0.0"
   },
   "devDependencies": {
     "@types/jquery": "^3.5.5",
