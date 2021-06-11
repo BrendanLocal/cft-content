@@ -98,8 +98,8 @@ return (
 
         <p className="text-white text-left smallcaps intro-links-header op-5 mt-4">ON THIS PAGE</p>
         <a href="#commitment" className="btn btn-text text-left intro-links text-orange bold no-underline ">The Smart Forest Action Plan</a>
-        <a href="#forever" className="btn btn-text text-left intro-links text-orange bold no-underline ">Here for good</a>
-       <a href="#smart-forests" className="btn btn-text text-left intro-links text-orange bold no-underline ">Anyone can do it</a>
+        <a href="#forever" className="btn btn-text text-left intro-links text-orange bold no-underline ">Start making a difference</a>
+       <a href="#smart-forests" className="btn btn-text text-left intro-links text-orange bold no-underline ">Our Smart Forests</a>
        <a href="#earth" className="btn btn-text text-left intro-links text-orange bold no-underline ">Every day is Earth Day</a>
 
         </Col>
