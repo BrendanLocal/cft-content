@@ -12,6 +12,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import styles from '../styles/Home.module.css'
 import Fade from 'react-reveal/Fade';
+import ReactPlayer from 'react-player'
 import { Parallax, Background } from 'react-parallax';
 
 const Lang = () => {
@@ -202,7 +203,32 @@ export default function Home({ file, href, children}) {
             </Row>
           </Fade>
         </Container>
+<Container fluid id="video" className="bg-white py-5">
+  <Row>
+    <Col className="col-12 col-md-6 d-flex justify-content-center">
+    <ReactPlayer playing playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4' />
+    </Col>
+  </Row>
+</Container>
+    <Container id="what"  fluid className="v-full z-999 bg-green align-items-center p-5 container-drop-heavy">
+      <Fade bottom>
+      <Row className="py-5 align-items-center justify-content-center mt-5">
+        
+        <Col className="order-2 order-lg-1 col-12 p-5 col-md-4 text-white">
+        <h2 className="text-orange bold">What is a Smart Forest?</h2>
+        <p className="pb-3 thin">A Smart Forest combines the resilience of a natural ecosystem, developed over millennia, with the predictive capabilities of today’s technologies. Inside a Smart Forest, life thrives; outside of it, scientists, students, investors and conservationists use digital instruments to understand and activate the forest’s role in cleaning our water, purifying our air, and replenishing our lost resources.</p>
+        <Link href="/what-is-a-smart-forest" ><a className="btn btn-green  ">Learn more about Smart Forests</a></Link>
+      
+        </Col>
+        <Col className="order-1 order-lg-2 col-12 col-md-4 px-3 py-3 roundedBox innerShadow">
+        
+          <object className="op-6" type="image/svg+xml" data="/power2-svg.svg"/>
+         
+        </Col>
 
+      </Row>
+      </Fade>
+    </Container>
         <Container id="how" fluid className="v-full z-999 bg-green p-5">
           <Fade bottom>
             <Row className="py-5 align-items-center justify-content-center">
