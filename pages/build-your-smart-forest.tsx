@@ -29,11 +29,6 @@ const [editingdata, form] = useGithubJsonForm(file, formOptions)
 usePlugin(form)
 useGithubToolbarPlugins()
 
-useEffect(() => {
-new Rellax(".rellax");
-var scene = document.getElementById('scene');
-var parallaxInstance = new Parallax(scene);
-}, []);
 
 
 const slideProperties = {
@@ -52,31 +47,69 @@ return (
     </meta>
   </Head>
 
-  <main className="bg-green">
-    <Container className="bg-green py-6">
-      <Row className="justify-content-center d-flex pb-5 mb-5">
-        <Col className="col-xl-5 p-5 stickyTop mb-5">
-        <div className="rellax" data-rellax-speed="1">
-          <div className="px-5 " data-relative-input="true" id="scene">
-            <img className="pos-absolute" data-depth="-0.7" src="/buildTemp_layer3.svg"></img>
-            <img className="pos-absolute" data-depth="-0.2" src="/buildTemp_layer1.svg"></img>
-            <img className="pos-absolute" data-depth=".5" src="/buildTemp_layer2.svg"></img>
-          </div>
-        </div>
-        </Col>
-        <Col className="col-xl-5 text-white p-5 pb-0">
-        <h1 className="text-orange mb-5">
-          {editingdata.heading}
-        </h1>
-        <p className="large">{editingdata.leadpara}</p>
-        <p>{editingdata.para2}</p>
-        <p>{editingdata.para3}</p>
-        <p className="pt-3"><a className="sectionLink" href="#5-phase">Our 5-Phase Approach</a><br />
-          <a className="sectionLink" href="#smart-forests">Our Smart Forests<sup>™</sup></a><br /></p>
-
+  <Row className="justify-content-left p-0 m-0 d-none d-lg-block">
+        <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
+          <p className="text-white m-2 bold op-6 ">BUILD YOUR SMART FOREST</p>
+          <ul>
+            <li className="p-0" data-dest="#intro">
+              <a href="#intro" className="text-white bold no-underline">
+               INTRO
+              </a>
+            </li>
+            <li className="p-0" data-dest="#commitment" >              
+              <a href="#commitment" className="text-white bold no-underline">
+                THE PLAN
+              </a>
+            </li>
+            <li className="p-0" data-dest="#forever">
+              <a href="#forever" className="text-white bold no-underline ">
+                FOREVER
+              </a>
+            </li>
+            <li className="p-0" data-dest="#smart-forests">             
+              <a href="#smart-forests" className="text-white bold no-underline ">
+                ANYONE
+              </a>
+            </li>
+            <li className="p-0" data-dest="#earth">             
+              <a href="#earth" className="text-white bold no-underline ">
+                EARTH
+              </a>
+            </li>
+          </ul>        
         </Col>
       </Row>
+
+      <main className="bg-green py-5">
+    <Container id="intro" className="bg-green py-5 px-5">
+      <Row className="justify-content-center d-flex pb-5 mb-5 py-5 px-5">
+        
+        <Col className="col-12 col-lg-5 stickyTop mb-5 p-3">
+         
+       <object type="image/svg+xml" data="/build2-svg.svg"/>
+        </Col> 
+      
+      <Col className="col-12 col-lg-5 text-white p-4 pb-0 intro-order">
+        <h1 className="text-orange mb-5 bold">
+        Build Your Smart Forest™
+        </h1>
+        <p className="large my-5 op-9">An opportunity for youth, families, farmers, landowners, Indigenous communities, and corporate Canada to come together to build a better environment and achieve a net-zero future.</p>
+        
+
+        <p className="text-white text-left smallcaps intro-links-header op-5 mt-4">ON THIS PAGE</p>
+        <a href="#commitment" className="btn btn-text text-left intro-links text-orange bold no-underline ">The Smart Forest Action Plan</a>
+        <a href="#forever" className="btn btn-text text-left intro-links text-orange bold no-underline ">Here for good</a>
+       <a href="#smart-forests" className="btn btn-text text-left intro-links text-orange bold no-underline ">Anyone can do it</a>
+       <a href="#earth" className="btn btn-text text-left intro-links text-orange bold no-underline ">Every day is Earth Day</a>
+
+        </Col>
+
+       
+        
+      </Row>
     </Container>
+
+
     <Container id="5-phase" className="v-full bg-green">
       <Row>
         <Col className="text-center">

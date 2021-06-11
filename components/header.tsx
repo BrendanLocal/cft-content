@@ -21,7 +21,7 @@ path: "/what-is-a-smart-forest"
 {
 key: "navItem2",
 label: "Build a Smart Forest",
-path: "/build-your-forest"
+path: "/build-your-smart-forest"
 },
 {
 key: "navItem4",

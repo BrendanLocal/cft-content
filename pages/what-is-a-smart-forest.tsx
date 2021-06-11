@@ -135,7 +135,7 @@ return (
       </Row>
     </Fade>
     <Fade bottom>
-      <Row className="justify-content-center d-flex pb-5 mx-5 px-5">  
+      <Row className="justify-content-center d-flex pb-5 mx-5 px-lg-5">  
         <Col className="col-12 col-lg-5 bg-brown roundedBox innerShadow px-5 pt-5 pb-4 m-4">
           
               <h3 className="text-orange">A Forest</h3>
@@ -183,7 +183,7 @@ return (
       <Row className="justify-content-center d-flex pb-5 mx-5">  
         <Col className="col-11 col-lg-8 bg-brown roundedBox innerShadow p-5 m-4 blockquote-bg">
           
-              <h3 className="text-left blockquote text-orange p-5">“Time is much shorter than we think. Failure means disaster. The changes required are enormous and we must all contribute in every part of our daily life. Especially us in the rich countries where no nation is doing nearly enough.”</h3>
+              <h3 className="text-left blockquote text-orange p-lg-5">“Time is much shorter than we think. Failure means disaster. The changes required are enormous and we must all contribute in every part of our daily life. Especially us in the rich countries where no nation is doing nearly enough.”</h3>
               <p className="text-left text-white my-0 mx-5 bold">— Greta Thunberg</p>
               <p className="text-left text-white mx-5 px-3 italic op-6">Climate activist</p>
 
@@ -210,27 +210,27 @@ return (
         <h4 className="text-white tight-drop-light">Corporate Forests Grow</h4>
         <p className="flex-fill pb-3 text-white tight-drop">A turnkey and sustainable solution to meet ESG goals</p>
        
-        <Link href="/build-your-forest#corporate" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a></Link>
+        <Link href="/build-your-smart-forest#corporate" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a></Link>
         </div>
         </Col>
         <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
         <h4 className="text-white tight-drop-light">School Forests Teach</h4>
         <p className="flex-fill pb-3 text-white tight-drop">A tangible opportunity for schools and students to combat climate change</p>
-        <Link href="/build-your-forest#school" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a></Link>
+        <Link href="/build-your-smart-forest#school" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a></Link>
         </div>
         </Col>
         <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
         <h4 className="text-white tight-drop-light">Legacy Forests Last</h4>
         <p className="flex-fill pb-3 text-white tight-drop">A unique way to leave a healthy planet for future generations</p>
-        <Link href="/build-your-forest#legacy" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a></Link></div>
+        <Link href="/build-your-smart-forest#legacy" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a></Link></div>
         </Col>
         <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop communal-card">
         <h4 className="text-white tight-drop-light">Communal Forests Unite</h4>
         <p className="flex-fill pb-3 text-white tight-drop">An opportunity for every Canadian to participate</p>
-        <Link href="/build-your-forest#communal" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a></Link> </div>
+        <Link href="/build-your-smart-forest#communal" ><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a></Link> </div>
         </Col>
       </Row>
       </Fade>
@@ -247,7 +247,7 @@ return (
       
       </Col>
 
-        <Col className="col-11 col-md-4 p-3 roundedBox innerShadow-heavy callout-box">
+        <Col className="col-10 col-md-4 p-3 roundedBox innerShadow-heavy callout-box">
           
               <p className="text-white text-green p-5 tight-drop">Planting <span className="bold">500 hectares of land</span> has the potential to sequester about <span className="bold">41,245 tonnes of carbon by 2050</span> and <span className="bold">75,300 tonnes by 2070.</span></p>
               
@@ -258,7 +258,7 @@ return (
     <Fade bottom>
       <Row className="align-items-center justify-content-center">
       <Col className="col-10 col-lg-7 px-5 mt-5"> 
-      <p className="large text-center text-orange bold op-9 my-0">See your carbon footprint and learn what you can do to get to net-zero.</p> 
+      <p className="h3 text-center text-orange bold op-9 my-0">See your carbon footprint and learn what you can do to get to net-zero.</p> 
 
         </Col>
         <Col className="col-10 text-center col-lg-7 my-5 pb-5">
