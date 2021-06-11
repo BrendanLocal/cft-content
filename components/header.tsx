@@ -2,12 +2,20 @@ import React, { useState, useEffect, MouseEvent} from 'react';
 import { render } from 'react-dom';
 import Link from 'next/link'
 import { signIn, signOut, useSession } from 'next-auth/client'
-
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import useSound from 'use-sound';
 
 const Header = ()=> {
+
+
+const [show, setShow] = useState(false);
+
+const handleClose = () => setShow(false);
+const handleShow = () => setShow(true);
+
+
   const [ session, loading ] = useSession()
 
 const [isActive, setActive] = useState(false);
@@ -82,37 +90,13 @@ path: "#"
 }
 ]
 
+const [playSound, stop] = useSound('/forest-sounds.mp3');
 
-const useAudio = url => {
-const [audio] = useState(typeof Audio !== "undefined" && new Audio(url));
-const [playing, setPlaying] = useState(true);
-
-
-const toggleSound = () => {
-  setPlaying(!playing);
-  };
-   
-useEffect(() => {
-playing ? audio.pause() : audio.play() ;
-},
-[playing]
-);
-
-useEffect(() => {
-audio.addEventListener('ended', function () {
-this.currentTime = 0;
-this.play();
-}, false);
-audio.addEventListener('ended', () => setPlaying(false));
-return () => {
-audio.removeEventListener('ended', () => setPlaying(false));
-};
-}, []);
-
-return [playing, toggleSound];
-};
-
-const [playing, toggleSound] = useAudio("/forest-sounds.mp3");
+const [isPlaying, setPlaying] = useState(false);
+ const toggleSound = () => {
+   playSound();
+    setPlaying(!isPlaying);
+  }
 
 
 const [showSearch, setSearch] = useState(false);
@@ -190,7 +174,7 @@ return(
               <li><img onClick={toggleSearch} src="/searchIcon.svg"></img>
               </li>
               <li>
-                 <div  className={playing ? null : 'mute'} ><img className="soundPlaying" src="/soundIcon.svg"></img><img className="soundMute" src="/muteIcon.svg"></img></div>
+                 <div  className={isPlaying ? 'mute' : null} ><img className="soundPlaying" onClick={() => toggleSound()} src="/soundIcon.svg"></img><img className="soundMute" src="/muteIcon.svg"></img></div>
 
 
               </li>
@@ -216,7 +200,6 @@ return(
             </ul>
           </div>
         </div>
-
 
 
 </React.Fragment>
