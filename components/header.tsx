@@ -3,6 +3,10 @@ import { render } from 'react-dom';
 import Link from 'next/link'
 import { signIn, signOut, useSession } from 'next-auth/client'
 
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 const Header = ()=> {
   const [ session, loading ] = useSession()
 
@@ -110,13 +114,24 @@ return [playing, toggleSound];
 
 const [playing, toggleSound] = useAudio("/forest-sounds.mp3");
 
+
 const [showSearch, setSearch] = useState(false);
-  function toggle(){
+ const toggleSearch = () => {
     setSearch(!showSearch);
   }
 
 return(
 <React.Fragment>
+
+<div id="searchComponent" className={ showSearch ? "searchOpen" : "searchClosed"}>
+  <Container className="v-80 d-flex justify-content-center align-items-center">
+  <Row><Col>
+  <h3 className="text-white">Search</h3>
+                <div className="searchBox"><img src="/searchIcon.svg"/><input type="text" className="searchInput"></input><img className="closeSearch" onClick={toggleSearch} src="/close.svg"/></div>
+                </Col>
+                </Row>
+                </Container>
+                </div>
 
   <div className="container-fluid header logoHeader">
     <div className="row ">
@@ -172,8 +187,7 @@ return(
           <div className="col col d-flex align-items-end justify-content-end menuInterface">
             <ul className="controlIcons">
 
-              <li>
-                <div id="searchComponent" className={ showSearch ? "searchOpen" : "searchClosed"}><div className="searchBox"><button onClick={() => setSearch}><img  src="/searchIcon.svg"></img></button><input type="text" className="searchInput"></input></div></div>
+              <li><img onClick={toggleSearch} src="/searchIcon.svg"></img>
               </li>
               <li>
                  <div  className={playing ? null : 'mute'} ><img className="soundPlaying" src="/soundIcon.svg"></img><img className="soundMute" src="/muteIcon.svg"></img></div>
