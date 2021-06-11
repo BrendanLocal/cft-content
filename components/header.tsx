@@ -2,20 +2,8 @@ import React, { useState, useEffect, MouseEvent} from 'react';
 import { render } from 'react-dom';
 import Link from 'next/link'
 import { signIn, signOut, useSession } from 'next-auth/client'
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import useSound from 'use-sound';
 
 const Header = ()=> {
-
-
-const [show, setShow] = useState(false);
-
-const handleClose = () => setShow(false);
-const handleShow = () => setShow(true);
-
-
   const [ session, loading ] = useSession()
 
 const [isActive, setActive] = useState(false);
@@ -90,32 +78,41 @@ path: "#"
 }
 ]
 
-const [playSound, stop] = useSound('/forest-sounds.mp3');
 
-const [isPlaying, setPlaying] = useState(false);
- const toggleSound = () => {
-   playSound();
-    setPlaying(!isPlaying);
-  }
+const useAudio = url => {
+const [audio] = useState(typeof Audio !== "undefined" && new Audio(url));
+const [playing, setPlaying] = useState(true);
 
 
-const [showSearch, setSearch] = useState(false);
- const toggleSearch = () => {
-    setSearch(!showSearch);
-  }
+const toggleSound = () => {
+  setPlaying(!playing);
+  };
+   
+useEffect(() => {
+playing ? audio.pause() : audio.play() ;
+},
+[playing]
+);
+
+useEffect(() => {
+audio.addEventListener('ended', function () {
+this.currentTime = 0;
+this.play();
+}, false);
+audio.addEventListener('ended', () => setPlaying(false));
+return () => {
+audio.removeEventListener('ended', () => setPlaying(false));
+};
+}, []);
+
+return [playing, toggleSound];
+};
+
+const [playing, toggleSound] = useAudio("/forest-sounds.mp3");
+
 
 return(
 <React.Fragment>
-
-<div id="searchComponent" className={ showSearch ? "searchOpen" : "searchClosed"}>
-  <Container className="v-80 d-flex justify-content-center align-items-center">
-  <Row><Col>
-  <h3 className="text-white">Search</h3>
-                <div className="searchBox"><img src="/searchIcon.svg"/><input type="text" className="searchInput"></input><img className="closeSearch" onClick={toggleSearch} src="/close.svg"/></div>
-                </Col>
-                </Row>
-                </Container>
-                </div>
 
   <div className="container-fluid header logoHeader">
     <div className="row ">
@@ -171,10 +168,11 @@ return(
           <div className="col col d-flex align-items-end justify-content-end menuInterface">
             <ul className="controlIcons">
 
-              <li><img onClick={toggleSearch} src="/searchIcon.svg"></img>
+              <li>
+                <Link href=""><img src="/searchIcon.svg"></img></Link>
               </li>
               <li>
-                 <div  className={isPlaying ? 'mute' : null} ><img className="soundPlaying" onClick={() => toggleSound()} src="/soundIcon.svg"></img><img className="soundMute" src="/muteIcon.svg"></img></div>
+                 <div  className={playing ? null : 'mute'} ><img className="soundPlaying" src="/soundIcon.svg"></img><img className="soundMute" src="/muteIcon.svg"></img></div>
 
 
               </li>
@@ -200,6 +198,7 @@ return(
             </ul>
           </div>
         </div>
+
 
 
 </React.Fragment>
