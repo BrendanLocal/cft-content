@@ -1559,6 +1559,15 @@ ul.plus li:before {
   left: -2em;
 }
 
+/* Search */
+
+.searchClosed .searchInput {
+opacity: 0;
+width: 0;
+padding: 0;
+
+}
+
 
 
 /* Tablet */

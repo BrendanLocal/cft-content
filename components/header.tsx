@@ -110,6 +110,10 @@ return [playing, toggleSound];
 
 const [playing, toggleSound] = useAudio("/forest-sounds.mp3");
 
+const [showSearch, setSearch] = useState(false);
+  function toggle(){
+    setSearch(!showSearch);
+  }
 
 return(
 <React.Fragment>
@@ -169,7 +173,7 @@ return(
             <ul className="controlIcons">
 
               <li>
-                <Link href=""><img src="/searchIcon.svg"></img></Link>
+                <div id="searchComponent" className={ showSearch ? "searchOpen" : "searchClosed"}><div className="searchBox"><button onClick={() => setSearch}><img  src="/searchIcon.svg"></img></button><input type="text" className="searchInput"></input></div></div>
               </li>
               <li>
                  <div  className={playing ? null : 'mute'} ><img className="soundPlaying" src="/soundIcon.svg"></img><img className="soundMute" src="/muteIcon.svg"></img></div>
