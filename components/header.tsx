@@ -15,27 +15,27 @@ setActive(!isActive);
 const navItems = [
 {
 key: "navItem1",
-label: "The Power of Smart Forests™",
-path: "/power-of-the-forest"
+label: "What is a Smart Forest",
+path: "/what-is-a-smart-forest"
 },
 {
 key: "navItem2",
-label: "Build a Smart Forest™",
-path: "/build-your-forest"
+label: "Build a Smart Forest",
+path: "/build-your-smart-forest"
 },
 {
 key: "navItem4",
-label: "Your Smart Forest™",
+label: "Your Smart Forest",
 path: "/portal"
 },
 {
 key: "navItem5",
-label: "Carbon offset calculator",
+label: "Net-Zero Carbon Calculator",
 path: "/carbon-calculator"
 },
 {
 key: "navItem6",
-label: "Smart Forest™ calculator",
+label: "Smart Forest Calculator",
 path: "/smart-forest-calculator"
 },
 {
@@ -152,13 +152,9 @@ return(
       <div className="col-6 col-md-2 d-flex flex-column gx-1 gx-lg-3 fixed">
         <div className="row align-self-top">
           <div className="col d-flex align-items-center justify-content-end menuInterface">
-          {!session && <>
-      <button className="smallCaps textButton" onClick={() => signIn()}>Sign in</button>
-    </>}
-    {session && <>
-      Signed in as {session.user.email} <button onClick={() => signOut()}>Sign out</button> <a className="smallCaps" href="/portal">Portal</a>
-      
-    </>}
+          
+      <Link href="/portal" ><a className="smallCaps textButton">Sign in</a></Link>
+    
             
             <div id="menuIcon" className={isActive ? 'open' : null} onClick={toggleClass}>
               <span></span>
