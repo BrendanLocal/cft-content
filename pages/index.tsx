@@ -12,6 +12,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import styles from '../styles/Home.module.css'
 import Fade from 'react-reveal/Fade';
+import ReactPlayer from 'react-player'
 import { Parallax, Background } from 'react-parallax';
 
 
@@ -216,7 +217,13 @@ const Lang = () => {
     </Parallax>
     </Parallax>
     
-
+<Container fluid id="video" className="bg-white py-5">
+  <Row>
+    <Col className="col-12 col-md-6 d-flex justify-content-center">
+    <ReactPlayer playing playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4' />
+    </Col>
+  </Row>
+</Container>
     <Container id="what"  fluid className="v-full z-999 bg-green align-items-center p-5 container-drop-heavy">
       <Fade bottom>
       <Row className="py-5 align-items-center justify-content-center mt-5">
