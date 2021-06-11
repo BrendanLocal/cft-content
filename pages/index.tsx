@@ -12,6 +12,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import styles from '../styles/Home.module.css'
 import Fade from 'react-reveal/Fade';
+import ReactPlayer from 'react-player'
 import { Parallax, Background } from 'react-parallax';
 
 const Lang = () => {
@@ -151,9 +152,9 @@ export default function Home({ file, href, children}) {
                 </Col>
               </Row>
               <Fade bottom>
-                <Row className="justify-content-center align-items-center mb-5 py-5">
-                   <Col className="col-10 col-lg-8 col-xl-6 p-md-1 mb-5 py-5">
-                    <p className="intro-par text-white bold pe-5 pe-lg-0 py-3">{editingdata.part1_header3}</p>
+              <Row className="justify-content-center  pb-5">
+              <Col className="col-10 col-lg-8 col-xl-6 p-md-1 mb-5 py-5">
+        <p className="intro-par text-white bold pe-5 pe-lg-0 py-3">{editingdata.part1_header3}</p>
                   </Col>
                 </Row>
               </Fade>
@@ -164,22 +165,22 @@ export default function Home({ file, href, children}) {
                   </Col>
                 </Row>
                 <Row className="justify-content-center pb-5 align-items-stretch mb-5">
-                  <Col className="col-10 col-lg-3 col-xl-2 mx-3 mb-4">
-                    <div className="roundedBox card no-border bg-white p-4 h-100">
+                <Col className="col-10 col-lg-3 col-xl-2  mx-3 mb-4">
+                  <div className="roundedBox card no-border bg-white p-4 h-100">
                       <p className="large text-green">{editingdata.part1_box1para}</p>
                     </div>
                   </Col>
-                  <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 mx-">
+                  <Col className="col-10 col-lg-3 col-xl-2  mx-3 mb-4">
                     <div className="roundedBox card no-border bg-white p-4 h-100">
                       <p className="large text-green">{editingdata.part1_box2para}</p>
                     </div>
                   </Col>
-                  <Col className="col-12 col-lg-3 col-xl-2 pe-5 pe-lg-0 mx-3">
+                  <Col className="col-10 col-lg-3 col-xl-2  mx-3 mb-4">
                     <div className="roundedBox card no-border bg-white p-4 h-100">
                       <p className="large text-green">{editingdata.part1_box3para}</p>
                     </div>
                   </Col>
-                  <Col className="text-center col-lg-12 pb-5 pe-5 mt-5 pe-lg-0">
+                  <Col className="text-center col-10 col-lg-12 pb-5 mt-3 ">
                     <Link href="/what-is-a-smart-forest" ><a className="btn btn-large btn-green">{editingdata.part1_button1}</a></Link>
                   </Col>
                 </Row>
@@ -187,8 +188,17 @@ export default function Home({ file, href, children}) {
             </Container>
           </Parallax>
         </Parallax>
+        
+        
+        <Container fluid id="video" className="bg-green py-5 container-drop-heavy">
+          <Row className="justify-content-center align-items-center">
+            <Col className="col-11 col-md-6 d-flex px-lg-5 my-5">
+            <ReactPlayer playing playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4' />
+            </Col>
+          </Row>
+        </Container>
 
-        <Container id="what" fluid className="v-full z-999 bg-green align-items-center p-5 container-drop-heavy">
+        <Container id="what" fluid className="v-full z-999 bg-green align-items-center p-5">
           <Fade bottom>
             <Row className="py-5 align-items-center justify-content-center mt-5">
               <Col className="order-2 order-lg-1 col-12 p-5 col-md-4 text-white">
@@ -196,7 +206,7 @@ export default function Home({ file, href, children}) {
                 <p className="pb-3 thin">{editingdata.part2_para1}</p>
                 <Link href="/what-is-a-smart-forest" ><a className="btn btn-green">{editingdata.part2_button1}</a></Link>
               </Col>
-              <Col className="order-1 order-lg-2 col-12 col-md-4 px-2 py-2 roundedBox innerShadow">
+              <Col className="order-1 order-lg-2 col-12 col-md-4 px-3 py-3 roundedBox innerShadow">
                 <object className="op-6" type="image/svg+xml" data="/power2-svg.svg"/>
               </Col>
             </Row>
@@ -220,10 +230,10 @@ export default function Home({ file, href, children}) {
           </Fade>
         </Container>
 
-        <Container id="who" fluid className="v-full z-999 bg-green pt-3 pb-5 mb-4">
+        <Container  id="who" fluid className="v-full z-999 bg-green py-5 mb-4">
           <Fade bottom>
-            <Row className="pt-5 align-items-center justify-content-center align-items-stretch protorow pb-0 mb-0">
-              <Col className="col-12 col-md-3 text-white mb-5 py-5 px-5">
+          <Row className="pe-5 align-items-center justify-content-center  align-items-stretch protorow pb-0 mb-0">
+            <Col className="col-10 col-md-3 text-white mb-5 py-5 px-5 me-5">
                 <h2 className="text-orange bold">{editingdata.part4_header1}</h2>
                 <p className="mb-4 thin">{editingdata.part4_para1}</p>
                 <svg className="down-arrow d-none" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74 29.46"><path d="M73.41,13.59,60.69.86a2,2,0,0,0-2.83,2.83L67.17,13H0v4H67.17l-9.31,9.31a2,2,0,1,0,2.83,2.83L73.41,16.41A2,2,0,0,0,73.41,13.59Z"/></svg>
@@ -236,34 +246,34 @@ export default function Home({ file, href, children}) {
 
         <Container id="you" fluid className="v-full z-999 bg-green pt-0 mt-0">
           <Fade bottom>
-            <Row className="align-items-center justify-content-center pt-0 mt-0">
-              <Col className="col-12 col-lg-6 pe-lg-0 mb-2 pt-0 mt-0">
+          <Row  className="align-items-center justify-content-center pt-0 mt-0">
+              <Col className="col-10 col-lg-6 pe-lg-0 mb-2 pt-0 mt-0">
                 <h2 className="text-center text-orange bold pt-0 mt-0">{editingdata.part5_header1}</h2>
               </Col>
             </Row>
           <Row className="justify-content-center align-items-stretch">
-            <Col className="col-12 col-md-6 col-lg-6 pe-lg-0 m-3">
+            <Col className="col-11 col-md-6 col-lg-6 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border py-4 d-flex flex-column drop corporate-card">
                 <Link href="/build-your-forest#corporate">
                   <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop py-1">{editingdata.part5_button1}</a>
                 </Link>
               </div>
             </Col>
-            <Col className="col-12 col-md-6 col-lg-6 pe-lg-0 m-3">
+            <Col className="col-11 col-md-6 col-lg-6 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border py-4 d-flex flex-column drop school-card">
                 <Link href="/build-your-forest#school">
                   <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop py-1">{editingdata.part5_button2}</a>
                 </Link>
               </div>
             </Col>
-            <Col className="col-12 col-md-6 col-lg-6 pe-lg-0 m-3">
+            <Col className="col-11 col-md-6 col-lg-6 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border py-4 d-flex flex-column drop legacy-card">
                 <Link href="/build-your-forest#legacy" >
                   <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop py-1">{editingdata.part5_button3}</a>
                 </Link>
               </div>
             </Col>
-            <Col className="col-12 col-md-6 col-lg-6 pe-lg-0 m-3">
+            <Col className="col-11 col-md-6 col-lg-6 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border py-4 d-flex flex-column drop communal-card">
                 <Link href="/build-your-forest#communal" >
                   <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop py-1">{editingdata.part5_button4}</a>
@@ -274,16 +284,16 @@ export default function Home({ file, href, children}) {
           </Fade>
         </Container>
       
-        <Container id="calculate" fluid className="v-full z-999 bg-green pt-0 mt-0 mb-0">
+        <Container id="calculate" fluid className="v-full z-999 bg-green pt-0 mt-0 mb-5">
           <Fade bottom>
             <Row className="align-items-center justify-content-center pt-0 mt-0 mb-0">
-              <Col className="col-12 col-lg-7 pe-lg-0 mb-4">
+              <Col className="col-10 col-lg-7 pe-lg-0 mb-4">
                 <h2 className="text-center text-orange mb-2 bold">{editingdata.part6_header1}</h2>
                 <p className="text-center large text-white thin op-9">{editingdata.part6_para1}</p>
               </Col>
             </Row>
-            <Row className="justify-content-center align-items-stretch mx-5">
-              <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
+            <Row className="justify-content-center  align-items-stretch mx-lg-5">
+                <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
                   <p className="h6 text-orange bold">{editingdata.part6_box1para1}</p>
                   <p className="large text-green mb-2">{editingdata.part6_box1para2}</p>
@@ -293,7 +303,7 @@ export default function Home({ file, href, children}) {
                   </Link>
                 </div>
               </Col>
-              <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
+              <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
                   <p className="h6 text-orange bold">{editingdata.part6_box2para1}</p>
                   <p className="large text-green mb-2">{editingdata.part6_box2para2}</p>
@@ -301,7 +311,7 @@ export default function Home({ file, href, children}) {
                   <Button variant="green mt-3">{editingdata.part6_box2button1}</Button>
                 </div>
               </Col>
-              <Col className="col-12 col-lg-4 col-xl-3 pe-lg-0">
+              <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
                   <p className="h6 text-orange bold">{editingdata.part6_box3para1}</p>
                   <p className="large text-green mb-2">{editingdata.part6_box3para2}</p>
