@@ -108,7 +108,7 @@ export default function Home({ file, href, children}) {
         <meta name="theme-color" content="#054218"></meta>
       </Head>
 
-      <Row className="justify-content-left p-0 m-0 d-none d-lg-block">
+      <Row className="justify-content-left p-0 m-0 d-none d-lg-block d-xl-block">
         <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
           <p className="text-white m-2 bold op-6">{editingdata.home}</p>
           <ul>

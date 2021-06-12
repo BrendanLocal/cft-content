@@ -51,7 +51,7 @@ export default function Power({ file }) {
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#054218"></meta>
       </Head>
-      <Row className="justify-content-left p-0 m-0 d-none d-lg-block">
+      <Row className="justify-content-left p-0 m-0 d-none d-lg-block d-xl-block">
         <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
           <p className="text-white m-2 bold op-6">SMART FORESTS</p>
           <ul>

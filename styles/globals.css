@@ -182,7 +182,12 @@ color: #fff;
   text-align: right;
 }
 
-
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  top: 50%;
+}
 
 .labelCaps {
 font-size: 10px;
