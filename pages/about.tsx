@@ -129,45 +129,45 @@ return (
       
       <Row className="justify-content-center align-items-center pt-5 mb-3">
         <Col className="col-10 col-lg-6 text-center text-white">
-        <h3 className="h2 text-orange bold">What keeps us growing? </h3>
-        <p className="large">We are a values-driven organization. Our actions are rooted in a proven, science-based understanding that: </p>
+        <h2 className=" text-orange bold mb-3">What keeps us growing? </h2>
+        <p className="large mb-3 mt-0">We are a values-driven organization. Our actions are rooted in a proven, science-based understanding that: </p>
 
         </Col>
       </Row>
       <Row className="pb-5 px-0">
         <Col className="pb-5 ">
         <Slide easing="ease" {...slideProperties}>
-          <Row className="justify-content-center each-slide">
-            <Col className="col-8 col-md-8 col-lg-6 p-4 p-lg-5 bg-white roundedBox drop">
-              <p className="text-center text-green bold">
+          <Row className="justify-content-center d-flex each-slide">
+            <Col className="align-items-center col-8 col-md-8 col-lg-6 d-flex p-4 p-lg-5 bg-brown roundedBox innerShadow">
+              <p className="text-center center text-white bold">
               An issue as threatening as climate change needs a solution as smart as forests.
               </p>
             </Col>
           </Row>
-          <Row className="justify-content-center each-slide">
-          <Col className="col-8 col-md-8 col-lg-6 p-4 p-lg-5 bg-white roundedBox drop">
-              <p className="text-center text-green bold">
+          <Row className="justify-content-center d-flex each-slide">
+            <Col className="align-items-center col-8 col-md-8 col-lg-6 d-flex p-4 p-lg-5 bg-brown roundedBox innerShadow">
+              <p className="text-center center text-white bold">
               When you invest in a Smart Forest, you invest in one of the most powerful forces against climate change: nature.
           </p>
           </Col>
           </Row>
-          <Row className="justify-content-center each-slide">
-          <Col className="col-8 col-md-8 col-lg-6 p-4 p-lg-5 bg-white roundedBox card-drop">
-              <p className="text-center text-green bold">
+          <Row className="justify-content-center d-flex each-slide">
+            <Col className="align-items-center col-8 col-md-8 col-lg-6 d-flex p-4 p-lg-5 bg-brown roundedBox innerShadow">
+              <p className="text-center center text-white bold">
               It’s critically important that we learn from, engage with, and consult with Indigenous communities from across Canada.  
           </p>
           </Col>
           </Row>
-          <Row className="justify-content-center each-slide">
-          <Col className="col-8 col-md-8 col-lg-6 p-4 p-lg-5 bg-white roundedBox card-drop">
-              <p className="text-center text-green bold">
+          <Row className="justify-content-center d-flex each-slide">
+            <Col className="align-items-center col-8 col-md-8 col-lg-6 d-flex p-4 p-lg-5 bg-brown roundedBox innerShadow">
+              <p className="text-center center text-white bold">
               As cultural attitudes towards climate change shift and become more urgent, market values will shift with them, ensuring that environmental, societal and economic interests can coexist.
           </p>
           </Col>
           </Row>
-          <Row className="justify-content-center each-slide">
-          <Col className="col-8 col-md-8 col-lg-6 p-4 p-lg-5 bg-white roundedBox card-drop">
-              <p className="text-center text-green bold">
+          <Row className="justify-content-center d-flex each-slide">
+            <Col className="align-items-center col-8 col-md-8 col-lg-6 d-flex p-4 p-lg-5 bg-brown roundedBox innerShadow">
+              <p className="text-center center text-white bold">
               By making the green economy accessible to everyone – from individuals to schools to corporations – we can help align values and promote tangible investments into a greener, cleaner and more sustainable planet.  
           </p>
           </Col>
