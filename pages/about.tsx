@@ -27,13 +27,34 @@ label: 'About',
 fields: [{ name: 'title', component: 'text' }],
 }
 
-const [editingdata, form] = useGithubJsonForm(file, formOptions)
-usePlugin(form)
-useGithubToolbarPlugins()
 
 const slideProperties = {
   indicators: i => (<span className="sliderDot"/>)
 }
+
+const [editingdata, form] = useGithubJsonForm(file, formOptions)
+  usePlugin(form)
+  useGithubToolbarPlugins()
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const id = entry.target.getAttribute('id');
+        if (entry.intersectionRatio > 0.0 ) {
+          if (document.querySelector(`.left-sidenav li[data-dest="#${id}"]`)){
+            document.querySelector(`.left-sidenav li[data-dest="#${id}"]`).classList.add('active');
+          }
+        } else {
+          if (document.querySelector(`.left-sidenav li[data-dest="#${id}"]`)){
+            document.querySelector(`.left-sidenav li[data-dest="#${id}"]`).classList.remove('active');
+          }
+        }
+      });
+    });
+    
+    // Track all div containers that have an `id` applied
+    document.querySelectorAll('div[id]').forEach((id) => {
+      observer.observe(id);});
+  },[]);
 
 return (
   
@@ -45,7 +66,7 @@ return (
     <meta name="theme-color" content="#054218"></meta>
   </Head>
 
-  <Row className="justify-content-left p-0 m-0 d-none d-lg-block">
+  <Row className="justify-content-left p-0 m-0 d-none d-lg-block d-xl-block">
         <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
           <p className="text-white m-2 bold op-6 mt-4">ABOUT</p>
           <ul>
@@ -82,7 +103,7 @@ return (
         <h1 className="text-orange mb-5 bold">
         We trust in nature.
         </h1>
-        <p className="lead mb-4 op-9 bold">Canada’s Forest Trust began when maritimer Gary Zed set out to reforest five hundred acres of fallow land in his home province of New Brunswick.</p> 
+        <p className="lead mb-4 bold">Canada’s Forest Trust began when maritimer Gary Zed set out to reforest five hundred acres of fallow land in his home province of New Brunswick.</p> 
 
         <p className="large op-9 thin">The professional foresters, seedling producers, and scientific experts who collaborated on that project taught Gary an invaluable lesson: under the right conditions, a forest can become a force of nature—quite literally. As the threat of climate change closes in, forests are one of our last and best chances to save our planet before it’s too late. </p>
 
@@ -104,49 +125,49 @@ return (
       </Row>
     </Container>
 
-    <Container fluid className="bg-green py-5 z-0 px-0">
+    <Container fluid id="growing" className="bg-green py-5 z-0 px-0">
       
       <Row className="justify-content-center align-items-center pt-5 mb-3">
         <Col className="col-10 col-lg-6 text-center text-white">
-        <h3 className="h2 text-orange bold">What keeps us growing? </h3>
-        <p className="large">We are a values-driven organization. Our actions are rooted in a proven, science-based understanding that: </p>
+        <h2 className=" text-orange bold mb-3">What keeps us growing? </h2>
+        <p className="large mb-3 mt-0">We are a values-driven organization. Our actions are rooted in a proven, science-based understanding that: </p>
 
         </Col>
       </Row>
       <Row className="pb-5 px-0">
         <Col className="pb-5 ">
         <Slide easing="ease" {...slideProperties}>
-          <Row className="justify-content-center each-slide">
-            <Col className="col-8 col-md-8 col-lg-6 p-4 p-lg-5 bg-white roundedBox drop">
-              <p className="text-green bold">
+          <Row className="justify-content-center d-flex each-slide">
+            <Col className="align-items-center col-8 col-md-8 col-lg-6 d-flex p-4 p-lg-5 bg-brown roundedBox innerShadow">
+              <p className="text-center center text-white bold">
               An issue as threatening as climate change needs a solution as smart as forests.
               </p>
             </Col>
           </Row>
-          <Row className="justify-content-center each-slide">
-          <Col className="col-8 col-md-8 col-lg-6 p-4 p-lg-5 bg-white roundedBox drop">
-              <p className="text-green bold">
+          <Row className="justify-content-center d-flex each-slide">
+            <Col className="align-items-center col-8 col-md-8 col-lg-6 d-flex p-4 p-lg-5 bg-brown roundedBox innerShadow">
+              <p className="text-center center text-white bold">
               When you invest in a Smart Forest, you invest in one of the most powerful forces against climate change: nature.
           </p>
           </Col>
           </Row>
-          <Row className="justify-content-center each-slide">
-          <Col className="col-8 col-md-8 col-lg-6 p-4 p-lg-5 bg-white roundedBox card-drop">
-              <p className="text-green bold">
+          <Row className="justify-content-center d-flex each-slide">
+            <Col className="align-items-center col-8 col-md-8 col-lg-6 d-flex p-4 p-lg-5 bg-brown roundedBox innerShadow">
+              <p className="text-center center text-white bold">
               It’s critically important that we learn from, engage with, and consult with Indigenous communities from across Canada.  
           </p>
           </Col>
           </Row>
-          <Row className="justify-content-center each-slide">
-          <Col className="col-8 col-md-8 col-lg-6 p-4 p-lg-5 bg-white roundedBox card-drop">
-              <p className="text-green bold">
+          <Row className="justify-content-center d-flex each-slide">
+            <Col className="align-items-center col-8 col-md-8 col-lg-6 d-flex p-4 p-lg-5 bg-brown roundedBox innerShadow">
+              <p className="text-center center text-white bold">
               As cultural attitudes towards climate change shift and become more urgent, market values will shift with them, ensuring that environmental, societal and economic interests can coexist.
           </p>
           </Col>
           </Row>
-          <Row className="justify-content-center each-slide">
-          <Col className="col-8 col-md-8 col-lg-6 p-4 p-lg-5 bg-white roundedBox card-drop">
-              <p className="text-green bold">
+          <Row className="justify-content-center d-flex each-slide">
+            <Col className="align-items-center col-8 col-md-8 col-lg-6 d-flex p-4 p-lg-5 bg-brown roundedBox innerShadow">
+              <p className="text-center center text-white bold">
               By making the green economy accessible to everyone – from individuals to schools to corporations – we can help align values and promote tangible investments into a greener, cleaner and more sustainable planet.  
           </p>
           </Col>
@@ -156,14 +177,14 @@ return (
       </Row>
     </Container>
 
-    <Container fluid className="bg-brown innerShadow-heavy py-6">
-      <Row className="justify-content-center pt-5">
+    <Container fluid id="team" className="bg-brown innerShadow-heavy py-6">
+      <Row className="justify-content-center  pt-5">
         <Col className="col-10 col-lg-8 text-center pt-3 ">
         <h2 className="text-white bold mb-5">Meet Our Leadership Team</h2>
         </Col>
       </Row>
-      <Row className="justify-content-center pb-5">
-        <Col className="col-7">
+      <Row className="justify-content-center align-items-center pb-5">
+        <Col className="col-11 col-lg-7">
         <Tabs>
         <TabList className="horizTab px-3">
         <Tab className="text-orange btn-text smallCaps small letterspace no-underline">
@@ -179,8 +200,8 @@ return (
         <TabPanel>
 
         {/* First panel starts here */}
-          <Row>
-            <Col className="col-4 p-3">
+        <Row className="justify-content-center align-items-center">
+            <Col className="col-10 col-md-4 p-3">
               <div className="roundedBox overflow-hide about-card">
               <Row><Col><img src="/placeholder-forest.jpg"></img></Col></Row>
               <Row className="bg-white p-3 text-center"><Col><span><Button className="modal-btn" variant="btn-text" onClick={handleShow}>
@@ -188,7 +209,7 @@ return (
       </Button></span></Col></Row>
               </div>
             </Col>
-            <Col className="col-4 p-3">
+            <Col className="col-10 col-md-4 p-3">
               <div className="roundedBox overflow-hide about-card">
               <Row><Col><img src="/placeholder-forest.jpg"></img></Col></Row>
               <Row className="bg-white p-3 text-center"><Col><span><Button className="modal-btn" variant="btn-text" onClick={handleShow}>
@@ -196,7 +217,7 @@ return (
       </Button></span></Col></Row>
               </div>
             </Col>
-            <Col className="col-4 p-3">
+            <Col className="col-10 col-md-4 p-3">
               <div className="roundedBox overflow-hide about-card">
               <Row><Col><img src="/placeholder-forest.jpg"></img></Col></Row>
               <Row className="bg-white p-3 text-center"><Col><span><Button className="modal-btn" variant="btn-text" onClick={handleShow}>
@@ -204,7 +225,7 @@ return (
       </Button></span></Col></Row>
               </div>
             </Col>
-            <Col className="col-4 p-3">
+            <Col className="col-10 col-md-4 p-3">
               <div className="roundedBox overflow-hide about-card">
               <Row><Col><img src="/placeholder-forest.jpg"></img></Col></Row>
               <Row className="bg-white p-3 text-center"><Col><span><Button className="modal-btn" variant="btn-text" onClick={handleShow}>
@@ -212,7 +233,7 @@ return (
       </Button></span></Col></Row>
               </div>
             </Col>
-            <Col className="col-4 p-3">
+            <Col className="col-10 col-md-4 p-3">
               <div className="roundedBox overflow-hide about-card">
               <Row><Col><img src="/placeholder-forest.jpg"></img></Col></Row>
               <Row className="bg-white p-3 text-center"><Col><span><Button className="modal-btn" variant="btn-text" onClick={handleShow}>
@@ -220,7 +241,7 @@ return (
       </Button></span></Col></Row>
               </div>
             </Col>
-            <Col className="col-4 p-3">
+            <Col className="col-10 col-md-4 p-3">
               <div className="roundedBox overflow-hide about-card">
               <Row><Col><img src="/placeholder-forest.jpg"></img></Col></Row>
               <Row className="bg-white p-3 text-center"><Col><span><Button className="modal-btn" variant="btn-text" onClick={handleShow}>
@@ -234,22 +255,28 @@ return (
         <TabPanel>
           <Row>
         {/* Second panel starts here */}
-        <Col className="col-4 p-3">
+        <Col className="col-10 col-md-4 p-3">
               <div className="roundedBox overflow-hide about-card">
               <Row><Col><img src="/placeholder-forest.jpg"></img></Col></Row>
-              <Row className="bg-white p-3 text-center"><Col><span>Person Name</span></Col></Row>
+              <Row className="bg-white p-3 text-center"><Col><span><Button className="modal-btn" variant="btn-text" onClick={handleShow}>
+        Person Name
+      </Button></span></Col></Row>
               </div>
             </Col>
-            <Col className="col-4 p-3">
+            <Col className="col-10 col-md-4 p-3">
               <div className="roundedBox overflow-hide about-card">
               <Row><Col><img src="/placeholder-forest.jpg"></img></Col></Row>
-              <Row className="bg-white p-3 text-center"><Col><span>Person Name</span></Col></Row>
+              <Row className="bg-white p-3 text-center"><Col><span><Button className="modal-btn" variant="btn-text" onClick={handleShow}>
+        Person Name
+      </Button></span></Col></Row>
               </div>
             </Col>
-            <Col className="col-4 p-3">
+            <Col className="col-10 col-md-4 p-3">
               <div className="roundedBox overflow-hide about-card">
               <Row><Col><img src="/placeholder-forest.jpg"></img></Col></Row>
-              <Row className="bg-white p-3 text-center"><Col><span>Person Name</span></Col></Row>
+              <Row className="bg-white p-3 text-center"><Col><span><Button className="modal-btn" variant="btn-text" onClick={handleShow}>
+        Person Name
+      </Button></span></Col></Row>
               </div>
             </Col>
             </Row>
@@ -257,22 +284,28 @@ return (
         <TabPanel>
         {/* Third panel starts here */}
         <Row>
-             <Col className="col-4 p-3">
+        <Col className="col-10 col-md-4 p-3">
               <div className="roundedBox overflow-hide about-card">
               <Row><Col><img src="/placeholder-forest.jpg"></img></Col></Row>
-              <Row className="bg-white p-3 text-center"><Col><span>Person Name</span></Col></Row>
+              <Row className="bg-white p-3 text-center"><Col><span><Button className="modal-btn" variant="btn-text" onClick={handleShow}>
+        Person Name
+      </Button></span></Col></Row>
               </div>
             </Col>
-            <Col className="col-4 p-3">
+            <Col className="col-10 col-md-4 p-3">
               <div className="roundedBox overflow-hide about-card">
               <Row><Col><img src="/placeholder-forest.jpg"></img></Col></Row>
-              <Row className="bg-white p-3 text-center"><Col><span>Person Name</span></Col></Row>
+              <Row className="bg-white p-3 text-center"><Col><span><Button className="modal-btn" variant="btn-text" onClick={handleShow}>
+        Person Name
+      </Button></span></Col></Row>
               </div>
             </Col>
-            <Col className="col-4 p-3">
+            <Col className="col-10 col-md-4 p-3">
               <div className="roundedBox overflow-hide about-card">
               <Row><Col><img src="/placeholder-forest.jpg"></img></Col></Row>
-              <Row className="bg-white p-3 text-center"><Col><span>Person Name</span></Col></Row>
+              <Row className="bg-white p-3 text-center"><Col><span><Button className="modal-btn" variant="btn-text" onClick={handleShow}>
+        Person Name
+      </Button></span></Col></Row>
               </div>
             </Col>
             </Row>
@@ -283,17 +316,28 @@ return (
     </Container>
 
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+        <Modal.Header className="d-none" closeButton>
+          <Modal.Title className="d-none"></Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+        <Modal.Body>
+          <Row className="justify-content-center align-items-center ">
+            <Col className="col-10 col-md-3 col-lg-4 p-0 mb-lg-5 p-3">
+            <img src="/placeholder-forest.jpg"></img>
+            </Col>
+            <Col className="col-10 col-md-7 col-lg-6 p-4">
+             <p className="h3 text-grey mt-4 mb-0">PERSON NAME</p>
+             <p className="h3 smallCaps text-grey thin italic mb-4">Title</p>
+             <p className="large text-greyx">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+             <p className="text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </Col>
+          </Row>
+        </Modal.Body>
+             
+        <Modal.Footer className="p-0">
+        <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
+          
         </Modal.Footer>
       </Modal>
     
