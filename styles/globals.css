@@ -102,7 +102,6 @@ h1.drop, .h1.drop {
 
 .blockquote-bg {
   background: url('/blockquote-bg.svg');
-    background-size: cover;
     background-position: 85% 40%;
     background-size: 52%;
     background-repeat: no-repeat;
@@ -182,12 +181,7 @@ color: #fff;
   text-align: right;
 }
 
-.center {
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-  top: 50%;
-}
+
 
 .labelCaps {
 font-size: 10px;
@@ -441,6 +435,81 @@ text-decoration: underline;
 
 .react-slideshow-container .default-nav:last-of-type {
   display: none;
+}
+
+/* Carousel */
+
+.carousel-control-next-icon {
+  margin-left: 50%;
+}
+
+.carousel-control-prev-icon {
+  margin-right: 50%;
+}
+
+.carousel-caption {
+  position: absolute;
+  right: 15%;
+  top: 5.5rem;
+  left: 13%;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  color: #fff;
+  text-align: center;
+}
+
+.phases {
+  background: url('/5Phases.jpg');
+    background-size: 101%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 592px;
+    border-radius: 10px;
+}
+
+.phase1 {
+  background: url('/Phase1.jpg');
+    background-size: 101%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 592px;
+    border-radius: 10px;
+}
+
+.phase2 {
+  background: url('/Phase2.jpg');
+  background-size: 101%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 592px;
+  border-radius: 10px;
+}
+
+.phase3 {
+  background: url('/Phase3.jpg');
+    background-size: 101%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 592px;
+    border-radius: 10px;
+}
+
+.phase4 {
+  background: url('/Phase4.jpg');
+    background-size: 101%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 592px;
+    border-radius: 10px;
+}
+
+.phase5 {
+  background: url('/Phase5.jpg');
+    background-size: 101%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 592px;
+    border-radius: 10px;
 }
 
 /* Left Side Nav */
@@ -950,11 +1019,15 @@ footer {
 }
 
 .tight-drop {
-  text-shadow: 0px 1px 10px rgba(0, 0, 0, 0.6);
+  text-shadow: 0px 1px 8px rgba(0, 0, 0, 0.6);
 }
 
 .tight-drop-light {
-  text-shadow: 0px 1px 10px rgba(0, 0, 0, 0.15);
+  text-shadow: 0px 1px 8px rgba(0, 0, 0, 0.4);
+}
+
+.tight-drop-heavy {
+  text-shadow: 0px 1px 8px rgba(0, 0, 0, 100);
 }
 
 .big-drop {
@@ -963,7 +1036,7 @@ footer {
 
 
 .intro-links{
-  margin: 10px 45px 10px 0px;
+  margin: 10px 35px 10px 0px;
   font-size: 16px;
   letter-spacing: 0.2px!important;
 }
@@ -1725,6 +1798,8 @@ height: 5vh;
   .align-bottom-social {
     bottom: 6vh;
   }
+
+
 }
 
 
@@ -1742,6 +1817,62 @@ font-size: .9em;
   z-index: -90;
   object-fit: cover;
   
+}
+
+.carousel-caption {
+  top: 3.5rem;
+}
+
+.carousel-caption p {
+  bottom: 3.5rem;
+}
+
+.phases {
+  background: url('/5Phases-mob.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 800px;
+}
+
+.phase1 {
+  background: url('/Phase1-mob.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 800px;
+}
+
+.phase2 {
+  background: url('/Phase2-mob.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 800px;
+}
+
+.phase3 {
+  background: url('/Phase3-mob.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 800px;
+}
+
+.phase4 {
+  background: url('/Phase4-mob.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 800px;
+}
+
+.phase5 {
+  background: url('/Phase5-mob.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 800px;
 }
 
 .protorow {
