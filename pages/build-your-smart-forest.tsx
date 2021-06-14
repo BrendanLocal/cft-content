@@ -247,826 +247,489 @@ return (
     </Container>
 
     {/* Coporate Forests */}
-
-    <Container id="corporate" className="py-6">
-      <Row className="text-center justify-content-center">
-        <Col className="col-lg-6">
-        <h2 className="text-white bold py-3">
-          {editingdata.corporatetitle}</h2>
+    <Container fluid id="corporate" className="bg-corp sectionPad">
+      <Row className="text-center justify-content-center pt-5">
+        <Col className="col-lg-6 text-white ">
+        <h2 className="bold py-3 text-orange">
+          Corporate Smart Forests™</h2>
+        <h3>Don’t just care for the environment. Prove it.</h3>
+        <h4>If ESG is not a box you’d like to tick, but a change you’d like to make, work with us.</h4>
         </Col>
       </Row>
       <Row className=" text-center  justify-content-center">
         <Col className="col-lg-7">
         <Row className=" horizTab  justify-content-center">
-          <Col>
-          <Button variant="text text-orange smallCaps letterspace">{editingdata.corpabout}</Button>
-          </Col>
-          <Col>
-          <Button variant="text text-orange smallCaps letterspace">{editingdata.corpgrow}</Button>
-          </Col>
-          <Col>
-          <Button variant="text text-orange smallCaps letterspace">{editingdata.corptesti}</Button>
-          </Col>
-          <Col>
-          <Button variant="text text-orange smallCaps letterspace">{editingdata.corpbenefits}</Button>
-          </Col>
+         
         </Row>
         </Col>
       </Row>
       <Row className="text-center justify-content-center">
-        <Col className="col-lg-7 py-5">
-        <p className="lead text-white bold">
-          {editingdata.corppara}
+        <Col className="col-lg-7 pt-5">
+        <p className="text-white bold">
+          An investment in a Corporate Smart ForestTM is an opportunity for corporations across Canada to reimagine
+          their sustainability strategy and invest for long-term ROI. This is a turnkey and sustainable approach for
+          corporations to meet net-zero and ESG commitments, offering:
         </p>
         </Col>
       </Row>
 
-      <Swiper spaceBetween={50} slidesPerView={3} navigation pagination={{ clickable: true }} onSlideChange={()=>
-        console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
-        >
 
-        <Row className="py-5 align-items-stretch px-5">
-          <SwiperSlide>
-            <Col className="h-100">
+        <Row className="pt-5 align-items-stretch px-5 justify-content-center">
+         
+            <Col className="h-100 col-12 col-md-3">
             <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-              <h4 className="thin text-green">{editingdata.corpcard1title}</h4>
-              <p className="flex-fill pb-3">{editingdata.corpcard1para}</p>
-              <Button variant="text text-left">{editingdata.corpcard1button}</Button>
+              <h4 className="thin text-green">Proprietary impact calculators </h4>
+              <p className="flex-fill pb-3">Calculate your net-zero carbon footprint and determine the size of forest
+                needed to offset your emissions.</p>
+              <Button variant="text text-left">Try the Calculators</Button>
             </div>
             </Col>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Col className="h-100">
+            
+            <Col className="h-100 col-12 col-md-3">
             <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-              <h4 className="thin text-green">{editingdata.corpcard2title}</h4>
-              <p className="flex-fill pb-3">{editingdata.corpcard2para}</p>
-              <Button variant="text text-left">{editingdata.corpcard2button}</Button>
+              <h4 className="thin text-green">Real-time monitoring</h4>
+              <p className="flex-fill pb-3">A secure, customized portal to watch your forest grow and build engagement
+                campaigns that bring the journey to life for shareholders, employees, and customers.</p>
+              <Button variant="text text-left">Try the Portal</Button>
             </div>
             </Col>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Col className="h-100">
+            
+          <Col className="h-100 col-12 col-md-3">
             <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-              <h4 className="thin text-green">{editingdata.corpcard3title}</h4>
-              <p className="flex-fill pb-3">{editingdata.corpcard3para}</p>
-              <Button variant="text text-left">{editingdata.corpcard3button}</Button>
+              <h4 className="thin text-green">Transparency and reporting</h4>
+              <p className="flex-fill pb-3">Demonstrate your commitment to sustainability and the significance of your
+                impact with a no clear-cut guarantee on each Smart Forest. Keep stakeholders informed with an annual
+                report on performance.</p>
+              <Button variant="text text-left">Reporting</Button>
             </div>
             </Col>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Col className="h-100">
-            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-              <h4 className="thin text-green">{editingdata.corpcard4title}</h4>
-              <p className="flex-fill pb-3">{editingdata.corpcard4para}</p>
-              <Button variant="text text-left">{editingdata.corpcard4button}</Button>
-            </div>
-            </Col>
-          </SwiperSlide>
+
 
         </Row>
-      </Swiper>
 
 
 
       <Row>
         <Col className="text-center py-5">
-        <Button variant="green">{editingdata.buildbutton}</Button></Col>
+        <Button variant="green">Build a Corporate Smart Forest™</Button></Col>
       </Row>
 
-    </Container>
-    <Container className="py-6">
-      <Row className="justify-content-center">
-        <Col className="col-lg-4">
-        <h3 className="text-center text-orange bold">{editingdata.growtitle}</h3>
-        <p className="text-center text-white medium">{editingdata.growpara}</p>
-        </Col>
-      </Row>
-      <Row className="justify-content-center py-4">
-        <Col className="outlineBox text-white p-4 col-lg-3">
-        <span className="smallCaps small text-orange letterspace">
-          {editingdata.step1}
-        </span>
-        <h4 className="thin py-3">{editingdata.step1title}</h4>
-        <p>{editingdata.step1para}</p>
-        <Link href="/smart-forest-calculator">
-        <Button variant="green">{editingdata.step1button}</Button>
-        </Link>
-        </Col>
-        <Col className="outlineBox text-white p-4 col-lg-3">
-        <span className="smallCaps small text-orange letterspace">
-          {editingdata.step2}
-        </span>
-        <h4 className="thin py-3">{editingdata.step2title}</h4>
-        <p>{editingdata.step2para}</p>
-
-        <Link href="/carbon-calculator">
-        <Button variant="green">{editingdata.step2button}</Button>
-        </Link>
-        </Col>
-        <Col className="outlineBox text-white p-4 col-lg-3">
-        <span className="smallCaps small text-orange letterspace">
-          {editingdata.step3}
-        </span>
-        <h4 className="thin py-3">{editingdata.step3title}</h4>
-        <p>{editingdata.step3para}</p>
-        <Button variant="green">{editingdata.step3button}</Button>
-        </Col>
-      </Row>
-    </Container>
-    <Container fluid className="py-6">
-      <Row>
-        <Col className="text-center py-5">
-        <span className="smallCaps small text-white letterspace">{editingdata.corptesti}</span>
-        </Col>
-      </Row>
-      <Row className="justify-content-center">
+      <Row className="justify-content-center py-5">
         <Col className="col-lg-8 bg-brown roundedBox p-5">
-        <Slide easing="ease" {...slideProperties}>
-        <Row className="justify-content-center each-slide px-5">
+          <Row className="justify-content-center bg-quote ">
             <Col className="p-5 text-white">
-              
-            <p className="text-orange large">
-              {editingdata.testi1para}
-            </p>
-            <span className="authorLine">{editingdata.testi1author}</span>
-            <span className="authorTitle">{editingdata.testi1authortitle}</span>
-</Col>
-          </Row>
-          <Row className="justify-content-center each-slide px-5">
-            <Col className="p-5 text-white">
-              
-            <p className="text-orange large">
-              {editingdata.testi2para}
-            </p>
-            <span className="authorLine">{editingdata.testi2author}</span>
-            <span className="authorTitle">{editingdata.testi2authortitle}</span>
-</Col>
-          </Row>
 
-        </Slide>
+            <p className="text-orange large lead">
+            We need 50 shades of green to catalyze and support all companies towards net zero… Companies will need to show how they plan to meet their net-zero targets through the appropriate mix of emission reductions and credible carbon offsets, including nature-based solutions such as reforestation.
+            </p>
+            <span className="authorLine">Mark Carney</span>
+            <span className="authorTitle">UN Special Envoy for Climate Action and Finance</span>
+            </Col>
+          </Row>
         </Col>
       </Row>
 
+      <Row className="justify-content-center pt-5">
+        <Col className="col-lg-6">
+        <h3 className="text-center text-orange bold">From balance sheet to bottom line.</h3>
+        <p className="px-5 text-center text-white medium">Corporate Smart Forests are good for the environment and for your business.</p>
+        </Col>
+      </Row>
+      <Row className="justify-content-center">
+        <Col className="text-white p-4 col-md-6">
+        <p>An investment in a Smart Forest allows your corporation to:
+          <ul className="bulletList">
+            <li>
+            Support immediate CO2 reductions from the atmosphere 
+            </li>
+            <li>
+Secure ESG benefits that protect and foster growth throughout Canada
+            </li>
+            <li>
+Reduce your cumulative impacts on the environment and society
+            </li>
+            <li>
+Boost the economy through the creation of local jobs
+            </li>
+            <li>
+Add shareholder value by strengthening long-term financial and operational performance
+            </li>
+          </ul>
+</p>
+        
+        </Col>
+       
+      </Row>
+      <Row className="justify-content-center pb-5">
+      <Col className="outlineBox text-white p-4 col-lg-3">
+        <h4 className="thin py-3">Calculate your net-zero carbon footprint</h4>
+        <p>Learn how much carbon your corporation generates in an average year. </p>
+        <Link href="/carbon-calculator">
+        <Button variant="green">Calculator</Button>
+        </Link>
+        </Col>
+        <Col className="outlineBox text-white p-4 col-lg-3">
+        <h4 className="thin py-3">Determine your net zero Smart Forest target</h4>
+        <p>See how many hectares your corporation must plant to reach a net-zero emissions target.</p>
+        <Link href="/carbon-calculator">
+        <Button variant="green">Calculator</Button>
+        </Link>
+        </Col>
+      </Row>
+     
     </Container>
-    <Container fluid className="py-6">
-    <Row>
-        <Col className="text-center py-3">
-        <span className="smallCaps small text-white letterspace">{editingdata.corpbenefits}</span>
-        </Col>
-      </Row>
-    <Row className="justify-content-center">
-        <Col className=" col-6">
-        <p className="text-center text-orange large bold">{editingdata.corpbenefitspara}</p></Col>
-      </Row>
-      <Row className="py-5 align-items-stretch justify-content-center">
-        <Col className="col-2">
-        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-        <p className="flex-fill pb-3  medium">{editingdata.corpbenefits1para}</p>
-        </div>
-        </Col>
-        <Col className="col-2">
-        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-        <p className="flex-fill pb-3 medium">{editingdata.corpbenefits2para}</p>
-        </div>
-        </Col>
-        <Col className="col-2">
-        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-        <p className="flex-fill pb-3 medium">{editingdata.corpbenefits3para}</p>
-        </div>
-        </Col>
-        <Col className="col-2">
-        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-        <p className="flex-fill pb-3  medium">{editingdata.corpbenefits4para}</p>
-        </div>
-        </Col>
-      </Row>
-      <Row>
-        <Col className="text-center">
-          <Link href="/contact">
-          <Button variant="green">{editingdata.buildbutton}</Button>
-          </Link>
-        </Col>
-      </Row>
-    </Container>
+    
+
 
     {/* School Forests */}
-
-    <Container id="school" className="py-6">
+    <Container fluid id="school" className="bg-school sectionPad">
       <Row className="text-center justify-content-center">
-        <Col className="col-lg-6">
-        <h2 className="text-white bold py-3">
-          {editingdata.schooltitle}</h2>
+        <Col className="col-lg-6 text-white ">
+        <h2 className="bold py-3 text-orange">
+          School Smart Forests™</h2>
+        <h3>Study climate action in real time</h3>
+        <h4>Student Smart ForestsTM protect our planet and teach us how to tackle climate change.</h4>
         </Col>
       </Row>
       <Row className=" text-center  justify-content-center">
         <Col className="col-lg-7">
         <Row className=" horizTab  justify-content-center">
-          <Col>
-          <Button variant="text text-orange smallCaps letterspace">{editingdata.schoolabout}</Button>
-          </Col>
-          <Col>
-          <Button variant="text text-orange smallCaps letterspace">{editingdata.schoolgrow}</Button>
-          </Col>
-          <Col>
-          <Button variant="text text-orange smallCaps letterspace">{editingdata.schooltesti}</Button>
-          </Col>
-          <Col>
-          <Button variant="text text-orange smallCaps letterspace">{editingdata.schoolbenefits}</Button>
-          </Col>
+         
         </Row>
         </Col>
       </Row>
       <Row className="text-center justify-content-center">
-        <Col className="col-lg-7 py-5">
-        <p className="lead text-white bold">
-          {editingdata.schoolpara}
+        <Col className="col-lg-7 pt-5">
+        <p className="text-white bold">
+        From climate strikes to online activism, students are taking action on climate change. With their future at stake, they’re looking for meaningful ways to steer things back on course.
         </p>
         </Col>
       </Row>
 
-      <Swiper spaceBetween={50} slidesPerView={3} navigation pagination={{ clickable: true }} onSlideChange={()=>
-        console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
-        >
 
-        <Row className="py-5 align-items-stretch px-5">
-          <SwiperSlide>
-            <Col className="h-100">
+        <Row className="pt-5 align-items-stretch px-5 justify-content-center">
+         
+            <Col className="h-100 col-12 col-md-3">
             <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-              <h4 className="thin text-green">{editingdata.corpcard1title}</h4>
-              <p className="flex-fill pb-3">{editingdata.corpcard1para}</p>
-              <Button variant="text text-left">{editingdata.corpcard1button}</Button>
+              <h4 className="thin text-green">See the change you make </h4>
+              <p className="flex-fill pb-3">A Smart Forest offers an opportunity to educate students about environmental stewardship with digital tools to track its effects in real time.</p>
             </div>
             </Col>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Col className="h-100">
+            
+            <Col className="h-100 col-12 col-md-3">
             <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-              <h4 className="thin text-green">{editingdata.corpcard2title}</h4>
-              <p className="flex-fill pb-3">{editingdata.corpcard2para}</p>
-              <Button variant="text text-left">{editingdata.corpcard2button}</Button>
+              <h4 className="thin text-green">Local fundraising, global impact
+</h4>
+              <p className="flex-fill pb-3">An easy-to-execute program that taps into students’ interests and demonstrates its immediate and long-term benefits.</p>
+           
             </div>
             </Col>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Col className="h-100">
+            
+          <Col className="h-100 col-12 col-md-3">
             <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-              <h4 className="thin text-green">{editingdata.corpcard3title}</h4>
-              <p className="flex-fill pb-3">{editingdata.corpcard3para}</p>
-              <Button variant="text text-left">{editingdata.corpcard3button}</Button>
+              <h4 className="thin text-green">Be part of Canadian history
+</h4>
+              <p className="flex-fill pb-3">The School Smart Forest™ Ambassadors program names the environmental stewards who have created a more sustainable future for all. </p>
             </div>
             </Col>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Col className="h-100">
-            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-              <h4 className="thin text-green">{editingdata.corpcard4title}</h4>
-              <p className="flex-fill pb-3">{editingdata.corpcard4para}</p>
-              <Button variant="text text-left">{editingdata.corpcard4button}</Button>
-            </div>
-            </Col>
-          </SwiperSlide>
+
 
         </Row>
-      </Swiper>
 
 
 
       <Row>
         <Col className="text-center py-5">
-
-        <Link href="/contact">
-        <Button variant="green">{editingdata.buildbutton}</Button>
-        </Link></Col>
+        <Button variant="green">Build a School Smart Forest™</Button></Col>
       </Row>
 
-    </Container>
-    <Container className="py-6">
       <Row className="justify-content-center">
-        <Col className="col-lg-4">
-        <h3 className="text-center text-orange bold">{editingdata.growtitle}</h3>
-        <p className="text-center text-white medium">{editingdata.growpara}</p>
+        <Col className="col-lg-8 bg-brown roundedBox p-5">
+          <Row className="justify-content-center bg-quote ">
+            <Col className="p-5 text-white">
+
+            <p className="text-orange large lead">
+            [Younger generations] have a different kind of investment in the future…A lot of the adults in the world aren’t going to be here by the time some climate conditions start taking effect in the world.
+            </p>
+            <span className="authorLine">Xiuhtezcatl Martinez</span>
+            <span className="authorTitle">Youth Director of Earth Guardians</span>
+            </Col>
+          </Row>
         </Col>
       </Row>
-      <Row className="justify-content-center py-4">
-        <Col className="outlineBox text-white p-4 col-lg-3">
-        <span className="smallCaps small text-orange letterspace">
-          {editingdata.step1}
-        </span>
-        <h4 className="thin py-3">{editingdata.step1title}</h4>
-        <p>{editingdata.step1para}</p>
 
-        <Link href="/smart-forest-calculator">
-        <Button variant="green">{editingdata.step1button}</Button>
-        </Link>
+      <Row className="justify-content-center pt-5">
+        <Col className="col-lg-6">
+        <h3 className="text-center text-orange bold">Students make great teachers. Give them a forest to manage.</h3>
+        <p className="px-5 text-center text-white medium">Spark a life-long connection to the environment and teach valuable skills.</p>
         </Col>
-        <Col className="outlineBox text-white p-4 col-lg-3">
-        <span className="smallCaps small text-orange letterspace">
-          {editingdata.step2}
-        </span>
-        <h4 className="thin py-3">{editingdata.step2title}</h4>
-        <p>{editingdata.step2para}</p>
+      </Row>
+      <Row className="justify-content-center">
+        <Col className="text-white p-4 col-md-6">
+        <p>The Smart Forest program empowers students to take action against the devastating effects of climate change, inspires leadership and builds organizational skills. Raising funds to build a forest is:
+          <ul className="bulletList">
+            <li>
+            <span className="bold">Healthy.</span> Zero calories and carbon-free. No sales of chocolate bars, cookie dough or other consumable items. 
+            </li>
+            <li>
+            <span className="bold">Sustainable.</span> No packaging or unused products. Forest stewardship reduces the carbon footprint of all Canadians.
+
+            </li>
+            <li>
+            <span className="bold">Safe, Secure and Easy.</span> All transactions are online, No door-to-door sales, cash handling, or post-fundraising deliveries required.            </li>
+            <li>
+            <span className="bold">Impactful.</span> Supports the health of the planet, scholarships, student employment, school programs, and community needs. 
+            </li>
+          </ul>
+</p>
+        
+        </Col>
+       
+      </Row>
+      <Row className="justify-content-center">
+      <Col className="outlineBox text-white p-4 col-lg-3">
+        <h4 className="thin py-3">Calculate your net-zero carbon footprint</h4>
+        <p>Learn how much carbon your school generates in an average year.  </p>
         <Link href="/carbon-calculator">
-        <Button variant="green">{editingdata.step2button}</Button>
+        <Button variant="green">Calculator</Button>
         </Link>
         </Col>
         <Col className="outlineBox text-white p-4 col-lg-3">
-        <span className="smallCaps small text-orange letterspace">
-          {editingdata.step3}
-        </span>
-        <h4 className="thin py-3">{editingdata.step3title}</h4>
-        <p>{editingdata.step3para}</p>
-        <Button variant="green">{editingdata.step3button}</Button>
+        <h4 className="thin py-3">Determine your net zero Smart Forest target</h4>
+        <p>See how many hectares your school must plant to reach a net-zero emissions target.</p>
+        <Link href="/carbon-calculator">
+        <Button variant="green">Calculator</Button>
+        </Link>
         </Col>
       </Row>
+     
     </Container>
-    <Container fluid className="py-6">
-      <Row>
-        <Col className="text-center py-5">
-        <span className="smallCaps small text-white letterspace">{editingdata.corptesti}</span>
-        </Col>
-      </Row>
-      <Row className="justify-content-center">
-        <Col className="col-lg-8 bg-brown roundedBox p-5">
-        <Slide easing="ease" {...slideProperties}>
-        <Row className="justify-content-center each-slide px-5">
-            <Col className="p-5 text-white">
-              
-            <p className="text-orange large">
-              {editingdata.testi1para}
-            </p>
-            <span className="authorLine">{editingdata.testi1author}</span>
-            <span className="authorTitle">{editingdata.testi1authortitle}</span>
-</Col>
-          </Row>
-          <Row className="justify-content-center each-slide px-5">
-            <Col className="p-5 text-white">
-              
-            <p className="text-orange large">
-              {editingdata.testi2para}
-            </p>
-            <span className="authorLine">{editingdata.testi2author}</span>
-            <span className="authorTitle">{editingdata.testi2authortitle}</span>
-</Col>
-          </Row>
-
-        </Slide>
-        </Col>
-      </Row>
-
-    </Container>
-    <Container fluid className="py-6">
-    <Row>
-        <Col className="text-center py-3">
-        <span className="smallCaps small text-white letterspace">{editingdata.schoolbenefits}</span>
-        </Col>
-      </Row>
-    <Row className="justify-content-center">
-        <Col className=" col-6">
-        <p className="text-center text-orange large bold">{editingdata.schoolbenefitspara}</p></Col>
-      </Row>
-      <Row className="py-5 align-items-stretch justify-content-center">
-        <Col className="col-2">
-        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-        <p className="flex-fill pb-3  medium">{editingdata.corpbenefits1para}</p>
-        </div>
-        </Col>
-        <Col className="col-2">
-        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-        <p className="flex-fill pb-3 medium">{editingdata.corpbenefits2para}</p>
-        </div>
-        </Col>
-        <Col className="col-2">
-        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-        <p className="flex-fill pb-3 medium">{editingdata.corpbenefits3para}</p>
-        </div>
-        </Col>
-        <Col className="col-2">
-        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-        <p className="flex-fill pb-3  medium">{editingdata.corpbenefits4para}</p>
-        </div>
-        </Col>
-      </Row>
-      <Row>
-        <Col className="text-center">
-          <Link href="/contact">
-          <Button variant="green">{editingdata.schoolbuildbutton}</Button>
-          </Link>
-        </Col>
-      </Row>
-    </Container>
-
-{/* Legacy Forests */}
-
-<Container id="legacy" className="py-6">
+    
+    {/* Legacy Forests */}
+    <Container fluid id="legacy" className="bg-legacy sectionPad">
       <Row className="text-center justify-content-center">
-        <Col className="col-lg-6">
-        <h2 className="text-white bold py-3">
-          {editingdata.legacytitle}</h2>
+        <Col className="col-lg-6 text-white ">
+        <h2 className="bold py-3 text-orange">
+          Legacy Smart Forests™</h2>
+        <h3>Leave a legacy that will grow for centuries</h3>
+        <h4>Give cleaner air, thriving wildlife habitats, and a healthier planet to future generations. </h4>
         </Col>
       </Row>
       <Row className=" text-center  justify-content-center">
         <Col className="col-lg-7">
         <Row className=" horizTab  justify-content-center">
-          <Col>
-          <Button variant="text text-orange smallCaps letterspace">{editingdata.schoolabout}</Button>
-          </Col>
-          <Col>
-          <Button variant="text text-orange smallCaps letterspace">{editingdata.schoolgrow}</Button>
-          </Col>
-          <Col>
-          <Button variant="text text-orange smallCaps letterspace">{editingdata.schooltesti}</Button>
-          </Col>
-          <Col>
-          <Button variant="text text-orange smallCaps letterspace">{editingdata.schoolbenefits}</Button>
-          </Col>
+         
         </Row>
         </Col>
       </Row>
       <Row className="text-center justify-content-center">
-        <Col className="col-lg-7 py-5">
-        <p className="lead text-white bold">
-          {editingdata.schoolpara}
+        <Col className="col-lg-7 pt-5">
+        <p className="text-white bold">
+        A Legacy Forest is your opportunity to invest in the future of our planet. Diversify your portfolio with  acres of reforested land, plentiful wildlife, cleaner air and water preservation. It's an investment that will pay off with lasting environmental, social, and economic returns for all Canadians in the years to come. 
         </p>
         </Col>
       </Row>
 
-      <Swiper spaceBetween={50} slidesPerView={3} navigation pagination={{ clickable: true }} onSlideChange={()=>
-        console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
-        >
-
-        <Row className="py-5 align-items-stretch px-5">
-          <SwiperSlide>
-            <Col className="h-100">
-            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-              <h4 className="thin text-green">{editingdata.corpcard1title}</h4>
-              <p className="flex-fill pb-3">{editingdata.corpcard1para}</p>
-              <Button variant="text text-left">{editingdata.corpcard1button}</Button>
-            </div>
-            </Col>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Col className="h-100">
-            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-              <h4 className="thin text-green">{editingdata.corpcard2title}</h4>
-              <p className="flex-fill pb-3">{editingdata.corpcard2para}</p>
-              <Button variant="text text-left">{editingdata.corpcard2button}</Button>
-            </div>
-            </Col>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Col className="h-100">
-            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-              <h4 className="thin text-green">{editingdata.corpcard3title}</h4>
-              <p className="flex-fill pb-3">{editingdata.corpcard3para}</p>
-              <Button variant="text text-left">{editingdata.corpcard3button}</Button>
-            </div>
-            </Col>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Col className="h-100">
-            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-              <h4 className="thin text-green">{editingdata.corpcard4title}</h4>
-              <p className="flex-fill pb-3">{editingdata.corpcard4para}</p>
-              <Button variant="text text-left">{editingdata.corpcard4button}</Button>
-            </div>
-            </Col>
-          </SwiperSlide>
-
-        </Row>
-      </Swiper>
 
 
 
       <Row>
         <Col className="text-center py-5">
-          <Link href="/contact">
-        <Button variant="green">{editingdata.buildbutton}</Button>
-        </Link></Col>
+        <Button variant="green">Build a Legacy Smart Forest™</Button></Col>
       </Row>
 
-    </Container>
-    <Container className="py-6">
-      <Row className="justify-content-center">
-        <Col className="col-lg-4">
-        <h3 className="text-center text-orange bold">{editingdata.growtitle}</h3>
-        <p className="text-center text-white medium">{editingdata.growpara}</p>
-        </Col>
-      </Row>
-      <Row className="justify-content-center py-4">
-        <Col className="outlineBox text-white p-4 col-lg-3">
-        <span className="smallCaps small text-orange letterspace">
-          {editingdata.step1}
-        </span>
-        <h4 className="thin py-3">{editingdata.step1title}</h4>
-        <p>{editingdata.step1para}</p>
-        <Link href="/smart-forest-calculator">
-        <Button variant="green">{editingdata.step1button}</Button>
-        </Link>
-        </Col>
-        <Col className="outlineBox text-white p-4 col-lg-3">
-        <span className="smallCaps small text-orange letterspace">
-          {editingdata.step2}
-        </span>
-        <h4 className="thin py-3">{editingdata.step2title}</h4>
-        <p>{editingdata.step2para}</p>
-        <Link href="carbon-calculator">
-        <Button variant="green">{editingdata.step2button}</Button>
-        </Link>
-        </Col>
-        <Col className="outlineBox text-white p-4 col-lg-3">
-        <span className="smallCaps small text-orange letterspace">
-          {editingdata.step3}
-        </span>
-        <h4 className="thin py-3">{editingdata.step3title}</h4>
-        <p>{editingdata.step3para}</p>
-        <Button variant="green">{editingdata.step3button}</Button>
-        </Col>
-      </Row>
-    </Container>
-    <Container fluid className="py-6">
-      <Row>
-        <Col className="text-center py-5">
-        <span className="smallCaps small text-white letterspace">{editingdata.corptesti}</span>
-        </Col>
-      </Row>
       <Row className="justify-content-center">
         <Col className="col-lg-8 bg-brown roundedBox p-5">
-        <Slide easing="ease" {...slideProperties}>
-        <Row className="justify-content-center each-slide px-5">
+          <Row className="justify-content-center bg-quote ">
             <Col className="p-5 text-white">
-              
-            <p className="text-orange large">
-              {editingdata.testi1para}
-            </p>
-            <span className="authorLine">{editingdata.testi1author}</span>
-            <span className="authorTitle">{editingdata.testi1authortitle}</span>
-</Col>
-          </Row>
-          <Row className="justify-content-center each-slide px-5">
-            <Col className="p-5 text-white">
-              
-            <p className="text-orange large">
-              {editingdata.testi2para}
-            </p>
-            <span className="authorLine">{editingdata.testi2author}</span>
-            <span className="authorTitle">{editingdata.testi2authortitle}</span>
-</Col>
-          </Row>
 
-        </Slide>
+            <p className="text-orange large lead">
+            We are running the most dangerous experiment in history right now, which is to see how much carbon dioxide the atmosphere can handle before there is a climate catastrophe.
+            </p>
+            <span className="authorLine">Elon Musk</span>
+            <span className="authorTitle">CEO Tesla Motors</span>
+            </Col>
+          </Row>
         </Col>
       </Row>
 
+      <Row className="justify-content-center pt-5">
+        <Col className="col-lg-6">
+        <h3 className="text-center text-orange bold">Make a slow growth investment</h3>
+        <p className="px-5 text-center text-white medium">Preserve and protect our planet now—and for future generations. 
+</p>
+        </Col>
+      </Row>
+      <Row className="justify-content-center">
+        <Col className="text-white p-4 col-md-6">
+        <p>Generate remarkable returns by investing in:
+          <ul className="bulletList">
+            <li>
+            Plant and wildlife biodiversity
+
+            </li>
+            <li>
+Air purification
+</li>
+            <li>
+            Local economies 
+            </li>
+            <li>
+            Student programs </li>
+            <li>
+A proven, positive impact on climate change 
+            </li>
+          </ul>
+</p>
+        
+        </Col>
+       
+      </Row>
+      <Row className="justify-content-center">
+      <Col className="outlineBox text-white p-4 col-lg-3">
+        <h4 className="thin py-3">Calculate your net-zero carbon footprint</h4>
+        <p>Learn how much carbon you generate in an average year.</p>
+        <Link href="/carbon-calculator">
+        <Button variant="green">Calculator</Button>
+        </Link>
+        </Col>
+        <Col className="outlineBox text-white p-4 col-lg-3">
+        <h4 className="thin py-3">Determine your net zero Smart Forest target</h4>
+        <p>See how many hectares you need to plant to reach a net-zero emissions target. </p>
+        <Link href="/carbon-calculator">
+        <Button variant="green">Calculator</Button>
+        </Link>
+        </Col>
+      </Row>
+     
     </Container>
-    <Container fluid className="py-6">
-    <Row>
-        <Col className="text-center py-3">
-        <span className="smallCaps small text-white letterspace">{editingdata.schoolbenefits}</span>
-        </Col>
-      </Row>
-    <Row className="justify-content-center">
-        <Col className=" col-6">
-        <p className="text-center text-orange large bold">{editingdata.schoolbenefitspara}</p></Col>
-      </Row>
-      <Row className="py-5 align-items-stretch justify-content-center">
-        <Col className="col-2">
-        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-        <p className="flex-fill pb-3  medium">{editingdata.corpbenefits1para}</p>
-        </div>
-        </Col>
-        <Col className="col-2">
-        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-        <p className="flex-fill pb-3 medium">{editingdata.corpbenefits2para}</p>
-        </div>
-        </Col>
-        <Col className="col-2">
-        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-        <p className="flex-fill pb-3 medium">{editingdata.corpbenefits3para}</p>
-        </div>
-        </Col>
-        <Col className="col-2">
-        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-        <p className="flex-fill pb-3  medium">{editingdata.corpbenefits4para}</p>
-        </div>
-        </Col>
-      </Row>
-      <Row>
-        <Col className="text-center">
-          <Link href="/contact">
-          <Button variant="green">{editingdata.schoolbuildbutton}</Button>
-          </Link>
-        </Col>
-      </Row>
-    </Container>
+    
 
     {/* Communal Forests */}
-
-<Container id="communal" className="py-6">
+    <Container fluid id="communal" className="bg-communal sectionPad">
       <Row className="text-center justify-content-center">
-        <Col className="col-lg-6">
-        <h2 className="text-white bold py-3">
-          {editingdata.communaltitle}</h2>
+        <Col className="col-lg-6 text-white ">
+        <h2 className="bold py-3 text-orange">
+          Communal Smart Forests™</h2>
+        <h3>Work together to protect future communities</h3>
+        <h4>Every Canadian can take action on climate change</h4>
         </Col>
       </Row>
       <Row className=" text-center  justify-content-center">
         <Col className="col-lg-7">
         <Row className=" horizTab  justify-content-center">
-          <Col>
-          <Button variant="text text-orange smallCaps letterspace">{editingdata.schoolabout}</Button>
-          </Col>
-          <Col>
-          <Button variant="text text-orange smallCaps letterspace">{editingdata.schoolgrow}</Button>
-          </Col>
-          <Col>
-          <Button variant="text text-orange smallCaps letterspace">{editingdata.schooltesti}</Button>
-          </Col>
-          <Col>
-          <Button variant="text text-orange smallCaps letterspace">{editingdata.schoolbenefits}</Button>
-          </Col>
+         
         </Row>
         </Col>
       </Row>
       <Row className="text-center justify-content-center">
-        <Col className="col-lg-7 py-5">
-        <p className="lead text-white bold">
-          {editingdata.communalpara}
+        <Col className="col-lg-7 pt-5">
+        <p className="text-white bold">
+        Each plant, animal, and microbe in the forest contributes something unique and essential to the ecosystem: a forest is a community that is greater than the sum of its parts. This simple, but powerful fact inspired the Communal ForestTM initiative. It’s an opportunity for every individual in Canada to play a part and help build a forest.
         </p>
         </Col>
       </Row>
 
-      <Swiper spaceBetween={50} slidesPerView={3} navigation pagination={{ clickable: true }} onSlideChange={()=>
-        console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
-        >
 
-        <Row className="py-5 align-items-stretch px-5">
-          <SwiperSlide>
-            <Col className="h-100">
-            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-              <h4 className="thin text-green">{editingdata.corpcard1title}</h4>
-              <p className="flex-fill pb-3">{editingdata.corpcard1para}</p>
-              <Button variant="text text-left">{editingdata.corpcard1button}</Button>
-            </div>
-            </Col>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Col className="h-100">
-            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-              <h4 className="thin text-green">{editingdata.corpcard2title}</h4>
-              <p className="flex-fill pb-3">{editingdata.corpcard2para}</p>
-              <Button variant="text text-left">{editingdata.corpcard2button}</Button>
-            </div>
-            </Col>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Col className="h-100">
-            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-              <h4 className="thin text-green">{editingdata.corpcard3title}</h4>
-              <p className="flex-fill pb-3">{editingdata.corpcard3para}</p>
-              <Button variant="text text-left">{editingdata.corpcard3button}</Button>
-            </div>
-            </Col>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Col className="h-100">
-            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-              <h4 className="thin text-green">{editingdata.corpcard4title}</h4>
-              <p className="flex-fill pb-3">{editingdata.corpcard4para}</p>
-              <Button variant="text text-left">{editingdata.corpcard4button}</Button>
-            </div>
-            </Col>
-          </SwiperSlide>
-
-        </Row>
-      </Swiper>
-
+       
 
 
       <Row>
         <Col className="text-center py-5">
-          <Link href="/contact">
-        <Button variant="green">{editingdata.buildbutton}</Button>
-        </Link></Col>
+        <Button variant="green">Build a Communal Smart Forest™</Button></Col>
       </Row>
 
-    </Container>
-    <Container className="py-6">
-      <Row className="justify-content-center">
-        <Col className="col-lg-4">
-        <h3 className="text-center text-orange bold">{editingdata.growtitle}</h3>
-        <p className="text-center text-white medium">{editingdata.growpara}</p>
-        </Col>
-      </Row>
-      <Row className="justify-content-center py-4">
-        <Col className="outlineBox text-white p-4 col-lg-3">
-        <span className="smallCaps small text-orange letterspace">
-          {editingdata.step1}
-        </span>
-        <h4 className="thin py-3">{editingdata.step1title}</h4>
-        <p>{editingdata.step1para}</p>
-        <Link href="/smart-forest-calculator">
-        <Button variant="green">{editingdata.step1button}</Button>
-        </Link>
-        </Col>
-        <Col className="outlineBox text-white p-4 col-lg-3">
-        <span className="smallCaps small text-orange letterspace">
-          {editingdata.step2}
-        </span>
-        <h4 className="thin py-3">{editingdata.step2title}</h4>
-        <p>{editingdata.step2para}</p>
-        <Link href="/carbon-calculator">
-        <Button variant="green">{editingdata.step2button}</Button>
-        </Link>
-        </Col>
-        <Col className="outlineBox text-white p-4 col-lg-3">
-        <span className="smallCaps small text-orange letterspace">
-          {editingdata.step3}
-        </span>
-        <h4 className="thin py-3">{editingdata.step3title}</h4>
-        <p>{editingdata.step3para}</p>
-        <Button variant="green">{editingdata.step3button}</Button>
-        </Col>
-      </Row>
-    </Container>
-    <Container fluid className="py-6">
-      <Row>
-        <Col className="text-center py-5">
-        <span className="smallCaps small text-white letterspace">{editingdata.corptesti}</span>
-        </Col>
-      </Row>
       <Row className="justify-content-center">
         <Col className="col-lg-8 bg-brown roundedBox p-5">
-        <Slide easing="ease" {...slideProperties}>
-        <Row className="justify-content-center each-slide px-5">
+          <Row className="justify-content-center bg-quote ">
             <Col className="p-5 text-white">
-              
-            <p className="text-orange large">
-              {editingdata.testi1para}
-            </p>
-            <span className="authorLine">{editingdata.testi1author}</span>
-            <span className="authorTitle">{editingdata.testi1authortitle}</span>
-</Col>
-          </Row>
-          <Row className="justify-content-center each-slide px-5">
-            <Col className="p-5 text-white">
-              
-            <p className="text-orange large">
-              {editingdata.testi2para}
-            </p>
-            <span className="authorLine">{editingdata.testi2author}</span>
-            <span className="authorTitle">{editingdata.testi2authortitle}</span>
-</Col>
-          </Row>
 
-        </Slide>
+            <p className="text-orange large lead">
+            What you do makes a difference, and you have to decide what kind of difference you want to make.
+            </p>
+            <span className="authorLine">Dr. Jane Goodall</span>
+            </Col>
+          </Row>
         </Col>
       </Row>
 
-    </Container>
-    <Container fluid className="py-6">
-    <Row>
-        <Col className="text-center py-3">
-        <span className="smallCaps small text-white letterspace">{editingdata.schoolbenefits}</span>
+      <Row className="justify-content-center pt-5">
+        <Col className="col-lg-6">
+        <h3 className="text-center text-orange bold">A forest is a community. And a community can build a forest.</h3>
+        <p className="px-5 text-center text-white medium">Communal Forests are created by the thousands of Canadians who are here for change.</p>
         </Col>
       </Row>
-    <Row className="justify-content-center">
-        <Col className=" col-6">
-        <p className="text-center text-orange large bold">{editingdata.schoolbenefitspara}</p></Col>
+      <Row className="justify-content-center">
+        <Col className="text-white p-4 col-md-6">
+        <p>A Communal Forest is:
+          <ul className="bulletList">
+            <li>
+            <span className="bold">Accessible.</span> Anyone can take part without walking out the front door.  
+            </li>
+            <li>
+            <span className="bold">Accountable.</span> Canada’s Forest Trust issues annual audits and reports so you can see the impact your forest makes.
+            </li>
+            <li>
+            <span className="bold">Trackable.</span> See maintenance, preservation, growth measurements, and more through the online portal and dashboard.</li>
+            <li>
+            <span className="bold">Forever.</span> Every communal forest will be protected by insurance and a no clear-cut guarantee.
+            </li>
+          </ul>
+</p>
+        
+        </Col>
+       
       </Row>
-      <Row className="py-5 align-items-stretch justify-content-center">
-        <Col className="col-2">
-        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-        <p className="flex-fill pb-3  medium">{editingdata.corpbenefits1para}</p>
-        </div>
+      <Row className="justify-content-center">
+      <Col className="outlineBox text-white p-4 col-lg-3">
+        <h4 className="thin py-3">Calculate your net-zero carbon footprint</h4>
+        <p>Learn how much carbon your school generates in an average year.  </p>
+        <Link href="/carbon-calculator">
+        <Button variant="green">Calculator</Button>
+        </Link>
         </Col>
-        <Col className="col-2">
-        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-        <p className="flex-fill pb-3 medium">{editingdata.corpbenefits2para}</p>
-        </div>
-        </Col>
-        <Col className="col-2">
-        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-        <p className="flex-fill pb-3 medium">{editingdata.corpbenefits3para}</p>
-        </div>
-        </Col>
-        <Col className="col-2">
-        <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-        <p className="flex-fill pb-3  medium">{editingdata.corpbenefits4para}</p>
-        </div>
+        <Col className="outlineBox text-white p-4 col-lg-3">
+        <h4 className="thin py-3">Determine your net zero Smart Forest target</h4>
+        <p>See how many hectares your school must plant to reach a net-zero emissions target.</p>
+        <Link href="/carbon-calculator">
+        <Button variant="green">Calculator</Button>
+        </Link>
         </Col>
       </Row>
-      <Row>
-        <Col className="text-center">
-          <Link href="/contact">
-          <Button variant="green">{editingdata.schoolbuildbutton}</Button>
-          </Link>
-        </Col>
-      </Row>
+     
     </Container>
 
+    <Container className="bg-green py-5">
+    <Row className="justify-content-center pt-3">
+    <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
+        <h4 className="text-white tight-drop-light">Net-Zero Carbon Calculator</h4>
+        <p className="flex-fill pb-3 text-white tight-drop">Determine your corporate, school, or individual carbon footprint and learn how you can get to net-zero.</p>
+       
+        <Link href="business-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">Proceed</a></Link>
+        </div>
+        </Col>
+
+        <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
+        <h4 className="text-white tight-drop-light">Smart Forest™ Calculator</h4>
+        <p className="flex-fill pb-3 text-white tight-drop">Find out how many acres of Smart Forest you need to plant to get to a net-negative carbon footprint.</p>
+       
+        <Link href="offset-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">Proceed</a></Link>
+        </div>
+        </Col>
+
+        <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
+        <h4 className="text-white tight-drop-light">Your portal</h4>
+        <p className="flex-fill pb-3 text-white tight-drop">See how just how impactful Smart a Forest can be</p>
+       
+        <Link href="portal-demo"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">Visit the Smart Forest demo portal</a></Link>
+        </div>
+        </Col>
+      </Row>
+    </Container>
+    
   </main>
 </div>
 )
