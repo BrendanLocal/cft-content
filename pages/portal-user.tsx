@@ -10,18 +10,26 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Map from '../components/portalMap'
 
+
 import Button from 'react-bootstrap/Button';
 
+import { useCurrentUser } from '../hooks/index';
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 
 export default function Portal({ file }) {
+
+  const [user, { mutate }] = useCurrentUser();
+  const [isUpdating, setIsUpdating] = useState(false);
+  const nameRef = useRef();
+  const [msg, setMsg] = useState({ message: '', isError: false });
+
+  
 const formOptions = {
 label: 'User Portal',
 fields: [{ name: 'title', component: 'text' }],
 }
-
 
 const [editingdata, form] = useGithubJsonForm(file, formOptions)
 usePlugin(form)
@@ -82,6 +90,67 @@ airbase('userdata').select({
 });
 
 
+useEffect(() => {
+  nameRef.current.value = user.name;
+}, [user]);
+
+const handleSubmit = async (event) => {
+  event.preventDefault();
+  if (isUpdating) return;
+  setIsUpdating(true);
+  const formData = new FormData();
+formData.append('name', nameRef.current.value);
+  const res = await fetch('/api/user', {
+    method: 'PATCH',
+    body: formData,
+  });
+  if (res.status === 200) {
+    const userData = await res.json();
+    mutate({
+      user: {
+        ...user,
+        ...userData.user,
+      },
+    });
+    setMsg({ message: 'Profile updated' });
+  } else {
+    setMsg({ message: await res.text(), isError: true });
+  }
+  setIsUpdating(false);
+};
+
+const handleSubmitPasswordChange = async (e) => {
+  e.preventDefault();
+  const body = {
+    oldPassword: e.currentTarget.oldPassword.value,
+    newPassword: e.currentTarget.newPassword.value,
+  };
+  e.currentTarget.oldPassword.value = '';
+  e.currentTarget.newPassword.value = '';
+
+  const res = await fetch('/api/user/password', {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+
+  if (res.status === 200) {
+    setMsg({ message: 'Password updated' });
+  } else {
+    setMsg({ message: await res.text(), isError: true });
+  }
+};
+
+async function sendVerificationEmail() {
+  const res = await fetch('/api/user/email/verify', {
+    method: 'POST',
+  });
+  if (res.status === 200) {
+    setMsg({ message: 'An email has been sent to your mailbox' });
+  } else {
+    setMsg({ message: await res.text(), isError: true });
+  }
+}
 
 
 return (
@@ -100,7 +169,7 @@ return (
       <Row className="justify-content-center d-flex">
         <Col className="col-xl-10 ">
         <h1 className="h2 text-orange text-center">
-          {editingdata.greeting} {userData.displayname}
+          {editingdata.greeting} {userMongo ? userMongo.name : 'stranger'}
         </h1>
         </Col>
       </Row>
@@ -251,6 +320,52 @@ return (
             </TabPanel>
             <TabPanel>
               <h2 className="panelHead text-center text-grey">Edit My Information</h2>
+              {msg.message ? <p style={{ color: msg.isError ? 'red' : '#0070f3', textAlign: 'center' }}>{msg.message}</p> : null}
+              <form onSubmit={handleSubmit}>
+          {!user.emailVerified ? (
+            <p>
+              Your email has not been verified.
+              {' '}
+              {/* eslint-disable-next-line */}
+                <a role="button" onClick={sendVerificationEmail}>
+                  Send verification email
+                </a>
+            </p>
+          ) : null}
+          <label htmlFor="name">
+            Name
+            <input
+              required
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Your name"
+              ref={nameRef}
+            />
+          </label>
+          <button disabled={isUpdating} type="submit">Save</button>
+        </form>
+        <form onSubmit={handleSubmitPasswordChange}>
+          <label htmlFor="oldpassword">
+            Old Password
+            <input
+              type="password"
+              name="oldPassword"
+              id="oldpassword"
+              required
+            />
+          </label>
+          <label htmlFor="newpassword">
+            New Password
+            <input
+              type="password"
+              name="newPassword"
+              id="newpassword"
+              required
+            />
+          </label>
+          <button type="submit">Change Password</button>
+        </form>
             </TabPanel>
 
             <TabPanel>

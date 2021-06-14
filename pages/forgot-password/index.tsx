@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
 const ForgetPasswordPage = () => {
   const [msg, setMsg] = useState({ message: '', isError: false });
@@ -19,9 +16,9 @@ const ForgetPasswordPage = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
     });
-
+ 
     if (res.status === 200) {
-      setMsg({ message: 'An email has been sent to your mailbox' });
+      setMsg({ message: 'An email has been sent to your mailbox', isError: false });
     } else {
       setMsg({ message: await res.text(), isError: true });
     }
@@ -29,16 +26,10 @@ const ForgetPasswordPage = () => {
 
   return (
     <>
-    <Head>
+      <Head>
         <title>Forget password</title>
       </Head>
-    <Container fluid className="bg-green">
-      <Row className="text-center justify-content-center">
-        <Col>
-          <h2 className="text-white">Forget password</h2>
-        </Col>
-      </Row>
-      
+      <h2>Forget password</h2>
       {msg.message ? <p style={{ color: msg.isError ? 'red' : '#0070f3', textAlign: 'center' }}>{msg.message}</p> : null}
       <form onSubmit={handleSubmit}>
         <p>Do not worry. Simply enter your email address below.</p>
@@ -51,7 +42,6 @@ const ForgetPasswordPage = () => {
         </label>
         <button type="submit">Submit</button>
       </form>
-      </Container>
     </>
   );
 };

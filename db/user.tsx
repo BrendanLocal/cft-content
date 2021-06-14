@@ -2,20 +2,20 @@ import { nanoid } from 'nanoid';
 import normalizeEmail from 'validator/lib/normalizeEmail';
 
 export async function findUserById(db, userId) {
-  return db.collection('users').findOne({
+  return db.collection('userData').findOne({
     _id: userId,
   }).then((user) => user || null);
 }
 
 export async function findUserByEmail(db, email) {
   email = normalizeEmail(email);
-  return db.collection('users').findOne({
+  return db.collection('userData').findOne({
     email,
   }).then((user) => user || null);
 }
 
 export async function updateUserById(db, id, update) {
-  return db.collection('users').findOneAndUpdate(
+  return db.collection('userData').findOneAndUpdate(
     { _id: id },
     { $set: update },
     { returnOriginal: false },
@@ -23,18 +23,16 @@ export async function updateUserById(db, id, update) {
 }
 
 export async function insertUser(db, {
-  email, password, bio = '', name, profilePicture,
+  email, password, name
 }) {
   return db
-    .collection('users')
+    .collection('userData')
     .insertOne({
       _id: nanoid(12),
       emailVerified: false,
-      profilePicture,
       email,
       password,
-      name,
-      bio,
+      name
     })
     .then(({ ops }) => ops[0]);
 }

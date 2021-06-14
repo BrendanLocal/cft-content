@@ -2,17 +2,15 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Error from 'next/error';
-import { all } from '@/middlewares/index';
-import { useCurrentUser } from '@/hooks/index';
-import Posts from '@/components/post/posts';
-import { extractUser } from '@/lib/api-helpers';
-import { findUserById } from '@/db/index';
-import { defaultProfilePicture } from '@/lib/default';
+import { all } from '../../../middlewares/index';
+import { useCurrentUser } from '../../../hooks/index';
+import { extractUser } from '../../../lib/api-helpers';
+import { findUserById } from '../../../db/index';
 
 export default function UserPage({ user }) {
   if (!user) return <Error statusCode={404} />;
   const {
-    name, email, bio, profilePicture, _id
+    name, email, bio, _id
   } = user || {};
   const [currentUser] = useCurrentUser();
   const isCurrentUser = currentUser?._id === user._id;
@@ -52,7 +50,6 @@ export default function UserPage({ user }) {
         <title>{name}</title>
       </Head>
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <img src={profilePicture || defaultProfilePicture(_id)} width="256" height="256" alt={name} />
         <section>
           <div>
             <h2>{name}</h2>
@@ -62,17 +59,11 @@ export default function UserPage({ user }) {
             </Link>
             )}
           </div>
-          Bio
-          <p>{bio}</p>
           Email
           <p>
             {email}
           </p>
         </section>
-      </div>
-      <div>
-        <h3>My posts</h3>
-        <Posts creatorId={user._id} />
       </div>
     </>
   );

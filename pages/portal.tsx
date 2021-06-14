@@ -27,14 +27,13 @@ const formOptions = {
 label: 'User Portal',
 fields: [{ name: 'title', component: 'text' }],
 }
-
 const router = useRouter();
   const [errorMsg, setErrorMsg] = useState('');
-  const [user, { mutate }] = useCurrentUser();
+  const [userMongo, { mutate }] = useCurrentUser();
   useEffect(() => {
     // redirect to home if user is authenticated
-    if (user) router.push('/');
-  }, [user]);
+    if (userMongo) router.push('/portal-user');
+  }, [userMongo]);
 
   async function onSubmit(e) {
     e.preventDefault();
