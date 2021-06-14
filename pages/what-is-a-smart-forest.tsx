@@ -215,7 +215,7 @@ export default function Power({ file }) {
                 <p className="h3 text-center text-orange bold op-9 my-0">See your carbon footprint and learn what you can do to get to net-zero.</p>
               </Col>
               <Col className="col-10 text-center col-lg-7 my-5 pb-5">
-                <Link href="/what-is-a-smart-forest" >
+                <Link href="/carbon-calculator" >
                   <a className="btn btn-large btn-green">WHAT'S YOUR IMPACT?</a>
                 </Link>
               </Col>
