@@ -143,9 +143,9 @@ return (
       </Row>
       <Row className="justify-content-center align-items-center px-5">
         
-        <Carousel activeIndex={index} onSelect={handleSelect} nextIcon={<span aria-hidden="false" className="carousel-control-next-icon" />} nextLabel="" prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" />} prevLabel="" className="col-12 col-md-11 col-lg-10 d-flex bg-brown roundedBox innerShadow-heavy px-0">
+        <Carousel activeIndex={index} onSelect={handleSelect} nextIcon={<span aria-hidden="false" className="carousel-control-next-icon" />} nextLabel="" prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" />} prevLabel="" className="col-12 col-md-11 col-lg-10 d-flex bg-brown roundedBox innerShadow-heavy px-0"> 
           
-          <Carousel.Item interval={500000} className="drop align-items-center">
+          <Carousel.Item interval={500000}>
           <div className="d-block w-100 phases"></div>
             <Carousel.Caption>
               
@@ -201,6 +201,8 @@ return (
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
+
+
         
       </Row>
     </Container>
@@ -208,40 +210,43 @@ return (
     
     
     <Container id="smart-forests" fluid className="v-full z-999 bg-green py-5">
+      
       <Row className="pt-5 align-items-center justify-content-center">
         <Col className="col-12 col-lg-6 pe-lg-0 mt-5">
-          <h2 className="text-center text-orange bold">{editingdata.smarttitle}</h2>
-          <p className="text-center text-white medium thin mb-4">{editingdata.smartpara}</p>
+          <h2 className="text-center text-orange bold">Start making a difference now—and far into the future</h2>
+          <p className="text-center text-white medium thin mb-4">Each Smart Forest has a ‘planting prescription’. This is the unique mix of species that’s right for the local climate, soil conditions, drainage, and land history. This optimal habitat maximizes the positive impacts the Forest will make, including carbon sequestration, oxygen production and water absorption.</p>
         </Col>
       </Row>
-      <Row className="justify-content-center pb-5 align-items-stretch">
+      <Row className="justify-content-center py-5 align-items-stretch">
       <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+      <a href="#corporate">
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
-        <h4 className="text-white tight-drop-light">{editingdata.card1title}<span className="text-orange">™</span></h4>
-        <p className="flex-fill pb-3 text-white tight-drop">{editingdata.card1para}</p>
-       
-        <a href="#corporate" className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a>
-        </div>
+        <h4 className="text-orange tight-drop-light">Corporate Forests</h4>
+        <p className="flex-fill pb-3 text-white tight-drop">Meet ESG goals and demonstrate results</p>
+        
+        </div></a>
         </Col>
-        <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3"><a href="#school">
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
-        <h4 className="text-white tight-drop-light">{editingdata.card2title}<span className="text-orange">™</span></h4>
-        <p className="flex-fill pb-3 text-white tight-drop">{editingdata.card2para}</p>
-        <a href="#school" className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a>
-        </div>
+        <h4 className="text-orange tight-drop-light">School Forests</h4>
+        <p className="flex-fill pb-3 text-white tight-drop">Give students the tools to positively impact their future</p>
+        </div></a>
         </Col>
         <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <a href="#legacy" >
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
-        <h4 className="text-white tight-drop-light">{editingdata.card3title}<span className="text-orange">™</span></h4>
-        <p className="flex-fill pb-3 text-white tight-drop">{editingdata.card3para}</p>
-        <a href="#legacy" className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a>
+        <h4 className="text-orange tight-drop-light">Legacy Forests</h4>
+        <p className="flex-fill pb-3 text-white tight-drop">Protect the planet for future generations</p>
         </div>
+        </a>
         </Col>
         <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <a href="#communal">
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop communal-card">
-        <h4 className="text-white tight-drop-light">{editingdata.card4title}<span className="text-orange">™</span></h4>
-        <p className="flex-fill pb-3 text-white tight-drop">{editingdata.card4para}</p>
-        <a href="#communal" className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a> </div>
+        <h4 className="text-orange tight-drop-light">Communal Forests</h4>
+        <p className="flex-fill pb-3 text-white tight-drop">Make a difference by coming together</p>
+        
+        </div></a>
         </Col>
       </Row>
     </Container>
@@ -274,10 +279,10 @@ return (
       </Row>
 
 
-        <Row className="pt-5 align-items-stretch px-5 justify-content-center">
+        <Row className="pt-5 d-flex align-items-stretch px-5 justify-content-center">
          
-            <Col className="h-100 col-12 col-md-3">
-            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
+            <Col className="col-12 col-md-3">
+            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch">
               <h4 className="thin text-green">Proprietary impact calculators </h4>
               <p className="flex-fill pb-3">Calculate your net-zero carbon footprint and determine the size of forest
                 needed to offset your emissions.</p>
@@ -285,8 +290,8 @@ return (
             </div>
             </Col>
             
-            <Col className="h-100 col-12 col-md-3">
-            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
+            <Col className="col-12 col-md-3">
+            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch">
               <h4 className="thin text-green">Real-time monitoring</h4>
               <p className="flex-fill pb-3">A secure, customized portal to watch your forest grow and build engagement
                 campaigns that bring the journey to life for shareholders, employees, and customers.</p>
@@ -294,8 +299,8 @@ return (
             </div>
             </Col>
             
-          <Col className="h-100 col-12 col-md-3">
-            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
+          <Col className="col-12 col-md-3">
+            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch">
               <h4 className="thin text-green">Transparency and reporting</h4>
               <p className="flex-fill pb-3">Demonstrate your commitment to sustainability and the significance of your
                 impact with a no clear-cut guarantee on each Smart Forest. Keep stakeholders informed with an annual
@@ -701,7 +706,7 @@ A proven, positive impact on climate change
 
     <Container className="bg-green py-5">
     <Row className="justify-content-center pt-3">
-    <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+    <Col className="col-12 col-md-4 col-lg-3  pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
         <h4 className="text-white tight-drop-light">Net-Zero Carbon Calculator</h4>
         <p className="flex-fill pb-3 text-white tight-drop">Determine your corporate, school, or individual carbon footprint and learn how you can get to net-zero.</p>
@@ -710,7 +715,7 @@ A proven, positive impact on climate change
         </div>
         </Col>
 
-        <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <Col className="col-12 col-md-4 col-lg-3  pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
         <h4 className="text-white tight-drop-light">Smart Forest™ Calculator</h4>
         <p className="flex-fill pb-3 text-white tight-drop">Find out how many acres of Smart Forest you need to plant to get to a net-negative carbon footprint.</p>
@@ -719,7 +724,7 @@ A proven, positive impact on climate change
         </div>
         </Col>
 
-        <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <Col className="col-12 col-md-4 col-lg-3 pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
         <h4 className="text-white tight-drop-light">Your portal</h4>
         <p className="flex-fill pb-3 text-white tight-drop">See how just how impactful Smart a Forest can be</p>
