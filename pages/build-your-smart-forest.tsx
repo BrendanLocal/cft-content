@@ -144,7 +144,7 @@ return (
       <Row className="justify-content-center align-items-center px-5">
         
         <Carousel activeIndex={index} onSelect={handleSelect} nextIcon={<span aria-hidden="false" className="carousel-control-next-icon" />} nextLabel="" prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" />} prevLabel="" className="col-12 col-md-11 col-lg-10 d-flex bg-brown roundedBox innerShadow-heavy px-0">
-        
+          
           <Carousel.Item interval={500000} className="drop align-items-center">
           <div className="d-block w-100 phases"></div>
             <Carousel.Caption>
@@ -156,9 +156,9 @@ return (
           <div className="d-block w-100 phase1"></div>
             <Carousel.Caption className="col-9 col-lg-4">
               <h3 className="h2 text-left tight-drop bold mb-1">PROCURE</h3>
-              <p className="large text-left tight-drop bold mb-4">Acquire land across Canada.</p>
+              <p className="large text-left tight-drop bold ">Acquire land across Canada.</p>
               
-              <div className="card card-drop no-border bg-white px-4 py-2 op-8 mb-3 ">
+              <div className="card card-drop no-border bg-white px-4 py-2 op-8 mb-2 ">
                 <ul className="text-grey text-left checkMark pe-3 pb-0">
                   <li className="pb-0">Identify appropriate areas for Smart Forests across Canada</li>
                 </ul>
@@ -175,81 +175,29 @@ return (
           <Carousel.Item interval={100000}>
           <div className="d-block w-100 phase2 " ></div>
             <Carousel.Caption className="col-9 col-lg-4">
-              <h3 className="h2 text-left tight-drop-light bold mb-1">PREPARE</h3>
-              <p className="large text-left tight-drop-light bold mb-4">Assess, plan, and complete site preparation for planting.</p>
-              
-              <div className="card card-drop no-border bg-white px-4 py-2 op-8 mb-3 ">
-                <ul className="text-grey text-left checkMark pe-3 pb-0">
-                  <li className="pb-0">Conduct planting prescription and silvicultural treatments</li>
-                </ul>
-              </div>
-
-              <div className="card card-drop no-border bg-white px-4 py-2 op-8">
-                <ul className="text-grey text-left checkMark pe-3 pb-0">
-                <li className="pb-0">Source suitable equipment</li>
-                </ul>
-              </div>
-            
+              <h3 className="h2 text-left tight-drop-light bold">PREPARE</h3>
+              <p className="large text-left tight-drop-light bold mb-5">Assess, plan, and complete site preparation for planting.</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item interval={100000}>
           <div className="d-block w-100 phase3 " ></div>
             <Carousel.Caption className="col-9 col-lg-4">
-              <h3 className="h2 text-left tight-drop bold mb-1">PLANT</h3>
-              <p className="large text-left tight-drop bold mb-4">Strategically plant seedlings to ensure optimal growth and carbon sequestration.</p>
-              
-              <div className="card card-drop no-border bg-white px-4 py-2 op-8 mb-3 ">
-                <ul className="text-grey text-left checkMark pe-3 pb-0">
-                  <li className="pb-0">Partner with nurseries and reforestation organizations</li>
-                </ul>
-              </div>
-
-              <div className="card card-drop no-border bg-white px-4 py-2 op-8">
-                <ul className="text-grey text-left checkMark pe-3 pb-0">
-                <li className="pb-0">Hire local experts and planting teams</li>
-                </ul>
-              </div>
-
+              <h3 className="h2 text-left tight-drop bold">PLANT</h3>
+              <p className="large text-left tight-drop bold mb-5">Strategically plant seedlings to ensure optimal growth and carbon sequestration.</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item interval={100000}>
           <div className="d-block w-100 phase4 "></div>
             <Carousel.Caption className="col-9 col-lg-4">
-              <h3 className="h2 text-left tight-drop-heavy bold mb-1">PRESERVE</h3>
-              <p className="large text-left tight-drop-heavy bold mb-4">Perform innovative forest management activities to maintain the forest and maximize its impact.</p>
-              
-              <div className="card card-drop no-border bg-white px-4 py-2 op-8 mb-3 ">
-                <ul className="text-grey text-left checkMark pe-3 pb-0">
-                  <li className="pb-0">Perform forest maintenance services</li>
-                </ul>
-              </div>
-
-              <div className="card card-drop no-border bg-white px-4 py-2 op-8">
-                <ul className="text-grey text-left checkMark pe-3 pb-0">
-                <li className="pb-0">Report on monitoring and maintenance services</li>
-                </ul>
-              </div>
-            
+              <h3 className="h2 text-left tight-drop-heavy bold">PRESERVE</h3>
+              <p className="large text-left tight-drop-heavy bold mb-5">Perform innovative forest management activities to maintain the forest and maximize its impact.</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item interval={100000}>
           <div className="d-block w-100 phase5 " ></div>
             <Carousel.Caption className="col-9 col-lg-4">
-              <h3 className="h2 text-left tight-drop bold mb-1">PROTECT</h3>
-              <p className="large text-left tight-drop bold mb-4">Audit, and set a no clear-cut guarantee on every forest.</p>
-              
-              <div className="card card-drop no-border bg-white px-4 py-2 op-8 mb-3 ">
-                <ul className="text-grey text-left checkMark pe-3 pb-0">
-                  <li className="pb-0">Prepare annual reports and certifications</li>
-                </ul>
-              </div>
-
-              <div className="card card-drop no-border bg-white px-4 py-2 op-8">
-                <ul className="text-grey text-left checkMark pe-3 pb-0">
-                <li className="pb-0">Monitor and share progress via digital portals</li>
-                </ul>
-              </div>
-            
+              <h3 className="h2 text-left tight-drop bold ">PROTECT</h3>
+              <p className="large text-left tight-drop bold mb-5">Audit, and set a no clear-cut guarantee on every forest.</p>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
