@@ -1,3 +1,6 @@
+
+
+
 import React, { useState, useRef, useEffect } from 'react';
 import Head from 'next/head'
 import Link from 'next/link'
@@ -9,8 +12,7 @@ import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Map from '../components/portalMap'
-
+import Map from '../components/portalMap';
 import { useRouter } from 'next/router';
 import { useCurrentUser } from '../hooks/index';
 
@@ -26,25 +28,6 @@ label: 'User Portal',
 fields: [{ name: 'title', component: 'text' }],
 }
 
-async function onSubmit(e) {
-  e.preventDefault();
-  const body = {
-    email: e.currentTarget.email.value,
-    password: e.currentTarget.password.value,
-  };
-  const res = await fetch('/api/auth', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body),
-  });
-  if (res.status === 200) {
-    const userObj = await res.json();
-    mutate(userObj);
-  } else {
-    setErrorMsg('Incorrect username or password. Try again!');
-  }
-}
-
 const router = useRouter();
   const [errorMsg, setErrorMsg] = useState('');
   const [user, { mutate }] = useCurrentUser();
@@ -52,6 +35,27 @@ const router = useRouter();
     // redirect to home if user is authenticated
     if (user) router.push('/');
   }, [user]);
+
+  async function onSubmit(e) {
+    e.preventDefault();
+    const body = {
+      email: e.currentTarget.email.value,
+      password: e.currentTarget.password.value,
+    };
+    const res = await fetch('/api/auth', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    if (res.status === 200) {
+      const userObj = await res.json();
+      mutate(userObj);
+    } else {
+      setErrorMsg('Incorrect username or password. Try again!');
+    }
+  }
+
+
 
 
 return (
@@ -127,30 +131,31 @@ return (
 )
 }
 
+
+
 /**
 * Fetch data with getStaticProps based on 'preview' mode
 */
 export const getStaticProps: GetStaticProps = async function({
-preview,
-previewData,
-}) {
-if (preview) {
-return getGithubPreviewProps({
-...previewData,
-fileRelativePath: 'content/portal.json',
-parse: parseJson,
-})
-}
-return {
-props: {
-sourceProvider: null,
-error: null,
-preview: false,
-file: {
-fileRelativePath: 'content/portal.json',
-data: (await import('../content/portal.json')).default,
-},
-},
-}
-}
-
+  preview,
+  previewData,
+  }) {
+  if (preview) {
+  return getGithubPreviewProps({
+  ...previewData,
+  fileRelativePath: 'content/portal.json',
+  parse: parseJson,
+  })
+  }
+  return {
+  props: {
+  sourceProvider: null,
+  error: null,
+  preview: false,
+  file: {
+  fileRelativePath: 'content/portal.json',
+  data: (await import('../content/portal.json')).default,
+  },
+  },
+  }
+  }

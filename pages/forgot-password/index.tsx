@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const ForgetPasswordPage = () => {
   const [msg, setMsg] = useState({ message: '', isError: false });
@@ -26,10 +29,16 @@ const ForgetPasswordPage = () => {
 
   return (
     <>
-      <Head>
+    <Head>
         <title>Forget password</title>
       </Head>
-      <h2>Forget password</h2>
+    <Container fluid className="bg-green">
+      <Row className="text-center justify-content-center">
+        <Col>
+          <h2 className="text-white">Forget password</h2>
+        </Col>
+      </Row>
+      
       {msg.message ? <p style={{ color: msg.isError ? 'red' : '#0070f3', textAlign: 'center' }}>{msg.message}</p> : null}
       <form onSubmit={handleSubmit}>
         <p>Do not worry. Simply enter your email address below.</p>
@@ -42,6 +51,7 @@ const ForgetPasswordPage = () => {
         </label>
         <button type="submit">Submit</button>
       </form>
+      </Container>
     </>
   );
 };
