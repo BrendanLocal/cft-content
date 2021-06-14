@@ -414,7 +414,7 @@ return (
 
 
         <Fade bottom>
-            <Row className="justify-content-center d-flex pb-5 mx-5 mt-5">
+            <Row className="justify-content-center d-flex py-5 mx-5 my-5">
               <Col className="col-11 col-lg-8 bg-brown roundedBox innerShadow p-5 m-4 blockquote-bg">
                 <h3 className="text-left blockquote text-orange p-lg-5">
                   “We need 50 shades of green to catalyze and support all companies towards net zero… Companies will need to show how they plan to meet their net-zero targets through the appropriate mix of emission reductions and credible carbon offsets, including nature-based solutions such as reforestation.”
@@ -436,12 +436,12 @@ return (
       </Fade>
 
     <Fade bottom>
-      <Row className="justify-content-center d-flex pb-5 mx-5">
-          <Col className="col-11 col-lg-7 bg-green roundedBox innerShadow px-5 pt-5 pb-4 m-4">
+      <Row className="justify-content-center d-flex pb-5 mx-5 mb-5">
+          <Col className="col-11 col-lg-7 bg-green roundedBox innerShadow px-5 pt-5 pb-4 m-4 mt-2">
         <p className="text-white large bold text-center">An investment in a Smart Forest allows your corporation to:
         </p>
 
-          <ul className="text-white checkMark px-5 mx-5">
+          <ul className="text-white checkMark px-5 mx-3">
             <li>
             Support immediate CO2 reductions from the atmosphere 
             </li>
