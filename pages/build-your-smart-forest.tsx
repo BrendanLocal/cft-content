@@ -40,7 +40,26 @@ indicators: i => (<span className="sliderDot" />)
     setIndex(selectedIndex);
   };
 
-  
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const id = entry.target.getAttribute('id');
+        if (entry.intersectionRatio > 0.0 ) {
+          if (document.querySelector(`.left-sidenav li[data-dest="#${id}"]`)){
+            document.querySelector(`.left-sidenav li[data-dest="#${id}"]`).classList.add('active');
+          }
+        } else {
+          if (document.querySelector(`.left-sidenav li[data-dest="#${id}"]`)){
+            document.querySelector(`.left-sidenav li[data-dest="#${id}"]`).classList.remove('active');
+          }
+        }
+      });
+    });
+    
+    // Track all div containers that have an `id` applied
+    document.querySelectorAll('div[id]').forEach((id) => {
+      observer.observe(id);});
+  },[]);
 
 return (
 
@@ -62,38 +81,28 @@ return (
                INTRO
               </a>
             </li>
-            <li className="p-0" data-dest="#commitment" >              
-              <a href="#commitment" className="text-white bold no-underline">
-                THE PLAN
-              </a>
-            </li>
-            <li className="p-0" data-dest="#forever">
-              <a href="#forever" className="text-white bold no-underline">
+            <li className="p-0" data-dest="#difference">
+              <a href="#difference" className="text-white bold no-underline">
                 DIFFERENCE
               </a>
             </li>
-            <li className="p-0" data-dest="#smart-forests">             
-              <a href="#smart-forests" className="text-white bold no-underline">
-                OUR FORESTS
-              </a>
-            </li>
-            <li className="p-0" data-dest="#earth">             
-              <a href="#earth" className="text-white bold no-underline">
+            <li className="p-0" data-dest="#corporate">             
+              <a href="#corporate" className="text-white bold no-underline">
                 CORPORATE
               </a>
             </li>
-            <li className="p-0" data-dest="#earth">             
-              <a href="#earth" className="text-white bold no-underline">
+            <li className="p-0" data-dest="#school">             
+              <a href="#school" className="text-white bold no-underline">
                 SCHOOL
               </a>
             </li>
-            <li className="p-0" data-dest="#earth">             
-              <a href="#earth" className="text-white bold no-underline">
+            <li className="p-0" data-dest="#legacy">             
+              <a href="#legacy" className="text-white bold no-underline">
                 LEGACY
               </a>
             </li>
-            <li className="p-0" data-dest="#earth">             
-              <a href="#earth" className="text-white bold no-underline">
+            <li className="p-0" data-dest="#communal">             
+              <a href="#communal" className="text-white bold no-underline">
                 COMMUNAL
               </a>
             </li>
@@ -118,7 +127,7 @@ return (
         
 
         <p className="text-white text-left smallcaps intro-links-header op-5 mt-4">ON THIS PAGE</p>
-        <a href="#commitment" className="btn btn-text text-left intro-links text-orange bold no-underline ">The Smart Forest Action Plan</a>
+        <a href="#the-plan" className="btn btn-text text-left intro-links text-orange bold no-underline ">The Smart Forest Action Plan</a>
        <a href="#smart-forests" className="btn btn-text text-left intro-links text-orange bold no-underline">Our Smart Forests</a>
               
 
@@ -130,7 +139,7 @@ return (
     </Container>
 
 
-    <Container id="5-phase" className="v-full z-999 bg-green p-5">
+    <Container id="the-plan" className="v-full z-999 bg-green p-5">
     <Fade bottom>
       <Row className="justify-content-center align-items-center my-4">
         <Col className="col-11 col-lg-8 text-center text-white">
@@ -257,7 +266,7 @@ return (
 
     
     
-    <Container id="smart-forests" fluid className="v-full z-999 bg-green py-5">
+    <Container id="difference" fluid className="v-full z-999 bg-green py-5">
       
     <Fade bottom>
       <Row className="pt-5 align-items-center justify-content-center">
@@ -273,36 +282,34 @@ return (
               <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
                 <h4 className="text-white tight-drop-light">Corporate Forests</h4>
                 <p className="flex-fill pb-3 text-white tight-drop">Meet ESG goals and demonstrate results</p>
-                <Link href="/#corporate" >
-                  <a className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">LEARN MORE</a>
-                </Link>
+                
+                  <a href="#corporate" className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">LEARN MORE</a>
+                
               </div>
             </Col>
             <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
                 <h4 className="text-white tight-drop-light">School Forests</h4>
                 <p className="flex-fill pb-3 text-white tight-drop">Give students the tools to positively impact their future</p>
-                <Link href="/#school" >
-                  <a className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">LEARN MORE</a>
-                </Link>
+                  <a href="#school" className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">LEARN MORE</a>
               </div>
             </Col>
             <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
                 <h4 className="text-white tight-drop-light">Legacy Forests</h4>
                 <p className="flex-fill pb-3 text-white tight-drop">Protect the planet for future generations</p>
-                <Link href="/#legacy" >
-                  <a className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">LEARN MORE</a>
-                </Link>
+               
+                  <a href="#legacy" className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">LEARN MORE</a>
+                
               </div>
             </Col>
             <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop communal-card">
                 <h4 className="text-white tight-drop-light">Communal Forests</h4>
                 <p className="flex-fill pb-3 text-white tight-drop">Make a difference by coming together</p>
-                <Link href="/#communal" >
-                  <a className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">LEARN MORE</a>
-                </Link>
+               
+                  <a href="#communal" className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">LEARN MORE</a>
+                
               </div>
             </Col>
           </Row>
@@ -326,16 +333,15 @@ return (
             <Col className="col-11 col-lg-7">
               <Row className=" horizTab  justify-content-center">
                 <Col className="mb-3">
-                <Link href="/"><Button variant="text text-orange smallCaps tight-drop-light down-links">ABOUT</Button></Link>
+                <Button href="#corp-about" variant="text text-orange smallCaps tight-drop-light down-links">ABOUT</Button>
+                </Col>
+                <Col className="mb-3"><Button  href="#corp-testimonial" variant="text text-orange smallCaps tight-drop-light down-links">TESTIMONIALS</Button>
                 </Col>
                 <Col className="mb-3">
-                <Link href="/"><Button variant="text text-orange smallCaps tight-drop-light down-links">TESTIMONIALS</Button></Link>
+<Button  href="#corp-bottom-line" variant="text text-orange smallCaps tight-drop-light down-links">BOTTOM LINE</Button>
                 </Col>
                 <Col className="mb-3">
-                <Link href="/"><Button variant="text text-orange smallCaps tight-drop-light down-links">BOTTOM LINE</Button></Link>
-                </Col>
-                <Col className="mb-3">
-                <Link href="/"><Button variant="text text-orange smallCaps tight-drop-light down-links">CALCULATE</Button></Link>
+                <Button href="#corp-calculate" variant="text text-orange smallCaps tight-drop-light down-links">CALCULATE</Button>
                 </Col>
               </Row>
             </Col>
@@ -343,7 +349,7 @@ return (
       </Fade>
 
       <Fade bottom>
-      <Row className="text-center justify-content-center py-4 px-3 mt-5">
+      <Row id="corp-about" className="text-center justify-content-center py-4 px-3 mt-5">
         <Col className="col-11 col-lg-7">
         <p className="emphasis-2 text-orange tight-drop-light mb-4">Don’t just care for the environment. <span className="text-white emphasis">Prove it.</span></p>
         </Col>
@@ -417,7 +423,7 @@ return (
 
 
         <Fade bottom>
-            <Row className="justify-content-center d-flex py-5 mx-5 my-5">
+            <Row id="corp-testimonial" className="justify-content-center d-flex py-5 mx-5 my-5">
               <Col className="col-11 col-lg-8 bg-brown roundedBox innerShadow p-5 m-4 blockquote-bg">
                 <h3 className="text-left blockquote text-orange p-lg-5">
                   “We need 50 shades of green to catalyze and support all companies towards net zero… Companies will need to show how they plan to meet their net-zero targets through the appropriate mix of emission reductions and credible carbon offsets, including nature-based solutions such as reforestation.”
@@ -430,7 +436,7 @@ return (
 
 
     <Fade bottom>
-      <Row className="justify-content-center pt-5 mb-3">
+      <Row id="corp-bottom-line" className="justify-content-center pt-5 mb-3">
         <Col className="col-11 col-md-8 ">
         <h2 className="text-center text-orange tight-drop-light bold mb-3">From balance sheet to bottom line.</h2>
         <p className="lead px-5 text-center tight-drop-light text-white">Corporate Smart Forests are good for the environment and for your business.</p>
@@ -469,7 +475,7 @@ return (
     
 
     <Fade bottom>
-      <Row className="justify-content-center pt-5 mb-3">
+      <Row id="corp-calculate" className="justify-content-center pt-5 mb-3">
         <Col className="col-11 col-md-8 ">
         <h2 className="text-center text-orange tight-drop-light bold mb-4">Start Calculating</h2>
         </Col>
