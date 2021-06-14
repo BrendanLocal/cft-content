@@ -173,7 +173,7 @@ h1.drop, .h1.drop {
 .emphasis-2 {
   font-size: calc(3rem + 1.5vw);
   line-height: calc(3rem + 1.5vw);
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -3px;
 }
 
