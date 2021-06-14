@@ -170,6 +170,13 @@ h1.drop, .h1.drop {
   letter-spacing: -3px;
 }
 
+.emphasis-2 {
+  font-size: calc(3rem + 1.5vw);
+  line-height: calc(3rem + 1.5vw);
+  font-weight: 500;
+  letter-spacing: -3px;
+}
+
 .blockquote {
   font-size: calc(1.3rem + .7vw);
   line-height: calc(1.8rem + .7vw);
