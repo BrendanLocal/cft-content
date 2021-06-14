@@ -81,9 +81,9 @@ return (
                INTRO
               </a>
             </li>
-            <li className="p-0" data-dest="#difference">
-              <a href="#difference" className="text-white bold no-underline">
-                DIFFERENCE
+            <li className="p-0" data-dest="#smart-forests">
+              <a href="#smart-forests" className="text-white bold no-underline">
+                OUR SMART FORESTS
               </a>
             </li>
             <li className="p-0" data-dest="#corporate">             
@@ -529,16 +529,16 @@ return (
             <Col className="col-11 col-lg-7">
               <Row className=" horizTab  justify-content-center">
                 <Col className="mb-3">
-                <Link href="/"><Button variant="text text-orange smallCaps tight-drop-light down-links">ABOUT</Button></Link>
+                <Button href="#school-about" variant="text text-orange smallCaps tight-drop-light down-links">ABOUT</Button>
                 </Col>
                 <Col className="mb-3">
-                <Link href="/"><Button variant="text text-orange smallCaps tight-drop-light down-links">TESTIMONIALS</Button></Link>
+                <Button href="#school-testimonials" variant="text text-orange smallCaps tight-drop-light down-links">TESTIMONIALS</Button>
                 </Col>
                 <Col className="mb-3">
-                <Link href="/"><Button variant="text text-orange smallCaps tight-drop-light down-links">STUDENTS</Button></Link>
+                <Button href="#school-students" variant="text text-orange smallCaps tight-drop-light down-links">STUDENTS</Button>
                 </Col>
                 <Col className="mb-3">
-                <Link href="/"><Button variant="text text-orange smallCaps tight-drop-light down-links">CALCULATE</Button></Link>
+                <Button href="#student-calculator" variant="text text-orange smallCaps tight-drop-light down-links">CALCULATE</Button>
                 </Col>
               </Row>
             </Col>
@@ -547,7 +547,7 @@ return (
 
       
       <Fade bottom>
-      <Row className="text-center justify-content-center py-4 px-4 mt-5">
+      <Row id="school-about" className="text-center justify-content-center py-4 px-4 mt-5">
         <Col className="col-11 col-lg-7">
         <p className="emphasis text-orange tight-drop-light mb-4">Study climate action in real time.</p>
         </Col>
@@ -614,7 +614,7 @@ return (
         </Row>
 
         <Fade bottom>
-            <Row className="justify-content-center d-flex py-5 mx-5 my-5">
+            <Row id="school-testimonials" className="justify-content-center d-flex py-5 mx-5 my-5">
               <Col className="col-11 col-lg-8 bg-brown roundedBox innerShadow p-5 m-4 blockquote-bg">
                 <h3 className="text-left blockquote text-orange p-lg-5">
                   “[Younger generations] have a different kind of investment in the future…A lot of the adults in the world aren’t going to be here by the time some climate conditions start taking effect in the world.”
@@ -627,7 +627,7 @@ return (
 
 
     <Fade bottom>
-      <Row className="justify-content-center pt-5 mb-3">
+      <Row id="school-students" className="justify-content-center pt-5 mb-3">
         <Col className="col-11 col-md-7 ">
         <h2 className="text-center text-orange tight-drop-light bold mb-3">Students make great teachers. Give them a forest to manage.</h2>
         <p className="lead px-5 text-center tight-drop-light text-white">Spark a life-long connection to the environment and teach valuable skills.</p>
@@ -665,7 +665,7 @@ return (
     
 
     <Fade bottom>
-      <Row className="justify-content-center pt-5 mb-3">
+      <Row id="school-calculators" className="justify-content-center pt-5 mb-3">
         <Col className="col-11 col-md-8 ">
         <h2 className="text-center text-orange tight-drop-light bold mb-4">Start Calculating</h2>
         </Col>
@@ -719,16 +719,16 @@ return (
             <Col className="col-11 col-lg-7">
               <Row className=" horizTab  justify-content-center">
                 <Col className="mb-3">
-                <Link href="/"><Button variant="text text-orange smallCaps tight-drop-light down-links">ABOUT</Button></Link>
+                <Button href="#legacy-about" variant="text text-orange smallCaps tight-drop-light down-links">ABOUT</Button>
                 </Col>
                 <Col className="mb-3">
-                <Link href="/"><Button variant="text text-orange smallCaps tight-drop-light down-links">TESTIMONIALS</Button></Link>
+                <Button  href="#legacy-testimonials" variant="text text-orange smallCaps tight-drop-light down-links">TESTIMONIALS</Button>
                 </Col>
                 <Col className="mb-3">
-                <Link href="/"><Button variant="text text-orange smallCaps tight-drop-light down-links">GROWTH INVESTMENT</Button></Link>
+                <Button  href="#legacy-investment" variant="text text-orange smallCaps tight-drop-light down-links">GROWTH INVESTMENT</Button>
                 </Col>
                 <Col className="mb-3">
-                <Link href="/"><Button variant="text text-orange smallCaps tight-drop-light down-links">CALCULATE</Button></Link>
+                <Button  href="#legacy-calculators" variant="text text-orange smallCaps tight-drop-light down-links">CALCULATE</Button>
                 </Col>
               </Row>
             </Col>
@@ -737,7 +737,7 @@ return (
 
       
       <Fade bottom>
-      <Row className="text-center justify-content-center py-4 px-4 mt-5">
+      <Row id="legacy-about" className="text-center justify-content-center py-4 px-4 mt-5">
         <Col className="col-11 col-lg-7">
         <p className="emphasis text-orange tight-drop-light mb-4">Leave a legacy that will grow for centuries.</p>
         </Col>
@@ -775,7 +775,7 @@ return (
         </Row>
 
         <Fade bottom>
-            <Row className="justify-content-center d-flex py-5 mx-5 my-5">
+            <Row id="legacy-testimonials" className="justify-content-center d-flex py-5 mx-5 my-5">
               <Col className="col-11 col-lg-8 bg-brown roundedBox innerShadow p-5 m-4 blockquote-bg">
                 <h3 className="text-left blockquote text-orange p-lg-5">
                 "We are running the most dangerous experiment in history right now, which is to see how much carbon dioxide the atmosphere can handle before there is a climate catastrophe."
@@ -788,7 +788,7 @@ return (
 
 
     <Fade bottom>
-      <Row className="justify-content-center pt-5 mb-3">
+      <Row id="legacy-investment"  className="justify-content-center pt-5 mb-3">
         <Col className="col-11 col-md-7 ">
         <h2 className="text-center text-orange tight-drop-light bold mb-3">Make a slow growth investment.</h2>
         <p className="lead px-5 text-center tight-drop-light text-white">Preserve and protect our planet now—and for future generations.</p>
@@ -824,7 +824,7 @@ return (
     </Fade> 
 
     <Fade bottom>
-      <Row className="justify-content-center pt-5 mb-3">
+      <Row id="legacy-calculators" className="justify-content-center pt-5 mb-3">
         <Col className="col-11 col-md-8 ">
         <h2 className="text-center text-orange tight-drop-light bold mb-4">Start Calculating</h2>
         </Col>
@@ -878,16 +878,16 @@ return (
             <Col className="col-11 col-lg-7">
               <Row className=" horizTab  justify-content-center">
                 <Col className="mb-3">
-                <Link href="/"><Button variant="text text-orange smallCaps tight-drop-light down-links">ABOUT</Button></Link>
+                <Button href="#communal-about" variant="text text-orange smallCaps tight-drop-light down-links">ABOUT</Button>
                 </Col>
                 <Col className="mb-3">
-                <Link href="/"><Button variant="text text-orange smallCaps tight-drop-light down-links">TESTIMONIALS</Button></Link>
+                <Button  href="#communal-testimonials" variant="text text-orange smallCaps tight-drop-light down-links">TESTIMONIALS</Button>
                 </Col>
                 <Col className="mb-3">
-                <Link href="/"><Button variant="text text-orange smallCaps tight-drop-light down-links">STUDENTS</Button></Link>
+                <Button  href="#communal-students" variant="text text-orange smallCaps tight-drop-light down-links">STUDENTS</Button>
                 </Col>
                 <Col className="mb-3">
-                <Link href="/"><Button variant="text text-orange smallCaps tight-drop-light down-links">CALCULATE</Button></Link>
+                <Button  href="#communal-calculators" variant="text text-orange smallCaps tight-drop-light down-links">CALCULATE</Button>
                 </Col>
               </Row>
             </Col>
@@ -896,7 +896,7 @@ return (
 
       
       <Fade bottom>
-      <Row className="text-center justify-content-center py-4 px-5 mt-5">
+      <Row id="communal-about" className="text-center justify-content-center py-4 px-5 mt-5">
         <Col className="col-11 col-lg-8">
         <p className="emphasis text-orange tight-drop-light mb-4">Work together to protect future communities.</p>
         </Col>
@@ -934,7 +934,7 @@ return (
         </Row>
 
         <Fade bottom>
-            <Row className="justify-content-center d-flex py-5 mx-5 my-5">
+            <Row  id="communal-testimonials" className="justify-content-center d-flex py-5 mx-5 my-5">
               <Col className="col-11 col-lg-8 bg-brown roundedBox innerShadow p-5 m-4 blockquote-bg">
                 <h3 className="text-left blockquote text-orange p-lg-5">
                 "What you do makes a difference, and you have to decide what kind of difference you want to make."
@@ -947,7 +947,7 @@ return (
 
 
     <Fade bottom>
-      <Row className="justify-content-center pt-5 px-5 mb-3">
+      <Row  id="communal-students" className="justify-content-center pt-5 px-5 mb-3">
         <Col className="col-11 col-md-8 ">
         <h2 className="text-center text-orange tight-drop-light bold mb-3">A forest is a community. And a community can build a forest.</h2>
         <p className="lead px-5 text-center tight-drop-light text-white">Communal Forests are created by the thousands of Canadians who are here for change.</p>
@@ -980,7 +980,7 @@ return (
     </Fade> 
 
     <Fade bottom>
-      <Row className="justify-content-center pt-5 mb-3">
+      <Row  id="communal-calculators" className="justify-content-center pt-5 mb-3">
         <Col className="col-11 col-md-8 ">
         <h2 className="text-center text-orange tight-drop-light bold mb-4">Start Calculating</h2>
         </Col>
