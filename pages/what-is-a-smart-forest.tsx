@@ -205,7 +205,7 @@ export default function Power({ file }) {
                 <p className="text-left text-white">Canada’s Forest Trust will build Smart Forests on deforested or unused land, located in ecologically diverse regions across the country, and will protect some of our nation’s most imperilled plants and animals.</p>
               </Col>
               <Col className="col-10 col-md-4 p-3 roundedBox innerShadow-heavy callout-box">
-                <p className="text-white text-green p-5 tight-drop">Planting <span className="bold">500 hectares of land</span>has the potential to sequester about <span className="bold">41,245 tonnes of carbon by 2050</span>and <span className="bold">75,300 tonnes by 2070.</span></p>
+                <p className="text-white text-green p-5 tight-drop-heavy">Planting <span className="bold">500 hectares of land</span>has the potential to sequester about <span className="bold">41,245 tonnes of carbon by 2050</span>and <span className="bold">75,300 tonnes by 2070.</span></p>
               </Col>
             </Row>
           </Fade>

@@ -72,9 +72,14 @@ hr.thick {
 
   padding-bottom: 10%;
 }
+.carousel-indicators {
+  margin-right: 40%;
+    margin-bottom: .9rem;
+    margin-left: 40%;
+}
 
 .carousel-indicators li {
-  width: 50px;
+  width: 40px;
   background: #fff;
   opacity: .5;
   margin: 0 5px;
@@ -1121,6 +1126,10 @@ footer {
   text-shadow: 0px 1px 30px rgba(0, 0, 0, 100);
 }
 
+.super-drop {
+  text-shadow: 0px 1px 20px rgba(0, 0, 0, 100);
+}
+
 
 .intro-links{
   margin: 10px 35px 10px 0px;
@@ -1146,6 +1155,26 @@ transition: all .5s ease;
   
   font-size: 12px;
   font-weight: 700;
+}
+
+
+.down-links{
+  font-size: 14px;
+  letter-spacing: 0.1px!important;
+}
+
+.down-links:after {
+  content: url(/navArrow.svg);
+  transform: rotate(90deg)!important;
+  margin-left: 5px;
+  width: 16px;
+  display: inline-block;
+  color: #fff;
+}
+
+.down-links:hover {
+transform: translateY(3px)!important;
+transition: all .5s ease;
 }
 
 
@@ -1528,18 +1557,25 @@ span.authorTitle {
 }
 
 
-.bg-communal{
-
-  
-  background-image: url('/communal-smart-forest-lopacity.png');
-
+.bg-communal {
+  background-image: url(/communal-smart-forest-lopacity.png);
   background-attachment: fixed;
-  background-position: center;
+  background-position: 50% 100%;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
 }
 
 /* Our Smart Forests Cards */
+
+.card-hover {
+  box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.2);
+}
+
+.card-hover:hover {
+  box-shadow: 0px 2px 20px 6px rgba(0, 0, 0, 0.5);
+  transition: all .5s ease;
+}
+
 
 .corporate-card {
     background: url('/corporate-smart-forest-lopacity.png');
@@ -1630,7 +1666,7 @@ transition: all .5s ease;
 
 .callout-box {
   font-size: 22px;
-  background: url('/legacy-smart-forest-lopacity.png');
+  background: url('/landing-image.png');
   background-size: cover;
   background-position: center;
 }

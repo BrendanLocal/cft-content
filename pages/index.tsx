@@ -295,7 +295,7 @@ export default function Home({ file, href, children}) {
             <Row className="justify-content-center  align-items-stretch mx-lg-5">
                 <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="h6 text-orange bold">{editingdata.part6_box1para1}</p>
+                  <p className="h6 text-mildgreen bold">{editingdata.part6_box1para1}</p>
                   <p className="large text-green mb-2">{editingdata.part6_box1para2}</p>
                   <p className="text-grey mb-3">{editingdata.part6_box1para3}</p>
                   <Link href="carbon-calculator">
@@ -305,7 +305,7 @@ export default function Home({ file, href, children}) {
               </Col>
               <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="h6 text-orange bold">{editingdata.part6_box2para1}</p>
+                  <p className="h6 text-mildgreen bold">{editingdata.part6_box2para1}</p>
                   <p className="large text-green mb-2">{editingdata.part6_box2para2}</p>
                   <p className="text-grey mb-4">{editingdata.part6_box2para3}</p>
                   <Button variant="green mt-3">{editingdata.part6_box2button1}</Button>
@@ -313,7 +313,7 @@ export default function Home({ file, href, children}) {
               </Col>
               <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="h6 text-orange bold">{editingdata.part6_box3para1}</p>
+                  <p className="h6 text-mildgreen bold">{editingdata.part6_box3para1}</p>
                   <p className="large text-green mb-2">{editingdata.part6_box3para2}</p>
                   <p className="text-grey mb-3">{editingdata.part6_box3para3}</p>
                   <Button variant="green" className="mt-5">{editingdata.part6_box3button1}</Button>

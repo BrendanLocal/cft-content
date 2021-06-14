@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Head from 'next/head'
-
+import Fade from 'react-reveal/Fade';
 import Link from 'next/link'
 import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { GetStaticProps } from 'next'
@@ -135,12 +135,15 @@ return (
 
 
     <Container id="5-phase" className="v-full z-999 bg-green p-5">
+    <Fade bottom>
       <Row className="justify-content-center align-items-center my-4">
         <Col className="col-11 col-lg-8 text-center text-white">
         <h2 className=" text-orange bold mb-2">The Smart Forest Action Plan</h2>
         <p className="large mt-0 mb-0">When you invest in a Smart Forest, you stay informed on its progress - from site selection to planting to ongoing maintenance and carbon footprint impact.</p>
         </Col>
       </Row>
+      </Fade>
+      <Fade bottom>
       <Row className="justify-content-center align-items-center px-5">
         
         <Carousel activeIndex={index} onSelect={handleSelect} nextIcon={<span aria-hidden="false" className="carousel-control-next-icon" />} nextLabel="" prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" />} prevLabel="" className="col-12 col-md-11 col-lg-10 d-flex bg-brown roundedBox innerShadow-heavy px-0"> 
@@ -155,8 +158,8 @@ return (
           <Carousel.Item interval={100000}>
           <div className="d-block w-100 phase1"></div>
             <Carousel.Caption className="col-9 col-lg-4">
-              <h3 className="h2 text-left tight-drop bold mb-1">PROCURE</h3>
-              <p className="large text-left tight-drop bold ">Acquire land across Canada.</p>
+              <h3 className="smallCaps text-left tight-drop bold mb-1">PROCURE</h3>
+              <p className="h3 text-left tight-drop mb-4">Acquire land across Canada.</p>
               
               <div className="card card-drop no-border bg-white px-4 py-2 op-8 mb-2 ">
                 <ul className="text-grey text-left checkMark pe-3 pb-0">
@@ -175,214 +178,329 @@ return (
           <Carousel.Item interval={100000}>
           <div className="d-block w-100 phase2 " ></div>
             <Carousel.Caption className="col-9 col-lg-4">
-              <h3 className="h2 text-left tight-drop-light bold">PREPARE</h3>
-              <p className="large text-left tight-drop-light bold mb-5">Assess, plan, and complete site preparation for planting.</p>
+              <h3 className="smallCaps text-left tight-drop bold mb-1">PREPARE</h3>
+              <p className="h3 text-left tight-drop mb-4">Assess, plan, and complete site preparation for planting.</p>
+              
+              <div className="card card-drop no-border bg-white px-4 py-2 op-8 mb-2 ">
+                <ul className="text-grey text-left checkMark pe-3 pb-0">
+                  <li className="pb-0">Identify appropriate areas for Smart Forests across Canada</li>
+                </ul>
+              </div>
+
+              <div className="card card-drop no-border bg-white px-4 py-2 op-8">
+                <ul className="text-grey text-left checkMark pe-3 pb-0">
+                <li className="pb-0">Secure seedlings that will thrive in the local environment</li>
+                </ul>
+              </div>
+            
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item interval={100000}>
           <div className="d-block w-100 phase3 " ></div>
             <Carousel.Caption className="col-9 col-lg-4">
-              <h3 className="h2 text-left tight-drop bold">PLANT</h3>
-              <p className="large text-left tight-drop bold mb-5">Strategically plant seedlings to ensure optimal growth and carbon sequestration.</p>
+              <h3 className="smallCaps text-left tight-drop bold mb-1">PLANT</h3>
+              <p className="h3 text-left tight-drop mb-4">Strategically plant seedlings to ensure optimal growth and carbon sequestration.</p>
+              
+              <div className="card card-drop no-border bg-white px-4 py-2 op-8 mb-2 ">
+                <ul className="text-grey text-left checkMark pe-3 pb-0">
+                  <li className="pb-0">Identify appropriate areas for Smart Forests across Canada</li>
+                </ul>
+              </div>
+
+              <div className="card card-drop no-border bg-white px-4 py-2 op-8">
+                <ul className="text-grey text-left checkMark pe-3 pb-0">
+                <li className="pb-0">Secure seedlings that will thrive in the local environment</li>
+                </ul>
+              </div>
+            
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item interval={100000}>
           <div className="d-block w-100 phase4 "></div>
             <Carousel.Caption className="col-9 col-lg-4">
-              <h3 className="h2 text-left tight-drop-heavy bold">PRESERVE</h3>
-              <p className="large text-left tight-drop-heavy bold mb-5">Perform innovative forest management activities to maintain the forest and maximize its impact.</p>
+              <h3 className="smallCaps text-left tight-drop bold mb-1">PRESERVE</h3>
+              <p className="h3 text-left tight-drop mb-4">Perform innovative forest management activities to maintain the forest and maximize its impact.</p>
+              <div className="card card-drop no-border bg-white px-4 py-2 op-8 mb-2 ">
+                <ul className="text-grey text-left checkMark pe-3 pb-0">
+                  <li className="pb-0">Identify appropriate areas for Smart Forests across Canada</li>
+                </ul>
+              </div>
+
+              <div className="card card-drop no-border bg-white px-4 py-2 op-8">
+                <ul className="text-grey text-left checkMark pe-3 pb-0">
+                <li className="pb-0">Secure seedlings that will thrive in the local environment</li>
+                </ul>
+              </div>
+           
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item interval={100000}>
           <div className="d-block w-100 phase5 " ></div>
             <Carousel.Caption className="col-9 col-lg-4">
-              <h3 className="h2 text-left tight-drop bold ">PROTECT</h3>
-              <p className="large text-left tight-drop bold mb-5">Audit, and set a no clear-cut guarantee on every forest.</p>
+              <h3 className="smallCaps text-left tight-drop bold mb-1">PROTECT</h3>
+              <p className="h3 text-left tight-drop mb-4">Audit, and set a no clear-cut guarantee on every forest.</p>
+              <div className="card card-drop no-border bg-white px-4 py-2 op-8 mb-2 ">
+                <ul className="text-grey text-left checkMark pe-3 pb-0">
+                  <li className="pb-0">Identify appropriate areas for Smart Forests across Canada</li>
+                </ul>
+              </div>
+
+              <div className="card card-drop no-border bg-white px-4 py-2 op-8">
+                <ul className="text-grey text-left checkMark pe-3 pb-0">
+                <li className="pb-0">Secure seedlings that will thrive in the local environment</li>
+                </ul>
+              </div>
+
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
-
-
-        
+ 
       </Row>
+      </Fade>
     </Container>
 
     
     
     <Container id="smart-forests" fluid className="v-full z-999 bg-green py-5">
       
+    <Fade bottom>
       <Row className="pt-5 align-items-center justify-content-center">
-        <Col className="col-12 col-lg-6 pe-lg-0 mt-5">
+        <Col className="col-12 col-lg-7 pe-lg-0 mt-5">
           <h2 className="text-center text-orange bold">Start making a difference now—and far into the future</h2>
-          <p className="text-center text-white medium thin mb-4">Each Smart Forest has a ‘planting prescription’. This is the unique mix of species that’s right for the local climate, soil conditions, drainage, and land history. This optimal habitat maximizes the positive impacts the Forest will make, including carbon sequestration, oxygen production and water absorption.</p>
+          <p className="text-center text-white medium thin mb-4">Each Smart Forest has a <span className="bold">‘planting prescription’</span>. This is the unique mix of species that’s right for the local climate, soil conditions, drainage, and land history. This optimal habitat maximizes the positive impacts the Forest will make, including carbon sequestration, oxygen production and water absorption.</p>
         </Col>
       </Row>
-      <Row className="justify-content-center py-5 align-items-stretch">
-      <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
-      <a href="#corporate">
-        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
-        <h4 className="text-orange tight-drop-light">Corporate Forests</h4>
-        <p className="flex-fill pb-3 text-white tight-drop">Meet ESG goals and demonstrate results</p>
-        
-        </div></a>
-        </Col>
-        <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3"><a href="#school">
-        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
-        <h4 className="text-orange tight-drop-light">School Forests</h4>
-        <p className="flex-fill pb-3 text-white tight-drop">Give students the tools to positively impact their future</p>
-        </div></a>
-        </Col>
-        <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
-        <a href="#legacy" >
-        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
-        <h4 className="text-orange tight-drop-light">Legacy Forests</h4>
-        <p className="flex-fill pb-3 text-white tight-drop">Protect the planet for future generations</p>
-        </div>
-        </a>
-        </Col>
-        <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
-        <a href="#communal">
-        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop communal-card">
-        <h4 className="text-orange tight-drop-light">Communal Forests</h4>
-        <p className="flex-fill pb-3 text-white tight-drop">Make a difference by coming together</p>
-        
-        </div></a>
-        </Col>
-      </Row>
+    </Fade>  
+    <Fade bottom>
+      <Row className="justify-content-center pb-5 align-items-stretch my-4">
+            <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+              <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
+                <h4 className="text-white tight-drop-light">Corporate Forests</h4>
+                <p className="flex-fill pb-3 text-white tight-drop">Meet ESG goals and demonstrate results</p>
+                <Link href="/#corporate" >
+                  <a className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">LEARN MORE</a>
+                </Link>
+              </div>
+            </Col>
+            <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+              <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
+                <h4 className="text-white tight-drop-light">School Forests</h4>
+                <p className="flex-fill pb-3 text-white tight-drop">Give students the tools to positively impact their future</p>
+                <Link href="/#school" >
+                  <a className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">LEARN MORE</a>
+                </Link>
+              </div>
+            </Col>
+            <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+              <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
+                <h4 className="text-white tight-drop-light">Legacy Forests</h4>
+                <p className="flex-fill pb-3 text-white tight-drop">Protect the planet for future generations</p>
+                <Link href="/#legacy" >
+                  <a className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">LEARN MORE</a>
+                </Link>
+              </div>
+            </Col>
+            <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+              <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop communal-card">
+                <h4 className="text-white tight-drop-light">Communal Forests</h4>
+                <p className="flex-fill pb-3 text-white tight-drop">Make a difference by coming together</p>
+                <Link href="/#communal" >
+                  <a className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">LEARN MORE</a>
+                </Link>
+              </div>
+            </Col>
+          </Row>
+        </Fade>
     </Container>
 
     {/* Coporate Forests */}
-    <Container fluid id="corporate" className="bg-corp sectionPad">
-      <Row className="text-center justify-content-center pt-5">
-        <Col className="col-lg-6 text-white ">
-        <h2 className="bold py-3 text-orange">
-          Corporate Smart Forests™</h2>
-        <h3>Don’t just care for the environment. Prove it.</h3>
-        <h4>If ESG is not a box you’d like to tick, but a change you’d like to make, work with us.</h4>
-        </Col>
-      </Row>
-      <Row className=" text-center  justify-content-center">
-        <Col className="col-lg-7">
-        <Row className=" horizTab  justify-content-center">
-         
-        </Row>
-        </Col>
-      </Row>
+  <Container fluid id="corporate" className="bg-corp sectionPad">
+      
+    <Fade bottom>
       <Row className="text-center justify-content-center">
-        <Col className="col-lg-7 pt-5">
-        <p className="text-white bold">
-          An investment in a Corporate Smart ForestTM is an opportunity for corporations across Canada to reimagine
-          their sustainability strategy and invest for long-term ROI. This is a turnkey and sustainable approach for
-          corporations to meet net-zero and ESG commitments, offering:
-        </p>
+        <Col className="col-11 col-lg-8 text-white ">
+        <h2 className="h1 bold py-3 text-white tight-drop-light my-5">
+          Corporate Smart Forests<span className="text-orange">™</span></h2>
         </Col>
       </Row>
+    </Fade>
 
+    <Fade bottom>
+      <Row className=" text-center  justify-content-center mb-4">
+            <Col className="col-11 col-lg-7">
+              <Row className=" horizTab  justify-content-center">
+                <Col className="mb-3">
+                <Link href="/"><Button variant="text text-orange smallCaps down-links">ABOUT</Button></Link>
+                </Col>
+                <Col className="mb-3">
+                <Link href="/"><Button variant="text text-orange smallCaps down-links">TESTIMONIAL</Button></Link>
+                </Col>
+                <Col className="mb-3">
+                <Link href="/"><Button variant="text text-orange smallCaps down-links">BOTTOM LINE</Button></Link>
+                </Col>
+                <Col className="mb-3">
+                <Link href="/"><Button variant="text text-orange smallCaps down-links">CALCULATE</Button></Link>
+                </Col>
+              </Row>
+            </Col>
+        </Row>
+      </Fade>
 
-        <Row className="pt-5 d-flex align-items-stretch px-5 justify-content-center">
-         
+      <Fade bottom>
+      <Row className="text-center justify-content-center py-5 my-5">
+        <Col className="col-11 col-lg-8 pt-5">
+        <p className="emphasis text-orange bold tight-drop-light mb-4">Don’t just care for the environment. Prove it.</p>
+        
+        </Col>
+        <Col className="col-11 col-lg-8">
+        <p className="lead text-white bold tight-drop-light px-5">If ESG is not a box you’d like to tick, but a change you’d like to make, work with us.</p>
+        
+        </Col>
+      </Row>
+      </Fade>
+
+      <Fade bottom>
+      <Row className="text-center justify-content-center mb-3 pb-0">
+        <Col className="col-lg-7 pt-5 pb-0">
+            <p className="text-white large">
+              An investment in a Corporate Smart ForestTM is an opportunity for corporations across Canada to reimagine
+              their sustainability strategy and invest for long-term ROI. This is a turnkey and sustainable approach for
+              corporations to meet net-zero and ESG commitments, offering:
+            </p>
+          </Col>
+      </Row>
+      </Fade>
+
+      <Fade bottom>
+        <Row className="d-flex align-items-stretch px-5 justify-content-center">
+  
             <Col className="col-12 col-md-3">
-            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch">
+            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch card-hover">
               <h4 className="thin text-green">Proprietary impact calculators </h4>
               <p className="flex-fill pb-3">Calculate your net-zero carbon footprint and determine the size of forest
                 needed to offset your emissions.</p>
-              <Button variant="text text-left">Try the Calculators</Button>
+              <Button className="modal-btn" variant="btn-text text text-left">Try the Calculators</Button>
             </div>
             </Col>
             
             <Col className="col-12 col-md-3">
-            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch">
+            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch card-hover">
               <h4 className="thin text-green">Real-time monitoring</h4>
               <p className="flex-fill pb-3">A secure, customized portal to watch your forest grow and build engagement
                 campaigns that bring the journey to life for shareholders, employees, and customers.</p>
-              <Button variant="text text-left">Try the Portal</Button>
+                <Button className="modal-btn" variant="btn-text text text-left">Try the Portal</Button>
             </div>
             </Col>
             
           <Col className="col-12 col-md-3">
-            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch">
+            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch card-hover">
               <h4 className="thin text-green">Transparency and reporting</h4>
               <p className="flex-fill pb-3">Demonstrate your commitment to sustainability and the significance of your
                 impact with a no clear-cut guarantee on each Smart Forest. Keep stakeholders informed with an annual
                 report on performance.</p>
-              <Button variant="text text-left">Reporting</Button>
+                <Button className="modal-btn" variant="btn-text text text-left">Reporting</Button>
             </div>
             </Col>
+        </Row>
+        </Fade>
+        
+        <Row className="text-center justify-content-center mb-3 pb-0">
 
-
+          <Col className="text-center py-5">
+            <Button className="btn-large" variant="green">Build a Corporate Smart Forest™</Button>
+            </Col>
+      
         </Row>
 
 
+        <Fade bottom>
+            <Row className="justify-content-center d-flex pb-5 mx-5 mt-5">
+              <Col className="col-11 col-lg-8 bg-brown roundedBox innerShadow p-5 m-4 blockquote-bg">
+                <h3 className="text-left blockquote text-orange p-lg-5">
+                  “We need 50 shades of green to catalyze and support all companies towards net zero… Companies will need to show how they plan to meet their net-zero targets through the appropriate mix of emission reductions and credible carbon offsets, including nature-based solutions such as reforestation.”
+                  </h3>
+                <p className="text-left text-white my-0 mx-5 bold">— Mark Carney</p>
+                <p className="text-left text-white mx-5 px-3 italic op-6">UN Special Envoy for Climate Action and Finance</p>
+              </Col>
+            </Row>
+          </Fade>
 
-      <Row>
-        <Col className="text-center py-5">
-        <Button variant="green">Build a Corporate Smart Forest™</Button></Col>
-      </Row>
 
-      <Row className="justify-content-center py-5">
-        <Col className="col-lg-8 bg-brown roundedBox p-5">
-          <Row className="justify-content-center bg-quote ">
-            <Col className="p-5 text-white">
-
-            <p className="text-orange large lead">
-            We need 50 shades of green to catalyze and support all companies towards net zero… Companies will need to show how they plan to meet their net-zero targets through the appropriate mix of emission reductions and credible carbon offsets, including nature-based solutions such as reforestation.
-            </p>
-            <span className="authorLine">Mark Carney</span>
-            <span className="authorTitle">UN Special Envoy for Climate Action and Finance</span>
-            </Col>
-          </Row>
+    <Fade bottom>
+      <Row className="justify-content-center pt-5 mb-3">
+        <Col className="col-11 col-md-8 ">
+        <h2 className="text-center text-orange tight-drop-light bold mb-3">From balance sheet to bottom line.</h2>
+        <p className="lead px-5 text-center tight-drop-light text-white">Corporate Smart Forests are good for the environment and for your business.</p>
         </Col>
       </Row>
+      </Fade>
 
-      <Row className="justify-content-center pt-5">
-        <Col className="col-lg-6">
-        <h3 className="text-center text-orange bold">From balance sheet to bottom line.</h3>
-        <p className="px-5 text-center text-white medium">Corporate Smart Forests are good for the environment and for your business.</p>
-        </Col>
-      </Row>
-      <Row className="justify-content-center">
-        <Col className="text-white p-4 col-md-6">
-        <p>An investment in a Smart Forest allows your corporation to:
-          <ul className="bulletList">
+    <Fade bottom>
+      <Row className="justify-content-center d-flex pb-5 mx-5">
+          <Col className="col-11 col-lg-7 bg-green roundedBox innerShadow px-5 pt-5 pb-4 m-4">
+        <p className="text-white large bold text-center">An investment in a Smart Forest allows your corporation to:
+        </p>
+
+          <ul className="text-white checkMark px-5 mx-5">
             <li>
             Support immediate CO2 reductions from the atmosphere 
             </li>
             <li>
-Secure ESG benefits that protect and foster growth throughout Canada
+            Secure ESG benefits that protect and foster growth throughout Canada
             </li>
             <li>
-Reduce your cumulative impacts on the environment and society
+            Reduce your cumulative impacts on the environment and society
             </li>
             <li>
-Boost the economy through the creation of local jobs
+            Boost the economy through the creation of local jobs
             </li>
             <li>
-Add shareholder value by strengthening long-term financial and operational performance
+            Add shareholder value by strengthening long-term financial and operational performance
             </li>
           </ul>
-</p>
         
-        </Col>
-       
+        </Col>      
       </Row>
-      <Row className="justify-content-center pb-5">
-      <Col className="outlineBox text-white p-4 col-lg-3">
-        <h4 className="thin py-3">Calculate your net-zero carbon footprint</h4>
-        <p>Learn how much carbon your corporation generates in an average year. </p>
-        <Link href="/carbon-calculator">
-        <Button variant="green">Calculator</Button>
-        </Link>
-        </Col>
-        <Col className="outlineBox text-white p-4 col-lg-3">
-        <h4 className="thin py-3">Determine your net zero Smart Forest target</h4>
-        <p>See how many hectares your corporation must plant to reach a net-zero emissions target.</p>
-        <Link href="/carbon-calculator">
-        <Button variant="green">Calculator</Button>
-        </Link>
+    </Fade>
+
+    
+
+    <Fade bottom>
+      <Row className="justify-content-center pt-5 mb-3">
+        <Col className="col-11 col-md-8 ">
+        <h2 className="text-center text-orange tight-drop-light bold mb-4">Start Calculating</h2>
         </Col>
       </Row>
-     
-    </Container>
+    </Fade>
+
+    
+    <Fade bottom>
+      <Row className="justify-content-center  align-items-stretch mx-lg-5">
+
+           <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+                  <p className="h6 text-mildgreen bold">STEP 1</p>
+                  <p className="large text-green mb-2">Calculate your net-zero carbon footprint</p>
+                  <p className="text-grey mb-4">Learn how much carbon your corporation generates in an average year.</p>
+                  <Link href="carbon-calculator">
+                    <Button variant="green" className="mt-3">Calculate your carbon footprint</Button>
+                  </Link>
+                </div>
+              </Col>
+
+              <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+                  <p className="h6 text-mildgreen bold">STEP 2</p>
+                  <p className="large text-green mb-2">Determine your net zero Smart Forest target</p>
+                  <p className="text-grey mb-4">See how many hectares your corporation must plant to reach a net-zero emissions target.</p>
+                  <Button variant="green" className="mt-3">Calculate your NET ZERO target</Button>
+                </div>
+              </Col>
+  
+      </Row>
+    </Fade>
+
+  </Container>
     
 
 
