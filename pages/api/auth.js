@@ -6,11 +6,9 @@ import { extractUser } from '../../lib/api-helpers';
 const handler = nc();
 
 handler.use(all);
+
 handler.post(passport.authenticate('local'), (req, res) => {
-
-  console.log(res);
-  const response = { user: extractUser(req.user) }
-
+  res.json({ user: extractUser(req.user) });
 });
 
 handler.delete((req, res) => {
