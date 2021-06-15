@@ -8,7 +8,7 @@ import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import dynamic from 'next/dynamic';
+import Map from '../components/portalMap';
 
 import Button from 'react-bootstrap/Button';
 
@@ -19,13 +19,12 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 export default function Portal({ file }) {
 
-  const [location, setLocation] = useState([]);
   const [user, { mutate }] = useCurrentUser();
-
   const [isUpdating, setIsUpdating] = useState(false);
   const nameRef = useRef();
   const [msg, setMsg] = useState({ message: '', isError: false });
   
+
 
 
 return (
@@ -45,7 +44,7 @@ return (
         <Col className="col-xl-10 ">
         <h1 className="h2 text-orange text-center">
           Welcome Back, {user ? user.name : 'stranger'}
-          {user ? user.lat : "no lat"}
+          {user ? user.lat : 'no lat'}
         </h1>
         </Col>
       </Row>

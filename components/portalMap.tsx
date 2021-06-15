@@ -2,15 +2,11 @@ import { useState } from "react";
 import ReactMapGL, { Marker } from "react-map-gl";
 
 
-export default function Map({ location })  {
+export default function Map()  {
 
   var lat = 47.185414;
   var long = -66.314062;
 
-  if (location) {
-    lat = location[0];
-    long = location[1];
-  }
 
   const [viewport, setViewport] = useState({
     width: "100%",
