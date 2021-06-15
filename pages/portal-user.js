@@ -26,14 +26,7 @@ export default function Portal({ file }) {
   const [msg, setMsg] = useState({ message: '', isError: false });
 
   
-const formOptions = {
-label: 'User Portal',
-fields: [{ name: 'title', component: 'text' }],
-}
 
-const [editingdata, form] = useGithubJsonForm(file, formOptions)
-usePlugin(form)
-useGithubToolbarPlugins()
 
 const [ session, loading ] = useSession();
 
@@ -169,7 +162,7 @@ return (
       <Row className="justify-content-center d-flex">
         <Col className="col-xl-10 ">
         <h1 className="h2 text-orange text-center">
-          {editingdata.greeting} {userMongo ? userMongo.name : 'stranger'}
+          Welcome Back, {userMongo ? userMongo.name : 'stranger'}
         </h1>
         </Col>
       </Row>
@@ -393,3 +386,4 @@ return (
 </div>
 )
 }
+
