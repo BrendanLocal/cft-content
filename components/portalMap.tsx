@@ -1,7 +1,6 @@
 import { useState } from "react";
 import ReactMapGL, { Marker } from "react-map-gl";
 
-import { useCurrentUser } from '../hooks/index';
 
 export default function Map({ location })  {
 
@@ -13,11 +12,9 @@ export default function Map({ location })  {
     long = location[1];
   }
 
-  const [user, { mutate }] = useCurrentUser();
   const [viewport, setViewport] = useState({
     width: "100%",
     height: "300px",
-    // The latitude and longitude of the center of London
     latitude: lat,
     longitude: long,
     zoom: 5

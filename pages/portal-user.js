@@ -44,6 +44,7 @@ return (
         <Col className="col-xl-10 ">
         <h1 className="h2 text-orange text-center">
           Welcome Back, {user ? user.name : 'stranger'}
+          {user ? user.lat : 'no lat'}
         </h1>
         </Col>
       </Row>
@@ -80,7 +81,7 @@ return (
             <Col className="col-lg-9 p-5">
             <TabPanel>
               <h2 className="panelHead text-center text-grey">My Smart Forest<sup>™</sup></h2>
-              <Map location={[47.185414, -66.314062]}/>
+              
               <Row className="borderGrid pt-3">
                 <Col>
                 <Row>
