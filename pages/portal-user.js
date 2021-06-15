@@ -10,11 +10,25 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import dynamic from 'next/dynamic';
 
+import { all } from '../middlewares/index';
+import { extractUser } from '../lib/api-helpers';
+import { findUserById } from '../db/index';
+
 import Button from 'react-bootstrap/Button';
 
 import { useCurrentUser } from '../hooks/index';
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+
+
+if (!user) return <Error statusCode={404} />;
+  const {
+    name, email, lat, long, _id
+  } = user || {};
+  const [currentUser] = useCurrentUser();
+  const isCurrentUser = currentUser?._id === user._id;
+
+  
 
 const Map = dynamic(() => import("../components/portalMap"), {
   loading: () => "Loading...",
@@ -23,7 +37,6 @@ const Map = dynamic(() => import("../components/portalMap"), {
 
 export default function Portal({ file }) {
 
-  const [user, { mutate }] = useCurrentUser();
   const [isUpdating, setIsUpdating] = useState(false);
   const nameRef = useRef();
   const [msg, setMsg] = useState({ message: '', isError: false });
@@ -47,8 +60,8 @@ return (
       <Row className="justify-content-center d-flex">
         <Col className="col-xl-10 ">
         <h1 className="h2 text-orange text-center">
-          Welcome Back, {user ? user.name : 'stranger'}
-          {user ? user.lat : 'no lat'}
+          Welcome Back, {name ? name : 'stranger'}
+          {lat ? lat : 'no lat'}
         </h1>
         </Col>
       </Row>
