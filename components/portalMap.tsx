@@ -33,8 +33,8 @@ return <ReactMapGL
 
     <div >
       <Marker
-      latitude={user ? user.latitude : lat}
-      longitude={user ? user.longitude : long}
+      latitude={lat}
+      longitude={long}
       offsetLeft={-30}
       offsetTop={-50}>
         <img height={60} src="mapPin-orange.svg"/>
