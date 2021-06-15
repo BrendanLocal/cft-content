@@ -16,10 +16,10 @@ import { useCurrentUser } from '../hooks/index';
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
+const [user, { mutate }] = useCurrentUser();
 
-export default function Portal({ file }) {
+export default function Portal ({user}) {
 
-  const [user, { mutate }] = useCurrentUser();
   const [isUpdating, setIsUpdating] = useState(false);
   const nameRef = useRef();
   const [msg, setMsg] = useState({ message: '', isError: false });
