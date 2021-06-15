@@ -29,10 +29,6 @@ export default function Portal({ file }) {
 
 
 
-
-const [user] = useCurrentUser();
-
-
   const [isUpdating, setIsUpdating] = useState(false);
   
   const [msg, setMsg] = useState({ message: '', isError: false });
