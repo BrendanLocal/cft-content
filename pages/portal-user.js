@@ -8,7 +8,6 @@ import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Map from '../components/portalMap';
 
 import Button from 'react-bootstrap/Button';
 
@@ -16,6 +15,10 @@ import { useCurrentUser } from '../hooks/index';
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
+const Map = dynamic(() => import("../components/portalMap"), {
+  loading: () => "Loading...",
+  ssr: false
+});
 
 export default function Portal({ file }) {
 
