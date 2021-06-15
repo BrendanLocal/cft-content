@@ -3,10 +3,15 @@ import ReactMapGL, { Marker } from "react-map-gl";
 
 import { useCurrentUser } from '../hooks/index';
 
-export default function Map() {
+export default function Map({ location })  {
 
   var lat = 47.185414;
   var long = -66.314062;
+
+  if (location) {
+    lat = location[0];
+    long = location[1];
+  }
 
   const [user, { mutate }] = useCurrentUser();
   const [viewport, setViewport] = useState({
