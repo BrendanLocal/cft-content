@@ -27,7 +27,9 @@ handler.post(async (req, res) => {
   }
   const hashedPassword = await bcrypt.hash(password, 10);
   const user = await insertUser(req.db, {
-    email, password: hashedPassword, name, long: 0, lat: 0,
+    email, password: hashedPassword, name, 
+    longitude: 0, 
+    latitude: 0,
     trees: 0,
     acres: 0,
     type: "",

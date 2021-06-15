@@ -31,7 +31,8 @@ export default function Portal({ file }) {
   
   const [msg, setMsg] = useState({ message: '', isError: false });
   
-  var location = [47.185414, -66.314062];
+  var location = [user.latitude, user.longitude];
+
 
 
 return (
@@ -52,7 +53,6 @@ return (
         <h1 className="h2 text-orange text-center">
           Welcome Back, {user ? user.name : 'stranger'}
         </h1>
-        {user ? user.longitude : ''} 
         </Col>
       </Row>
       <Row className="flex justify-content-center">
