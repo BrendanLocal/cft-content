@@ -365,6 +365,7 @@ hr {
   transition: all .5s;
 }
 
+
 .modal-btn {
   color: #FF4D24;
   padding: 5px 5px 5px 5px!important;
@@ -379,7 +380,6 @@ hr {
 .modal-dialog {
   max-width: 800px;
 }
-
 
 
 .modal-header.button.close {
@@ -1155,6 +1155,9 @@ footer {
   text-shadow: 0px 1px 20px rgba(0, 0, 0, 100);
 }
 
+.tight-drop video {
+  text-shadow: 0px 1px 8px rgba(0, 0, 0, 0.6);
+}
 
 .intro-links{
   margin: 10px 35px 10px 0px;
@@ -1403,11 +1406,56 @@ z-index:999;
     font-weight: 100;
 }
 
+.newsItem.tickerButton {
+  padding: 10px 15px 12px 8px!important;
+  border-radius: 6px;
+  font-size: 14px!important;
+  text-transform: uppercase;
+  font-weight: 600 !important;
+  transition: all .5s;
+  color: #fff;
+  background-color: #00823B;
+  margin: 0px 10px 0px 25px;
+}
+
+.newsItem.tickerButton:hover {
+  
+  transition: all .5s;
+  color: #fff;
+
+}
+
+.newsItem.tickerButton:before {
+  content:"";
+  background: url("/play-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1em;
+  height: 1em;
+  position: relative;
+  display: inline-block;
+  margin: 0 5px 0;
+  top:2px;
+}
+
 
 .newsItem:hover {
 
     color: #FF4D24;
 
+}
+
+.newsItem:not(.tickerButton):before {
+  content:"";
+  background: url("/cft-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1em;
+  height: 1em;
+  position: relative;
+  display: inline-block;
+  margin: 0 15px 0;
+  top:2px;
 }
 
 .newsItem:before {
