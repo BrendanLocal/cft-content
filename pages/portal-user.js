@@ -80,7 +80,7 @@ return (
             <Col className="col-lg-9 p-5">
             <TabPanel>
               <h2 className="panelHead text-center text-grey">My Smart Forest<sup>™</sup></h2>
-              <Map location={[user.lat, user.long]}/>
+              <Map location={user ? [user.lat, user.long] : [47.185414, -66.314062]}/>
               <Row className="borderGrid pt-3">
                 <Col>
                 <Row>
