@@ -405,7 +405,7 @@ return (
             </div>
             </Col>
             
-          <Col className="col-12 col-md-3 ">
+          <Col className="col-12 col-md-3 mb-3">
             <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch card-hover">
               <h4 className="thin text-green">Transparency and reporting</h4>
               <p className="flex-fill pb-3">Demonstrate your commitment to sustainability and the significance of your
