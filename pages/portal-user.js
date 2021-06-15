@@ -31,10 +31,10 @@ export default function Portal({ file }) {
   const [msg, setMsg] = useState({ message: '', isError: false });
   
 
-  (async () => {
+(async () => {
 
-    const [user] = await useCurrentUser();
-  
+  const [user] = useCurrentUser();
+});
 
 
 
@@ -232,6 +232,6 @@ return (
 
   </main>
 </div>
-)});
+)
 }
 
