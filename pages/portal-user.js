@@ -19,12 +19,13 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 export default function Portal({ file }) {
 
-  const [user, { mutate }] = useCurrentUser();
+  const [location, setLocation] = useState([]);
+  const [user, { mutate }] = useCurrentUser().then(
+  setLocation([user.lat, user.long])
+  );
   const [isUpdating, setIsUpdating] = useState(false);
   const nameRef = useRef();
   const [msg, setMsg] = useState({ message: '', isError: false });
-  const [location, setLocation] = useState([]);
-  setLocation([user.lat, user.long]);
   const Map = dynamic(() => import("../components/portalMap"), {
     loading: () => "Loading...",
     ssr: false
