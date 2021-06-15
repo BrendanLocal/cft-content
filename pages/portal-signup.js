@@ -3,6 +3,10 @@ import Head from 'next/head';
 import Router from 'next/router';
 import { useCurrentUser } from '../hooks/index';
 
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 const SignupPage = () => {
   const [user, { mutate }] = useCurrentUser();
   const [errorMsg, setErrorMsg] = useState('');
@@ -33,13 +37,15 @@ const SignupPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Sign up</title>
-      </Head>
-      <div>
+
+      <Container>
+        <Row><Col>
         <h2>Sign up</h2>
+
+      </Col></Row>
         <form onSubmit={handleSubmit}>
           {errorMsg ? <p style={{ color: 'red' }}>{errorMsg}</p> : null}
+          <Row><Col>
           <label htmlFor="name">
             <input
               id="name"
@@ -48,6 +54,8 @@ const SignupPage = () => {
               placeholder="Your name"
             />
           </label>
+          </Col></Row>
+          <Row><Col>
           <label htmlFor="email">
             <input
               id="email"
@@ -56,6 +64,8 @@ const SignupPage = () => {
               placeholder="Email address"
             />
           </label>
+          </Col></Row>
+          <Row><Col>
           <label htmlFor="password">
             <input
               id="password"
@@ -65,12 +75,9 @@ const SignupPage = () => {
             />
           </label>
           <button type="submit">Sign up</button>
+          </Col></Row>
         </form>
-        <p style={{ color: '#777', textAlign: 'center' }}>
-          Note: The database is public. For your privacy,
-          please avoid using your personal, work email.
-        </p>
-      </div>
+      </Container>
     </>
   );
 };
