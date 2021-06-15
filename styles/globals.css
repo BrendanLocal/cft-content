@@ -72,6 +72,7 @@ hr.thick {
 
   padding-bottom: 10%;
 }
+
 .carousel-indicators {
   margin-right: 40%;
     margin-bottom: .9rem;
@@ -2004,11 +2005,11 @@ height: 5vh;
   }
 
   .phases {
-    background: url('/5Phases-mob.jpg');
+    background: url('/5Phases-mob.jpg')!important;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: 50rem;
+      height: 44rem;
   }
   
   .phase1 {
@@ -2016,7 +2017,7 @@ height: 5vh;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: 50rem;
+      height: 44rem;
   }
   
   .phase2 {
@@ -2024,7 +2025,7 @@ height: 5vh;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: 50rem;
+      height: 44rem;
   }
   
   .phase3 {
@@ -2032,7 +2033,7 @@ height: 5vh;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: 50rem;
+      height: 44rem;
   }
   
   .phase4 {
@@ -2040,7 +2041,7 @@ height: 5vh;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: 50rem;
+      height: 44rem;
   }
   
   .phase5 {
@@ -2048,7 +2049,7 @@ height: 5vh;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: 50rem;
+      height: 44rem;
   }
 
 
@@ -2071,6 +2072,12 @@ font-size: .9em;
   
 }
 
+.carousel-indicators {
+  margin-right: 20%;
+    margin-bottom: .9rem;
+    margin-left: 20%;
+}
+
 .carousel-caption {
   top: 3.5rem;
 }
@@ -2080,11 +2087,11 @@ font-size: .9em;
 }
 
 .phases {
-  background: url('/5Phases-mob.jpg');
+  background: url('/5Phases-mob.jpg')!important;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 60rem;
+    height: 46rem;
 }
 
 .phase1 {
@@ -2092,7 +2099,7 @@ font-size: .9em;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 60rem;
+    height: 46rem;
 }
 
 .phase2 {
@@ -2100,7 +2107,7 @@ font-size: .9em;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 60rem;
+    height: 46rem;
 }
 
 .phase3 {
@@ -2108,7 +2115,7 @@ font-size: .9em;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 60rem;
+    height: 46rem;
 }
 
 .phase4 {
@@ -2116,7 +2123,7 @@ font-size: .9em;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 60rem;
+    height: 46rem;
 }
 
 .phase5 {
@@ -2124,7 +2131,7 @@ font-size: .9em;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 60rem;
+    height: 46rem;
 }
 
 .protorow {

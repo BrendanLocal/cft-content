@@ -271,7 +271,7 @@ return (
       
     <Fade bottom>
       <Row className="pt-5 align-items-center justify-content-center">
-        <Col className="col-11 col-lg-7 pe-lg-0 mt-5">
+        <Col className="col-10 col-lg-7 pe-lg-0 mt-5">
           <h2 className="text-center text-orange bold">Start making a difference now—and far into the future</h2>
           <p className="text-center text-white medium thin mb-4">Each Smart Forest has a <span className="bold">‘planting prescription’</span>. This is the unique mix of species that’s right for the local climate, soil conditions, drainage, and land history. This optimal habitat maximizes the positive impacts the Forest will make, including carbon sequestration, oxygen production and water absorption.</p>
         </Col>
@@ -333,16 +333,16 @@ return (
       <Row className=" text-center  justify-content-center mb-4">
             <Col className="col-11 col-lg-7">
               <Row className=" horizTab  justify-content-center">
-                <Col className="mb-3">
+                <Col className="col-5 col-md-3 mb-3">
                 <Button href="#corp-about" variant="text text-orange tight-drop-light smallCaps down-links">ABOUT</Button>
                 </Col>
-                <Col className="mb-3">
+                <Col className="col-5 col-md-3 mb-3">
                 <Button href="#corp-testimonial" variant="text text-orange tight-drop-light smallCaps down-links">TESTIMONIAL</Button>
                 </Col>
-                <Col className="mb-3">
+                <Col className="col-5 col-md-3 mb-3">
                 <Button href="#corp-bottom-line" variant="text text-orange tight-drop-light smallCaps down-links">BOTTOM LINE</Button>
                 </Col>
-                <Col className="mb-3">
+                <Col className="col-5 col-md-3 mb-3">
                 <Button href="#corp-calculate" variant="text text-orange tight-drop-light smallCaps down-links">CALCULATE</Button>
                 </Col>
               </Row>
@@ -352,10 +352,10 @@ return (
 
       <Fade bottom>
       <Row id="corp-about" className="text-center justify-content-center py-4 px-5 mt-5">
-      <Col className="col-11 col-lg-7">
+      <Col className="col-12 col-lg-7">
         <p className="emphasis-2 text-orange tight-drop-light mb-3">Don’t just care for the environment. <span className="emphasis text-white">Prove it.</span></p>
         </Col>
-        <Col className="col-11 col-lg-7">
+        <Col className="col-12 col-lg-7">
         <p className="lead text-white bold ">If ESG is not a box you’d like to tick, but a change you’d like to make, work with us.</p>
         
         </Col>
@@ -387,7 +387,7 @@ return (
       <Fade bottom>
         <Row className="d-flex align-items-stretch px-5 justify-content-center">
   
-            <Col className="col-12 col-md-3">
+            <Col className="col-12 col-md-3 mb-3">
             <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch card-hover">
               <h4 className="thin text-green">Proprietary impact calculators </h4>
               <p className="flex-fill pb-3">Calculate your net-zero carbon footprint and determine the size of forest
@@ -396,7 +396,7 @@ return (
             </div>
             </Col>
             
-            <Col className="col-12 col-md-3">
+            <Col className="col-12 col-md-3 mb-3">
             <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch card-hover">
               <h4 className="thin text-green">Real-time monitoring</h4>
               <p className="flex-fill pb-3">A secure, customized portal to watch your forest grow and build engagement
@@ -405,7 +405,7 @@ return (
             </div>
             </Col>
             
-          <Col className="col-12 col-md-3">
+          <Col className="col-12 col-md-3 ">
             <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch card-hover">
               <h4 className="thin text-green">Transparency and reporting</h4>
               <p className="flex-fill pb-3">Demonstrate your commitment to sustainability and the significance of your
@@ -419,7 +419,7 @@ return (
         
         <Row className="text-center justify-content-center mb-3 pb-0">
 
-          <Col className="text-center py-5">
+          <Col className="col-10 text-center py-5">
             <Button className="btn-large" variant="green">Build a Corporate Smart Forest™</Button>
             </Col>
       
@@ -464,16 +464,16 @@ return (
 
     <Fade bottom>
       <Row id="corp-bottom-line" className="justify-content-center pt-5 mb-3">
-        <Col className="col-11 col-md-8 ">
+        <Col className="col-10 col-md-8 ">
         <h2 className="text-center text-orange tight-drop-light bold mb-3">From balance sheet to bottom line.</h2>
-        <p className="lead px-5 text-center tight-drop-light text-white">Corporate Smart Forests are good for the environment and for your business.</p>
+        <p className="lead px-3 text-center tight-drop-light text-white">Corporate Smart Forests are good for the environment and for your business.</p>
         </Col>
       </Row>
       </Fade>
 
     <Fade bottom>
       <Row className="justify-content-center d-flex pb-5 mx-5 mb-5">
-          <Col className="col-11 col-lg-7 bg-green roundedBox innerShadow px-3 pt-5 pb-4 m-4 mt-2">
+          <Col className="col-12 col-md-7 col-lg-7 bg-green roundedBox innerShadow px-3 pt-5 pb-4 m-4 mt-2">
         <p className="text-white large bold text-center">An investment in a Smart Forest allows your corporation to:
         </p>
 
@@ -556,16 +556,16 @@ return (
       <Row className=" text-center  justify-content-center mb-4">
             <Col className="col-11 col-lg-7">
               <Row className=" horizTab  justify-content-center">
-                <Col className="mb-3">
+                <Col className="col-5 col-md-3 mb-3">
                 <Link href="#school-1"><Button variant="text text-orange smallCaps tight-drop-light down-links">ABOUT</Button></Link>
                 </Col>
-                <Col className="mb-3">
+                <Col className="col-5 col-md-3 mb-3">
                 <Link href="#school-2"><Button variant="text text-orange smallCaps tight-drop-light down-links">TESTIMONIALS</Button></Link>
                 </Col>
-                <Col className="mb-3">
+                <Col className="col-5 col-md-3 mb-3">
                 <Link href="#school-3"><Button variant="text text-orange smallCaps tight-drop-light down-links">STUDENTS</Button></Link>
                 </Col>
-                <Col className="mb-3">
+                <Col className="col-5 col-md-3 mb-3">
                 <Link href="#school-4"><Button variant="text text-orange smallCaps tight-drop-light down-links">CALCULATE</Button></Link>
                 </Col>
               </Row>
@@ -607,7 +607,7 @@ return (
       <Fade bottom>
         <Row className="d-flex align-items-stretch px-5 justify-content-center">
   
-            <Col className="col-12 col-md-3">
+            <Col className="col-12 col-md-3 mb-3">
             <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch card-hover">
               <h4 className="thin text-green">See the change you make</h4>
               <p className="flex-fill pb-3">A Smart Forest offers an opportunity to educate students about environmental stewardship with digital tools to track its effects in real time.</p>
@@ -615,7 +615,7 @@ return (
             </div>
             </Col>
             
-            <Col className="col-12 col-md-3">
+            <Col className="col-12 col-md-3 mb-3">
             <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch card-hover">
               <h4 className="thin text-green">Local fundraising, global impact</h4>
               <p className="flex-fill pb-3">An easy-to-execute program that taps into students’ interests and demonstrates its immediate and long-term benefits.</p>
@@ -623,7 +623,7 @@ return (
             </div>
             </Col>
             
-          <Col className="col-12 col-md-3">
+          <Col className="col-12 col-md-3 mb-3">
             <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch card-hover">
               <h4 className="thin text-green">Be part of Canadian history</h4>
               <p className="flex-fill pb-3">The School Smart Forest™ Ambassadors program names the environmental stewards who have created a more sustainable future for all.</p>
@@ -635,7 +635,7 @@ return (
         
         <Row className="text-center justify-content-center mb-3 pb-0">
 
-          <Col className="text-center py-5">
+          <Col className="col-10 text-center py-5">
             <Button className="btn-large" variant="green">Build a School Smart Forest™</Button>
             </Col>
       
@@ -681,14 +681,14 @@ return (
       <Row id="school-3" className="justify-content-center pt-5 mb-3">
         <Col className="col-11 col-md-7 ">
         <h2 className="text-center text-orange tight-drop-light bold mb-3">Students make great teachers. Give them a forest to manage.</h2>
-        <p className="lead px-5 text-center tight-drop-light text-white">Spark a life-long connection to the environment and teach valuable skills.</p>
+        <p className="lead px-3 text-center tight-drop-light text-white">Spark a life-long connection to the environment and teach valuable skills.</p>
         </Col>
       </Row>
       </Fade>
 
     <Fade bottom>
       <Row className="justify-content-center d-flex pb-5 mx-5 mb-5">
-          <Col className="col-11 col-lg-7 bg-green roundedBox innerShadow px-5 pt-5 pb-4 m-4 mt-2">
+          <Col className="col-12 col-md-7 col-lg-7 bg-green roundedBox innerShadow px-5 pt-5 pb-4 m-4 mt-2">
         <p className="text-white large bold text-center">The Smart Forest program empowers students to take action against the devastating effects of climate change, inspires leadership and builds organizational skills. Raising funds to build a forest is:
         </p>
 
@@ -769,16 +769,16 @@ return (
       <Row className=" text-center  justify-content-center mb-4">
             <Col className="col-11 col-lg-7">
               <Row className=" horizTab  justify-content-center">
-                <Col className="mb-3">
+                <Col className="col-5 col-md-3 mb-3">
                 <Link href="#legacy-1"><Button variant="text text-orange smallCaps tight-drop-light down-links">ABOUT</Button></Link>
                 </Col>
-                <Col className="mb-3">
+                <Col className="col-5 col-md-3 mb-3">
                 <Link href="#legacy-2"><Button variant="text text-orange smallCaps tight-drop-light down-links">TESTIMONIALS</Button></Link>
                 </Col>
-                <Col className="mb-3">
+                <Col className="col-5 col-md-3 mb-3">
                 <Link href="#legacy-3"><Button variant="text text-orange smallCaps tight-drop-light down-links">GROWTH</Button></Link>
                 </Col>
-                <Col className="mb-3">
+                <Col className="col-5 col-md-3 mb-3">
                 <Link href="#legacy-4"><Button variant="text text-orange smallCaps tight-drop-light down-links">CALCULATE</Button></Link>
                 </Col>
               </Row>
@@ -788,7 +788,7 @@ return (
 
       
       <Fade bottom>
-      <Row id="legacy-1" className="text-center justify-content-center py-4 px-4 mt-5">
+      <Row id="legacy-1" className="text-center justify-content-center py-4 px-3 mt-5">
         <Col className="col-11 col-lg-7">
         <p className="emphasis text-orange tight-drop-light mb-4">Leave a legacy that will grow for centuries.</p>
         </Col>
@@ -809,7 +809,7 @@ return (
 
       <Fade bottom>
       <Row className="text-center justify-content-center mb-3 p-4 pb-0">
-        <Col className="col-11 col-lg-7 pb-0">
+        <Col className="col-10 col-lg-7 pb-0">
             <p className="text-white large">
             A Legacy Forest is your opportunity to invest in the future of our planet. Diversify your portfolio with  acres of reforested land, plentiful wildlife, cleaner air and water preservation. It's an investment that will pay off with lasting environmental, social, and economic returns for all Canadians in the years to come. 
             </p>
@@ -819,7 +819,7 @@ return (
         
         <Row className="text-center justify-content-center mb-3 pb-0">
 
-          <Col className="text-center pb-5">
+          <Col className="col-10 text-center pb-5">
             <Button className="btn-large" variant="green">Build a Legacy Smart Forest™</Button>
             </Col>
       
@@ -865,14 +865,14 @@ return (
       <Row id="legacy-3" className="justify-content-center pt-5 mb-3">
         <Col className="col-11 col-md-7 ">
         <h2 className="text-center text-orange tight-drop-light bold mb-3">Make a slow growth investment.</h2>
-        <p className="lead px-5 text-center tight-drop-light text-white">Preserve and protect our planet now—and for future generations.</p>
+        <p className="lead px-3 text-center tight-drop-light text-white">Preserve and protect our planet now—and for future generations.</p>
         </Col>
       </Row>
       </Fade>
 
     <Fade bottom>
       <Row className="justify-content-center d-flex pb-5 mx-5 mb-5">
-          <Col className="justify-content-center align-items-center col-11 col-lg-7 bg-green roundedBox innerShadow px-3 pt-5 pb-4 m-4 mt-2">
+          <Col className="justify-content-center align-items-center col-12 col-lg-7 bg-green roundedBox innerShadow px-3 pt-5 pb-4 m-4 mt-2">
         <p className="text-white large bold text-center">Generate remarkable returns by investing in:
         </p>
 
@@ -951,16 +951,16 @@ return (
       <Row className=" text-center  justify-content-center mb-4">
             <Col className="col-11 col-lg-7">
               <Row className=" horizTab  justify-content-center">
-                <Col className="mb-3">
+                <Col className="col-5 col-md-3 mb-3">
                 <Link href="#comm-1"><Button variant="text text-orange smallCaps tight-drop-light down-links">ABOUT</Button></Link>
                 </Col>
-                <Col className="mb-3">
+                <Col className="col-5 col-md-3 mb-3">
                 <Link href="#comm-2"><Button variant="text text-orange smallCaps tight-drop-light down-links">TESTIMONIALS</Button></Link>
                 </Col>
-                <Col className="mb-3">
+                <Col className="col-5 col-md-3 mb-3">
                 <Link href="#comm-3"><Button variant="text text-orange smallCaps tight-drop-light down-links">COMMUNITY</Button></Link>
                 </Col>
-                <Col className="mb-3">
+                <Col className="col-5 col-md-3 mb-3">
                 <Link href="#comm-4"><Button variant="text text-orange smallCaps tight-drop-light down-links">CALCULATE</Button></Link>
                 </Col>
               </Row>
@@ -971,10 +971,10 @@ return (
       
       <Fade bottom>
       <Row id="comm-1" className="text-center justify-content-center py-4 px-5 mt-5">
-        <Col className="col-11 col-lg-8">
+        <Col className="col-12 col-lg-8">
         <p className="emphasis text-orange tight-drop-light mb-4">Work together to protect future communities.</p>
         </Col>
-        <Col className="col-11 col-lg-8">
+        <Col className="col-12 col-lg-8">
         <p className="lead text-white bold ">Every Canadian can take action on climate change.</p>
         
         </Col>
@@ -991,7 +991,7 @@ return (
 
       <Fade bottom>
       <Row className="text-center justify-content-center mb-3 p-4 pb-0">
-        <Col className="col-11 col-lg-7 pb-0">
+        <Col className="col-10 col-lg-7 pb-0">
             <p className="text-white large">
             Each plant, animal, and microbe in the forest contributes something unique and essential to the ecosystem: a forest is a community that is greater than the sum of its parts. This simple, but powerful fact inspired the Communal ForestTM initiative. It’s an opportunity for every individual in Canada to play a part and help build a forest.
             </p>
@@ -1001,7 +1001,7 @@ return (
         
         <Row className="text-center justify-content-center mb-3 pb-0">
 
-          <Col className="text-center pb-5">
+          <Col className="col-10 text-center pb-5">
             <Button className="btn-large" variant="green">Build a Communal Smart Forest™</Button>
             </Col>
       
@@ -1046,14 +1046,14 @@ return (
       <Row id="comm-3" className="justify-content-center pt-5 px-5 mb-3">
         <Col className="col-11 col-md-8 ">
         <h2 className="text-center text-orange tight-drop-light bold mb-3">A forest is a community. And a community can build a forest.</h2>
-        <p className="lead px-5 text-center tight-drop-light text-white">Communal Forests are created by the thousands of Canadians who are here for change.</p>
+        <p className="lead px-3 text-center tight-drop-light text-white">Communal Forests are created by the thousands of Canadians who are here for change.</p>
         </Col>
       </Row>
       </Fade>
 
     <Fade bottom>
       <Row className="justify-content-center d-flex pb-5 mx-5 mb-5">
-          <Col className="col-11 col-lg-7 bg-green roundedBox innerShadow px-3 pt-5 pb-4 m-4 mt-2">
+          <Col className="col-12 col-lg-7 bg-green roundedBox innerShadow px-3 pt-5 pb-4 m-4 mt-2">
         <p className="text-white large bold text-center">A Communal Forest is:
         </p>
 
