@@ -17,7 +17,7 @@ handler.get(async (req, res) => {
   res.json({ user: u });
 });
 
-handler, async (req, res) => {
+handler.patch(upload.single('profilePicture'), async (req, res) => {
   if (!req.user) {
     req.status(401).end();
     return;
