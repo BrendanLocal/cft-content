@@ -24,11 +24,8 @@ export default function Portal({ file }) {
 
   var location = [47.185414, -66.314062];
  
-(async () => {
-  const [user] = await useCurrentUser();
 
-});
-
+const [user] = await useCurrentUser();
   const [isUpdating, setIsUpdating] = useState(false);
   
   const [msg, setMsg] = useState({ message: '', isError: false });
