@@ -21,7 +21,6 @@ export default function Portal({ file }) {
 
   const [location, setLocation] = useState([]);
   const [user, { mutate }] = useCurrentUser();
-  setLocation([user.lat, user.long]);
 
   const [isUpdating, setIsUpdating] = useState(false);
   const nameRef = useRef();
