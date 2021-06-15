@@ -48,12 +48,10 @@ const [userData, setUserData] = React.useState({
   country: ""
 });
 
-
-
 airbase('userdata').select({
   // Selecting the first 3 records in Grid view:
   maxRecords: 3,
-  filterByFormula: "{clientname} = 'gary_000001'",
+  filterByFormula: "{clientname} = " + user.clientname,
   view: "Grid view"
 }).eachPage(function page(records, fetchNextPage) {
   // This function (`page`) will get called for each page of records.

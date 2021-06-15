@@ -38,9 +38,9 @@ const SignupPage = () => {
   return (
     <>
 
-      <Container>
+      <Container className="py-5">
         <Row><Col>
-        <h2>Sign up</h2>
+        <h2 className="text-white">Sign up</h2>
 
       </Col></Row>
         <form onSubmit={handleSubmit}>
