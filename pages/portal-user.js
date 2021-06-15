@@ -23,7 +23,7 @@ export default function Portal({ file }) {
   const nameRef = useRef();
   const [msg, setMsg] = useState({ message: '', isError: false });
   
-  const Map = dynamic(() => import("../components/Map"), {
+  const Map = dynamic(() => import("../../components/Map"), {
     loading: () => "Loading...",
     ssr: false
   });
