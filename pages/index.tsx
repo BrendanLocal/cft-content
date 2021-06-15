@@ -191,12 +191,21 @@ export default function Home({ file, href, children}) {
         
         
         <Container fluid id="video" className="bg-green py-5 container-drop-heavy">
-          <Row className="justify-content-center align-items-center mt-5">
-            <Col className="col-11 col-md-6 d-flex px-lg-5 my-5">
-            <ReactPlayer playing playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4' />
+        <Fade bottom>
+        <Row className="justify-content-center align-items-center pt-5 mt-5">
+            <Col className="col-11 col-md-8">
+              <h2 className="text-orange text-center bold mb-4">
+                What Keeps Us Growing
+              </h2>
+             </Col>
+            </Row>
+          <Row className="justify-content-center align-items-center">
+            <Col className="col-11 col-md-6 d-flex px-lg-5 mb-5 mt-2">
+            <ReactPlayer playing playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4'/>
             </Col>
           </Row>
-        </Container>
+        </Fade>
+      </Container>
 
         <Container id="what" fluid className="v-full z-999 bg-green align-items-center p-5">
           <Fade bottom>
@@ -204,9 +213,9 @@ export default function Home({ file, href, children}) {
               <Col className="order-2 order-lg-1 col-12 p-5 col-md-4 text-white">
                 <h2 className="text-orange bold">{editingdata.part2_header1}</h2>
                 <p className="pb-3 thin">{editingdata.part2_para1}</p>
-                <Link href="/what-is-a-smart-forest" ><a className="btn btn-green">{editingdata.part2_button1}</a></Link>
+                <Link href="/what-is-a-smart-forest"><a className="btn btn-green">{editingdata.part2_button1}</a></Link>
               </Col>
-              <Col className="order-1 order-lg-2 col-12 col-md-4 px-3 py-3 roundedBox innerShadow">
+              <Col className="order-1 order-lg-2 col-12 col-md-5">
                 <object className="op-6" type="image/svg+xml" data="/power2-svg.svg"/>
               </Col>
             </Row>
@@ -216,7 +225,7 @@ export default function Home({ file, href, children}) {
         <Container id="how" fluid className="v-full z-999 bg-green p-5">
           <Fade bottom>
             <Row className="py-5 align-items-center justify-content-center">
-              <Col className="col-12 col-md-4 p-5 roundedBox innerShadow bg-brown">
+              <Col className="col-12 col-md-5 p-5">
                 <object type="image/svg+xml" data="/build2-svg.svg"/>
               </Col>
               <Col className="col-12 p-5 col-md-4 text-white">

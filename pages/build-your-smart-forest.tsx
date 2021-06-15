@@ -376,7 +376,7 @@ return (
       <Row className="text-center justify-content-center mb-3 p-4 pb-0">
         <Col className="col-11 col-lg-7 pb-0">
             <p className="text-white large">
-              An investment in a Corporate Smart ForestTM is an opportunity for corporations across Canada to reimagine
+              An investment in a Corporate Smart Forest is an opportunity for corporations across Canada to reimagine
               their sustainability strategy and invest for long-term ROI. This is a turnkey and sustainable approach for
               corporations to meet net-zero and ESG commitments, offering:
             </p>
