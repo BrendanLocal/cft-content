@@ -21,12 +21,6 @@ const Map = dynamic(() => import("../components/portalMap"), {
 
 export default function Portal({ file }) {
 
-  (function(next) {
-    const [user] = useCurrentUser();
-    next()
-  }(function() {
-  var location = [user.latitude, user.longitude];
-  }))
   
  
   const [isUpdating, setIsUpdating] = useState(false);
@@ -89,7 +83,7 @@ return (
             <Col className="col-lg-9 p-5">
             <TabPanel>
               <h2 className="panelHead text-center text-grey">My Smart Forest<sup>™</sup></h2>
-              <Map location={location}/>
+              <Map location={[user.latitude, user.longitude]}/>
               <Row className="borderGrid pt-3">
                 <Col>
                 <Row>
