@@ -1,12 +1,10 @@
 import session from 'express-session';
 import connectMongo from 'connect-mongo';
-import mongoose from 'mongoose';
 
-const MongoStore = new connectMongo(session);
-mongoose.Promise = global.Promise;
+const MongoStore = connectMongo(session);
 
 export default function sessionMiddleware(req, res, next) {
-  const mongoStore = MongoStore({
+  const mongoStore = new MongoStore({
     client: req.dbClient,
     stringify: false,
   });
@@ -17,5 +15,3 @@ export default function sessionMiddleware(req, res, next) {
     store: mongoStore,
   })(req, res, next);
 }
-
-
