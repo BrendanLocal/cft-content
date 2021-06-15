@@ -28,59 +28,6 @@ export default function Portal({ file }) {
   
 
 
-const [ session, loading ] = useSession();
-
-var Airtable = require('airtable');
-var airbase = new Airtable({apiKey: 'keysTmOxkJA2tynqF'}).base('appGnInO2fkYUQc2f');
-
-const [userData, setUserData] = React.useState({
-  displayname: "",
-  long: 0,
-  lat: 0,
-  trees: 0,
-  acres: 0,
-  type: "",
-  status: "",
-  net: 0,
-  engagement: 0,
-  biodiversity: 0,
-  location: "",
-  country: ""
-});
-
-airbase('userdata').select({
-  // Selecting the first 3 records in Grid view:
-  maxRecords: 1,
-  filterByFormula: "{clientname} = 'brendan_000002'",
-  view: "Grid view"
-}).eachPage(function page(records, fetchNextPage) {
-  // This function (`page`) will get called for each page of records.
-
-  records.forEach(function(record) {
-    userData.displayname = record.get('displayname');
-    userData.long = record.get('longitude');
-    userData.lat = record.get('latitude');
-    userData.trees = record.get('trees');
-    userData.acres = record.get('acres');
-    userData.type = record.get('type');
-    userData.status = record.get('status');
-    userData.net = record.get('net');
-    userData.engagement = record.get('engagement');
-    userData.biodiversity = record.get('biodiversity');
-    userData.location = record.get('location');
-    userData.country = record.get('country');
-  });
-
-  // To fetch the next page of records, call `fetchNextPage`.
-  // If there are more records, `page` will get called again.
-  // If there are no more records, `done` will get called.
-  
-
-}, function done(err) {
-  if (err) { console.error(err); return; }
-});
-
-
 return (
 
 <div>
@@ -139,19 +86,19 @@ return (
                 <Col>
                 <Row>
                   <Col>
-                  <span className="h3 text-green mb-0">{userData.location}</span>
+                  <span className="h3 text-green mb-0">{user ? user.location : ''}</span>
                   </Col>
                 </Row>
                 <Row>
                   <Col>
-                  <span className="bold">{userData.country}</span>
+                  <span className="bold">{user ? user.country : ''}</span>
                   </Col>
                 </Row>
                 </Col>
                 <Col>
                 <Row>
                   <Col>
-                  <span className="h3 text-green mb-0">{userData.trees}</span>
+                  <span className="h3 text-green mb-0">{user ? user.trees : ''}</span>
                   </Col>
                 </Row>
                 <Row>
@@ -163,7 +110,7 @@ return (
                 <Col>
                 <Row>
                   <Col>
-                  <span className="h3 text-green mb-0">{userData.acres}</span>
+                  <span className="h3 text-green mb-0">{user ? user.acres : ''}</span>
                   </Col>
                 </Row>
                 <Row>
@@ -177,7 +124,7 @@ return (
                 <Col>
                 <Row>
                   <Col>
-                  <span className="h4 text-green">{userData.type}</span>
+                  <span className="h4 text-green">{user ? user.type : ''}</span>
                   </Col>
                 </Row>
                 <Row>
@@ -189,7 +136,7 @@ return (
                 <Col>
                 <Row>
                   <Col>
-                  <span className="h4 text-green">{userData.status}</span>
+                  <span className="h4 text-green">{user ? user.status : ''}</span>
                   </Col>
                 </Row>
                 <Row>
@@ -201,7 +148,7 @@ return (
                 <Col>
                 <Row>
                   <Col>
-                  <span className="h4 text-green">{userData.net*100}%</span>
+                  <span className="h4 text-green">{user ? user.next : ''}%</span>
                   </Col>
                 </Row>
                 <Row>
@@ -213,7 +160,7 @@ return (
                 <Col>
                 <Row>
                   <Col>
-                  <span className="h4 text-green">{userData.engagement}</span>
+                  <span className="h4 text-green">{user ? user.engagement : ''}</span>
                   </Col>
                 </Row>
                 <Row>
@@ -225,7 +172,7 @@ return (
                 <Col>
                 <Row>
                   <Col>
-                  <span className="h4 text-green">{userData.biodiversity*100}%</span>
+                  <span className="h4 text-green">{user ? user.biodiversity : ''}%</span>
                   </Col>
                 </Row>
                 <Row>
