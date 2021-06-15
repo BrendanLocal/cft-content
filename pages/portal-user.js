@@ -20,7 +20,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 export default function Portal({ file }) {
 
-  const [user, { mutate }] = useCurrentUser();
+  const [userMongo, { mutate }] = useCurrentUser();
   const [isUpdating, setIsUpdating] = useState(false);
   const nameRef = useRef();
   const [msg, setMsg] = useState({ message: '', isError: false });
