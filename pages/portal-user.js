@@ -25,8 +25,6 @@ export default function Portal({ file }) {
   const [msg, setMsg] = useState({ message: '', isError: false });
   
 
-  const latlong = [user.lat, user.long];
-  
 
 
 return (
@@ -82,7 +80,7 @@ return (
             <Col className="col-lg-9 p-5">
             <TabPanel>
               <h2 className="panelHead text-center text-grey">My Smart Forest<sup>™</sup></h2>
-              <Map location={latlong}/>
+              <Map location={[user.lat, user.long]}/>
               <Row className="borderGrid pt-3">
                 <Col>
                 <Row>
