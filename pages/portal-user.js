@@ -24,12 +24,11 @@ export default function Portal({ file }) {
 
   var location = [47.185414, -66.314062];
  
-async function fetchUser() {
+  (async () => {
   const [user] = await useCurrentUser();
   location = await [user.latitude, user.longitude];
-}
+});
 
-fetchUser();
 
 const [user] = useCurrentUser();
 
