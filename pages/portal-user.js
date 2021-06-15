@@ -29,6 +29,8 @@ export default function Portal({ file }) {
   
 
 
+  var location = [47.185414, -66.314062];
+
 
 return (
 
@@ -83,7 +85,7 @@ return (
             <Col className="col-lg-9 p-5">
             <TabPanel>
               <h2 className="panelHead text-center text-grey">My Smart Forest<sup>™</sup></h2>
-              <Map location={[user.latitude, user.longitude]}/>
+              <Map location={user ? user.longitude : '0,0'}/>
               <Row className="borderGrid pt-3">
                 <Col>
                 <Row>
