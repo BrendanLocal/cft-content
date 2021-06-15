@@ -26,22 +26,12 @@ export default function Portal({ file }) {
 
   const [user] = useCurrentUser();
 
-  const nameRef = useRef();
-  const latRef = useRef();
-  const longRef = useRef();
 
   const [isUpdating, setIsUpdating] = useState(false);
   
   const [msg, setMsg] = useState({ message: '', isError: false });
   
   var location = [47.185414, -66.314062];
-
-  useEffect(() => {
-    nameRef.current.value = user.name;
-    latRef.current.value = user.lat;
-
-    longRef.current.value = user.long;
-  }, [user]);
 
 
 return (
