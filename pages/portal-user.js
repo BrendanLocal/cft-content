@@ -26,12 +26,13 @@ export default function Portal({ file }) {
  
 async function fetchUser() {
   const [user] = await useCurrentUser();
-  location = [user.latitude, user.longitude];
+  location = await [user.latitude, user.longitude];
 }
+
+fetchUser();
 
 const [user] = useCurrentUser();
 
-fetchUser();
 
   const [isUpdating, setIsUpdating] = useState(false);
   
