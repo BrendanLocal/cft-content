@@ -24,7 +24,10 @@ handler.patch(upload.single('profilePicture'), async (req, res) => {
   }
   
   const user = await updateUserById(req.db, req.user._id, {
-    ...(name && { name })
+    ...(name && { name }),
+    ...(lat && {lat}),
+    ...(long && {long}),
+    ...(profilePicture && { profilePicture }),
   });
 
   res.json({ user: extractUser(user) });
