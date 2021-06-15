@@ -21,7 +21,7 @@ const Map = dynamic(() => import("../components/portalMap"), {
 
 export default function Portal({ file }) {
 
-  
+    const [user] = useCurrentUser();
  
   const [isUpdating, setIsUpdating] = useState(false);
   
