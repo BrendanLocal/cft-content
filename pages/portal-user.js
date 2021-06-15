@@ -10,27 +10,21 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import dynamic from 'next/dynamic';
 import Button from 'react-bootstrap/Button';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import Link from 'next/link';
-import Error from 'next/error';
-import { all } from '../middlewares/index';
 import { useCurrentUser } from '../hooks/index';
-import { extractUser } from '../lib/api-helpers';
-import { findUserById } from '../db/index';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+
+
+
+
 
 const Map = dynamic(() => import("../components/portalMap"), {
   loading: () => "Loading...",
   ssr: false
 });
 
-export default function Portal({ user }) {
-  if (!user) return <Error statusCode={404} />;
-  const {
-    name, email, lat, _id
-  } = user || {};
-  const [currentUser] = useCurrentUser();
+export default function Portal({ file }) {
 
-
+  const [user, { mutate }] = useCurrentUser();
   const [isUpdating, setIsUpdating] = useState(false);
   const nameRef = useRef();
   const [msg, setMsg] = useState({ message: '', isError: false });
@@ -54,7 +48,7 @@ return (
       <Row className="justify-content-center d-flex">
         <Col className="col-xl-10 ">
         <h1 className="h2 text-orange text-center">
-          Welcome Back, {name}
+          Welcome Back, {user ? user.name : 'stranger'}
         </h1>
         </Col>
       </Row>
