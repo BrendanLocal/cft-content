@@ -8,7 +8,6 @@ import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Map from '../components/portalMap'
 
 
 import Button from 'react-bootstrap/Button';
@@ -24,7 +23,12 @@ export default function Portal({ file }) {
   const [isUpdating, setIsUpdating] = useState(false);
   const nameRef = useRef();
   const [msg, setMsg] = useState({ message: '', isError: false });
+  const Map = dynamic(() => import("../components/portalMap"), {
+    loading: () => "Loading...",
+    ssr: false
+  });
 
+  const latlong = [user.lat, user.long];
   
 
 
@@ -81,7 +85,7 @@ return (
             <Col className="col-lg-9 p-5">
             <TabPanel>
               <h2 className="panelHead text-center text-grey">My Smart Forest<sup>™</sup></h2>
-              <Map {... user.lat, user.long}/>
+              <Map locations={latlong}/>
               <Row className="borderGrid pt-3">
                 <Col>
                 <Row>
