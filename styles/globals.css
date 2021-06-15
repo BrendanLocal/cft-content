@@ -476,6 +476,15 @@ text-decoration: underline;
   text-align: left;
 }
 
+.calc-intro:after {
+  content: url(/navArrow.svg);
+  transform: rotate(90deg)!important;
+  margin-top: 3px;
+  width: 24px;
+  margin-left: 10px;
+  position: absolute;
+}
+
 .down-arrow {
   fill: #fff;
   transform: rotate(90deg);
@@ -911,8 +920,13 @@ padding: 10%;
   height: 100% !important;
   width: 100vw !important;
 }
+
 .bg-green {
   background-color: #054217;
+}
+
+.bg-mildgreen {
+  background-color: #00823B;
 }
 
 .bg-brown {
