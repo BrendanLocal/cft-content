@@ -34,7 +34,7 @@ export default function Portal({ file }) {
   (async () => {
 
     const [user] = await useCurrentUser();
-  });
+  
 
 
 
@@ -232,6 +232,6 @@ return (
 
   </main>
 </div>
-)
+)});
 }
 
