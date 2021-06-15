@@ -317,7 +317,7 @@ return (
         </Fade>
     </Container>
 
-    {/* Coporate Forests */}
+    {/* Corporate Forests */}
   <Container fluid id="corporate" className="bg-corp sectionPad">
       
     <Fade bottom>
@@ -427,14 +427,37 @@ return (
 
 
         <Fade bottom>
-            <Row id="corp-testimonial" className="justify-content-center d-flex py-5 mx-5 my-5">
-              <Col className="col-11 col-lg-8 bg-brown roundedBox innerShadow p-5 m-4 blockquote-bg">
-                <h3 className="text-left blockquote text-orange p-lg-5">
-                  “We need 50 shades of green to catalyze and support all companies towards net zero… Companies will need to show how they plan to meet their net-zero targets through the appropriate mix of emission reductions and credible carbon offsets, including nature-based solutions such as reforestation.”
-                  </h3>
-                <p className="text-left text-white my-0 mx-5 bold">— Mark Carney</p>
-                <p className="text-left text-white mx-5 px-3 italic op-6">UN Special Envoy for Climate Action and Finance</p>
-              </Col>
+            <Row id="corp-testimonial" className="justify-content-center align-items-center my-5">
+            <Carousel className="col-11 col-lg-8 bg-brown roundedBox innerShadow p-5 m-4 px-0" activeIndex={index} onSelect={handleSelect} nextIcon={<span aria-hidden="false" className="carousel-control-next-icon" />} nextLabel="" prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" />} prevLabel="" > 
+          
+              <Carousel.Item interval={100000} className="justify-content-center">
+              
+                  <div className="d-block w-100 blockquote-bg mb-4 align-items-center d-flex">
+                    <div className="px-lg-5 pt-lg-4 mx-5">
+                    <h3 className="text-left blockquote text-orange">
+                      “We need 50 shades of green to catalyze and support all companies towards net zero… Companies will need to show how they plan to meet their net-zero targets through the appropriate mix of emission reductions and credible carbon offsets, including nature-based solutions such as reforestation.”
+                      </h3>
+                    <p className="text-left text-white my-0 mx-5 bold">— Mark Carney</p>
+                    <p className="text-left text-white mx-5 px-3 italic op-6">UN Special Envoy for Climate Action and Finance</p>
+                    </div>
+                  </div>
+                  
+              </Carousel.Item>
+
+                <Carousel.Item interval={100000} className="justify-content-center">
+
+                  <div className="d-block w-100 blockquote-bg mb-4 align-items-center d-flex">
+                  <div className="px-lg-5 pt-lg-4 mx-5">
+                      <h3 className="text-left blockquote text-orange">
+                      “[Younger generations] have a different kind of investment in the future…A lot of the adults in the world aren’t going to be here by the time some climate conditions start taking effect in the world.”
+                        </h3>
+                      <p className="text-left text-white my-0 mx-5 bold">— Xiuhtezcatl Martinez</p>
+                   <p className="text-left text-white mx-5 px-3 italic op-6">Youth Director of Earth Guardians</p>                    </div>
+                    </div>
+                  
+                </Carousel.Item>
+              
+              </Carousel>
             </Row>
           </Fade>
 
@@ -619,14 +642,37 @@ return (
         </Row>
 
         <Fade bottom>
-            <Row id="school-2" className="justify-content-center d-flex py-5 mx-5 my-5">
-              <Col className="col-11 col-lg-8 bg-brown roundedBox innerShadow p-5 m-4 blockquote-bg">
-                <h3 className="text-left blockquote text-orange p-lg-5">
-                  “[Younger generations] have a different kind of investment in the future…A lot of the adults in the world aren’t going to be here by the time some climate conditions start taking effect in the world.”
-                  </h3>
-                <p className="text-left text-white my-0 mx-5 bold">— Xiuhtezcatl Martinez</p>
-                <p className="text-left text-white mx-5 px-3 italic op-6">Youth Director of Earth Guardians</p>
-              </Col>
+            <Row id="school-2" className="justify-content-center align-items-center my-5">
+            <Carousel className="col-11 col-lg-8 bg-brown roundedBox  innerShadow p-5 m-4 px-0" activeIndex={index} onSelect={handleSelect} nextIcon={<span aria-hidden="false" className="carousel-control-next-icon" />} nextLabel="" prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" />} prevLabel="" > 
+          
+          <Carousel.Item interval={100000} className="justify-content-center">
+          
+              <div className="d-block w-100 blockquote-bg mb-4 align-items-center d-flex">
+                <div className="px-lg-5 pt-lg-4 mx-5">
+                      <h3 className="text-left blockquote text-orange">
+                      “[Younger generations] have a different kind of investment in the future…A lot of the adults in the world aren’t going to be here by the time some climate conditions start taking effect in the world.”
+                        </h3>
+                      <p className="text-left text-white my-0 mx-5 bold">— Xiuhtezcatl Martinez</p>
+                <p className="text-left text-white mx-5 px-3 italic op-6">Youth Director of Earth Guardians</p>                    </div>
+                    </div>
+                  
+              </Carousel.Item>
+
+                <Carousel.Item interval={100000}>
+
+                <div className="d-block w-100 blockquote-bg mb-4 align-items-center d-flex">
+                  <div className="px-lg-5 pt-lg-4 mx-5">
+                      <h3 className="text-left blockquote text-orange">
+                      “We need 50 shades of green to catalyze and support all companies towards net zero… Companies will need to show how they plan to meet their net-zero targets through the appropriate mix of emission reductions and credible carbon offsets, including nature-based solutions such as reforestation.”
+                      </h3>
+                    <p className="text-left text-white my-0 mx-5 bold">— Mark Carney</p>
+                    <p className="text-left text-white mx-5 px-3 italic op-6">UN Special Envoy for Climate Action and Finance</p>
+                  </div>
+                  </div>
+                  
+                </Carousel.Item>
+              
+              </Carousel>
             </Row>
           </Fade>
 
@@ -780,14 +826,37 @@ return (
         </Row>
 
         <Fade bottom>
-            <Row id="legacy-2" className="justify-content-center d-flex py-5 mx-5 my-5">
-              <Col className="col-11 col-lg-8 bg-brown roundedBox innerShadow p-5 m-4 blockquote-bg">
-                <h3 className="text-left blockquote text-orange p-lg-5">
-                "We are running the most dangerous experiment in history right now, which is to see how much carbon dioxide the atmosphere can handle before there is a climate catastrophe."
-                  </h3>
-                <p className="text-left text-white my-0 mx-5 bold">— Elon Musk</p>
-                <p className="text-left text-white mx-5 px-3 italic op-6">CEO of Tesla</p>
-              </Col>
+            <Row id="legacy-2" className="justify-content-center align-items-center my-5">
+            <Carousel className="col-11 col-lg-8 bg-brown roundedBox  innerShadow p-5 m-4 px-0" activeIndex={index} onSelect={handleSelect} nextIcon={<span aria-hidden="false" className="carousel-control-next-icon" />} nextLabel="" prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" />} prevLabel="" > 
+          
+          <Carousel.Item interval={100000} className="justify-content-center">
+          
+              <div className="d-block w-100 blockquote-bg mb-4 align-items-center d-flex">
+                <div className="px-lg-5 pt-lg-4 mx-5">
+                      <h3 className="text-left blockquote text-orange">
+                    "We are running the most dangerous experiment in history right now, which is to see how much carbon dioxide the atmosphere can handle before there is a climate catastrophe."
+                      </h3>
+                    <p className="text-left text-white my-0 mx-5 bold">— Elon Musk</p>
+                    <p className="text-left text-white mx-5 px-3 italic op-6">CEO of Tesla</p>
+                  </div>
+                  </div>
+                  
+              </Carousel.Item>
+
+                <Carousel.Item interval={100000}>
+
+                <div className="d-block w-100 blockquote-bg mb-4 align-items-center d-flex">
+                  <div className="px-lg-5 pt-lg-4 mx-5">
+                      <h3 className="text-left blockquote text-orange">
+                      “[Younger generations] have a different kind of investment in the future…A lot of the adults in the world aren’t going to be here by the time some climate conditions start taking effect in the world.”
+                        </h3>
+                      <p className="text-left text-white my-0 mx-5 bold">— Xiuhtezcatl Martinez</p>
+                    <p className="text-left text-white mx-5 px-3 italic op-6">Youth Director of Earth Guardians</p>                    </div>
+                    </div>
+                  
+                </Carousel.Item>
+              
+              </Carousel>
             </Row>
           </Fade>
 
@@ -939,17 +1008,39 @@ return (
         </Row>
 
         <Fade bottom>
-            <Row id="comm-2" className="justify-content-center d-flex py-5 mx-5 my-5">
-              <Col className="col-11 col-lg-8 bg-brown roundedBox innerShadow p-5 m-4 blockquote-bg">
-                <h3 className="text-left blockquote text-orange p-lg-5">
-                "What you do makes a difference, and you have to decide what kind of difference you want to make."
-                  </h3>
-                <p className="text-left text-white my-0 mx-5 bold">— Dr. Jane Goodall</p>
-                <p className="text-left text-white mx-5 px-3 italic op-6"></p>
-              </Col>
+            <Row id="comm-2" className="justify-content-center align-items-center my-5">
+            <Carousel className="col-11 col-lg-8 bg-brown roundedBox  innerShadow p-5 m-4 px-0" activeIndex={index} onSelect={handleSelect} nextIcon={<span aria-hidden="false" className="carousel-control-next-icon" />} nextLabel="" prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" />} prevLabel="" > 
+          
+          <Carousel.Item interval={100000} className="justify-content-center">
+          
+              <div className="d-block w-100 blockquote-bg mb-4 align-items-center d-flex">
+                <div className="px-lg-5 pt-lg-4 mx-5">
+                      <h3 className="text-left blockquote text-orange">
+                    "What you do makes a difference, and you have to decide what kind of difference you want to make."
+                      </h3>
+                    <p className="text-left text-white my-0 mx-5 bold">— Dr. Jane Goodall</p>
+                    <p className="text-left text-white mx-5 px-3 italic op-6"></p>
+                  </div>
+                  </div>
+                  
+              </Carousel.Item>
+
+                <Carousel.Item interval={100000}>
+
+                <div className="d-block w-100 blockquote-bg mb-4 align-items-center d-flex">
+                  <div className="px-lg-5 pt-lg-4 mx-5">
+                      <h3 className="text-left blockquote text-orange">
+                      “[Younger generations] have a different kind of investment in the future…A lot of the adults in the world aren’t going to be here by the time some climate conditions start taking effect in the world.”
+                        </h3>
+                      <p className="text-left text-white my-0 mx-5 bold">— Xiuhtezcatl Martinez</p>
+                      <p className="text-left text-white mx-5 px-3 italic op-6">Youth Director of Earth Guardians</p>                    </div>
+                    </div>
+                  
+                </Carousel.Item>
+              
+              </Carousel>
             </Row>
           </Fade>
-
 
     <Fade bottom>
       <Row id="comm-3" className="justify-content-center pt-5 px-5 mb-3">

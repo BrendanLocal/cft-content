@@ -188,6 +188,7 @@ h1.drop, .h1.drop {
     background-position: 85% 40%;
     background-size: 52%;
     background-repeat: no-repeat;
+    height: 400px;
 }
 
 h2, .h2 {
@@ -562,8 +563,8 @@ text-decoration: underline;
 }
 
 .phases {
-  background: url('/5Phases.jpg');
-    background-size: 101%;
+  content: url('/5Phases.jpg');
+    object-fit: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 592px;
@@ -1594,6 +1595,18 @@ span.authorTitle {
   transition: all .5s ease;
 }
 
+.card-hover.modal-btn {
+  content: url(/navArrow-orange.svg)!important;
+    margin-left: 5px;
+    width: 100%;
+    display: inline-block;
+    color: #FF4D24;
+}
+
+.card-hover.modal-btn:hover {
+  box-shadow: 0px 2px 20px 6px rgba(0, 0, 0, 0.2);
+  transition: all .5s ease;
+}
 
 .corporate-card {
     background: url('/corporate-smart-forest-lopacity.png');
@@ -2107,6 +2120,10 @@ font-size: .9em;
 .each-slide p {
   font-size: 24px;
   line-height: 27px;
+}
+
+.blockquote-bg {  
+    height: 480px;
 }
 
 
