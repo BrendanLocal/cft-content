@@ -9,6 +9,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Fade from 'react-reveal/Fade';
 import Button from 'react-bootstrap/Button';
+import Carousel from 'react-bootstrap/Carousel';
 import Modal from 'react-bootstrap/Modal';
 import Rellax from "rellax";
 import Parallax from 'parallax-js'
@@ -27,6 +28,11 @@ label: 'About',
 fields: [{ name: 'title', component: 'text' }],
 }
 
+const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
 
 const slideProperties = {
   indicators: i => (<span className="sliderDot"/>)
@@ -134,47 +140,74 @@ return (
 
         </Col>
       </Row>
-      <Row className="pb-5 px-0">
-        <Col className="pb-5 ">
-        <Slide easing="ease" {...slideProperties}>
-          <Row className="justify-content-center d-flex each-slide">
-            <Col className="align-items-center col-8 col-md-8 col-lg-6 d-flex p-4 p-lg-5 bg-brown roundedBox innerShadow">
-              <p className="text-center center text-white bold">
+
+      <Fade bottom>
+            <Row className="justify-content-center align-items-center mb-5 pb-5">
+            <Carousel className="col-11 col-lg-7 bg-brown roundedBox  innerShadow p-5 mx-4 px-0 mb-5" activeIndex={index} onSelect={handleSelect} nextIcon={<span aria-hidden="false" className="carousel-control-next-icon" />} nextLabel="" prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" />} prevLabel="" > 
+          
+          <Carousel.Item interval={100000} className="justify-content-center">
+          
+              <div className="d-block w-100 about-bg mb-4 align-items-center d-flex">
+                <div className="px-lg-5 pt-lg-4 mx-5">
+                <p className="lead text-center center text-white bold">
               An issue as threatening as climate change needs a solution as smart as forests.
               </p>
-            </Col>
-          </Row>
-          <Row className="justify-content-center d-flex each-slide">
-            <Col className="align-items-center col-8 col-md-8 col-lg-6 d-flex p-4 p-lg-5 bg-brown roundedBox innerShadow">
-              <p className="text-center center text-white bold">
-              When you invest in a Smart Forest, you invest in one of the most powerful forces against climate change: nature.
-          </p>
-          </Col>
-          </Row>
-          <Row className="justify-content-center d-flex each-slide">
-            <Col className="align-items-center col-8 col-md-8 col-lg-6 d-flex p-4 p-lg-5 bg-brown roundedBox innerShadow">
-              <p className="text-center center text-white bold">
-              It’s critically important that we learn from, engage with, and consult with Indigenous communities from across Canada.  
-          </p>
-          </Col>
-          </Row>
-          <Row className="justify-content-center d-flex each-slide">
-            <Col className="align-items-center col-8 col-md-8 col-lg-6 d-flex p-4 p-lg-5 bg-brown roundedBox innerShadow">
-              <p className="text-center center text-white bold">
-              As cultural attitudes towards climate change shift and become more urgent, market values will shift with them, ensuring that environmental, societal and economic interests can coexist.
-          </p>
-          </Col>
-          </Row>
-          <Row className="justify-content-center d-flex each-slide">
-            <Col className="align-items-center col-8 col-md-8 col-lg-6 d-flex p-4 p-lg-5 bg-brown roundedBox innerShadow">
-              <p className="text-center center text-white bold">
-              By making the green economy accessible to everyone – from individuals to schools to corporations – we can help align values and promote tangible investments into a greener, cleaner and more sustainable planet.  
-          </p>
-          </Col>
-          </Row>
-        </Slide>
-        </Col>
-      </Row>
+                  </div>
+                  </div>
+                  
+              </Carousel.Item>
+
+                <Carousel.Item interval={100000}>
+
+                <div className="d-block w-100 about-bg mb-4 align-items-center d-flex">
+                  <div className="px-lg-5 pt-lg-4 mx-5">
+                  <p className="lead text-center center text-white bold">
+                    When you invest in a Smart Forest, you invest in one of the most powerful forces against climate change: nature.
+                </p>                   
+                </div>
+                </div>
+                  
+                </Carousel.Item>
+
+                <Carousel.Item interval={100000}>
+
+                <div className="d-block w-100 about-bg mb-4 align-items-center d-flex">
+                  <div className="px-lg-5 pt-lg-4 mx-5">
+                  <p className="lead text-center center text-white bold">
+                  It’s critically important that we learn from, engage with, and consult with Indigenous communities from across Canada.                  </p>                   
+                </div>
+                </div>
+                  
+                </Carousel.Item>
+
+                <Carousel.Item interval={100000}>
+
+                <div className="d-block w-100 about-bg mb-4 align-items-center d-flex">
+                  <div className="px-lg-5 pt-lg-4 mx-5">
+                  <p className="lead text-center center text-white bold">
+                  As cultural attitudes towards climate change shift and become more urgent, market values will shift with them, ensuring that environmental, societal and economic interests can coexist.
+                  </p>
+                  </div>
+                </div>
+                  
+                </Carousel.Item>
+
+                <Carousel.Item interval={100000}>
+
+                <div className="d-block w-100 about-bg mb-4 align-items-center d-flex">
+                  <div className="px-lg-5 pt-lg-4 mx-5">
+                  <p className="lead text-center center text-white bold">
+                  By making the green economy accessible to everyone – from individuals to schools to corporations – we can help align values and promote tangible investments into a greener, cleaner and more sustainable planet.  
+                  </p>
+                  </div>
+                </div>
+                  
+                </Carousel.Item>
+              
+              </Carousel>
+            </Row>
+          </Fade>
+
     </Container>
 
     <Container fluid id="team" className="bg-brown innerShadow-heavy py-6">

@@ -143,16 +143,16 @@ return (
     <Container id="the-plan" className="v-full z-999 bg-green p-5">
     <Fade bottom>
       <Row className="justify-content-center align-items-center my-4">
-        <Col className="col-11 col-lg-8 text-center text-white">
+        <Col className="col-sm-11 col-md-10 col-lg-8 text-center text-white">
         <h2 className=" text-orange bold mb-2">The Smart Forest Action Plan</h2>
         <p className="large mt-0 mb-0">When you invest in a Smart Forest, you stay informed on its progress - from site selection to planting to ongoing maintenance and carbon footprint impact.</p>
         </Col>
       </Row>
       </Fade>
       <Fade bottom>
-      <Row className="justify-content-center align-items-center px-5">
+      <Row className="justify-content-center align-items-center px-3">
         
-        <Carousel activeIndex={index} onSelect={handleSelect} nextIcon={<span aria-hidden="false" className="carousel-control-next-icon" />} nextLabel="" prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" />} prevLabel="" className="col-12 col-md-11 col-lg-10 d-flex bg-brown roundedBox innerShadow-heavy px-0"> 
+        <Carousel className="col-12 col-md-12 col-lg-11 col-xl-10  d-flex bg-brown roundedBox innerShadow-heavy px-0" activeIndex={index} onSelect={handleSelect} nextIcon={<span aria-hidden="false" className="carousel-control-next-icon" />} nextLabel="" prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" />} prevLabel="" > 
           
           <Carousel.Item interval={500000}>
           <div className="d-block w-100 phases"></div>
@@ -163,7 +163,7 @@ return (
 
           <Carousel.Item interval={100000}>
           <div className="d-block w-100 phase1"></div>
-            <Carousel.Caption className="col-9 col-lg-4">
+            <Carousel.Caption className="col-9 col-md-8 col-lg-6 col-xl-4">
               <h3 className="smallCaps text-left tight-drop bold mb-1">PROCURE</h3>
               <p className="h3 text-left tight-drop mb-4">Acquire land across Canada.</p>
               
@@ -183,7 +183,7 @@ return (
           
           <Carousel.Item interval={100000}>
           <div className="d-block w-100 phase2 " ></div>
-            <Carousel.Caption className="col-9 col-lg-4">
+            <Carousel.Caption className="col-9 col-md-8 col-lg-6 col-xl-4">
               <h3 className="smallCaps text-left tight-drop bold mb-1">PREPARE</h3>
               <p className="h3 text-left tight-drop mb-4">Assess, plan, and complete site preparation for planting.</p>
               
@@ -203,7 +203,7 @@ return (
           </Carousel.Item>
           <Carousel.Item interval={100000}>
           <div className="d-block w-100 phase3 " ></div>
-            <Carousel.Caption className="col-9 col-lg-4">
+            <Carousel.Caption className="col-9 col-md-8 col-lg-6 col-xl-4">
               <h3 className="smallCaps text-left tight-drop bold mb-1">PLANT</h3>
               <p className="h3 text-left tight-drop mb-4">Strategically plant seedlings to ensure optimal growth and carbon sequestration.</p>
               
@@ -223,7 +223,7 @@ return (
           </Carousel.Item>
           <Carousel.Item interval={100000}>
           <div className="d-block w-100 phase4 "></div>
-            <Carousel.Caption className="col-9 col-lg-4">
+            <Carousel.Caption className="col-9 col-md-8 col-lg-6 col-xl-4">
               <h3 className="smallCaps text-left tight-drop bold mb-1">PRESERVE</h3>
               <p className="h3 text-left tight-drop mb-4">Perform innovative forest management activities to maintain the forest and maximize its impact.</p>
               <div className="card card-drop no-border bg-white px-4 py-2 op-8 mb-2 ">
@@ -242,7 +242,7 @@ return (
           </Carousel.Item>
           <Carousel.Item interval={100000}>
           <div className="d-block w-100 phase5 " ></div>
-            <Carousel.Caption className="col-9 col-lg-4">
+            <Carousel.Caption className="col-9 col-md-8 col-lg-6 col-xl-4">
               <h3 className="smallCaps text-left tight-drop bold mb-1">PROTECT</h3>
               <p className="h3 text-left tight-drop mb-4">Audit, and set a no clear-cut guarantee on every forest.</p>
               <div className="card card-drop no-border bg-white px-4 py-2 op-8 mb-2 ">
@@ -271,7 +271,7 @@ return (
       
     <Fade bottom>
       <Row className="pt-5 align-items-center justify-content-center">
-        <Col className="col-12 col-lg-7 pe-lg-0 mt-5">
+        <Col className="col-11 col-lg-7 pe-lg-0 mt-5">
           <h2 className="text-center text-orange bold">Start making a difference now—and far into the future</h2>
           <p className="text-center text-white medium thin mb-4">Each Smart Forest has a <span className="bold">‘planting prescription’</span>. This is the unique mix of species that’s right for the local climate, soil conditions, drainage, and land history. This optimal habitat maximizes the positive impacts the Forest will make, including carbon sequestration, oxygen production and water absorption.</p>
         </Col>
