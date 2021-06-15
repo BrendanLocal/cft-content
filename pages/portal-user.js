@@ -20,9 +20,9 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 export default function Portal({ file }) {
 
   const [location, setLocation] = useState([]);
-  const [user, { mutate }] = useCurrentUser().then(
-  setLocation([user.lat, user.long])
-  );
+  const [user, { mutate }] = useCurrentUser();
+  setLocation([user.lat, user.long]);
+
   const [isUpdating, setIsUpdating] = useState(false);
   const nameRef = useRef();
   const [msg, setMsg] = useState({ message: '', isError: false });
@@ -49,6 +49,7 @@ return (
         <Col className="col-xl-10 ">
         <h1 className="h2 text-orange text-center">
           Welcome Back, {user ? user.name : 'stranger'}
+          {user.lat}
         </h1>
         </Col>
       </Row>
