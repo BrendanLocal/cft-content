@@ -21,7 +21,6 @@ import { useCurrentUser } from '../hooks/index';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 
-if (!user) return <Error statusCode={404} />;
   const {
     name, email, lat, long, _id
   } = user || {};
