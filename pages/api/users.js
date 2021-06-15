@@ -27,7 +27,16 @@ handler.post(async (req, res) => {
   }
   const hashedPassword = await bcrypt.hash(password, 10);
   const user = await insertUser(req.db, {
-    email, password: hashedPassword, bio: '', name,
+    email, password: hashedPassword, name, long: 0, lat: 0,
+    trees: 0,
+    acres: 0,
+    type: "",
+    status: "",
+    net: 0,
+    engagement: 0,
+    biodiversity: 0,
+    location: "",
+    country: "Canada"
   });
   req.logIn(user, (err) => {
     if (err) throw err;
