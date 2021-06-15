@@ -727,10 +727,11 @@ return (
 
       </Col>
     </Row>
+
     <Row className="justify-content-center ">
       <Col className="col-10 align-items-center text-center p-3">
       <div className="bg-brown p-5 innerShadow roundedBox">
-        <p className="smallCaps text-orange">Next Steps</p>
+        <p className="smallCaps text-orange">Next Step</p>
       <h3 className="text-white mb-4 px-4">Calculate how many hectares of Smart Forest you need to invest in to reach a Net-Zero emissions target.</h3>
       <Button className="btn-large mt-1" variant="green">Calculate Your Net-Zero Target</Button>
       </div>
@@ -747,7 +748,6 @@ return (
 
     <Row className="justify-content-center pb-5 mb-5">
     
-
         <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
         <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
         <h4 className="text-white tight-drop-light">Corporate</h4>

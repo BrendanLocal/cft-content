@@ -726,7 +726,7 @@ return (
     <Row className="justify-content-center ">
       <Col className="col-10 align-items-center text-center p-3">
       <div className="bg-brown p-5 innerShadow roundedBox">
-        <p className="smallCaps text-orange">Next Steps</p>
+        <p className="smallCaps text-orange">Next Step</p>
       <h3 className="text-white mb-4 px-4">Calculate how many hectares of Smart Forest you need to invest in to reach a Net-Zero emissions target.</h3>
       <Button className="btn-large mt-1" variant="green">Calculate Your Net-Zero Target</Button>
       </div>
