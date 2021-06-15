@@ -12,8 +12,10 @@ export default function Map({ location })  {
     lat = location[0];
     long = location[1];
   }
-  
+
   const [user] = useCurrentUser();
+
+  
   const [viewport, setViewport] = useState({
     width: "100%",
     height: "300px",
