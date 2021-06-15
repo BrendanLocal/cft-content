@@ -393,30 +393,3 @@ return (
 </div>
 )
 }
-
-/**
-* Fetch data with getStaticProps based on 'preview' mode
-*/
-export const getStaticProps: GetStaticProps = async function({
-preview,
-previewData,
-}) {
-if (preview) {
-return getGithubPreviewProps({
-...previewData,
-fileRelativePath: 'content/portal.json',
-parse: parseJson,
-})
-}
-return {
-props: {
-sourceProvider: null,
-error: null,
-preview: false,
-file: {
-fileRelativePath: 'content/portal.json',
-data: (await import('../content/portal.json')).default,
-},
-},
-}
-}
