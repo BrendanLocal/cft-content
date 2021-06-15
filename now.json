@@ -1,0 +1,15 @@
+{
+  "name": "nextjs-mongodb-app",
+  "version": 2,
+  "build": {
+    "env": {
+      "MONGODB_URI": "mongodb+srv://dbAdmin:MnD9834zq*8y@cluster0.nblhs.mongodb.net/cftdata?retryWrites=true&w=majority",
+      "CLOUDINARY_URL": "cloudinary://741947492169653:vkyuRmZ3EbSULnkfXJdtSqwhURw@dbplcha6k",
+      "DB_NAME": "cftdata",
+      "EMAIL_FROM": "no.reply@canadasforesttrust.ca",
+      "WEB_URI": "https://nextjs-mongodb.now.sh",
+      "SESSION_SECRET": "thaifoodistasty",
+"SENDGRID_API_KEY": "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"
+    }
+  }
+}
