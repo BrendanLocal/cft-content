@@ -22,7 +22,7 @@ handler.patch(upload.single('profilePicture'), async (req, res) => {
     req.status(401).end();
     return;
   }
-  
+  const { name, bio, lat, long } = req.body;
   const user = await updateUserById(req.db, req.user._id, {
     ...(name && { name }),
     ...(lat && {lat}),
