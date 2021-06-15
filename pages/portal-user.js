@@ -20,7 +20,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 export default function Portal({ file }) {
 
-  const [userMongo, { mutate }] = useCurrentUser();
+  const [user, { mutate }] = useCurrentUser();
   const [isUpdating, setIsUpdating] = useState(false);
   const nameRef = useRef();
   const [msg, setMsg] = useState({ message: '', isError: false });
@@ -84,7 +84,7 @@ airbase('userdata').select({
 
 
 useEffect(() => {
-  nameRef.current.value = userMongo.name;
+  nameRef.current.value = user.name;
 }, [user]);
 
 const handleSubmit = async (event) => {
@@ -162,7 +162,7 @@ return (
       <Row className="justify-content-center d-flex">
         <Col className="col-xl-10 ">
         <h1 className="h2 text-orange text-center">
-          Welcome Back, {userMongo ? userMongo.name : 'stranger'}
+          Welcome Back, {user ? user.name : 'stranger'}
         </h1>
         </Col>
       </Row>
@@ -315,7 +315,7 @@ return (
               <h2 className="panelHead text-center text-grey">Edit My Information</h2>
               {msg.message ? <p style={{ color: msg.isError ? 'red' : '#0070f3', textAlign: 'center' }}>{msg.message}</p> : null}
               <form onSubmit={handleSubmit}>
-          {!userMongo.emailVerified ? (
+          {!user.emailVerified ? (
             <p>
               Your email has not been verified.
               {' '}
