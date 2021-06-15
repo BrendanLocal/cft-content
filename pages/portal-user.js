@@ -84,7 +84,7 @@ airbase('userdata').select({
 
 
 useEffect(() => {
-  nameRef.current.value = user.name;
+  nameRef.current.value = userMongo.name;
 }, [user]);
 
 const handleSubmit = async (event) => {
@@ -315,7 +315,7 @@ return (
               <h2 className="panelHead text-center text-grey">Edit My Information</h2>
               {msg.message ? <p style={{ color: msg.isError ? 'red' : '#0070f3', textAlign: 'center' }}>{msg.message}</p> : null}
               <form onSubmit={handleSubmit}>
-          {!user.emailVerified ? (
+          {!userMongo.emailVerified ? (
             <p>
               Your email has not been verified.
               {' '}
