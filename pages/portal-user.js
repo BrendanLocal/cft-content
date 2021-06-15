@@ -48,7 +48,7 @@ return (
         <Col className="col-xl-10 ">
         <h1 className="h2 text-orange text-center">
           Welcome Back, {user ? user.name : 'stranger'}
-          {user.lat}
+          {user ? user.lat : "no lat"}
         </h1>
         </Col>
       </Row>
