@@ -25,10 +25,7 @@ export default function Portal({ file }) {
   const [isUpdating, setIsUpdating] = useState(false);
   const nameRef = useRef();
   const [msg, setMsg] = useState({ message: '', isError: false });
-  const Map = dynamic(() => import("../components/portalMap"), {
-    loading: () => "Loading...",
-    ssr: false
-  });
+  
 
 
 return (
