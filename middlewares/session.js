@@ -2,6 +2,7 @@ import session from 'express-session';
 import connectMongo from 'connect-mongo';
 
 const MongoStore = connectMongo(session);
+const MongoDbStore = require('connect-mongo');
 
 export default function sessionMiddleware(req, res, next) {
   const mongoStore = new MongoStore({
@@ -12,6 +13,8 @@ export default function sessionMiddleware(req, res, next) {
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
-    store: mongoStore,
+    store: MongoDbStore.create({
+      mongoUrl: process.env.MONGODB_URI
+      })
   })(req, res, next);
 }
