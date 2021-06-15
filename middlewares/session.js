@@ -1,11 +1,12 @@
 import session from 'express-session';
 import connectMongo from 'connect-mongo';
+import mongoose from 'mongoose';
 
-const MongoStore = connectMongo(session);
-const MongoDbStore = require('connect-mongo');
+const MongoStore = new connectMongo(session);
+mongoose.Promise = global.Promise;
 
 export default function sessionMiddleware(req, res, next) {
-  const mongoStore = new MongoStore({
+  const mongoStore = MongoStore({
     client: req.dbClient,
     stringify: false,
   });
@@ -13,8 +14,8 @@ export default function sessionMiddleware(req, res, next) {
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
-    store: MongoDbStore.create({
-      mongoUrl: process.env.MONGODB_URI
-      })
+    store: mongoStore,
   })(req, res, next);
 }
+
+
