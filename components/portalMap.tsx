@@ -17,7 +17,6 @@ export default function Map({ location })  {
   const [viewport, setViewport] = useState({
     width: "100%",
     height: "300px",
-    // The latitude and longitude of the center of London
     latitude: lat,
     longitude: long,
     zoom: 5

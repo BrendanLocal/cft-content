@@ -8,7 +8,6 @@ import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Map from '../components/portalMap';
 
 import Button from 'react-bootstrap/Button';
 
@@ -24,7 +23,10 @@ export default function Portal({ file }) {
   const nameRef = useRef();
   const [msg, setMsg] = useState({ message: '', isError: false });
   
-
+  const Map = dynamic(() => import("../components/Map"), {
+    loading: () => "Loading...",
+    ssr: false
+  });
 
 
 return (
