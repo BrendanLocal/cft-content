@@ -15,11 +15,6 @@ export default function Map({ location })  {
 
   const [user] = useCurrentUser();
 
-  if (!user) {
-lat = user.latitude;
-
-long = user.longitude;
-  }
 
   const [viewport, setViewport] = useState({
     width: "100%",
@@ -38,8 +33,8 @@ return <ReactMapGL
 
     <div >
       <Marker
-      latitude={lat}
-      longitude={long}
+      latitude={user ? user.latitude : lat}
+      longitude={user ? user.longitude : long}
       offsetLeft={-30}
       offsetTop={-50}>
         <img height={60} src="mapPin-orange.svg"/>
