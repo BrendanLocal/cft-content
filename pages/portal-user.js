@@ -52,6 +52,7 @@ return (
         <h1 className="h2 text-orange text-center">
           Welcome Back, {user ? user.name : 'stranger'}
         </h1>
+        {user ? user.longitude : ''}
         </Col>
       </Row>
       <Row className="flex justify-content-center">
@@ -97,7 +98,7 @@ return (
                 </Row>
                 <Row>
                   <Col>
-                  <span className="bold">{user ? user.lat : ''}</span>
+                  <span className="bold">{user ? user.country : ''}</span>
                   </Col>
                 </Row>
                 </Col>
