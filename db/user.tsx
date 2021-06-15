@@ -32,7 +32,18 @@ export async function insertUser(db, {
       emailVerified: false,
       email,
       password,
-      name
+      name,
+      long: 0,
+  lat: 0,
+  trees: 0,
+  acres: 0,
+  type: "",
+  status: "",
+  net: 0,
+  engagement: 0,
+  biodiversity: 0,
+  location: "",
+  country: ""
     })
     .then(({ ops }) => ops[0]);
 }
