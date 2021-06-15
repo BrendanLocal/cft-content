@@ -19,10 +19,7 @@ const Map = dynamic(() => import("../components/portalMap"), {
   ssr: false
 });
 
-(async () => {
 
-  const [user] = await useCurrentUser();
-});
 
 export default function Portal({ file }) {
 
@@ -34,7 +31,10 @@ export default function Portal({ file }) {
   const [msg, setMsg] = useState({ message: '', isError: false });
   
 
+  (async () => {
 
+    const [user] = await useCurrentUser();
+  });
 
 
 
