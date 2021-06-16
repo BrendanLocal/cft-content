@@ -7,8 +7,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import useSound from 'use-sound';
 
+import { useCurrentUser } from '../hooks/index';
+
 const Header = ()=> {
 
+  const [user] = useCurrentUser();
 
 const [show, setShow] = useState(false);
 
@@ -156,7 +159,7 @@ return(
         <div className="row align-self-top">
           <div className="col d-flex align-items-center justify-content-end menuInterface">
           
-      <Link href="/portal" ><a className="smallCaps textButton">Sign in</a></Link>
+      <Link href="/portal" ><a className="smallCaps textButton">{ user? "Your Portal" : "Sign in" }</a></Link>
     
             
             <div id="menuIcon" className={isActive ? 'open' : null} onClick={toggleClass}>
