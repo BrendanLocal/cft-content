@@ -19,22 +19,28 @@ const Map = dynamic(() => import("../components/portalMap"), {
   ssr: false
 });
 
-
-const fetchLocation = async () => {
-  await useCurrentUser().then((response) => {
-    setLocation([response.latitude, response.longitude]);
-  }).catch((err) => 
-  console.log({ err })
-  );
-};
-
 export default function Portal({ file }) {
 
   const [user] = useCurrentUser();
   const [location, setLocation] = useState([47.185414, -66.314062]);
-
+  
   useEffect(() => {
+    console.log('useeffect');
+    const fetchLocation = async () => {
+      console.log('async');
+      await useCurrentUser().then((response) => {
+        console.log(response);
+        console.log(response.longitude);
+        setLocation([response.latitude, response.longitude]);
+      }).catch((err) => 
+      console.log({ err })
+      );
+    };
+
+
     fetchLocation();
+
+
   }, []);
 
 
