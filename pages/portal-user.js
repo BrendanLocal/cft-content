@@ -19,12 +19,11 @@ const Map = dynamic(() => import("../components/portalMap"), {
   ssr: false
 });
 
+export default function Portal({ file }) {
 
-export default async function Portal({ file }) {
-
-  var location = [47.185414, -66.314062];
+  var location = [useCurrentUser().latitude, useCurrentUser().longitude];
  
-  const [user] = await useCurrentUser();
+  const [user] = useCurrentUser();
  
   if(user){
     let lat = user.latitude;
