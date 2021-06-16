@@ -281,7 +281,6 @@ return (
               name="name"
               type="text"
               placeholder="Your name"
-              ref={name}
             />
           </label>
           <button disabled={isUpdating} type="submit">Save</button>
