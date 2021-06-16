@@ -24,6 +24,7 @@ export default function Portal({ file }) {
   const [user, { mutate }] = useCurrentUser();
   const nameRef = useRef();
   const [msg, setMsg] = useState({ message: '', isError: false });
+  const [isUpdating, setIsUpdating] = useState(false);
   const [location, setLocation] = useState([47.185414, -66.314062]);
   
   useEffect(() => {
@@ -40,9 +41,7 @@ console.log(location);
 
   
   
-  const [isUpdating, setIsUpdating] = useState(false);
   
-  const [msg, setMsg] = useState({ message: '', isError: false });
 
 
   /* for the settings editor */
