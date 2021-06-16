@@ -82,7 +82,7 @@ airbase('userdata').select({
 });
 
 
-
+var location = [47.185414, -66.314062];
 
 return (
 
@@ -116,13 +116,9 @@ return (
               <Tab>
                 My Smart Forest<sup>™</sup></Tab>
               <Tab>Grow My Impact</Tab>
-              <Tab>Edit My Information</Tab>
               <br />
               <span className="smallCaps small text-green panelHead ">Campaigns</span>
-              <Tab>
-
-                New +
-              </Tab>
+              
               <Tab>
 
                 Active
@@ -137,7 +133,7 @@ return (
             <Col className="col-lg-9 p-5">
             <TabPanel>
               <h2 className="panelHead text-center text-grey">My Smart Forest<sup>™</sup></h2>
-              <Map/>
+              <Map location={location}/>
               <Row className="borderGrid pt-3">
                 <Col>
                 <Row>
@@ -248,13 +244,6 @@ return (
             </TabPanel>
             <TabPanel>
               <h2 className="panelHead text-center text-grey">Grow My Impact</h2>
-            </TabPanel>
-            <TabPanel>
-              <h2 className="panelHead text-center text-grey">Edit My Information</h2>
-            </TabPanel>
-
-            <TabPanel>
-              <h2 className="panelHead text-center text-grey">New Campaign</h2>
             </TabPanel>
 
             <TabPanel>

@@ -91,15 +91,6 @@ hr.thick {
   cursor: pointer;
 }
 
-.carousel-item-left {
-  transform: translateX(-100%);
-}
-
-
-.carousel-item-right {
-  transform: translateX(100%);
-}
-
 .carousel-item {
   position: relative;
   display: none;
@@ -116,11 +107,11 @@ hr.thick {
 .carousel-item.active {
     display: block;
 }
-.active.carousel-item-end,
+.active.carousel-item-end, .active.carousel-item-right,
 .carousel-item-next:not(.carousel-item-start) {
     transform: translateX(100%);
 }
-.active.carousel-item-start,
+.active.carousel-item-start, .active.carousel-item-left,
 .carousel-item-prev:not(.carousel-item-end) {
     transform: translateX(-100%);
 }
@@ -1502,7 +1493,6 @@ input[type=text], input[type=email], textarea, input[type=number] {
 input[type=text], input[type=email], textarea {
 
   border-radius: 8px;
-  border: none;
   padding: 8px;;
   font-size: 12px;
 }
