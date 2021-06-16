@@ -258,33 +258,24 @@ let total = vehicleSub + subtotalBuild + flightSub + transitSub + studentCommute
 
 return (
 
-<div>
-  <Container className="py-5">
+<div className="bg-school">
+  <Container className="p-5">
     <Row className="justify-content-center">
-      <Col className="col-11 col-lg-10 pt-5">
+    <Col className="col-11 col-lg-10 pt-5 align-items-center my-4 pt-5">
       
-      <h1 className="text-orange text-center pt-5">Carbon Calculator</h1>
-      <Row className=" horizTab  justify-content-center pb-5">
-          <Col>
-          <Link href="personal-calculator"><Button variant="text text-orange smallCaps letterspace">Personal Calculator</Button></Link>
-          </Col>
-          
-          <Col>
-          <Link href="business-calculator"><Button variant="text text-orange smallCaps letterspace">Business Calculator</Button></Link>
-          </Col>
-        </Row>
+      <h1 className="emphasis text-orange text-center bold tight-drop-light">School Carbon Calculator</h1>
+      
       </Col>
     </Row>
     <Row className="justify-content-center">
       <Col className="p-3 col-11 col-lg-6">
-      <div className="card roundedBox bg-offwhite p-4 cardShadow cardSpacing">
-      <p className="large">School Calculator</p>
-      <p>Estimated Carbon Emission used in Schools.</p>
+      <div className="card roundedBox no-border bg-green p-4 innerShadow cardSpacing">
+      <p className="lead text-white m-2 calc-intro">Calculate how much carbon your school must offset to reach net-zero</p>
       </div>
-      <div className="card roundedBox bg-offwhite p-4 cardShadow cardSpacing">
+      <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
         <Row>
           <Col>
-          <h4>
+          <h4 className="text-green">
             Heating & Electricity
           </h4>
         <hr/>
@@ -349,13 +340,13 @@ return (
       </div>
 
 
-      <div className="card roundedBox bg-offwhite p-4 cardShadow cardSpacing">
+      <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
         <Row>
           <Col>
-          <h3>
+          <h3 className="text-green">
             Employee Commute
           </h3>
-          <p>Please input the following information for your employees' daily commute:</p>
+          <p className="text-grey">Please input the following information for your employees' daily commute:</p>
           </Col>
         </Row>
         <Row>
@@ -394,13 +385,13 @@ return (
         </Row>
       </div>
 
-      <div className="card roundedBox bg-offwhite p-4 cardShadow cardSpacing">
+      <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
         <Row>
           <Col>
-          <h3>
+          <h3 className="text-green">
             Student Commute
           </h3>
-          <p>Please input the following information for your students' daily commute:</p>
+          <p className="text-grey">Please input the following information for your students' daily commute:</p>
           </Col>
         </Row>
         <Row>
@@ -472,13 +463,13 @@ return (
         </Row>
       </div>
 
-      <div className="card roundedBox bg-offwhite p-4 cardShadow cardSpacing">
+      <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
         <Row>
           <Col className="col-12">
-          <h3>
+          <h3 className="text-green">
             Other Transportation
           </h3>
-          <p>Please input the information to determine the C02 emissions for transportation other than the sudents' daily commute?:</p>
+          <p className="text-grey">Please input the information to determine the C02 emissions for transportation other than the sudents' daily commute?:</p>
         <hr/>
           </Col>
            
@@ -512,10 +503,10 @@ return (
         </Row>
        </div>
       
-       <div className="card roundedBox bg-offwhite p-4 cardShadow cardSpacing">
+       <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
         <Row>
           <Col className="col-12">
-          <h3>
+          <h3 className="text-green">
             Other Vehicles
             <hr/>
           </h3>
@@ -541,10 +532,13 @@ return (
        </div>
 
 
-       <div className="card roundedBox bg-offwhite p-4 cardShadow cardSpacing">
+       <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
         <Row>
           <Col className="col-12">
-          <p>Extracurricular Activities (Any school endorsed activity outside of regular school hours such as sports teams,
+          <h3 className="text-green">
+          Extracurricular Activities
+          </h3>
+          <p className="text-grey">Extracurricular Activities (Any school endorsed activity outside of regular school hours such as sports teams,
                fundraising)</p>
         <hr/>
           </Col>
@@ -578,10 +572,10 @@ return (
         </Row>
        </div>
 
-       <div className="card roundedBox bg-offwhite p-4 cardShadow cardSpacing">
+       <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
         <Row>
           <Col className="col-12">
-          <h3>
+          <h3 className="text-green">
             Other Vehicles
           </h3>
           <hr/>
@@ -606,13 +600,13 @@ return (
        </div>
 
 
-      <div className="card roundedBox bg-offwhite p-4 cardShadow cardSpacing">
+      <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
         <Row>
           <Col>
-          <h3>
+          <h3 className="text-green">
             Flight
           </h3>
-          <p>Please include the number of flights taken by students for any school endorsed programs 
+          <p className="text-grey">Please include the number of flights taken by students for any school endorsed programs 
               (educational trips, exchange programs).
           </p>
           </Col>
@@ -708,8 +702,8 @@ return (
 
 
       </Col>
-      <Col className=" p-3  col-12 col-lg-4 stickyCalc ">
-        <div className="text-white p-5 innerShadow roundedBox">
+      <Col className=" p-3  col-12 col-lg-4 stickyCalc mb-4">
+        <div className="text-white p-5 innerShadow roundedBox bg-green">
       <h4 className="mb-0">Subtotals</h4>
       <hr/>
       <Row><Col>Heating & Electricity</Col><Col className="text-right bold">{subtotalBuild > 0 ? subtotalBuild.toFixed(2) : "--"}</Col></Row>
@@ -733,15 +727,45 @@ return (
 
       </Col>
     </Row>
-    <Row className="justify-content-center">
-      <Col className="col-md-10">
-      <div className="bg-brown text-white p-5 innerShadow roundedBox">
-      <h4 className="mb-0">Next Steps</h4>
-      <hr/>
-      <Button variant="green">Smart Forest™ Calculator</Button>
+
+    <Row className="justify-content-center ">
+      <Col className="col-10 align-items-center text-center p-3">
+      <div className="bg-brown p-5 innerShadow roundedBox">
+        <p className="smallCaps text-orange">Next Step</p>
+      <h3 className="text-white mb-4 px-4">Calculate how many hectares of Smart Forest you need to invest in to reach a Net-Zero emissions target.</h3>
+      <Button className="btn-large mt-1" variant="green">Calculate Your Net-Zero Target</Button>
       </div>
       </Col>
     </Row>
+    
+    <Row className="justify-content-center mt-5">
+      <Col className="col-11 col-lg-10 pt-5">
+      
+      <h2 className=" text-orange text-center pt-5 bold mb-4 tight-drop-light">Other Carbon Calculators</h2>
+      
+      </Col>
+    </Row>
+
+    <Row className="justify-content-center pb-5 mb-5">
+    
+        <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
+        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
+        <h4 className="text-white tight-drop-light">Corporate</h4>
+        <p className="flex-fill pb-3 text-white tight-drop">Calculate how much carbon your corporation must offset to reach net-zero.</p>
+       
+        <Link href="business-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">SELECT</a></Link>
+        </div>
+        </Col>
+
+        <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
+        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
+        <h4 className="text-white tight-drop-light">Personal</h4>
+        <p className="flex-fill pb-3 text-white tight-drop">Calculate how much carbon you must personally offset to reach net-zero.</p>
+       
+        <Link href="personal-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">SELECT</a></Link>
+        </div>
+        </Col>
+      </Row>
   </Container>
 </div>
 

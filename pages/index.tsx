@@ -108,7 +108,7 @@ export default function Home({ file, href, children}) {
         <meta name="theme-color" content="#054218"></meta>
       </Head>
 
-      <Row className="justify-content-left p-0 m-0 d-none d-lg-block">
+      <Row className="justify-content-left p-0 m-0 d-none d-lg-block d-xl-block">
         <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
           <p className="text-white m-2 bold op-6">{editingdata.home}</p>
           <ul>
@@ -154,7 +154,7 @@ export default function Home({ file, href, children}) {
               <Fade bottom>
               <Row className="justify-content-center  pb-5">
               <Col className="col-10 col-lg-8 col-xl-6 p-md-1 mb-5 py-5">
-        <p className="intro-par text-white bold pe-5 pe-lg-0 py-3">{editingdata.part1_header3}</p>
+                <p className="intro-par text-white bold pe-5  py-3">{editingdata.part1_header3}</p>
                   </Col>
                 </Row>
               </Fade>
@@ -191,12 +191,21 @@ export default function Home({ file, href, children}) {
         
         
         <Container fluid id="video" className="bg-green py-5 container-drop-heavy">
+        <Fade bottom>
+        <Row className="justify-content-center align-items-center pt-5 mt-5">
+            <Col className="col-11 col-md-8">
+              <h2 className="text-orange text-center bold mb-4">
+                What Keeps Us Growing
+              </h2>
+             </Col>
+            </Row>
           <Row className="justify-content-center align-items-center">
-            <Col className="col-11 col-md-6 d-flex px-lg-5 my-5">
-            <ReactPlayer playing playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4' />
+            <Col className="col-11 col-md-6 d-flex px-lg-5 mb-5 mt-2">
+            <ReactPlayer playing playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4'/>
             </Col>
           </Row>
-        </Container>
+        </Fade>
+      </Container>
 
         <Container id="what" fluid className="v-full z-999 bg-green align-items-center p-5">
           <Fade bottom>
@@ -204,50 +213,25 @@ export default function Home({ file, href, children}) {
               <Col className="order-2 order-lg-1 col-12 p-5 col-md-4 text-white">
                 <h2 className="text-orange bold">{editingdata.part2_header1}</h2>
                 <p className="pb-3 thin">{editingdata.part2_para1}</p>
-                <Link href="/what-is-a-smart-forest" ><a className="btn btn-green">{editingdata.part2_button1}</a></Link>
+                <Link href="/what-is-a-smart-forest"><a className="btn btn-green">{editingdata.part2_button1}</a></Link>
               </Col>
-              <Col className="order-1 order-lg-2 col-12 col-md-4 px-3 py-3 roundedBox innerShadow">
+              <Col className="order-1 order-lg-2 col-12 col-md-5">
                 <object className="op-6" type="image/svg+xml" data="/power2-svg.svg"/>
               </Col>
             </Row>
           </Fade>
         </Container>
-<Container fluid id="video" className="bg-white py-5">
-  <Row>
-    <Col className="col-12 col-md-6 d-flex justify-content-center">
-    <ReactPlayer playing playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4' />
-    </Col>
-  </Row>
-</Container>
-    <Container id="what"  fluid className="v-full z-999 bg-green align-items-center p-5 container-drop-heavy">
-      <Fade bottom>
-      <Row className="py-5 align-items-center justify-content-center mt-5">
-        
-        <Col className="order-2 order-lg-1 col-12 p-5 col-md-4 text-white">
-        <h2 className="text-orange bold">What is a Smart Forest?</h2>
-        <p className="pb-3 thin">A Smart Forest combines the resilience of a natural ecosystem, developed over millennia, with the predictive capabilities of today’s technologies. Inside a Smart Forest, life thrives; outside of it, scientists, students, investors and conservationists use digital instruments to understand and activate the forest’s role in cleaning our water, purifying our air, and replenishing our lost resources.</p>
-        <Link href="/what-is-a-smart-forest" ><a className="btn btn-green  ">Learn more about Smart Forests</a></Link>
-      
-        </Col>
-        <Col className="order-1 order-lg-2 col-12 col-md-4 px-3 py-3 roundedBox innerShadow">
-        
-          <object className="op-6" type="image/svg+xml" data="/power2-svg.svg"/>
-         
-        </Col>
 
-      </Row>
-      </Fade>
-    </Container>
         <Container id="how" fluid className="v-full z-999 bg-green p-5">
           <Fade bottom>
             <Row className="py-5 align-items-center justify-content-center">
-              <Col className="col-12 col-md-4 p-5 roundedBox innerShadow bg-brown">
+              <Col className="col-12 col-md-5 p-5">
                 <object type="image/svg+xml" data="/build2-svg.svg"/>
               </Col>
               <Col className="col-12 p-5 col-md-4 text-white">
                 <h2 className="text-orange bold">{editingdata.part3_header1}</h2>
                 <p className="pb-3 thin">{editingdata.part3_para1}</p>
-                <Link href="/build-your-forest" >
+                <Link href="/build-your-smart-forest" >
                   <a className="btn btn-green">{editingdata.part3_button1}</a>
                 </Link>
               </Col>
@@ -279,28 +263,28 @@ export default function Home({ file, href, children}) {
           <Row className="justify-content-center align-items-stretch">
             <Col className="col-11 col-md-6 col-lg-6 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border py-4 d-flex flex-column drop corporate-card">
-                <Link href="/build-your-forest#corporate">
+                <Link href="/build-your-smart-forest#corporate">
                   <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop py-1">{editingdata.part5_button1}</a>
                 </Link>
               </div>
             </Col>
             <Col className="col-11 col-md-6 col-lg-6 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border py-4 d-flex flex-column drop school-card">
-                <Link href="/build-your-forest#school">
+                <Link href="/build-your-smart-forest#school">
                   <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop py-1">{editingdata.part5_button2}</a>
                 </Link>
               </div>
             </Col>
             <Col className="col-11 col-md-6 col-lg-6 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border py-4 d-flex flex-column drop legacy-card">
-                <Link href="/build-your-forest#legacy" >
+                <Link href="/build-your-smart-forest#legacy" >
                   <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop py-1">{editingdata.part5_button3}</a>
                 </Link>
               </div>
             </Col>
             <Col className="col-11 col-md-6 col-lg-6 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border py-4 d-flex flex-column drop communal-card">
-                <Link href="/build-your-forest#communal" >
+                <Link href="/build-your-smart-forest#communal" >
                   <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop py-1">{editingdata.part5_button4}</a>
                 </Link>
               </div>
@@ -320,7 +304,7 @@ export default function Home({ file, href, children}) {
             <Row className="justify-content-center  align-items-stretch mx-lg-5">
                 <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="h6 text-orange bold">{editingdata.part6_box1para1}</p>
+                  <p className="h6 text-mildgreen bold">{editingdata.part6_box1para1}</p>
                   <p className="large text-green mb-2">{editingdata.part6_box1para2}</p>
                   <p className="text-grey mb-3">{editingdata.part6_box1para3}</p>
                   <Link href="carbon-calculator">
@@ -330,7 +314,7 @@ export default function Home({ file, href, children}) {
               </Col>
               <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="h6 text-orange bold">{editingdata.part6_box2para1}</p>
+                  <p className="h6 text-mildgreen bold">{editingdata.part6_box2para1}</p>
                   <p className="large text-green mb-2">{editingdata.part6_box2para2}</p>
                   <p className="text-grey mb-4">{editingdata.part6_box2para3}</p>
                   <Button variant="green mt-3">{editingdata.part6_box2button1}</Button>
@@ -338,7 +322,7 @@ export default function Home({ file, href, children}) {
               </Col>
               <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="h6 text-orange bold">{editingdata.part6_box3para1}</p>
+                  <p className="h6 text-mildgreen bold">{editingdata.part6_box3para1}</p>
                   <p className="large text-green mb-2">{editingdata.part6_box3para2}</p>
                   <p className="text-grey mb-3">{editingdata.part6_box3para3}</p>
                   <Button variant="green" className="mt-5">{editingdata.part6_box3button1}</Button>

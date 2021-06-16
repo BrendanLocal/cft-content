@@ -51,7 +51,7 @@ export default function Power({ file }) {
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#054218"></meta>
       </Head>
-      <Row className="justify-content-left p-0 m-0 d-none d-lg-block">
+      <Row className="justify-content-left p-0 m-0 d-none d-lg-block d-xl-block">
         <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
           <p className="text-white m-2 bold op-6">SMART FORESTS</p>
           <ul>
@@ -105,7 +105,7 @@ export default function Power({ file }) {
           <Fade bottom>
             <Row className="justify-content-center d-flex pb-5 mx-5 px-lg-5">
               <Col className="col-12 col-lg-5 bg-brown roundedBox innerShadow px-5 pt-5 pb-4 m-4">          
-                <h3 className="text-orange">A Forest</h3>
+                <h3 className="h2 text-orange">Forest</h3>
                 <ul className="text-white checkMark">
                   <li>Mitigates climate change by sequestering carbon</li>
                   <li>Purifies the air and improves soil quality</li>
@@ -115,9 +115,9 @@ export default function Power({ file }) {
                 </ul>
               </Col>
               <Col className="col-12 col-lg-5 roundedBox card card-drop px-5 pt-5 pb-4 m-4">
-                <h3 className="text-orange">A Smart Forest</h3>
+                <h3 className="h2 text-orange"><span className="bold">Smart</span> Forest</h3>
                 <ul className="text-grey plus">
-                  <li>Is a forest <span className="bold italic">and</span>an investment in the health of our planet</li>
+                  <li>Is a forest <span className="bold italic">and</span> an investment in the health of our planet</li>
                   <li>Offers a tangible way to offset a large carbon footprints</li>
                   <li>Maximizes its impact through expert forest management</li>
                   <li>Proves its effectiveness via proprietary digital tools</li>
@@ -205,7 +205,7 @@ export default function Power({ file }) {
                 <p className="text-left text-white">Canada’s Forest Trust will build Smart Forests on deforested or unused land, located in ecologically diverse regions across the country, and will protect some of our nation’s most imperilled plants and animals.</p>
               </Col>
               <Col className="col-10 col-md-4 p-3 roundedBox innerShadow-heavy callout-box">
-                <p className="text-white text-green p-5 tight-drop">Planting <span className="bold">500 hectares of land</span>has the potential to sequester about <span className="bold">41,245 tonnes of carbon by 2050</span>and <span className="bold">75,300 tonnes by 2070.</span></p>
+                <p className="text-white text-green p-5 tight-drop-heavy">Planting <span className="bold">500 hectares of land</span> has the potential to sequester about <span className="bold">41,245 tonnes of carbon by 2050</span> and <span className="bold">75,300 tonnes by 2070.</span></p>
               </Col>
             </Row>
           </Fade>
@@ -215,7 +215,7 @@ export default function Power({ file }) {
                 <p className="h3 text-center text-orange bold op-9 my-0">See your carbon footprint and learn what you can do to get to net-zero.</p>
               </Col>
               <Col className="col-10 text-center col-lg-7 my-5 pb-5">
-                <Link href="/what-is-a-smart-forest" >
+                <Link href="/carbon-calculator" >
                   <a className="btn btn-large btn-green">WHAT'S YOUR IMPACT?</a>
                 </Link>
               </Col>

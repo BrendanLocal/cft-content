@@ -25,5 +25,9 @@
 , "pages/_app.js", "hooks/airtable.tsx"  ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "paths": {
+    "@/*": ["./src/*"]
+  }
+  
 }
