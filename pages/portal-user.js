@@ -272,7 +272,7 @@ return (
               <h2 className="panelHead text-center text-grey">Edit My Information</h2>
               {msg.message ? <p style={{ color: msg.isError ? 'red' : '#0070f3', textAlign: 'center' }}>{msg.message}</p> : null}
         <form onSubmit={handleSubmit}>
-          { user && user.emailVerified ? null  : (
+          { user ? null  : (
             <p>
               Your email has not been verify.
               {' '}
