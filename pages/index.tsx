@@ -189,25 +189,8 @@ export default function Home({ file, href, children}) {
           </Parallax>
         </Parallax>
         
-        
-        <Container fluid id="video" className="bg-green py-5 container-drop-heavy">
-        <Fade bottom>
-        <Row className="justify-content-center align-items-center pt-5 mt-5">
-            <Col className="col-11 col-md-8">
-              <h2 className="text-orange text-center bold mb-4">
-                What Keeps Us Growing
-              </h2>
-             </Col>
-            </Row>
-          <Row className="justify-content-center align-items-center">
-            <Col className="col-11 col-md-6 d-flex px-lg-5 mb-5 mt-2">
-            <ReactPlayer playing playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4'/>
-            </Col>
-          </Row>
-        </Fade>
-      </Container>
 
-        <Container id="what" fluid className="v-full z-999 bg-green align-items-center p-5">
+        <Container id="what" fluid className="v-full z-999 bg-green align-items-center p-5 container-drop-heavy">
           <Fade bottom>
             <Row className="py-5 align-items-center justify-content-center mt-5">
               <Col className="order-2 order-lg-1 col-12 p-5 col-md-4 text-white">
