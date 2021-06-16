@@ -25,7 +25,7 @@ export default function Portal({ file }) {
   const [isUpdating, setIsUpdating] = useState(false);
   const [location, setLocation] = useState([47.185414, -66.314062]);
   const [name, setName] = useState("");
-
+  const nameRef = useRef();
   const [msg, setMsg] = useState({ message: '', isError: false });
 
 
@@ -34,9 +34,17 @@ export default function Portal({ file }) {
 
   setName(user.name);
 setLocation([Number(user.longitude), Number(user.latitude)]);
-console.log(location);
+
+
   }, []);
 
+
+  useEffect(() => {
+
+    nameRef.current.value = user.name;
+  console.log(nameRef);
+    }, [user]);
+  
   
   
   
