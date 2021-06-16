@@ -22,7 +22,6 @@ const Map = dynamic(() => import("../components/portalMap"), {
 export default function Portal({ file }) {
 
   const [user, { mutate }] = useCurrentUser();
-  const [isUpdating, setIsUpdating] = useState(false);
   const nameRef = useRef();
   const [msg, setMsg] = useState({ message: '', isError: false });
   const [location, setLocation] = useState([47.185414, -66.314062]);
