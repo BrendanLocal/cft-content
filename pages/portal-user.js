@@ -14,7 +14,7 @@ import { useCurrentUser } from '../hooks/index';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 
-const Map = dynamic(() => import("../components/Map"), {
+const Map = dynamic(() => import("../components/portalMap"), {
   loading: () => "Loading...",
   ssr: false
 });
