@@ -1424,7 +1424,7 @@ z-index:999;
 }
 
 .newsItem.tickerButton:hover {
-  
+  cursor: pointer;
   transition: all .5s;
   color: #fff;
 
