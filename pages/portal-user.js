@@ -41,6 +41,8 @@ console.log(location);
   useEffect(() => {
     console.log("useeffect2");
     nameRef.current.value = user.name;
+
+    console.log(nameRef);
   }, [user]);
 
   
