@@ -155,6 +155,15 @@ return (
             </Col>
             <Col className="col-lg-9 p-5">
             <TabPanel>
+            <Tabs><TabList>
+            <Tab className="link bold text-orange">
+                Dashboard
+                </Tab>
+              <Tab className="link bold text-orange">
+               2040 ForestCast<sup>™</sup>
+                </Tab>
+            </TabList>
+            <TabPanel>
               <h2 className="panelHead text-center text-grey">My Smart Forest<sup>™</sup></h2>
               <Map location={location}/>
               <Row className="borderGrid pt-3">
@@ -260,10 +269,12 @@ return (
               <Row>
               <hr className="thick"/>
               </Row>
-              <Row>
-                <Col>
-                <a className="link bold text-orange">2040 ForestCast<sup>™</sup></a></Col>
-              </Row>
+              </TabPanel>
+
+            <TabPanel>
+            <h2 className="panelHead text-center text-grey">2040 ForestCast<sup>™</sup></h2>
+              </TabPanel>
+              </Tabs>
             </TabPanel>
             <TabPanel>
               <h2 className="panelHead text-center text-grey">Grow My Impact</h2>
@@ -285,7 +296,7 @@ return (
           </label><br></br>
           <button disabled={isUpdating} type="submit">Save</button>
         </form>
-
+<br></br>
         <h3>Change your password</h3>
         <form onSubmit={handleSubmitPasswordChange}>
           <label htmlFor="oldpassword">
@@ -296,7 +307,7 @@ return (
               id="oldpassword"
               required
             />
-          </label>
+          </label><br></br>
           <label htmlFor="newpassword">
             New Password<br></br>
             <input
