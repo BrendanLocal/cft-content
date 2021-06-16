@@ -22,10 +22,14 @@ const Map = dynamic(() => import("../components/portalMap"), {
 export default function Portal({ file }) {
 
   const [user, { mutate }] = useCurrentUser();
-  var nameRef = useRef();
-  const [msg, setMsg] = useState({ message: '', isError: false });
   const [isUpdating, setIsUpdating] = useState(false);
   const [location, setLocation] = useState([47.185414, -66.314062]);
+
+
+  const nameRef = useRef();
+  const [msg, setMsg] = useState({ message: '', isError: false });
+
+
   
   useEffect(() => {
 
@@ -36,8 +40,8 @@ console.log(location);
 
   useEffect(() => {
     nameRef.current.value = user.name;
+    bioRef.current.value = user.bio;
   }, [user]);
-
 
   
   
@@ -69,6 +73,7 @@ console.log(location);
     }
     setIsUpdating(false);
   };
+
 
   const handleSubmitPasswordChange = async (e) => {
     e.preventDefault();
@@ -102,6 +107,7 @@ console.log(location);
       setMsg({ message: await res.text(), isError: true });
     }
   }
+
 
 return (
 
@@ -272,7 +278,7 @@ return (
               <h2 className="panelHead text-center text-grey">Edit My Information</h2>
               {msg.message ? <p style={{ color: msg.isError ? 'red' : '#0070f3', textAlign: 'center' }}>{msg.message}</p> : null}
         <form onSubmit={handleSubmit}>
-          { user ? null  : (
+          {!user.emailVerified ? (
             <p>
               Your email has not been verify.
               {' '}
@@ -281,7 +287,7 @@ return (
                   Send verification email
                 </a>
             </p>
-          )}
+          ) : null}
           <label htmlFor="name">
             Name
             <input
