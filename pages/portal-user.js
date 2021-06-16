@@ -14,12 +14,27 @@ import { useCurrentUser } from '../hooks/index';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 
-const Map = dynamic(() => import("../components/portalMap"), {
+const Map = dynamic(() => import("../components/Map"), {
   loading: () => "Loading...",
   ssr: false
 });
 
+const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/greggs.json?access_token=${process.env.MAPBOX_KEY}&bbox=-0.227654%2C51.464102%2C0.060737%2C51.553421&limit=10`;
+
+
 export default function Portal({ file }) {
+  const [locations, setLocations] = useState([]);
+  
+  useEffect(() => {
+    const fetchLocations = async () => {
+      await fetch(url).then((response) =>
+        response.text()).then((res) => JSON.parse(res))
+      .then((json) => {
+        setLocations(json.features);
+      }).catch((err) => console.log({ err }));
+    };
+    fetchLocations();
+  }, []);
 
   var location = [useCurrentUser().latitude, useCurrentUser().longitude];
  
@@ -36,7 +51,6 @@ export default function Portal({ file }) {
   const [isUpdating, setIsUpdating] = useState(false);
   
   const [msg, setMsg] = useState({ message: '', isError: false });
-
 
 return (
 
