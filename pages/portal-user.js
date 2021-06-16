@@ -26,7 +26,7 @@ export default function Portal({ file }) {
   
   useEffect(() => {
     console.log('useEffect');
-    console.log(user.latitude);
+    console.log(Number(user.latitude));
 setLocation([Number(user.latitude), Number(user.longitude)]);
   }, []);
 
