@@ -13,14 +13,6 @@ export default async function Map({ location })  {
     long = location[1];
   }
 
-    let [user] = await useCurrentUser();   
-    if(user){
-      let lat = user.latitude;
-      let long = user.longitude;
-
-    console.log(lat)
-    console.log(long)
-}
 let [viewport, setViewport] = useState({
   width: "100%",
   height: "300px",
