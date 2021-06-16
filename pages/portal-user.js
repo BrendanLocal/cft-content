@@ -35,8 +35,6 @@ export default function Portal({ file }) {
     };
     fetchLocations();
   }, []);
-
-  var location = [useCurrentUser().latitude, useCurrentUser().longitude];
  
   const [user] = useCurrentUser();
  
