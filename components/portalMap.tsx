@@ -12,22 +12,29 @@ export default function Map({ location })  {
     lat = location[0];
     long = location[1];
   }
-
-  (async function() {
+  async function wrapperFunction() {
     let [user] = await useCurrentUser();   
     if(user){
-      let lat = user.latitude;
-      let long = user.longitude;
+      const lat = user.latitude;
+      const long = user.longitude;
+
+    console.log(lat)
+    console.log(long)
+}
+const [viewport, setViewport] = useState({
+  width: "100%",
+  height: "300px",
+  latitude: lat,
+  longitude: long,
+  zoom: 5
+});
+
     }
-  })();
   
-  const [viewport, setViewport] = useState({
-    width: "100%",
-    height: "300px",
-    latitude: lat,
-    longitude: long,
-    zoom: 5
-  });
+    wrapperFunction().catch((error) => {
+      console.log(error)
+  })
+  
 return <ReactMapGL
   mapStyle="mapbox://styles/mapbox/streets-v11"
   mapboxApiAccessToken="pk.eyJ1IjoiYnJlbmRhbi1sb2NhbCIsImEiOiJja3A0OGNzN2UxeXhtMndxcTh0cmx0N3R4In0.ey4Lfo0kJ9jW1RUWVgW57g"
