@@ -23,11 +23,11 @@ export default function Portal({ file }) {
 
   const [user] = useCurrentUser();
 
-  const [location, setLocation] = useState([]);
+  const [location, setLocation] = useState([47.185414, -66.314062]);
   
   useEffect(() => {
       setLocation([user.latitude, user.longitude]);
-    
+
   });
   
   const [isUpdating, setIsUpdating] = useState(false);
