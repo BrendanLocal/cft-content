@@ -39,8 +39,8 @@ console.log(location);
   }, []);
 
   useEffect(() => {
+    console.log("useeffect2");
     nameRef.current.value = user.name;
-    bioRef.current.value = user.bio;
   }, [user]);
 
   
