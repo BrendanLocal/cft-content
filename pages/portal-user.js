@@ -30,6 +30,21 @@ export default function Portal({ file }) {
   
   const [msg, setMsg] = useState({ message: '', isError: false });
 
+
+  useEffect(() => {
+    const fetchLocation = async () => {
+      await useCurrentUser().then((response) => {
+        setLocation([response.latitude, response.longitude]);
+      }).catch((err) => 
+      console.log({ err })
+      );
+    };
+    fetchLocation();
+  }, []);
+
+
+
+
 return (
 
 <div>
