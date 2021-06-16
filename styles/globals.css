@@ -1632,7 +1632,7 @@ span.authorTitle {
   background-size: cover;
 }
 
-.bg-legacy{
+.bg-legacy {
 
   
   background-image: url('/legacy-smart-forest-lopacity.png');
@@ -1681,6 +1681,7 @@ span.authorTitle {
     background-size: cover;
     background-position: center;
     box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
+    background-color:#054217;
 }
 
 .corporate-card:hover {
@@ -1708,7 +1709,7 @@ span.authorTitle {
     background-size: cover;
     background-position: center;
     box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
-
+    background-color:#054217;
 }
 
 
@@ -1739,7 +1740,7 @@ transition: all .5s ease;
     background-size: cover;
     background-position: center;
     box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
-
+    background-color:#054217;
 }
 
 .legacy-card:hover {
@@ -1777,7 +1778,7 @@ transition: all .5s ease;
     background-size: cover;
     background-position: center;
     box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
-  
+    background-color:#054217;
 }
 
 .communal-card:hover {

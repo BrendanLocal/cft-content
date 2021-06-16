@@ -235,12 +235,12 @@ let total = vehicleSub + subtotalBuild + flightSub + publicTransportSub + subtot
 
 return (
 
-<div>
+<div className="bg-legacy">
   <Container className="p-5">
     <Row className="justify-content-center">
     <Col className="col-11 col-lg-10 pt-5 align-items-center my-4 pt-5">
       
-      <h1 className="emphasis text-orange text-center bold">Personal Carbon Calculator</h1>
+      <h1 className="emphasis text-orange text-center bold tight-drop-light">Personal Carbon Calculator</h1>
       
       </Col>
     </Row>
@@ -725,7 +725,7 @@ return (
       </Col>
     
       <Col className=" p-3  col-12 col-lg-4 stickyCalc mb-4">
-        <div className="text-white p-5 innerShadow roundedBox">
+        <div className="text-white p-5 innerShadow roundedBox bg-green">
       <h4 className="mb-0">Subtotals</h4>
       <hr/>
       <Row><Col>Heating & Electricity</Col><Col className="text-right bold">{totalBuild > 0 ? totalBuild.toFixed(2) : "--"}</Col></Row>
@@ -758,7 +758,7 @@ return (
     <Row className="justify-content-center mt-5">
       <Col className="col-11 col-lg-10 pt-5">
       
-      <h2 className=" text-orange text-center pt-5 bold mb-4">Other Carbon Calculators</h2>
+      <h2 className=" text-orange text-center pt-5 bold mb-4 tight-drop-light">Other Carbon Calculators</h2>
       
       </Col>
     </Row>
