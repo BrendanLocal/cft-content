@@ -346,7 +346,7 @@ return (
         <Row>
           <Col>
           <label htmlFor="number">Month(s) per year spent living at this residence?</label><br />
-          <input onChange={changeYear} type="number" placeholder="Month(s) in residence" />
+          <input onChange={changeYear} type="number" placeholder="Month(s) per year in residence" />
           </Col>
         </Row>
 
@@ -425,7 +425,7 @@ return (
         <Row>
           <Col>
           <label htmlFor="number">Month(s) per year spent living at this residence?</label><br />
-          <input onChange={changeYearTwo} type="number" placeholder="Month(s) in residence" />
+          <input onChange={changeYearTwo} type="number" placeholder="Month(s) per year in residence" />
           </Col>
         </Row>
 
@@ -579,15 +579,15 @@ return (
   <Row>
     <Col className="col">
       Yacht
-    <input onChange={calculateMiles} name="yachtGas" type="number" placeholder="Marine Diesel Litres/year" />
-    <input onChange={calculateMiles} name="yachtDiesel" type="number" placeholder="Marine Unleaded Litres/year" />
+    <input onChange={calculateMiles} name="yachtGas" type="number" placeholder="Marine Diesel Litres per year" />
+    <input onChange={calculateMiles} name="yachtDiesel" type="number" placeholder="Marine Unleaded Litres per year" />
     </Col>
   </Row> 
   <hr/>
   <Row>
     <Col className="col">
       ATV (quad bike)
-    <input onChange={calculateMiles} name="atvGas" type="number" placeholder="Litres/year" />
+    <input onChange={calculateMiles} name="atvGas" type="number" placeholder="Litres per year" />
     </Col>
   </Row> 
   <hr/>
@@ -595,7 +595,7 @@ return (
   <Row>
     <Col className="col">
       Side-by-side
-    <input onChange={calculateMiles} name="sbsGas" type="number" placeholder="Litres/year" />
+    <input onChange={calculateMiles} name="sbsGas" type="number" placeholder="Litres per year" />
     </Col>
   </Row> 
   <hr/>
@@ -603,7 +603,7 @@ return (
   <Row>
     <Col className="col">
       Snowmobile
-    <input onChange={calculateMiles} name="snowGas" type="number" placeholder="Litres/year" />
+    <input onChange={calculateMiles} name="snowGas" type="number" placeholder="Litres per year" />
     </Col>
   </Row> 
 
@@ -742,7 +742,7 @@ return (
           </Col>
           <Col className="col-xl-4">
           <input onChange={calculateTransitMiles} name="publicCar" type="number"
-            placeholder="Average Km/day" />
+            placeholder="Average Km per day" />
           </Col>
         </Row>
         <Row>
@@ -750,7 +750,7 @@ return (
           Taxi/Rideshare
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateTransitMiles} name="publicTaxi" type="number" placeholder="Average km/day" />
+          <input onChange={calculateTransitMiles} name="publicTaxi" type="number" placeholder="Average Km per day" />
           </Col>
         </Row>
         <Row>
@@ -758,7 +758,7 @@ return (
           Metro/Subway
           </Col>
           <Col className="col-6 col-xl-4">
-          <input onChange={calculateTransitMiles} name="publicSubway" type="number" placeholder="Average km/day" />
+          <input onChange={calculateTransitMiles} name="publicSubway" type="number" placeholder="Average Km per day" />
           </Col>
         </Row>
 
