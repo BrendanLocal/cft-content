@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import useSound from 'use-sound';
-
+import Search from '../components/search';
 import { useCurrentUser } from '../hooks/index';
 
 const Header = ()=> {
@@ -114,7 +114,7 @@ return(
   <Container className="v-80 d-flex justify-content-center align-items-center">
   <Row><Col>
   <h3 className="text-white">Search</h3>
-                <div className="searchBox"><img src="/searchIcon.svg"/><input type="text" className="searchInput"></input><img className="closeSearch" onClick={toggleSearch} src="/close.svg"/></div>
+                <div className="searchBox"><Search/><img src="/searchIcon.svg"/><input type="text" className="searchInput"></input><img className="closeSearch" onClick={toggleSearch} src="/close.svg"/></div>
                 </Col>
                 </Row>
                 </Container>
