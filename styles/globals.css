@@ -1234,6 +1234,10 @@ footer {
   text-shadow: 0px 1px 8px rgba(0, 0, 0, 0.6);
 }
 
+.nudge {
+  margin-right: 6px;
+}
+
 .intro-links{
   margin: 10px 35px 10px 0px;
   font-size: 16px;
@@ -1579,6 +1583,8 @@ button, input, optgroup, select, textarea {
   margin: 5px 0;
   font-size: 12.5px;
 }
+
+
 
 /* Landing Page */
 
@@ -2351,6 +2357,10 @@ font-size: .9em;
 .about-bg {
 
   height: 400px;
+}
+
+.nudge {
+  margin-right: 0px;
 }
 
 }

@@ -128,8 +128,8 @@ export default function Home({ file, href, children}) {
             <h3 className="text-green smallCaps text-center">THE SMART FOREST INITIATIVE</h3>
             </Col>
           </Row>
-          <Row className="justify-content-center align-items-center ps-lg-4 ms-lg-3">
-            <Col className="col-12 d-flex ms-lg-4 mb-2">
+          <Row className="justify-content-center align-items-center ps-lg-4 ms-lg-4">
+            <Col className="col-12 d-flex ms-lg-4 mb-2 nudge">
             
             <ReactPlayer playing playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4'/>
            
@@ -189,14 +189,14 @@ export default function Home({ file, href, children}) {
               <Fade bottom>
               <Row className="justify-content-center  pb-5">
               <Col className="col-10 col-lg-8 col-xl-6 p-md-1 mb-5 py-5">
-              <ReactMarkdown className="intro-par text-white bold pe-5  py-3">{editingdata.part1_header3}</ReactMarkdown>
+              <ReactMarkdown className="intro-par text-white bold pe-5 py-3">{editingdata.part1_header3}</ReactMarkdown>
                   </Col>
                 </Row>
               </Fade>
               <Fade bottom>
-                <Row className="justify-content-center pb-5">
-                  <Col className="col-10 col-lg-8 pe-lg-0 mb-0 p-0">
-                    <h2 className="intro-par text-center text-white mb-0 bold"><ReactMarkdown>{editingdata.part1_header4}</ReactMarkdown></h2>
+                <Row className="justify-content-center pb-4 ">
+                  <Col className="col-10 col-lg-8 pe-lg-0 p-0">
+                    <h2 className="intro-par text-center text-white bold pb-0"><ReactMarkdown>{editingdata.part1_header4}</ReactMarkdown></h2>
                   </Col>
                 </Row>
                 <Row className="justify-content-center pb-5 align-items-stretch mb-5">
@@ -215,7 +215,7 @@ export default function Home({ file, href, children}) {
                     <ReactMarkdown className="large text-green">{editingdata.part1_box3para}</ReactMarkdown>
                     </div>
                   </Col>
-                  <Col className="text-center col-10 col-lg-12 pb-5 mt-3 ">
+                  <Col className="text-center col-10 col-lg-12 pb-5 mt-4 ">
                     <a className="btn btn-large btn-green intro-cta" onClick={handleShow}>{editingdata.part1_button1}</a>
                   </Col>
                 </Row>

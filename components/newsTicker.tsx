@@ -77,8 +77,8 @@ return(
             <h3 className="text-green smallCaps text-center">THE SMART FOREST INITIATIVE</h3>
             </Col>
           </Row>
-          <Row className="justify-content-center align-items-center ps-lg-4 ms-lg-3">
-            <Col className="col-12 d-flex ms-lg-4 mb-2">
+          <Row className="justify-content-center align-items-center ps-lg-4 ms-lg-4">
+            <Col className="col-12 d-flex ms-lg-4 mb-2 nudge">
             
             <ReactPlayer playing playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4'/>
            
