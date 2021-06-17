@@ -128,15 +128,6 @@ export default function Power({ file }) {
               </Col>
             </Row>
           </Fade>
-          <Fade bottom>
-          <Row className="justify-content-center align-items-center ps-lg-1">
-            <Col className="col-12 col-md-8 col-lg-6 ps-lg-5">
-            
-            <ReactPlayer playing playsinline controls="true" url='./CFT_Rev8_DDC_ForApproval.mp4'/>
-           
-            </Col>
-          </Row>
-          </Fade>
         </Container>
 
         <Container id="forever" fluid className="v-full z-999 bg-green py-5">

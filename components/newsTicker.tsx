@@ -74,7 +74,7 @@ return(
         <Modal.Body>
           <Row className="justify-content-center align-items-center mb-0">
             <Col>
-            <h3 className="text-green smallCaps text-center">What is a Smart Forest?</h3>
+            <h3 className="text-green smallCaps text-center">THE SMART FOREST INITIATIVE</h3>
             </Col>
           </Row>
           <Row className="justify-content-center align-items-center ps-lg-4 ms-lg-3">

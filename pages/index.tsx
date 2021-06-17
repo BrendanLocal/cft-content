@@ -12,6 +12,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import styles from '../styles/Home.module.css'
 import Fade from 'react-reveal/Fade';
+import Modal from 'react-bootstrap/Modal';
 import ReactPlayer from 'react-player'
 import { Parallax, Background } from 'react-parallax';
 
@@ -76,6 +77,11 @@ export default function Home({ file, href, children}) {
     ]
   }
 
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const [editingdata, form] = useGithubJsonForm(file, formOptions)
   usePlugin(form)
   useGithubToolbarPlugins()
@@ -107,6 +113,31 @@ export default function Home({ file, href, children}) {
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#054218"></meta>
       </Head>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header className="d-none" closeButton>
+          <Modal.Title className="d-none"></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Row className="justify-content-center align-items-center mb-0">
+            <Col>
+            <h3 className="text-green smallCaps text-center">THE SMART FOREST INITIATIVE</h3>
+            </Col>
+          </Row>
+          <Row className="justify-content-center align-items-center ps-lg-4 ms-lg-3">
+            <Col className="col-12 d-flex ms-lg-4 mb-2">
+            
+            <ReactPlayer playing playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4'/>
+           
+            </Col>
+          </Row>
+        </Modal.Body>
+        <Modal.Footer className="p-0">
+        <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
 
       <Row className="justify-content-left p-0 m-0 d-none d-lg-block d-xl-block">
         <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
@@ -181,7 +212,7 @@ export default function Home({ file, href, children}) {
                     </div>
                   </Col>
                   <Col className="text-center col-10 col-lg-12 pb-5 mt-3 ">
-                    <Link href="/what-is-a-smart-forest" ><a className="btn btn-large btn-green">{editingdata.part1_button1}</a></Link>
+                    <a className="btn btn-large btn-green intro-cta" onClick={handleShow}>{editingdata.part1_button1}</a>
                   </Col>
                 </Row>
               </Fade>
