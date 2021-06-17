@@ -285,8 +285,12 @@ return (
             <div className="forestImages"><img src="/trees-platform.png"/><img className="overlay" src={"/trees-year-"+state.x+".png"}/></div>
             
             <p className="smallCaps small text-center text-green">{state.x} years</p>
-      <Slider className="forestSlider"
+      <Slider 
       styles={{
+        track: {
+          margin: "0 3%",
+  width: "94% !important"
+        },
         active: {
           backgroundColor: '#054218'
         },
@@ -297,11 +301,11 @@ return (
         }
       }}
 
-        axis="x"
         x={state.x}
         xstep={5}
         onChange={({ x }) => setState(state => ({ ...state, x }))}
       />
+   
       
       <Row className="numRow">
       <Col>0</Col>
