@@ -431,6 +431,10 @@ hr {
   color: #fff;
 }
 
+.btn-green {
+  background:#00823B!important;
+}
+
 .btn-white {
   border: solid 2px #ffffff;
   color: #fff;
@@ -1583,10 +1587,11 @@ input[type=text], input[type=email], input[type=password], textarea {
   border-radius: 8px;
   padding: 8px;;
   font-size: 12px;
+  width: 100%;
 }
 
-label[type=email], input[type=password] {
-  width: 100%;
+label[type=name], label[type=email], label[type=password] {
+  width: 100%!important;
 }
 
 select {
@@ -1757,7 +1762,7 @@ span.authorTitle {
 }
 
 .w-100 {
-  width: 100%;
+  width: 100%!important;
 }
 
 .card-hover.modal-btn:hover {
