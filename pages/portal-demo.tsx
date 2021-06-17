@@ -241,7 +241,7 @@ return (
                 <Col>
                 <Row>
                   <Col>
-                  <span className="h4 text-green">{userData ? userData.next : ''}%</span>
+                  <span className="h4 text-green">{userData ? userData.net : ''}%</span>
                   </Col>
                 </Row>
                 <Row>
