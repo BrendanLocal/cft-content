@@ -183,6 +183,13 @@ h1.drop, .h1.drop {
     height: 400px;
 }
 
+.blockquote-bg-scale {
+  background: url('/blockquote-bg.svg');
+    background-position: 85% 40%;
+    background-size: 52%;
+    background-repeat: no-repeat;
+}
+
 .about-bg {
 
     height: 300px;
@@ -343,6 +350,12 @@ hr {
   background-color: #00823B;
 }
 
+.react-player video {
+  position: relative;
+  left: 0;
+  top: 0;
+  transform: none;
+}
 
 /* Buttons */
 .btn {
@@ -1389,7 +1402,7 @@ transition: transform .5s;
 
 .sidebar li a {
   font-size: 2.5em;
-  font-weight:100;
+  font-weight:400;
   padding: .3em 0;
   position: relative;
 display: inline-block;

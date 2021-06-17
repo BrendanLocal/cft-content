@@ -27,7 +27,7 @@ setActive(!isActive);
 const navItems = [
 {
 key: "navItem1",
-label: "What is a Smart Forest",
+label: "What is a Smart Forest?",
 path: "/what-is-a-smart-forest"
 },
 {
