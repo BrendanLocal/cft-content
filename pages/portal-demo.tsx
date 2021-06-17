@@ -297,7 +297,6 @@ return (
         }
       }}
 
-        axis="x"
         x={state.x}
         xstep={5}
         onChange={({ x }) => setState(state => ({ ...state, x }))}
