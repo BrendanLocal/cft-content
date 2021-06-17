@@ -1,5 +1,4 @@
-import {useEffect} from 'react';
-
+import React, { useState, useRef, useEffect } from 'react';
 const addBodyClass = className => document.body.classList.add(className);
 const removeBodyClass = className => document.body.classList.remove(className);
 

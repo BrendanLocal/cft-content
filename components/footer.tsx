@@ -58,7 +58,7 @@ return(
       </Col>
       <Col className="col-12 col-md-2 col-xl-2 p-3">
       <h4>Portal</h4>
-      <Link href="/portal"><a className="btn text-orange textButton text-left d-block">Portal</a></Link>
+      <Link href="/portal"><a className="btn text-orange textButton text-left d-block">Sign In</a></Link>
       </Col>
       <Col className="col-12 col-md-4 col-xl-3 p-3 pe-5">
       <h4>Join Our Newsletter</h4>

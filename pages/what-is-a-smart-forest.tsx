@@ -11,6 +11,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Rellax from"rellax";
+import ReactPlayer from 'react-player';
 import Parallax from 'parallax-js'
 
 export default function Power({ file }) {
@@ -140,7 +141,7 @@ export default function Power({ file }) {
           </Fade>
           <Fade bottom>
             <Row className="justify-content-center d-flex pb-5 mx-5">
-              <Col className="col-11 col-lg-8 bg-brown roundedBox innerShadow p-5 m-4 blockquote-bg">
+              <Col className="col-11 col-lg-8 bg-brown roundedBox innerShadow p-5 m-4 blockquote-bg-scale">
                 <h3 className="text-left blockquote text-orange p-lg-5">“Time is much shorter than we think. Failure means disaster. The changes required are enormous and we must all contribute in every part of our daily life. Especially us in the rich countries where no nation is doing nearly enough.”</h3>
                 <p className="text-left text-white my-0 mx-5 bold">— Greta Thunberg</p>
                 <p className="text-left text-white mx-5 px-3 italic op-6">Climate activist</p>
