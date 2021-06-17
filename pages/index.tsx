@@ -145,7 +145,7 @@ export default function Home({ file, href, children}) {
 
       <Row className="justify-content-left p-0 m-0 d-none d-lg-block d-xl-block">
         <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
-          <p className="text-white m-2 bold op-6">{editingdata.home}</p>
+          <ReactMarkdown className="text-white m-2 bold op-6">{editingdata.home}</ReactMarkdown>
           <ul>
             <li className="p-0" data-dest="#intro">
               <a href="#intro" className="text-white bold no-underline">{editingdata.menu1}</a>
@@ -189,7 +189,7 @@ export default function Home({ file, href, children}) {
               <Fade bottom>
               <Row className="justify-content-center  pb-5">
               <Col className="col-10 col-lg-8 col-xl-6 p-md-1 mb-5 py-5">
-                <p className="intro-par text-white bold pe-5  py-3"><ReactMarkdown>{editingdata.part1_header3}</ReactMarkdown></p>
+              <ReactMarkdown className="intro-par text-white bold pe-5  py-3">{editingdata.part1_header3}</ReactMarkdown>
                   </Col>
                 </Row>
               </Fade>
@@ -202,17 +202,17 @@ export default function Home({ file, href, children}) {
                 <Row className="justify-content-center pb-5 align-items-stretch mb-5">
                 <Col className="col-10 col-lg-3 col-xl-2  mx-3 mb-4">
                   <div className="roundedBox card no-border bg-white p-4 h-100">
-                      <p className="large text-green"><ReactMarkdown>{editingdata.part1_box1para}</ReactMarkdown></p>
+                  <ReactMarkdown className="large text-green">{editingdata.part1_box1para}</ReactMarkdown>
                     </div>
                   </Col>
                   <Col className="col-10 col-lg-3 col-xl-2  mx-3 mb-4">
                     <div className="roundedBox card no-border bg-white p-4 h-100">
-                      <p className="large text-green"><ReactMarkdown>{editingdata.part1_box2para}</ReactMarkdown></p>
+                    <ReactMarkdown className="large text-green">{editingdata.part1_box2para}</ReactMarkdown>
                     </div>
                   </Col>
                   <Col className="col-10 col-lg-3 col-xl-2  mx-3 mb-4">
                     <div className="roundedBox card no-border bg-white p-4 h-100">
-                      <p className="large text-green"><ReactMarkdown>{editingdata.part1_box3para}</ReactMarkdown></p>
+                    <ReactMarkdown className="large text-green">{editingdata.part1_box3para}</ReactMarkdown>
                     </div>
                   </Col>
                   <Col className="text-center col-10 col-lg-12 pb-5 mt-3 ">
@@ -230,7 +230,7 @@ export default function Home({ file, href, children}) {
             <Row className="py-5 align-items-center justify-content-center mt-5">
               <Col className="order-2 order-lg-1 col-12 p-5 col-md-4 text-white">
                 <h2 className="text-orange bold"><ReactMarkdown>{editingdata.part2_header1}</ReactMarkdown></h2>
-                <p className="pb-3 thin"><ReactMarkdown>{editingdata.part2_para1}</ReactMarkdown></p>
+                <ReactMarkdown className="pb-3 thin">{editingdata.part2_para1}</ReactMarkdown>
                 <Link href="/what-is-a-smart-forest"><a className="btn btn-green">{editingdata.part2_button1}</a></Link>
               </Col>
               <Col className="order-1 order-lg-2 col-12 col-md-5">
@@ -248,7 +248,7 @@ export default function Home({ file, href, children}) {
               </Col>
               <Col className="col-12 p-5 col-md-4 text-white">
                 <h2 className="text-orange bold"><ReactMarkdown>{editingdata.part3_header1}</ReactMarkdown></h2>
-                <p className="pb-3 thin"><ReactMarkdown>{editingdata.part3_para1}</ReactMarkdown></p>
+                <ReactMarkdown className="pb-3 thin">{editingdata.part3_para1}</ReactMarkdown>
                 <Link href="/build-your-smart-forest" >
                   <a className="btn btn-green">{editingdata.part3_button1}</a>
                 </Link>
@@ -262,7 +262,7 @@ export default function Home({ file, href, children}) {
           <Row className="pe-5 align-items-center justify-content-center  align-items-stretch protorow pb-0 mb-0">
             <Col className="col-10 col-md-3 text-white mb-5 py-5 px-5 me-5">
                 <h2 className="text-orange bold"><ReactMarkdown>{editingdata.part4_header1}</ReactMarkdown></h2>
-                <p className="mb-4 thin"><ReactMarkdown>{editingdata.part4_para1}</ReactMarkdown></p>
+                <ReactMarkdown className="mb-4 thin">{editingdata.part4_para1}</ReactMarkdown>
                 <svg className="down-arrow d-none" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74 29.46"><path d="M73.41,13.59,60.69.86a2,2,0,0,0-2.83,2.83L67.17,13H0v4H67.17l-9.31,9.31a2,2,0,1,0,2.83,2.83L73.41,16.41A2,2,0,0,0,73.41,13.59Z"/></svg>
               </Col>
               <Col className="col-12 col-md-4 p-1">
@@ -316,15 +316,15 @@ export default function Home({ file, href, children}) {
             <Row className="align-items-center justify-content-center pt-0 mt-0 mb-0">
               <Col className="col-10 col-lg-7 pe-lg-0 mb-4">
                 <h2 className="text-center text-orange mb-2 bold"><ReactMarkdown>{editingdata.part6_header1}</ReactMarkdown></h2>
-                <p className="text-center large text-white thin op-9"><ReactMarkdown>{editingdata.part6_para1}</ReactMarkdown></p>
+                <ReactMarkdown className="text-center large text-white thin op-9">{editingdata.part6_para1}</ReactMarkdown>
               </Col>
             </Row>
             <Row className="justify-content-center  align-items-stretch mx-lg-5">
                 <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="h6 text-mildgreen bold"><ReactMarkdown>{editingdata.part6_box1para1}</ReactMarkdown></p>
-                  <p className="large text-green mb-2"><ReactMarkdown>{editingdata.part6_box1para2}</ReactMarkdown></p>
-                  <p className="text-grey mb-3"><ReactMarkdown>{editingdata.part6_box1para3}</ReactMarkdown></p>
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.part6_box1para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-2">{editingdata.part6_box1para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.part6_box1para3}</ReactMarkdown>
                   <Link href="carbon-calculator">
                     <Button variant="green" className="mt-5">{editingdata.part6_box1button1}</Button>
                   </Link>
@@ -332,17 +332,17 @@ export default function Home({ file, href, children}) {
               </Col>
               <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="h6 text-mildgreen bold"><ReactMarkdown>{editingdata.part6_box2para1}</ReactMarkdown></p>
-                  <p className="large text-green mb-2"><ReactMarkdown>{editingdata.part6_box2para2}</ReactMarkdown></p>
-                  <p className="text-grey mb-4"><ReactMarkdown>{editingdata.part6_box2para3}</ReactMarkdown></p>
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.part6_box2para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-2">{editingdata.part6_box2para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-4">{editingdata.part6_box2para3}</ReactMarkdown>
                   <Button variant="green mt-3">{editingdata.part6_box2button1}</Button>
                 </div>
               </Col>
               <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="h6 text-mildgreen bold"><ReactMarkdown>{editingdata.part6_box3para1}</ReactMarkdown></p>
-                  <p className="large text-green mb-2"><ReactMarkdown>{editingdata.part6_box3para2}</ReactMarkdown></p>
-                  <p className="text-grey mb-3"><ReactMarkdown>{editingdata.part6_box3para3}</ReactMarkdown></p>
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.part6_box3para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-2">{editingdata.part6_box3para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.part6_box3para3}</ReactMarkdown>
                   <Button variant="green" className="mt-5">{editingdata.part6_box3button1}</Button>
                 </div>
               </Col>
