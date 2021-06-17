@@ -224,6 +224,7 @@ font-weight: 600;
  .text-small {
   font-size: 12px;
 }
+
 .smallCaps.small {
   font-size: 12px;
 }
@@ -1555,6 +1556,7 @@ z-index:999;
 input[type=checkbox] {
   margin-right: 10px;
 }
+
 input[type=text], input[type=email], textarea, input[type=number] {
   width: 100%;
 }
@@ -1575,6 +1577,7 @@ button, input, optgroup, select, textarea {
   border: solid 1px #bbb;
   padding: 5px 10px;
   margin: 5px 0;
+  font-size: 12.5px;
 }
 
 /* Landing Page */

@@ -327,19 +327,19 @@ return (
           </Col>
           <h5 className="smallCaps text-small text-green">Residence 1</h5>
         </Row>
-        <Row>
+        <Row className="mb-3">
           <Col>
           <label htmlFor="number">Calculating for:</label><br />
-          <input onChange={changeFam} type="radio" id="myself" name="calculateWho" value="myself" checked/>
+          <input className="me-2" onChange={changeFam} type="radio" id="myself" name="calculateWho" value="myself" checked/>
 <label >Myself</label><br></br>
-<input onChange={changeFam} type="radio" id="family" name="calculateWho" value="family"/>
+<input className="me-2" onChange={changeFam} type="radio" id="family" name="calculateWho" value="family"/>
 <label >Entire household</label><br></br>
           </Col>
         </Row>
         <Row>
           <Col>
           <label htmlFor="number">How many people live in your household?</label><br />
-          <input onChange={changeNum} type="number" placeholder="# of people in your household" />
+          <input onChange={changeNum} type="number" placeholder="Number of people in your household" />
           </Col>
         </Row>
 
@@ -406,19 +406,19 @@ return (
           </Col>
           <h5 className="smallCaps text-small text-green">Residence 2</h5>
         </Row>
-        <Row>
+        <Row className="mb-3">
           <Col>
           <label htmlFor="number">Calculating for:</label><br />
-          <input onChange={changeFamTwo} type="radio" id="myself" name="calculateWhoTwo" value="myself" checked/>
+          <input className="me-2" onChange={changeFamTwo} type="radio" id="myself" name="calculateWhoTwo" value="myself" checked/>
 <label >Myself</label><br></br>
-<input onChange={changeFamTwo} type="radio" id="family" name="calculateWhoTwo" value="family"/>
+<input className="me-2" onChange={changeFamTwo} type="radio" id="family" name="calculateWhoTwo" value="family"/>
 <label >Entire household</label><br></br>
           </Col>
         </Row>
         <Row>
           <Col>
           <label htmlFor="number">How many people live in your household?</label><br />
-          <input onChange={changeNumTwo} type="number" placeholder="# of people in your household" />
+          <input onChange={changeNumTwo} type="number" placeholder="Number of people in your household" />
           </Col>
         </Row>
 
@@ -487,7 +487,7 @@ return (
         
           <Col>
           <h5 className="smallCaps text-small text-green">Small Cars</h5>
-          (Honda Civic, Toyota Prius)
+          <p className="text-small op-6">Honda Civic, Toyota Prius</p>
           <Row>
             <Col className="col">
               Gas
@@ -510,7 +510,7 @@ return (
         <hr/>
 
         <h5 className="smallCaps text-small text-green">Medium Cars</h5>
-          (4-Door Sedans, SUV's)
+          <p className="text-small op-6">4-Door Sedans, SUV's</p>
 
           <Row>
             <Col className="col">
@@ -533,7 +533,7 @@ return (
           <hr/>
 
 <h5 className="smallCaps text-small text-green">Large Vehicles</h5>
-(Pickup Trucks)
+<p className="text-small op-6">Pickup Trucks</p>
 
   <Row>
     <Col className="col">
@@ -555,7 +555,7 @@ return (
   </Row>
   <hr/>
   <h5 className="smallCaps text-small text-green">Motorcycle</h5>
-All sizes
+  <p className="text-small op-6">All sizes</p>
   <Row>
     <Col className="col">
       Gas
@@ -564,7 +564,7 @@ All sizes
   </Row> 
   <hr/>
   <h5 className="smallCaps text-small text-green">Private Jet</h5>
-All sizes
+  <p className="text-small op-6">All sizes</p>
   <Row>
     <Col className="col">
       All fuel types
@@ -637,7 +637,7 @@ All sizes
             </Col>
             <Col className="col-6 col-xl-6">
             <input onChange={calculateFlightCount} name="flyShort" type="number"
-              placeholder="Average # of flights per employee" />
+              placeholder="Number of flights" />
             </Col>
           </Row>
           </Col>
@@ -654,7 +654,7 @@ All sizes
               </Col>
               <Col className="col-6">
               <input onChange={calculateFlightCount} name="flyMediumEco" type="number"
-                placeholder="Average # of flights per employee" />
+                placeholder="Number of flights" />
               </Col>
             </Row>
             <Row>
@@ -663,7 +663,7 @@ All sizes
               </Col>
               <Col className="col-6">
               <input onChange={calculateFlightCount} name="flyMediumBus" type="number"
-                placeholder="Average # of flights per employee" />
+                placeholder="Number of flights" />
               </Col>
             </Row>
             </Col>
@@ -680,7 +680,7 @@ All sizes
               </Col>
               <Col>
               <input onChange={calculateFlightCount} name="flyLongEco" type="number"
-                placeholder="Average # of flights per employee" />
+                placeholder="Number of flights" />
               </Col>
             </Row>
             <Row>
@@ -689,7 +689,7 @@ All sizes
               </Col>
               <Col>
               <input onChange={calculateFlightCount} name="flyLongEcoPlus" type="number"
-                placeholder="Average # of flights per employee" />
+                placeholder="Number of flights" />
               </Col>
             </Row>
             <Row>
@@ -698,7 +698,7 @@ All sizes
               </Col>
               <Col>
               <input onChange={calculateFlightCount} name="flyLongBus" type="number"
-                placeholder="Average # of flights per employee" />
+                placeholder="Number of flights" />
               </Col>
             </Row>
             <Row>
@@ -707,7 +707,7 @@ All sizes
               </Col>
               <Col>
               <input onChange={calculateFlightCount} name="flyLongFirst" type="number"
-                placeholder="Average # of flights per employee" />
+                placeholder="Number of flights" />
               </Col>
             </Row>
             </Col>
@@ -721,7 +721,7 @@ All sizes
             </Col>
             <Col className="col-sm-6 col-xl-4">
             <input onChange={calculateFlightCount} name="flyHotels" type="number"
-              placeholder="# of nights per employee" />
+              placeholder="Number of nights" />
             </Col>
           </Row>
       </div>
@@ -794,7 +794,7 @@ All sizes
       <Col className="col-10 align-items-center text-center p-3">
       <div className="bg-brown p-5 innerShadow roundedBox">
         <p className="smallCaps text-orange">Next Step</p>
-      <h3 className="text-white mb-4 px-4">Calculate how many hectares of Smart Forest you need to invest in to reach a Net-Zero emissions target.</h3>
+      <h3 className="text-white mb-4 px-2 px-lg-5">Calculate how many hectares of Smart Forest you need to invest in to reach a Net-Zero emissions target.</h3>
       <Button className="btn-large mt-1" variant="green">Calculate Your Net-Zero Target</Button>
       </div>
       </Col>
