@@ -9,10 +9,11 @@ function postData() {
     const id = fileName.replace(/\.md$/, '')
     const fullPath = path.join(pagesDirectory, fileName)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
+    const fileContentsRead = JSON.parse(fileContents)
     const matterResult = matter(fileContents)
     return {
       id,
-      title: matterResult.data.title,
+      title: fileContentsRead.pageName,
       contents: matterResult.content
     }
   })
