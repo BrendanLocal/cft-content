@@ -34,9 +34,9 @@ export default function Splash() {
                 </Col>    
             </Row>
 
-            <Row className="justify-content-center d-lg-none">
-                <Col className="col-12 text-center">
-                <a href="/" className="btn btn-text text-orange large tight-drop-light no-underline">TAP TO ENTER THE FOREST</a>
+            <Row className="justify-content-center d-lg-none mt-5 p-5">
+                <Col className="col-8 text-center">
+                <a href="/" className="intro-btn btn btn-text text-orange large tight-drop-light no-underline">TAP TO ENTER THE FOREST</a>
                 </Col>    
             </Row>
 
