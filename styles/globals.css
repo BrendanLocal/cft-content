@@ -301,7 +301,7 @@ li a, a.underline {
   text-decoration: underline;
 }
 
-.calculate-card.large {
+p.large {
   font-size: 20px!important;
 }
 
@@ -378,7 +378,7 @@ hr {
   height: 1em;
   position: relative;
   display: inline-block;
-  margin: 0 10px 0 -5px;
+  margin: 0 10px 0 -2px;
   top:2px;
 }
 
