@@ -250,7 +250,7 @@ export default function Home({ file, href, children}) {
                 <h2 className="text-orange bold"><ReactMarkdown>{editingdata.part3_header1}</ReactMarkdown></h2>
                 <ReactMarkdown className="pb-3 thin">{editingdata.part3_para1}</ReactMarkdown>
                 <Link href="/build-your-smart-forest" >
-                  <a className="btn btn-green">{editingdata.part3_button1}</a>
+                  <a className="btn btn-green px-lg-5">{editingdata.part3_button1}</a>
                 </Link>
               </Col>
             </Row>
