@@ -350,13 +350,6 @@ hr {
   background-color: #00823B;
 }
 
-.react-player video {
-  position: relative;
-  left: 0;
-  top: 0;
-  transform: none;
-}
-
 /* Buttons */
 .btn {
   padding: 10px 20px 10px 20px;
