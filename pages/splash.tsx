@@ -22,21 +22,21 @@ export default function Splash() {
       <main id="intro">   
         <Container fluid className="v-full justify-content-center z-999 p-5">
 
-            <Row className="justify-content-center mt-5 mb-2">
-                <Col className="col-12 col-md-9">
-                <object type="image/svg+xml" data="/intro-animation.svg"/> 
+            <Row className="justify-content-center mt-5 mb-2 p-sm-0 m-sm-0">
+                <Col className="col-12 col-md-8 p-sm-0 m-sm-0 mt-5">
+                <object className="mt-5" type="image/svg+xml" data="/intro-animation.svg"/> 
                 </Col>    
             </Row>
 
             <Row className="justify-content-center d-none d-lg-block">
                 <Col className="col-12 text-center">
-                <a href="/" className="intro-btn btn btn-text text-orange large tight-drop-light no-underline">CLICK TO ENTER THE FOREST</a>
+                <a href="/" className="intro-btn btn btn-text text-orange large tight-drop-light no-underline">ENTER THE FOREST</a>
                 </Col>    
             </Row>
 
             <Row className="justify-content-center d-lg-none mt-5 p-5">
                 <Col className="col-8 text-center">
-                <a href="/" className="intro-btn btn btn-text text-orange large tight-drop-light no-underline">TAP TO ENTER THE FOREST</a>
+                <a href="/" className="intro-btn btn btn-text text-orange large tight-drop-light no-underline">ENTER THE FOREST</a>
                 </Col>    
             </Row>
 
