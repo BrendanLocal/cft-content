@@ -13,6 +13,7 @@ import Button from 'react-bootstrap/Button';
 import { useCurrentUser } from '../hooks/index';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
+import Slider from 'react-input-slider';
 
 const Map = dynamic(() => import("../components/portalMap"), {
   loading: () => "Loading...",
@@ -155,7 +156,8 @@ return (
             </Col>
             <Col className="col-lg-9 p-5">
             <TabPanel>
-            <Tabs><TabList>
+            <Tabs>
+              <TabList>
             <Tab className="link bold text-orange">
                 Dashboard
                 </Tab>

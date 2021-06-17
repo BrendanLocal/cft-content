@@ -6,6 +6,7 @@ import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { GetStaticProps } from 'next'
 import { usePlugin } from 'tinacms'
 import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
+import { useMarkdownForm } from 'next-tinacms-markdown'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -79,6 +80,7 @@ export default function Home({ file, href, children}) {
   const [editingdata, form] = useGithubJsonForm(file, formOptions)
   usePlugin(form)
   useGithubToolbarPlugins()
+  
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -99,6 +101,7 @@ export default function Home({ file, href, children}) {
     document.querySelectorAll('div[id]').forEach((id) => {
       observer.observe(id);});
   },[]);
+
 
   return (
     <div className={styles.homeParallax}>
