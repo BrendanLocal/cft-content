@@ -287,6 +287,10 @@ return (
             <p className="smallCaps small text-center text-green">{state.x} years</p>
       <Slider 
       styles={{
+        track: {
+          margin: "0 3%",
+  width: "94% !important"
+        },
         active: {
           backgroundColor: '#054218'
         },
