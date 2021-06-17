@@ -1915,7 +1915,44 @@ border-left: solid 1px #00823B;
   padding: 2%;
 }
 
+.tabRow li {
+  display: inline-block;
+    border: none;
+    margin: 0 10px;
+    padding: 0 5px;
+    transition: border 0s;
+}
+.tabRow li:hover {
+cursor: pointer;
+}
+.tabRow li:not(.react-tabs__tab--selected) {
+border-bottom: none !important;
+  
+}
+.tabRow {
+  text-align: center;
+}
 
+.forestSlider {
+  margin: 0 3%;
+  width: 94% !important;
+}
+.forestImages {
+  position: relative;
+width: 100%;
+}
+.forestImages img.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  left:0;
+  object-fit: contain;
+}
+
+.numRow .col {
+  text-align: center;
+}
 
 /* About */
 
