@@ -57,8 +57,8 @@ return (
         </Row>
         <Row>
           <Col>
-          <label htmlFor="footprint">What is your carbon footprint? (tonnes/year)</label><br />
-          <input className="mb-4" onChange={changeFootprint} name="type" type="number" placeholder="Carbon footprint in tonnes/year" />
+          <label htmlFor="footprint">What is your carbon footprint? (Tonnes per year)</label><br />
+          <input className="mb-4" onChange={changeFootprint} name="type" type="number" placeholder="Carbon footprint in tonnes per year" />
           Haven't calculated your footprint? <Link href="carbon-calculator"><a className="underline modal-btn">Do it here</a></Link>
           </Col>
         </Row>
