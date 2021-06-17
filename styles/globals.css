@@ -271,7 +271,6 @@ color: #fff;
 }
 
 
-
 .labelCaps {
 font-size: 10px;
 font-weight: 700;
@@ -374,6 +373,20 @@ hr {
   display: inline-block;
   margin: 0 10px 0 -2px;
   top:2px;
+}
+
+.signin-btn {
+  padding: 10px 20px 10px 20px;
+  border-radius: 6px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  font-weight: 900 !important;
+  margin-bottom: 10px;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  transition: all .5s;
+  border: none;
 }
 
 
@@ -1565,11 +1578,15 @@ input[type=text], input[type=email], textarea, input[type=number] {
   width: 100%;
 }
 
-input[type=text], input[type=email], textarea {
+input[type=text], input[type=email], input[type=password], textarea {
 
   border-radius: 8px;
   padding: 8px;;
   font-size: 12px;
+}
+
+label[type=email], input[type=password] {
+  width: 100%;
 }
 
 select {
@@ -1737,6 +1754,10 @@ span.authorTitle {
     width: 100%;
     display: inline-block;
     color: #FF4D24;
+}
+
+.w-100 {
+  width: 100%;
 }
 
 .card-hover.modal-btn:hover {

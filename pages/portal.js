@@ -70,21 +70,21 @@ return (
 
   <main className="bg-green">
     <Container className="bg-green py-5">
-      <Row className="justify-content-center d-flex pt-5">
+      <Row className="justify-content-center d-flex pt-5 mt-5">
         <Col className="col-xl-10 ">
-        <h1 className="h2 text-orange text-center py-3">
-          Customer Portal
+        <h1 className="h2 text-orange text-center bold py-3">
+          Welcome to our Customer Portal!
         </h1>
         </Col>
       </Row>
-      <Row className="flex justify-content-center pb-5">
-        <Col className="col-12 col-md-5 col-xl-4 p-3">
-          <div className="roundedBoxMedium outerShadow p-5 bg-offwhite">
+      <Row className="flex justify-content-center pb-5 mb-5">
+        <Col className="col-12 col-md-8 col-lg-5 col-xl-4 p-4">
+          <div className="roundedBox no-border card-drop p-5 pb-4 bg-white">
 
-        <h3>Log In</h3>
+        <h3 className="text-green pt-0 mb-2">Sign In</h3>
         <form onSubmit={onSubmit}>
         {errorMsg ? <p style={{ color: 'red' }}>{errorMsg}</p> : null}
-        <label htmlFor="email">
+        <label className="mb-1" htmlFor="email">
           <input
             id="email"
             type="email"
@@ -92,7 +92,7 @@ return (
             placeholder="Email address"
           />
         </label>
-        <label htmlFor="password">
+        <label className="mb-3" htmlFor="password">
           <input
             id="password"
             type="password"
@@ -100,25 +100,25 @@ return (
             placeholder="Password"
           />
         </label><br/>
-        <button className="btn-green" type="submit">Sign in</button><br/>
+        <button className="btn-green signin-btn mb-3" type="submit">Sign in</button><br/>
         <Link href="/become-a-customer">
-        <a className="text-orange textButton" >Become a customer</a></Link> <br/>
-        <Link href="/forgot-password">
-          <a className="text-orange textButton" >Forgot password</a>
+        <a className="text-orange text-small textButton modal-btn bold" >Become a customer</a></Link> <br/>
+        <Link href="/forgot-password ">
+          <a className="text-orange text-small textButton modal-btn" >Forgot password?</a>
         </Link>
         
       </form>
         
         </div>
         </Col>
-        <Col className="col-12 col-md-5 col-xl-4 p-3">
+        <Col className="col-12 col-md-8 col-lg-5 col-xl-4 p-4">
 
-        <div className="roundedBoxMedium outerShadow p-5 bg-offwhite">
+        <div className="roundedBox no-border card-drop p-5 bg-white">
 
-        <h3>Demo Portal</h3>
-        <p>Try out the customer portal for yourself, using some data from our founder's own portal.</p>
+        <h3 className="text-green">Demo Portal</h3>
+        <p className="text-grey mb-5">Try out the customer portal for yourself, using data from our founder's own portal.</p>
 <Link href="portal-demo">
-        <Button variant="green">Enter the demo portal</Button></Link>
+        <Button className="mt-4 w-100" variant="green">Enter the demo portal</Button></Link>
         </div>
         </Col>
       </Row>
