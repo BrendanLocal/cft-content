@@ -990,7 +990,58 @@ padding: 10%;
 }
 
 
-/* Borders */
+/* Splash */
+
+
+.intro-btn {
+  opacity: 0;
+  animation: fadeIn 3s;
+  animation-delay: 7s;
+  animation-fill-mode: forwards;
+
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+.splash button {
+  display: none;
+  transform: translateY(100%);
+  transition: ease .5s;
+}
+
+.splash .header {
+  display: none;
+  transform: translateY(100%);
+  transition: ease .5s;
+}
+
+.splash .menuInterface {
+  display: none;
+  transform: translateY(100%);
+  transition: ease .5s;
+}
+
+.splash .socialIcons {
+  display: none;
+  transform: translateY(100%);
+  transition: ease .5s;
+}
+
+.splash #ticker {
+  display: none;
+  transform: translateY(100%);
+  transition: ease .5s;
+}
+
+.splash footer {
+  display: none;
+  transform: translateY(100%);
+  transition: ease .5s;
+}
 
 
 /* Header */
