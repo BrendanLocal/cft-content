@@ -42,6 +42,8 @@ const App = () => {
 "Transporation (Bus, Taxi, etc)",
 "Utility Provider (Electrical, Hydro, Natural Gas, etc.)	"
   ])
+
+  const [counting, setCounting] = React.useState([]);
   
 const [selectBuild, setBuild] = React.useState("");
 const [selectSize, setSize] = React.useState("");
@@ -332,9 +334,11 @@ return (
         <Row>
           <Col>
           <label htmlFor="number">How many buildings of this type are in the organization?</label><br />
-          <input  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" onChange={changeNum} type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Number of buildings of this type" />
+          <input  onChange={changeNum} type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Number of buildings of this type" />
 
           </Col>
         </Row>
@@ -359,12 +363,18 @@ return (
             Gas
             </Col>
             <Col className="col-xl-4">
-            <input onChange={calculateCount} name="carGas" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Number of vehicles" />
+            <input onChange={calculateCount} name="carGas" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  min="0"  placeholder="Number of vehicles" />
             </Col>
             <Col className="col-xl-4">
-            <input onChange={calculateMiles} name="carGas" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Annual Km per vehicle" />
+            <input onChange={calculateMiles} name="carGas" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  min="0"  placeholder="Annual Km per vehicle" />
             </Col>
           </Row>
           <Row>
@@ -372,12 +382,18 @@ return (
             Diesel
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="carDiesel" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Number of vehicles" />
+            <input onChange={calculateCount} name="carDiesel" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  min="0"  placeholder="Number of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="carDiesel" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Annual Km per vehicle" />
+            <input onChange={calculateMiles} name="carDiesel" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  min="0"  placeholder="Annual Km per vehicle" />
             </Col>
           </Row>
           <Row>
@@ -385,12 +401,18 @@ return (
             Hybrid
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="carHybrid" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Number of vehicles" />
+            <input onChange={calculateCount} name="carHybrid" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  min="0"  placeholder="Number of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="carHybrid" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Annual Km per vehicle" />
+            <input onChange={calculateMiles} name="carHybrid" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  min="0"  placeholder="Annual Km per vehicle" />
             </Col>
           </Row>
           </Col>
@@ -404,12 +426,18 @@ return (
             Gas
             </Col>
             <Col className="col-6 col-xl-4 ">
-            <input onChange={calculateCount} name="truckGas" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Number of vehicles" />
+            <input onChange={calculateCount} name="truckGas" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  min="0"  placeholder="Number of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="truckGas" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Annual Km per vehicle" />
+            <input onChange={calculateMiles} name="truckGas" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  min="0"  placeholder="Annual Km per vehicle" />
             </Col>
           </Row>
           <Row>
@@ -417,12 +445,18 @@ return (
             Diesel
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="truckDiesel" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Number of vehicles" />
+            <input onChange={calculateCount} name="truckDiesel" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  min="0"  placeholder="Number of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="truckDiesel" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Annual Km per vehicle" />
+            <input onChange={calculateMiles} name="truckDiesel" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  min="0"  placeholder="Annual Km per vehicle" />
             </Col>
           </Row>
           <Row>
@@ -430,12 +464,18 @@ return (
             Hybrid
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="truckHybrid" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Number of vehicles" />
+            <input onChange={calculateCount} name="truckHybrid" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  min="0"  placeholder="Number of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="truckHybrid" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Annual Km per vehicle" />
+            <input onChange={calculateMiles} name="truckHybrid" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  min="0"  placeholder="Annual Km per vehicle" />
             </Col>
           </Row>
           </Col>
@@ -449,12 +489,18 @@ return (
             Gas
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="deliveryGas" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Number of vehicles" />
+            <input onChange={calculateCount} name="deliveryGas" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  min="0"  placeholder="Number of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="deliveryGas" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Annual Km per vehicle" />
+            <input onChange={calculateMiles} name="deliveryGas" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  min="0"  placeholder="Annual Km per vehicle" />
             </Col>
           </Row>
           <Row>
@@ -462,8 +508,11 @@ return (
             Diesel
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="deliveryDiesel" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Number of vehicles" />
+            <input onChange={calculateCount} name="deliveryDiesel" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  min="0"  placeholder="Number of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
             <input onChange={calculateMiles} name="deliveryDiesel" type="number"
@@ -481,12 +530,18 @@ return (
             Refrigerated
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="semiFrig" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Number of vehicles" />
+            <input onChange={calculateCount} name="semiFrig" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  min="0"  placeholder="Number of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="semiFrig" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Annual Km per vehicle" />
+            <input onChange={calculateMiles} name="semiFrig" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  min="0"  placeholder="Annual Km per vehicle" />
             </Col>
           </Row>
           <Row>
@@ -494,12 +549,18 @@ return (
             Non-Refrigerated
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="semiNonFrig" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Number of vehicles" />
+            <input onChange={calculateCount} name="semiNonFrig" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  min="0"  placeholder="Number of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="semiNonFrig" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Annual Km per vehicle" />
+            <input onChange={calculateMiles} name="semiNonFrig" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  min="0"  placeholder="Annual Km per vehicle" />
             </Col>
           </Row>
           </Col>
@@ -510,12 +571,18 @@ return (
              <h5 className="smallCaps text-small text-green">Private Jet</h5>
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="jetNum" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Number of vehicles" />
+            <input onChange={calculateCount} name="jetNum" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  min="0"  placeholder="Number of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="jetNum" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Annual Km per vehicle" />
+            <input onChange={calculateMiles} name="jetNum" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  min="0"  placeholder="Annual Km per vehicle" />
             </Col>
         </Row>
       </div>
@@ -533,11 +600,18 @@ return (
           Car
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateTransitCount} name="transitCar" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Number of vehicles" />
+          <input onChange={calculateTransitCount} name="transitCar" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Number of vehicles" />
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateTransitMiles} name="transitCar" type="number"
+          <input onChange={calculateTransitMiles} name="transitCar" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} 
             placeholder="Average Km per day" />
           </Col>
         </Row>
@@ -546,12 +620,18 @@ return (
           Bus
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateTransitCount} name="transitBus" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Number of employees" />
+          <input onChange={calculateTransitCount} name="transitBus" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Number of employees" />
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateTransitMiles} name="transitBus" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Average Km per day" />
+          <input onChange={calculateTransitMiles} name="transitBus" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Average Km per day" />
           </Col>
         </Row>
         <Row>
@@ -559,12 +639,18 @@ return (
           Train
           </Col>
           <Col className="col-6 col-xl-4">
-          <input onChange={calculateTransitCount} name="transitTrain" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Number of employees" />
+          <input onChange={calculateTransitCount} name="transitTrain" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Number of employees" />
           </Col>
           <Col className="col-6 col-xl-4">
-          <input onChange={calculateTransitMiles} name="transitTrain" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Average Km per day" />
+          <input onChange={calculateTransitMiles} name="transitTrain" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Average Km per day" />
           </Col>
         </Row>
 
@@ -587,8 +673,11 @@ return (
           <Col className="col-2 col-sm-1 col-xl-4">
           </Col>
           <Col className="col-6 col-xl-4">
-          <input onChange={calculateEmp} name="flyEmployees" type="number" min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" 
+          <input onChange={calculateEmp} name="flyEmployees" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}
             placeholder="Number of employees who fly" />
           </Col>
         </Row>
@@ -603,8 +692,11 @@ return (
             All
             </Col>
             <Col className="col-6 col-xl-6">
-            <input onChange={calculateFlightCount} name="flyShort" type="number" min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" 
+            <input onChange={calculateFlightCount} name="flyShort" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} 
               placeholder="Flights per employee" />
             </Col>
           </Row>
@@ -621,8 +713,11 @@ return (
               Economy
               </Col>
               <Col className="col-6">
-              <input onChange={calculateFlightCount} name="flyMediumEco" type="number" min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" 
+              <input onChange={calculateFlightCount} name="flyMediumEco" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}
                 placeholder="Flights per employee" />
               </Col>
             </Row>
@@ -631,8 +726,11 @@ return (
               Business/First
               </Col>
               <Col className="col-6">
-              <input onChange={calculateFlightCount} name="flyMediumBus" type="number" min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" 
+              <input onChange={calculateFlightCount} name="flyMediumBus" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}
                 placeholder="Flights per employee" />
               </Col>
             </Row>
@@ -649,8 +747,11 @@ return (
               Economy
               </Col>
               <Col>
-              <input onChange={calculateFlightCount} name="flyLongEco" type="number" min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" 
+              <input onChange={calculateFlightCount} name="flyLongEco" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}
                 placeholder="Flights per employee" />
               </Col>
             </Row>
@@ -659,8 +760,11 @@ return (
               Economy +
               </Col>
               <Col>
-              <input onChange={calculateFlightCount} name="flyLongEcoPlus" type="number" min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" 
+              <input onChange={calculateFlightCount} name="flyLongEcoPlus" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} 
                 placeholder="Flights per employee" />
               </Col>
             </Row>
@@ -669,8 +773,11 @@ return (
               Business Class
               </Col>
               <Col>
-              <input onChange={calculateFlightCount} name="flyLongBus" type="number" min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" 
+              <input onChange={calculateFlightCount} name="flyLongBus" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} 
                 placeholder="Flights per employee" />
               </Col>
             </Row>
@@ -679,8 +786,11 @@ return (
               First Class
               </Col>
               <Col>
-              <input onChange={calculateFlightCount} name="flyLongFirst" type="number" min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" 
+              <input onChange={calculateFlightCount} name="flyLongFirst" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}
                 placeholder="Flights per employee" />
               </Col>
             </Row>
@@ -694,8 +804,11 @@ return (
             <Col  className="col-2 col-sm-1 col-xl-4">
             </Col>
             <Col className="col-sm-6 col-xl-4">
-            <input onChange={calculateFlightCount} name="flyHotels" type="number" min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" 
+            <input onChange={calculateFlightCount} name="flyHotels" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} 
               placeholder="Nights per employee" />
             </Col>
           </Row>
@@ -716,8 +829,11 @@ return (
           Van/Truck (&lt;3.5 Tonnes)
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateFreightNum} name="freightVan" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Tonnes shipped" />
+          <input onChange={calculateFreightNum} name="freightVan" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Tonnes shipped" />
           </Col>
           <Col className="col-xl-4">
           <input onChange={calculateFreightMiles} name="freightVan" type="number"
@@ -730,8 +846,11 @@ return (
           Semi (Non-Refrigerated)
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateFreightNum} name="freightSemiNonFrig" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Tonnes shipped" />
+          <input onChange={calculateFreightNum} name="freightSemiNonFrig" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Tonnes shipped" />
           </Col>
           <Col className="col-xl-4">
           <input onChange={calculateFreightMiles} name="freightSemiNonFrig" type="number"
@@ -744,8 +863,11 @@ return (
           Semi (Refrigerated)
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateFreightNum} name="freightSemiFrig" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Tonnes shipped" />
+          <input onChange={calculateFreightNum} name="freightSemiFrig" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}   placeholder="Tonnes shipped" />
           </Col>
           <Col className="col-xl-4">
           <input onChange={calculateFreightMiles} name="freightSemiFrig" type="number"
@@ -758,8 +880,11 @@ return (
           Cargo Ship
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateFreightNum} name="freightCargo" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Tonnes shipped" />
+          <input onChange={calculateFreightNum} name="freightCargo" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}   placeholder="Tonnes shipped" />
           </Col>
           <Col className="col-xl-4">
           <input onChange={calculateFreightMiles} name="freightCargo" type="number"
@@ -772,8 +897,11 @@ return (
           Air (&lt;3700 km)
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateFreightNum} name="freightAirLess" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Tonnes shipped" />
+          <input onChange={calculateFreightNum} name="freightAirLess" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Tonnes shipped" />
           </Col>
           <Col className="col-xl-4">
           <input onChange={calculateFreightMiles} name="freightAirLess" type="number"
@@ -786,12 +914,18 @@ return (
           Air (3700+ km)
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateFreightNum} name="freightAirMore" type="number"  min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"  placeholder="Tonnes shipped" />
+          <input onChange={calculateFreightNum} name="freightAirMore" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}   placeholder="Tonnes shipped" />
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateFreightMiles} name="freightAirMore" type="number" min="0" oninput="this.value = 
- !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" 
+          <input onChange={calculateFreightMiles} name="freightAirMore" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}
             placeholder="Average distance" />
           </Col>
         </Row>
