@@ -7,9 +7,10 @@ import {
 } from "react-router-dom";
 
 export default class TestSplash extends React.Component {
+  
   componentDidMount () {
     let visited = localStorage["alreadyVisited"];
-        if(!visited) {
+        if(visited) {
              //this is the first time
              localStorage["alreadyVisited"] = true;
              <Redirect to="/splash" />
