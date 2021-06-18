@@ -224,7 +224,6 @@ font-weight: 600;
  .text-small {
   font-size: 12px;
 }
-
 .smallCaps.small {
   font-size: 12px;
 }
@@ -271,6 +270,7 @@ color: #fff;
 }
 
 
+
 .labelCaps {
 font-size: 10px;
 font-weight: 700;
@@ -302,7 +302,7 @@ li a, a.underline {
 }
 
 p.large {
-  font-size: 20px!important;
+  font-size: 20px;
 }
 
 .large, .large * {
@@ -350,6 +350,13 @@ hr {
   background-color: #00823B;
 }
 
+.react-player video {
+  position: relative;
+  left: 0;
+  top: 0;
+  transform: none;
+}
+
 /* Buttons */
 .btn {
   padding: 10px 20px 10px 20px;
@@ -371,22 +378,8 @@ hr {
   height: 1em;
   position: relative;
   display: inline-block;
-  margin: 0 10px 0 -2px;
+  margin: 0 10px 0 -5px;
   top:2px;
-}
-
-.signin-btn {
-  padding: 10px 20px 10px 20px;
-  border-radius: 6px;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: .1rem;
-  font-weight: 900 !important;
-  margin-bottom: 10px;
-  -webkit-transition: all .5s;
-  -moz-transition: all .5s;
-  transition: all .5s;
-  border: none;
 }
 
 
@@ -429,10 +422,6 @@ hr {
 .btn-green {
   background:#00823B;
   color: #fff;
-}
-
-.btn-green {
-  background:#00823B!important;
 }
 
 .btn-white {
@@ -1032,8 +1021,8 @@ padding: 10%;
 
 .intro-btn {
   opacity: 0;
-  animation: fadeIn 2s;
-  animation-delay: 8s;
+  animation: fadeIn 3s;
+  animation-delay: 8.5s;
   animation-fill-mode: forwards;
 }
 
@@ -1249,10 +1238,6 @@ footer {
 
 .tight-drop video {
   text-shadow: 0px 1px 8px rgba(0, 0, 0, 0.6);
-}
-
-.nudge {
-  margin-right: 6px;
 }
 
 .intro-links{
@@ -1577,21 +1562,15 @@ z-index:999;
 input[type=checkbox] {
   margin-right: 10px;
 }
-
 input[type=text], input[type=email], textarea, input[type=number] {
   width: 100%;
 }
 
-input[type=text], input[type=email], input[type=password], textarea {
+input[type=text], input[type=email], textarea {
 
   border-radius: 8px;
   padding: 8px;;
   font-size: 12px;
-  width: 100%;
-}
-
-label[type=name], label[type=email], label[type=password] {
-  width: 100%!important;
 }
 
 select {
@@ -1603,10 +1582,7 @@ button, input, optgroup, select, textarea {
   border: solid 1px #bbb;
   padding: 5px 10px;
   margin: 5px 0;
-  font-size: 12.5px;
 }
-
-
 
 /* Landing Page */
 
@@ -1759,10 +1735,6 @@ span.authorTitle {
     width: 100%;
     display: inline-block;
     color: #FF4D24;
-}
-
-.w-100 {
-  width: 100%!important;
 }
 
 .card-hover.modal-btn:hover {
@@ -2393,10 +2365,6 @@ font-size: .9em;
 .about-bg {
 
   height: 400px;
-}
-
-.nudge {
-  margin-right: 0px;
 }
 
 }

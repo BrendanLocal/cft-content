@@ -301,10 +301,10 @@ return (
             Gas
             </Col>
             <Col className="col-xl-4">
-            <input onChange={calculateCount} name="carGas" type="number" placeholder="Number of vehicles" />
+            <input onChange={calculateCount} name="carGas" type="number" placeholder="# of vehicles" />
             </Col>
             <Col className="col-xl-4">
-            <input onChange={calculateMiles} name="carGas" type="number" placeholder="Annual Km per vehicle" />
+            <input onChange={calculateMiles} name="carGas" type="number" placeholder="Average Annual Km/vehicle" />
             </Col>
           </Row>
           <Row>
@@ -312,10 +312,10 @@ return (
             Diesel
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="carDiesel" type="number" placeholder="Number of vehicles" />
+            <input onChange={calculateCount} name="carDiesel" type="number" placeholder="# of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="carDiesel" type="number" placeholder="Annual Km per vehicle" />
+            <input onChange={calculateMiles} name="carDiesel" type="number" placeholder="Average Annual Km/vehicle" />
             </Col>
           </Row>
           <Row>
@@ -323,10 +323,10 @@ return (
             Hybrid
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="carHybrid" type="number" placeholder="Number of vehicles" />
+            <input onChange={calculateCount} name="carHybrid" type="number" placeholder="# of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="carHybrid" type="number" placeholder="Annual Km per vehicle" />
+            <input onChange={calculateMiles} name="carHybrid" type="number" placeholder="Average Annual Km/vehicle" />
             </Col>
           </Row>
           </Col>
@@ -340,10 +340,10 @@ return (
             Gas
             </Col>
             <Col className="col-6 col-xl-4 ">
-            <input onChange={calculateCount} name="truckGas" type="number" placeholder="Number of vehicles" />
+            <input onChange={calculateCount} name="truckGas" type="number" placeholder="# of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="truckGas" type="number" placeholder="Annual Km per vehicle" />
+            <input onChange={calculateMiles} name="truckGas" type="number" placeholder="Average Annual Km/vehicle" />
             </Col>
           </Row>
           <Row>
@@ -351,10 +351,10 @@ return (
             Diesel
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="truckDiesel" type="number" placeholder="Number of vehicles" />
+            <input onChange={calculateCount} name="truckDiesel" type="number" placeholder="# of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="truckDiesel" type="number" placeholder="Annual Km per vehicle" />
+            <input onChange={calculateMiles} name="truckDiesel" type="number" placeholder="Average Annual Km/vehicle" />
             </Col>
           </Row>
           <Row>
@@ -362,10 +362,10 @@ return (
             Hybrid
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="truckHybrid" type="number" placeholder="Number of vehicles" />
+            <input onChange={calculateCount} name="truckHybrid" type="number" placeholder="# of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="truckHybrid" type="number" placeholder="Annual Km per vehicle" />
+            <input onChange={calculateMiles} name="truckHybrid" type="number" placeholder="Average Annual Km/vehicle" />
             </Col>
           </Row>
           </Col>
@@ -379,10 +379,10 @@ return (
             Gas
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="deliveryGas" type="number" placeholder="Number of vehicles" />
+            <input onChange={calculateCount} name="deliveryGas" type="number" placeholder="# of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="deliveryGas" type="number" placeholder="Annual Km per vehicle" />
+            <input onChange={calculateMiles} name="deliveryGas" type="number" placeholder="Average Annual Km/vehicle" />
             </Col>
           </Row>
           <Row>
@@ -390,11 +390,11 @@ return (
             Diesel
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="deliveryDiesel" type="number" placeholder="Number of vehicles" />
+            <input onChange={calculateCount} name="deliveryDiesel" type="number" placeholder="# of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
             <input onChange={calculateMiles} name="deliveryDiesel" type="number"
-              placeholder="Annual Km per vehicle" />
+              placeholder="Average Annual Km/vehicle" />
             </Col>
           </Row>
           </Col>
@@ -408,10 +408,10 @@ return (
             Refrigerated
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="semiFrig" type="number" placeholder="Number of vehicles" />
+            <input onChange={calculateCount} name="semiFrig" type="number" placeholder="# of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="semiFrig" type="number" placeholder="Annual Km per vehicle" />
+            <input onChange={calculateMiles} name="semiFrig" type="number" placeholder="Average Annual Km/vehicle" />
             </Col>
           </Row>
           <Row>
@@ -419,10 +419,10 @@ return (
             Non-Refrigerated
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="semiNonFrig" type="number" placeholder="Number of vehicles" />
+            <input onChange={calculateCount} name="semiNonFrig" type="number" placeholder="# of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="semiNonFrig" type="number" placeholder="Annual Km per vehicle" />
+            <input onChange={calculateMiles} name="semiNonFrig" type="number" placeholder="Average Annual Km/vehicle" />
             </Col>
           </Row>
           </Col>
@@ -433,10 +433,10 @@ return (
              <h5 className="smallCaps text-small text-green">Private Jet</h5>
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="jetNum" type="number" placeholder="Number of vehicles" />
+            <input onChange={calculateCount} name="jetNum" type="number" placeholder="# of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="jetNum" type="number" placeholder="Annual Km per vehicle" />
+            <input onChange={calculateMiles} name="jetNum" type="number" placeholder="Average Annual Km/vehicle" />
             </Col>
         </Row>
       </div>
@@ -454,11 +454,11 @@ return (
           Car
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateTransitCount} name="transitCar" type="number" placeholder="Number of vehicles" />
+          <input onChange={calculateTransitCount} name="transitCar" type="number" placeholder="# of vehicles" />
           </Col>
           <Col className="col-xl-4">
           <input onChange={calculateTransitMiles} name="transitCar" type="number"
-            placeholder="Average Km per day" />
+            placeholder="Average Km/day" />
           </Col>
         </Row>
         <Row>
@@ -466,10 +466,10 @@ return (
           Bus
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateTransitCount} name="transitBus" type="number" placeholder="Number of employees" />
+          <input onChange={calculateTransitCount} name="transitBus" type="number" placeholder="# of employees" />
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateTransitMiles} name="transitBus" type="number" placeholder="Average Km per day" />
+          <input onChange={calculateTransitMiles} name="transitBus" type="number" placeholder="Average km/day" />
           </Col>
         </Row>
         <Row>
@@ -477,10 +477,10 @@ return (
           Train
           </Col>
           <Col className="col-6 col-xl-4">
-          <input onChange={calculateTransitCount} name="transitTrain" type="number" placeholder="Number of employees" />
+          <input onChange={calculateTransitCount} name="transitTrain" type="number" placeholder="# of employees" />
           </Col>
           <Col className="col-6 col-xl-4">
-          <input onChange={calculateTransitMiles} name="transitTrain" type="number" placeholder="Average Km per day" />
+          <input onChange={calculateTransitMiles} name="transitTrain" type="number" placeholder="Average km/day" />
           </Col>
         </Row>
 
@@ -504,7 +504,7 @@ return (
           </Col>
           <Col className="col-6 col-xl-4">
           <input onChange={calculateEmp} name="flyEmployees" type="number"
-            placeholder="Number of employees who fly" />
+            placeholder="# of employees who fly" />
           </Col>
         </Row>
         <hr/>
@@ -519,7 +519,7 @@ return (
             </Col>
             <Col className="col-6 col-xl-6">
             <input onChange={calculateFlightCount} name="flyShort" type="number"
-              placeholder="Flights per employee" />
+              placeholder="Average # of flights per employee" />
             </Col>
           </Row>
           </Col>
@@ -536,7 +536,7 @@ return (
               </Col>
               <Col className="col-6">
               <input onChange={calculateFlightCount} name="flyMediumEco" type="number"
-                placeholder="Flights per employee" />
+                placeholder="Average # of flights per employee" />
               </Col>
             </Row>
             <Row>
@@ -545,7 +545,7 @@ return (
               </Col>
               <Col className="col-6">
               <input onChange={calculateFlightCount} name="flyMediumBus" type="number"
-                placeholder="Flights per employee" />
+                placeholder="Average # of flights per employee" />
               </Col>
             </Row>
             </Col>
@@ -562,7 +562,7 @@ return (
               </Col>
               <Col>
               <input onChange={calculateFlightCount} name="flyLongEco" type="number"
-                placeholder="Flights per employee" />
+                placeholder="Average # of flights per employee" />
               </Col>
             </Row>
             <Row>
@@ -571,7 +571,7 @@ return (
               </Col>
               <Col>
               <input onChange={calculateFlightCount} name="flyLongEcoPlus" type="number"
-                placeholder="Flights per employee" />
+                placeholder="Average # of flights per employee" />
               </Col>
             </Row>
             <Row>
@@ -580,7 +580,7 @@ return (
               </Col>
               <Col>
               <input onChange={calculateFlightCount} name="flyLongBus" type="number"
-                placeholder="Flights per employee" />
+                placeholder="Average # of flights per employee" />
               </Col>
             </Row>
             <Row>
@@ -589,7 +589,7 @@ return (
               </Col>
               <Col>
               <input onChange={calculateFlightCount} name="flyLongFirst" type="number"
-                placeholder="Flights per employee" />
+                placeholder="Average # of flights per employee" />
               </Col>
             </Row>
             </Col>
@@ -603,7 +603,7 @@ return (
             </Col>
             <Col className="col-sm-6 col-xl-4">
             <input onChange={calculateFlightCount} name="flyHotels" type="number"
-              placeholder="Nights per employee" />
+              placeholder="# of nights per employee" />
             </Col>
           </Row>
       </div>
@@ -727,7 +727,7 @@ return (
       <Col className="col-10 align-items-center text-center p-3">
       <div className="bg-brown p-5 innerShadow roundedBox">
         <p className="smallCaps text-orange">Next Step</p>
-      <h3 className="text-white mb-4 px-2 px-lg-5">Calculate how many hectares of Smart Forest you need to invest in to reach a Net-Zero emissions target.</h3>
+      <h3 className="text-white mb-4 px-4">Calculate how many hectares of Smart Forest you need to invest in to reach a Net-Zero emissions target.</h3>
       <Button className="btn-large mt-1" variant="green">Calculate Your Net-Zero Target</Button>
       </div>
       </Col>
