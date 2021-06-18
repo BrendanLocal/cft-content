@@ -161,7 +161,6 @@ return(
           
       <Link href={ user? "/portal-user" : "/portal" } ><a className="smallCaps textButton">{ user? "Your Portal" : "Sign in" }</a></Link>
 
-      { user? "<a tabIndex={0} role='button' onClick={handleLogout}>Logout</a>" : null } 
       
     
             
