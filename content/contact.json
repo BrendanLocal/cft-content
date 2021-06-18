@@ -1,7 +1,8 @@
----
-title: Contact Us
----
+
+
 {
+  "pageName":"Contact Us",
+  "pageURL":"contact",
   "title": "Contact Us",
   "name": "Canada's Forest Trust",
   "address": "Street Address, Ottawa, Ontario, CANADA",

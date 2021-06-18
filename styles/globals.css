@@ -2127,6 +2127,14 @@ ul.plus li:before {
   transition: all .5s;
   }
 
+  .searchInner {
+    display: inline-block;
+  }
+
+  .searchBox img , .searchBox svg{
+    vertical-align: top;
+  }
+
   .searchClosed .row, .searchClosed .container {
 height: 0;
 visibility: hidden;
@@ -2152,6 +2160,7 @@ z-index: 999;
 #searchComponent img {
   width:40px;
   color: #fff; 
+  margin-top: 4px;
 }
 
 #searchComponent h3 {
@@ -2168,6 +2177,7 @@ z-index: 999;
 #searchComponent .closeSearch {
   width: 30px;
   margin-left: 20px;
+  margin-top: 8px;
 }
 .closeSearch:hover {
   cursor: pointer;
