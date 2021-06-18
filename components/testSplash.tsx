@@ -1,5 +1,6 @@
 // components/layout.js
 import React from 'react'
+import { useRouter } from 'next/router'
 
 import {
   BrowserRouter as 
@@ -10,10 +11,14 @@ export default class TestSplash extends React.Component {
   
   componentDidMount () {
     let visited = localStorage["alreadyVisited"];
-        if(visited) {
+        if(!visited) {
              //this is the first time
+             console.log('test');
              localStorage["alreadyVisited"] = true;
-             <Redirect to="/splash" />
+            return (
+
+<Redirect to="/splash" />
+            )
 
         }
   }

@@ -157,7 +157,7 @@ return (
             <Col className="col-lg-9 p-5">
             <TabPanel>
             <Tabs>
-              <TabList>
+              <TabList className="tabRow">
             <Tab className="link bold text-orange">
                 Dashboard
                 </Tab>
@@ -172,19 +172,19 @@ return (
                 <Col>
                 <Row>
                   <Col>
-                  <span className="h3 text-green mb-0">{user ? user.location : ''}</span>
+                  <span className="h3 text-green mb-0">{userData ? userData.location : ''}</span>
                   </Col>
                 </Row>
                 <Row>
                   <Col>
-                  <span className="bold">{user ? user.country : ''}</span>
+                  <span className="bold">{userData ? userData.country : ''}</span>
                   </Col>
                 </Row>
                 </Col>
                 <Col>
                 <Row>
                   <Col>
-                  <span className="h3 text-green mb-0">{user ? user.trees : ''}</span>
+                  <span className="h3 text-green mb-0">{userData ? userData.trees : ''}</span>
                   </Col>
                 </Row>
                 <Row>
@@ -196,7 +196,7 @@ return (
                 <Col>
                 <Row>
                   <Col>
-                  <span className="h3 text-green mb-0">{user ? user.acres : ''}</span>
+                  <span className="h3 text-green mb-0">{userData ? userData.acres : ''}</span>
                   </Col>
                 </Row>
                 <Row>
@@ -210,7 +210,7 @@ return (
                 <Col>
                 <Row>
                   <Col>
-                  <span className="h4 text-green">{user ? user.type : ''}</span>
+                  <span className="h4 text-green">{userData ? userData.type : ''}</span>
                   </Col>
                 </Row>
                 <Row>
@@ -222,7 +222,7 @@ return (
                 <Col>
                 <Row>
                   <Col>
-                  <span className="h4 text-green">{user ? user.status : ''}</span>
+                  <span className="h4 text-green">{userData ? userData.status : ''}</span>
                   </Col>
                 </Row>
                 <Row>
@@ -234,7 +234,7 @@ return (
                 <Col>
                 <Row>
                   <Col>
-                  <span className="h4 text-green">{user ? user.next : ''}%</span>
+                  <span className="h4 text-green">{userData ? userData.net : ''}%</span>
                   </Col>
                 </Row>
                 <Row>
@@ -246,7 +246,7 @@ return (
                 <Col>
                 <Row>
                   <Col>
-                  <span className="h4 text-green">{user ? user.engagement : ''}</span>
+                  <span className="h4 text-green">{userData ? userData.engagement : ''}</span>
                   </Col>
                 </Row>
                 <Row>
@@ -258,7 +258,7 @@ return (
                 <Col>
                 <Row>
                   <Col>
-                  <span className="h4 text-green">{user ? user.biodiversity : ''}%</span>
+                  <span className="h4 text-green">{userData ? userData.biodiversity : ''}%</span>
                   </Col>
                 </Row>
                 <Row>
@@ -275,6 +275,96 @@ return (
 
             <TabPanel>
             <h2 className="panelHead text-center text-grey">2040 ForestCast<sup>™</sup></h2>
+            <div className="forestImages"><img src="/trees-platform.png"/><img className="overlay" src={"/trees-year-"+state.x+".png"}/></div>
+            
+            <p className="smallCaps small text-center text-green">{state.x} years</p>
+      <Slider 
+      styles={{
+        track: {
+          margin: "0 3%",
+  width: "94% !important"
+        },
+        active: {
+          backgroundColor: '#054218'
+        },
+        thumb: { backgroundColor: '#00823B'
+        },
+        disabled: {
+          opacity: 0.5
+        }
+      }}
+
+        x={state.x}
+        xstep={5}
+        onChange={({ x }) => setState(state => ({ ...state, x }))}
+      />
+   
+      
+      <Row className="numRow">
+      <Col>0</Col>
+      <Col>10</Col>
+      <Col>20</Col>
+      <Col>30</Col>
+      <Col>40</Col>
+      <Col>50</Col>
+      <Col>60</Col>
+      <Col>70</Col>
+      <Col>80</Col>
+      <Col>90</Col>
+      <Col>100</Col>
+      </Row>
+      <Row className="pt-5">
+      <Col>
+                <Row>
+                  <Col>
+                  <span className="h4 text-green">{sliderData[state.x].height} meters</span>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                  <span className="bold">Average Height</span>
+                  </Col>
+                </Row>
+      </Col>
+      <Col>
+                <Row>
+                  <Col>
+                  <span className="h4 text-green">{sliderData[state.x].volume} m3/ha</span>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                  <span className="bold">Estimated Volume</span>
+                  </Col>
+                </Row>
+      </Col>
+      <Col>
+                <Row>
+                  <Col>
+                  <span className="h4 text-green">{sliderData[state.x].carbon} T/ha</span>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                  <span className="bold">Estimated CO2 Sequestered</span>
+                  </Col>
+                </Row>
+      </Col>
+
+      <Col>
+                <Row>
+                  <Col>
+                  <span className="h4 text-green">{sliderData[state.x].jobs}</span>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                  <span className="bold">Estimated Jobs</span>
+                  </Col>
+                </Row>
+      </Col>
+      </Row>
+   
               </TabPanel>
               </Tabs>
             </TabPanel>

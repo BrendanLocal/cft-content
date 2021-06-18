@@ -123,7 +123,7 @@ return(
   <div className="container-fluid header logoHeader">
     <div className="row ">
       <div className="col">
-        <Link href="/">
+        <Link href="/home">
         <img className="logo" src="/cft-logo-white.svg" />
         </Link>
       </div>

@@ -11,6 +11,37 @@ import Link from 'next/link'
 
 const App = () => {
 
+
+  const [selectBusinessType, setBusinessType] = React.useState([
+    "Airline & Air Travel",
+"Alcohol, Tobacco, & Cannabis Retail",
+"Auto Parts & Repair",
+"Beauty & Wellness",
+"Cafe/Restaurant",
+"Car Dealership",
+"Communication Service (Telecommunication, Media, Newspaper, Business,  etc)",
+"Construction",
+"Financial Service (Insurance, Bank, Advising, etc)",
+"Fitness (Gym, Personal Training)",
+"Home/Building Contractor",
+"Hospital",
+"Hospitality (Hotel, Motel, Air B&B)",
+"Information Technology (Cybersecurity, networking, software, etc.)",
+"Grocery Store",
+"Lumber/Pulp Mill",
+"Product Manufacturer",
+"Mining",
+"Medical Equipment/Pharmaceuticals",
+"Medical Care Provider",
+"Movie Theatre",
+"Oil & Gas Production",
+"Other",
+"Professional Service (Law, Engineering, Consulting, Business)",
+"Real Estate",
+"Retail (Clothing, Furniture, Books, etc)",
+"Transporation (Bus, Taxi, etc)",
+"Utility Provider (Electrical, Hydro, Natural Gas, etc.)	"
+  ])
   
 const [selectBuild, setBuild] = React.useState("");
 const [selectSize, setSize] = React.useState("");
@@ -84,31 +115,13 @@ setNum(event.target.value);
 
 
 const buildArray = {
-"5000":{
-Office:17364.7272966102, Medical:11745.2006980804, School:4757.66316027602, Care:12771.2658005338,
-Warehouse:9099.64324928882, Hotel:9690.54436545558, Hospital:37996.8383017167, Food:31883.4665465874,
-Retail:14238.4420898752, Other:21150.1136386494
-},
-"10000":{
-Office:36410.3314832734, Medical:31652.8432142392, School:50910.7964173328, Care:38785.1544490552,
-Warehouse:33615.6982670747, Hotel:40569.5408950621, Hospital:37996.8383017167, Food:69291.7802772103,
-Retail:34880.9486788779, Other:41842.7553285601
-},
-"50000":{
-Office:107974.850039479, Medical:121467.615511552, School:126421.429416638, Care:135848.999758979,
-Warehouse:86165.0149485114, Hotel:110204.71235101, Hospital:378941.441441445, Food:336771.355336677,
-Retail:130500.101484575, Other:87631.4688550379
-},
-"200000":{
-Office:512724.873119453, Medical:505494.939911453, School:342315.840255058, Care:579775.620791251,
-Warehouse:285542.673700571, Hotel:591931.842049994, Hospital:1264876.401631, Food:868870.950206574,
-Retail:297789.023649549, Other:338731.643770728
-},
-"200001":{
-Office:2234861.05228483, Medical:5452546.29629634, School:1112764.55026456, Care:1377046.13095239,
-Warehouse:1092785.89654373, Hotel:1861523.06967986, Hospital:5946424.34988185, Food:1439977.47747749,
-Retail:2446129.79207279, Other:1848813.90303718
-}
+  "5000":{	Office:17364.7272966102,	Medical:11745.2006980804,	School:4757.66316027602,	Care:12771.2658005338,	Warehouse:9099.64324928882,	Hotel:9690.54436545558,	Hospital:37996.8383017167,	Food:31883.4665465874,	Restaurant:31883.4665465874,	Retail:14238.4420898752,	Other:21150.1136386494	},
+  "10000":{	Office:36410.3314832734,	Medical:31652.8432142392,	School:50910.7964173328,	Care:38785.1544490552,	Warehouse:33615.6982670747,	Hotel:40569.5408950621,	Hospital:37996.8383017167,	Food:69291.7802772103,	Restaurant:69291.7802772103,	Retail:34880.9486788779,	Other:41842.7553285601	},
+  "50000":{	Office:107974.850039479,	Medical:121467.615511552,	School:126421.429416638,	Care:135848.999758979,	Warehouse:86165.0149485114,	Hotel:110204.71235101,	Hospital:378941.441441445,	Food:336771.355336677,	Restaurant:336771.355336677,	Retail:130500.101484575,	Other:87631.4688550379	},
+  "100000":{	Office:192271.827419795,	Medical:189560.602466795,	School:128368.440095647,	Care:217415.857796719,	Warehouse:107078.502637714,	Hotel:221974.440768748,	Hospital:474328.650611625,	Food:325826.606327465,	Restaurant:325826.606327465,	Retail:111670.883868581,	Other:127024.366414023	},
+  "150000":{	Office:384543.65483959,	Medical:379121.204933589,	School:256736.880191293,	Care:434831.715593438,	Warehouse:214157.005275428,	Hotel:443948.881537496,	Hospital:948657.301223249,	Food:651653.21265493,	Restaurant:651653.21265493,	Retail:223341.767737162,	Other:254048.732828046	},
+  "200000":{	Office:769087.30967918,	Medical:758242.409867179,	School:513473.760382587,	Care:869663.431186876,	Warehouse:428314.010550856,	Hotel:887897.763074991,	Hospital:1897314.6024465,	Food:1303306.42530986,	Restaurant:1303306.42530986,	Retail:446683.535474323,	Other:508097.465656091	},
+  "200001":{	Office:2234861.05228483,	Medical:5452546.29629634,	School:1112764.55026456,	Care:1377046.13095239,	Warehouse:1092785.89654373,	Hotel:1861523.06967986,	Hospital:5946424.34988185,	Food:1439977.47747749,	Restaurant:1439977.47747749,	Retail:2446129.79207279,	Other:1848813.90303718	}
 }
 
 
@@ -244,10 +257,39 @@ return (
 
         </Row>
         <Row>
-          <Col>
-          <label htmlFor="number">How many buildings of this type are in the organization?</label><br />
-          <input onChange={changeNum} type="number" placeholder="Number of buildings of this type" />
-
+          <Col> 
+          <label htmlFor="business">What type of business do you have?</label><br />
+          <select name="business" >
+            <option value="" hidden>Select...</option>
+            <option>	Airline & Air Travel	</option>
+<option>	Alcohol, Tobacco, & Cannabis Retail	</option>
+<option>	Auto Parts & Repair	</option>
+<option>	Beauty & Wellness	</option>
+<option>	Cafe/Restaurant	</option>
+<option>	Car Dealership	</option>
+<option>	Communication Service (Telecommunication, Media, Newspaper, Business,  etc)	</option>
+<option>	Construction	</option>
+<option>	Financial Service (Insurance, Bank, Advising, etc)	</option>
+<option>	Fitness (Gym, Personal Training)	</option>
+<option>	Home/Building Contractor	</option>
+<option>	Hospital	</option>
+<option>	Hospitality (Hotel, Motel, Air B&B)	</option>
+<option>	Information Technology (Cybersecurity, networking, software, etc.)	</option>
+<option>	Grocery Store	</option>
+<option>	Lumber/Pulp Mill	</option>
+<option>	Product Manufacturer	</option>
+<option>	Mining	</option>
+<option>	Medical Equipment/Pharmaceuticals	</option>
+<option>	Medical Care Provider	</option>
+<option>	Movie Theatre	</option>
+<option>	Oil & Gas Production	</option>
+<option>	Other	</option>
+<option>	Professional Service (Law, Engineering, Consulting, Business)	</option>
+<option>	Real Estate	</option>
+<option>	Retail (Clothing, Furniture, Books, etc)	</option>
+<option>	Transporation (Bus, Taxi, etc)	</option>
+<option>	Utility Provider (Electrical, Hydro, Natural Gas, etc.)	</option>
+          </select>
           </Col>
         </Row>
         <Row>
@@ -263,11 +305,15 @@ return (
             <option value='Hotel'>Hotel/Motel/Lodge</option>
             <option value='Hospital'>Hospital</option>
             <option value='Food'>Food and Beverage Store</option>
+
+            <option value='Restaurant'>Restaurant</option>
             <option value='Retail'>Non-Food Retail</option>
             <option value='Other'>Other</option>
           </select>
           </Col>
         </Row>
+
+
         <Row>
           <Col>
           <label htmlFor="size">How many square feet is the building?</label><br />
@@ -281,6 +327,14 @@ return (
           </select>
           </Col>
         </Row>
+        <Row>
+          <Col>
+          <label htmlFor="number">How many buildings of this type are in the organization?</label><br />
+          <input onChange={changeNum} type="number" placeholder="Number of buildings of this type" />
+
+          </Col>
+        </Row>
+        
         
       </div>
       <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">

@@ -1046,13 +1046,15 @@ padding: 10%;
 .splash button {
  opacity: 0;
   transform: translateY(-100%);
-  transition: all ease .5s;
+
+  transition: none;
 }
 
 .splash .header {
   opacity: 0;
   transform: translateY(-100%);
-  transition: all ease .5s;
+
+  transition: none;
 }
 .header {
   transition: all ease .5s;
@@ -1061,7 +1063,8 @@ padding: 10%;
 .splash .menuInterface {
   opacity: 0;
   transform: translateX(-100%);
-  transition: all ease .5s;
+
+  transition: none;
 }
 
 .menuInterface {
@@ -1071,19 +1074,32 @@ padding: 10%;
 .splash .socialIcons {
   opacity: 0;
   transform: translateX(100%);
+
+  transition: none;
+}
+
+
+.socialIcons {
   transition: all ease .5s;
 }
 
 .splash #ticker {
   opacity: 0;
   transform: translateY(100%);
+
+  transition: none;
+}
+
+
+#ticker {
   transition: all ease .5s;
 }
 
 .splash footer {
   opacity: 0;
   transform: translateY(100%);
-  transition: all ease .5s;
+
+  transition: none;
 }
 
 
@@ -2051,6 +2067,7 @@ border-bottom: none !important;
 .forestImages {
   position: relative;
 width: 100%;
+margin-top: -8%;
 }
 .forestImages img.overlay {
   position: absolute;
