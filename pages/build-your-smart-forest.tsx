@@ -14,6 +14,8 @@ import Parallax from 'parallax-js'
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Slide } from 'react-slideshow-image';
+import ReactMarkdown from 'react-markdown';
+
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 export default function Build({ file }) {
@@ -43,7 +45,7 @@ export default function Build({ file }) {
 
       <Row className="justify-content-left p-0 m-0 d-none d-lg-block">
         <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
-          <p className="text-white m-2 bold op-6">{editingdata.buildForest}</p>
+          <ReactMarkdown className="text-white m-2 bold op-6">{editingdata.buildForest}</ReactMarkdown>
           <ul>
             <li className="p-0" data-dest="#intro">
               <a href="#intro" className="text-white bold no-underline">{editingdata.menu1}</a>
@@ -72,8 +74,8 @@ export default function Build({ file }) {
             </Col>
             <Col className="col-12 col-lg-5 text-white p-4 pb-0 intro-order">
               <h1 className="text-orange mb-5 bold">{editingdata.part1_header1}</h1>
-              <p className="large my-5 op-9">{editingdata.part1_para1}</p>
-              <p className="text-white text-left smallcaps intro-links-header op-5 mt-4">{editingdata.part1_header2}</p>
+              <ReactMarkdown className="large my-5 op-9">{editingdata.part1_para1}</ReactMarkdown>
+              <ReactMarkdown className="text-white text-left smallcaps intro-links-header op-5 mt-4">{editingdata.part1_header2}</ReactMarkdown>
               <a href="#commitment" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.part1_menu1}</a>
               <a href="#forever" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.part1_menu2}</a>
               <a href="#smart-forests" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.part1_menu3}</a>
@@ -98,14 +100,14 @@ export default function Build({ file }) {
           <Row className="pt-5 align-items-center justify-content-center">
             <Col className="col-12 col-lg-6 pe-lg-0 mt-5">
               <h2 className="text-center text-orange bold">{editingdata.part1_header4}</h2>
-              <p className="text-center text-white medium thin mb-4">{editingdata.part1_para2}</p>
+              <ReactMarkdown className="text-center text-white medium thin mb-4">{editingdata.part1_para2}</ReactMarkdown>
             </Col>
           </Row>
           <Row className="justify-content-center pb-5 align-items-stretch">
           <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
             <h4 className="text-white tight-drop-light">{editingdata.part1_box1header1}<span className="text-orange">™</span></h4>
-            <p className="flex-fill pb-3 text-white tight-drop">{editingdata.part1_box1para1}</p>
+            <ReactMarkdown className="flex-fill pb-3 text-white tight-drop">{editingdata.part1_box1para1}</ReactMarkdown>
           
             <a href="#corporate" className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnMore}</a>
             </div>
@@ -113,21 +115,21 @@ export default function Build({ file }) {
             <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
             <h4 className="text-white tight-drop-light">{editingdata.part1_box2header1}<span className="text-orange">™</span></h4>
-            <p className="flex-fill pb-3 text-white tight-drop">{editingdata.part1_box2para1}</p>
+            <ReactMarkdown className="flex-fill pb-3 text-white tight-drop">{editingdata.part1_box2para1}</ReactMarkdown>
             <a href="#school" className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnMore}</a>
             </div>
             </Col>
             <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
             <h4 className="text-white tight-drop-light">{editingdata.part1_box3header1}<span className="text-orange">™</span></h4>
-            <p className="flex-fill pb-3 text-white tight-drop">{editingdata.part1_box3para1}</p>
+            <ReactMarkdown className="flex-fill pb-3 text-white tight-drop">{editingdata.part1_box3para1}</ReactMarkdown>
             <a href="#legacy" className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnMore}</a>
             </div>
             </Col>
             <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop communal-card">
             <h4 className="text-white tight-drop-light">{editingdata.part1_box4header1}<span className="text-orange">™</span></h4>
-            <p className="flex-fill pb-3 text-white tight-drop">{editingdata.part1_box4para1}</p>
+            <ReactMarkdown className="flex-fill pb-3 text-white tight-drop">{editingdata.part1_box4para1}</ReactMarkdown>
             <a href="#communal" className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnMore}</a> </div>
             </Col>
           </Row>
@@ -161,7 +163,7 @@ export default function Build({ file }) {
           </Row>
           <Row className="text-center justify-content-center">
             <Col className="col-lg-7 py-5">
-              <p className="lead text-white bold">{editingdata.part2_para1}</p>
+              <ReactMarkdown className="lead text-white bold">{editingdata.part2_para1}</ReactMarkdown>
             </Col>
           </Row>
 
@@ -173,7 +175,7 @@ export default function Build({ file }) {
                 <Col className="h-100">
                   <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
                     <h4 className="thin text-green">{editingdata.part2_box1header1}</h4>
-                    <p className="flex-fill pb-3">{editingdata.part2_box1para1}</p>
+                    <ReactMarkdown className="flex-fill pb-3">{editingdata.part2_box1para1}</ReactMarkdown>
                     <Button variant="text text-left">{editingdata.watchVideo}</Button>
                   </div>
                 </Col>
@@ -182,7 +184,7 @@ export default function Build({ file }) {
                 <Col className="h-100">
                   <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
                     <h4 className="thin text-green">{editingdata.part2_box2header1}</h4>
-                    <p className="flex-fill pb-3">{editingdata.part2_box2para1}</p>
+                    <ReactMarkdown className="flex-fill pb-3">{editingdata.part2_box2para1}</ReactMarkdown>
                     <Button variant="text text-left">{editingdata.learnMore}</Button>
                   </div>
                 </Col>
@@ -191,7 +193,7 @@ export default function Build({ file }) {
                 <Col className="h-100">
                   <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
                     <h4 className="thin text-green">{editingdata.part2_box3header1}</h4>
-                    <p className="flex-fill pb-3">{editingdata.part2_box3para1}</p>
+                    <ReactMarkdown className="flex-fill pb-3">{editingdata.part2_box3para1}</ReactMarkdown>
                     <Button variant="text text-left">{editingdata.watchVideo}</Button>
                   </div>
                 </Col>
@@ -200,7 +202,7 @@ export default function Build({ file }) {
                 <Col className="h-100">
                   <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
                     <h4 className="thin text-green">{editingdata.part2_box4header1}</h4>
-                    <p className="flex-fill pb-3">{editingdata.part2_box4para1}</p>
+                    <ReactMarkdown className="flex-fill pb-3">{editingdata.part2_box4para1}</ReactMarkdown>
                     <Button variant="text text-left">{editingdata.watchVideo}</Button>
                   </div>
                 </Col>
@@ -217,14 +219,14 @@ export default function Build({ file }) {
           <Row className="justify-content-center">
             <Col className="col-lg-4">
               <h3 className="text-center text-orange bold">{editingdata.part2_header2}</h3>
-              <p className="text-center text-white medium">{editingdata.part2_para2}</p>
+              <ReactMarkdown className="text-center text-white medium">{editingdata.part2_para2}</ReactMarkdown>
             </Col>
           </Row>
           <Row className="justify-content-center py-4">
             <Col className="outlineBox text-white p-4 col-lg-3">
               <span className="smallCaps small text-orange letterspace">{editingdata.step1}</span>
               <h4 className="thin py-3">{editingdata.part2_step1header1}</h4>
-              <p>{editingdata.part2_step1para1}</p>
+              <ReactMarkdown>{editingdata.part2_step1para1}</ReactMarkdown>
               <Link href="/smart-forest-calculator">
                 <Button variant="green">{editingdata.part2_step1button1}</Button>
               </Link>
@@ -232,7 +234,7 @@ export default function Build({ file }) {
             <Col className="outlineBox text-white p-4 col-lg-3">
               <span className="smallCaps small text-orange letterspace">{editingdata.step2}</span>
               <h4 className="thin py-3">{editingdata.part2_step2header1}</h4>
-              <p>{editingdata.part2_step2para1}</p>
+              <ReactMarkdown>{editingdata.part2_step2para1}</ReactMarkdown>
               <Link href="/carbon-calculator">
                 <Button variant="green">{editingdata.part2_step2button1}</Button>
               </Link>
@@ -240,7 +242,7 @@ export default function Build({ file }) {
             <Col className="outlineBox text-white p-4 col-lg-3">
               <span className="smallCaps small text-orange letterspace">{editingdata.step3}</span>
               <h4 className="thin py-3">{editingdata.part2_step3header1}</h4>
-              <p>{editingdata.part2_step3para1}</p>
+              <ReactMarkdown>{editingdata.part2_step3para1}</ReactMarkdown>
               <Button variant="green">{editingdata.part2_step3button1}</Button>
             </Col>
           </Row>
@@ -256,14 +258,14 @@ export default function Build({ file }) {
               <Slide easing="ease" {...slideProperties}>
                 <Row className="justify-content-center each-slide px-5">
                   <Col className="p-5 text-white">
-                    <p className="text-orange large">{editingdata.part2_quote1para1}</p>
+                    <ReactMarkdown className="text-orange large">{editingdata.part2_quote1para1}</ReactMarkdown>
                     <span className="authorLine">{editingdata.part2_quote1para2}</span>
                     <span className="authorTitle">{editingdata.part2_quote1para3}</span>
                   </Col>
                 </Row>
                 <Row className="justify-content-center each-slide px-5">
                   <Col className="p-5 text-white">
-                    <p className="text-orange large">{editingdata.part2_quote2para1}</p>
+                    <ReactMarkdown className="text-orange large">{editingdata.part2_quote2para1}</ReactMarkdown>
                     <span className="authorLine">{editingdata.part2_quote2para2}</span>
                     <span className="authorTitle">{editingdata.part2_quote2para3}</span>
                   </Col>
@@ -280,28 +282,28 @@ export default function Build({ file }) {
           </Row>
           <Row className="justify-content-center">
             <Col className=" col-6">
-              <p className="text-center text-orange large bold">{editingdata.part2_para3}</p>
+              <ReactMarkdown className="text-center text-orange large bold">{editingdata.part2_para3}</ReactMarkdown>
             </Col>
           </Row>
           <Row className="py-5 align-items-stretch justify-content-center">
             <Col className="col-2">
               <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-                <p className="flex-fill pb-3  medium">{editingdata.part2_benefitsbox1}</p>
+                <ReactMarkdown className="flex-fill pb-3  medium">{editingdata.part2_benefitsbox1}</ReactMarkdown>
               </div>
             </Col>
             <Col className="col-2">
               <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-                <p className="flex-fill pb-3 medium">{editingdata.part2_benefitsbox2}</p>
+                <ReactMarkdown className="flex-fill pb-3 medium">{editingdata.part2_benefitsbox2}</ReactMarkdown>
               </div>
             </Col>
             <Col className="col-2">
               <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-                <p className="flex-fill pb-3 medium">{editingdata.part2_benefitsbox3}</p>
+                <ReactMarkdown className="flex-fill pb-3 medium">{editingdata.part2_benefitsbox3}</ReactMarkdown>
               </div>
             </Col>
             <Col className="col-2">
               <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-                <p className="flex-fill pb-3  medium">{editingdata.part2_benefitsbox4}</p>
+                <ReactMarkdown className="flex-fill pb-3  medium">{editingdata.part2_benefitsbox4}</ReactMarkdown>
               </div>
             </Col>
           </Row>
@@ -342,7 +344,7 @@ export default function Build({ file }) {
           </Row>
           <Row className="text-center justify-content-center">
             <Col className="col-lg-7 py-5">
-              <p className="lead text-white bold">{editingdata.part3_para1}</p>
+              <ReactMarkdown className="lead text-white bold">{editingdata.part3_para1}</ReactMarkdown>
             </Col>
           </Row>
 
@@ -356,7 +358,7 @@ export default function Build({ file }) {
                 <Col className="h-100">
                 <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
                   <h4 className="thin text-green">{editingdata.part3_box1header1}</h4>
-                  <p className="flex-fill pb-3">{editingdata.part3_box1para1}</p>
+                  <ReactMarkdown className="flex-fill pb-3">{editingdata.part3_box1para1}</ReactMarkdown>
                   <Button variant="text text-left">{editingdata.watchVideo}</Button>
                 </div>
                 </Col>
@@ -365,7 +367,7 @@ export default function Build({ file }) {
                 <Col className="h-100">
                 <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
                   <h4 className="thin text-green">{editingdata.part3_box2header1}</h4>
-                  <p className="flex-fill pb-3">{editingdata.part3_box2para1}</p>
+                  <ReactMarkdown className="flex-fill pb-3">{editingdata.part3_box2para1}</ReactMarkdown>
                   <Button variant="text text-left">{editingdata.watchVideo}</Button>
                 </div>
                 </Col>
@@ -374,7 +376,7 @@ export default function Build({ file }) {
                 <Col className="h-100">
                 <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
                   <h4 className="thin text-green">{editingdata.part3_box3header1}</h4>
-                  <p className="flex-fill pb-3">{editingdata.part3_box3para1}</p>
+                  <ReactMarkdown className="flex-fill pb-3">{editingdata.part3_box3para1}</ReactMarkdown>
                   <Button variant="text text-left">{editingdata.watchVideo}</Button>
                 </div>
                 </Col>
@@ -383,7 +385,7 @@ export default function Build({ file }) {
                 <Col className="h-100">
                 <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
                   <h4 className="thin text-green">{editingdata.part3_box4header1}</h4>
-                  <p className="flex-fill pb-3">{editingdata.part3_box4para1}</p>
+                  <ReactMarkdown className="flex-fill pb-3">{editingdata.part3_box4para1}</ReactMarkdown>
                   <Button variant="text text-left">{editingdata.watchVideo}</Button>
                 </div>
                 </Col>
@@ -402,14 +404,14 @@ export default function Build({ file }) {
           <Row className="justify-content-center">
             <Col className="col-lg-4">
               <h3 className="text-center text-orange bold">{editingdata.part3_header2}</h3>
-              <p className="text-center text-white medium">{editingdata.part3_para2}</p>
+              <ReactMarkdown className="text-center text-white medium">{editingdata.part3_para2}</ReactMarkdown>
             </Col>
           </Row>
           <Row className="justify-content-center py-4">
             <Col className="outlineBox text-white p-4 col-lg-3">
               <span className="smallCaps small text-orange letterspace">{editingdata.step1}</span>
               <h4 className="thin py-3">{editingdata.part3_step1header1}</h4>
-              <p>{editingdata.part3_step1para1}</p>
+              <ReactMarkdown>{editingdata.part3_step1para1}</ReactMarkdown>
               <Link href="/smart-forest-calculator">
                 <Button variant="green">{editingdata.part3_step1button1}</Button>
               </Link>
@@ -417,7 +419,7 @@ export default function Build({ file }) {
             <Col className="outlineBox text-white p-4 col-lg-3">
               <span className="smallCaps small text-orange letterspace">{editingdata.step2}</span>
               <h4 className="thin py-3">{editingdata.part3_step2header1}</h4>
-              <p>{editingdata.part3_step2para1}</p>
+              <ReactMarkdown>{editingdata.part3_step2para1}</ReactMarkdown>
               <Link href="/carbon-calculator">
                 <Button variant="green">{editingdata.part3_step2button1}</Button>
               </Link>
@@ -425,7 +427,7 @@ export default function Build({ file }) {
             <Col className="outlineBox text-white p-4 col-lg-3">
               <span className="smallCaps small text-orange letterspace">{editingdata.step3}</span>
               <h4 className="thin py-3">{editingdata.part3_step3header1}</h4>
-              <p>{editingdata.part3_step3para1}</p>
+              <ReactMarkdown>{editingdata.part3_step3para1}</ReactMarkdown>
               <Button variant="green">{editingdata.part3_step3button1}</Button>
             </Col>
           </Row>
@@ -441,14 +443,14 @@ export default function Build({ file }) {
               <Slide easing="ease" {...slideProperties}>
                 <Row className="justify-content-center each-slide px-5">
                   <Col className="p-5 text-white">
-                    <p className="text-orange large">{editingdata.part3_quote1para1}</p>
+                    <ReactMarkdown className="text-orange large">{editingdata.part3_quote1para1}</ReactMarkdown>
                     <span className="authorLine">{editingdata.part3_quote1para2}</span>
                     <span className="authorTitle">{editingdata.part3_quote1para3}</span>
                   </Col>
                 </Row>
                 <Row className="justify-content-center each-slide px-5">
                   <Col className="p-5 text-white">
-                    <p className="text-orange large">{editingdata.part3_quote2para1}</p>
+                    <ReactMarkdown className="text-orange large">{editingdata.part3_quote2para1}</ReactMarkdown>
                     <span className="authorLine">{editingdata.part3_quote2para2}</span>
                     <span className="authorTitle">{editingdata.part3_quote2para3}</span>
                   </Col>
@@ -465,28 +467,28 @@ export default function Build({ file }) {
           </Row>
           <Row className="justify-content-center">
             <Col className=" col-6">
-              <p className="text-center text-orange large bold">{editingdata.part3_para3}</p>
+              <ReactMarkdown className="text-center text-orange large bold">{editingdata.part3_para3}</ReactMarkdown>
             </Col>
           </Row>
           <Row className="py-5 align-items-stretch justify-content-center">
             <Col className="col-2">
               <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-                <p className="flex-fill pb-3  medium">{editingdata.part3_benefitsbox1}</p>
+                <ReactMarkdown className="flex-fill pb-3  medium">{editingdata.part3_benefitsbox1}</ReactMarkdown>
               </div>
             </Col>
             <Col className="col-2">
               <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-                <p className="flex-fill pb-3 medium">{editingdata.part3_benefitsbox2}</p>
+                <ReactMarkdown className="flex-fill pb-3 medium">{editingdata.part3_benefitsbox2}</ReactMarkdown>
               </div>
             </Col>
             <Col className="col-2">
               <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-                <p className="flex-fill pb-3 medium">{editingdata.part3_benefitsbox3}</p>
+                <ReactMarkdown className="flex-fill pb-3 medium">{editingdata.part3_benefitsbox3}</ReactMarkdown>
               </div>
             </Col>
             <Col className="col-2">
               <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-                <p className="flex-fill pb-3  medium">{editingdata.part3_benefitsbox4}</p>
+                <ReactMarkdown className="flex-fill pb-3  medium">{editingdata.part3_benefitsbox4}</ReactMarkdown>
               </div>
             </Col>
           </Row>
@@ -527,9 +529,9 @@ export default function Build({ file }) {
           </Row>
           <Row className="text-center justify-content-center">
             <Col className="col-lg-7 py-5">
-            <p className="lead text-white bold">
+            <ReactMarkdown className="lead text-white bold">
               {editingdata.part4_para1}
-            </p>
+            </ReactMarkdown>
             </Col>
           </Row>
           <Swiper spaceBetween={50} slidesPerView={3} navigation pagination={{ clickable: true }} 
@@ -540,7 +542,7 @@ export default function Build({ file }) {
                 <Col className="h-100">
                   <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
                     <h4 className="thin text-green">{editingdata.part4_box1header1}</h4>
-                    <p className="flex-fill pb-3">{editingdata.part4_box1para1}</p>
+                    <ReactMarkdown className="flex-fill pb-3">{editingdata.part4_box1para1}</ReactMarkdown>
                     <Button variant="text text-left">{editingdata.watchVideo}</Button>
                   </div>
                 </Col>
@@ -549,7 +551,7 @@ export default function Build({ file }) {
                 <Col className="h-100">
                   <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
                     <h4 className="thin text-green">{editingdata.part4_box2header1}</h4>
-                    <p className="flex-fill pb-3">{editingdata.part4_box2para1}</p>
+                    <ReactMarkdown className="flex-fill pb-3">{editingdata.part4_box2para1}</ReactMarkdown>
                     <Button variant="text text-left">{editingdata.learnMore}</Button>
                   </div>
                 </Col>
@@ -558,7 +560,7 @@ export default function Build({ file }) {
                 <Col className="h-100">
                   <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
                     <h4 className="thin text-green">{editingdata.part4_box3header1}</h4>
-                    <p className="flex-fill pb-3">{editingdata.part4_box3para1}</p>
+                    <ReactMarkdown className="flex-fill pb-3">{editingdata.part4_box3para1}</ReactMarkdown>
                     <Button variant="text text-left">{editingdata.watchVideo}</Button>
                   </div>
                 </Col>
@@ -567,7 +569,7 @@ export default function Build({ file }) {
                 <Col className="h-100">
                   <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
                     <h4 className="thin text-green">{editingdata.part4_box4header1}</h4>
-                    <p className="flex-fill pb-3">{editingdata.part4_box4para1}</p>
+                    <ReactMarkdown className="flex-fill pb-3">{editingdata.part4_box4para1}</ReactMarkdown>
                     <Button variant="text text-left">{editingdata.watchVideo}</Button>
                   </div>
                 </Col>
@@ -586,14 +588,14 @@ export default function Build({ file }) {
           <Row className="justify-content-center">
             <Col className="col-lg-4">
               <h3 className="text-center text-orange bold">{editingdata.part4_header2}</h3>
-              <p className="text-center text-white medium">{editingdata.part4_para2}</p>
+              <ReactMarkdown className="text-center text-white medium">{editingdata.part4_para2}</ReactMarkdown>
             </Col>
           </Row>
           <Row className="justify-content-center py-4">
             <Col className="outlineBox text-white p-4 col-lg-3">
               <span className="smallCaps small text-orange letterspace">{editingdata.step1}</span>
               <h4 className="thin py-3">{editingdata.part4_step1header2}</h4>
-              <p>{editingdata.part4_step1para1}</p>
+              <ReactMarkdown>{editingdata.part4_step1para1}</ReactMarkdown>
               <Link href="/smart-forest-calculator">
                 <Button variant="green">{editingdata.part4_step1button1}</Button>
               </Link>
@@ -601,7 +603,7 @@ export default function Build({ file }) {
             <Col className="outlineBox text-white p-4 col-lg-3">
               <span className="smallCaps small text-orange letterspace">{editingdata.step2}</span>
               <h4 className="thin py-3">{editingdata.part4_step2header2}</h4>
-              <p>{editingdata.part4_step2para1}</p>
+              <ReactMarkdown>{editingdata.part4_step2para1}</ReactMarkdown>
               <Link href="carbon-calculator">
                 <Button variant="green">{editingdata.part4_step2button1}</Button>
               </Link>
@@ -609,7 +611,7 @@ export default function Build({ file }) {
             <Col className="outlineBox text-white p-4 col-lg-3">
               <span className="smallCaps small text-orange letterspace">{editingdata.step3}</span>
               <h4 className="thin py-3">{editingdata.part4_step3header2}</h4>
-              <p>{editingdata.part4_step3para1}</p>
+              <ReactMarkdown>{editingdata.part4_step3para1}</ReactMarkdown>
               <Button variant="green">{editingdata.part4_step3button1}</Button>
             </Col>
           </Row>
@@ -625,14 +627,14 @@ export default function Build({ file }) {
               <Slide easing="ease" {...slideProperties}>
                 <Row className="justify-content-center each-slide px-5">
                   <Col className="p-5 text-white">
-                    <p className="text-orange large">{editingdata.part4_quote1para1}</p>
+                    <ReactMarkdown className="text-orange large">{editingdata.part4_quote1para1}</ReactMarkdown>
                     <span className="authorLine">{editingdata.part4_quote1para2}</span>
                     <span className="authorTitle">{editingdata.part4_quote1para3}</span>
                   </Col>        
                 </Row>
                 <Row className="justify-content-center each-slide px-5">
                   <Col className="p-5 text-white">
-                    <p className="text-orange large">{editingdata.part4_quote2para1}</p>
+                    <ReactMarkdown className="text-orange large">{editingdata.part4_quote2para1}</ReactMarkdown>
                     <span className="authorLine">{editingdata.part4_quote2para2}</span>
                     <span className="authorTitle">{editingdata.part4_quote2para3}</span>
                   </Col>
@@ -649,28 +651,28 @@ export default function Build({ file }) {
           </Row>
           <Row className="justify-content-center">
             <Col className=" col-6">
-              <p className="text-center text-orange large bold">{editingdata.part4_para3}</p>
+              <ReactMarkdown className="text-center text-orange large bold">{editingdata.part4_para3}</ReactMarkdown>
             </Col>
           </Row>
           <Row className="py-5 align-items-stretch justify-content-center">
             <Col className="col-2">
               <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-                <p className="flex-fill pb-3  medium">{editingdata.part4_benefitsbox1}</p>
+                <ReactMarkdown className="flex-fill pb-3  medium">{editingdata.part4_benefitsbox1}</ReactMarkdown>
               </div>
             </Col>
             <Col className="col-2">
               <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-                <p className="flex-fill pb-3 medium">{editingdata.part4_benefitsbox2}</p>
+                <ReactMarkdown className="flex-fill pb-3 medium">{editingdata.part4_benefitsbox2}</ReactMarkdown>
               </div>
             </Col>
             <Col className="col-2">
               <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-                <p className="flex-fill pb-3 medium">{editingdata.part4_benefitsbox3}</p>
+                <ReactMarkdown className="flex-fill pb-3 medium">{editingdata.part4_benefitsbox3}</ReactMarkdown>
               </div>
             </Col>
             <Col className="col-2">
               <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-                <p className="flex-fill pb-3  medium">{editingdata.part4_benefitsbox4}</p>
+                <ReactMarkdown className="flex-fill pb-3  medium">{editingdata.part4_benefitsbox4}</ReactMarkdown>
               </div>
             </Col>
           </Row>
@@ -711,7 +713,7 @@ export default function Build({ file }) {
           </Row>
           <Row className="text-center justify-content-center">
             <Col className="col-lg-7 py-5">
-              <p className="lead text-white bold">{editingdata.part5_para1}</p>
+              <ReactMarkdown className="lead text-white bold">{editingdata.part5_para1}</ReactMarkdown>
             </Col>
           </Row>
           <Swiper spaceBetween={50} slidesPerView={3} navigation pagination={{ clickable: true }} 
@@ -722,7 +724,7 @@ export default function Build({ file }) {
                 <Col className="h-100">
                   <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
                     <h4 className="thin text-green">{editingdata.part5_box1header1}</h4>
-                    <p className="flex-fill pb-3">{editingdata.part5_box1para1}</p>
+                    <ReactMarkdown className="flex-fill pb-3">{editingdata.part5_box1para1}</ReactMarkdown>
                     <Button variant="text text-left">{editingdata.watchVideo}</Button>
                   </div>
                 </Col>
@@ -731,7 +733,7 @@ export default function Build({ file }) {
                 <Col className="h-100">
                   <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
                     <h4 className="thin text-green">{editingdata.part5_box2header1}</h4>
-                    <p className="flex-fill pb-3">{editingdata.part5_box2para1}</p>
+                    <ReactMarkdown className="flex-fill pb-3">{editingdata.part5_box2para1}</ReactMarkdown>
                     <Button variant="text text-left">{editingdata.learnMore}</Button>
                   </div>
                 </Col>
@@ -740,7 +742,7 @@ export default function Build({ file }) {
                 <Col className="h-100">
                   <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
                     <h4 className="thin text-green">{editingdata.part5_box3header1}</h4>
-                    <p className="flex-fill pb-3">{editingdata.part5_box3para1}</p>
+                    <ReactMarkdown className="flex-fill pb-3">{editingdata.part5_box3para1}</ReactMarkdown>
                     <Button variant="text text-left">{editingdata.watchVideo}</Button>
                   </div>
                 </Col>
@@ -749,7 +751,7 @@ export default function Build({ file }) {
                 <Col className="h-100">
                   <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
                     <h4 className="thin text-green">{editingdata.part5_box4header1}</h4>
-                    <p className="flex-fill pb-3">{editingdata.part5_box4para1}</p>
+                    <ReactMarkdown className="flex-fill pb-3">{editingdata.part5_box4para1}</ReactMarkdown>
                     <Button variant="text text-left">{editingdata.watchVideo}</Button>
                   </div>
                 </Col>
@@ -768,14 +770,14 @@ export default function Build({ file }) {
           <Row className="justify-content-center">
             <Col className="col-lg-4">
               <h3 className="text-center text-orange bold">{editingdata.part17_header1}</h3>
-              <p className="text-center text-white medium">{editingdata.part17_para1}</p>
+              <ReactMarkdown className="text-center text-white medium">{editingdata.part17_para1}</ReactMarkdown>
             </Col>
           </Row>
           <Row className="justify-content-center py-4">
             <Col className="outlineBox text-white p-4 col-lg-3">
               <span className="smallCaps small text-orange letterspace">{editingdata.step1}</span>
               <h4 className="thin py-3">{editingdata.part5_step1header2}</h4>
-              <p>{editingdata.part5_step1para1}</p>
+              <ReactMarkdown>{editingdata.part5_step1para1}</ReactMarkdown>
               <Link href="/smart-forest-calculator">
                 <Button variant="green">{editingdata.part5_step1button1}</Button>
               </Link>
@@ -783,7 +785,7 @@ export default function Build({ file }) {
             <Col className="outlineBox text-white p-4 col-lg-3">
               <span className="smallCaps small text-orange letterspace">{editingdata.step2}</span>
               <h4 className="thin py-3">{editingdata.part5_step2header2}</h4>
-              <p>{editingdata.part5_step2para1}</p>
+              <ReactMarkdown>{editingdata.part5_step2para1}</ReactMarkdown>
               <Link href="/carbon-calculator">
                 <Button variant="green">{editingdata.part5_step2button1}</Button>
               </Link>
@@ -791,7 +793,7 @@ export default function Build({ file }) {
             <Col className="outlineBox text-white p-4 col-lg-3">
               <span className="smallCaps small text-orange letterspace">{editingdata.step3}</span>
               <h4 className="thin py-3">{editingdata.part5_step3header2}</h4>
-              <p>{editingdata.part5_step3para1}</p>
+              <ReactMarkdown>{editingdata.part5_step3para1}</ReactMarkdown>
               <Button variant="green">{editingdata.part5_step3button1}</Button>
             </Col>
           </Row>
@@ -807,14 +809,14 @@ export default function Build({ file }) {
               <Slide easing="ease" {...slideProperties}>
                 <Row className="justify-content-center each-slide px-5">
                   <Col className="p-5 text-white">
-                    <p className="text-orange large">{editingdata.part5_quote1para1}</p>
+                    <ReactMarkdown className="text-orange large">{editingdata.part5_quote1para1}</ReactMarkdown>
                     <span className="authorLine">{editingdata.part5_quote1para2}</span>
                     <span className="authorTitle">{editingdata.part5_quote1para3}</span>
                   </Col>
                 </Row>
                 <Row className="justify-content-center each-slide px-5">
                   <Col className="p-5 text-white">
-                    <p className="text-orange large">{editingdata.part5_quote2para1}</p>
+                    <ReactMarkdown className="text-orange large">{editingdata.part5_quote2para1}</ReactMarkdown>
                     <span className="authorLine">{editingdata.part5_quote2para2}</span>
                     <span className="authorTitle">{editingdata.part5_quote2para3}</span>
                   </Col>
@@ -831,28 +833,28 @@ export default function Build({ file }) {
           </Row>
           <Row className="justify-content-center">
             <Col className=" col-6">
-              <p className="text-center text-orange large bold">{editingdata.part5_benefitspara1}</p>
+              <ReactMarkdown className="text-center text-orange large bold">{editingdata.part5_benefitspara1}</ReactMarkdown>
             </Col>
           </Row>
           <Row className="py-5 align-items-stretch justify-content-center">
             <Col className="col-2">
               <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-                <p className="flex-fill pb-3  medium">{editingdata.part5_benefitsbox1}</p>
+                <ReactMarkdown className="flex-fill pb-3  medium">{editingdata.part5_benefitsbox1}</ReactMarkdown>
               </div>
             </Col>
             <Col className="col-2">
               <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-                <p className="flex-fill pb-3 medium">{editingdata.part5_benefitsbox2}</p>
+                <ReactMarkdown className="flex-fill pb-3 medium">{editingdata.part5_benefitsbox2}</ReactMarkdown>
               </div>
             </Col>
             <Col className="col-2">
               <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-                <p className="flex-fill pb-3 medium">{editingdata.part5_benefitsbox3}</p>
+                <ReactMarkdown className="flex-fill pb-3 medium">{editingdata.part5_benefitsbox3}</ReactMarkdown>
               </div>
             </Col>
             <Col className="col-2">
               <div className="roundedBox bg-white p-4 h-100 d-flex flex-column">
-                <p className="flex-fill pb-3  medium">{editingdata.part5_benefitsbox4}</p>
+                <ReactMarkdown className="flex-fill pb-3  medium">{editingdata.part5_benefitsbox4}</ReactMarkdown>
               </div>
             </Col>
           </Row>
