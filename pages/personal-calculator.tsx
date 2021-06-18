@@ -67,7 +67,9 @@ const [vehicleArray, setVehicleArray] = React.useState({
   largeDiesel	:{mult:	0.20419	,miles: null},
   largeHybrid	:{mult:	0.1448	,miles: null},
   motorbikeGas	:{mult:	0.11337	,miles: null},
-  planeGas	:{mult:	2.9237	,miles: null},
+  planeGas	:{mult:	2.54306	,miles: null},
+
+  jetGas	:{mult:	2.54306	,miles: null},
   yachtGas	:{mult:	2.54	,miles: null},
   yachtDiesel	:{mult:	2.35	,miles: null},
   atvGas	:{mult:	2.3	,miles: null},
@@ -642,6 +644,18 @@ return (
     </Col>
   </Row> 
   <hr/>
+  <h5 className="smallCaps text-small text-green">Private Plane</h5>
+  <p className="text-small op-6">All sizes</p>
+  <Row>
+    <Col className="col">
+      All fuel types
+    <input onChange={calculateMiles} name="jetGas" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Annual litres of fuel" />
+    </Col>
+  </Row> 
   <h5 className="smallCaps text-small text-green">Private Jet</h5>
   <p className="text-small op-6">All sizes</p>
   <Row>
@@ -651,7 +665,7 @@ return (
         if (!/[0-9]/.test(event.key)) {
           event.preventDefault();
         }
-      }} placeholder="Annual KM (gas)" />
+      }} placeholder="Annual litres of fuel" />
     </Col>
   </Row> 
 
