@@ -160,21 +160,38 @@ const changeEnergyTwo = (event) => {
 /* array using data from the spreadsheet, including multipliers */
 
 const buildArray = {
-  "1000":{
-  gas:1072, oil:1562, electric:758, wood:91
-  },
-  "1500":{
-    gas:3473, oil:5059, electric:2456, wood:295
-  },
-  "2000":{
-    gas:4188, oil:6100, electric:2961, wood:356
-  },
-  "2500":{
-    gas:5464, oil:7960, electric:3864, wood:465
-  },
-  "2501":{
-    gas:6179, oil:9002, electric:4369, wood:525
-  }
+  "1000":{	gas:	1072	,
+    oil:	1562	,
+    electric:	758	,
+    wood:	91	},
+  "1500":{	gas:	3473	,
+    oil:	5059	,
+    electric:	2456	,
+    wood:	295	},
+  "2000":{	gas:	4188	,
+    oil:	6100	,
+    electric:	2961	,
+    wood:	356	},
+  "2500":{	gas:	5464	,
+    oil:	7960	,
+    electric:	3864	,
+    wood:	465	},
+  "5000":{	gas:	8197	,
+    oil:	11940	,
+    electric:	5796	,
+    wood:	697	},
+  "7500":{	gas:	12295	,
+    oil:	17910	,
+    electric:	8694	,
+    wood:	1045	},
+  "10000":{	gas:	18442	,
+    oil:	26865	,
+    electric:	13041	,
+    wood:	1568	},
+  "10001":{	gas:	27663	,
+    oil:	40298	,
+    electric:	19561	,
+    wood:	2352	}
   }
 
 const energySavingsMult = {
@@ -367,7 +384,10 @@ return (
             <option value='1500'> 1000-1500 </option>
             <option value='2000'> 1500-2000 </option>
             <option value='2500'> 2000-2500 </option>
-            <option value='2501'> 2500+ </option>
+            <option value='5000'> 2500-5000 </option>
+            <option value='7500'> 5000-7500 </option>
+            <option value='10000'> 7500-10000 </option>
+            <option value='10001'> 10000+ </option>
           </select>
           </Col>
         </Row>
@@ -454,7 +474,10 @@ return (
             <option value='1500'> 1000-1500 </option>
             <option value='2000'> 1500-2000 </option>
             <option value='2500'> 2000-2500 </option>
-            <option value='2501'> 2500+ </option>
+            <option value='5000'> 2500-5000 </option>
+            <option value='7500'> 5000-7500 </option>
+            <option value='10000'> 7500-10000 </option>
+            <option value='10001'> 10000+ </option>
           </select>
           </Col>
         </Row>
