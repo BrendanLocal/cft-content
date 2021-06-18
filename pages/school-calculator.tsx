@@ -326,7 +326,8 @@ return (
         <Row>
           <Col>
           <label htmlFor="type">How many of this building type is used by your school?</label><br />
-          <input onChange={changeNum} name="type" type="number" placeholder="Number of buildings" />
+          <input onChange={changeNum} name="type" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Number of buildings" />
           </Col>
         </Row>
 
@@ -334,7 +335,8 @@ return (
           <Col>
           <label htmlFor="energy">If your school provides room and board, what size is the residence building (Sq. Ft.)?
           </label><br />
-          <input onChange={changeNumTwo} name="type" type="number" placeholder="Size of building" />
+          <input onChange={changeNumTwo} name="type" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Size of building" />
           </Col>
         </Row> 
       </div>
@@ -354,7 +356,8 @@ return (
           Car
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateTransitCount} name="transitCar" type="number" placeholder="Number of vehicles" />
+          <input onChange={calculateTransitCount} name="transitCar" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Number of vehicles" />
           </Col>
           <Col className="col-xl-4">
           <input onChange={calculateTransitMiles} name="transitCar" type="number"
@@ -366,10 +369,12 @@ return (
           Bus
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateTransitCount} name="transitBus" type="number" placeholder="Number of employees" />
+          <input onChange={calculateTransitCount} name="transitBus" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Number of employees" />
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateTransitMiles} name="transitBus" type="number" placeholder="Average Km per day" />
+          <input onChange={calculateTransitMiles} name="transitBus" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Average Km per day" />
           </Col>
         </Row>
         <Row>
@@ -377,10 +382,12 @@ return (
           Train
           </Col>
           <Col className="col-6 col-xl-4">
-          <input onChange={calculateTransitCount} name="transitTrain" type="number" placeholder="Number of employees" />
+          <input onChange={calculateTransitCount} name="transitTrain" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Number of employees" />
           </Col>
           <Col className="col-6 col-xl-4">
-          <input onChange={calculateTransitMiles} name="transitTrain" type="number" placeholder="Average Km per day" />
+          <input onChange={calculateTransitMiles} name="transitTrain" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Average Km per day" />
           </Col>
         </Row>
       </div>
@@ -399,7 +406,8 @@ return (
           Gasoline
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateStudentCommuteCount} name="gasoline" type="number" placeholder="Number of buses" />
+          <input onChange={calculateStudentCommuteCount} name="gasoline" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Number of buses" />
           </Col>
           <Col className="col-xl-4">
           <input onChange={calculateStudentCommuteMiles} name="gasoline" type="number"
@@ -411,10 +419,12 @@ return (
           Diesel
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateStudentCommuteCount} name="diesel" type="number" placeholder="Number of buses" />
+          <input onChange={calculateStudentCommuteCount} name="diesel" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Number of buses" />
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateStudentCommuteMiles} name="diesel" type="number" placeholder="Average Km per day" />
+          <input onChange={calculateStudentCommuteMiles} name="diesel" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Average Km per day" />
           </Col>
         </Row>
         <Row>
@@ -422,10 +432,12 @@ return (
           Propane
           </Col>
           <Col className="col-6 col-xl-4">
-          <input onChange={calculateStudentCommuteCount} name="propane" type="number" placeholder="Number of buses" />
+          <input onChange={calculateStudentCommuteCount} name="propane" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Number of buses" />
           </Col>
           <Col className="col-6 col-xl-4">
-          <input onChange={calculateStudentCommuteMiles} name="propane" type="number" placeholder="Average Km per day" />
+          <input onChange={calculateStudentCommuteMiles} name="propane" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Average Km per day" />
           </Col>
         </Row>
         <Row>
@@ -433,10 +445,12 @@ return (
           <label htmlFor="type">How many students commute by city bus?</label><br />
           </Col>
           <Col className ="col-6">
-          <input onChange={calculateStudentCommuteCount} name="cityBus" type="number" placeholder="Number of students" />
+          <input onChange={calculateStudentCommuteCount} name="cityBus" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Number of students" />
           </Col>
           <Col className ="col-6">
-          <input onChange={calculateStudentCommuteMiles} name="cityBus" type="number" placeholder="Average Km per day" />
+          <input onChange={calculateStudentCommuteMiles} name="cityBus" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Average Km per day" />
           </Col>
         </Row>
         <Row>
@@ -444,10 +458,12 @@ return (
           <label htmlFor="type">How many students are usually picked up/dropped off by car?	</label><br />
           </Col>
           <Col className ="col-6">
-          <input onChange={calculateStudentCommuteCount} name="car" type="number" placeholder="Number of students" />
+          <input onChange={calculateStudentCommuteCount} name="car" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Number of students" />
           </Col>
           <Col className ="col-6">
-          <input onChange={calculateStudentCommuteMiles} name="car" type="number" placeholder="Average Km per day" />
+          <input onChange={calculateStudentCommuteMiles} name="car" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Average Km per day" />
           </Col>
         </Row>
         <Row>
@@ -455,10 +471,12 @@ return (
           <label htmlFor="type">How many students primarily commute by train? </label><br />
           </Col>
           <Col className ="col-6">
-          <input onChange={calculateStudentCommuteCount} name="train" type="number" placeholder="Number of students" />
+          <input onChange={calculateStudentCommuteCount} name="train" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Number of students" />
           </Col>
           <Col className ="col-6">
-          <input onChange={calculateStudentCommuteMiles} name="train" type="number" placeholder="Average Km per day" />
+          <input onChange={calculateStudentCommuteMiles} name="train" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Average Km per day" />
           </Col>
         </Row>
       </div>
@@ -480,7 +498,8 @@ return (
             Gasoline
             </Col>
             <Col className="col-xl-4">
-            <input onChange={calculateMiles} name="carGas" type="number" placeholder="Average Annual Km" />
+            <input onChange={calculateMiles} name="carGas" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Average Annual Km" />
             </Col>
           </Row>
           <Row>
@@ -488,7 +507,8 @@ return (
             Diesel
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="carDiesel" type="number" placeholder="Average Annual Km" />
+            <input onChange={calculateMiles} name="carDiesel" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Average Annual Km" />
             </Col>
           </Row>
           <Row>
@@ -496,7 +516,8 @@ return (
             Propane
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="carPropane" type="number" placeholder="Average Annual Km" />
+            <input onChange={calculateMiles} name="carPropane" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Average Annual Km" />
             </Col>
           </Row>
           </Col>
@@ -516,7 +537,8 @@ return (
             Van
             </Col>
             <Col className="col-xl-4">
-            <input onChange={calculateOtherTransitMiles} name="van" type="number" placeholder="Average Annual Km" />
+            <input onChange={calculateOtherTransitMiles} name="van" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Average Annual Km" />
             </Col>
           </Row>
           <Row>
@@ -524,7 +546,8 @@ return (
             Car
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateOtherTransitMiles} name="car" type="number" placeholder="Average Annual Km" />
+            <input onChange={calculateOtherTransitMiles} name="car" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Average Annual Km" />
             </Col>
           </Row>
           </Col>
@@ -549,7 +572,8 @@ return (
             Gasoline
             </Col>
             <Col className="col-xl-4">
-            <input onChange={calculateMiles} name="carGas" type="number" placeholder="Average Annual Km" />
+            <input onChange={calculateMiles} name="carGas" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Average Annual Km" />
             </Col>
           </Row>
           <Row>
@@ -557,7 +581,8 @@ return (
             Diesel
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="carDiesel" type="number" placeholder="Average Annual Km" />
+            <input onChange={calculateMiles} name="carDiesel" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Average Annual Km" />
             </Col>
           </Row>
           <Row>
@@ -565,7 +590,8 @@ return (
             Propane
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="carPropane" type="number" placeholder="Average Annual Km" />
+            <input onChange={calculateMiles} name="carPropane" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Average Annual Km" />
             </Col>
           </Row>
           </Col>
@@ -584,7 +610,8 @@ return (
             Van
             </Col>
             <Col className="col-xl-4">
-            <input onChange={calculateOtherTransitMiles} name="carGas" type="number" placeholder="Average Annual Km" />
+            <input onChange={calculateOtherTransitMiles} name="carGas" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Average Annual Km" />
             </Col>
           </Row>
           <Row>
@@ -592,7 +619,8 @@ return (
             Car
             </Col>
             <Col className="col-6 col-xl-4">
-            <input onChange={calculateOtherTransitMiles} name="carDiesel" type="number" placeholder="Average Annual Km" />
+            <input onChange={calculateOtherTransitMiles} name="carDiesel" type="number"  min="0" oninput="this.value = 
+ !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Average Annual Km" />
             </Col>
           </Row>
           </Col>
