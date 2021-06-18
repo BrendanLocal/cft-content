@@ -172,19 +172,19 @@ return (
                 <Col>
                 <Row>
                   <Col>
-                  <span className="h3 text-green mb-0">{userData ? userData.location : ''}</span>
+                  <span className="h3 text-green mb-0">{user ? user.location : ''}</span>
                   </Col>
                 </Row>
                 <Row>
                   <Col>
-                  <span className="bold">{userData ? userData.country : ''}</span>
+                  <span className="bold">{user ? user.country : ''}</span>
                   </Col>
                 </Row>
                 </Col>
                 <Col>
                 <Row>
                   <Col>
-                  <span className="h3 text-green mb-0">{userData ? userData.trees : ''}</span>
+                  <span className="h3 text-green mb-0">{user ? user.trees : ''}</span>
                   </Col>
                 </Row>
                 <Row>
@@ -196,7 +196,7 @@ return (
                 <Col>
                 <Row>
                   <Col>
-                  <span className="h3 text-green mb-0">{userData ? userData.acres : ''}</span>
+                  <span className="h3 text-green mb-0">{user ? user.acres : ''}</span>
                   </Col>
                 </Row>
                 <Row>
@@ -210,7 +210,7 @@ return (
                 <Col>
                 <Row>
                   <Col>
-                  <span className="h4 text-green">{userData ? userData.type : ''}</span>
+                  <span className="h4 text-green">{user ? user.type : ''}</span>
                   </Col>
                 </Row>
                 <Row>
@@ -222,7 +222,7 @@ return (
                 <Col>
                 <Row>
                   <Col>
-                  <span className="h4 text-green">{userData ? userData.status : ''}</span>
+                  <span className="h4 text-green">{user ? user.status : ''}</span>
                   </Col>
                 </Row>
                 <Row>
@@ -234,7 +234,7 @@ return (
                 <Col>
                 <Row>
                   <Col>
-                  <span className="h4 text-green">{userData ? userData.net : ''}%</span>
+                  <span className="h4 text-green">{user ? user.net : ''}%</span>
                   </Col>
                 </Row>
                 <Row>
@@ -246,7 +246,7 @@ return (
                 <Col>
                 <Row>
                   <Col>
-                  <span className="h4 text-green">{userData ? userData.engagement : ''}</span>
+                  <span className="h4 text-green">{user ? user.engagement : ''}</span>
                   </Col>
                 </Row>
                 <Row>
@@ -258,7 +258,7 @@ return (
                 <Col>
                 <Row>
                   <Col>
-                  <span className="h4 text-green">{userData ? userData.biodiversity : ''}%</span>
+                  <span className="h4 text-green">{user ? user.biodiversity : ''}%</span>
                   </Col>
                 </Row>
                 <Row>
