@@ -7,7 +7,7 @@ export default function Search() {
   const [query, setQuery] = useState('')
   const [active, setActive] = useState(false)
   const [results, setResults] = useState([])
-  const searchEndpoint = (query) => `../pages/api/search?q=${query}`
+  const searchEndpoint = (query) => `/api/search?q=${query}`
 
   fetch(`../pages/api/search?q=build`).then(async response => {
     try {
@@ -50,21 +50,22 @@ export default function Search() {
   }, [])
 
   return (
-    <div
+    <div className="searchInner"
       ref={searchRef}
     >
-      <input
-        onChange={onChange}
+      <input 
+      onChange={onChange}
         onFocus={onFocus}
-        placeholder='Search posts'
+        placeholder='Search...'
         type='text'
-        value={query}
-      />
+        value={query} 
+        className="searchInput" />
       { active && results.length > 0 && (
-        <ul >
-          {results.map(({ id, title }) => (
+        <ul className="text-white p-5">
+          <p className="smallCaps small">Results</p>
+          {results.map(({ id, title, url }) => (
             <li key={id}>
-              <Link href="/[id]" as={`/${id}`}>
+              <Link href="/[url]" as={`/${url}`}>
                 <a>{title}</a>
               </Link>
             </li>

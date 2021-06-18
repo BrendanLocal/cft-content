@@ -13,6 +13,7 @@ function postData() {
     const matterResult = matter(fileContents)
     return {
       id,
+      url: fileContentsRead.pageURL,
       title: fileContentsRead.pageName,
       contents: matterResult.content
     }
