@@ -28,16 +28,16 @@ handler.post(async (req, res) => {
   const hashedPassword = await bcrypt.hash(password, 10);
   const user = await insertUser(req.db, {
     email, password: hashedPassword, name, 
-    longitude: 0, 
-    latitude: 0,
-    trees: 0,
-    acres: 0,
-    type: "",
-    status: "",
-    net: 0,
-    engagement: 0,
-    biodiversity: 0,
-    location: "",
+    longitude: 52.548559, 
+    latitude: -88.145779,
+    trees: 70000,
+    acres: 20,
+    type: "Boreal",
+    status: "Prepare",
+    net: 85,
+    engagement: 20000,
+    biodiversity: 20,
+    location: "New Brunswick",
     country: "Canada"
   });
   req.logIn(user, (err) => {

@@ -11,10 +11,6 @@ import Button from 'react-bootstrap/Button';
 const SignupPage = () => {
   const [user, { mutate }] = useCurrentUser();
   const [errorMsg, setErrorMsg] = useState('');
-  useEffect(() => {
-    // redirect to home if user is authenticated
-    if (user) Router.replace('/');
-  }, [user]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
