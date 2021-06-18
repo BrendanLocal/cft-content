@@ -367,14 +367,14 @@ return (
         if (!/[0-9]/.test(event.key)) {
           event.preventDefault();
         }
-      }}  min="0"  placeholder="Number of vehicles" />
+      }}  placeholder="Number of vehicles" />
             </Col>
             <Col className="col-xl-4">
             <input onChange={calculateMiles} name="carGas" type="number" min="0" onKeyPress={(event) => {
         if (!/[0-9]/.test(event.key)) {
           event.preventDefault();
         }
-      }}  min="0"  placeholder="Annual Km per vehicle" />
+      }} placeholder="Annual Km per vehicle" />
             </Col>
           </Row>
           <Row>
@@ -386,14 +386,14 @@ return (
         if (!/[0-9]/.test(event.key)) {
           event.preventDefault();
         }
-      }}  min="0"  placeholder="Number of vehicles" />
+      }}  placeholder="Number of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
             <input onChange={calculateMiles} name="carDiesel" type="number" min="0" onKeyPress={(event) => {
         if (!/[0-9]/.test(event.key)) {
           event.preventDefault();
         }
-      }}  min="0"  placeholder="Annual Km per vehicle" />
+      }}   placeholder="Annual Km per vehicle" />
             </Col>
           </Row>
           <Row>
@@ -405,14 +405,14 @@ return (
         if (!/[0-9]/.test(event.key)) {
           event.preventDefault();
         }
-      }}  min="0"  placeholder="Number of vehicles" />
+      }}  placeholder="Number of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
             <input onChange={calculateMiles} name="carHybrid" type="number" min="0" onKeyPress={(event) => {
         if (!/[0-9]/.test(event.key)) {
           event.preventDefault();
         }
-      }}  min="0"  placeholder="Annual Km per vehicle" />
+      }}  placeholder="Annual Km per vehicle" />
             </Col>
           </Row>
           </Col>
@@ -430,14 +430,14 @@ return (
         if (!/[0-9]/.test(event.key)) {
           event.preventDefault();
         }
-      }}  min="0"  placeholder="Number of vehicles" />
+      }}  placeholder="Number of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
             <input onChange={calculateMiles} name="truckGas" type="number" min="0" onKeyPress={(event) => {
         if (!/[0-9]/.test(event.key)) {
           event.preventDefault();
         }
-      }}  min="0"  placeholder="Annual Km per vehicle" />
+      }}   placeholder="Annual Km per vehicle" />
             </Col>
           </Row>
           <Row>
@@ -449,14 +449,14 @@ return (
         if (!/[0-9]/.test(event.key)) {
           event.preventDefault();
         }
-      }}  min="0"  placeholder="Number of vehicles" />
+      }}  placeholder="Number of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
             <input onChange={calculateMiles} name="truckDiesel" type="number" min="0" onKeyPress={(event) => {
         if (!/[0-9]/.test(event.key)) {
           event.preventDefault();
         }
-      }}  min="0"  placeholder="Annual Km per vehicle" />
+      }}  placeholder="Annual Km per vehicle" />
             </Col>
           </Row>
           <Row>
@@ -468,14 +468,14 @@ return (
         if (!/[0-9]/.test(event.key)) {
           event.preventDefault();
         }
-      }}  min="0"  placeholder="Number of vehicles" />
+      }}   placeholder="Number of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
             <input onChange={calculateMiles} name="truckHybrid" type="number" min="0" onKeyPress={(event) => {
         if (!/[0-9]/.test(event.key)) {
           event.preventDefault();
         }
-      }}  min="0"  placeholder="Annual Km per vehicle" />
+      }}   placeholder="Annual Km per vehicle" />
             </Col>
           </Row>
           </Col>
@@ -493,14 +493,14 @@ return (
         if (!/[0-9]/.test(event.key)) {
           event.preventDefault();
         }
-      }}  min="0"  placeholder="Number of vehicles" />
+      }}   placeholder="Number of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
             <input onChange={calculateMiles} name="deliveryGas" type="number" min="0" onKeyPress={(event) => {
         if (!/[0-9]/.test(event.key)) {
           event.preventDefault();
         }
-      }}  min="0"  placeholder="Annual Km per vehicle" />
+      }}  placeholder="Annual Km per vehicle" />
             </Col>
           </Row>
           <Row>
@@ -512,7 +512,7 @@ return (
         if (!/[0-9]/.test(event.key)) {
           event.preventDefault();
         }
-      }}  min="0"  placeholder="Number of vehicles" />
+      }}  placeholder="Number of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
             <input onChange={calculateMiles} name="deliveryDiesel" type="number"
@@ -534,14 +534,14 @@ return (
         if (!/[0-9]/.test(event.key)) {
           event.preventDefault();
         }
-      }}  min="0"  placeholder="Number of vehicles" />
+      }} placeholder="Number of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
             <input onChange={calculateMiles} name="semiFrig" type="number" min="0" onKeyPress={(event) => {
         if (!/[0-9]/.test(event.key)) {
           event.preventDefault();
         }
-      }}  min="0"  placeholder="Annual Km per vehicle" />
+      }}   placeholder="Annual Km per vehicle" />
             </Col>
           </Row>
           <Row>
@@ -553,14 +553,14 @@ return (
         if (!/[0-9]/.test(event.key)) {
           event.preventDefault();
         }
-      }}  min="0"  placeholder="Number of vehicles" />
+      }}   placeholder="Number of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
             <input onChange={calculateMiles} name="semiNonFrig" type="number" min="0" onKeyPress={(event) => {
         if (!/[0-9]/.test(event.key)) {
           event.preventDefault();
         }
-      }}  min="0"  placeholder="Annual Km per vehicle" />
+      }}  placeholder="Annual Km per vehicle" />
             </Col>
           </Row>
           </Col>
@@ -575,14 +575,14 @@ return (
         if (!/[0-9]/.test(event.key)) {
           event.preventDefault();
         }
-      }}  min="0"  placeholder="Number of vehicles" />
+      }}  placeholder="Number of vehicles" />
             </Col>
             <Col className="col-6 col-xl-4">
             <input onChange={calculateMiles} name="jetNum" type="number" min="0" onKeyPress={(event) => {
         if (!/[0-9]/.test(event.key)) {
           event.preventDefault();
         }
-      }}  min="0"  placeholder="Annual Km per vehicle" />
+      }}  placeholder="Annual Km per vehicle" />
             </Col>
         </Row>
       </div>
