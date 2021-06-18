@@ -1,4 +1,6 @@
 import React from 'react';
+
+import Link from 'next/link'
 import Head from 'next/head'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -8,7 +10,7 @@ import useBodyClass from '../components/headerClass';
 
 export default function Splash() {
 
-    useBodyClass(`splash`);
+    useBodyClass('splash');
 
   return (
 
@@ -30,7 +32,7 @@ export default function Splash() {
 
             <Row className="justify-content-center d-none d-lg-block">
                 <Col className="col-12 text-center">
-                <a href="/" className="intro-btn btn btn-text text-orange large tight-drop-light no-underline">ENTER THE FOREST</a>
+                <Link href="/" ><a className="intro-btn btn btn-text text-orange large tight-drop-light no-underline">ENTER THE FOREST</a></Link>
                 </Col>    
             </Row>
 

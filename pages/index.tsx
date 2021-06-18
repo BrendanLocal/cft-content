@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, Component } from 'react';
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Head from 'next/head'
@@ -17,6 +17,7 @@ import Modal from 'react-bootstrap/Modal';
 import ReactPlayer from 'react-player'
 import { Parallax, Background } from 'react-parallax';
 import ReactMarkdown from 'react-markdown'
+import TestSplash from '../components/testSplash'
 
 const Lang = () => {
   var language ="en";
@@ -28,7 +29,10 @@ const Lang = () => {
     return (language)
   }
 
+
+    
 export default function Home({ file, href, children}) {
+  
   const router = useRouter();  
   const formOptions = {
     label: 'Home Page',
@@ -111,6 +115,7 @@ export default function Home({ file, href, children}) {
 
 
   return (
+    <TestSplash>
     <div className={styles.homeParallax}>
       <Head>
         <title>Canada's Forest Trust</title>
@@ -351,6 +356,7 @@ export default function Home({ file, href, children}) {
         </Container>
       </main>
     </div>
+    </TestSplash>
   )
 }
 /**

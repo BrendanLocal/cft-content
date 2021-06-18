@@ -931,7 +931,7 @@ padding: 10%;
 }
 
 .how-bg {
-  background: url('/how-bg.png');
+  background: url('/how-bg.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1044,39 +1044,46 @@ padding: 10%;
 
 
 .splash button {
-  display: none;
-  transform: translateY(100%);
-  transition: ease .5s;
+ opacity: 0;
+  transform: translateY(-100%);
+  transition: all ease .5s;
 }
 
 .splash .header {
-  display: none;
-  transform: translateY(100%);
-  transition: ease .5s;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: all ease .5s;
+}
+.header {
+  transition: all ease .5s;
 }
 
 .splash .menuInterface {
-  display: none;
-  transform: translateY(100%);
-  transition: ease .5s;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all ease .5s;
+}
+
+.menuInterface {
+  transition: all ease .5s;
 }
 
 .splash .socialIcons {
-  display: none;
-  transform: translateY(100%);
-  transition: ease .5s;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all ease .5s;
 }
 
 .splash #ticker {
-  display: none;
+  opacity: 0;
   transform: translateY(100%);
-  transition: ease .5s;
+  transition: all ease .5s;
 }
 
 .splash footer {
-  display: none;
+  opacity: 0;
   transform: translateY(100%);
-  transition: ease .5s;
+  transition: all ease .5s;
 }
 
 
