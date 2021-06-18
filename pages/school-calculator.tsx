@@ -104,34 +104,47 @@ const changeNumTwo = (event) => {
 
 /* array using data from the spreadsheet, including multipliers */
 
-const buildArray = {
+const buildArrayTwo = {
   "5000":{
+    none: 0,
     office:13701.48346
   , industrial:7179.992482
   , others:16688.30884
   },
   "10000":{
+    none: 0,
       office:28729.24786
     , industrial:26524.1674
     , others:33015.65352
   },
   "50000":{
+    none: 0,
       office:85196.594
     , industrial:67987.73782
     , others:69144.83022
 
   },
   "200000":{
+    none: 0,
       office:404560.9958
     , industrial:225304.9042
     , others:267273.1874
 
   },
   "200001":{
+    none: 0,
       office:1763397.214
     , industrial:862252.9814
     , others:1458790.148
   }
+  }
+
+  const buildArray = {
+    "5000":	4757.66316,
+"10000":	50910.79642,
+"50000":	126421.4294,
+"200000":	342315.8403,
+"200001":	1112764.55
   }
 
 
@@ -141,10 +154,32 @@ if (schoolNumTwo)
   totalResidenceSize = schoolNumTwo * multValue;
 }
 
-if (buildSize )
+
+if (buildSizeTwo || buildSize || totalResidenceSize)
 {
-  subtotalBuild = Number((buildArray[buildSize][schoolType]) + totalResidenceSize)
+  let i = 0;
+
+  if (buildSize) {
+    i += Number(buildArray[buildSize])
+
+  }
+
+
+  if (totalResidenceSize) {
+    i += totalResidenceSize
+
+  }
+
+  if (buildSizeTwo && schoolType ) {
+    i += Number(buildArrayTwo[buildSizeTwo][schoolType]) * schoolNum
+  }
+ 
+  subtotalBuild = i;
+
+
 }
+
+
 
 
 
@@ -302,6 +337,8 @@ return (
           <label htmlFor="type">Building Type</label><br />
           <select name="type" value={selectType} onChange={changeType}>
             <option value="" hidden>Select...</option>
+
+            <option value='none'> None </option>
             <option value='office'> Office Building </option>
             <option value='industrial'> Industrial Arts/Warehouse </option>
             <option value='others'> Others </option>
@@ -854,21 +891,21 @@ return (
         <div className="text-white p-5 innerShadow roundedBox bg-green">
       <h4 className="mb-0">Subtotals</h4>
       <hr/>
-      <Row><Col>Heating & Electricity</Col><Col className="text-right bold">{subtotalBuild > 0 ? subtotalBuild.toFixed(2) : "--"}</Col></Row>
+      <Row><Col>Heating & Electricity</Col><Col className="text-right bold">{subtotalBuild > 0 ? (subtotalBuild/1000).toFixed(2) : "--"}</Col></Row>
       <hr/>
-      <Row><Col>Employee Commute</Col><Col className="text-right bold">{transitSub > 0 ? transitSub.toFixed(2) : "--"}</Col></Row>
+      <Row><Col>Employee Commute</Col><Col className="text-right bold">{transitSub > 0 ? (transitSub/1000).toFixed(2) : "--"}</Col></Row>
       <hr/>
-      <Row><Col>Student Commute</Col><Col className="text-right bold">{studentCommute > 0 ? studentCommute.toFixed(2) : "--"}</Col></Row>
+      <Row><Col>Student Commute</Col><Col className="text-right bold">{studentCommute > 0 ? (studentCommute/1000).toFixed(2) : "--"}</Col></Row>
       <hr/>
-      <Row><Col>Other Transportation</Col><Col className="text-right bold">{vehicleSub > 0 ? vehicleSub.toFixed(2) : "--"}</Col></Row>
+      <Row><Col>Other Transportation</Col><Col className="text-right bold">{vehicleSub > 0 ? (vehicleSub/1000).toFixed(2) : "--"}</Col></Row>
       <hr/>
-      <Row><Col>Other Vehicle</Col><Col className="text-right bold">{otherVehicleSub > 0 ? otherVehicleSub.toFixed(2) : "--"}</Col></Row>
+      <Row><Col>Other Vehicle</Col><Col className="text-right bold">{otherVehicleSub > 0 ? (otherVehicleSub/1000).toFixed(2) : "--"}</Col></Row>
       <hr/>
-      <Row><Col>Flights</Col><Col className="text-right bold">{flightSub > 0 ? flightSub.toFixed(2) : "--"}</Col></Row>
+      <Row><Col>Flights</Col><Col className="text-right bold">{flightSub > 0 ? (flightSub/1000).toFixed(2) : "--"}</Col></Row>
       <hr/>
       
       <span className="smallCaps text-small">Total</span><br/>
-      <span className="h2 bold">{total > 0 ? total.toFixed(2) : "--"}</span>
+      <span className="h2 bold">{total > 0 ? (total/1000).toFixed(2) : "--"}</span>
       <p>{total > 0 ? "(Metric Tonnes of CO2 per Year)" : ""}</p>
       <p>This is only an estimate etc</p>
       </div>
