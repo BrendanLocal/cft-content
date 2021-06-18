@@ -38,6 +38,12 @@ setLocation([Number(user.longitude), Number(user.latitude)]);
 console.log(location);
   }, []);
 
+
+  useEffect(() => {
+    // redirect to home if user is authenticated
+    if (user) Router.replace('/home');
+  }, [user]);
+
   
   
   
