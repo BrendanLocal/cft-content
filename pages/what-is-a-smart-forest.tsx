@@ -13,6 +13,7 @@ import Button from 'react-bootstrap/Button';
 import Rellax from"rellax";
 import ReactPlayer from 'react-player';
 import Parallax from 'parallax-js'
+import ReactMarkdown from 'react-markdown'
 
 export default function Power({ file }) {
   const formOptions = {
@@ -28,7 +29,7 @@ export default function Power({ file }) {
     const observer = new IntersectionObserver(entries =>{
       entries.forEach(entry =>{
         const id = entry.target.getAttribute('id');
-        if (entry.intersectionRatio >0.0 ) {
+        if (entry.intersectionRatio>0.0 ) {
           if (document.querySelector(`.left-sidenav li[data-dest="#${id}"]`)){
             document.querySelector(`.left-sidenav li[data-dest="#${id}"]`).classList.add('active');
           }
@@ -54,22 +55,22 @@ export default function Power({ file }) {
       </Head>
       <Row className="justify-content-left p-0 m-0 d-none d-lg-block d-xl-block">
         <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
-          <p className="text-white m-2 bold op-6">SMART FORESTS</p>
+          <ReactMarkdown className="text-white m-2 bold op-6">{editingdata.smartForest}</ReactMarkdown>
           <ul>
             <li className="p-0" data-dest="#intro">
-              <a href="#intro" className="text-white bold no-underline">INTRO</a>
+              <a href="#intro" className="text-white bold no-underline">{editingdata.menu1}</a>
             </li>
             <li className="p-0" data-dest="#commitment">
-              <a href="#commitment" className="text-white bold no-underline">COMMITMENT</a>
+              <a href="#commitment" className="text-white bold no-underline">{editingdata.menu2}</a>
             </li>
             <li className="p-0" data-dest="#forever">
-              <a href="#forever" className="text-white bold no-underline">FOREVER</a>
+              <a href="#forever" className="text-white bold no-underline">{editingdata.menu3}</a>
             </li>
             <li className="p-0" data-dest="#smart-forests">      
-              <a href="#smart-forests" className="text-white bold no-underline">ANYONE</a>
+              <a href="#smart-forests" className="text-white bold no-underline">{editingdata.menu4}</a>
             </li>
             <li className="p-0" data-dest="#earth">       
-              <a href="#earth" className="text-white bold no-underline">EARTH</a>
+              <a href="#earth" className="text-white bold no-underline">{editingdata.menu5}</a>
             </li>
           </ul>  
         </Col>
@@ -79,13 +80,13 @@ export default function Power({ file }) {
         <Container id="intro" className="bg-green py-5 px-5">
           <Row className="justify-content-center d-flex pb-5 mb-5 py-5 px-5">
             <Col className="order-2 order-lg-1 col-12 col-lg-5 text-white p-4 pb-0 intro-order">
-              <h1 className="text-orange mb-5 bold">What is a Smart Forest?</h1>
-              <p className="large my-5 op-9">Smart Forests™ have a significant impact on climate change. They provide ecosystems for diverse wildlife. They create jobs for generations of Canadians. And they show us exactly how they restore our planet via their own digital tools.</p>
-              <p className="text-white text-left smallcaps intro-links-header op-5 mt-4">ON THIS PAGE</p>
-              <a href="#commitment" className="btn btn-text text-left intro-links text-orange bold no-underline">Our Commitment</a>
-              <a href="#forever" className="btn btn-text text-left intro-links text-orange bold no-underline">Here for good</a>
-              <a href="#smart-forests" className="btn btn-text text-left intro-links text-orange bold no-underline">Anyone can do it</a>
-              <a href="#earth" className="btn btn-text text-left intro-links text-orange bold no-underline">Every day is Earth Day</a>
+              <h1 className="text-orange mb-5 bold">{editingdata.part1_header1}</h1>
+              <ReactMarkdown className="large my-5 op-9">{editingdata.part1_para1}</ReactMarkdown>
+              <ReactMarkdown className="text-white text-left smallcaps intro-links-header op-5 mt-4">{editingdata.part1_header2}</ReactMarkdown>
+              <a href="#commitment" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.part1_menu1}</a>
+              <a href="#forever" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.part1_menu2}</a>
+              <a href="#smart-forests" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.part1_menu3}</a>
+              <a href="#earth" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.part1_menu4}</a>
             </Col>
             <Col className="order-1 order-lg-2 col-12 col-lg-5 stickyTop mb-5">
               <object className="op-8" type="image/svg+xml" data="/power2-svg.svg"/>
@@ -97,33 +98,33 @@ export default function Power({ file }) {
           <Fade bottom>
             <Row className="pt-5 align-items-center justify-content-center">
               <Col className="col-10 col-lg-7 pt-3">
-                <h2 className="text-center text-orange bold mb-2">Our commitment:</h2>
-                <p className="emphasis text-center text-white bold mb-3">NEVER PLANT A SINGLE TREE AGAIN.</p>
-                <p className="text-center text-white thin op-9">It’s now or never. Canada’s Forest Trust will plant 10 million acres of Smart Forests across Canada by 2040. This is the bold action needed to tackle the enormous challenge facing our planet.</p>
+                <h2 className="text-center text-orange bold mb-2">{editingdata.part2_header1}:</h2>
+                <ReactMarkdown className="emphasis text-center text-white bold mb-3">{editingdata.part2_header2}</ReactMarkdown>
+                <ReactMarkdown className="text-center text-white thin op-9">{editingdata.part2_para1}</ReactMarkdown>
               </Col>
             </Row>
           </Fade>
           <Fade bottom>
             <Row className="justify-content-center d-flex pb-5 mx-5 px-lg-5">
               <Col className="col-12 col-lg-5 bg-brown roundedBox innerShadow px-5 pt-5 pb-4 m-4">          
-                <h3 className="h2 text-orange">Forest</h3>
+                <h3 className="h2 text-orange">{editingdata.part2_box1header1}</h3>
                 <ul className="text-white checkMark">
-                  <li>Mitigates climate change by sequestering carbon</li>
-                  <li>Purifies the air and improves soil quality</li>
-                  <li>Regulates, filters, and moderates water flow</li>
-                  <li>Supports wildlife and plant species that would otherwise disappear</li>
-                  <li>Helps mitigate and prevent natural disasters</li>
+                  <li>{editingdata.part2_box1headerpara1}</li>
+                  <li>{editingdata.part2_box1headerpara2}</li>
+                  <li>{editingdata.part2_box1headerpara3}</li>
+                  <li>{editingdata.part2_box1headerpara4}</li>
+                  <li>{editingdata.part2_box1headerpara5}</li>
                 </ul>
               </Col>
               <Col className="col-12 col-lg-5 roundedBox card card-drop px-5 pt-5 pb-4 m-4">
-                <h3 className="h2 text-orange"><span className="bold">Smart</span> Forest</h3>
+                <h3 className="h2 text-orange">{editingdata.part2_box2header1}</h3>
                 <ul className="text-grey plus">
-                  <li>Is a forest <span className="bold italic">and</span> an investment in the health of our planet</li>
-                  <li>Offers a tangible way to offset a large carbon footprints</li>
-                  <li>Maximizes its impact through expert forest management</li>
-                  <li>Proves its effectiveness via proprietary digital tools</li>
-                  <li>Boosts the green economy</li>
-                  <li>Is protected forever with a no-harvest guarantee</li>
+                  <li>{editingdata.part2_box2headerpara1}</li>
+                  <li>{editingdata.part2_box2headerpara2}</li>
+                  <li>{editingdata.part2_box2headerpara3}</li>
+                  <li>{editingdata.part2_box2headerpara4}</li>
+                  <li>{editingdata.part2_box2headerpara5}</li>
+                  <li>{editingdata.part2_box2headerpara6}</li>
                 </ul>
               </Col>
             </Row>
@@ -134,17 +135,17 @@ export default function Power({ file }) {
           <Fade bottom>
             <Row className="pt-5 align-items-center justify-content-center">
               <Col className="col-10 col-lg-8 pt-3">
-                <h2 className="text-center text-orange bold mb-2">Smart Forests are here for good.</h2>
-                <p className="text-center text-white lead op-9">Once we build a Smart Forest, it’s protected. <span className="bold">Forever.</span></p>
+                <h2 className="text-center text-orange bold mb-2">{editingdata.part3_header1}</h2>
+                <ReactMarkdown className="text-center text-white lead op-9">{editingdata.part3_header2}</ReactMarkdown>
               </Col>
             </Row>
           </Fade>
           <Fade bottom>
             <Row className="justify-content-center d-flex pb-5 mx-5">
               <Col className="col-11 col-lg-8 bg-brown roundedBox innerShadow p-5 m-4 blockquote-bg-scale">
-                <h3 className="text-left blockquote text-orange p-lg-5">“Time is much shorter than we think. Failure means disaster. The changes required are enormous and we must all contribute in every part of our daily life. Especially us in the rich countries where no nation is doing nearly enough.”</h3>
-                <p className="text-left text-white my-0 mx-5 bold">— Greta Thunberg</p>
-                <p className="text-left text-white mx-5 px-3 italic op-6">Climate activist</p>
+                <h3 className="text-left blockquote text-orange p-lg-5">{editingdata.part3_box1para1}</h3>
+                <ReactMarkdown className="text-left text-white my-0 mx-5 bold">{editingdata.part3_box1para2}</ReactMarkdown>
+                <ReactMarkdown className="text-left text-white mx-5 px-3 italic op-6">{editingdata.part3_box1para3}</ReactMarkdown>
               </Col>
             </Row>
           </Fade>
@@ -154,43 +155,43 @@ export default function Power({ file }) {
           <Fade bottom>
             <Row className="pt-5 align-items-center justify-content-center">
               <Col className="col-10 col-lg-8 pe-lg-0 p-3">
-                <h2 className="text-center text-orange bold">Anyone can build a Smart Forest. Across generations. Across Canada.</h2>
+                <h2 className="text-center text-orange bold">{editingdata.part4_header1}</h2>
               </Col>
             </Row>
             <Row className="justify-content-center pb-5 align-items-stretch">
             <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
-                <h4 className="text-white tight-drop-light">Corporate Forests Grow</h4>
-                <p className="flex-fill pb-3 text-white tight-drop">A turnkey and sustainable solution to meet ESG goals</p>
-                <Link href="/build-your-smart-forest#corporate" >
-                  <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a>
+                <h4 className="text-white tight-drop-light">{editingdata.part4_box1header1}</h4>
+                <ReactMarkdown className="flex-fill pb-3 text-white tight-drop">{editingdata.part4_box1para1}</ReactMarkdown>
+                <Link href="/build-your-smart-forest#corporate">
+                  <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnMore}</a>
                 </Link>
               </div>
             </Col>
             <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
-                <h4 className="text-white tight-drop-light">School Forests Teach</h4>
-                <p className="flex-fill pb-3 text-white tight-drop">A tangible opportunity for schools and students to combat climate change</p>
-                <Link href="/build-your-smart-forest#school" >
-                  <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a>
+                <h4 className="text-white tight-drop-light">{editingdata.part4_box2header1}</h4>
+                <ReactMarkdown className="flex-fill pb-3 text-white tight-drop">{editingdata.part4_box2para1}</ReactMarkdown>
+                <Link href="/build-your-smart-forest#school">
+                  <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnMore}</a>
                 </Link>
               </div>
             </Col>
             <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
-                <h4 className="text-white tight-drop-light">Legacy Forests Last</h4>
-                <p className="flex-fill pb-3 text-white tight-drop">A unique way to leave a healthy planet for future generations</p>
-                <Link href="/build-your-smart-forest#legacy" >
-                  <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a>
+                <h4 className="text-white tight-drop-light">{editingdata.part4_box3header1}</h4>
+                <ReactMarkdown className="flex-fill pb-3 text-white tight-drop">{editingdata.part4_box3para1}</ReactMarkdown>
+                <Link href="/build-your-smart-forest#legacy">
+                  <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnMore}</a>
                 </Link>
               </div>
             </Col>
             <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop communal-card">
-                <h4 className="text-white tight-drop-light">Communal Forests Unite</h4>
-                <p className="flex-fill pb-3 text-white tight-drop">An opportunity for every Canadian to participate</p>
-                <Link href="/build-your-smart-forest#communal" >
-                  <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnmore}</a>
+                <h4 className="text-white tight-drop-light">{editingdata.part4_box4header1}</h4>
+                <ReactMarkdown className="flex-fill pb-3 text-white tight-drop">{editingdata.part4_box4para1}</ReactMarkdown>
+                <Link href="/build-your-smart-forest#communal">
+                  <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnMore}</a>
                 </Link>
               </div>
             </Col>
@@ -202,22 +203,22 @@ export default function Power({ file }) {
           <Fade bottom>
             <Row className="pt-5 align-items-center justify-content-center">
               <Col className="col-10 p-5 col-md-4">
-                <h2 className="text-left text-orange bold">Let’s live in a country where every day is Earth day.</h2>
-                <p className="text-left text-white">Canada’s Forest Trust will build Smart Forests on deforested or unused land, located in ecologically diverse regions across the country, and will protect some of our nation’s most imperilled plants and animals.</p>
+                <h2 className="text-left text-orange bold">{editingdata.part5_header1}</h2>
+                <ReactMarkdown className="text-left text-white">{editingdata.part5_para1}</ReactMarkdown>
               </Col>
               <Col className="col-10 col-md-4 p-3 roundedBox innerShadow-heavy callout-box">
-                <p className="text-white text-green p-5 tight-drop-heavy">Planting <span className="bold">500 hectares of land</span> has the potential to sequester about <span className="bold">41,245 tonnes of carbon by 2050</span> and <span className="bold">75,300 tonnes by 2070.</span></p>
+                <ReactMarkdown className="text-white text-green p-5 tight-drop-heavy">{editingdata.part5_box1para1}</ReactMarkdown>
               </Col>
             </Row>
           </Fade>
           <Fade bottom>
             <Row className="align-items-center justify-content-center">
               <Col className="col-10 col-lg-7 px-5 mt-5">
-                <p className="h3 text-center text-orange bold op-9 my-0">See your carbon footprint and learn what you can do to get to net-zero.</p>
+                <ReactMarkdown className="h3 text-center text-orange bold op-9 my-0">{editingdata.part5_header2}</ReactMarkdown>
               </Col>
               <Col className="col-10 text-center col-lg-7 my-5 pb-5">
                 <Link href="/carbon-calculator" >
-                  <a className="btn btn-large btn-green">WHAT'S YOUR IMPACT?</a>
+                  <a className="btn btn-large btn-green">{editingdata.part5_button1}</a>
                 </Link>
               </Col>
             </Row>
