@@ -104,6 +104,36 @@ console.log(location);
   }
 
 
+const [state, setState] = useState({ x: 0 });
+
+/* slider data */
+
+const [sliderData,setSliderData] = React.useState({
+  0	:	{	"height"	: 	0	, 	"volume"	:	0	,	"jobs"	:	2	, "carbon":	0	}	,
+5	:	{	"height"	: 	0.4	, 	"volume"	:	0.8	,	"jobs"	:	2	, "carbon":	6	}	,
+10	:	{	"height"	: 	1.2	, 	"volume"	:	5.4	,	"jobs"	:	2	, "carbon":	11	}	,
+15	:	{	"height"	: 	2.6	, 	"volume"	:	9.6	,	"jobs"	:	4	, "carbon":	17	}	,
+20	:	{	"height"	: 	3.8	, 	"volume"	:	15.3	,	"jobs"	:	4	, "carbon":	22	}	,
+25	:	{	"height"	: 	6	, 	"volume"	:	24.2	,	"jobs"	:	4	, "carbon":	28	}	,
+30	:	{	"height"	: 	8.3	, 	"volume"	:	34	,	"jobs"	:	4	, "carbon":	33	}	,
+35	:	{	"height"	: 	10.6	, 	"volume"	:	50	,	"jobs"	:	4	, "carbon":	44	}	,
+40	:	{	"height"	: 	12.9	, 	"volume"	:	71	,	"jobs"	:	4	, "carbon":	61	}	,
+45	:	{	"height"	: 	15.1	, 	"volume"	:	93	,	"jobs"	:	4	, "carbon":	75	}	,
+50	:	{	"height"	: 	17.1	, 	"volume"	:	114	,	"jobs"	:	4	, "carbon":	99	}	,
+55	:	{	"height"	: 	18.9	, 	"volume"	:	131	,	"jobs"	:	4	, "carbon":	123	}	,
+60	:	{	"height"	: 	20.6	, 	"volume"	:	149	,	"jobs"	:	3	, "carbon":	224	}	,
+65	:	{	"height"	: 	22.1	, 	"volume"	:	157	,	"jobs"	:	3	, "carbon":	238	}	,
+70	:	{	"height"	: 	23.4	, 	"volume"	:	162	,	"jobs"	:	3	, "carbon":	250	}	,
+75	:	{	"height"	: 	24.5	, 	"volume"	:	167	,	"jobs"	:	3	, "carbon":	128	}	,
+80	:	{	"height"	: 	25.5	, 	"volume"	:	172	,	"jobs"	:	3	, "carbon":	268	}	,
+85	:	{	"height"	: 	26.5	, 	"volume"	:	180	,	"jobs"	:	3	, "carbon":	273	}	,
+90	:	{	"height"	: 	27.3	, 	"volume"	:	188	,	"jobs"	:	3	, "carbon":	286	}	,
+95	:	{	"height"	: 	28.1	, 	"volume"	:	194	,	"jobs"	:	3	, "carbon":	293	}	,
+100	:	{	"height"	: 	28.8	, 	"volume"	:	196	,	"jobs"	:	3	, "carbon":	168	}	
+})
+
+
+
 return (
 
 <div>
