@@ -146,8 +146,8 @@ return (
   </Head>
 
   <main className="bg-green">
-    <Container className="bg-green py-5">
-      <Row className="justify-content-center d-flex">
+    <Container className="bg-green py-5 my-5">
+      <Row className="justify-content-center d-flex mb-4 pt-lg-5">
         <Col className="col-xl-10 ">
         <h1 className="h2 text-orange text-center">
           Welcome Back, {user ? user.name : 'stranger'}
@@ -155,16 +155,16 @@ return (
         </Col>
       </Row>
       <Row className="flex justify-content-center">
-        <Col className="col-xl-8 roundedBoxMedium bg-white outerShadow">
+        <Col className="col-xl-8 roundedBox bg-white card-drop">
 
         <Tabs>
           <Row>
-            <Col className="col-lg-3 p-5  pe-1 bg-offwhite roundedBoxMediumLeft">
+            <Col className="col-lg-3 p-4 pe-1 bg-offwhite roundedBoxLeft">
 
             <TabList>
               <span className="smallCaps small text-green panelHead ">Profile</span>
               <Tab>
-                My Smart Forest<sup>™</sup></Tab>
+                My Smart Forest</Tab>
               <Tab>Grow My Impact</Tab>
               <Tab>Edit My Information</Tab>
               <br />
@@ -184,54 +184,55 @@ return (
 
             </TabList>
             </Col>
-            <Col className="col-lg-9 p-5">
+            <Col className="col-lg-9 p-5 pt-4">
             <TabPanel>
+              <h2 className="panelHead text-center text-green mb-2">My Smart Forest</h2>
             <Tabs>
-              <TabList className="tabRow">
+              <TabList className="tabRow mb-0">
             <Tab className="link bold text-orange">
                 Dashboard
                 </Tab>
               <Tab className="link bold text-orange">
-               2040 ForestCast<sup>™</sup>
+               ForestCast<sup>™</sup>
                 </Tab>
             </TabList>
             <TabPanel>
-              <h2 className="panelHead text-center text-grey">My Smart Forest<sup>™</sup></h2>
+              
               <Map location={location}/>
               <Row className="borderGrid pt-3">
                 <Col>
                 <Row>
-                  <Col>
-                  <span className="h3 text-green mb-0">{user ? user.location : ''}</span>
+                <Col className="ps-1">
+                  <span className="h2 bold text-green ps-0 mb-0">{user ? user.location : ''}</span>
                   </Col>
                 </Row>
                 <Row>
-                  <Col>
-                  <span className="bold">{user ? user.country : ''}</span>
-                  </Col>
-                </Row>
-                </Col>
-                <Col>
-                <Row>
-                  <Col>
-                  <span className="h3 text-green mb-0">{user ? user.trees : ''}</span>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                  <span className="bold">Trees</span>
+                <Col className="ps-1">
+                  <span className="p text-small">{user ? user.country : ''}</span>
                   </Col>
                 </Row>
                 </Col>
                 <Col>
                 <Row>
                   <Col>
-                  <span className="h3 text-green mb-0">{user ? user.acres : ''}</span>
+                  <span className="h2 bold text-green mb-0">{user ? user.trees : ''}</span>
                   </Col>
                 </Row>
                 <Row>
                   <Col>
-                  <span className="bold">Acres</span>
+                  <span className="p text-small">Trees</span>
+                  </Col>
+                </Row>
+                </Col>
+                <Col>
+                <Row>
+                  <Col>
+                  <span className="h2 bold text-green mb-0">{user ? user.acres : ''}</span>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                  <span className="p text-small">Acres</span>
                   </Col>
                 </Row>
                 </Col>
@@ -245,7 +246,7 @@ return (
                 </Row>
                 <Row>
                   <Col>
-                  <span className="bold">Forest Type</span>
+                  <span className="p text-small">Forest Type</span>
                   </Col>
                 </Row>
                 </Col>
@@ -257,7 +258,7 @@ return (
                 </Row>
                 <Row>
                   <Col>
-                  <span className="bold">Build Status</span>
+                  <span className="p text-small">Build Status</span>
                   </Col>
                 </Row>
                 </Col>
@@ -269,7 +270,7 @@ return (
                 </Row>
                 <Row>
                   <Col>
-                  <span className="bold">To Net Zero</span>
+                  <span className="p text-small">To Net Zero</span>
                   </Col>
                 </Row>
                 </Col>
@@ -281,7 +282,7 @@ return (
                 </Row>
                 <Row>
                   <Col>
-                  <span className="bold">People Engaged</span>
+                  <span className="p text-small">People Engaged</span>
                   </Col>
                 </Row>
                 </Col>
@@ -293,7 +294,7 @@ return (
                 </Row>
                 <Row>
                   <Col>
-                  <span className="bold">Biodiversity Protected</span>
+                  <span className="p text-small">Biodiversity Protected</span>
                   </Col>
                 </Row>
                 </Col>
@@ -303,8 +304,7 @@ return (
               </Row>
               </TabPanel>
 
-            <TabPanel>
-            <h2 className="panelHead text-center text-grey">2040 ForestCast<sup>™</sup></h2>
+            <TabPanel className="pt-0">
             <div className="forestImages"><img src="/trees-platform.png"/><img className="overlay" src={"/trees-year-"+state.x+".png"}/></div>
             
             <p className="smallCaps small text-center text-green">{state.x} years</p>
@@ -344,7 +344,7 @@ return (
       <Col>100</Col>
       </Row>
       <Row className="pt-5">
-      <Col>
+      <Col className="px-4">
                 <Row>
                   <Col>
                   <span className="h4 text-green">{sliderData[state.x].height} meters</span>
@@ -352,11 +352,11 @@ return (
                 </Row>
                 <Row>
                   <Col>
-                  <span className="bold">Average Height</span>
+                  <span className="p text-small">Average Height</span>
                   </Col>
                 </Row>
       </Col>
-      <Col>
+      <Col className="px-4">
                 <Row>
                   <Col>
                   <span className="h4 text-green">{sliderData[state.x].volume} m3/ha</span>
@@ -364,11 +364,11 @@ return (
                 </Row>
                 <Row>
                   <Col>
-                  <span className="bold">Estimated Volume</span>
+                  <span className="p text-small">Estimated Volume</span>
                   </Col>
                 </Row>
       </Col>
-      <Col>
+      <Col className="px-4">
                 <Row>
                   <Col>
                   <span className="h4 text-green">{sliderData[state.x].carbon} T/ha</span>
@@ -376,12 +376,12 @@ return (
                 </Row>
                 <Row>
                   <Col>
-                  <span className="bold">Estimated CO2 Sequestered</span>
+                  <span className="p text-small">Estimated CO2 Sequestered</span>
                   </Col>
                 </Row>
       </Col>
 
-      <Col>
+      <Col className="px-4">
                 <Row>
                   <Col>
                   <span className="h4 text-green">{sliderData[state.x].jobs}</span>
@@ -389,7 +389,7 @@ return (
                 </Row>
                 <Row>
                   <Col>
-                  <span className="bold">Estimated Jobs</span>
+                  <span className="p text-small">Estimated Jobs</span>
                   </Col>
                 </Row>
       </Col>
@@ -399,10 +399,10 @@ return (
               </Tabs>
             </TabPanel>
             <TabPanel>
-              <h2 className="panelHead text-center text-grey">Grow My Impact</h2>
+              <h2 className="panelHead text-center text-green mb-2">Grow My Impact</h2>
             </TabPanel>
             <TabPanel>
-              <h2 className="panelHead text-center text-grey">Edit My Information</h2>
+              <h2 className="panelHead text-center text-green mb-2">Edit My Information</h2>
               {msg.message ? <p style={{ color: msg.isError ? 'red' : '#0070f3', textAlign: 'center' }}>{msg.message}</p> : null}
           <h3>Change your name</h3>
         <form onSubmit={handleSubmit}>
@@ -444,15 +444,15 @@ return (
             </TabPanel>
 
             <TabPanel>
-              <h2 className="panelHead text-center text-grey">New Campaign</h2>
+              <h2 className="panelHead text-center text-green mb-2">New Campaign</h2>
             </TabPanel>
 
             <TabPanel>
-              <h2 className="panelHead text-center text-grey">Active Campaigns</h2>
+              <h2 className="panelHead text-center text-green mb-2">Active Campaigns</h2>
             </TabPanel>
 
             <TabPanel>
-              <h2 className="panelHead text-center text-grey">Previous Campaigns</h2>
+              <h2 className="panelHead text-center text-green mb-2">Previous Campaigns</h2>
             </TabPanel>
             </Col>
 

@@ -1613,7 +1613,7 @@ input[type=text], input[type=email], input[type=password], textarea {
   width: 100%;
 }
 
-label[type=name], label[type=email], label[type=password] {
+label[type=name], label[type=email], label[type=password], label[type=oldpassword], label[type=newpassword] {
   width: 100%!important;
 }
 
