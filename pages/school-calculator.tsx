@@ -326,7 +326,7 @@ return (
         <Row>
           <Col>
           <label htmlFor="type">How many of this building type is used by your school?</label><br />
-          <input onChange={changeNum} name="type" type="number" placeholder="# of buildings" />
+          <input onChange={changeNum} name="type" type="number" placeholder="Number of buildings" />
           </Col>
         </Row>
 
@@ -334,7 +334,7 @@ return (
           <Col>
           <label htmlFor="energy">If your school provides room and board, what size is the residence building (Sq. Ft.)?
           </label><br />
-          <input onChange={changeNumTwo} name="type" type="number" placeholder="size of building" />
+          <input onChange={changeNumTwo} name="type" type="number" placeholder="Size of building" />
           </Col>
         </Row> 
       </div>
@@ -354,11 +354,11 @@ return (
           Car
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateTransitCount} name="transitCar" type="number" placeholder="# of vehicles" />
+          <input onChange={calculateTransitCount} name="transitCar" type="number" placeholder="Number of vehicles" />
           </Col>
           <Col className="col-xl-4">
           <input onChange={calculateTransitMiles} name="transitCar" type="number"
-            placeholder="Average Km/day" />
+            placeholder="Average Km per day" />
           </Col>
         </Row>
         <Row>
@@ -366,10 +366,10 @@ return (
           Bus
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateTransitCount} name="transitBus" type="number" placeholder="# of employees" />
+          <input onChange={calculateTransitCount} name="transitBus" type="number" placeholder="Number of employees" />
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateTransitMiles} name="transitBus" type="number" placeholder="Average km/day" />
+          <input onChange={calculateTransitMiles} name="transitBus" type="number" placeholder="Average Km per day" />
           </Col>
         </Row>
         <Row>
@@ -377,10 +377,10 @@ return (
           Train
           </Col>
           <Col className="col-6 col-xl-4">
-          <input onChange={calculateTransitCount} name="transitTrain" type="number" placeholder="# of employees" />
+          <input onChange={calculateTransitCount} name="transitTrain" type="number" placeholder="Number of employees" />
           </Col>
           <Col className="col-6 col-xl-4">
-          <input onChange={calculateTransitMiles} name="transitTrain" type="number" placeholder="Average km/day" />
+          <input onChange={calculateTransitMiles} name="transitTrain" type="number" placeholder="Average Km per day" />
           </Col>
         </Row>
       </div>
@@ -399,11 +399,11 @@ return (
           Gasoline
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateStudentCommuteCount} name="gasoline" type="number" placeholder="# of buses" />
+          <input onChange={calculateStudentCommuteCount} name="gasoline" type="number" placeholder="Number of buses" />
           </Col>
           <Col className="col-xl-4">
           <input onChange={calculateStudentCommuteMiles} name="gasoline" type="number"
-            placeholder="Average Km/day" />
+            placeholder="Average Km per day" />
           </Col>
         </Row>
         <Row>
@@ -411,10 +411,10 @@ return (
           Diesel
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateStudentCommuteCount} name="diesel" type="number" placeholder="# of buses" />
+          <input onChange={calculateStudentCommuteCount} name="diesel" type="number" placeholder="Number of buses" />
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateStudentCommuteMiles} name="diesel" type="number" placeholder="Average km/day" />
+          <input onChange={calculateStudentCommuteMiles} name="diesel" type="number" placeholder="Average Km per day" />
           </Col>
         </Row>
         <Row>
@@ -422,10 +422,10 @@ return (
           Propane
           </Col>
           <Col className="col-6 col-xl-4">
-          <input onChange={calculateStudentCommuteCount} name="propane" type="number" placeholder="# of buses" />
+          <input onChange={calculateStudentCommuteCount} name="propane" type="number" placeholder="Number of buses" />
           </Col>
           <Col className="col-6 col-xl-4">
-          <input onChange={calculateStudentCommuteMiles} name="propane" type="number" placeholder="Average km/day" />
+          <input onChange={calculateStudentCommuteMiles} name="propane" type="number" placeholder="Average Km per day" />
           </Col>
         </Row>
         <Row>
@@ -433,10 +433,10 @@ return (
           <label htmlFor="type">How many students commute by city bus?</label><br />
           </Col>
           <Col className ="col-6">
-          <input onChange={calculateStudentCommuteCount} name="cityBus" type="number" placeholder="# of students" />
+          <input onChange={calculateStudentCommuteCount} name="cityBus" type="number" placeholder="Number of students" />
           </Col>
           <Col className ="col-6">
-          <input onChange={calculateStudentCommuteMiles} name="cityBus" type="number" placeholder="Average km/day" />
+          <input onChange={calculateStudentCommuteMiles} name="cityBus" type="number" placeholder="Average Km per day" />
           </Col>
         </Row>
         <Row>
@@ -444,10 +444,10 @@ return (
           <label htmlFor="type">How many students are usually picked up/dropped off by car?	</label><br />
           </Col>
           <Col className ="col-6">
-          <input onChange={calculateStudentCommuteCount} name="car" type="number" placeholder="# of students" />
+          <input onChange={calculateStudentCommuteCount} name="car" type="number" placeholder="Number of students" />
           </Col>
           <Col className ="col-6">
-          <input onChange={calculateStudentCommuteMiles} name="car" type="number" placeholder="Average km/day" />
+          <input onChange={calculateStudentCommuteMiles} name="car" type="number" placeholder="Average Km per day" />
           </Col>
         </Row>
         <Row>
@@ -455,10 +455,10 @@ return (
           <label htmlFor="type">How many students primarily commute by train? </label><br />
           </Col>
           <Col className ="col-6">
-          <input onChange={calculateStudentCommuteCount} name="train" type="number" placeholder="# of students" />
+          <input onChange={calculateStudentCommuteCount} name="train" type="number" placeholder="Number of students" />
           </Col>
           <Col className ="col-6">
-          <input onChange={calculateStudentCommuteMiles} name="train" type="number" placeholder="Average km/day" />
+          <input onChange={calculateStudentCommuteMiles} name="train" type="number" placeholder="Average Km per day" />
           </Col>
         </Row>
       </div>
@@ -623,7 +623,7 @@ return (
             </Col>
             <Col className="col-6 col-xl-6">
             <input onChange={calculateFlightCount} name="flyShort" type="number"
-              placeholder="Average # of flights" />
+              placeholder="Number of flights" />
             </Col>
           </Row>
           </Col>
@@ -640,7 +640,7 @@ return (
               </Col>
               <Col className="col-6">
               <input onChange={calculateFlightCount} name="flyMediumEco" type="number"
-                placeholder="Average # of flights" />
+                placeholder="Number of flights" />
               </Col>
             </Row>
             <Row>
@@ -649,7 +649,7 @@ return (
               </Col>
               <Col className="col-6">
               <input onChange={calculateFlightCount} name="flyMediumBus" type="number"
-                placeholder="Average # of flights" />
+                placeholder="Number of flights" />
               </Col>
             </Row>
             </Col>
@@ -666,7 +666,7 @@ return (
               </Col>
               <Col>
               <input onChange={calculateFlightCount} name="flyLongEco" type="number"
-                placeholder="Average # of flights" />
+                placeholder="Number of flights" />
               </Col>
             </Row>
             <Row>
@@ -675,7 +675,7 @@ return (
               </Col>
               <Col>
               <input onChange={calculateFlightCount} name="flyLongEcoPlus" type="number"
-                placeholder="Average # of flights" />
+                placeholder="Number of flights" />
               </Col>
             </Row>
             <Row>
@@ -684,7 +684,7 @@ return (
               </Col>
               <Col>
               <input onChange={calculateFlightCount} name="flyLongBus" type="number"
-                placeholder="Average # of flights" />
+                placeholder="Number of flights" />
               </Col>
             </Row>
             <Row>
@@ -693,7 +693,7 @@ return (
               </Col>
               <Col>
               <input onChange={calculateFlightCount} name="flyLongFirst" type="number"
-                placeholder="Average # of flights" />
+                placeholder="Number of flights" />
               </Col>
             </Row>
             </Col>
@@ -732,7 +732,7 @@ return (
       <Col className="col-10 align-items-center text-center p-3">
       <div className="bg-brown p-5 innerShadow roundedBox">
         <p className="smallCaps text-orange">Next Step</p>
-      <h3 className="text-white mb-4 px-4">Calculate how many hectares of Smart Forest you need to invest in to reach a Net-Zero emissions target.</h3>
+      <h3 className="text-white mb-4 px-2 px-lg-5">Calculate how many hectares of Smart Forest you need to invest in to reach a Net-Zero emissions target.</h3>
       <Button className="btn-large mt-1" variant="green">Calculate Your Net-Zero Target</Button>
       </div>
       </Col>

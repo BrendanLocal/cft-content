@@ -20,6 +20,10 @@ const [selectHeatTwo, setHeatTwo] = React.useState("");
 const [selectEnergyTwo, setEnergyTwo] = React.useState("");
 const [buildSub, setBuildSub] = React.useState(0);
 
+const [getFam, setFam] = React.useState(true);
+
+const [getFamTwo, setFamTwo] = React.useState(true);
+
 
 let buildType = null;
 let buildSize = null;
@@ -53,18 +57,22 @@ energyTypeTwo = selectEnergyTwo;
 //vehicle multiplier
 const [vehicleSub, setVehicle] = React.useState(0);
 const [vehicleArray, setVehicleArray] = React.useState({
-  carGas: {mult:0.14836,count: null, miles: null},
-  carDiesel: {mult:0.13721,count: null, miles: null},
-  carHybrid: {mult:0.10275,count: null, miles: null},
-  truckGas: {mult:0.18659,count: null, miles: null},
-  truckDiesel: {mult:0.16637,count: null, miles: null},
-  truckHybrid: {mult:0.10698,count: null, miles: null},
-  deliveryGas: {mult:0.27087,count: null, miles: null},
-  deliveryDiesel: {mult:0.20419,count: null, miles: null},
-  deliveryHybrid: {mult:0.1448,count: null, miles: null},
-  semiNonFrig: {mult:0.8654,count: null, miles: null},
-  semiFrig: {mult:1.0142,count: null, miles: null},
-  jetNum: {mult:2.9237,count: null, miles: null}
+  smallGas	:{mult:	0.14836	,miles: null},
+  smallDiesel	:{mult:	0.13721	,miles: null},
+  smallHybrid	:{mult:	0.10275	,miles: null},
+  mediumGas	:{mult:	0.18659	,miles: null},
+  mediumDiesel	:{mult:	0.16637	,miles: null},
+  mediumHybrid	:{mult:	0.10698	,miles: null},
+  largeGas	:{mult:	0.27087	,miles: null},
+  largeDiesel	:{mult:	0.20419	,miles: null},
+  largeHybrid	:{mult:	0.1448	,miles: null},
+  motorbikeGas	:{mult:	0.11337	,miles: null},
+  planeGas	:{mult:	2.9237	,miles: null},
+  yachtGas	:{mult:	2.54	,miles: null},
+  yachtDiesel	:{mult:	2.35	,miles: null},
+  atvGas	:{mult:	2.3	,miles: null},
+  sbsGas	:{mult:	2.3	,miles: null},
+  snowGas	:{mult:	2.3	,miles: null}
 });
 
 //flight multiplier
@@ -89,6 +97,26 @@ const [publicTransportArray, setPublicTransportArray] = React.useState({
 const [publicTransportSub, setPublicTransport] = React.useState(0);
 
 //onchange methods
+
+
+const changeFam = (event) => {
+  if(event.target.value == "myself"){
+    setFam(true);
+  } else {
+    setFam(false);
+  }
+}
+
+
+const changeFamTwo = (event) => {
+  if(event.target.value == "myself"){
+    setFamTwo(true);
+  } else {
+    setFamTwo(false);
+  }
+}
+
+
 const changeSize = (event) => {
   setSize(event.target.value);
 }
@@ -158,12 +186,51 @@ const energySavingsMult = {
     
 if (buildSize && heatType && energyType)
 {
-  subtotalBuild = Number((buildArray[buildSize][heatType] * energySavingsMult[energyType] * (buildYear/12 * 100)))
-}
+  if(!getFam){
+    buildNum = 1
+  }
+  subtotalBuild = Number(
+    (
+      (
+        (buildArray[buildSize][heatType] * energySavingsMult[energyType])
+        /
+          buildNum
+      )
+      +
+      (
+        (buildYear/12)
+        * 1444
+      )
+      /
+      buildNum
+      )
+    /1000
+    );
+    }
 
 if (buildSizeTwo && heatTypeTwo && energyTypeTwo) 
 {
-  subtotalBuildTwo = Number((buildArray[buildSizeTwo][heatTypeTwo] * energySavingsMult[energyTypeTwo] * (buildYearTwo/12 * 100))) 
+
+  if(!getFamTwo){
+    buildNumTwo = 1
+  }
+  subtotalBuildTwo = Number(
+    (
+      (
+        (buildArray[buildSizeTwo][heatTypeTwo] * energySavingsMult[energyTypeTwo])
+        /
+        buildNumTwo
+      )
+      +
+      (
+        (buildYearTwo/12)
+        * 1444
+      )
+      /
+      buildNumTwo
+      )
+    /1000
+    );
 }
 
 totalBuild = Number(subtotalBuild + subtotalBuildTwo)
@@ -174,13 +241,11 @@ const calculateVehicle=()=> {
   for (let x of Object.keys(vehicleArray))
   {
     let i = 0;
-    if (vehicleArray[x].count && vehicleArray[x].miles)
-    {
-      i += Number((vehicleArray[x].count * vehicleArray[x].mult * vehicleArray[x].miles))
-    }
+    
+      i += Number((vehicleArray[x].mult * vehicleArray[x].miles))
     subtotalVehicle += i
   }
-  setVehicle(Number(subtotalVehicle))
+  setVehicle(Number(subtotalVehicle)/1000)
 }
 
 /* function to calculate the number of vehicles */
@@ -230,7 +295,8 @@ const calculateTransitMiles=(e)=>{
 }
 
 /* calculate the 'total' here by adding on the other subtotals */
-let total = vehicleSub + subtotalBuild + flightSub + publicTransportSub + subtotalBuildTwo;
+let total = vehicleSub + totalBuild + flightSub + publicTransportSub;
+
 
 
 return (
@@ -250,6 +316,7 @@ return (
       <p className="lead text-white m-2 calc-intro">Calculate how much carbon you must personally offset to reach net-zero</p>
       </div>
       <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
+      
         <Row>
           <Col>
           <h4 className="text-green">
@@ -260,17 +327,26 @@ return (
           </Col>
           <h5 className="smallCaps text-small text-green">Residence 1</h5>
         </Row>
+        <Row className="mb-3">
+          <Col>
+          <label htmlFor="number">Calculating for:</label><br />
+          <input className="me-2" onChange={changeFam} type="radio" id="myself" name="calculateWho" value="myself" checked/>
+<label >Myself</label><br></br>
+<input className="me-2" onChange={changeFam} type="radio" id="family" name="calculateWho" value="family"/>
+<label >Entire household</label><br></br>
+          </Col>
+        </Row>
         <Row>
           <Col>
           <label htmlFor="number">How many people live in your household?</label><br />
-          <input onChange={changeNum} type="number" placeholder="# of people in your household" />
+          <input onChange={changeNum} type="number" placeholder="Number of people in your household" />
           </Col>
         </Row>
 
         <Row>
           <Col>
-          <label htmlFor="number">Month(s) spent living at this residence?</label><br />
-          <input onChange={changeYear} type="number" placeholder="Month(s) in residence" />
+          <label htmlFor="number">Month(s) per year spent living at this residence?</label><br />
+          <input onChange={changeYear} type="number" placeholder="Month(s) per year in residence" />
           </Col>
         </Row>
 
@@ -330,17 +406,26 @@ return (
           </Col>
           <h5 className="smallCaps text-small text-green">Residence 2</h5>
         </Row>
+        <Row className="mb-3">
+          <Col>
+          <label htmlFor="number">Calculating for:</label><br />
+          <input className="me-2" onChange={changeFamTwo} type="radio" id="myself" name="calculateWhoTwo" value="myself" checked/>
+<label >Myself</label><br></br>
+<input className="me-2" onChange={changeFamTwo} type="radio" id="family" name="calculateWhoTwo" value="family"/>
+<label >Entire household</label><br></br>
+          </Col>
+        </Row>
         <Row>
           <Col>
           <label htmlFor="number">How many people live in your household?</label><br />
-          <input onChange={changeNumTwo} type="number" placeholder="# of people in your household" />
+          <input onChange={changeNumTwo} type="number" placeholder="Number of people in your household" />
           </Col>
         </Row>
 
         <Row>
           <Col>
-          <label htmlFor="number">Month(s) spent living at this residence?</label><br />
-          <input onChange={changeYearTwo} type="number" placeholder="Month(s) in residence" />
+          <label htmlFor="number">Month(s) per year spent living at this residence?</label><br />
+          <input onChange={changeYearTwo} type="number" placeholder="Month(s) per year in residence" />
           </Col>
         </Row>
 
@@ -393,181 +478,138 @@ return (
         <Row>
           <Col className="col-12">
           <h3 className="text-green">
-            Vehicle Fleet
+            Personal Vehicles
           </h3>
-          <p className="text-grey">Please input the following information for all company-owned fleet vehicles:</p>
+          <p className="text-grey">Please input your annual kilometers for each vehicle type that you drive:</p>
 
         <hr/>
           </Col>
         
           <Col>
-          <h5 className="smallCaps text-small text-green">Cars</h5>
+          <h5 className="smallCaps text-small text-green">Small Cars</h5>
+          <p className="text-small op-6">Honda Civic, Toyota Prius</p>
           <Row>
-            <Col className="col-12 col-xl-4">
-            Gas
+            <Col className="col">
+              Gas
+            <input onChange={calculateMiles} name="smallGas" type="number" placeholder="Annual KM (gas)" />
             </Col>
-            <Col className="col-xl-4">
-            <input onChange={calculateCount} name="carGas" type="number" placeholder="# of vehicles" />
-            </Col>
-            <Col className="col-xl-4">
-            <input onChange={calculateMiles} name="carGas" type="number" placeholder="Average Annual Km/vehicle" />
+          </Row> 
+          <Row>
+            <Col className="col">
+              Diesel
+            <input onChange={calculateMiles} name="smallDiesel" type="number" placeholder="Annual KM (diesel)" />
             </Col>
           </Row>
           <Row>
-            <Col  className="col-10 col-xl-4">
-            Diesel
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="carDiesel" type="number" placeholder="# of vehicles" />
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="carDiesel" type="number" placeholder="Average Annual Km/vehicle" />
+            <Col className="col">
+              Hybrid
+            <input onChange={calculateMiles} name="smallHybrid" type="number" placeholder="Annual KM (hybrid)" />
             </Col>
           </Row>
-          <Row>
-            <Col className="col-10 col-xl-4">
-            Hybrid
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="carHybrid" type="number" placeholder="# of vehicles" />
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="carHybrid" type="number" placeholder="Average Annual Km/vehicle" />
-            </Col>
-          </Row>
-          </Col>
-        </Row>
+          
         <hr/>
-        <Row>
-          <Col>
-           <h5 className="smallCaps text-small text-green">Pickups/SUVs</h5>
+
+        <h5 className="smallCaps text-small text-green">Medium Cars</h5>
+          <p className="text-small op-6">4-Door Sedans, SUV's</p>
+
           <Row>
-            <Col className="col-12 col-xl-4">
-            Gas
+            <Col className="col">
+              Gas
+            <input onChange={calculateMiles} name="mediumGas" type="number" placeholder="Annual KM (gas)" />
             </Col>
-            <Col className="col-6 col-xl-4 ">
-            <input onChange={calculateCount} name="truckGas" type="number" placeholder="# of vehicles" />
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="truckGas" type="number" placeholder="Average Annual Km/vehicle" />
+          </Row> 
+          <Row>
+            <Col className="col">
+              Diesel
+            <input onChange={calculateMiles} name="mediumDiesel" type="number" placeholder="Annual KM (diesel)" />
             </Col>
           </Row>
           <Row>
-            <Col  className="col-10 col-xl-4">
-            Diesel
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="truckDiesel" type="number" placeholder="# of vehicles" />
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="truckDiesel" type="number" placeholder="Average Annual Km/vehicle" />
+            <Col className="col">
+              Hybrid
+            <input onChange={calculateMiles} name="mediumHybrid" type="number" placeholder="Annual KM (hybrid)" />
             </Col>
           </Row>
-          <Row>
-            <Col className="col-10 col-xl-4">
-            Hybrid
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="truckHybrid" type="number" placeholder="# of vehicles" />
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="truckHybrid" type="number" placeholder="Average Annual Km/vehicle" />
-            </Col>
-          </Row>
-          </Col>
-        </Row>
-        <hr/>
-        <Row>
-          <Col>
-           <h5 className="smallCaps text-small text-green">Delivery Trucks/Vans (Up to 3.5 tonnes)</h5>
-          <Row>
-            <Col className="col-10 col-xl-4">
-            Gas
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="deliveryGas" type="number" placeholder="# of vehicles" />
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="deliveryGas" type="number" placeholder="Average Annual Km/vehicle" />
-            </Col>
-          </Row>
-          <Row>
-            <Col className="col-10 col-xl-4">
-            Diesel
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="deliveryDiesel" type="number" placeholder="# of vehicles" />
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="deliveryDiesel" type="number"
-              placeholder="Average Annual Km/vehicle" />
-            </Col>
-          </Row>
-          <Row>
-            <Col className="col-10 col-xl-4">
-            Hybrid
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="deliveryHybrid" type="number" placeholder="# of vehicles" />
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="deliveryHybrid" type="number"
-              placeholder="Average Annual Km/vehicle" />
-            </Col>
-          </Row>
-          </Col>
-        </Row>
-        <hr/>
-        <Row>
-            <Col className="col-10 col-xl-4">
-             <h5 className="smallCaps text-small text-green">Motorbike</h5>
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="bikeGas" type="number" placeholder="# of motorbikes" />
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="bikeGas" type="number" placeholder="Average Annual Km/motorbike" />
-            </Col>
-        </Row>
-        <hr/>
-        <Row>
-          <Col>
-           <h5 className="smallCaps text-small text-green">Semi Trailer</h5>
-          <Row>
-            <Col className="col-10 col-xl-4">
-            Refrigerated
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="semiFrig" type="number" placeholder="# of vehicles" />
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="semiFrig" type="number" placeholder="Average Annual Km/vehicle" />
-            </Col>
-          </Row>
-          <Row>
-            <Col className="col-10 col-xl-4">
-            Non-Refrigerated
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="semiNonFrig" type="number" placeholder="# of vehicles" />
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="semiNonFrig" type="number" placeholder="Average Annual Km/vehicle" />
-            </Col>
-          </Row>
-          </Col>
-        </Row>
-        <hr/>
-        <Row>
-            <Col className="col-10 col-xl-4">
-             <h5 className="smallCaps text-small text-green">Private Jet</h5>
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="jetNum" type="number" placeholder="# of vehicles" />
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="jetNum" type="number" placeholder="Average Annual Km/vehicle" />
-            </Col>
+          <hr/>
+
+<h5 className="smallCaps text-small text-green">Large Vehicles</h5>
+<p className="text-small op-6">Pickup Trucks</p>
+
+  <Row>
+    <Col className="col">
+      Gas
+    <input onChange={calculateMiles} name="largeGas" type="number" placeholder="Annual KM (gas)" />
+    </Col>
+  </Row> 
+  <Row>
+    <Col className="col">
+      Diesel
+    <input onChange={calculateMiles} name="largeDiesel" type="number" placeholder="Annual KM (diesel)" />
+    </Col>
+  </Row>
+  <Row>
+    <Col className="col">
+      Hybrid
+    <input onChange={calculateMiles} name="largeHybrid" type="number" placeholder="Annual KM (hybrid)" />
+    </Col>
+  </Row>
+  <hr/>
+  <h5 className="smallCaps text-small text-green">Motorcycle</h5>
+  <p className="text-small op-6">All sizes</p>
+  <Row>
+    <Col className="col">
+      Gas
+    <input onChange={calculateMiles} name="motorbikeGas" type="number" placeholder="Annual KM (gas)" />
+    </Col>
+  </Row> 
+  <hr/>
+  <h5 className="smallCaps text-small text-green">Private Jet</h5>
+  <p className="text-small op-6">All sizes</p>
+  <Row>
+    <Col className="col">
+      All fuel types
+    <input onChange={calculateMiles} name="planeGas" type="number" placeholder="Annual KM (gas)" />
+    </Col>
+  </Row> 
+
+
+  <hr/>
+  <h5 className="smallCaps text-small text-green">Input the amount of fuel annualy per vehicle</h5>
+
+  <Row>
+    <Col className="col">
+      Yacht
+    <input onChange={calculateMiles} name="yachtGas" type="number" placeholder="Marine Diesel Litres per year" />
+    <input onChange={calculateMiles} name="yachtDiesel" type="number" placeholder="Marine Unleaded Litres per year" />
+    </Col>
+  </Row> 
+  <hr/>
+  <Row>
+    <Col className="col">
+      ATV (quad bike)
+    <input onChange={calculateMiles} name="atvGas" type="number" placeholder="Litres per year" />
+    </Col>
+  </Row> 
+  <hr/>
+
+  <Row>
+    <Col className="col">
+      Side-by-side
+    <input onChange={calculateMiles} name="sbsGas" type="number" placeholder="Litres per year" />
+    </Col>
+  </Row> 
+  <hr/>
+
+  <Row>
+    <Col className="col">
+      Snowmobile
+    <input onChange={calculateMiles} name="snowGas" type="number" placeholder="Litres per year" />
+    </Col>
+  </Row> 
+
+
+  
+         </Col>
         </Row>
       </div>
       
@@ -595,7 +637,7 @@ return (
             </Col>
             <Col className="col-6 col-xl-6">
             <input onChange={calculateFlightCount} name="flyShort" type="number"
-              placeholder="Average # of flights per employee" />
+              placeholder="Number of flights" />
             </Col>
           </Row>
           </Col>
@@ -612,7 +654,7 @@ return (
               </Col>
               <Col className="col-6">
               <input onChange={calculateFlightCount} name="flyMediumEco" type="number"
-                placeholder="Average # of flights per employee" />
+                placeholder="Number of flights" />
               </Col>
             </Row>
             <Row>
@@ -621,7 +663,7 @@ return (
               </Col>
               <Col className="col-6">
               <input onChange={calculateFlightCount} name="flyMediumBus" type="number"
-                placeholder="Average # of flights per employee" />
+                placeholder="Number of flights" />
               </Col>
             </Row>
             </Col>
@@ -638,7 +680,7 @@ return (
               </Col>
               <Col>
               <input onChange={calculateFlightCount} name="flyLongEco" type="number"
-                placeholder="Average # of flights per employee" />
+                placeholder="Number of flights" />
               </Col>
             </Row>
             <Row>
@@ -647,7 +689,7 @@ return (
               </Col>
               <Col>
               <input onChange={calculateFlightCount} name="flyLongEcoPlus" type="number"
-                placeholder="Average # of flights per employee" />
+                placeholder="Number of flights" />
               </Col>
             </Row>
             <Row>
@@ -656,7 +698,7 @@ return (
               </Col>
               <Col>
               <input onChange={calculateFlightCount} name="flyLongBus" type="number"
-                placeholder="Average # of flights per employee" />
+                placeholder="Number of flights" />
               </Col>
             </Row>
             <Row>
@@ -665,7 +707,7 @@ return (
               </Col>
               <Col>
               <input onChange={calculateFlightCount} name="flyLongFirst" type="number"
-                placeholder="Average # of flights per employee" />
+                placeholder="Number of flights" />
               </Col>
             </Row>
             </Col>
@@ -679,7 +721,7 @@ return (
             </Col>
             <Col className="col-sm-6 col-xl-4">
             <input onChange={calculateFlightCount} name="flyHotels" type="number"
-              placeholder="# of nights per employee" />
+              placeholder="Number of nights" />
             </Col>
           </Row>
       </div>
@@ -700,7 +742,7 @@ return (
           </Col>
           <Col className="col-xl-4">
           <input onChange={calculateTransitMiles} name="publicCar" type="number"
-            placeholder="Average Km/day" />
+            placeholder="Average Km per day" />
           </Col>
         </Row>
         <Row>
@@ -708,7 +750,7 @@ return (
           Taxi/Rideshare
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateTransitMiles} name="publicTaxi" type="number" placeholder="Average km/day" />
+          <input onChange={calculateTransitMiles} name="publicTaxi" type="number" placeholder="Average Km per day" />
           </Col>
         </Row>
         <Row>
@@ -716,7 +758,7 @@ return (
           Metro/Subway
           </Col>
           <Col className="col-6 col-xl-4">
-          <input onChange={calculateTransitMiles} name="publicSubway" type="number" placeholder="Average km/day" />
+          <input onChange={calculateTransitMiles} name="publicSubway" type="number" placeholder="Average Km per day" />
           </Col>
         </Row>
 
@@ -724,15 +766,18 @@ return (
 
       </Col>
     
+
+      
+    
       <Col className=" p-3  col-12 col-lg-4 stickyCalc mb-4">
         <div className="text-white p-5 innerShadow roundedBox bg-green">
       <h4 className="mb-0">Subtotals</h4>
       <hr/>
       <Row><Col>Heating & Electricity</Col><Col className="text-right bold">{totalBuild > 0 ? totalBuild.toFixed(2) : "--"}</Col></Row>
       <hr/>
-      <Row><Col>Vehicle Fleet</Col><Col className="text-right bold">{vehicleSub > 0 ? vehicleSub.toFixed(2) : "--"}</Col></Row>
+      <Row><Col>Vehicle Mileage</Col><Col className="text-right bold">{vehicleSub > 0 ? vehicleSub.toFixed(2) : "--"}</Col></Row>
       <hr/>
-      <Row><Col>Flight</Col><Col className="text-right bold">{flightSub > 0 ? flightSub.toFixed(2) : "--"}</Col></Row>
+      <Row><Col>Flights</Col><Col className="text-right bold">{flightSub > 0 ? flightSub.toFixed(2) : "--"}</Col></Row>
       <hr/>
       <Row><Col>Public Transportation</Col><Col className="text-right bold">{publicTransportSub > 0 ? publicTransportSub.toFixed(2) : "--"}</Col></Row>
       <hr/>
@@ -749,7 +794,7 @@ return (
       <Col className="col-10 align-items-center text-center p-3">
       <div className="bg-brown p-5 innerShadow roundedBox">
         <p className="smallCaps text-orange">Next Step</p>
-      <h3 className="text-white mb-4 px-4">Calculate how many hectares of Smart Forest you need to invest in to reach a Net-Zero emissions target.</h3>
+      <h3 className="text-white mb-4 px-2 px-lg-5">Calculate how many hectares of Smart Forest you need to invest in to reach a Net-Zero emissions target.</h3>
       <Button className="btn-large mt-1" variant="green">Calculate Your Net-Zero Target</Button>
       </div>
       </Col>
