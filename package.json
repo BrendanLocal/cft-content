@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "cache-posts": "node scripts/cache.js"
   },
   "dependencies": {
     "@formspree/react": "^2.2.3",
@@ -36,6 +37,9 @@
     "express-session": "^1.17.2",
     "framer": "^1.2.30",
     "framer-motion": "^4.1.16",
+    "fuzzy-search": "^3.2.1",
+    "gray-matter": "^4.0.3",
+    "husky": "^6.0.0",
     "jquery": "^3.6.0",
     "jquery-jsdom": "^1.0.0",
     "jsdom": "^16.5.3",
@@ -108,8 +112,14 @@
     "@types/node": "^14.14.41",
     "@types/react": "^17.0.3",
     "@types/react-transition-group": "^4.4.1",
+    "husky": "^6.0.0",
     "hygen-next-tinacms-github": "https://github.com/dwalkr/hygen-next-tinacms-github",
     "typescript": "^4.2.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn cache-posts && git add cache/data.js"
+    }
   },
   "resolutions": {
     "d2/left-pad": "1.1.1",

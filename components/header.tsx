@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import useSound from 'use-sound';
-
+import Search from '../components/search';
 import { useCurrentUser } from '../hooks/index';
 
 const Header = ()=> {
@@ -111,10 +111,10 @@ return(
 <React.Fragment>
 
 <div id="searchComponent" className={ showSearch ? "searchOpen" : "searchClosed"}>
-  <Container className="v-80 d-flex justify-content-center align-items-center">
-  <Row><Col>
+  <Container className="v-80 d-flex justify-content-center align-items-start pt-5">
+  <Row className="pt-5"><Col className="align-content-start d-flex flex-column">
   <h3 className="text-white">Search</h3>
-                <div className="searchBox"><img src="/searchIcon.svg"/><input type="text" className="searchInput"></input><img className="closeSearch" onClick={toggleSearch} src="/close.svg"/></div>
+                <div className="searchBox"><img src="/searchIcon.svg"/><Search/><img className="closeSearch" onClick={toggleSearch} src="/close.svg"/></div>
                 </Col>
                 </Row>
                 </Container>
