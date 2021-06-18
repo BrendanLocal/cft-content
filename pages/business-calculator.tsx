@@ -322,7 +322,9 @@ return (
             <option value='5000'>&lt;5000</option>
             <option value='10000'>5000-10,000</option>
             <option value='50000'>10,000-50,000</option>
-            <option value='200000'>50,000-200,000</option>
+            <option value='100000'>50,000-100,000</option>
+            <option value='150000'>100,000-150,000</option>
+            <option value='200000'>150,000-200,000</option>
             <option value='200001'>200,000+</option>
           </select>
           </Col>
