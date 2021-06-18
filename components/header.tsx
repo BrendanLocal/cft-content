@@ -45,12 +45,12 @@ path: "/portal"
 },
 {
 key: "navItem5",
-label: "Net-Zero Carbon Calculator",
+label: "Carbon Calculators",
 path: "/carbon-calculator"
 },
 {
 key: "navItem6",
-label: "Smart Forest Calculator",
+label: "Net-Zero Calculator",
 path: "/smart-forest-calculator"
 },
 {

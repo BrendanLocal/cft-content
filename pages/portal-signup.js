@@ -6,6 +6,7 @@ import { useCurrentUser } from '../hooks/index';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 const SignupPage = () => {
   const [user, { mutate }] = useCurrentUser();
@@ -36,49 +37,51 @@ const SignupPage = () => {
   };
 
   return (
-    <>
+    <div>
 
       <Container className="py-5">
-        <Row><Col>
-        <h2 className="text-white">Sign up</h2>
+         <Row className="flex justify-content-center py-5 mb-5">
+          <Col className="col-12 col-md-8 col-lg-5 col-xl-4 p-5">
+          <div className="roundedBox no-border card-drop p-5 pb-4 bg-white mt-3">
 
-      </Col></Row>
+        <h1 className="h2 text-orange bold pt-0 mb-3 text-center">Sign Up</h1>
+        <p className="text-grey mb-3 text-center">Please enter the following credentials to create an account.</p>
         <form onSubmit={handleSubmit}>
           {errorMsg ? <p style={{ color: 'red' }}>{errorMsg}</p> : null}
-          <Row><Col>
-          <label htmlFor="name">
+        <label className="mb-1 w-100" htmlFor="name">
             <input
               id="name"
               name="name"
               type="text"
               placeholder="Your name"
             />
-          </label>
-          </Col></Row>
-          <Row><Col>
-          <label htmlFor="email">
+        </label>
+        <label className="mb-1 w-100" htmlFor="email">
             <input
               id="email"
               name="email"
               type="email"
               placeholder="Email address"
-            />
-          </label>
-          </Col></Row>
-          <Row><Col>
-          <label htmlFor="password">
-            <input
+            /> 
+        </label>
+        <label className="mb-2 w-100" htmlFor="password">
+        <input
               id="password"
               name="password"
               type="password"
               placeholder="Create a password"
             />
-          </label>
-          <button type="submit">Sign up</button>
-          </Col></Row>
-        </form>
+        </label>
+        <br/>
+        
+          <Button className="w-100 btn-green no-border mt-3 mb-4" type="btn-green">Sign up</Button>
+
+          </form>
+          </div>
+          </Col>
+        </Row>
       </Container>
-    </>
+      </div>
   );
 };
 
