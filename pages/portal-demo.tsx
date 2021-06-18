@@ -126,7 +126,7 @@ return (
   </Head>
 
   <main className="bg-green">
-    <Container className="bg-green py-5 mt-5">
+    <Container className="bg-green py-5 my-5">
       <Row className="justify-content-center d-flex mb-4 pt-lg-5">
         <Col className="col-xl-10 ">
         <h1 className="h2 bold text-orange text-center">
@@ -135,11 +135,11 @@ return (
         </Col>
       </Row>
       <Row className="flex justify-content-center">
-        <Col className="col-xl-8 roundedBoxMedium bg-white outerShadow">
+        <Col className="col-xl-8 roundedBox bg-white card-drop">
 
         <Tabs>
           <Row>
-            <Col className="col-lg-3 p-5  pe-1 bg-offwhite roundedBoxMediumLeft">
+            <Col className="col-lg-3 p-4 pe-1 bg-offwhite roundedBoxLeft">
 
             <TabList>
               <span className="smallCaps small text-green panelHead ">Profile</span>
@@ -163,12 +163,11 @@ return (
             </Col>
             
             <Col className="col-lg-9 p-5 pt-4">
-
-            <h2 className="panelHead text-center text-green mb-2 ">My Smart Forest</h2>
            
-            <TabPanel className="mb-2">
+            <TabPanel>
+            <h2 className="panelHead text-center text-green mb-2 ">My Smart Forest</h2>
             <Tabs>
-              <TabList className="tabRow">
+              <TabList className="tabRow mb-0">
             <Tab className="link bold text-orange">
                 Dashboard
                 </Tab>
@@ -180,10 +179,10 @@ return (
               
               <Map location={location}/>
               <Row className="borderGrid pt-3">
-                <Col className="me-md-4">
+                <Col>
                 <Row>
                   <Col className="ps-1">
-                  <span className="h3 text-green ps-0 mb-0">{userData ? userData.location : ''}</span>
+                  <span className="h2 bold text-green ps-0 mb-0">{userData ? userData.location : ''}</span>
                   </Col>
                 </Row>
                 <Row>
@@ -192,7 +191,7 @@ return (
                   </Col>
                 </Row>
                 </Col>
-                <Col className="me-md-3">
+                <Col>
                 <Row>
                   <Col>
                   <span className="h2 bold text-green mb-0">{userData ? userData.trees : ''}</span>
@@ -284,10 +283,9 @@ return (
               </Row>
               </TabPanel>
 
-            <TabPanel>
+            <TabPanel className="pt-0">
             <div className="forestImages"><img src="/trees-platform.png"/><img className="overlay" src={"/trees-year-"+state.x+".png"}/></div>
-            
-            <p className="smallCaps small text-center text-green">{state.x} years</p>
+             <p className="smallCaps small text-center text-green">{state.x} years</p>
       <Slider 
       styles={{
         track: {
@@ -310,7 +308,7 @@ return (
       />
    
       
-      <Row className="numRow mt-5">
+      <Row className="numRow">
       <Col>0</Col>
       <Col>10</Col>
       <Col>20</Col>
@@ -379,15 +377,15 @@ return (
               </Tabs>
             </TabPanel>
             <TabPanel>
-              <h2 className="panelHead text-center text-grey">Grow My Impact</h2>
+              <h2 className="panelHead text-center text-green mb-2 ">Grow My Impact</h2>
             </TabPanel>
 
             <TabPanel>
-              <h2 className="panelHead text-center text-grey">Active Campaigns</h2>
+              <h2 className="panelHead text-center text-green mb-2 ">Active Campaigns</h2>
             </TabPanel>
 
             <TabPanel>
-              <h2 className="panelHead text-center text-grey">Previous Campaigns</h2>
+              <h2 className="panelHead text-center text-green mb-2 ">Previous Campaigns</h2>
             </TabPanel>
             </Col>
 
