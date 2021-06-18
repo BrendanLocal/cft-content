@@ -33,17 +33,17 @@ export async function insertUser(db, {
       email,
       password,
       name,
-      longitude: "",
-  latitude: "",
-  trees: 0,
-  acres: 0,
-  type: "",
-  status: "",
-  net: 0,
-  engagement: 0,
-  biodiversity: 0,
-  location: "",
-  country: ""
+      longitude: 52.548559, 
+    latitude: -88.145779,
+    trees: 70000,
+    acres: 20,
+    type: "Boreal",
+    status: "Prepare",
+    net: 85,
+    engagement: 20000,
+    biodiversity: 20,
+    location: "New Brunswick",
+    country: "Canada"
     })
     .then(({ ops }) => ops[0]);
 }
