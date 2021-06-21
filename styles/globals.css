@@ -44,9 +44,8 @@ a {
   color: inherit;
   text-decoration: none;
 }
- p a {
-   text-decoration: underline; 
- }
+
+
 
 * {
   box-sizing: border-box;
@@ -316,7 +315,7 @@ p.large {
   font-size: 18px !important;
 }
 
-p.lead {
+.lead {
   font-size: 30px;
   line-height: 35px;
 }
