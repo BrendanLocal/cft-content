@@ -927,4 +927,4 @@ export const getStaticProps: GetStaticProps = async function({
     },
   }
 }
-}
+
