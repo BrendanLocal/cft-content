@@ -91,6 +91,7 @@ export default function Home({ file, href, children}) {
   usePlugin(form)
   useGithubToolbarPlugins()
   
+
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -154,7 +155,7 @@ export default function Home({ file, href, children}) {
               <a href="#intro" className="text-white bold no-underline">{editingdata.menu1}</a>
             </li>
             <li className="p-0" data-dest="#what">
-              <a href="#what" className="text-white bold no-underline">{editingdata.menu2}</a>
+              <a href="#what"  className="text-white bold no-underline">{editingdata.menu2}</a>
             </li>
             <li className="p-0" data-dest="#how">
               <a href="#how" className="text-white bold no-underline">{editingdata.menu3}</a>
@@ -230,7 +231,7 @@ export default function Home({ file, href, children}) {
 
         <Container id="what" fluid className="v-full z-999 bg-green align-items-center p-5 container-drop-heavy">
           <Fade bottom>
-            <Row className="py-5 align-items-center justify-content-center mt-5 ms-lg-1">
+            <Row className="py-5 align-items-center justify-content-center mt-2 ms-lg-1">
               <Col className="order-2 order-lg-1 col-12 p-5 col-md-4 text-white ms-lg-5 pe-lg-2">
                 <h2 className="text-orange bold pe-lg-4"><ReactMarkdown>{editingdata.part2_header1}</ReactMarkdown></h2>
                 <ReactMarkdown className="pb-3 thin pe-lg-5">{editingdata.part2_para1}</ReactMarkdown>
@@ -260,7 +261,7 @@ export default function Home({ file, href, children}) {
           </Fade>
         </Container>
 
-        <Container  id="who" fluid className="v-full z-999 bg-green py-5 mb-4">
+        <Container  id="who" fluid className="v-full z-999 bg-green py-5 mt-4 mb-4">
           <Fade bottom>
           <Row className="pe-5 align-items-center justify-content-center  align-items-stretch protorow pb-0 mb-0 ms-lg-5">
             <Col className="col-10 col-md-3 text-white mb-5 py-5 px-5 me-5 ms-5">
@@ -274,9 +275,9 @@ export default function Home({ file, href, children}) {
           </Fade>
         </Container>
 
-        <Container id="you" fluid className="v-full z-999 bg-green pt-0 mt-0">
+        <Container id="you" fluid className="v-full z-999 bg-green pt-5 mt-0">
           <Fade bottom>
-          <Row  className="align-items-center justify-content-center pt-0 mt-0">
+          <Row  className="align-items-center justify-content-center pt-4 mt-0">
               <Col className="col-10 col-lg-6 pe-lg-0 mb-2 pt-0 mt-0">
                 <h2 className="text-center text-orange bold pt-0 mt-0"><ReactMarkdown>{editingdata.part5_header1}</ReactMarkdown></h2>
               </Col>
@@ -314,9 +315,9 @@ export default function Home({ file, href, children}) {
           </Fade>
         </Container>
       
-        <Container id="calculate" fluid className="v-full z-999 bg-green pt-0 mt-0 mb-5">
+        <Container id="calculate" fluid className="v-full z-999 bg-green pt-5 mt-0 mb-5">
           <Fade bottom>
-            <Row className="align-items-center justify-content-center pt-0 mt-0 mb-0">
+            <Row className="align-items-center justify-content-center pt-4 mt-0 mb-0">
               <Col className="col-10 col-lg-7 pe-lg-0 mb-4">
                 <h2 className="text-center text-orange mb-2 bold"><ReactMarkdown>{editingdata.part6_header1}</ReactMarkdown></h2>
                 <ReactMarkdown className="text-center large text-white thin op-9">{editingdata.part6_para1}</ReactMarkdown>

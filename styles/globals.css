@@ -1368,6 +1368,9 @@ transition: all .5s ease;
 
 /* Sidebar */
 
+div.container-fluid, div.container {
+  scroll-margin-top: -20px;
+}
 
 #sidebar {
   position: fixed;

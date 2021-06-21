@@ -61,6 +61,8 @@ const [vehicleArray, setVehicleArray] = React.useState({
   smallDiesel	:{mult:	0.13721	,miles: null},
   smallHybrid	:{mult:	0.10275	,miles: null},
   mediumGas	:{mult:	0.18659	,miles: null},
+
+  rentalGas	:{mult:	0.18659	,miles: null},
   mediumDiesel	:{mult:	0.16637	,miles: null},
   mediumHybrid	:{mult:	0.10698	,miles: null},
   largeGas	:{mult:	0.27087	,miles: null},
@@ -648,7 +650,7 @@ return (
   <p className="text-small op-6">All sizes</p>
   <Row>
     <Col className="col">
-      All fuel types
+      Aviation fuel
     <input onChange={calculateMiles} name="jetGas" type="number" min="0" onKeyPress={(event) => {
         if (!/[0-9]/.test(event.key)) {
           event.preventDefault();
@@ -660,7 +662,7 @@ return (
   <p className="text-small op-6">All sizes</p>
   <Row>
     <Col className="col">
-      All fuel types
+      Aviation fuel
     <input onChange={calculateMiles} name="planeGas" type="number" min="0" onKeyPress={(event) => {
         if (!/[0-9]/.test(event.key)) {
           event.preventDefault();
@@ -841,6 +843,18 @@ return (
               placeholder="Number of nights" />
             </Col>
           </Row>
+          <Row>
+          <Col className="col-10 col-sm-5 col-xl-4">
+            Rental cars
+            </Col>
+            <Col className="col-sm-6 col-xl-4">
+            <input onChange={calculateMiles} name="rentalGas" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Annual KM (gas)" />
+      </Col>
+          </Row> 
       </div>
 
       <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
