@@ -95,8 +95,8 @@ return (
               <h1 className="text-orange mb-5 bold">{editingdata.header1}</h1>
               <ReactMarkdown className="lead mb-4 op-9 bold">{editingdata.para1}</ReactMarkdown> 
               <ReactMarkdown className="large op-9 thin">{editingdata.para2}</ReactMarkdown>
-              <ReactMarkdown className="large op-9 thin">{editingdata.para3_1}<a href="/" className="text-orange">{editingdata.para3_link}</a>{editingdata.para3_2}</ReactMarkdown>
-              <ReactMarkdown className="large op-9 thin">{editingdata.para4_1} <a href="/" className="text-orange">{editingdata.para4_link1}</a> {editingdata.para4_2}<a href="/" className="text-orange">{editingdata.para4_link2}</a>{editingdata.para4_3}<a href="/" className="text-orange">{editingdata.para4_link3}</a>{editingdata.para4_4}<a href="/">{editingdata.para4_link4}</a>{editingdata.para4_5}</ReactMarkdown>
+              <ReactMarkdown className="large op-9 thin">{editingdata.para3_1}</ReactMarkdown>
+              <ReactMarkdown className="large op-9 thin">{editingdata.para4_1}</ReactMarkdown>
               <ReactMarkdown className="text-white text-left smallcaps intro-links-header op-5 mt-4">{editingdata.header2}</ReactMarkdown>
               <a href="#commitment" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.link1}</a>
               <a href="#forever" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.link2}</a>
