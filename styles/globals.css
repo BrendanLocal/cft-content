@@ -1656,7 +1656,7 @@ input[type=text], input[type=email], input[type=password], textarea {
   width: 100%;
 }
 
-label[type=name], label[type=email], label[type=password] {
+label[type=name], label[type=email], label[type=password], label[type=oldpassword], label[type=newpassword] {
   width: 100%!important;
 }
 
@@ -2065,9 +2065,9 @@ padding: 5px 0;
 }
 
 .panelHead {
-  font-size: 1.1em;
+  font-size: 1.4em;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
@@ -2082,7 +2082,7 @@ border-left: solid 1px #00823B;
   border-bottom: solid 1px #00823B;
 }
 .borderGrid > div {
-  padding: 2%;
+  padding: 3%;
 }
 
 .tabRow li {
@@ -2107,11 +2107,12 @@ border-bottom: none !important;
   margin: 0 3%;
   width: 94% !important;
 }
+
 .forestImages {
   position: relative;
 width: 100%;
-margin-top: -8%;
 }
+
 .forestImages img.overlay {
   position: absolute;
   top: 0;
