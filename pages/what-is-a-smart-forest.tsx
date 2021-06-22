@@ -69,7 +69,7 @@ export default function Power({ file }) {
             <li className="p-0" data-dest="#smart-forests">      
               <a href="#smart-forests" className="text-white bold no-underline">{editingdata.menu4}</a>
             </li>
-            <li className="p-0" data-dest="#earth">       
+            <li className="d-none p-0" data-dest="#earth">       
               <a href="#earth" className="text-white bold no-underline">{editingdata.menu5}</a>
             </li>
           </ul>  
@@ -86,7 +86,7 @@ export default function Power({ file }) {
               <a href="#commitment" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.part1_menu1}</a>
               <a href="#forever" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.part1_menu2}</a>
               <a href="#smart-forests" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.part1_menu3}</a>
-              <a href="#earth" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.part1_menu4}</a>
+              <a href="#earth" className="d-none btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.part1_menu4}</a>
             </Col>
             <Col className="order-1 order-lg-2 col-12 col-lg-5 stickyTop mb-5">
               <object className="op-8" type="image/svg+xml" data="/power2-svg.svg"/>
@@ -98,7 +98,7 @@ export default function Power({ file }) {
           <Fade bottom>
             <Row className="pt-5 align-items-center justify-content-center">
               <Col className="col-10 col-lg-7 pt-3">
-                <h2 className="text-center text-orange bold mb-2">{editingdata.part2_header1}:</h2>
+                <h2 className="text-center text-orange bold mb-2">{editingdata.part2_header1}</h2>
                 <ReactMarkdown className="emphasis text-center text-white bold mb-3">{editingdata.part2_header2}</ReactMarkdown>
                 <ReactMarkdown className="text-center text-white thin op-9">{editingdata.part2_para1}</ReactMarkdown>
               </Col>
@@ -119,7 +119,7 @@ export default function Power({ file }) {
               <Col className="col-12 col-lg-5 roundedBox card card-drop px-5 pt-5 pb-4 m-4">
                 <h3 className="h2 text-orange">{editingdata.part2_box2header1}</h3>
                 <ul className="text-grey plus">
-                  <li>{editingdata.part2_box2headerpara1}</li>
+                <li className="mb-0 pb-0"><ReactMarkdown>{editingdata.part2_box2headerpara1}</ReactMarkdown></li>
                   <li>{editingdata.part2_box2headerpara2}</li>
                   <li>{editingdata.part2_box2headerpara3}</li>
                   <li>{editingdata.part2_box2headerpara4}</li>
@@ -144,8 +144,8 @@ export default function Power({ file }) {
             <Row className="justify-content-center d-flex pb-5 mx-5">
               <Col className="col-11 col-lg-8 bg-brown roundedBox innerShadow p-5 m-4 blockquote-bg-scale">
                 <h3 className="text-left blockquote text-orange p-lg-5">{editingdata.part3_box1para1}</h3>
-                <ReactMarkdown className="text-left text-white my-0 mx-5 bold">{editingdata.part3_box1para2}</ReactMarkdown>
-                <ReactMarkdown className="text-left text-white mx-5 px-3 italic op-6">{editingdata.part3_box1para3}</ReactMarkdown>
+                <p className="text-left text-white my-0 mx-5 bold pb-0">{editingdata.part3_box1para2}</p>
+                <p className="text-left text-white mx-5 px-3 italic op-6">{editingdata.part3_box1para3}</p>
               </Col>
             </Row>
           </Fade>
@@ -199,7 +199,7 @@ export default function Power({ file }) {
           </Fade>
         </Container>
 
-        <Container id="earth" fluid className="v-full z-999 bg-green">
+        <Container id="earth" fluid className="d-none v-full z-999 bg-green">
           <Fade bottom>
             <Row className="pt-5 align-items-center justify-content-center">
               <Col className="col-10 p-5 col-md-4">
