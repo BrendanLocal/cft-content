@@ -106,20 +106,16 @@ return (
         </Col> 
       
       <Col className="col-12 col-lg-5 text-white p-4 pb-0 intro-order ">
-        <h1 className="text-orange mb-5 bold">
+        <h1 className="text-orange mb-3 bold">
         We trust in nature.
         </h1>
-        <p className="lead mb-4 bold">Canada’s Forest Trust began when maritimer Gary Zed set out to reforest five hundred acres of fallow land in his home province of New Brunswick.</p> 
+        <p className="lead bold mb-5">Forests are one of our last and best chances to save our planet before it’s too late. </p> 
 
-        <p className="large op-9 thin">The professional foresters, seedling producers, and scientific experts who collaborated on that project taught Gary an invaluable lesson: under the right conditions, a forest can become a force of nature—quite literally. As the threat of climate change closes in, forests are one of our last and best chances to save our planet before it’s too late. </p>
+        <p className="large op-9 pt-3">A forest conjures images of sun dappled leaves, chirping birds, and fresh air. We see much more: a powerful investment in our future, managed with the goal of maximizing impact, delivering a real solution to mitigate climate change, and protected for generations.</p>
 
-        <p className="large op-9 thin">And so Canada’s Forest Trust was born. Our “why” is simple: to win the fight against climate change, we must unlock the power of Canadian-built forests. You’ll find our “how” in <a href="/" className="text-orange">our five-phase Smart Forest action plan</a>, which lays out the steps we’ll take to plant 10 million acres of Smart Forests™ by 2040. </p>
+        <p className="large op-9">Under the right conditions, a forest can become a force of nature—quite literally. And that means driving corporations, students, and individuals across our country to invest in a large-scale plan that will see 10 million acres of new forests built by 2040.</p>        
 
-        <p className="large op-9 thin">As for our “who”—well, that’s where you come in. Whether you represent <a href="/" className="text-orange">a company</a> seeking to diversify your ESG investments, <a href="/" className="text-orange">a school</a> looking for a meaningful vehicle to raise money and educate tomorrow’s climate advocates, <a href="/" className="text-orange">an individual</a> laying down roots for future generations, or <a href="/">a community member</a> searching for new ways to grow, you have a role to play in the future of Canada’s forests—a role that’s intrinsically linked to the future of our planet. </p>
-
-        
-
-        <p className="text-white text-left smallcaps intro-links-header op-5 mt-4">ON THIS PAGE</p>
+        <p className="text-white text-left smallcaps intro-links-header op-5 mt-5">ON THIS PAGE</p>
         <a href="#commitment" className="btn btn-text text-left intro-links text-orange bold no-underline ">What Keeps Us Growing?</a>
         <a href="#forever" className="btn btn-text text-left intro-links text-orange bold no-underline ">Meet Our Leadership Team</a>
        
@@ -142,8 +138,8 @@ return (
       </Row>
 
       <Fade bottom>
-            <Row className="justify-content-center align-items-center mb-5 pb-5">
-            <Carousel className="col-11 col-lg-7 bg-brown roundedBox  innerShadow p-5 mx-4 px-0 mb-5" activeIndex={index} onSelect={handleSelect} nextIcon={<span aria-hidden="false" className="carousel-control-next-icon" />} nextLabel="" prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" />} prevLabel="" > 
+            <Row className="justify-content-center align-items-center ">
+            <Carousel className="col-11 col-lg-7 bg-brown roundedBox  innerShadow p-5 mx-4 px-0 mb-4" activeIndex={index} onSelect={handleSelect} nextIcon={<span aria-hidden="false" className="carousel-control-next-icon" />} nextLabel="" prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" />} prevLabel="" > 
           
           <Carousel.Item interval={100000} className="justify-content-center">
           
@@ -174,7 +170,8 @@ return (
                 <div className="d-block w-100 about-bg mb-4 align-items-center d-flex">
                   <div className="px-lg-5 pt-lg-4 mx-5">
                   <p className="lead text-center center text-white bold">
-                  It’s critically important that we learn from, engage with, and consult with Indigenous communities from across Canada.                  </p>                   
+                  As cultural attitudes towards climate change shift, environmental, societal and economic interests align.
+                   </p>                   
                 </div>
                 </div>
                   
@@ -185,7 +182,7 @@ return (
                 <div className="d-block w-100 about-bg mb-4 align-items-center d-flex">
                   <div className="px-lg-5 pt-lg-4 mx-5">
                   <p className="lead text-center center text-white bold">
-                  As cultural attitudes towards climate change shift and become more urgent, market values will shift with them, ensuring that environmental, societal and economic interests can coexist.
+                  It’s critically important that we learn from, engage with, and consult with Indigenous communities across Canada.
                   </p>
                   </div>
                 </div>
@@ -197,7 +194,7 @@ return (
                 <div className="d-block w-100 about-bg mb-4 align-items-center d-flex">
                   <div className="px-lg-5 pt-lg-4 mx-5">
                   <p className="lead text-center center text-white bold">
-                  By making the green economy accessible to everyone – from individuals to schools to corporations – we can help align values and promote tangible investments into a greener, cleaner and more sustainable planet.  
+                  By making the green economy accessible to everyone – from individuals to schools to corporations, we create a greener, cleaner and more sustainable planet.
                   </p>
                   </div>
                 </div>
@@ -208,12 +205,31 @@ return (
             </Row>
           </Fade>
 
+
+    <Fade bottom>
+      <Row className="align-items-center justify-content-center my-2">
+        <Col className="col-10 col-lg-7 pe-lg-0">
+          <h3 className="text-center text-orange bold">Ready to have a smart impact?</h3>
+        </Col>
+      </Row>
+      <Row className="text-center justify-content-center mb-5 ">
+
+          <Col className="col-10 text-center pb-5 pe-lg-0">
+            <Button variant="green">Reach out to us</Button>
+            </Col>
+      
+        </Row>
+    </Fade>  
+
     </Container>
 
     <Container fluid id="team" className="bg-brown innerShadow-heavy py-6">
-      <Row className="justify-content-center  pt-5">
-        <Col className="col-10 col-lg-8 text-center pt-3 ">
-        <h2 className="text-white bold mb-5">Meet Our Leadership Team</h2>
+      <Row className="justify-content-center pt-5 mb-4">
+        <Col className="col-10 col-lg-7 text-center pt-3 ">
+        <h2 className="text-orange bold">Meet Our Leadership Team</h2>
+        <p className="text-white px-3 px-lg-5">
+          CFT was established by Gary Zed, an entrepreneur with a reputation for taking on tough challenges and getting things done. A leader with a national vision, Gary heads up a team that is committed to making CFT the most talked about climate success story in the decades ahead.
+          </p>
         </Col>
       </Row>
       <Row className="justify-content-center align-items-center pb-5">
