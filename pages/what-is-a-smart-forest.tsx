@@ -55,7 +55,7 @@ export default function Power({ file }) {
       </Head>
       <Row className="justify-content-left p-0 m-0 d-none d-lg-block d-xl-block">
         <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
-          <ReactMarkdown className="text-white m-2 bold op-6">{editingdata.smartForest}</ReactMarkdown>
+          <ReactMarkdown className="text-white m-2 bold op-6 pe-5">{editingdata.smartForest}</ReactMarkdown>
           <ul>
             <li className="p-0" data-dest="#intro">
               <a href="#intro" className="text-white bold no-underline">{editingdata.menu1}</a>
@@ -89,7 +89,7 @@ export default function Power({ file }) {
               <a href="#earth" className="d-none btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.part1_menu4}</a>
             </Col>
             <Col className="order-1 order-lg-2 col-12 col-lg-5 stickyTop mb-5 p-0">
-              <object className="op-8" type="image/svg+xml" data="/power2-svg.svg"/>
+              <object className="op-9 p-0" type="image/svg+xml" data="/power2-svg.svg"/>
             </Col>
           </Row>
         </Container>
@@ -136,7 +136,7 @@ export default function Power({ file }) {
             <Row className="pt-5 align-items-center justify-content-center">
               <Col className="col-10 col-lg-8 pt-3">
                 <h2 className="text-center text-orange bold mb-2">{editingdata.part3_header1}</h2>
-                <ReactMarkdown className="text-center text-white lead">{editingdata.part3_header2}</ReactMarkdown>
+                <ReactMarkdown className="text-center text-white lead mb-2">{editingdata.part3_header2}</ReactMarkdown>
               </Col>
             </Row>
           </Fade>
