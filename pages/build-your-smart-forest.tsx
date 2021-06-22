@@ -74,7 +74,7 @@ return (
 
   <Row className="justify-content-left p-0 m-0 d-none d-lg-block d-xl-block">
         <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
-          <p className="text-white mx-2 mt-0 mb-0 bold op-6 ">BUILD A SMART FOREST</p>
+          <p className="text-white mx-2 mt-0 mb-0 xbold op-6 pe-5">BUILD YOUR SMART FOREST</p>
           <ul>
             <li className="p-0" data-dest="#intro">
               <a href="#intro" className="text-white bold no-underline">
@@ -1169,7 +1169,7 @@ return (
     <Row className="justify-content-center pt-3">
     <Col className="col-12 col-md-4 col-lg-3  pe-lg-0 m-3">
         <div className="roundedBox card bg-white no-border p-4 h-100 d-flex flex-column card-hover">
-        <h4 className="text-green ">Net-Zero Carbon Calculator</h4>
+        <h4 className="text-green">Net-Zero Carbon Calculator</h4>
         <p className="flex-fill pb-3 text-grey">Determine your corporate, school, or individual carbon footprint and learn how you can get to net-zero.</p>
        
         <Link href="business-calculator"><a className="btn btn-text modal-btn text-left text-orange bold no-underline ">TRY IT</a></Link>
@@ -1178,7 +1178,7 @@ return (
 
         <Col className="col-12 col-md-4 col-lg-3  pe-lg-0 m-3">
         <div className="roundedBox card bg-white no-border p-4 h-100 d-flex flex-column card-hover">
-        <h4 className="text-green ">Smart Forest™ Calculator</h4>
+        <h4 className="text-green">Smart Forest™ Calculator</h4>
         <p className="flex-fill pb-3 text-grey ">Find out how many acres of Smart Forest you need to plant to get to a net-negative carbon footprint.</p>
        
         <Link href="offset-calculator"><a className="btn btn-text modal-btn text-left text-orange bold no-underline ">TRY IT</a></Link>
@@ -1187,7 +1187,7 @@ return (
 
         <Col className="col-12 col-md-4 col-lg-3 pe-lg-0 m-3">
         <div className="roundedBox card bg-white no-border p-4 h-100 d-flex flex-column card-hover">
-        <h4 className="text-green ">Customer Portal Demo</h4>
+        <h4 className="text-green">Customer Portal Demo</h4>
         <p className="flex-fill pb-3 text-grey ">See just how impactful a Smart Forest can be.</p>
        
         <Link href="portal-demo"><a className="btn btn-text modal-btn text-left text-orange bold no-underline me-5">TRY IT</a></Link>
