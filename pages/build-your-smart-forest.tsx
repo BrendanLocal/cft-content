@@ -74,7 +74,7 @@ return (
 
   <Row className="justify-content-left p-0 m-0 d-none d-lg-block d-xl-block">
         <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
-          <p className="text-white mx-2 mt-0 mb-0 xbold op-6 pe-5">BUILD YOUR SMART FOREST</p>
+          <p className="text-white mx-2 mt-0 mb-0 bold op-6 pe-5">BUILD YOUR SMART FOREST</p>
           <ul>
             <li className="p-0" data-dest="#intro">
               <a href="#intro" className="text-white bold no-underline">
