@@ -273,7 +273,7 @@ return (
       <Row className="pt-5 align-items-center justify-content-center">
         <Col className="col-10 col-lg-7 pe-lg-0 mt-5">
           <h2 className="text-center text-orange bold">Start making a difference now—and far into the future</h2>
-          <p className="text-center text-white medium thin mb-4">Each Smart Forest has a <span className="bold">‘planting prescription’</span>. This is the unique mix of species that’s right for the local climate, soil conditions, drainage, and land history. This optimal habitat maximizes the positive impacts the Forest will make, including carbon sequestration, oxygen production and water absorption.</p>
+          <p className="text-center text-white medium mb-4">Each Smart Forest has a <span className="bold">‘planting prescription’</span>. This is the unique mix of species that’s right for the local climate, soil conditions, drainage, and land history. This optimal habitat maximizes the positive impacts the Forest will make, including carbon sequestration, oxygen production and water absorption.</p>
         </Col>
       </Row>
     </Fade>  
@@ -322,12 +322,12 @@ return (
             <Row className="justify-content-center my-3">
                 <Col className="text-center">
                   <h3 className="text-orange bold mb-2">Build your Smart Forest today</h3>
-                  <p className="text-white px-lg-5 large">Make your impact on climate change, now and for generations to come.</p>
+                  <p className="text-white medium">Make your impact on climate change, now and for generations to come.</p>
                 </Col>
             </Row>
             <Row className="justify-content-center">
                 <Col className="text-center">
-                    <Button className="btn-large px-5" variant="green">Invest</Button>
+                    <Button className="px-5" variant="green">Invest</Button>
                     </Col>    
               </Row>
             </Col>
@@ -381,7 +381,7 @@ return (
       </Row>
       <Row className="text-center justify-content-center mb-5 pb-0">
 
-          <Col className="col-10 text-center pb-3 pe-lg-0">
+          <Col className="col-10 text-center pb-3">
             <Button className="btn-large" variant="green">Start Investing Today</Button>
             </Col>
       
@@ -482,7 +482,7 @@ return (
       <Row id="corp-bottom-line" className="justify-content-center pt-5 mb-3">
         <Col className="col-10 col-md-8 ">
         <h2 className="text-center text-orange tight-drop-light bold mb-3">From balance sheet to bottom line.</h2>
-        <p className="lead px-3 px-lg-5 text-center tight-drop-light text-white">Corporate Smart Forests are good for the environment and for your business.</p>
+        <p className="lead px-lg-4 text-center tight-drop-light text-white">Corporate Smart Forests are good for the environment and for your business.</p>
         </Col>
       </Row>
       </Fade>
@@ -521,8 +521,6 @@ return (
 
         </Col>
       </Row>
-      </Fade>
-      <Fade bottom>
       <Row className="text-center justify-content-center mb-5 pb-5 ">
 
           <Col className="col-10 text-center pb-5 pe-lg-0">
@@ -602,13 +600,13 @@ return (
         <p className="emphasis text-orange tight-drop-light mb-4">Study climate action in real time.</p>
         </Col>
         <Col className="col-11 col-lg-7">
-        <p className="lead text-white bold ">Student Smart ForestsTM protect our planet and teach us how to tackle climate change.</p>
+        <p className="lead text-white bold ">Student Smart Forests protect our planet and teach us how to tackle climate change.</p>
         
         </Col>
       </Row>
       <Row className="text-center justify-content-center mb-5 pb-0">
 
-          <Col className="col-10 text-center pb-3 pe-lg-0">
+          <Col className="col-10 text-center pb-3">
             <Button className="btn-large" variant="green">Start Building Today</Button>
             </Col>
       
@@ -710,7 +708,7 @@ return (
     <Fade bottom>
       <Row className="justify-content-center d-flex pb-5 mx-5 mb-5">
           <Col className="col-12 col-md-7 col-lg-7 bg-green roundedBox innerShadow px-5 pt-5 pb-4 m-4 mt-2">
-        <p className="text-white large bold text-center">The Smart Forest program empowers students to take action against the devastating effects of climate change, inspires leadership and builds organizational skills. Raising funds to build a forest is:
+        <p className="text-white large bold text-center">Raising funds to build a forest is:
         </p>
 
           <ul className="text-white checkMark px-3 mx-3">
@@ -727,8 +725,10 @@ return (
             <li>
             <span className="bold">Impactful.</span> Supports the health of the planet, scholarships, student employment, school programs, and community needs. 
             </li>
+            <li>
+            <span className="bold">Empowering.</span> Enables students to take action against the devastating effects of climate change, inspires leadership and builds organizational skills.
+            </li>
           </ul>
-          
         
         </Col>      
       </Row>
@@ -743,8 +743,6 @@ return (
 
         </Col>
       </Row>
-      </Fade>
-      <Fade bottom>
       <Row className="text-center justify-content-center mb-5 pb-5 ">
 
           <Col className="col-10 text-center pb-5 pe-lg-0">
@@ -829,7 +827,7 @@ return (
       </Row>
       <Row className="text-center justify-content-center mb-5 pb-0">
 
-          <Col className="col-10 text-center pb-3 pe-lg-0">
+          <Col className="col-10 text-center pb-3">
             <Button className="btn-large" variant="green">Start Building Today</Button>
             </Col>
       
@@ -939,8 +937,6 @@ return (
           <h2 className="text-center text-orange bold tight-drop-light">Start building your legacy.</h2>
         </Col>
       </Row>
-      </Fade>
-      <Fade bottom>
       <Row className="text-center justify-content-center mb-5 pb-5 ">
 
           <Col className="col-10 text-center pb-5 pe-lg-0">
@@ -1024,7 +1020,7 @@ return (
       </Row>
       <Row className="text-center justify-content-center mb-5 pb-0">
 
-          <Col className="col-10 text-center pb-3 pe-lg-0">
+          <Col className="col-10 text-center pb-3">
             <Button className="btn-large" variant="green">Start Building Today</Button>
             </Col>
       
@@ -1126,8 +1122,6 @@ return (
 
         </Col>
       </Row>
-      </Fade>
-      <Fade bottom>
       <Row className="text-center justify-content-center mb-5 pb-5 ">
 
           <Col className="col-10 text-center pb-5 pe-lg-0">
