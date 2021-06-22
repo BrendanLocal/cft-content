@@ -128,7 +128,7 @@ return (
         <h1 className="text-orange mb-5 bold">
         Build Your Smart Forest™
         </h1>
-        <p className="large my-5 op-9">An opportunity for youth, families, farmers, landowners, Indigenous communities, and corporate Canada to come together to build a better environment and achieve a net-zero future.</p>
+        <p className="large my-5 op-9">An opportunity for youth, individuals, families, farmers, landowners, Indigenous communities, and corporate Canada to come together to build a better environment and achieve a net-zero future.</p>
         
 
         <p className="text-white text-left smallcaps intro-links-header op-5 mt-4">ON THIS PAGE</p>
@@ -143,9 +143,9 @@ return (
     <Container id="the-plan" className="v-full z-999 bg-green p-5">
     <Fade bottom>
       <Row className="justify-content-center align-items-center my-4">
-        <Col className="col-sm-11 col-md-10 col-lg-8 text-center text-white">
-        <h2 className=" text-orange bold mb-2">The Smart Forest Action Plan</h2>
-        <p className="large mt-0 mb-0">When you invest in a Smart Forest, you stay informed on its progress - from site selection to planting to ongoing maintenance and carbon footprint impact.</p>
+        <Col className="col-sm-11 col-md-10 col-lg-9 text-center text-white">
+        <h2 className=" text-orange bold mb-2">CFT’s Smart Forest Action Plan</h2>
+        <p className="large mt-0 mb-0">When you invest in a Smart Forest, we keep you  informed on its progress - from site selection to planting to ongoing maintenance and carbon and biodiversity footprint impact. CFT manages the forest landscape from the moment you buy your forest.</p>
         </Col>
       </Row>
       </Fade>
@@ -315,6 +315,25 @@ return (
             </Col>
           </Row>
         </Fade>
+
+        <Fade bottom>
+        <Row className="pb-5 align-items-center justify-content-center my-5">
+          <Col className="col-10 col-lg-7 p-5 bg-brown roundedBox innerShadow">
+            <Row className="justify-content-center my-3">
+                <Col className="text-center">
+                  <h3 className="text-orange bold mb-2">Build your Smart Forest today</h3>
+                  <p className="text-white px-lg-5 large">Make your impact on climate change, now and for generations to come.</p>
+                </Col>
+            </Row>
+            <Row className="justify-content-center">
+                <Col className="text-center">
+                    <Button className="btn-large px-5" variant="green">Invest</Button>
+                    </Col>    
+              </Row>
+            </Col>
+          </Row>
+        </Fade>
+     
     </Container>
 
     {/* Corporate Forests */}
@@ -343,7 +362,7 @@ return (
                 <Button href="#corp-bottom-line" variant="text text-orange tight-drop-light smallCaps down-links">BOTTOM LINE</Button>
                 </Col>
                 <Col className="col-5 col-md-3 mb-3">
-                <Button href="#corp-calculate" variant="text text-orange tight-drop-light smallCaps down-links">CALCULATE</Button>
+                <Button href="#corp-contact" variant="text text-orange tight-drop-light smallCaps down-links">CONTACT</Button>
                 </Col>
               </Row>
             </Col>
@@ -360,12 +379,17 @@ return (
         
         </Col>
       </Row>
+      <Row className="text-center justify-content-center mb-5 pb-0">
+
+          <Col className="col-10 text-center pb-3 pe-lg-0">
+            <Button className="btn-large" variant="green">Start Investing Today</Button>
+            </Col>
+      
+        </Row>
       </Fade>
 
-      
-
       <Fade bottom>
-      <Row className="justify-content-center align-items-center mb-3">
+      <Row className="justify-content-center align-items-center my-5">
         <Col className="col-1 horizTab">
         
         </Col>
@@ -385,7 +409,7 @@ return (
       </Fade>
 
       <Fade bottom>
-        <Row className="d-flex align-items-stretch px-5 justify-content-center">
+        <Row className="d-flex align-items-stretch px-5 justify-content-center pb-5">
   
             <Col className="col-12 col-md-3 mb-3">
             <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch card-hover">
@@ -417,14 +441,6 @@ return (
         </Row>
         </Fade>
         
-        <Row className="text-center justify-content-center mb-3 pb-0">
-
-          <Col className="col-10 text-center py-5">
-            <Button className="btn-large" variant="green">Build a Corporate Smart Forest™</Button>
-            </Col>
-      
-        </Row>
-
 
         <Fade bottom>
             <Row id="corp-testimonial" className="justify-content-center align-items-center my-5">
@@ -466,20 +482,19 @@ return (
       <Row id="corp-bottom-line" className="justify-content-center pt-5 mb-3">
         <Col className="col-10 col-md-8 ">
         <h2 className="text-center text-orange tight-drop-light bold mb-3">From balance sheet to bottom line.</h2>
-        <p className="lead px-3 text-center tight-drop-light text-white">Corporate Smart Forests are good for the environment and for your business.</p>
+        <p className="lead px-3 px-lg-5 text-center tight-drop-light text-white">Corporate Smart Forests are good for the environment and for your business.</p>
         </Col>
       </Row>
       </Fade>
 
     <Fade bottom>
-      <Row className="justify-content-center d-flex pb-5 mx-5 mb-5">
+      <Row className="justify-content-center d-flex pb-5 mx-5 mb-3">
           <Col className="col-12 col-md-7 col-lg-7 bg-green roundedBox innerShadow px-3 pt-5 pb-4 m-4 mt-2">
         <p className="text-white large bold text-center">An investment in a Smart Forest allows your corporation to:
         </p>
-
           <ul className="text-white checkMark px-5 mx-3">
             <li>
-            Support immediate CO2 reductions from the atmosphere 
+            Drive immediate CO2 reductions from the atmosphere 
             </li>
             <li>
             Secure ESG benefits that protect and foster growth throughout Canada
@@ -493,29 +508,37 @@ return (
             <li>
             Add shareholder value by strengthening long-term financial and operational performance
             </li>
-          </ul>
-        
+          </ul>       
         </Col>      
       </Row>
     </Fade>
 
-    
-
     <Fade bottom>
-      <Row id="corp-calculate" className="justify-content-center pt-5 mb-3">
-        <Col className="col-11 col-md-8 ">
-        <h2 className="text-center text-orange tight-drop-light bold mb-4">Start Calculating</h2>
+      <Row id="corp-contact" className="pt-4 align-items-center justify-content-center mb-3">
+        <Col className="col-10 col-lg-7 pe-lg-0">
+          <h2 className="text-center text-orange bold tight-drop-light">Start building your ESG portfolio.</h2>
+          <p className="text-center px-lg-4 text-white large">Our team is available to meet with your ESG leaders to discuss your custom Corporate Forest program. Our agreements range in length, and offset contributions start as soon as the land is procured and preparation begins.</p>
+
         </Col>
       </Row>
-    </Fade>
+      </Fade>
+      <Fade bottom>
+      <Row className="text-center justify-content-center mb-5 pb-5 ">
+
+          <Col className="col-10 text-center pb-5 pe-lg-0">
+            <Button className="btn-large px-5" variant="green">Contact Us</Button>
+            </Col>
+      
+        </Row>
+    </Fade>  
+    
 
     
     <Fade bottom>
-      <Row className="justify-content-center  align-items-stretch mx-lg-5">
+      <Row className="justify-content-center  align-items-stretch mx-lg-5 mb-4">
 
            <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="h6 text-mildgreen bold">STEP 1</p>
                   <p className="large text-green mb-2">Calculate your net-zero carbon footprint</p>
                   <p className="text-grey mb-4">Learn how much carbon your corporation generates in an average year.</p>
                   <Link href="carbon-calculator">
@@ -526,9 +549,8 @@ return (
 
               <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="h6 text-mildgreen bold">STEP 2</p>
                   <p className="large text-green mb-2">Determine your net zero Smart Forest target</p>
-                  <p className="text-grey mb-4">See how many hectares your corporation must plant to reach a net-zero emissions target.</p>
+                  <p className="text-grey mb-4">See how many acres your corporation must plant to reach a net-zero emissions target.</p>
                   <Button variant="green" className="mt-3">Calculate your NET ZERO target</Button>
                 </div>
               </Col>
@@ -566,7 +588,7 @@ return (
                 <Link href="#school-3"><Button variant="text text-orange smallCaps tight-drop-light down-links">STUDENTS</Button></Link>
                 </Col>
                 <Col className="col-5 col-md-3 mb-3">
-                <Link href="#school-4"><Button variant="text text-orange smallCaps tight-drop-light down-links">CALCULATE</Button></Link>
+                <Link href="#school-4"><Button variant="text text-orange smallCaps tight-drop-light down-links">CONTACT</Button></Link>
                 </Col>
               </Row>
             </Col>
@@ -584,10 +606,17 @@ return (
         
         </Col>
       </Row>
+      <Row className="text-center justify-content-center mb-5 pb-0">
+
+          <Col className="col-10 text-center pb-3 pe-lg-0">
+            <Button className="btn-large" variant="green">Start Building Today</Button>
+            </Col>
+      
+        </Row>
       </Fade>
 
       <Fade bottom>
-      <Row className="justify-content-center align-items-center mb-2">
+      <Row className="justify-content-center align-items-center my-5">
         <Col className="col-1 horizTab">
         
         </Col>
@@ -605,7 +634,7 @@ return (
       </Fade>
 
       <Fade bottom>
-        <Row className="d-flex align-items-stretch px-5 justify-content-center">
+        <Row className="d-flex align-items-stretch px-5 justify-content-center pb-5">
   
             <Col className="col-12 col-md-3 mb-3">
             <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch card-hover">
@@ -633,13 +662,6 @@ return (
         </Row>
         </Fade>
         
-        <Row className="text-center justify-content-center mb-3 pb-0">
-
-          <Col className="col-10 text-center py-5">
-            <Button className="btn-large" variant="green">Build a School Smart Forest™</Button>
-            </Col>
-      
-        </Row>
 
         <Fade bottom>
             <Row id="school-2" className="justify-content-center align-items-center my-5">
@@ -650,10 +672,10 @@ return (
               <div className="d-block w-100 blockquote-bg mb-4 align-items-center d-flex">
                 <div className="px-lg-5 pt-lg-4 mx-5">
                       <h3 className="text-left blockquote text-orange">
-                      “[Younger generations] have a different kind of investment in the future…A lot of the adults in the world aren’t going to be here by the time some climate conditions start taking effect in the world.”
+                      “Time is much shorter than we think. Failure means disaster. The changes required are enormous and we must all contribute in every part of our daily life. Especially us in the rich countries where no nation is doing nearly enough.”
                         </h3>
-                      <p className="text-left text-white my-0 mx-5 bold">— Xiuhtezcatl Martinez</p>
-                <p className="text-left text-white mx-5 px-3 italic op-6">Youth Director of Earth Guardians</p>                    </div>
+                      <p className="text-left text-white my-0 mx-5 bold">— Greta Thunberg</p>
+                <p className="text-left text-white mx-5 px-3 italic op-6">Climate Activist</p>                    </div>
                     </div>
                   
               </Carousel.Item>
@@ -661,14 +683,13 @@ return (
                 <Carousel.Item interval={100000}>
 
                 <div className="d-block w-100 blockquote-bg mb-4 align-items-center d-flex">
-                  <div className="px-lg-5 pt-lg-4 mx-5">
+                <div className="px-lg-5 pt-lg-4 mx-5">
                       <h3 className="text-left blockquote text-orange">
-                      “We need 50 shades of green to catalyze and support all companies towards net zero… Companies will need to show how they plan to meet their net-zero targets through the appropriate mix of emission reductions and credible carbon offsets, including nature-based solutions such as reforestation.”
-                      </h3>
-                    <p className="text-left text-white my-0 mx-5 bold">— Mark Carney</p>
-                    <p className="text-left text-white mx-5 px-3 italic op-6">UN Special Envoy for Climate Action and Finance</p>
-                  </div>
-                  </div>
+                      “[Younger generations] have a different kind of investment in the future…A lot of the adults in the world aren’t going to be here by the time some climate conditions start taking effect in the world.”
+                        </h3>
+                      <p className="text-left text-white my-0 mx-5 bold">— Xiuhtezcatl Martinez</p>
+                <p className="text-left text-white mx-5 px-3 italic op-6">Youth Director of Earth Guardians</p>                    </div>
+                    </div>
                   
                 </Carousel.Item>
               
@@ -713,23 +734,33 @@ return (
       </Row>
     </Fade>
 
-    
 
-    <Fade bottom>
-      <Row id="school-4" className="justify-content-center pt-5 mb-3">
-        <Col className="col-11 col-md-8 ">
-        <h2 className="text-center text-orange tight-drop-light bold mb-4">Start Calculating</h2>
+<Fade bottom>
+      <Row id="school-4" className="pt-4 align-items-center justify-content-center mb-3">
+        <Col className="col-10 col-lg-7 pe-lg-0">
+          <h2 className="text-center text-orange bold tight-drop-light">Get involved in the future today.</h2>
+          <p className="text-center px-lg-5 text-white large">Work with our team to establish a secure online program to sell seedlings for your School Forest. Your school keeps 50% of proceeds to support school initiatives.</p>
+
         </Col>
       </Row>
-    </Fade>
+      </Fade>
+      <Fade bottom>
+      <Row className="text-center justify-content-center mb-5 pb-5 ">
+
+          <Col className="col-10 text-center pb-5 pe-lg-0">
+            <Button className="btn-large px-5" variant="green">Contact Us</Button>
+            </Col>
+      
+        </Row>
+    </Fade>  
+    
 
     
     <Fade bottom>
-      <Row className="justify-content-center  align-items-stretch mx-lg-5">
+      <Row className="justify-content-center  align-items-stretch mx-lg-5  mb-4">
 
            <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="h6 text-mildgreen bold">STEP 1</p>
                   <p className="large text-green mb-2">Calculate your net-zero carbon footprint</p>
                   <p className="text-grey mb-4">Learn how much carbon your school generates in an average year.</p>
                   <Link href="carbon-calculator">
@@ -740,9 +771,8 @@ return (
 
               <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="h6 text-mildgreen bold">STEP 2</p>
                   <p className="large text-green mb-2">Determine your net zero Smart Forest target</p>
-                  <p className="text-grey mb-4">See how many hectares your school must plant to reach a net-zero emissions target.</p>
+                  <p className="text-grey mb-4">See how many acres your school must plant to reach a net-zero emissions target.</p>
                   <Button variant="green" className="mt-3">Calculate your NET ZERO target</Button>
                 </div>
               </Col>
@@ -779,7 +809,7 @@ return (
                 <Link href="#legacy-3"><Button variant="text text-orange smallCaps tight-drop-light down-links">GROWTH</Button></Link>
                 </Col>
                 <Col className="col-5 col-md-3 mb-3">
-                <Link href="#legacy-4"><Button variant="text text-orange smallCaps tight-drop-light down-links">CALCULATE</Button></Link>
+                <Link href="#legacy-4"><Button variant="text text-orange smallCaps tight-drop-light down-links">CONTACT</Button></Link>
                 </Col>
               </Row>
             </Col>
@@ -797,18 +827,26 @@ return (
         
         </Col>
       </Row>
+      <Row className="text-center justify-content-center mb-5 pb-0">
+
+          <Col className="col-10 text-center pb-3 pe-lg-0">
+            <Button className="btn-large" variant="green">Start Building Today</Button>
+            </Col>
+      
+        </Row>
       </Fade>
 
       <Fade bottom>
-      <Row className="justify-content-center align-items-center mb-2">
+      <Row className="justify-content-center align-items-center my-5">
         <Col className="col-1 horizTab">
         
         </Col>
       </Row>
       </Fade>
 
+
       <Fade bottom>
-      <Row className="text-center justify-content-center mb-3 p-4 pb-0">
+      <Row className="text-center justify-content-center mb-3 p-4 pb-5">
         <Col className="col-10 col-lg-7 pb-0">
             <p className="text-white large">
             A Legacy Forest is your opportunity to invest in the future of our planet. Diversify your portfolio with  acres of reforested land, plentiful wildlife, cleaner air and water preservation. It's an investment that will pay off with lasting environmental, social, and economic returns for all Canadians in the years to come. 
@@ -817,13 +855,6 @@ return (
       </Row>
       </Fade>
         
-        <Row className="text-center justify-content-center mb-3 pb-0">
-
-          <Col className="col-10 text-center pb-5">
-            <Button className="btn-large" variant="green">Build a Legacy Smart Forest™</Button>
-            </Col>
-      
-        </Row>
 
         <Fade bottom>
             <Row id="legacy-2" className="justify-content-center align-items-center my-5">
@@ -864,8 +895,8 @@ return (
     <Fade bottom>
       <Row id="legacy-3" className="justify-content-center pt-5 mb-3">
         <Col className="col-11 col-md-7 ">
-        <h2 className="text-center text-orange tight-drop-light bold mb-3">Make a slow growth investment.</h2>
-        <p className="lead px-3 text-center tight-drop-light text-white">Preserve and protect our planet now—and for future generations.</p>
+        <h2 className="text-center text-orange tight-drop-light bold mb-3">Make a long term investment.</h2>
+        <p className="lead px-3 text-center tight-drop-light text-white">Lead by example. Preserve and protect our planet now—and for future generations.</p>
         </Col>
       </Row>
       </Fade>
@@ -877,8 +908,12 @@ return (
         </p>
 
           <ul className="text-white checkMark px-5 mx-5">
+          
           <li className="ms-lg-5">
-            Plant and wildlife biodiversity
+            Our planet's future
+            </li>
+          <li className="ms-lg-5">
+            Biodiversity
             </li>
             <li className="ms-lg-5">
             Air purification
@@ -897,21 +932,30 @@ return (
       </Row>
     </Fade> 
 
-    <Fade bottom>
-      <Row id="legacy-4" className="justify-content-center pt-5 mb-3">
-        <Col className="col-11 col-md-8 ">
-        <h2 className="text-center text-orange tight-drop-light bold mb-4">Start Calculating</h2>
+    
+  <Fade bottom>
+      <Row id="legacy-4" className="pt-4 align-items-center justify-content-center mb-3">
+        <Col className="col-10 col-lg-7 pe-lg-0">
+          <h2 className="text-center text-orange bold tight-drop-light">Start building your legacy.</h2>
         </Col>
       </Row>
-    </Fade>
+      </Fade>
+      <Fade bottom>
+      <Row className="text-center justify-content-center mb-5 pb-5 ">
+
+          <Col className="col-10 text-center pb-5 pe-lg-0">
+            <Button className="btn-large px-5" variant="green">Contact Us</Button>
+            </Col>
+      
+        </Row>
+    </Fade>  
 
     
     <Fade bottom>
-      <Row className="justify-content-center  align-items-stretch mx-lg-5">
+      <Row className="justify-content-center  align-items-stretch mx-lg-5  mb-4">
 
            <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="h6 text-mildgreen bold">STEP 1</p>
                   <p className="large text-green mb-2">Calculate your net-zero carbon footprint</p>
                   <p className="text-grey mb-5">Learn how much carbon you generate in an average year.</p>
                   <Link href="carbon-calculator">
@@ -922,9 +966,8 @@ return (
 
               <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="h6 text-mildgreen bold">STEP 2</p>
                   <p className="large text-green mb-2">Determine your net zero Smart Forest target</p>
-                  <p className="text-grey mb-4">See how many hectares you need to plant to reach a net-zero emissions target.</p>
+                  <p className="text-grey mb-4">See how many acres you need to plant to reach a net-zero emissions target.</p>
                   <Button variant="green" className="mt-3">Calculate your NET ZERO target</Button>
                 </div>
               </Col>
@@ -961,7 +1004,7 @@ return (
                 <Link href="#comm-3"><Button variant="text text-orange smallCaps tight-drop-light down-links">COMMUNITY</Button></Link>
                 </Col>
                 <Col className="col-5 col-md-3 mb-3">
-                <Link href="#comm-4"><Button variant="text text-orange smallCaps tight-drop-light down-links">CALCULATE</Button></Link>
+                <Link href="#comm-4"><Button variant="text text-orange smallCaps tight-drop-light down-links">CONTACT</Button></Link>
                 </Col>
               </Row>
             </Col>
@@ -979,10 +1022,17 @@ return (
         
         </Col>
       </Row>
+      <Row className="text-center justify-content-center mb-5 pb-0">
+
+          <Col className="col-10 text-center pb-3 pe-lg-0">
+            <Button className="btn-large" variant="green">Start Building Today</Button>
+            </Col>
+      
+        </Row>
       </Fade>
 
       <Fade bottom>
-      <Row className="justify-content-center align-items-center mb-2">
+      <Row className="justify-content-center align-items-center my-5">
         <Col className="col-1 horizTab">
         
         </Col>
@@ -990,7 +1040,7 @@ return (
       </Fade>
 
       <Fade bottom>
-      <Row className="text-center justify-content-center mb-3 p-4 pb-0">
+      <Row className="text-center justify-content-center mb-3 p-4 pb-5">
         <Col className="col-10 col-lg-7 pb-0">
             <p className="text-white large">
             Each plant, animal, and microbe in the forest contributes something unique and essential to the ecosystem: a forest is a community that is greater than the sum of its parts. This simple, but powerful fact inspired the Communal ForestTM initiative. It’s an opportunity for every individual in Canada to play a part and help build a forest.
@@ -999,13 +1049,6 @@ return (
       </Row>
       </Fade>
         
-        <Row className="text-center justify-content-center mb-3 pb-0">
-
-          <Col className="col-10 text-center pb-5">
-            <Button className="btn-large" variant="green">Build a Communal Smart Forest™</Button>
-            </Col>
-      
-        </Row>
 
         <Fade bottom>
             <Row id="comm-2" className="justify-content-center align-items-center my-5">
@@ -1046,7 +1089,7 @@ return (
       <Row id="comm-3" className="justify-content-center pt-5 px-5 mb-3">
         <Col className="col-11 col-md-8 ">
         <h2 className="text-center text-orange tight-drop-light bold mb-3">A forest is a community. And a community can build a forest.</h2>
-        <p className="lead px-3 text-center tight-drop-light text-white">Communal Forests are created by the thousands of Canadians who are here for change.</p>
+        <p className="lead px-3 px-lg-5 text-center tight-drop-light text-white">Communal Forests are created by the thousands of Canadians who are here for change.</p>
         </Col>
       </Row>
       </Fade>
@@ -1076,20 +1119,30 @@ return (
     </Fade> 
 
     <Fade bottom>
-      <Row id="comm-4" className="justify-content-center pt-5 mb-3">
-        <Col className="col-11 col-md-8 ">
-        <h2 className="text-center text-orange tight-drop-light bold mb-4">Start Calculating</h2>
+      <Row id="comm-4" className="pt-4 align-items-center justify-content-center mb-3">
+        <Col className="col-10 col-lg-7 pe-lg-0">
+          <h2 className="text-center text-orange bold tight-drop-light">Join your fellow Canadians and make a change for the better.</h2>
+          <p className="text-center px-lg-5 text-white large">Anyone can do their part to offset their carbon footprint—large or small. Use our calculators to see what kind of impact you can make. Once a Communal Forest is started, our online portals will show you how it’s progressing.</p>
+
         </Col>
       </Row>
-    </Fade>
+      </Fade>
+      <Fade bottom>
+      <Row className="text-center justify-content-center mb-5 pb-5 ">
+
+          <Col className="col-10 text-center pb-5 pe-lg-0">
+            <Button className="btn-large px-5" variant="green">Contact Us</Button>
+            </Col>
+      
+        </Row>
+    </Fade>  
 
     
     <Fade bottom>
-      <Row className="justify-content-center  align-items-stretch mx-lg-5">
+      <Row className="justify-content-center  align-items-stretch mx-lg-5 ">
 
            <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="h6 text-mildgreen bold">STEP 1</p>
                   <p className="large text-green mb-2">Calculate your net-zero carbon footprint</p>
                   <p className="text-grey mb-3">Learn how much carbon your community generate in an average year.</p>
                   <Link href="carbon-calculator">
@@ -1100,9 +1153,8 @@ return (
 
               <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="h6 text-mildgreen bold">STEP 2</p>
                   <p className="large text-green mb-2">Determine your net zero Smart Forest target</p>
-                  <p className="text-grey mb-4">See how many hectares your community needs to plant to reach a net-zero emissions target.</p>
+                  <p className="text-grey mb-4">See how many acres your community needs to plant to reach a net-zero emissions target.</p>
                   <Button variant="green" className="mt-3">Calculate your NET ZERO target</Button>
                 </div>
               </Col>
@@ -1116,29 +1168,29 @@ return (
   <Container fluid className="bg-green p-5 section-pad my-0">
     <Row className="justify-content-center pt-3">
     <Col className="col-12 col-md-4 col-lg-3  pe-lg-0 m-3">
-        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
-        <h4 className="text-white tight-drop-light">Net-Zero Carbon Calculator</h4>
-        <p className="flex-fill pb-3 text-white tight-drop">Determine your corporate, school, or individual carbon footprint and learn how you can get to net-zero.</p>
+        <div className="roundedBox card bg-white no-border p-4 h-100 d-flex flex-column card-hover">
+        <h4 className="text-green ">Net-Zero Carbon Calculator</h4>
+        <p className="flex-fill pb-3 text-grey">Determine your corporate, school, or individual carbon footprint and learn how you can get to net-zero.</p>
        
-        <Link href="business-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">Proceed</a></Link>
+        <Link href="business-calculator"><a className="btn btn-text modal-btn text-left text-orange bold no-underline ">TRY IT</a></Link>
         </div>
         </Col>
 
         <Col className="col-12 col-md-4 col-lg-3  pe-lg-0 m-3">
-        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
-        <h4 className="text-white tight-drop-light">Smart Forest™ Calculator</h4>
-        <p className="flex-fill pb-3 text-white tight-drop">Find out how many acres of Smart Forest you need to plant to get to a net-negative carbon footprint.</p>
+        <div className="roundedBox card bg-white no-border p-4 h-100 d-flex flex-column card-hover">
+        <h4 className="text-green ">Smart Forest™ Calculator</h4>
+        <p className="flex-fill pb-3 text-grey ">Find out how many acres of Smart Forest you need to plant to get to a net-negative carbon footprint.</p>
        
-        <Link href="offset-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">Proceed</a></Link>
+        <Link href="offset-calculator"><a className="btn btn-text modal-btn text-left text-orange bold no-underline ">TRY IT</a></Link>
         </div>
         </Col>
 
         <Col className="col-12 col-md-4 col-lg-3 pe-lg-0 m-3">
-        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
-        <h4 className="text-white tight-drop-light">Your portal</h4>
-        <p className="flex-fill pb-3 text-white tight-drop">See how just how impactful Smart a Forest can be</p>
+        <div className="roundedBox card bg-white no-border p-4 h-100 d-flex flex-column card-hover">
+        <h4 className="text-green ">Customer Portal Demo</h4>
+        <p className="flex-fill pb-3 text-grey ">See just how impactful a Smart Forest can be.</p>
        
-        <Link href="portal-demo"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">Visit the Smart Forest demo portal</a></Link>
+        <Link href="portal-demo"><a className="btn btn-text modal-btn text-left text-orange bold no-underline me-5">TRY IT</a></Link>
         </div>
         </Col>
       </Row>
