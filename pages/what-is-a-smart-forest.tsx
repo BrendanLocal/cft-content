@@ -82,13 +82,13 @@ export default function Power({ file }) {
             <Col className="order-2 order-lg-1 col-12 col-lg-5 text-white p-4 pb-0 intro-order">
               <h1 className="text-orange mb-5 bold">{editingdata.part1_header1}</h1>
               <ReactMarkdown className="large my-5 op-9">{editingdata.part1_para1}</ReactMarkdown>
-              <ReactMarkdown className="text-white text-left smallcaps intro-links-header op-5 mt-4">{editingdata.part1_header2}</ReactMarkdown>
+              <ReactMarkdown className="text-white text-left smallcaps intro-links-header op-5 mt-4 mb-3">{editingdata.part1_header2}</ReactMarkdown>
               <a href="#commitment" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.part1_menu1}</a>
               <a href="#forever" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.part1_menu2}</a>
               <a href="#smart-forests" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.part1_menu3}</a>
               <a href="#earth" className="d-none btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.part1_menu4}</a>
             </Col>
-            <Col className="order-1 order-lg-2 col-12 col-lg-5 stickyTop mb-5">
+            <Col className="order-1 order-lg-2 col-12 col-lg-5 stickyTop mb-5 p-0">
               <object className="op-8" type="image/svg+xml" data="/power2-svg.svg"/>
             </Col>
           </Row>
@@ -100,7 +100,7 @@ export default function Power({ file }) {
               <Col className="col-10 col-lg-7 pt-3">
                 <h2 className="text-center text-orange bold mb-2">{editingdata.part2_header1}</h2>
                 <ReactMarkdown className="emphasis text-center text-white bold mb-3">{editingdata.part2_header2}</ReactMarkdown>
-                <ReactMarkdown className="text-center text-white thin op-9">{editingdata.part2_para1}</ReactMarkdown>
+                <ReactMarkdown className="text-center text-white thin">{editingdata.part2_para1}</ReactMarkdown>
               </Col>
             </Row>
           </Fade>
@@ -136,7 +136,7 @@ export default function Power({ file }) {
             <Row className="pt-5 align-items-center justify-content-center">
               <Col className="col-10 col-lg-8 pt-3">
                 <h2 className="text-center text-orange bold mb-2">{editingdata.part3_header1}</h2>
-                <ReactMarkdown className="text-center text-white lead op-9">{editingdata.part3_header2}</ReactMarkdown>
+                <ReactMarkdown className="text-center text-white lead">{editingdata.part3_header2}</ReactMarkdown>
               </Col>
             </Row>
           </Fade>
@@ -145,7 +145,7 @@ export default function Power({ file }) {
               <Col className="col-11 col-lg-8 bg-brown roundedBox innerShadow p-5 m-4 blockquote-bg-scale">
                 <h3 className="text-left blockquote text-orange p-lg-5">{editingdata.part3_box1para1}</h3>
                 <p className="text-left text-white my-0 mx-5 bold pb-0">{editingdata.part3_box1para2}</p>
-                <p className="text-left text-white mx-5 px-3 italic op-6">{editingdata.part3_box1para3}</p>
+                <p className="text-left text-white mx-5 px-3 italic op-6 mb-3">{editingdata.part3_box1para3}</p>
               </Col>
             </Row>
           </Fade>
@@ -162,7 +162,7 @@ export default function Power({ file }) {
             <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
                 <h4 className="text-white tight-drop-light">{editingdata.part4_box1header1}</h4>
-                <ReactMarkdown className="flex-fill pb-3 text-white tight-drop">{editingdata.part4_box1para1}</ReactMarkdown>
+                <ReactMarkdown className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part4_box1para1}</ReactMarkdown>
                 <Link href="/build-your-smart-forest#corporate">
                   <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnMore}</a>
                 </Link>
@@ -171,7 +171,7 @@ export default function Power({ file }) {
             <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
                 <h4 className="text-white tight-drop-light">{editingdata.part4_box2header1}</h4>
-                <ReactMarkdown className="flex-fill pb-3 text-white tight-drop">{editingdata.part4_box2para1}</ReactMarkdown>
+                <ReactMarkdown className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part4_box2para1}</ReactMarkdown>
                 <Link href="/build-your-smart-forest#school">
                   <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnMore}</a>
                 </Link>
@@ -180,7 +180,7 @@ export default function Power({ file }) {
             <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
                 <h4 className="text-white tight-drop-light">{editingdata.part4_box3header1}</h4>
-                <ReactMarkdown className="flex-fill pb-3 text-white tight-drop">{editingdata.part4_box3para1}</ReactMarkdown>
+                <ReactMarkdown className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part4_box3para1}</ReactMarkdown>
                 <Link href="/build-your-smart-forest#legacy">
                   <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnMore}</a>
                 </Link>
@@ -189,7 +189,7 @@ export default function Power({ file }) {
             <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop communal-card">
                 <h4 className="text-white tight-drop-light">{editingdata.part4_box4header1}</h4>
-                <ReactMarkdown className="flex-fill pb-3 text-white tight-drop">{editingdata.part4_box4para1}</ReactMarkdown>
+                <ReactMarkdown className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part4_box4para1}</ReactMarkdown>
                 <Link href="/build-your-smart-forest#communal">
                   <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnMore}</a>
                 </Link>
