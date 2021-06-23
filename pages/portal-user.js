@@ -153,7 +153,7 @@ return (
 
   <main className="bg-green">
     <Container className="bg-green py-5 my-5">
-      <Row className="justify-content-center d-flex mb-4 pt-lg-5">
+      <Row className="justify-content-center d-flex mb-3 pt-lg-5">
         <Col className="col-xl-10 ">
         <h1 className="h2 text-orange text-center">
           Welcome Back, {user ? user.name : 'stranger'}
@@ -202,7 +202,8 @@ return (
                ForestCast<sup>™</sup>
                 </Tab>
             </TabList>
-            <TabPanel>
+            
+            <TabPanel className="mt-3">
               
               <Map location={location}/>
               <Row className="borderGrid pt-3">

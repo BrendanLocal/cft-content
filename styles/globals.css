@@ -2131,6 +2131,66 @@ width: 100%;
   text-align: center;
 }
 
+.image-gallery-left-nav .image-gallery-svg, .image-gallery-right-nav .image-gallery-svg {
+  height: 100px;
+  width: 40px;
+}
+
+.image-gallery-icon:hover {
+  color: #ffffff!important;
+}
+
+.image-gallery-content .image-gallery-slide .image-gallery-image {
+  cursor: default;
+}
+
+.image-gallery-thumbnail.active, .image-gallery-thumbnail:hover {
+  outline: none;
+  border: 4px solid #00823B;
+}
+
+.image-gallery-thumbnail.active, .image-gallery-thumbnail:focus {
+  outline: none;
+  border: 4px solid #00823B;
+}
+
+.image-gallery-slide .image-gallery-description {
+  background: none;
+  color: #fff;
+  bottom: 0;
+  left: 0;
+  line-height: 1;
+  padding: 10px 20px 25px 20px;
+  position: absolute;
+  white-space: normal;
+  cursor: default;
+  font-weight: 600;
+  text-shadow: 0px 1px 8px rgb(0 0 0 / 90%);
+}
+
+.share-btn {
+  background: url('/share-btn.svg');
+  height: 28px;
+  width: 28px;
+  top: 0;
+  right: 0;
+  z-index: 4;
+}
+
+.image-gallery-index {
+  background: none;
+  color: #fff;
+  line-height: 1;
+  padding: 20px 20px 10px 20px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 4;
+  cursor: default;
+  font-weight: 600;
+  text-shadow: 0px 1px 8px rgb(0 0 0 / 90%);
+}
+
 /* About */
 
 .horizTab li {
