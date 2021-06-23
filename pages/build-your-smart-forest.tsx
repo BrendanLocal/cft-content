@@ -128,7 +128,7 @@ export default function Build({ file }) {
             <Col className="col-12 col-lg-5 text-white p-4 pb-0 intro-order">
               <h1 className="text-orange mb-5 bold">{editingdata.part1_header1}</h1>
               <p className="large my-5 op-9">{editingdata.part1_para1}</p>
-              <p className="text-white text-left smallcaps intro-links-header op-5 mt-4">{editingdata.part1_header2}</p>
+              <p className="text-white text-left smallcaps intro-links-header op-5 mt-4 mb-3">{editingdata.part1_header2}</p>
               <a href="#the-plan" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.part1_menu1}</a>
               <a href="#our-forests" className="btn btn-text text-left text-orange intro-links  no-underline">{editingdata.part1_menu2}</a>
             </Col>
@@ -139,8 +139,8 @@ export default function Build({ file }) {
           <Fade bottom>
             <Row className="justify-content-center align-items-center my-4">
               <Col className="col-sm-11 col-md-10 col-lg-9 text-center text-white">
-                <h2 className=" text-orange bold mb-2">{editingdata.part2_header3}</h2>
-                <p className="large mt-0 mb-0">{editingdata.part2_para2}</p>
+                <h2 className="text-orange bold mb-2">{editingdata.part2_header3}</h2>
+                <p className="medium mt-0 mb-0 px-lg-4 mb-2">{editingdata.part2_para2}</p>
               </Col>
             </Row>
           </Fade>
@@ -269,7 +269,7 @@ export default function Build({ file }) {
               <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
                 <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
                   <h4 className="text-white tight-drop-light">{editingdata.part3_box1header1}</h4>
-                  <p className="flex-fill pb-3 text-white tight-drop">{editingdata.part3_box1para1}</p>
+                  <p className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part3_box1para1}</p>
                   <a href="#corporate" className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">
                     {editingdata.learnMore}
                   </a>
@@ -278,21 +278,21 @@ export default function Build({ file }) {
               <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
                 <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
                   <h4 className="text-white tight-drop-light">{editingdata.part3_box2header1}</h4>
-                  <p className="flex-fill pb-3 text-white tight-drop">{editingdata.part3_box2para1}</p>
+                  <p className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part3_box2para1}</p>
                   <a href="#school" className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">{editingdata.learnMore}</a>
                 </div>
               </Col>
               <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
                 <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
                   <h4 className="text-white tight-drop-light">{editingdata.part3_box3header1}</h4>
-                  <p className="flex-fill pb-3 text-white tight-drop">{editingdata.part3_box3para1}</p>
+                  <p className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part3_box3para1}</p>
                   <a href="#legacy" className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">{editingdata.learnMore}</a>
                 </div>
               </Col>
               <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
                 <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop communal-card">
                   <h4 className="text-white tight-drop-light">{editingdata.part3_box4header1}</h4>
-                  <p className="flex-fill pb-3 text-white tight-drop">{editingdata.part3_box4para1}</p>
+                  <p className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part3_box4para1}</p>
                   <a href="#communal" className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">{editingdata.learnMore}</a>
                 </div>
               </Col>
@@ -304,7 +304,7 @@ export default function Build({ file }) {
                 <Row className="justify-content-center my-3">
                   <Col className="text-center">
                     <h3 className="text-orange bold mb-2">{editingdata.part3_box5header1}</h3>
-                    <p className="text-white medium">{editingdata.part3_box5para1}</p>
+                    <p className="text-white medium mb-2">{editingdata.part3_box5para1}</p>
                   </Col>
                 </Row>
                 <Row className="justify-content-center">
@@ -332,9 +332,9 @@ export default function Build({ file }) {
           </Fade>
 
           <Fade bottom>
-            <Row className=" text-center  justify-content-center mb-4">
+            <Row className="text-center  justify-content-center mb-4">
               <Col className="col-11 col-lg-7">
-                <Row className=" horizTab  justify-content-center">
+                <Row className="horizTab  justify-content-center">
                   <Col className="col-5 col-md-3 mb-3">
                     <Button href="#corp-about" variant="text text-orange tight-drop-light smallCaps down-links">
                       {editingdata.part4_menu1}
@@ -368,7 +368,7 @@ export default function Build({ file }) {
                 </ReactMarkdown>
               </Col>
               <Col className="col-12 col-lg-7">
-                <p className="lead text-white bold">{editingdata.part4_para2}</p>
+                <p className="lead text-white bold mb-2">{editingdata.part4_para2}</p>
               </Col>
             </Row>
             <Row className="text-center justify-content-center mb-5 pb-0">
@@ -389,7 +389,7 @@ export default function Build({ file }) {
           <Fade bottom>
             <Row className="text-center justify-content-center mb-3 p-4 pb-0">
               <Col className="col-11 col-lg-7 pb-0">
-                <p className="text-white large">{editingdata.part4_para3}</p>
+                <p className="text-white large mb-3">{editingdata.part4_para3}</p>
               </Col>
             </Row>
           </Fade>
@@ -465,7 +465,7 @@ export default function Build({ file }) {
             <Row id="corp-bottom-line" className="justify-content-center pt-5 mb-3">
               <Col className="col-10 col-md-8">
                 <h2 className="text-center text-orange tight-drop-light bold mb-3">{editingdata.part4_header2}</h2>
-                <p className="lead px-lg-4 text-center tight-drop-light text-white">{editingdata.part4_para4}</p>
+                <p className="lead px-lg-4 text-center tight-drop-light text-white mb-2">{editingdata.part4_para4}</p>
               </Col>
             </Row>
           </Fade>
@@ -491,7 +491,7 @@ export default function Build({ file }) {
             <Row id="corp-contact" className="pt-4 align-items-center justify-content-center mb-3">
               <Col className="col-10 col-lg-7 pe-lg-0">
                 <h2 className="text-center text-orange bold tight-drop-light">{editingdata.part4_header3}</h2>
-                <p className="text-center px-lg-4 text-white large">{editingdata.part4_para5}</p>
+                <p className="text-center px-lg-4 text-white large mb-2">{editingdata.part4_para5}</p>
               </Col>
             </Row>
             <Row className="text-center justify-content-center mb-5 pb-5">
@@ -535,7 +535,7 @@ export default function Build({ file }) {
           <Fade bottom>
             <Row className="text-center justify-content-center">
               <Col className="col-11 col-lg-8 text-white">
-                <h2 className=" bold py-3 text-white tight-drop-light">
+                <h2 className="bold py-3 text-white tight-drop-light">
                   {editingdata.part5_header1}
                 </h2>
               </Col>
@@ -543,9 +543,9 @@ export default function Build({ file }) {
           </Fade>
 
           <Fade bottom>
-            <Row className=" text-center  justify-content-center mb-4">
+            <Row className="text-center  justify-content-center mb-4">
               <Col className="col-11 col-lg-7">
-                <Row className=" horizTab  justify-content-center">
+                <Row className="horizTab  justify-content-center">
                   <Col className="col-5 col-md-3 mb-3">
                     <Link href="#school-1">
                       <Button variant="text text-orange smallCaps tight-drop-light down-links">
@@ -585,7 +585,7 @@ export default function Build({ file }) {
                 <p className="emphasis text-orange tight-drop-light mb-4">{editingdata.part5_para1}</p>
               </Col>
               <Col className="col-11 col-lg-7">
-                <p className="lead text-white bold">{editingdata.part5_para2}</p>
+                <p className="lead text-white bold mb-3">{editingdata.part5_para2}</p>
               </Col>
             </Row>
             <Row className="text-center justify-content-center mb-5 pb-0">
@@ -606,7 +606,7 @@ export default function Build({ file }) {
           <Fade bottom>
             <Row className="text-center justify-content-center mb-3 p-4 pb-0">
               <Col className="col-11 col-lg-7 pb-0">
-                <p className="text-white large">{editingdata.part5_para3}</p>
+                <p className="text-white large mb-3">{editingdata.part5_para3}</p>
               </Col>
             </Row>
           </Fade>
@@ -681,7 +681,7 @@ export default function Build({ file }) {
             <Row id="school-3" className="justify-content-center pt-5 mb-3">
               <Col className="col-11 col-md-7">
                 <h2 className="text-center text-orange tight-drop-light bold mb-3">{editingdata.part5_header2}</h2>
-                <p className="lead px-3 text-center tight-drop-light text-white">{editingdata.part5_para4}</p>
+                <p className="lead px-3 text-center tight-drop-light text-white mb-2">{editingdata.part5_para4}</p>
               </Col>
             </Row>
           </Fade>
@@ -689,7 +689,7 @@ export default function Build({ file }) {
           <Fade bottom>
             <Row className="justify-content-center d-flex pb-5 mx-5 mb-5">
               <Col className="col-12 col-md-7 col-lg-7 bg-green roundedBox innerShadow px-5 pt-5 pb-4 m-4 mt-2">
-                <p className="text-white large bold text-center">{editingdata.part5_pointsheader}</p>
+                <p className="text-white large bold text-center mb-3">{editingdata.part5_pointsheader}</p>
                 <ul className="text-white checkMark px-3 mx-3">
                   <li><ReactMarkdown>{editingdata.part5_pointspara1}</ReactMarkdown></li>
                   <li><ReactMarkdown>{editingdata.part5_pointspara2}</ReactMarkdown></li>
@@ -705,7 +705,7 @@ export default function Build({ file }) {
             <Row id="school-4" className="pt-4 align-items-center justify-content-center mb-3">
               <Col className="col-10 col-lg-7 pe-lg-0">
                 <h2 className="text-center text-orange bold tight-drop-light">{editingdata.part5_header3}</h2>
-                <p className="text-center px-lg-5 text-white large">{editingdata.part5_para5}</p>
+                <p className="text-center px-lg-5 text-white large mb-2">{editingdata.part5_para5}</p>
               </Col>
             </Row>
             <Row className="text-center justify-content-center mb-5 pb-5">
@@ -749,15 +749,15 @@ export default function Build({ file }) {
           <Fade bottom>
             <Row className="text-center justify-content-center">
               <Col className="col-11 col-lg-8 text-white">
-                <h2 className=" bold py-3 text-white tight-drop-light">{editingdata.part6_header1}</h2>
+                <h2 className="bold py-3 text-white tight-drop-light">{editingdata.part6_header1}</h2>
               </Col>
             </Row>
           </Fade>
 
           <Fade bottom>
-            <Row className=" text-center  justify-content-center mb-4">
+            <Row className="text-center  justify-content-center mb-4">
               <Col className="col-11 col-lg-7">
-                <Row className=" horizTab  justify-content-center">
+                <Row className="horizTab  justify-content-center">
                   <Col className="col-5 col-md-3 mb-3">
                     <Link href="#legacy-1">
                       <Button variant="text text-orange smallCaps tight-drop-light down-links">
@@ -797,7 +797,7 @@ export default function Build({ file }) {
                 <p className="emphasis text-orange tight-drop-light mb-4">{editingdata.part6_para1}</p>
               </Col>
               <Col className="col-11 col-lg-7">
-                <p className="lead text-white bold">{editingdata.part6_para2}</p>
+                <p className="lead text-white bold mb-2">{editingdata.part6_para2}</p>
               </Col>
             </Row>
             <Row className="text-center justify-content-center mb-5 pb-0">
@@ -818,7 +818,7 @@ export default function Build({ file }) {
           <Fade bottom>
             <Row className="text-center justify-content-center mb-3 p-4 pb-5">
               <Col className="col-10 col-lg-7 pb-0">
-                <p className="text-white large">{editingdata.part6_para3}</p>
+                <p className="text-white large mb-3">{editingdata.part6_para3}</p>
               </Col>
             </Row>
           </Fade>
@@ -859,7 +859,7 @@ export default function Build({ file }) {
             <Row id="legacy-3" className="justify-content-center pt-5 mb-3">
               <Col className="col-11 col-md-7">
                 <h2 className="text-center text-orange tight-drop-light bold mb-3">{editingdata.part6_header2}</h2>
-                <p className="lead px-3 text-center tight-drop-light text-white">{editingdata.part6_para4}</p>
+                <p className="lead px-3 text-center tight-drop-light text-white mb-2">{editingdata.part6_para4}</p>
               </Col>
             </Row>
           </Fade>
@@ -867,7 +867,7 @@ export default function Build({ file }) {
           <Fade bottom>
             <Row className="justify-content-center d-flex pb-5 mx-5 mb-5">
               <Col className="justify-content-center align-items-center col-12 col-lg-7 bg-green roundedBox innerShadow px-3 pt-5 pb-4 m-4 mt-2">
-                <p className="text-white large bold text-center">{editingdata.part6_pointsheader}</p>
+                <p className="text-white large bold text-center mb-3">{editingdata.part6_pointsheader}</p>
                 <ul className="text-white checkMark px-5 mx-5">
                   <li className="ms-lg-5">{editingdata.part6_pointspara1}</li>
                   <li className="ms-lg-5">{editingdata.part6_pointspara2}</li>
@@ -927,15 +927,15 @@ export default function Build({ file }) {
           <Fade bottom>
             <Row className="text-center justify-content-center">
               <Col className="col-11 col-lg-8 text-white">
-                <h2 className=" bold py-3 text-white tight-drop-light">{editingdata.part7_header1}</h2>
+                <h2 className="bold py-3 text-white tight-drop-light">{editingdata.part7_header1}</h2>
               </Col>
             </Row>
           </Fade>
 
           <Fade bottom>
-            <Row className=" text-center  justify-content-center mb-4">
+            <Row className="text-center  justify-content-center mb-4">
               <Col className="col-11 col-lg-7">
-                <Row className=" horizTab  justify-content-center">
+                <Row className="horizTab  justify-content-center">
                   <Col className="col-5 col-md-3 mb-3">
                     <Link href="#comm-1">
                       <Button variant="text text-orange smallCaps tight-drop-light down-links">
@@ -975,7 +975,7 @@ export default function Build({ file }) {
                 <p className="emphasis text-orange tight-drop-light mb-4">{editingdata.part7_para1}</p>
               </Col>
               <Col className="col-12 col-lg-8">
-                <p className="lead text-white bold">{editingdata.part7_para2}</p>
+                <p className="lead text-white bold mb-2">{editingdata.part7_para2}</p>
               </Col>
             </Row>
             <Row className="text-center justify-content-center mb-5 pb-0">
@@ -996,7 +996,7 @@ export default function Build({ file }) {
           <Fade bottom>
             <Row className="text-center justify-content-center mb-3 p-4 pb-5">
               <Col className="col-10 col-lg-7 pb-0">
-                <p className="text-white large">{editingdata.part7_para3}</p>
+                <p className="text-white large mb-3">{editingdata.part7_para3}</p>
               </Col>
             </Row>
           </Fade>
@@ -1041,7 +1041,7 @@ export default function Build({ file }) {
             <Row id="comm-3" className="justify-content-center pt-5 px-5 mb-3">
               <Col className="col-11 col-md-8">
                 <h2 className="text-center text-orange tight-drop-light bold mb-3">{editingdata.part7_header2}</h2>
-                <p className="lead px-3 px-lg-5 text-center tight-drop-light text-white">{editingdata.part7_para4}</p>
+                <p className="lead px-3 px-lg-5 text-center tight-drop-light text-white mb-2">{editingdata.part7_para4}</p>
               </Col>
             </Row>
           </Fade>
@@ -1049,9 +1049,7 @@ export default function Build({ file }) {
           <Fade bottom>
             <Row className="justify-content-center d-flex pb-5 mx-5 mb-5">
               <Col className="col-12 col-lg-7 bg-green roundedBox innerShadow px-3 pt-5 pb-4 m-4 mt-2">
-                <p className="text-white large bold text-center">
-                  {editingdata.part7_pointsheader}
-                </p>
+                <p className="text-white large bold text-center mb-3">{editingdata.part7_pointsheader}</p>
                 <ul className="text-white checkMark px-5 mx-3">
                   <li><ReactMarkdown>{editingdata.part7_pointspara1}</ReactMarkdown></li>
                   <li><ReactMarkdown>{editingdata.part7_pointspara2}</ReactMarkdown></li>
@@ -1066,7 +1064,7 @@ export default function Build({ file }) {
             <Row id="comm-4" className="pt-4 align-items-center justify-content-center mb-3">
               <Col className="col-10 col-lg-7 pe-lg-0">
                 <h2 className="text-center text-orange bold tight-drop-light">{editingdata.part7_header3}</h2>
-                <p className="text-center px-lg-5 text-white large">{editingdata.part7_para5}</p>
+                <p className="text-center px-lg-5 text-white large mb-2">{editingdata.part7_para5}</p>
               </Col>
             </Row>
             <Row className="text-center justify-content-center mb-5 pb-5">
