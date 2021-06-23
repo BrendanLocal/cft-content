@@ -61,6 +61,7 @@
     "parallax-js": "^3.1.0",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
+    "puppeteer": "^10.0.0",
     "react": "17.0.2",
     "react-alert": "^7.0.3",
     "react-audio-player": "^0.17.0",
