@@ -61,13 +61,17 @@ const [vehicleArray, setVehicleArray] = React.useState({
   smallDiesel	:{mult:	0.13721	,miles: null},
   smallHybrid	:{mult:	0.10275	,miles: null},
   mediumGas	:{mult:	0.18659	,miles: null},
+
+  rentalGas	:{mult:	0.18659	,miles: null},
   mediumDiesel	:{mult:	0.16637	,miles: null},
   mediumHybrid	:{mult:	0.10698	,miles: null},
   largeGas	:{mult:	0.27087	,miles: null},
   largeDiesel	:{mult:	0.20419	,miles: null},
   largeHybrid	:{mult:	0.1448	,miles: null},
   motorbikeGas	:{mult:	0.11337	,miles: null},
-  planeGas	:{mult:	2.9237	,miles: null},
+  planeGas	:{mult:	2.54306	,miles: null},
+
+  jetGas	:{mult:	2.54306	,miles: null},
   yachtGas	:{mult:	2.54	,miles: null},
   yachtDiesel	:{mult:	2.35	,miles: null},
   atvGas	:{mult:	2.3	,miles: null},
@@ -160,21 +164,38 @@ const changeEnergyTwo = (event) => {
 /* array using data from the spreadsheet, including multipliers */
 
 const buildArray = {
-  "1000":{
-  gas:1072, oil:1562, electric:758, wood:91
-  },
-  "1500":{
-    gas:3473, oil:5059, electric:2456, wood:295
-  },
-  "2000":{
-    gas:4188, oil:6100, electric:2961, wood:356
-  },
-  "2500":{
-    gas:5464, oil:7960, electric:3864, wood:465
-  },
-  "2501":{
-    gas:6179, oil:9002, electric:4369, wood:525
-  }
+  "1000":{	gas:	1072	,
+    oil:	1562	,
+    electric:	758	,
+    wood:	91	},
+  "1500":{	gas:	3473	,
+    oil:	5059	,
+    electric:	2456	,
+    wood:	295	},
+  "2000":{	gas:	4188	,
+    oil:	6100	,
+    electric:	2961	,
+    wood:	356	},
+  "2500":{	gas:	5464	,
+    oil:	7960	,
+    electric:	3864	,
+    wood:	465	},
+  "5000":{	gas:	8197	,
+    oil:	11940	,
+    electric:	5796	,
+    wood:	697	},
+  "7500":{	gas:	12295	,
+    oil:	17910	,
+    electric:	8694	,
+    wood:	1045	},
+  "10000":{	gas:	18442	,
+    oil:	26865	,
+    electric:	13041	,
+    wood:	1568	},
+  "10001":{	gas:	27663	,
+    oil:	40298	,
+    electric:	19561	,
+    wood:	2352	}
   }
 
 const energySavingsMult = {
@@ -339,14 +360,22 @@ return (
         <Row>
           <Col>
           <label htmlFor="number">How many people live in your household?</label><br />
-          <input onChange={changeNum} type="number" placeholder="Number of people in your household" />
+          <input onChange={changeNum} type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Number of people in your household" />
           </Col>
         </Row>
 
         <Row>
           <Col>
           <label htmlFor="number">Month(s) per year spent living at this residence?</label><br />
-          <input onChange={changeYear} type="number" placeholder="Month(s) per year in residence" />
+          <input onChange={changeYear} type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Month(s) per year in residence" />
           </Col>
         </Row>
 
@@ -359,7 +388,10 @@ return (
             <option value='1500'> 1000-1500 </option>
             <option value='2000'> 1500-2000 </option>
             <option value='2500'> 2000-2500 </option>
-            <option value='2501'> 2500+ </option>
+            <option value='5000'> 2500-5000 </option>
+            <option value='7500'> 5000-7500 </option>
+            <option value='10000'> 7500-10000 </option>
+            <option value='10001'> 10000+ </option>
           </select>
           </Col>
         </Row>
@@ -418,14 +450,22 @@ return (
         <Row>
           <Col>
           <label htmlFor="number">How many people live in your household?</label><br />
-          <input onChange={changeNumTwo} type="number" placeholder="Number of people in your household" />
+          <input onChange={changeNumTwo} type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Number of people in your household" />
           </Col>
         </Row>
 
         <Row>
           <Col>
           <label htmlFor="number">Month(s) per year spent living at this residence?</label><br />
-          <input onChange={changeYearTwo} type="number" placeholder="Month(s) per year in residence" />
+          <input onChange={changeYearTwo} type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Month(s) per year in residence" />
           </Col>
         </Row>
 
@@ -438,7 +478,10 @@ return (
             <option value='1500'> 1000-1500 </option>
             <option value='2000'> 1500-2000 </option>
             <option value='2500'> 2000-2500 </option>
-            <option value='2501'> 2500+ </option>
+            <option value='5000'> 2500-5000 </option>
+            <option value='7500'> 5000-7500 </option>
+            <option value='10000'> 7500-10000 </option>
+            <option value='10001'> 10000+ </option>
           </select>
           </Col>
         </Row>
@@ -491,19 +534,31 @@ return (
           <Row>
             <Col className="col">
               Gas
-            <input onChange={calculateMiles} name="smallGas" type="number" placeholder="Annual KM (gas)" />
+            <input onChange={calculateMiles} name="smallGas" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Annual KM (gas)" />
             </Col>
           </Row> 
           <Row>
             <Col className="col">
               Diesel
-            <input onChange={calculateMiles} name="smallDiesel" type="number" placeholder="Annual KM (diesel)" />
+            <input onChange={calculateMiles} name="smallDiesel" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Annual KM (diesel)" />
             </Col>
           </Row>
           <Row>
             <Col className="col">
               Hybrid
-            <input onChange={calculateMiles} name="smallHybrid" type="number" placeholder="Annual KM (hybrid)" />
+            <input onChange={calculateMiles} name="smallHybrid" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Annual KM (hybrid)" />
             </Col>
           </Row>
           
@@ -515,19 +570,31 @@ return (
           <Row>
             <Col className="col">
               Gas
-            <input onChange={calculateMiles} name="mediumGas" type="number" placeholder="Annual KM (gas)" />
+            <input onChange={calculateMiles} name="mediumGas" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Annual KM (gas)" />
             </Col>
           </Row> 
           <Row>
             <Col className="col">
               Diesel
-            <input onChange={calculateMiles} name="mediumDiesel" type="number" placeholder="Annual KM (diesel)" />
+            <input onChange={calculateMiles} name="mediumDiesel" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Annual KM (diesel)" />
             </Col>
           </Row>
           <Row>
             <Col className="col">
               Hybrid
-            <input onChange={calculateMiles} name="mediumHybrid" type="number" placeholder="Annual KM (hybrid)" />
+            <input onChange={calculateMiles} name="mediumHybrid" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Annual KM (hybrid)" />
             </Col>
           </Row>
           <hr/>
@@ -538,19 +605,31 @@ return (
   <Row>
     <Col className="col">
       Gas
-    <input onChange={calculateMiles} name="largeGas" type="number" placeholder="Annual KM (gas)" />
+    <input onChange={calculateMiles} name="largeGas" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Annual KM (gas)" />
     </Col>
   </Row> 
   <Row>
     <Col className="col">
       Diesel
-    <input onChange={calculateMiles} name="largeDiesel" type="number" placeholder="Annual KM (diesel)" />
+    <input onChange={calculateMiles} name="largeDiesel" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Annual KM (diesel)" />
     </Col>
   </Row>
   <Row>
     <Col className="col">
       Hybrid
-    <input onChange={calculateMiles} name="largeHybrid" type="number" placeholder="Annual KM (hybrid)" />
+    <input onChange={calculateMiles} name="largeHybrid" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Annual KM (hybrid)" />
     </Col>
   </Row>
   <hr/>
@@ -559,16 +638,36 @@ return (
   <Row>
     <Col className="col">
       Gas
-    <input onChange={calculateMiles} name="motorbikeGas" type="number" placeholder="Annual KM (gas)" />
+    <input onChange={calculateMiles} name="motorbikeGas" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Annual KM (gas)" />
     </Col>
   </Row> 
   <hr/>
+  <h5 className="smallCaps text-small text-green">Private Plane</h5>
+  <p className="text-small op-6">All sizes</p>
+  <Row>
+    <Col className="col">
+      Aviation fuel
+    <input onChange={calculateMiles} name="jetGas" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Annual litres of fuel" />
+    </Col>
+  </Row> 
   <h5 className="smallCaps text-small text-green">Private Jet</h5>
   <p className="text-small op-6">All sizes</p>
   <Row>
     <Col className="col">
-      All fuel types
-    <input onChange={calculateMiles} name="planeGas" type="number" placeholder="Annual KM (gas)" />
+      Aviation fuel
+    <input onChange={calculateMiles} name="planeGas" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Annual litres of fuel" />
     </Col>
   </Row> 
 
@@ -579,15 +678,27 @@ return (
   <Row>
     <Col className="col">
       Yacht
-    <input onChange={calculateMiles} name="yachtGas" type="number" placeholder="Marine Diesel Litres per year" />
-    <input onChange={calculateMiles} name="yachtDiesel" type="number" placeholder="Marine Unleaded Litres per year" />
+    <input onChange={calculateMiles} name="yachtGas" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Marine Diesel Litres per year" />
+    <input onChange={calculateMiles} name="yachtDiesel" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Marine Unleaded Litres per year" />
     </Col>
   </Row> 
   <hr/>
   <Row>
     <Col className="col">
       ATV (quad bike)
-    <input onChange={calculateMiles} name="atvGas" type="number" placeholder="Litres per year" />
+    <input onChange={calculateMiles} name="atvGas" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Litres per year" />
     </Col>
   </Row> 
   <hr/>
@@ -595,7 +706,11 @@ return (
   <Row>
     <Col className="col">
       Side-by-side
-    <input onChange={calculateMiles} name="sbsGas" type="number" placeholder="Litres per year" />
+    <input onChange={calculateMiles} name="sbsGas" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Litres per year" />
     </Col>
   </Row> 
   <hr/>
@@ -603,7 +718,11 @@ return (
   <Row>
     <Col className="col">
       Snowmobile
-    <input onChange={calculateMiles} name="snowGas" type="number" placeholder="Litres per year" />
+    <input onChange={calculateMiles} name="snowGas" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Litres per year" />
     </Col>
   </Row> 
 
@@ -724,6 +843,18 @@ return (
               placeholder="Number of nights" />
             </Col>
           </Row>
+          <Row>
+          <Col className="col-10 col-sm-5 col-xl-4">
+            Rental cars
+            </Col>
+            <Col className="col-sm-6 col-xl-4">
+            <input onChange={calculateMiles} name="rentalGas" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Annual KM (gas)" />
+      </Col>
+          </Row> 
       </div>
 
       <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
@@ -750,7 +881,11 @@ return (
           Taxi/Rideshare
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateTransitMiles} name="publicTaxi" type="number" placeholder="Average Km per day" />
+          <input onChange={calculateTransitMiles} name="publicTaxi" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Average Km per day" />
           </Col>
         </Row>
         <Row>
@@ -758,7 +893,11 @@ return (
           Metro/Subway
           </Col>
           <Col className="col-6 col-xl-4">
-          <input onChange={calculateTransitMiles} name="publicSubway" type="number" placeholder="Average Km per day" />
+          <input onChange={calculateTransitMiles} name="publicSubway" type="number" min="0" onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} placeholder="Average Km per day" />
           </Col>
         </Row>
 

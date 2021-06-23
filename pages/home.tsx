@@ -44,6 +44,8 @@ export default function Home({ file, href, children}) {
       {name: 'menu4', component: 'markdown' },
       {name: 'menu5', component: 'markdown' },
       {name: 'menu6', component: 'markdown' },
+      {name: 'modal1_header', component: 'markdown' },
+      {name: 'modal1_close', component: 'markdown' },
       {name: 'part1_header1', component: 'markdown' },
       {name: 'part1_header2', component: 'markdown' },
       {name: 'part1_header3', component: 'markdown' },
@@ -91,6 +93,7 @@ export default function Home({ file, href, children}) {
   usePlugin(form)
   useGithubToolbarPlugins()
   
+
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -128,21 +131,17 @@ export default function Home({ file, href, children}) {
         <Modal.Body>
           <Row className="justify-content-center align-items-center mb-0">
             <Col>
-            <h3 className="text-green smallCaps text-center">THE SMART FOREST INITIATIVE</h3>
+              <h3 className="text-green smallCaps text-center">{editingdata.modal1_header}</h3>
             </Col>
           </Row>
           <Row className="justify-content-center align-items-center ps-lg-4 ms-lg-4">
             <Col className="col-12 d-flex ms-lg-4 mb-2 nudge">
-            
-            <ReactPlayer playing playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4'/>
-           
+              <ReactPlayer playing playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4'/>
             </Col>
           </Row>
         </Modal.Body>
         <Modal.Footer className="p-0">
-        <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleClose}>
-            Close
-          </Button>
+          <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleClose}>{editingdata.modal1_close}</Button>
         </Modal.Footer>
       </Modal>
 
@@ -154,7 +153,7 @@ export default function Home({ file, href, children}) {
               <a href="#intro" className="text-white bold no-underline">{editingdata.menu1}</a>
             </li>
             <li className="p-0" data-dest="#what">
-              <a href="#what" className="text-white bold no-underline">{editingdata.menu2}</a>
+              <a href="#what"  className="text-white bold no-underline">{editingdata.menu2}</a>
             </li>
             <li className="p-0" data-dest="#how">
               <a href="#how" className="text-white bold no-underline">{editingdata.menu3}</a>
@@ -172,12 +171,12 @@ export default function Home({ file, href, children}) {
         </Col>
       </Row>
       <main id="intro">
-        <Parallax
+        <Parallax className="fadein"
           bgImage='/landingSKY.png'
           bgImageAlt="SKY"
           strength={500}
         >
-          <Parallax
+          <Parallax className="fadein"
             bgImage='/landingLAND.png'
             bgImageAlt="LAND"
             strength={200}
@@ -230,10 +229,10 @@ export default function Home({ file, href, children}) {
 
         <Container id="what" fluid className="v-full z-999 bg-green align-items-center p-5 container-drop-heavy">
           <Fade bottom>
-            <Row className="py-5 align-items-center justify-content-center mt-5 ms-lg-1">
+            <Row className="py-5 align-items-center justify-content-center mt-2 ms-lg-1">
               <Col className="order-2 order-lg-1 col-12 p-5 col-md-4 text-white ms-lg-5 pe-lg-2">
                 <h2 className="text-orange bold pe-lg-4"><ReactMarkdown>{editingdata.part2_header1}</ReactMarkdown></h2>
-                <ReactMarkdown className="pb-3 thin pe-lg-5">{editingdata.part2_para1}</ReactMarkdown>
+                <ReactMarkdown className="pb-3 mb-2 thin pe-lg-5">{editingdata.part2_para1}</ReactMarkdown>
                 <Link href="/what-is-a-smart-forest"><a className="btn btn-green">{editingdata.part2_button1}</a></Link>
               </Col>
               <Col className="order-1 order-lg-2 col-12 col-md-5 p-4 ps-lg-0">
@@ -251,7 +250,7 @@ export default function Home({ file, href, children}) {
               </Col>
               <Col className="col-12 p-5 ps-lg-2 col-md-4 text-white">
                 <h2 className="text-orange bold"><ReactMarkdown>{editingdata.part3_header1}</ReactMarkdown></h2>
-                <ReactMarkdown className="pb-3 thin">{editingdata.part3_para1}</ReactMarkdown>
+                <ReactMarkdown className="pb-3 mb-2 thin">{editingdata.part3_para1}</ReactMarkdown>
                 <Link href="/build-your-smart-forest" >
                   <a className="btn btn-green px-lg-5">{editingdata.part3_button1}</a>
                 </Link>
@@ -260,7 +259,7 @@ export default function Home({ file, href, children}) {
           </Fade>
         </Container>
 
-        <Container  id="who" fluid className="v-full z-999 bg-green py-5 mb-4">
+        <Container  id="who" fluid className="v-full z-999 bg-green py-5 mt-4 mb-4">
           <Fade bottom>
           <Row className="pe-5 align-items-center justify-content-center  align-items-stretch protorow pb-0 mb-0 ms-lg-5">
             <Col className="col-10 col-md-3 text-white mb-5 py-5 px-5 me-5 ms-5">
@@ -274,9 +273,9 @@ export default function Home({ file, href, children}) {
           </Fade>
         </Container>
 
-        <Container id="you" fluid className="v-full z-999 bg-green pt-0 mt-0">
+        <Container id="you" fluid className="v-full z-999 bg-green pt-5 mt-0">
           <Fade bottom>
-          <Row  className="align-items-center justify-content-center pt-0 mt-0">
+          <Row  className="align-items-center justify-content-center pt-4 mt-0">
               <Col className="col-10 col-lg-6 pe-lg-0 mb-2 pt-0 mt-0">
                 <h2 className="text-center text-orange bold pt-0 mt-0"><ReactMarkdown>{editingdata.part5_header1}</ReactMarkdown></h2>
               </Col>
@@ -314,19 +313,19 @@ export default function Home({ file, href, children}) {
           </Fade>
         </Container>
       
-        <Container id="calculate" fluid className="v-full z-999 bg-green pt-0 mt-0 mb-5">
+        <Container id="calculate" fluid className="v-full z-999 bg-green pt-5 mt-0 mb-5">
           <Fade bottom>
-            <Row className="align-items-center justify-content-center pt-0 mt-0 mb-0">
+            <Row className="align-items-center justify-content-center pt-4">
               <Col className="col-10 col-lg-7 pe-lg-0 mb-4">
-                <h2 className="text-center text-orange mb-2 bold"><ReactMarkdown>{editingdata.part6_header1}</ReactMarkdown></h2>
-                <ReactMarkdown className="text-center large text-white thin op-9">{editingdata.part6_para1}</ReactMarkdown>
+                <h2 className="text-center text-orange bold"><ReactMarkdown>{editingdata.part6_header1}</ReactMarkdown></h2>
+                <ReactMarkdown className="text-center large my-2 text-white">{editingdata.part6_para1}</ReactMarkdown>
               </Col>
             </Row>
             <Row className="justify-content-center  align-items-stretch mx-lg-5">
                 <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <ReactMarkdown className="h6 text-mildgreen bold mb-0">{editingdata.part6_box1para1}</ReactMarkdown>
-                  <ReactMarkdown className="large text-green mb-0">{editingdata.part6_box1para2}</ReactMarkdown>
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.part6_box1para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.part6_box1para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-3">{editingdata.part6_box1para3}</ReactMarkdown>
                   <Link href="carbon-calculator">
                     <Button variant="green" className="mt-5">{editingdata.part6_box1button1}</Button>
@@ -335,16 +334,16 @@ export default function Home({ file, href, children}) {
               </Col>
               <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <ReactMarkdown className="h6 text-mildgreen bold mb-0">{editingdata.part6_box2para1}</ReactMarkdown>
-                  <ReactMarkdown className="large text-green mb-0 ">{editingdata.part6_box2para2}</ReactMarkdown>
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.part6_box2para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.part6_box2para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-4">{editingdata.part6_box2para3}</ReactMarkdown>
                   <Button variant="green mt-3">{editingdata.part6_box2button1}</Button>
                 </div>
               </Col>
               <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <ReactMarkdown className="h6 text-mildgreen bold mb-0">{editingdata.part6_box3para1}</ReactMarkdown>
-                  <ReactMarkdown className="large text-green mb-0">{editingdata.part6_box3para2}</ReactMarkdown>
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.part6_box3para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.part6_box3para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-3">{editingdata.part6_box3para3}</ReactMarkdown>
                   <Button variant="green" className="mt-5">{editingdata.part6_box3button1}</Button>
                 </div>
