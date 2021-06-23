@@ -44,6 +44,8 @@ export default function Home({ file, href, children}) {
       {name: 'menu4', component: 'markdown' },
       {name: 'menu5', component: 'markdown' },
       {name: 'menu6', component: 'markdown' },
+      {name: 'modal1_header', component: 'markdown' },
+      {name: 'modal1_close', component: 'markdown' },
       {name: 'part1_header1', component: 'markdown' },
       {name: 'part1_header2', component: 'markdown' },
       {name: 'part1_header3', component: 'markdown' },
@@ -129,21 +131,17 @@ export default function Home({ file, href, children}) {
         <Modal.Body>
           <Row className="justify-content-center align-items-center mb-0">
             <Col>
-            <h3 className="text-green smallCaps text-center">THE SMART FOREST INITIATIVE</h3>
+              <h3 className="text-green smallCaps text-center">{editingdata.modal1_header}</h3>
             </Col>
           </Row>
           <Row className="justify-content-center align-items-center ps-lg-4 ms-lg-4">
             <Col className="col-12 d-flex ms-lg-4 mb-2 nudge">
-            
-            <ReactPlayer playing playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4'/>
-           
+              <ReactPlayer playing playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4'/>
             </Col>
           </Row>
         </Modal.Body>
         <Modal.Footer className="p-0">
-        <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleClose}>
-            Close
-          </Button>
+          <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleClose}>{editingdata.modal1_close}</Button>
         </Modal.Footer>
       </Modal>
 
