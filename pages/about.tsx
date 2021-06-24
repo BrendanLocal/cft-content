@@ -146,7 +146,7 @@ export default function Power({ file }) {
               <p className="lead bold mb-5">{editingdata.para1}</p>
               <p className="large op-9 pt-3">{editingdata.para2}</p>
               <p className="large op-9">{editingdata.para3}</p>
-              <p className="text-white text-left smallcaps intro-links-header op-5 mt-5">{editingdata.header2}</p>
+              <p className="text-white text-left smallcaps intro-links-header op-5 mt-5 mb-3">{editingdata.header2}</p>
               <a href="#commitment" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.link1}</a>
               <a href="#forever" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.link2}</a>
             </Col>
@@ -218,12 +218,12 @@ export default function Power({ file }) {
           <Fade bottom>
             <Row className="align-items-center justify-content-center my-2">
               <Col className="col-10 col-lg-7 pe-lg-0">
-                <h3 className="text-center text-orange bold">{editingdata.part2_para1}</h3>
+                <h3 className="text-center text-orange bold">{editingdata.part1_para6}</h3>
               </Col>
             </Row>
             <Row className="text-center justify-content-center mb-5 ">
               <Col className="col-10 text-center pb-5 pe-lg-0">
-                <Button variant="green">{editingdata.part2_button}</Button>
+                <Button variant="green">{editingdata.part1_button}</Button>
               </Col>
             </Row>
           </Fade>
@@ -233,7 +233,7 @@ export default function Power({ file }) {
           <Row className="justify-content-center pt-5 mb-4">
             <Col className="col-10 col-lg-7 text-center pt-3 ">
               <h2 className="text-orange bold">{editingdata.part2_header1}</h2>
-              <p className="text-white px-3 px-lg-5">{editingdata.part2_para1}</p>
+              <p className="text-white px-3 px-lg-5 mb-3">{editingdata.part2_para1}</p>
             </Col>
           </Row>
           <Row className="justify-content-center align-items-center pb-5">

@@ -25,7 +25,8 @@
   font-weight: 100;
 }
 
-@import "react-slideshow-image/dist/styles.css";
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
 
 html,
 body {
@@ -303,16 +304,16 @@ li a, a.underline {
   text-decoration: underline;
 }
 
-p.large {
+.large {
   font-size: 20px!important;
 }
 
 .large, .large * {
-  font-size: 18px !important;
+  font-size: 20px !important;
 }
 
 .large, .large * {
-  font-size: 18px !important;
+  font-size: 20px !important;
 }
 
 .lead {
@@ -328,7 +329,7 @@ p.large {
   font-weight: 200;
 }
 
-p.bold {
+.bold {
 
   font-weight: 700;
 }
@@ -909,7 +910,9 @@ padding: 10%;
   position: relative;
 }
 
-
+div>p {
+  margin-bottom: 0;
+}
 
 /* Infographic */
 

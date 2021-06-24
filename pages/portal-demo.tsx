@@ -9,7 +9,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Map from '../components/portalMap'
-
+import ImageGallery from 'react-image-gallery';
 import Slider from 'react-input-slider';
 import Button from 'react-bootstrap/Button';
 
@@ -114,6 +114,23 @@ const [sliderData,setSliderData] = React.useState({
 })
 
 
+
+    const images = [
+      {
+        original: '/landing-image.png',
+        thumbnail: '/landing-image-thumb.png'
+      },
+      {
+        original: '/landing-image.png',
+        thumbnail: '/landing-image-thumb.png'
+      },
+      {
+        original: '/landing-image.png',
+        thumbnail: '/landing-image-thumb.png'
+      }
+    ]
+
+
 return (
 
 <div>
@@ -172,7 +189,10 @@ return (
                 Dashboard
                 </Tab>
               <Tab className="link bold text-orange">
-                ForestCast<sup>™</sup>
+                ForestCast
+                </Tab>
+                <Tab className="link bold text-orange">
+                Image Gallery
                 </Tab>
             </TabList>
             <TabPanel>
@@ -374,6 +394,11 @@ return (
       </Row>
    
               </TabPanel>
+              
+              <TabPanel>
+                    <ImageGallery items={images} />
+              </TabPanel>
+
               </Tabs>
             </TabPanel>
             <TabPanel>

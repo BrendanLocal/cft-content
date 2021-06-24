@@ -168,7 +168,6 @@ export default function Build({ file }) {
                         <li className="pb-0">{editingdata.part2_step1box1}</li>
                       </ul>
                     </div>
-
                     <div className="card card-drop no-border bg-white px-4 py-2 op-8">
                       <ul className="text-grey text-left checkMark pe-3 pb-0">
                         <li className="pb-0">{editingdata.part2_step1box2}</li>
@@ -685,7 +684,7 @@ export default function Build({ file }) {
               </Col>
             </Row>
           </Fade>
-
+          
           <Fade bottom>
             <Row className="justify-content-center d-flex pb-5 mx-5 mb-5">
               <Col className="col-12 col-md-7 col-lg-7 bg-green roundedBox innerShadow px-5 pt-5 pb-4 m-4 mt-2">
@@ -814,7 +813,7 @@ export default function Build({ file }) {
               <Col className="col-1 horizTab"></Col>
             </Row>
           </Fade>
-
+          
           <Fade bottom>
             <Row className="text-center justify-content-center mb-3 p-4 pb-5">
               <Col className="col-10 col-lg-7 pb-0">
@@ -863,7 +862,7 @@ export default function Build({ file }) {
               </Col>
             </Row>
           </Fade>
-
+          
           <Fade bottom>
             <Row className="justify-content-center d-flex pb-5 mx-5 mb-5">
               <Col className="justify-content-center align-items-center col-12 col-lg-7 bg-green roundedBox innerShadow px-3 pt-5 pb-4 m-4 mt-2">
@@ -968,6 +967,7 @@ export default function Build({ file }) {
               </Col>
             </Row>
           </Fade>
+          
 
           <Fade bottom>
             <Row id="comm-1" className="text-center justify-content-center py-4 px-5 mt-5">
@@ -1036,7 +1036,7 @@ export default function Build({ file }) {
               </Carousel>
             </Row>
           </Fade>
-
+          
           <Fade bottom>
             <Row id="comm-3" className="justify-content-center pt-5 px-5 mb-3">
               <Col className="col-11 col-md-8">
