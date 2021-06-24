@@ -24,7 +24,12 @@ const SignupPage = (file) => {
     label: 'Home Page',
     fields: [
       {name: 'title', component: 'markdown' },
-    ]
+      {name: 'pageName', component: 'markdown' },
+      {name: 'pageURL', component: 'markdown' },
+      {name: 'title', component: 'markdown' },
+      {name: 'signUp', component: 'markdown' },
+      {name: 'Note', component: 'markdown' }
+     ]
   }
 
   const [editingdata, form] = useGithubJsonForm(file, formOptions)
