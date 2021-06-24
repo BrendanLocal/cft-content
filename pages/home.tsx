@@ -28,8 +28,6 @@ const Lang = () => {
     return (language)
   }
 
-
-    
 export default function Home({ file, href, children}) {
   
   const router = useRouter();  

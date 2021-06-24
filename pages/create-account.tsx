@@ -1,9 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import Router from 'next/router';
+import Router, { useRouter } from 'next/router';
 import { useCurrentUser } from '../hooks/index';
+import { GetStaticProps } from 'next';
+import { getGithubPreviewProps, parseJson } from 'next-tinacms-github';
+import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github';
+import file from 'react-player/file';
+import { usePlugin } from 'tinacms';
 
-const SignupPage = () => {
+const Lang = () => {
+  var language ="en";
+    const router = useRouter();
+    if(router.query.lang){ 
+    const lan = JSON.stringify(router.query.lang);
+    language = JSON.parse(lan)
+    }
+    return (language)
+  }
+
+const SignupPage = (file) => {
+  
+  const formOptions = {
+    label: 'Home Page',
+    fields: [
+      {name: 'title', component: 'markdown' },
+    ]
+  }
+
+  const [editingdata, form] = useGithubJsonForm(file, formOptions)
+  usePlugin(form)
+  useGithubToolbarPlugins()
+
   const [user, { mutate }] = useCurrentUser();
   const [errorMsg, setErrorMsg] = useState('');
   useEffect(() => {
@@ -34,10 +61,10 @@ const SignupPage = () => {
   return (
     <>
       <Head>
-        <title>Sign up</title>
+        <title>{editingdata.signUp}</title>
       </Head>
       <div>
-        <h2>Sign up</h2>
+        <h2>{editingdata.signUp}</h2>
         <form onSubmit={handleSubmit}>
           {errorMsg ? <p style={{ color: 'red' }}>{errorMsg}</p> : null}
           <label htmlFor="name">
@@ -64,15 +91,36 @@ const SignupPage = () => {
               placeholder="Create a password"
             />
           </label>
-          <button type="submit">Sign up</button>
+          <button type="submit">{editingdata.signUp}</button>
         </form>
-        <p style={{ color: '#777', textAlign: 'center' }}>
-          Note: The database is public. For your privacy,
-          please avoid using your personal, work email.
-        </p>
+        <p style={{ color: '#777', textAlign: 'center' }}>{editingdata.Note}</p>
       </div>
     </>
   );
 };
 
 export default SignupPage;
+
+/**
+* Fetch data with getStaticProps based on 'preview' mode
+*/
+export const getStaticProps: GetStaticProps = async function({preview, previewData,}) {
+  if (preview) {
+    return getGithubPreviewProps({
+      ...previewData,
+      fileRelativePath: 'content/create-account.json',
+      parse: parseJson,
+    })
+  }
+  return {
+    props: {
+      sourceProvider: null,
+      error: null,
+      preview: false,
+      file: {
+        fileRelativePath: 'content/create-account.json',
+        data: (await import('../content/create-account.json')).default,
+      },
+    },
+  }
+}
