@@ -76,10 +76,11 @@
       
     "dataHeader":"Subtotals",
     "dataType1":"Heating & Electricity",
-    "dataType2":"Vehicle Fleet",
-    "dataType3":"Employee Commute",
-    "dataType4":"Employee Travel",
-    "dataType5":"Freight Shipments",
+    "dataType2":"Employee Commute",
+    "dataType3":"Student Commute",
+    "dataType4":"Other Transportation",
+    "dataType5":"Other Vehicle",
+    "dataType6":"Flights",
     "dataTotal":"TOTAL",
     "dataDisclaimer":"This is only an estimate etc",
     
@@ -88,8 +89,8 @@
     "box1Button":"Calculate Your Net-Zero Target",
   
     "otherHeader":"Other Carbon Calculators",
-    "otherbox1Header":"School",
-    "otherbox1Para":"Calculate how much carbon your school must offset to reach net-zero.",
+    "otherbox1Header":"Corporate",
+    "otherbox1Para":"Calculate how much carbon your corporation must offset to reach net-zero.",
     "otherbox1button":"SELECT",
     "otherbox2Header":"Personal",
     "otherbox2Para":"Calculate how much carbon you must personally offset to reach net-zero.",
