@@ -1,10 +1,7 @@
 {
-  "":"",
   "header":"Corporate Carbon Calculator",
-
   "para1":"Calculate how much carbon your corporation must offset to reach net-zero",
   "select":"Select...",
-
   "businessHeader":"Heating & Electricity",
   "businessTypeHeader":"What type of business do you have?",
     "businessType1":"Airline & Air Travel",
