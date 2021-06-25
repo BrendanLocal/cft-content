@@ -3,1008 +3,916 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-
 import Link from 'next/link'
+import { useRouter } from "next/router";
+import { GetStaticProps } from "next";
+import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
+import { useGithubJsonForm, useGithubToolbarPlugins } from "react-tinacms-github";
+import { usePlugin } from "tinacms";
+import { useState } from "react";
 
+const Lang = () => {
+  var language ="en";
+    const router = useRouter();
+    if(router.query.lang){ 
+    const lan = JSON.stringify(router.query.lang);
+    language = JSON.parse(lan)
+    }
+    return (language)
+  }
 
+const App = (file) => {
+  
+  const formOptions = {
+    label: 'Home Page',
+    fields: [
+      {name: 'businessType1', component: 'markdown' },
+      {name: 'businessType2', component: 'markdown' },
+      {name: 'businessType3', component: 'markdown' },
+      {name: 'businessType4', component: 'markdown' },
+      {name: 'businessType5', component: 'markdown' },
+      {name: 'businessType6', component: 'markdown' },
+      {name: 'businessType7', component: 'markdown' },
+      {name: 'businessType8', component: 'markdown' },
+      {name: 'businessType9', component: 'markdown' },
+      {name: 'businessType10', component: 'markdown' },
+      {name: 'businessType11', component: 'markdown' },
+      {name: 'businessType12', component: 'markdown' },
+      {name: 'businessType13', component: 'markdown' },
+      {name: 'businessType14', component: 'markdown' },
+      {name: 'businessType15', component: 'markdown' },
+      {name: 'businessType16', component: 'markdown' },
+      {name: 'businessType17', component: 'markdown' },
+      {name: 'businessType18', component: 'markdown' },
+      {name: 'businessType19', component: 'markdown' },
+      {name: 'businessType20', component: 'markdown' },
+      {name: 'businessType21', component: 'markdown' },
+      {name: 'businessType22', component: 'markdown' },
+      {name: 'businessType23', component: 'markdown' },
+      {name: 'businessType24', component: 'markdown' },
+      {name: 'businessType25', component: 'markdown' },
+      {name: 'businessType26', component: 'markdown' },
+      {name: 'businessType27', component: 'markdown' },
+      {name: 'businessType28', component: 'markdown' }
+     ]
+  }
 
+  const [show, setShow] = useState(false);
 
-const App = () => {
-
+  const [editingdata, form] = useGithubJsonForm(file, formOptions)
+  usePlugin(form)
+  useGithubToolbarPlugins()
 
   const [selectBusinessType, setBusinessType] = React.useState([
     "Airline & Air Travel",
-"Alcohol, Tobacco, & Cannabis Retail",
-"Auto Parts & Repair",
-"Beauty & Wellness",
-"Cafe/Restaurant",
-"Car Dealership",
-"Communication Service (Telecommunication, Media, Newspaper, Business,  etc)",
-"Construction",
-"Financial Service (Insurance, Bank, Advising, etc)",
-"Fitness (Gym, Personal Training)",
-"Home/Building Contractor",
-"Hospital",
-"Hospitality (Hotel, Motel, Air B&B)",
-"Information Technology (Cybersecurity, networking, software, etc.)",
-"Grocery Store",
-"Lumber/Pulp Mill",
-"Product Manufacturer",
-"Mining",
-"Medical Equipment/Pharmaceuticals",
-"Medical Care Provider",
-"Movie Theatre",
-"Oil & Gas Production",
-"Other",
-"Professional Service (Law, Engineering, Consulting, Business)",
-"Real Estate",
-"Retail (Clothing, Furniture, Books, etc)",
-"Transporation (Bus, Taxi, etc)",
-"Utility Provider (Electrical, Hydro, Natural Gas, etc.)	"
+    "Alcohol, Tobacco, & Cannabis Retail",
+    "Auto Parts & Repair",
+    "Beauty & Wellness",
+    "Cafe/Restaurant",
+    "Car Dealership",
+    "Communication Service (Telecommunication, Media, Newspaper, Business,  etc)",
+    "Construction",
+    "Financial Service (Insurance, Bank, Advising, etc)",
+    "Fitness (Gym, Personal Training)",
+    "Home/Building Contractor",
+    "Hospital",
+    "Hospitality (Hotel, Motel, Air B&B)",
+    "Information Technology (Cybersecurity, networking, software, etc.)",
+    "Grocery Store",
+    "Lumber/Pulp Mill",
+    "Product Manufacturer",
+    "Mining",
+    "Medical Equipment/Pharmaceuticals",
+    "Medical Care Provider",
+    "Movie Theatre",
+    "Oil & Gas Production",
+    "Other",
+    "Professional Service (Law, Engineering, Consulting, Business)",
+    "Real Estate",
+    "Retail (Clothing, Furniture, Books, etc)",
+    "Transporation (Bus, Taxi, etc)",
+    "Utility Provider (Electrical, Hydro, Natural Gas, etc.)	"
   ])
-
-  const [counting, setCounting] = React.useState([]);
   
-const [selectBuild, setBuild] = React.useState("");
-const [selectSize, setSize] = React.useState("");
-const [selectNum, setNum] = React.useState("");
-const [vehicleSub, setVehicle] = React.useState(0);
-const [buildSub, setBuildSub] = React.useState(0);
-const [vehicleArray, setVehicleArray] = React.useState({
-carGas: {mult:0.15179,count: null, miles: null},
-carDiesel: {mult:0.16748,count: null, miles: null},
-carHybrid: {mult:0.10487,count: null, miles: null},
-truckGas: {mult:0.27807,count: null, miles: null},
-truckDiesel: {mult:0.20419,count: null, miles: null},
-truckHybrid: {mult:0.11518,count: null, miles: null},
-deliveryGas: {mult:0.21962,count: null, miles: null},
-deliveryDiesel: {mult:0.2471,count: null, miles: null},
-semiNonFrig: {mult:0.8654,count: null, miles: null},
-semiFrig: {mult:1.0142,count: null, miles: null},
-jetNum: {mult:2.9237,count: null, miles: null}});
-const [transitArray, setTransitArray] = React.useState({
-transitCar: {mult:0.1743,count: null, miles: null},
-transitBus: {mult:0.06214,count: null, miles: null},
-transitTrain: {mult:0.06214,count: null, miles: null}});
-const [transitSub, setTransit] = React.useState(0);
-const [flightArray, setFlightArray] = React.useState({
-flyShort: {mult:122.15,count: null},
-flyMediumEco: {mult:305.96,count: null},
-flyMediumBus: {mult:458.94,count: null},
-flyLongEco: {mult:696.225,count: null},
-flyLongEcoPlus: {mult:1113.9,count: null},
-flyLongBus: {mult:2018.95,count: null},
-flyLongFirst: {mult:2784.75,count: null},
-flyHotels: {mult:17.4, count: null}});
-const [flightEmp, setEmp] = React.useState(0);
-const [flightSub, setFlight] = React.useState(0);
-const [freightArray, setFreightArray] = React.useState({
-  freightVan: {mult:0.61628,count: null, miles: null},
-  freightSemiNonFrig: {mult:0.1065,count: null, miles: null},
-  freightSemiFrig: {mult:0.12481,count: null, miles: null},
-  freightCargo: {mult:0.01323,count: null, miles: null},
-  freightAirLess: {mult:2.20496,count: null, miles: null},
-  freightAirMore: {mult:1.13382,count: null, miles: null}});
+  const [counting, setCounting] = React.useState([]);
+  const [selectBuild, setBuild] = React.useState("");
+  const [selectSize, setSize] = React.useState("");
+  const [selectNum, setNum] = React.useState("");
+  const [vehicleSub, setVehicle] = React.useState(0);
+  const [buildSub, setBuildSub] = React.useState(0);
+  const [transitSub, setTransit] = React.useState(0);
+  const [flightEmp, setEmp] = React.useState(0);
+  const [flightSub, setFlight] = React.useState(0);
   const [freightSub, setFreight] = React.useState(0);
 
+  const [vehicleArray, setVehicleArray] = React.useState({
+    carGas: {mult:0.15179,count: null, miles: null},
+    carDiesel: {mult:0.16748,count: null, miles: null},
+    carHybrid: {mult:0.10487,count: null, miles: null},
+    truckGas: {mult:0.27807,count: null, miles: null},
+    truckDiesel: {mult:0.20419,count: null, miles: null},
+    truckHybrid: {mult:0.11518,count: null, miles: null},
+    deliveryGas: {mult:0.21962,count: null, miles: null},
+    deliveryDiesel: {mult:0.2471,count: null, miles: null},
+    semiNonFrig: {mult:0.8654,count: null, miles: null},
+    semiFrig: {mult:1.0142,count: null, miles: null},
+    jetNum: {mult:2.9237,count: null, miles: null}
+  });
 
-let buildType = null;
-let buildSize = null;
-let buildNum = 1;
-let subtotalVehicle = 0;
-let subtotalTransit = 0;
-let subtotalFlight = 0;
-let subtotalBuild = 0;
-let subtotalFreight = 0;
+  const [transitArray, setTransitArray] = React.useState({
+    transitCar: {mult:0.1743,count: null, miles: null},
+    transitBus: {mult:0.06214,count: null, miles: null},
+    transitTrain: {mult:0.06214,count: null, miles: null}
+  });
 
+  const [flightArray, setFlightArray] = React.useState({
+    flyShort: {mult:122.15,count: null},
+    flyMediumEco: {mult:305.96,count: null},
+    flyMediumBus: {mult:458.94,count: null},
+    flyLongEco: {mult:696.225,count: null},
+    flyLongEcoPlus: {mult:1113.9,count: null},
+    flyLongBus: {mult:2018.95,count: null},
+    flyLongFirst: {mult:2784.75,count: null},
+    flyHotels: {mult:17.4, count: null}
+  });
 
-buildType = selectBuild;
-buildSize = Number(selectSize);
-buildNum = Number(selectNum);
+  const [freightArray, setFreightArray] = React.useState({
+    freightVan: {mult:0.61628,count: null, miles: null},
+    freightSemiNonFrig: {mult:0.1065,count: null, miles: null},
+    freightSemiFrig: {mult:0.12481,count: null, miles: null},
+    freightCargo: {mult:0.01323,count: null, miles: null},
+    freightAirLess: {mult:2.20496,count: null, miles: null},
+    freightAirMore: {mult:1.13382,count: null, miles: null}
+  });
 
+  let buildType = null;
+  let buildSize = null;
+  let buildNum = 1;
+  let subtotalVehicle = 0;
+  let subtotalTransit = 0;
+  let subtotalFlight = 0;
+  let subtotalBuild = 0;
+  let subtotalFreight = 0;
 
-const changeBuild = (event) => {
-setBuild(event.target.value);
-};
+  buildType = selectBuild;
+  buildSize = Number(selectSize);
+  buildNum = Number(selectNum);
 
-const changeSize = (event) => {
-setSize(event.target.value);
-}
+  const changeBuild = (event) => {
+    setBuild(event.target.value);
+  };
 
-const changeNum = (event) => {
-setNum(event.target.value);
-}
-
-
-const buildArray = {
-  "5000":{	Office:17364.7272966102,	Medical:11745.2006980804,	School:4757.66316027602,	Care:12771.2658005338,	Warehouse:9099.64324928882,	Hotel:9690.54436545558,	Hospital:37996.8383017167,	Food:31883.4665465874,	Restaurant:31883.4665465874,	Retail:14238.4420898752,	Other:21150.1136386494	},
-  "10000":{	Office:36410.3314832734,	Medical:31652.8432142392,	School:50910.7964173328,	Care:38785.1544490552,	Warehouse:33615.6982670747,	Hotel:40569.5408950621,	Hospital:37996.8383017167,	Food:69291.7802772103,	Restaurant:69291.7802772103,	Retail:34880.9486788779,	Other:41842.7553285601	},
-  "50000":{	Office:107974.850039479,	Medical:121467.615511552,	School:126421.429416638,	Care:135848.999758979,	Warehouse:86165.0149485114,	Hotel:110204.71235101,	Hospital:378941.441441445,	Food:336771.355336677,	Restaurant:336771.355336677,	Retail:130500.101484575,	Other:87631.4688550379	},
-  "100000":{	Office:192271.827419795,	Medical:189560.602466795,	School:128368.440095647,	Care:217415.857796719,	Warehouse:107078.502637714,	Hotel:221974.440768748,	Hospital:474328.650611625,	Food:325826.606327465,	Restaurant:325826.606327465,	Retail:111670.883868581,	Other:127024.366414023	},
-  "150000":{	Office:384543.65483959,	Medical:379121.204933589,	School:256736.880191293,	Care:434831.715593438,	Warehouse:214157.005275428,	Hotel:443948.881537496,	Hospital:948657.301223249,	Food:651653.21265493,	Restaurant:651653.21265493,	Retail:223341.767737162,	Other:254048.732828046	},
-  "200000":{	Office:769087.30967918,	Medical:758242.409867179,	School:513473.760382587,	Care:869663.431186876,	Warehouse:428314.010550856,	Hotel:887897.763074991,	Hospital:1897314.6024465,	Food:1303306.42530986,	Restaurant:1303306.42530986,	Retail:446683.535474323,	Other:508097.465656091	},
-  "200001":{	Office:2234861.05228483,	Medical:5452546.29629634,	School:1112764.55026456,	Care:1377046.13095239,	Warehouse:1092785.89654373,	Hotel:1861523.06967986,	Hospital:5946424.34988185,	Food:1439977.47747749,	Restaurant:1439977.47747749,	Retail:2446129.79207279,	Other:1848813.90303718	}
-}
-
-
-if (buildType && buildNum && buildSize) {
-
-subtotalBuild = Number((buildArray[buildSize][buildType] * buildNum /1000))
-
-}
-
-const calculateVehicle=()=> {
-subtotalVehicle = 0
-for (let x of Object.keys(vehicleArray)) {
-let i = 0;
-if (vehicleArray[x].count && vehicleArray[x].miles){
-i += Number((vehicleArray[x].count * vehicleArray[x].mult * vehicleArray[x].miles))/1000
-
-}
-subtotalVehicle += i
-}
-
-setVehicle(Number(subtotalVehicle))
-}
-
-
-
-const calculateCount=(e)=>{
-vehicleArray[e.target.name].count = Number(e.target.value)
-calculateVehicle()
-}
-
-const calculateMiles=(e)=>{
-vehicleArray[e.target.name].miles = Number(e.target.value)
-calculateVehicle()
-}
-
-
-const calculateTransit=()=> {
-subtotalTransit = 0
-for (let x of Object.keys(transitArray)) {
-let i = 0;
-if (transitArray[x].count && transitArray[x].miles){
-i += Number((transitArray[x].count * transitArray[x].mult * transitArray[x].miles * 231))/1000
-
-}
-subtotalTransit += i
-}
-
-setTransit(Number(subtotalTransit))
-}
-
-const calculateTransitCount=(e)=>{
-transitArray[e.target.name].count = Number(e.target.value)
-calculateTransit()
-}
-
-const calculateTransitMiles=(e)=>{
-transitArray[e.target.name].miles = Number(e.target.value)
-calculateTransit()
-}
-
-
-const calculateFlight=()=> {
-subtotalFlight = 0
-for (let x of Object.keys(flightArray)) {
-let i = 0;
-i += Number((flightArray[x].count * flightArray[x].mult * flightEmp))/1000
-subtotalFlight += i
-}
-setFlight(Number(subtotalFlight))
-}
-
-const calculateFlightCount=(e)=>{
-flightArray[e.target.name].count = Number(e.target.value)
-calculateFlight()
-}
-
-const calculateEmp=(e)=>{
-setEmp(e.target.value);
-}
-
-
-const calculateFreight=()=> {
-  subtotalFreight = 0
-  for (let x of Object.keys(freightArray)) {
-  let i = 0;
-  i += Number((freightArray[x].count * freightArray[x].mult * freightArray[x].miles))/1000
-  subtotalFreight += i
-  }
-  setFreight(Number(subtotalFreight))
+  const changeSize = (event) => {
+    setSize(event.target.value);
   }
 
-const calculateFreightNum=(e)=>{
-  freightArray[e.target.name].count = Number(e.target.value)
-  calculateFreight()
-}
-  
-const calculateFreightMiles=(e)=>{
-  freightArray[e.target.name].miles = Number(e.target.value)
-  calculateFreight()
-}
+  const changeNum = (event) => {
+    setNum(event.target.value);
+  }
 
 
-
-let total = vehicleSub + subtotalBuild + transitSub + flightSub + freightSub;
-
-
-return (
-
-
-<div className="bg-corp">
-  <Container className="p-5">
-    <Row className="justify-content-center">
-      <Col className="col-11 col-lg-10 pt-5 align-items-center my-4 pt-5">
-      
-      <h1 className="emphasis text-orange text-center bold tight-drop-light">Corporate Carbon Calculator</h1>
-      
-      </Col>
-    </Row>
-    <Row className="justify-content-center">
-      <Col className="p-3 col-11 col-lg-6">
-      <div className="card roundedBox no-border bg-green p-4 innerShadow cardSpacing">
-      <p className="lead text-white m-2 calc-intro">Calculate how much carbon your corporation must offset to reach net-zero</p>
-      </div>
-      <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
-        <Row>
-          <Col>
-          <h4 className="text-green">
-            Heating & Electricity
-          </h4>
-
-        <hr/>
-          </Col>
-
-        </Row>
-        <Row>
-          <Col> 
-          <label htmlFor="business">What type of business do you have?</label><br />
-          <select name="business" >
-            <option value="" hidden>Select...</option>
-            <option>	Airline & Air Travel	</option>
-<option>	Alcohol, Tobacco, & Cannabis Retail	</option>
-<option>	Auto Parts & Repair	</option>
-<option>	Beauty & Wellness	</option>
-<option>	Cafe/Restaurant	</option>
-<option>	Car Dealership	</option>
-<option>	Communication Service (Telecommunication, Media, Newspaper, Business,  etc)	</option>
-<option>	Construction	</option>
-<option>	Financial Service (Insurance, Bank, Advising, etc)	</option>
-<option>	Fitness (Gym, Personal Training)	</option>
-<option>	Home/Building Contractor	</option>
-<option>	Hospital	</option>
-<option>	Hospitality (Hotel, Motel, Air B&B)	</option>
-<option>	Information Technology (Cybersecurity, networking, software, etc.)	</option>
-<option>	Grocery Store	</option>
-<option>	Lumber/Pulp Mill	</option>
-<option>	Product Manufacturer	</option>
-<option>	Mining	</option>
-<option>	Medical Equipment/Pharmaceuticals	</option>
-<option>	Medical Care Provider	</option>
-<option>	Movie Theatre	</option>
-<option>	Oil & Gas Production	</option>
-<option>	Other	</option>
-<option>	Professional Service (Law, Engineering, Consulting, Business)	</option>
-<option>	Real Estate	</option>
-<option>	Retail (Clothing, Furniture, Books, etc)	</option>
-<option>	Transporation (Bus, Taxi, etc)	</option>
-<option>	Utility Provider (Electrical, Hydro, Natural Gas, etc.)	</option>
-          </select>
-          </Col>
-        </Row>
-        <Row>
-          <Col> 
-          <label htmlFor="building">Which type of commercial space is the building?</label><br />
-          <select name="building" onChange={changeBuild} value={selectBuild}>
-            <option value="" hidden>Select...</option>
-            <option value='Office'>Office Building (Non-Medical)</option>
-            <option value='Medical'>Medical Office Building</option>
-            <option value='School'>Elementary/Secondary School</option>
-            <option value='Care'>Assisted Daily/ Residential Care Facility</option>
-            <option value='Warehouse'>Warehouse</option>
-            <option value='Hotel'>Hotel/Motel/Lodge</option>
-            <option value='Hospital'>Hospital</option>
-            <option value='Food'>Food and Beverage Store</option>
-
-            <option value='Restaurant'>Restaurant</option>
-            <option value='Retail'>Non-Food Retail</option>
-            <option value='Other'>Other</option>
-          </select>
-          </Col>
-        </Row>
+  const buildArray = {
+    "5000":{	Office:17364.7272966102,	Medical:11745.2006980804,	School:4757.66316027602,	Care:12771.2658005338,	Warehouse:9099.64324928882,	Hotel:9690.54436545558,	Hospital:37996.8383017167,	Food:31883.4665465874,	Restaurant:31883.4665465874,	Retail:14238.4420898752,	Other:21150.1136386494	},
+    "10000":{	Office:36410.3314832734,	Medical:31652.8432142392,	School:50910.7964173328,	Care:38785.1544490552,	Warehouse:33615.6982670747,	Hotel:40569.5408950621,	Hospital:37996.8383017167,	Food:69291.7802772103,	Restaurant:69291.7802772103,	Retail:34880.9486788779,	Other:41842.7553285601	},
+    "50000":{	Office:107974.850039479,	Medical:121467.615511552,	School:126421.429416638,	Care:135848.999758979,	Warehouse:86165.0149485114,	Hotel:110204.71235101,	Hospital:378941.441441445,	Food:336771.355336677,	Restaurant:336771.355336677,	Retail:130500.101484575,	Other:87631.4688550379	},
+    "100000":{	Office:192271.827419795,	Medical:189560.602466795,	School:128368.440095647,	Care:217415.857796719,	Warehouse:107078.502637714,	Hotel:221974.440768748,	Hospital:474328.650611625,	Food:325826.606327465,	Restaurant:325826.606327465,	Retail:111670.883868581,	Other:127024.366414023	},
+    "150000":{	Office:384543.65483959,	Medical:379121.204933589,	School:256736.880191293,	Care:434831.715593438,	Warehouse:214157.005275428,	Hotel:443948.881537496,	Hospital:948657.301223249,	Food:651653.21265493,	Restaurant:651653.21265493,	Retail:223341.767737162,	Other:254048.732828046	},
+    "200000":{	Office:769087.30967918,	Medical:758242.409867179,	School:513473.760382587,	Care:869663.431186876,	Warehouse:428314.010550856,	Hotel:887897.763074991,	Hospital:1897314.6024465,	Food:1303306.42530986,	Restaurant:1303306.42530986,	Retail:446683.535474323,	Other:508097.465656091	},
+    "200001":{	Office:2234861.05228483,	Medical:5452546.29629634,	School:1112764.55026456,	Care:1377046.13095239,	Warehouse:1092785.89654373,	Hotel:1861523.06967986,	Hospital:5946424.34988185,	Food:1439977.47747749,	Restaurant:1439977.47747749,	Retail:2446129.79207279,	Other:1848813.90303718	}
+  }
 
 
-        <Row>
-          <Col>
-          <label htmlFor="size">How many square feet is the building?</label><br />
-          <select name="size" value={selectSize} onChange={changeSize}>
-            <option value="" hidden>Select...</option>
-            <option value='5000'>&lt;5000</option>
-            <option value='10000'>5000-10,000</option>
-            <option value='50000'>10,000-50,000</option>
-            <option value='100000'>50,000-100,000</option>
-            <option value='150000'>100,000-150,000</option>
-            <option value='200000'>150,000-200,000</option>
-            <option value='200001'>200,000+</option>
-          </select>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-          <label htmlFor="number">How many buildings of this type are in the organization?</label><br />
-          <input  onChange={changeNum} type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }} placeholder="Number of buildings of this type" />
+  if (buildType && buildNum && buildSize) {
+    subtotalBuild = Number((buildArray[buildSize][buildType] * buildNum /1000))
+  }
 
-          </Col>
-        </Row>
-        
-        
-      </div>
-      <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
-        <Row>
-          <Col className="col-12">
-          <h3 className="text-green">
-            Vehicle Fleet
-          </h3>
-          <p className="text-grey">Please input the following information for all company-owned fleet vehicles:</p>
+  const calculateVehicle=()=> {
+    subtotalVehicle = 0
+    for (let x of Object.keys(vehicleArray)) {
+      let i = 0;
+      if (vehicleArray[x].count && vehicleArray[x].miles){
+        i += Number((vehicleArray[x].count * vehicleArray[x].mult * vehicleArray[x].miles))/1000
+      }
+    subtotalVehicle += i
+  }
 
-        <hr/>
-          </Col>
-        
-          <Col>
-          <h5 className="smallCaps text-small text-green">Cars</h5>
+  setVehicle(Number(subtotalVehicle))
+  }
+
+  const calculateCount=(e)=>{
+    vehicleArray[e.target.name].count = Number(e.target.value)
+    calculateVehicle()
+  }
+
+  const calculateMiles=(e)=>{
+    vehicleArray[e.target.name].miles = Number(e.target.value)
+    calculateVehicle()
+  }
+
+
+  const calculateTransit=()=> {
+    subtotalTransit = 0
+    for (let x of Object.keys(transitArray)) {
+      let i = 0;
+      if (transitArray[x].count && transitArray[x].miles){
+        i += Number((transitArray[x].count * transitArray[x].mult * transitArray[x].miles * 231))/1000
+      }
+      subtotalTransit += i
+    }
+    setTransit(Number(subtotalTransit))
+  }
+
+  const calculateTransitCount=(e)=>{
+    transitArray[e.target.name].count = Number(e.target.value)
+    calculateTransit()
+  }
+
+  const calculateTransitMiles=(e)=>{
+    transitArray[e.target.name].miles = Number(e.target.value)
+    calculateTransit()
+  }
+
+
+  const calculateFlight=()=> {
+    subtotalFlight = 0
+    for (let x of Object.keys(flightArray)) {
+      let i = 0;
+      i += Number((flightArray[x].count * flightArray[x].mult * flightEmp))/1000
+      subtotalFlight += i
+    }
+    setFlight(Number(subtotalFlight))
+  }
+
+  const calculateFlightCount=(e)=>{
+    flightArray[e.target.name].count = Number(e.target.value)
+    calculateFlight()
+  }
+
+  const calculateEmp=(e)=>{
+    setEmp(e.target.value);
+  }
+
+  const calculateFreight=()=> {
+    subtotalFreight = 0
+    for (let x of Object.keys(freightArray)) {
+      let i = 0;
+      i += Number((freightArray[x].count * freightArray[x].mult * freightArray[x].miles))/1000
+      subtotalFreight += i
+    }
+    setFreight(Number(subtotalFreight))
+  }
+
+  const calculateFreightNum=(e)=>{
+    freightArray[e.target.name].count = Number(e.target.value)
+    calculateFreight()
+  }
+    
+  const calculateFreightMiles=(e)=>{
+    freightArray[e.target.name].miles = Number(e.target.value)
+    calculateFreight()
+  }
+
+  let total = vehicleSub + subtotalBuild + transitSub + flightSub + freightSub;
+
+  return (
+
+
+  <div className="bg-corp">
+    <Container className="p-5">
+      <Row className="justify-content-center">
+        <Col className="col-11 col-lg-10 pt-5 align-items-center my-4 pt-5">
+          <h1 className="emphasis text-orange text-center bold tight-drop-light">{editingdata.header}</h1>
+        </Col>
+      </Row>
+      <Row className="justify-content-center">
+        <Col className="p-3 col-11 col-lg-6">
+        <div className="card roundedBox no-border bg-green p-4 innerShadow cardSpacing">
+          <p className="lead text-white m-2 calc-intro">{editingdata.para1}</p>
+        </div>
+
+        <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
           <Row>
-            <Col className="col-12 col-xl-4">
-            Gas
-            </Col>
-            <Col className="col-xl-4">
-            <input onChange={calculateCount} name="carGas" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}  placeholder="Number of vehicles" />
-            </Col>
-            <Col className="col-xl-4">
-            <input onChange={calculateMiles} name="carGas" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }} placeholder="Annual Km per vehicle" />
-            </Col>
-          </Row>
-          <Row>
-            <Col  className="col-10 col-xl-4">
-            Diesel
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="carDiesel" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}  placeholder="Number of vehicles" />
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="carDiesel" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}   placeholder="Annual Km per vehicle" />
-            </Col>
-          </Row>
-          <Row>
-            <Col className="col-10 col-xl-4">
-            Hybrid
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="carHybrid" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}  placeholder="Number of vehicles" />
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="carHybrid" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}  placeholder="Annual Km per vehicle" />
-            </Col>
-          </Row>
-          </Col>
-        </Row>
-        <hr/>
-        <Row>
-          <Col>
-           <h5 className="smallCaps text-small text-green">Pickups/SUVs</h5>
-          <Row>
-            <Col className="col-12 col-xl-4">
-            Gas
-            </Col>
-            <Col className="col-6 col-xl-4 ">
-            <input onChange={calculateCount} name="truckGas" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}  placeholder="Number of vehicles" />
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="truckGas" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}   placeholder="Annual Km per vehicle" />
-            </Col>
-          </Row>
-          <Row>
-            <Col  className="col-10 col-xl-4">
-            Diesel
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="truckDiesel" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}  placeholder="Number of vehicles" />
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="truckDiesel" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}  placeholder="Annual Km per vehicle" />
-            </Col>
-          </Row>
-          <Row>
-            <Col className="col-10 col-xl-4">
-            Hybrid
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="truckHybrid" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}   placeholder="Number of vehicles" />
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="truckHybrid" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}   placeholder="Annual Km per vehicle" />
-            </Col>
-          </Row>
-          </Col>
-        </Row>
-        <hr/>
-        <Row>
-          <Col>
-           <h5 className="smallCaps text-small text-green">Delivery Trucks/Vans (Up to 3.5 tonnes)</h5>
-          <Row>
-            <Col className="col-10 col-xl-4">
-            Gas
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="deliveryGas" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}   placeholder="Number of vehicles" />
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="deliveryGas" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}  placeholder="Annual Km per vehicle" />
-            </Col>
-          </Row>
-          <Row>
-            <Col className="col-10 col-xl-4">
-            Diesel
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="deliveryDiesel" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}  placeholder="Number of vehicles" />
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="deliveryDiesel" type="number"
-              placeholder="Annual Km per vehicle" />
-            </Col>
-          </Row>
-          </Col>
-        </Row>
-        <hr/>
-        <Row>
-          <Col>
-           <h5 className="smallCaps text-small text-green">Semi Trailer</h5>
-          <Row>
-            <Col className="col-10 col-xl-4">
-            Refrigerated
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="semiFrig" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }} placeholder="Number of vehicles" />
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="semiFrig" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}   placeholder="Annual Km per vehicle" />
-            </Col>
-          </Row>
-          <Row>
-            <Col className="col-10 col-xl-4">
-            Non-Refrigerated
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="semiNonFrig" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}   placeholder="Number of vehicles" />
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="semiNonFrig" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}  placeholder="Annual Km per vehicle" />
-            </Col>
-          </Row>
-          </Col>
-        </Row>
-        <hr/>
-        <Row>
-            <Col className="col-10 col-xl-4">
-             <h5 className="smallCaps text-small text-green">Private Jet</h5>
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateCount} name="jetNum" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}  placeholder="Number of vehicles" />
-            </Col>
-            <Col className="col-6 col-xl-4">
-            <input onChange={calculateMiles} name="jetNum" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}  placeholder="Annual Km per vehicle" />
-            </Col>
-        </Row>
-      </div>
-      <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
-        <Row>
-          <Col>
-          <h3 className="text-green">
-            Employee Commute
-          </h3>
-          <p className="text-grey">Please input the following information for your employees' daily commute:</p>
-          </Col>
-        </Row>
-        <Row>
-          <Col className="col-12 col-xl-4">
-          Car
-          </Col>
-          <Col className="col-xl-4">
-          <input onChange={calculateTransitCount} name="transitCar" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}  placeholder="Number of vehicles" />
-          </Col>
-          <Col className="col-xl-4">
-          <input onChange={calculateTransitMiles} name="transitCar" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }} 
-            placeholder="Average Km per day" />
-          </Col>
-        </Row>
-        <Row>
-          <Col className="col-12 col-xl-4">
-          Bus
-          </Col>
-          <Col className="col-xl-4">
-          <input onChange={calculateTransitCount} name="transitBus" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }} placeholder="Number of employees" />
-          </Col>
-          <Col className="col-xl-4">
-          <input onChange={calculateTransitMiles} name="transitBus" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }} placeholder="Average Km per day" />
-          </Col>
-        </Row>
-        <Row>
-          <Col className="col-10 col-xl-4">
-          Train
-          </Col>
-          <Col className="col-6 col-xl-4">
-          <input onChange={calculateTransitCount} name="transitTrain" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }} placeholder="Number of employees" />
-          </Col>
-          <Col className="col-6 col-xl-4">
-          <input onChange={calculateTransitMiles} name="transitTrain" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}  placeholder="Average Km per day" />
-          </Col>
-        </Row>
-
-      </div>
-
-      <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
-        <Row>
-          <Col>
-          <h3 className="text-green">
-            Employee Travel
-          </h3>
-          <p className="text-grey">Please input the following information for your employees:</p>
-          </Col>
-        </Row>
-        <hr/>
-        <Row>
-          <Col className="col-10 col-sm-5 col-xl-4">
-          Employees that fly
-          </Col>
-          <Col className="col-2 col-sm-1 col-xl-4">
-          </Col>
-          <Col className="col-6 col-xl-4">
-          <input onChange={calculateEmp} name="flyEmployees" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}
-            placeholder="Number of employees who fly" />
-          </Col>
-        </Row>
-        <hr/>
-        <Row>
-          <Col className="col-12 col-xl-4">
-          Short (&lt;2 hrs)
-          </Col>
-          <Col>
-          <Row>
-            <Col className="col-6 col-md-6">
-            All
-            </Col>
-            <Col className="col-6 col-xl-6">
-            <input onChange={calculateFlightCount} name="flyShort" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }} 
-              placeholder="Flights per employee" />
-            </Col>
-          </Row>
-          </Col>
-          </Row>
-          <hr/>
-        <Row>
-            <Col className="col-10 col-xl-4">
-            Medium (2-4hrs)
-            </Col>
             <Col>
-            <Row>
-              <Col className="col-6">
-              Economy
-              </Col>
-              <Col className="col-6">
-              <input onChange={calculateFlightCount} name="flyMediumEco" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}
-                placeholder="Flights per employee" />
-              </Col>
-            </Row>
-            <Row>
-              <Col className="col-6 ">
-              Business/First
-              </Col>
-              <Col className="col-6">
-              <input onChange={calculateFlightCount} name="flyMediumBus" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}
-                placeholder="Flights per employee" />
-              </Col>
-            </Row>
+            <h4 className="text-green">
+              {editingdata.box1Header}
+            </h4>
+            <hr/>
+            </Col>
+          </Row>
+          <Row>
+            <Col> 
+            <label htmlFor="business">{editingdata.businessTypeHeader}</label><br />
+            <select name="business" >
+              <option value="" hidden>{editingdata.select}</option>
+              <option>{editingdata.businessType1}</option>
+              <option>{editingdata.businessType2}</option>
+              <option>{editingdata.businessType3}</option>
+              <option>{editingdata.businessType4}</option>
+              <option>{editingdata.businessType5}</option>
+              <option>{editingdata.businessType6}</option>
+              <option>{editingdata.businessType7}</option>
+              <option>{editingdata.businessType8}</option>
+              <option>{editingdata.businessType9}</option>
+              <option>{editingdata.businessType10}</option>
+              <option>{editingdata.businessType11}</option>
+              <option>{editingdata.businessType12}</option>
+              <option>{editingdata.businessType13}</option>
+              <option>{editingdata.businessType14}</option>
+              <option>{editingdata.businessType15}</option>
+              <option>{editingdata.businessType16}</option>
+              <option>{editingdata.businessType17}</option>
+              <option>{editingdata.businessType18}</option>
+              <option>{editingdata.businessType19}</option>
+              <option>{editingdata.businessType20}</option>
+              <option>{editingdata.businessType21}</option>
+              <option>{editingdata.businessType22}</option>
+              <option>{editingdata.businessType23}</option>
+              <option>{editingdata.businessType24}</option>
+              <option>{editingdata.businessType25}</option>
+              <option>{editingdata.businessType26}</option>
+              <option>{editingdata.businessType27}</option>
+              <option>{editingdata.businessType28}</option>
+            </select>
+            </Col>
+          </Row>
+          <Row>
+            <Col> 
+            <label htmlFor="building">{editingdata.businessTypeHeader}</label><br />
+            <select name="building" onChange={changeBuild} value={selectBuild}>
+              <option value="" hidden>{editingdata.select}</option>
+              <option value='Office'>{editingdata.commercialSpace1}</option>
+              <option value='Medical'>{editingdata.commercialSpace2}</option>
+              <option value='School'>{editingdata.commercialSpace3}</option>
+              <option value='Care'>{editingdata.commercialSpace4}</option>
+              <option value='Warehouse'>{editingdata.commercialSpace5}</option>
+              <option value='Hotel'>{editingdata.commercialSpace6}</option>
+              <option value='Hospital'>{editingdata.commercialSpace7}</option>
+              <option value='Food'>{editingdata.commercialSpace8}</option>
+              <option value='Restaurant'>{editingdata.commercialSpace9}</option>
+              <option value='Retail'>{editingdata.commercialSpace10}</option>
+              <option value='Other'>{editingdata.commercialSpace11}</option>
+            </select>
+            </Col>
+          </Row>
+
+
+          <Row>
+            <Col>
+            <label htmlFor="size">{editingdata.squareFeetHeader}</label><br />
+            <select name="size" value={selectSize} onChange={changeSize}>
+              <option value="" hidden>{editingdata.select}</option>
+              <option value='5000'>{editingdata.squareFeet1}</option>
+              <option value='10000'>{editingdata.squareFeet2}</option>
+              <option value='50000'>{editingdata.squareFeet3}</option>
+              <option value='100000'>{editingdata.squareFeet4}</option>
+              <option value='150000'>{editingdata.squareFeet5}</option>
+              <option value='200000'>{editingdata.squareFeet6}</option>
+              <option value='200001'>{editingdata.squareFeet7}</option>
+            </select>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <label htmlFor="number">{editingdata.buildingNumberHeader}</label><br />
+              <input  onChange={changeNum} type="number" min="0" 
+                onKeyPress={(event) => {
+                  if (!/[0-9]/.test(event.key)) {
+                    event.preventDefault();
+                  }
+                }
+              } placeholder="Number of buildings of this type"/>
+            </Col>
+          </Row>
+        </div>
+
+        <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
+          <Row>
+            <Col className="col-12">
+              <h3 className="text-green">vehicleHeader</h3>
+              <p className="text-grey">vehiclepara</p>
+              <hr/>
+            </Col>
+          
+            <Col>
+              <h5 className="smallCaps text-small text-green">Cars</h5>
+              <Row>
+                <Col className="col-12 col-xl-4">
+                  vehiclecarGas
+                </Col>
+                <Col className="col-xl-4">
+                  <input onChange={calculateCount} name="carGas" type="number" min="0" onKeyPress={
+                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                  }  placeholder={editingdata.vehiclePlaceholder1} />
+                </Col>
+                <Col className="col-xl-4">
+                  <input onChange={calculateMiles} name="carGas" type="number" min="0" onKeyPress={
+                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                  } placeholder={editingdata.vehiclePlaceholder2} />
+                </Col>
+              </Row>
+              <Row>
+                <Col  className="col-10 col-xl-4">
+                  vehiclecarDiesel
+                </Col>
+                <Col className="col-6 col-xl-4">
+                  <input onChange={calculateCount} name="carDiesel" type="number" min="0" onKeyPress={
+                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                  }  placeholder={editingdata.vehiclePlaceholder1} />
+                </Col>
+                <Col className="col-6 col-xl-4">
+                  <input onChange={calculateMiles} name="carDiesel" type="number" min="0" onKeyPress={
+                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                  }   placeholder={editingdata.vehiclePlaceholder2} />
+                </Col>
+              </Row>
+              <Row>
+                <Col className="col-10 col-xl-4">
+                  vehiclecarHybrid
+                </Col>
+                <Col className="col-6 col-xl-4">
+                  <input onChange={calculateCount} name="carHybrid" type="number" min="0" onKeyPress={
+                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                  }  placeholder={editingdata.vehiclePlaceholder1} />
+                </Col>
+                <Col className="col-6 col-xl-4">
+                  <input onChange={calculateMiles} name="carHybrid" type="number" min="0" onKeyPress={
+                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                  }  placeholder={editingdata.vehiclePlaceholder2} />
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+          <hr/>
+          <Row>
+            <Col>
+              <h5 className="smallCaps text-small text-green">vehiclepickupHeader</h5>
+              <Row>
+                <Col className="col-12 col-xl-4">vehiclepickupGas</Col>
+                <Col className="col-6 col-xl-4 ">
+                  <input onChange={calculateCount} name="truckGas" type="number" min="0" onKeyPress={
+                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                  }  placeholder={editingdata.vehiclePlaceholder1} />
+                </Col>
+                <Col className="col-6 col-xl-4">
+                  <input onChange={calculateMiles} name="truckGas" type="number" min="0" onKeyPress={
+                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                  }   placeholder={editingdata.vehiclePlaceholder2} />
+                </Col>
+              </Row>
+              <Row>
+                <Col  className="col-10 col-xl-4">vehiclepickupDiesel</Col>
+                <Col className="col-6 col-xl-4">
+                  <input onChange={calculateCount} name="truckDiesel" type="number" min="0" onKeyPress={
+                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                  }  placeholder={editingdata.vehiclePlaceholder1} />
+                </Col>
+                <Col className="col-6 col-xl-4">
+                  <input onChange={calculateMiles} name="truckDiesel" type="number" min="0" onKeyPress={
+                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                  }  placeholder={editingdata.vehiclePlaceholder2} />
+                </Col>
+              </Row>
+              <Row>
+                <Col className="col-10 col-xl-4">vehiclepickupHybrid</Col>
+                <Col className="col-6 col-xl-4">
+                  <input onChange={calculateCount} name="truckHybrid" type="number" min="0" onKeyPress={
+                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                  }   placeholder={editingdata.vehiclePlaceholder1} />
+                </Col>
+                <Col className="col-6 col-xl-4">
+                  <input onChange={calculateMiles} name="truckHybrid" type="number" min="0" onKeyPress={
+                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                  }   placeholder={editingdata.vehiclePlaceholder2} />
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+          <hr/>
+          <Row>
+            <Col>
+              <h5 className="smallCaps text-small text-green">vehicletruckHeader</h5>
+              <Row>
+                <Col className="col-10 col-xl-4">vehicletruckGas</Col>
+                <Col className="col-6 col-xl-4">
+                  <input onChange={calculateCount} name="deliveryGas" type="number" min="0" onKeyPress={
+                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                  }   placeholder={editingdata.vehiclePlaceholder1} />
+                </Col>
+                <Col className="col-6 col-xl-4">
+                  <input onChange={calculateMiles} name="deliveryGas" type="number" min="0" onKeyPress={
+                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                  }   placeholder={editingdata.vehiclePlaceholder2} />
+                </Col>
+              </Row>
+              <Row>
+                <Col className="col-10 col-xl-4">vehicletruckDiesel</Col>
+                <Col className="col-6 col-xl-4">
+                  <input onChange={calculateCount} name="deliveryDiesel" type="number" min="0" onKeyPress={
+                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                  }   placeholder={editingdata.vehiclePlaceholder1} />
+                </Col>
+                <Col className="col-6 col-xl-4">
+                  <input onChange={calculateMiles} name="deliveryDiesel" type="number" min="0" onKeyPress={
+                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                  }   placeholder={editingdata.vehiclePlaceholder2} />
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+          <hr/>
+          <Row>
+            <Col>
+              <h5 className="smallCaps text-small text-green">vehicleSemiHeader</h5>
+              <Row>
+                <Col className="col-10 col-xl-4">vehiclesemiFridge</Col>
+                <Col className="col-6 col-xl-4">
+                  <input onChange={calculateCount} name="semiFrig" type="number" min="0" onKeyPress={
+                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                  }   placeholder={editingdata.vehiclePlaceholder1} />
+                </Col>
+                <Col className="col-6 col-xl-4">
+                <input onChange={calculateMiles} name="semiFrig" type="number" min="0" onKeyPress={
+                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                  }   placeholder={editingdata.vehiclePlaceholder2} />
+                </Col>
+              </Row>
+              <Row>
+                <Col className="col-10 col-xl-4">vehiclesemiNonFridge</Col>
+                <Col className="col-6 col-xl-4">
+                  <input onChange={calculateCount} name="semiNonFrig" type="number" min="0" onKeyPress={
+                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                  }   placeholder={editingdata.vehiclePlaceholder1} />
+                </Col>
+                <Col className="col-6 col-xl-4">
+                  <input onChange={calculateMiles} name="semiNonFrig" type="number" min="0" onKeyPress={
+                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                  }   placeholder={editingdata.vehiclePlaceholder2} />
+                </Col>
+              </Row>
             </Col>
           </Row>
           <hr/>
           <Row>
             <Col className="col-10 col-xl-4">
-            Long (4+ hrs)
+              <h5 className="smallCaps text-small text-green">vehiclejet</h5>
             </Col>
-            <Col className="col-12 col-xl-8">
-            <Row>
-              <Col>
-              Economy
-              </Col>
-              <Col>
-              <input onChange={calculateFlightCount} name="flyLongEco" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}
-                placeholder="Flights per employee" />
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-              Economy +
-              </Col>
-              <Col>
-              <input onChange={calculateFlightCount} name="flyLongEcoPlus" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }} 
-                placeholder="Flights per employee" />
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-              Business Class
-              </Col>
-              <Col>
-              <input onChange={calculateFlightCount} name="flyLongBus" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }} 
-                placeholder="Flights per employee" />
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-              First Class
-              </Col>
-              <Col>
-              <input onChange={calculateFlightCount} name="flyLongFirst" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}
-                placeholder="Flights per employee" />
-              </Col>
-            </Row>
+            <Col className="col-6 col-xl-4">
+              <input onChange={calculateCount} name="jetNum" type="number" min="0" onKeyPress={
+                (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+              }   placeholder={editingdata.vehiclePlaceholder1} />
+            </Col>
+            <Col className="col-6 col-xl-4">
+              <input onChange={calculateMiles} name="jetNum" type="number" min="0" onKeyPress={
+                (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+              }   placeholder={editingdata.vehiclePlaceholder2} />
+            </Col>
+          </Row>
+        </div>
+        <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
+          <Row>
+            <Col>
+            <h3 className="text-green">commuteHeader</h3>
+            <p className="text-grey">commutePara</p>
+            </Col>
+          </Row>
+          <Row>
+            <Col className="col-12 col-xl-4">commuteCar</Col>
+            <Col className="col-xl-4">
+              <input onChange={calculateTransitCount} name="transitCar" type="number" min="0" onKeyPress={
+                (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+              }   placeholder={editingdata.vehiclePlaceholder1} />
+            </Col>
+            <Col className="col-xl-4">
+              <input onChange={calculateTransitMiles} name="transitCar" type="number" min="0" onKeyPress={
+                (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+              }   placeholder={editingdata.vehiclePlaceholder2} />
+            </Col>
+          </Row>
+          <Row>
+            <Col className="col-12 col-xl-4">commuteBus</Col>
+            <Col className="col-xl-4">
+              <input onChange={calculateTransitCount} name="transitBus" type="number" min="0" onKeyPress={
+                (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+              }   placeholder={editingdata.vehiclePlaceholder1} />
+            </Col>
+            <Col className="col-xl-4">
+              <input onChange={calculateTransitMiles} name="transitBus" type="number" min="0" onKeyPress={
+                (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+              }   placeholder={editingdata.vehiclePlaceholder2} />
+            </Col>
+          </Row>
+          <Row>
+            <Col className="col-10 col-xl-4">commuteTrain</Col>
+            <Col className="col-6 col-xl-4">
+              <input onChange={calculateTransitCount} name="transitTrain" type="number" min="0" onKeyPress={
+                (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+              }   placeholder={editingdata.vehiclePlaceholder1} />
+            </Col>
+            <Col className="col-6 col-xl-4">
+              <input onChange={calculateTransitMiles} name="transitTrain" type="number" min="0" onKeyPress={
+                (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+              }   placeholder={editingdata.vehiclePlaceholder2} />
+            </Col>
+          </Row>
+        </div>
+
+        <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
+          <Row>
+            <Col>
+            <h3 className="text-green">travelHeader</h3>
+            <p className="text-grey">travelPara</p>
             </Col>
           </Row>
           <hr/>
           <Row>
-            <Col className="col-10 col-sm-5 col-xl-4">
-            Nights spent in hotels
+            <Col className="col-10 col-sm-5 col-xl-4">travelEmp</Col>
+            <Col className="col-2 col-sm-1 col-xl-4">
             </Col>
-            <Col  className="col-2 col-sm-1 col-xl-4">
-            </Col>
-            <Col className="col-sm-6 col-xl-4">
-            <input onChange={calculateFlightCount} name="flyHotels" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }} 
-              placeholder="Nights per employee" />
+            <Col className="col-6 col-xl-4">
+              <input onChange={calculateEmp} name="flyEmployees" type="number" min="0" onKeyPress={
+                (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+              }   placeholder={editingdata.travelPlaceholder1} />
             </Col>
           </Row>
-      </div>
+          <hr/>
+          <Row>
+            <Col className="col-12 col-xl-4">travelShort</Col>
+            <Col>
+              <Row>
+                <Col className="col-6 col-md-6">travelShort1</Col>
+                <Col className="col-6 col-xl-6">
+                  <input onChange={calculateFlightCount} name="flyShort" type="number" min="0" onKeyPress={
+                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                  }   placeholder={editingdata.travelPlaceholder2} />
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+          <hr/>
+          <Row>
+            <Col className="col-10 col-xl-4">travelMed</Col>
+              <Col>
+                <Row>
+                  <Col className="col-6">travelMed1</Col>
+                    <Col className="col-6">
+                      <input onChange={calculateFlightCount} name="flyMediumEco" type="number" min="0" onKeyPress={
+                        (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                      }   placeholder={editingdata.travelPlaceholder2} />
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col className="col-6 ">travelMed2</Col>
+                    <Col className="col-6">
+                <input onChange={calculateFlightCount} name="flyMediumBus" type="number" min="0" onKeyPress={
+                (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+              }   placeholder={editingdata.travelPlaceholder2} />
+                </Col>
+              </Row>
+              </Col>
+            </Row>
+            <hr/>
+            <Row>
+              <Col className="col-10 col-xl-4">travelLong</Col>
+              <Col className="col-12 col-xl-8">
+                <Row>
+                  <Col>travelLong1</Col>
+                  <Col>
+                    <input onChange={calculateFlightCount} name="flyLongEco" type="number" min="0" onKeyPress={
+                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                    }   placeholder={editingdata.travelPlaceholder2} />
+                </Col>
+              </Row>
+              <Row>
+                <Col>travelLong2</Col>
+                <Col>
+                  <input onChange={calculateFlightCount} name="flyLongEcoPlus" type="number" min="0" onKeyPress={
+                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                  }   placeholder={editingdata.travelPlaceholder2} />
+                </Col>
+              </Row>
+              <Row>
+                <Col>travelLong3</Col>
+                <Col>
+                  <input onChange={calculateFlightCount} name="flyLongBus" type="number" min="0" onKeyPress={
+                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                  }   placeholder={editingdata.travelPlaceholder2} />
+                </Col>
+              </Row>
+              <Row>
+                <Col>travelLong4</Col>
+                <Col>
+                  <input onChange={calculateFlightCount} name="flyLongFirst" type="number" min="0" onKeyPress={
+                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                  }   placeholder={editingdata.travelPlaceholder2} />
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+          <hr/>
+          <Row>
+            <Col className="col-10 col-sm-5 col-xl-4">travelNights</Col>
+            <Col  className="col-2 col-sm-1 col-xl-4"></Col>
+            <Col className="col-sm-6 col-xl-4">
+              <input onChange={calculateFlightCount} name="flyHotels" type="number" min="0" onKeyPress={
+                (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+              }   placeholder={editingdata.travelPlaceholder3} />
+            </Col>
+          </Row>
+        </div>
 
-      <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
-        <Row>
-          <Col>
-          <h3 className="text-green">
-          Freight (Incoming and Outgoing Shipments)		
-          </h3>
-          <p className="text-grey">Please input how much cargo your business has shipped over the past 12 months. Do not include shipments made by company fleet vehicles.</p>
-          </Col>
-        </Row>
-        <hr/>
-        <Row>
-          <Col className="col-12 col-xl-4">
-          Van/Truck (&lt;3.5 Tonnes)
-          </Col>
-          <Col className="col-xl-4">
-          <input onChange={calculateFreightNum} name="freightVan" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }} placeholder="Tonnes shipped" />
-          </Col>
-          <Col className="col-xl-4">
-          <input onChange={calculateFreightMiles} name="freightVan" type="number"
-            placeholder="Average distance" />
-          </Col>
-        </Row>
-        <hr/>
-        <Row>
-          <Col className="col-12 col-xl-4">
-          Semi (Non-Refrigerated)
-          </Col>
-          <Col className="col-xl-4">
-          <input onChange={calculateFreightNum} name="freightSemiNonFrig" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}  placeholder="Tonnes shipped" />
-          </Col>
-          <Col className="col-xl-4">
-          <input onChange={calculateFreightMiles} name="freightSemiNonFrig" type="number"
-            placeholder="Average distance" />
-          </Col>
-        </Row>
-        <hr/>
-        <Row>
-          <Col className="col-12 col-xl-4">
-          Semi (Refrigerated)
-          </Col>
-          <Col className="col-xl-4">
-          <input onChange={calculateFreightNum} name="freightSemiFrig" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}   placeholder="Tonnes shipped" />
-          </Col>
-          <Col className="col-xl-4">
-          <input onChange={calculateFreightMiles} name="freightSemiFrig" type="number"
-            placeholder="Average distance" />
-          </Col>
-        </Row>
-        <hr/>
-        <Row>
-          <Col className="col-12 col-xl-4">
-          Cargo Ship
-          </Col>
-          <Col className="col-xl-4">
-          <input onChange={calculateFreightNum} name="freightCargo" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}   placeholder="Tonnes shipped" />
-          </Col>
-          <Col className="col-xl-4">
-          <input onChange={calculateFreightMiles} name="freightCargo" type="number"
-            placeholder="Average distance" />
-          </Col>
-        </Row>
-        <hr/>
-        <Row>
-          <Col className="col-12 col-xl-4">
-          Air (&lt;3700 km)
-          </Col>
-          <Col className="col-xl-4">
-          <input onChange={calculateFreightNum} name="freightAirLess" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}  placeholder="Tonnes shipped" />
-          </Col>
-          <Col className="col-xl-4">
-          <input onChange={calculateFreightMiles} name="freightAirLess" type="number"
-            placeholder="Average distance" />
-          </Col>
-        </Row>
-        <hr/>
-        <Row>
-          <Col className="col-12 col-xl-4">
-          Air (3700+ km)
-          </Col>
-          <Col className="col-xl-4">
-          <input onChange={calculateFreightNum} name="freightAirMore" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}   placeholder="Tonnes shipped" />
-          </Col>
-          <Col className="col-xl-4">
-          <input onChange={calculateFreightMiles} name="freightAirMore" type="number" min="0" onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}
-            placeholder="Average distance" />
-          </Col>
-        </Row>
-        
-        
-
-      </div>
-      
+        <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
+          <Row>
+            <Col>
+            <h3 className="text-green">freightHeader</h3>
+            <p className="text-grey">freightPara</p>
+            </Col>
+          </Row>
+          <hr/>
+          <Row>
+            <Col className="col-12 col-xl-4">freightVan</Col>
+            <Col className="col-xl-4">
+              <input onChange={calculateFreightNum} name="freightVan" type="number" min="0" onKeyPress={
+                (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+              }   placeholder={editingdata.freightPlaceholder1} />
+            </Col>
+            <Col className="col-xl-4">
+            <input onChange={calculateFreightMiles} name="freightVan" type="number"
+              placeholder={editingdata.freightPlaceholder2} />
+            </Col>
+          </Row>
+          <hr/>
+          <Row>
+            <Col className="col-12 col-xl-4">freightSemiNon</Col>
+            <Col className="col-xl-4">
+              <input onChange={calculateFreightNum} name="freightSemiNonFrig" type="number" min="0" onKeyPress={
+                (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+              }   placeholder={editingdata.freightPlaceholder1} />
+            </Col>
+            <Col className="col-xl-4">
+              <input onChange={calculateFreightMiles} name="freightSemiNonFrig" type="number" placeholder={editingdata.freightPlaceholder2}/>
+            </Col>
+          </Row>
+          <hr/>
+          <Row>
+            <Col className="col-12 col-xl-4">freightSemiFridge</Col>
+            <Col className="col-xl-4">
+              <input onChange={calculateFreightNum} name="freightSemiFrig" type="number" min="0" onKeyPress={
+                (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+              }   placeholder={editingdata.freightPlaceholder1} />
+            </Col>
+            <Col className="col-xl-4">
+              <input onChange={calculateFreightMiles} name="freightSemiNonFrig" type="number" placeholder={editingdata.freightPlaceholder2}/>
+            </Col>
+          </Row>
+          <hr/>
+          <Row>
+            <Col className="col-12 col-xl-4">freightShip</Col>
+            <Col className="col-xl-4">
+              <input onChange={calculateFreightNum} name="freightCargo" type="number" min="0" onKeyPress={
+                (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+              }   placeholder={editingdata.freightPlaceholder1} />
+            </Col>
+            <Col className="col-xl-4">
+            <input onChange={calculateFreightMiles} name="freightSemiNonFrig" type="number" placeholder={editingdata.freightPlaceholder2}/>
+            </Col>
+          </Row>
+          <hr/>
+          <Row>
+            <Col className="col-12 col-xl-4">freightAirLow</Col>
+            <Col className="col-xl-4">
+              <input onChange={calculateFreightNum} name="freightAirLess" type="number" min="0" onKeyPress={
+                (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+              }   placeholder={editingdata.freightPlaceholder1} />
+            </Col>
+            <Col className="col-xl-4">
+            <input onChange={calculateFreightMiles} name="freightSemiNonFrig" type="number" placeholder={editingdata.freightPlaceholder2}/>
+            </Col>
+          </Row>
+          <hr/>
+          <Row>
+            <Col className="col-12 col-xl-4">freightAirHigh</Col>
+            <Col className="col-xl-4">
+              <input onChange={calculateFreightNum} name="freightAirMore" type="number" min="0" onKeyPress={
+                (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+              }   placeholder={editingdata.freightPlaceholder1} />
+            </Col>
+            <Col className="col-xl-4">
+              <input onChange={calculateFreightMiles} name="freightAirMore" type="number" min="0" onKeyPress={
+                (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+              }   placeholder={editingdata.freightPlaceholder2} />
+            </Col>
+          </Row>
+        </div>
       </Col>
       <Col className=" p-3  col-12 col-lg-4 stickyCalc mb-4">
         <div className="text-white p-5 innerShadow roundedBox bg-green">
-      <h4 className="mb-0">Subtotals</h4>
-      <hr/>
-      <Row><Col>Heating & Electricity</Col><Col className="text-right bold">{subtotalBuild > 0 ? subtotalBuild.toFixed(2) : "--"}</Col></Row>
-      <hr/>
-      <Row><Col>Vehicle Fleet</Col><Col className="text-right bold">{vehicleSub > 0 ? vehicleSub.toFixed(2) : "--"}</Col></Row>
-      <hr/>
-      <Row><Col>Employee Commute</Col><Col className="text-right bold">{transitSub > 0 ? transitSub.toFixed(2) : "--"}</Col></Row>
-      <hr/>
-      <Row><Col>Employee Travel</Col><Col className="text-right bold">{flightSub > 0 ? flightSub.toFixed(2) : "--"}</Col></Row>
-      <hr/>
-      <Row><Col>Freight Shipments</Col><Col className="text-right bold">{freightSub > 0 ? freightSub.toFixed(2) : "--"}</Col></Row>
-      <hr/>
-      <span className="smallCaps text-small">Total</span><br/>
-      <span className="h2 bold">{total > 0 ? total.toFixed(2) : "--"}</span>
-      <p>{total > 0 ? "(Metric Tonnes of CO2 per Year)" : ""}</p>
-      <p>This is only an estimate etc</p>
-      </div>
-
-      </Col>
-    </Row>
-    <Row className="justify-content-center ">
-      <Col className="col-10 align-items-center text-center p-3">
-      <div className="bg-brown p-5 innerShadow roundedBox">
-        <p className="smallCaps text-orange">Next Step</p>
-      <h3 className="text-white mb-4 px-2 px-lg-5">Calculate how many hectares of Smart Forest you need to invest in to reach a Net-Zero emissions target.</h3>
-      <Link href="/smart-forest-calculator">
-      <a className="btn btn-green btn-large mt-1">Calculate Your Net-Zero Target</a></Link>
-      </div>
-      </Col>
-    </Row>
-    
-    <Row className="justify-content-center mt-5">
-      <Col className="col-11 col-lg-10 pt-5">
-      
-      <h2 className=" text-orange text-center pt-5 bold mb-4 tight-drop-light">Other Carbon Calculators</h2>
-      
-      </Col>
-    </Row>
-
-    <Row className="justify-content-center pb-5 mb-5">
-    
-
-        <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
-        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
-        <h4 className="text-white tight-drop-light">School</h4>
-        <p className="flex-fill pb-3 text-white tight-drop">Calculate how much carbon your school must offset to reach net-zero.</p>
-       
-        <Link href="school-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">SELECT</a></Link>
+          <h4 className="mb-0">dataHeader</h4>
+          <hr/>
+          <Row>
+            <Col>dataType1</Col>
+            <Col className="text-right bold">{subtotalBuild > 0 ? subtotalBuild.toFixed(2) : "--"}</Col>
+          </Row>
+          <hr/>
+          <Row>
+            <Col>dataType2</Col>
+            <Col className="text-right bold">{vehicleSub > 0 ? vehicleSub.toFixed(2) : "--"}</Col>
+          </Row>
+          <hr/>
+          <Row>
+            <Col>dataType3</Col>
+            <Col className="text-right bold">{transitSub > 0 ? transitSub.toFixed(2) : "--"}</Col>
+          </Row>
+          <hr/>
+          <Row>
+            <Col>dataType4</Col>
+            <Col className="text-right bold">{flightSub > 0 ? flightSub.toFixed(2) : "--"}</Col>
+          </Row>
+          <hr/>
+          <Row>
+            <Col>dataType5</Col>
+            <Col className="text-right bold">{freightSub > 0 ? freightSub.toFixed(2) : "--"}</Col>
+          </Row>
+          <hr/>
+          <span className="smallCaps text-small">dataTotal</span><br/>
+          <span className="h2 bold">{total > 0 ? total.toFixed(2) : "--"}</span>
+          <p>{total > 0 ? "(Metric Tonnes of CO2 per Year)" : ""}</p>
+          <p>dataDisclaimer</p>
         </div>
-        </Col>
 
-        <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
-        <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
-        <h4 className="text-white tight-drop-light">Personal</h4>
-        <p className="flex-fill pb-3 text-white tight-drop">Calculate how much carbon you must personally offset to reach net-zero.</p>
-       
-        <Link href="personal-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">SELECT</a></Link>
+        </Col>
+      </Row>
+      <Row className="justify-content-center ">
+        <Col className="col-10 align-items-center text-center p-3">
+        <div className="bg-brown p-5 innerShadow roundedBox">
+          <p className="smallCaps text-orange">box1Header</p>
+        <h3 className="text-white mb-4 px-2 px-lg-5">box1Para</h3>
+        <Link href="/smart-forest-calculator">
+        <a className="btn btn-green btn-large mt-1">box1Button</a></Link>
         </div>
         </Col>
       </Row>
-     
-  </Container>
+      
+      <Row className="justify-content-center mt-5">
+        <Col className="col-11 col-lg-10 pt-5">
+        
+        <h2 className=" text-orange text-center pt-5 bold mb-4 tight-drop-light">otherHeader</h2>
+        
+        </Col>
+      </Row>
 
-  
-  
-</div>
+      <Row className="justify-content-center pb-5 mb-5">
+      
 
-);
+          <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
+          <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
+          <h4 className="text-white tight-drop-light">otherbox1Header</h4>
+          <p className="flex-fill pb-3 text-white tight-drop">otherbox1Para</p>
+        
+          <Link href="school-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">otherbox1button</a></Link>
+          </div>
+          </Col>
+
+          <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
+          <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
+          <h4 className="text-white tight-drop-light">otherbox2Header</h4>
+          <p className="flex-fill pb-3 text-white tight-drop">otherbox2Para</p>
+        
+          <Link href="personal-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">otherbox2button</a></Link>
+          </div>
+          </Col>
+        </Row>
+      
+    </Container>
+
+    
+    
+  </div>
+
+  );
 }
 
 export default App;
+
+/**
+* Fetch data with getStaticProps based on 'preview' mode
+*/
+export const getStaticProps: GetStaticProps = async function({preview, previewData,}) {
+  if (preview) {
+    return getGithubPreviewProps({
+      ...previewData,
+      fileRelativePath: 'content/business-calculator.json',
+      parse: parseJson,
+    })
+  }
+  return {
+    props: {
+      sourceProvider: null,
+      error: null,
+      preview: false,
+      file: {
+        fileRelativePath: 'content/business-calculator.json',
+        data: (await import('../content/business-calculator.json')).default,
+      },
+    },
+  }
+}
