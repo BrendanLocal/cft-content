@@ -1,0 +1,10 @@
+{
+    "header1":"Select a Carbon Calculator",
+    "box1Header":"Corporate",
+    "box1Para":"Calculate how much carbon your corporation must offset to reach net-zero.",
+    "box2Header":"School",
+    "box2Para":"Calculate how much carbon your school must offset to reach net-zero.",
+    "box3Header":"Personal",
+    "box3Para":"Calculate how much carbon you must personally offset to reach net-zero.",
+    "select":"SELECT"    
+}

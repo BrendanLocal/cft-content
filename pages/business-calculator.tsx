@@ -24,7 +24,7 @@ const Lang = () => {
 const App = (file) => {
   
   const formOptions = {
-    label: 'Home Page',
+    label: 'Business Calculator',
     fields: [
       {name: 'businessType1', component: 'markdown' },
       {name: 'header', component: 'markdown' },
