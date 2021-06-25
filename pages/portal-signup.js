@@ -16,7 +16,7 @@ const SignupPage = () => {
     if (user) Router.replace('/home');
   }, [user]);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => { 
     e.preventDefault();
     const body = {
       email: e.currentTarget.email.value,
