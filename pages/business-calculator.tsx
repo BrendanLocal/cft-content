@@ -6,9 +6,9 @@ import Button from 'react-bootstrap/Button';
 import Link from 'next/link'
 import { useRouter } from "next/router";
 import { GetStaticProps } from "next";
-import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
-import { useGithubJsonForm, useGithubToolbarPlugins } from "react-tinacms-github";
-import { usePlugin } from "tinacms";
+import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
+import { usePlugin } from 'tinacms'
+import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
 import { useState } from "react";
 
 const Lang = () => {
@@ -21,7 +21,7 @@ const Lang = () => {
     return (language)
   }
 
-const App = (file) => {
+  export default function BusinessCalc({ file, href, children}) {
   
   const formOptions = {
     label: 'Business Calculator',
@@ -896,7 +896,7 @@ const App = (file) => {
               <input onChange={calculateFreightMiles} name="freightAirMore" type="number" min="0" onKeyPress={
                 (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
               }   placeholder={editingdata.freightPlaceholder2} />
-            </Col>
+            </Col> 
           </Row>
         </div>
       </Col>
@@ -987,7 +987,6 @@ const App = (file) => {
   );
 }
 
-export default App;
 
 /**
 * Fetch data with getStaticProps based on 'preview' mode
