@@ -21,7 +21,7 @@ const Lang = () => {
     return (language)
   }
 
-const App = (file) => {
+  export default function CarbonCalc({ file, href, children}) {
   
   const formOptions = {
     label: 'Carbon Calculator',
@@ -48,37 +48,37 @@ return (
       <Container className="py-5 mb-5">
         <Row className="justify-content-center mt-5">
           <Col className="col-11 col-lg-10 pt-5">
-            <h1 className="h2 text-orange text-center pt-5 bold mb-4">header1</h1>
+            <h1 className="h2 text-orange text-center pt-5 bold mb-4">{editingdata.header1}</h1>
           </Col>
         </Row>
 
         <Row className="justify-content-center pb-5 mb-5">
           <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
-              <h4 className="text-white tight-drop-light">box1Header</h4>
-              <p className="flex-fill pb-3 text-white tight-drop">box1Para</p>
+              <h4 className="text-white tight-drop-light">{editingdata.box1Header}</h4>
+              <p className="flex-fill pb-3 text-white tight-drop">{editingdata.box1Para}</p>
               <Link href="business-calculator">
-                <a className="btn btn-text text-left text-orange bold no-underline tight-drop">select</a>
+                <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.select}</a>
               </Link>
             </div>
           </Col>
 
           <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
-              <h4 className="text-white tight-drop-light">box2Header</h4>
-              <p className="flex-fill pb-3 text-white tight-drop">box2Para</p>
+              <h4 className="text-white tight-drop-light">{editingdata.box2Header}</h4>
+              <p className="flex-fill pb-3 text-white tight-drop">{editingdata.box2Para}</p>
               <Link href="school-calculator">
-                <a className="btn btn-text text-left text-orange bold no-underline tight-drop">select</a>
+                <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.select}</a>
               </Link>
             </div>
           </Col>
 
           <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
-              <h4 className="text-white tight-drop-light">box3Header</h4>
-              <p className="flex-fill pb-3 text-white tight-drop">box2Para</p>
+              <h4 className="text-white tight-drop-light">{editingdata.box3Header}</h4>
+              <p className="flex-fill pb-3 text-white tight-drop">{editingdata.box2Para}</p>
               <Link href="personal-calculator">
-                <a className="btn btn-text text-left text-orange bold no-underline tight-drop">select</a>
+                <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.select}</a>
               </Link>
             </div>
           </Col>
@@ -87,7 +87,6 @@ return (
     </div>
   );
 }
-export default App;
 
 /**
 * Fetch data with getStaticProps based on 'preview' mode

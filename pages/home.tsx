@@ -117,7 +117,7 @@ export default function Home({ file, href, children}) {
   return (
     <div className={styles.homeParallax}>
       <Head>
-        <title>Canada's Forest Trust</title>
+        <title>{editingdata.title}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#054218"></meta>
       </Head>
