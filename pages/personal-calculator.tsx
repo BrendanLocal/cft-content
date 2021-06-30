@@ -4,6 +4,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
+import Card from 'react-bootstrap/Card';
+import Accordion from 'react-bootstrap/Accordion';
+
 import Link from 'next/link'
 
 const App = () => {
@@ -13,16 +16,35 @@ const [selectNum, setNum] = React.useState("");
 const [selectYear, setYear] = React.useState("");
 const [selectHeat, setHeat] = React.useState("");
 const [selectEnergy, setEnergy] = React.useState("");
+
 const [selectNumTwo, setNumTwo] = React.useState("");
 const [selectYearTwo, setYearTwo] = React.useState("");
 const [selectSizeTwo, setSizeTwo] = React.useState("");
 const [selectHeatTwo, setHeatTwo] = React.useState("");
 const [selectEnergyTwo, setEnergyTwo] = React.useState("");
+
+const [selectNumThree, setNumThree] = React.useState("");
+const [selectYearThree, setYearThree] = React.useState("");
+const [selectSizeThree, setSizeThree] = React.useState("");
+const [selectHeatThree, setHeatThree] = React.useState("");
+const [selectEnergyThree, setEnergyThree] = React.useState("");
+
+const [selectNumFour, setNumFour] = React.useState("");
+const [selectYearFour, setYearFour] = React.useState("");
+const [selectSizeFour, setSizeFour] = React.useState("");
+const [selectHeatFour, setHeatFour] = React.useState("");
+const [selectEnergyFour, setEnergyFour] = React.useState("");
 const [buildSub, setBuildSub] = React.useState(0);
 
 const [getFam, setFam] = React.useState(true);
 
 const [getFamTwo, setFamTwo] = React.useState(true);
+
+
+const [getFamThree, setFamThree] = React.useState(true);
+
+
+const [getFamFour, setFamFour] = React.useState(true);
 
 
 let buildType = null;
@@ -37,10 +59,27 @@ let buildYearTwo = 1;
 let buildSizeTwo = null;
 let heatTypeTwo = null;
 let energyTypeTwo = null;
+
+let subtotalBuildTwo = 0;
+
+let buildNumThree = 1;
+let buildYearThree = 1;
+let buildSizeThree = null;
+let heatTypeThree = null;
+let energyTypeThree = null;
+let subtotalBuildThree = 0;
+
+
+let buildNumFour = 1;
+let buildYearFour = 1;
+let buildSizeFour = null;
+let heatTypeFour = null;
+let energyTypeFour = null;
+let subtotalBuildFour = 0;
+
 let subtotalVehicle = 0;
 let subtotalFlight = 0;
 let subtotalPublicTransport = 0;
-let subtotalBuildTwo = 0;
 let totalBuild = 0;
 
 buildSize = Number(selectSize);
@@ -53,6 +92,21 @@ buildYearTwo = Number(selectYearTwo);
 buildSizeTwo = Number(selectSizeTwo);
 heatTypeTwo = selectHeatTwo;
 energyTypeTwo = selectEnergyTwo;
+
+buildNumThree = Number(selectNumThree);
+buildYearThree = Number(selectYearThree);
+buildSizeThree = Number(selectSizeThree);
+heatTypeThree = selectHeatThree;
+energyTypeThree = selectEnergyThree;
+
+
+
+buildNumFour = Number(selectNumFour);
+buildYearFour = Number(selectYearFour);
+buildSizeFour = Number(selectSizeFour);
+heatTypeFour = selectHeatFour;
+energyTypeFour = selectEnergyFour;
+
 
 //vehicle multiplier
 const [vehicleSub, setVehicle] = React.useState(0);
@@ -116,6 +170,22 @@ const changeFamTwo = (event) => {
   }
 }
 
+const changeFamThree = (event) => {
+  if(event.target.value == "myself"){
+    setFamThree(true);
+  } else {
+    setFamThree(false);
+  }
+}
+
+const changeFamFour = (event) => {
+  if(event.target.value == "myself"){
+    setFamFour(true);
+  } else {
+    setFamFour(false);
+  }
+}
+
 
 const changeSize = (event) => {
   setSize(event.target.value);
@@ -156,6 +226,51 @@ const changeHeatTwo = (event) => {
 const changeEnergyTwo = (event) => {
   setEnergyTwo(event.target.value);
 }
+
+
+
+const changeNumThree = (event) => {
+  setNumThree(event.target.value);
+}
+
+const changeSizeThree = (event) => {
+  setSizeThree(event.target.value);
+}
+
+const changeYearThree = (event) => {
+  setYearThree(event.target.value);
+}
+
+const changeHeatThree = (event) => {
+  setHeatThree(event.target.value);
+}
+
+const changeEnergyThree = (event) => {
+  setEnergyThree(event.target.value);
+}
+
+
+
+const changeNumFour = (event) => {
+  setNumFour(event.target.value);
+}
+
+const changeSizeFour = (event) => {
+  setSizeFour(event.target.value);
+}
+
+const changeYearFour = (event) => {
+  setYearFour(event.target.value);
+}
+
+const changeHeatFour = (event) => {
+  setHeatFour(event.target.value);
+}
+
+const changeEnergyFour = (event) => {
+  setEnergyFour(event.target.value);
+}
+
 
 /* array using data from the spreadsheet, including multipliers */
 
@@ -233,7 +348,58 @@ if (buildSizeTwo && heatTypeTwo && energyTypeTwo)
     );
 }
 
-totalBuild = Number(subtotalBuild + subtotalBuildTwo)
+if (buildSizeThree && heatTypeThree && energyTypeThree) 
+{
+
+  if(!getFamThree){
+    buildNumThree = 1
+  }
+  subtotalBuildThree = Number(
+    (
+      (
+        (buildArray[buildSizeThree][heatTypeThree] * energySavingsMult[energyTypeThree])
+        /
+        buildNumThree
+      )
+      +
+      (
+        (buildYearThree/12)
+        * 1444
+      )
+      /
+      buildNumThree
+      )
+    /1000
+    );
+}
+
+
+if (buildSizeFour && heatTypeFour && energyTypeFour) 
+{
+
+  if(!getFamFour){
+    buildNumFour = 1
+  }
+  subtotalBuildFour = Number(
+    (
+      (
+        (buildArray[buildSizeFour][heatTypeFour] * energySavingsMult[energyTypeFour])
+        /
+        buildNumFour
+      )
+      +
+      (
+        (buildYearFour/12)
+        * 1444
+      )
+      /
+      buildNumFour
+      )
+    /1000
+    );
+}
+
+totalBuild = Number(subtotalBuild + subtotalBuildTwo + subtotalBuildThree + subtotalBuildFour)
 
 /* function to calculate the 'vehicle' section */
 const calculateVehicle=()=> {
@@ -339,14 +505,22 @@ return (
         <Row>
           <Col>
           <label htmlFor="number">How many people live in your household?</label><br />
-          <input onChange={changeNum} type="number" placeholder="Number of people in your household" />
+          <input onChange={changeNum} type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Number of people in your household" />
           </Col>
         </Row>
 
         <Row>
           <Col>
           <label htmlFor="number">Month(s) per year spent living at this residence?</label><br />
-          <input onChange={changeYear} type="number" placeholder="Month(s) per year in residence" />
+          <input onChange={changeYear} type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Month(s) per year in residence" />
           </Col>
         </Row>
 
@@ -391,21 +565,20 @@ return (
           </select>
           </Col>
         </Row> 
+         
+        <Accordion>
+  <Card>
+    <Card.Header>
+      <Accordion.Toggle as={Button} variant="link" eventKey="0">
+
+      <Row>
         
-      </div>
-
-
-      <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
-        <Row>
-          <Col>
-          <h4 className="text-green">
-            Heating & Electricity
-          </h4>
-
-        <hr/>
-          </Col>
           <h5 className="smallCaps text-small text-green">Residence 2</h5>
         </Row>
+        </Accordion.Toggle>
+    </Card.Header>
+    <Accordion.Collapse eventKey="0">
+      <Card.Body>
         <Row className="mb-3">
           <Col>
           <label htmlFor="number">Calculating for:</label><br />
@@ -418,14 +591,22 @@ return (
         <Row>
           <Col>
           <label htmlFor="number">How many people live in your household?</label><br />
-          <input onChange={changeNumTwo} type="number" placeholder="Number of people in your household" />
+          <input onChange={changeNumTwo} type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Number of people in your household" />
           </Col>
         </Row>
 
         <Row>
           <Col>
           <label htmlFor="number">Month(s) per year spent living at this residence?</label><br />
-          <input onChange={changeYearTwo} type="number" placeholder="Month(s) per year in residence" />
+          <input onChange={changeYearTwo} type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Month(s) per year in residence" />
           </Col>
         </Row>
 
@@ -470,6 +651,186 @@ return (
           </select>
           </Col>
         </Row> 
+        </Card.Body>
+    </Accordion.Collapse>
+  </Card>
+
+  <Card>
+    <Card.Header>
+      <Accordion.Toggle as={Button} variant="link" eventKey="1">
+  <Row>
+          <h5 className="smallCaps text-small text-green">Residence 3</h5>
+        </Row>
+        </Accordion.Toggle>
+    </Card.Header>
+    <Accordion.Collapse eventKey="1">
+      <Card.Body>
+        <Row className="mb-3">
+          <Col>
+          <label htmlFor="number">Calculating for:</label><br />
+          <input className="me-2" onChange={changeFamThree} type="radio" id="myself" name="calculateWhoThree" value="myself" checked/>
+<label >Myself</label><br></br>
+<input className="me-2" onChange={changeFamThree} type="radio" id="family" name="calculateWhoThree" value="family"/>
+<label >Entire household</label><br></br>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+          <label htmlFor="number">How many people live in your household?</label><br />
+          <input onChange={changeNumThree} type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Number of people in your household" />
+          </Col>
+        </Row>
+
+        <Row>
+          <Col>
+          <label htmlFor="number">Month(s) per year spent living at this residence?</label><br />
+          <input onChange={changeYearThree} type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Month(s) per year in residence" max="12"/>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col>
+          <label htmlFor="size">How many square feet is your home?</label><br />
+          <select name="size" value={selectSizeThree} onChange={changeSizeThree}>
+            <option value="" hidden>Select...</option>
+            <option value='1000'> 0-1000 </option>
+            <option value='1500'> 1000-1500 </option>
+            <option value='2000'> 1500-2000 </option>
+            <option value='2500'> 2000-2500 </option>
+            <option value='2501'> 2500+ </option>
+          </select>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col>
+          <label htmlFor="heat">What is the main source of heat for your home?</label><br />
+          <select name="heat" value={selectHeatThree} onChange={changeHeatThree}>
+            <option value="" hidden>Select...</option>
+            <option value='gas'> Natural Gas </option>
+            <option value='oil'> Furnace Oil </option>
+            <option value='electric'> Electric </option>
+            <option value='wood'> Wood/Pellets </option>
+          </select>
+          </Col>
+        </Row>
+
+      <Row>
+          <Col>
+          <label htmlFor="energy">Energy Savings: Have you retrofitted your house, 
+          or built your house with any of the following energy-saving features?
+          </label><br />
+          <select name="energy" value={selectEnergyThree} onChange={changeEnergyThree}>
+            <option value="" hidden>Select...</option>
+            <option value='none'> None </option>
+            <option value='light'> Light - Recommissioning, LED Lightbulbs, Weatherization </option>
+            <option value='moderate'> Moderate - Lighting Retrofit, Automated Thermostats, Window Replacement </option>
+            <option value='extensive'>Extensive - Air Sealing and Re-Insulating, Conversion to District Energy and Ground Source Heat Pumps </option>
+          </select>
+          </Col>
+        </Row> 
+        
+        </Card.Body>
+    </Accordion.Collapse>
+  </Card>
+  <Card>
+    <Card.Header>
+      <Accordion.Toggle as={Button} variant="link" eventKey="2">
+        <Row>
+
+          <h5 className="smallCaps text-small text-green">Residence 4</h5>
+        </Row>
+
+
+        </Accordion.Toggle>
+    </Card.Header>
+    <Accordion.Collapse eventKey="2">
+      <Card.Body>
+        <Row className="mb-3">
+          <Col>
+          <label htmlFor="number">Calculating for:</label><br />
+          <input className="me-2" onChange={changeFamFour} type="radio" id="myself" name="calculateWhoThree" value="myself" checked/>
+<label >Myself</label><br></br>
+<input className="me-2" onChange={changeFamFour} type="radio" id="family" name="calculateWhoThree" value="family"/>
+<label >Entire household</label><br></br>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+          <label htmlFor="number">How many people live in your household?</label><br />
+          <input onChange={changeNumFour} type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Number of people in your household" />
+          </Col>
+        </Row>
+
+        <Row>
+          <Col>
+          <label htmlFor="number">Month(s) per year spent living at this residence?</label><br />
+          <input onChange={changeYearFour} type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Month(s) per year in residence" max="12"/>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col>
+          <label htmlFor="size">How many square feet is your home?</label><br />
+          <select name="size" value={selectSizeFour} onChange={changeSizeFour}>
+            <option value="" hidden>Select...</option>
+            <option value='1000'> 0-1000 </option>
+            <option value='1500'> 1000-1500 </option>
+            <option value='2000'> 1500-2000 </option>
+            <option value='2500'> 2000-2500 </option>
+            <option value='2501'> 2500+ </option>
+          </select>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col>
+          <label htmlFor="heat">What is the main source of heat for your home?</label><br />
+          <select name="heat" value={selectHeatFour} onChange={changeHeatFour}>
+            <option value="" hidden>Select...</option>
+            <option value='gas'> Natural Gas </option>
+            <option value='oil'> Furnace Oil </option>
+            <option value='electric'> Electric </option>
+            <option value='wood'> Wood/Pellets </option>
+          </select>
+          </Col>
+        </Row>
+
+      <Row>
+          <Col>
+          <label htmlFor="energy">Energy Savings: Have you retrofitted your house, 
+          or built your house with any of the following energy-saving features?
+          </label><br />
+          <select name="energy" value={selectEnergyFour} onChange={changeEnergyFour}>
+            <option value="" hidden>Select...</option>
+            <option value='none'> None </option>
+            <option value='light'> Light - Recommissioning, LED Lightbulbs, Weatherization </option>
+            <option value='moderate'> Moderate - Lighting Retrofit, Automated Thermostats, Window Replacement </option>
+            <option value='extensive'>Extensive - Air Sealing and Re-Insulating, Conversion to District Energy and Ground Source Heat Pumps </option>
+          </select>
+          </Col>
+        </Row> 
+
+        </Card.Body>
+    </Accordion.Collapse>
+  </Card>
+        </Accordion>
         
       </div> 
 
@@ -491,19 +852,31 @@ return (
           <Row>
             <Col className="col">
               Gas
-            <input onChange={calculateMiles} name="smallGas" type="number" placeholder="Annual KM (gas)" />
+            <input onChange={calculateMiles} name="smallGas" type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Annual KM (gas)" />
             </Col>
           </Row> 
           <Row>
             <Col className="col">
               Diesel
-            <input onChange={calculateMiles} name="smallDiesel" type="number" placeholder="Annual KM (diesel)" />
+            <input onChange={calculateMiles} name="smallDiesel" type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Annual KM (diesel)" />
             </Col>
           </Row>
           <Row>
             <Col className="col">
               Hybrid
-            <input onChange={calculateMiles} name="smallHybrid" type="number" placeholder="Annual KM (hybrid)" />
+            <input onChange={calculateMiles} name="smallHybrid" type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Annual KM (hybrid)" />
             </Col>
           </Row>
           
@@ -515,19 +888,31 @@ return (
           <Row>
             <Col className="col">
               Gas
-            <input onChange={calculateMiles} name="mediumGas" type="number" placeholder="Annual KM (gas)" />
+            <input onChange={calculateMiles} name="mediumGas" type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Annual KM (gas)" />
             </Col>
           </Row> 
           <Row>
             <Col className="col">
               Diesel
-            <input onChange={calculateMiles} name="mediumDiesel" type="number" placeholder="Annual KM (diesel)" />
+            <input onChange={calculateMiles} name="mediumDiesel" type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Annual KM (diesel)" />
             </Col>
           </Row>
           <Row>
             <Col className="col">
               Hybrid
-            <input onChange={calculateMiles} name="mediumHybrid" type="number" placeholder="Annual KM (hybrid)" />
+            <input onChange={calculateMiles} name="mediumHybrid" type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Annual KM (hybrid)" />
             </Col>
           </Row>
           <hr/>
@@ -538,19 +923,31 @@ return (
   <Row>
     <Col className="col">
       Gas
-    <input onChange={calculateMiles} name="largeGas" type="number" placeholder="Annual KM (gas)" />
+    <input onChange={calculateMiles} name="largeGas" type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Annual KM (gas)" />
     </Col>
   </Row> 
   <Row>
     <Col className="col">
       Diesel
-    <input onChange={calculateMiles} name="largeDiesel" type="number" placeholder="Annual KM (diesel)" />
+    <input onChange={calculateMiles} name="largeDiesel" type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Annual KM (diesel)" />
     </Col>
   </Row>
   <Row>
     <Col className="col">
       Hybrid
-    <input onChange={calculateMiles} name="largeHybrid" type="number" placeholder="Annual KM (hybrid)" />
+    <input onChange={calculateMiles} name="largeHybrid" type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Annual KM (hybrid)" />
     </Col>
   </Row>
   <hr/>
@@ -559,7 +956,11 @@ return (
   <Row>
     <Col className="col">
       Gas
-    <input onChange={calculateMiles} name="motorbikeGas" type="number" placeholder="Annual KM (gas)" />
+    <input onChange={calculateMiles} name="motorbikeGas" type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Annual KM (gas)" />
     </Col>
   </Row> 
   <hr/>
@@ -568,7 +969,11 @@ return (
   <Row>
     <Col className="col">
       All fuel types
-    <input onChange={calculateMiles} name="planeGas" type="number" placeholder="Annual KM (gas)" />
+    <input onChange={calculateMiles} name="planeGas" type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Annual KM (gas)" />
     </Col>
   </Row> 
 
@@ -579,15 +984,27 @@ return (
   <Row>
     <Col className="col">
       Yacht
-    <input onChange={calculateMiles} name="yachtGas" type="number" placeholder="Marine Diesel Litres per year" />
-    <input onChange={calculateMiles} name="yachtDiesel" type="number" placeholder="Marine Unleaded Litres per year" />
+    <input onChange={calculateMiles} name="yachtGas" type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Marine Diesel Litres per year" />
+    <input onChange={calculateMiles} name="yachtDiesel" type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Marine Unleaded Litres per year" />
     </Col>
   </Row> 
   <hr/>
   <Row>
     <Col className="col">
       ATV (quad bike)
-    <input onChange={calculateMiles} name="atvGas" type="number" placeholder="Litres per year" />
+    <input onChange={calculateMiles} name="atvGas" type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Litres per year" />
     </Col>
   </Row> 
   <hr/>
@@ -595,7 +1012,11 @@ return (
   <Row>
     <Col className="col">
       Side-by-side
-    <input onChange={calculateMiles} name="sbsGas" type="number" placeholder="Litres per year" />
+    <input onChange={calculateMiles} name="sbsGas" type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Litres per year" />
     </Col>
   </Row> 
   <hr/>
@@ -603,7 +1024,11 @@ return (
   <Row>
     <Col className="col">
       Snowmobile
-    <input onChange={calculateMiles} name="snowGas" type="number" placeholder="Litres per year" />
+    <input onChange={calculateMiles} name="snowGas" type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Litres per year" />
     </Col>
   </Row> 
 
@@ -636,7 +1061,11 @@ return (
             All
             </Col>
             <Col className="col-6 col-xl-6">
-            <input onChange={calculateFlightCount} name="flyShort" type="number"
+            <input onChange={calculateFlightCount} name="flyShort" type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} 
               placeholder="Number of flights" />
             </Col>
           </Row>
@@ -653,7 +1082,11 @@ return (
               Economy
               </Col>
               <Col className="col-6">
-              <input onChange={calculateFlightCount} name="flyMediumEco" type="number"
+              <input onChange={calculateFlightCount} name="flyMediumEco" type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} 
                 placeholder="Number of flights" />
               </Col>
             </Row>
@@ -662,7 +1095,11 @@ return (
               Business/First
               </Col>
               <Col className="col-6">
-              <input onChange={calculateFlightCount} name="flyMediumBus" type="number"
+              <input onChange={calculateFlightCount} name="flyMediumBus" type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} 
                 placeholder="Number of flights" />
               </Col>
             </Row>
@@ -679,7 +1116,11 @@ return (
               Economy
               </Col>
               <Col>
-              <input onChange={calculateFlightCount} name="flyLongEco" type="number"
+              <input onChange={calculateFlightCount} name="flyLongEco" type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} 
                 placeholder="Number of flights" />
               </Col>
             </Row>
@@ -688,7 +1129,11 @@ return (
               Economy +
               </Col>
               <Col>
-              <input onChange={calculateFlightCount} name="flyLongEcoPlus" type="number"
+              <input onChange={calculateFlightCount} name="flyLongEcoPlus" type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} 
                 placeholder="Number of flights" />
               </Col>
             </Row>
@@ -697,7 +1142,11 @@ return (
               Business Class
               </Col>
               <Col>
-              <input onChange={calculateFlightCount} name="flyLongBus" type="number"
+              <input onChange={calculateFlightCount} name="flyLongBus" type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} 
                 placeholder="Number of flights" />
               </Col>
             </Row>
@@ -706,7 +1155,11 @@ return (
               First Class
               </Col>
               <Col>
-              <input onChange={calculateFlightCount} name="flyLongFirst" type="number"
+              <input onChange={calculateFlightCount} name="flyLongFirst" type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} 
                 placeholder="Number of flights" />
               </Col>
             </Row>
@@ -720,7 +1173,11 @@ return (
             <Col  className="col-2 col-sm-1 col-xl-4">
             </Col>
             <Col className="col-sm-6 col-xl-4">
-            <input onChange={calculateFlightCount} name="flyHotels" type="number"
+            <input onChange={calculateFlightCount} name="flyHotels" type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} 
               placeholder="Number of nights" />
             </Col>
           </Row>
@@ -741,7 +1198,11 @@ return (
           Bus
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateTransitMiles} name="publicCar" type="number"
+          <input onChange={calculateTransitMiles} name="publicCar" type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }} 
             placeholder="Average Km per day" />
           </Col>
         </Row>
@@ -750,7 +1211,11 @@ return (
           Taxi/Rideshare
           </Col>
           <Col className="col-xl-4">
-          <input onChange={calculateTransitMiles} name="publicTaxi" type="number" placeholder="Average Km per day" />
+          <input onChange={calculateTransitMiles} name="publicTaxi" type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Average Km per day" />
           </Col>
         </Row>
         <Row>
@@ -758,7 +1223,11 @@ return (
           Metro/Subway
           </Col>
           <Col className="col-6 col-xl-4">
-          <input onChange={calculateTransitMiles} name="publicSubway" type="number" placeholder="Average Km per day" />
+          <input onChange={calculateTransitMiles} name="publicSubway" type="number"  onKeyPress={(event) => {
+        if (!/[0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}  placeholder="Average Km per day" />
           </Col>
         </Row>
 

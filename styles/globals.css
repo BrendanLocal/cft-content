@@ -1597,6 +1597,13 @@ z-index:999;
 
 /* Forms */
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+
 input[type=checkbox] {
   margin-right: 10px;
 }
