@@ -12,16 +12,16 @@ import { usePlugin } from "tinacms";
 import { useState } from "react";
 
 const Lang = () => {
-  var language ="en";
-    const router = useRouter();
-    if(router.query.lang){ 
-    const lan = JSON.stringify(router.query.lang);
-    language = JSON.parse(lan)
-    }
-    return (language)
+var language ="en";
+  const router = useRouter();
+  if(router.query.lang){ 
+  const lan = JSON.stringify(router.query.lang);
+  language = JSON.parse(lan)
   }
+  return (language)
+}
 
-  export default function CarbonCalc({ file, href, children}) {
+export default function CarbonCalc({ file, href, children}) {
   
   const formOptions = {
     label: 'Carbon Calculator',
@@ -34,7 +34,7 @@ const Lang = () => {
       {name: 'box3Header', component: 'markdown' },
       {name: 'box3Para', component: 'markdown' },
       {name: 'select', component: 'markdown' }
-     ]
+      ]
   }
 
   const [show, setShow] = useState(false);
@@ -43,7 +43,7 @@ const Lang = () => {
   usePlugin(form)
   useGithubToolbarPlugins()
 
-return (
+  return (
     <div>
       <Container className="py-5 mb-5">
         <Row className="justify-content-center mt-5">
