@@ -1,14 +1,55 @@
-import React, { useState, useEffect } from 'react';
-import Head from 'next/head';
-import Router from 'next/router';
-import { useCurrentUser } from '../hooks/index';
-
+import React, { useState, useRef, useEffect, Component } from 'react';
+import { useRouter } from 'next/router'
+import Link from 'next/link'
+import Head from 'next/head'
+import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
+import { GetStaticProps } from 'next'
+import { usePlugin } from 'tinacms'
+import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
+import { useMarkdownForm } from 'next-tinacms-markdown'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import styles from '../styles/Home.module.css'
+import Fade from 'react-reveal/Fade';
+import Modal from 'react-bootstrap/Modal';
+import ReactPlayer from 'react-player'
+import { Parallax, Background } from 'react-parallax';
+import ReactMarkdown from 'react-markdown'
+
+
+const Lang = () => {
+  var language ="en";
+    const router = useRouter();
+    if(router.query.lang){ 
+    const lan = JSON.stringify(router.query.lang);
+    language = JSON.parse(lan)
+    }
+    return (language)
+  }
 
 const SignupPage = () => {
+  
+  const router = useRouter();  
+  const formOptions = {
+    label: 'Home Page',
+    fields: [
+      {name: 'title', component: 'markdown' },
+      {name: 'part6_box3button1', component: 'markdown' }
+    ]
+  }
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const [editingdata, form] = useGithubJsonForm(file, formOptions)
+  usePlugin(form)
+  useGithubToolbarPlugins()
+
+
   const [user, { mutate }] = useCurrentUser();
   const [errorMsg, setErrorMsg] = useState('');
   useEffect(() => {
@@ -38,44 +79,41 @@ const SignupPage = () => {
 
   return (
     <div>
-
       <Container className="py-5">
          <Row className="flex justify-content-center py-5 mb-5">
           <Col className="col-12 col-md-8 col-lg-5 col-xl-4 p-5">
           <div className="roundedBox no-border card-drop p-5 pb-4 bg-white mt-3">
 
-        <h1 className="h2 text-orange bold pt-0 mb-3 text-center">Sign Up</h1>
-        <p className="text-grey mb-3 text-center">Please enter the following credentials to create an account.</p>
-        <form onSubmit={handleSubmit}>
-          {errorMsg ? <p style={{ color: 'red' }}>{errorMsg}</p> : null}
-        <label className="mb-1 w-100" htmlFor="name">
-            <input
-              id="name"
-              name="name"
-              type="text"
-              placeholder="Your name"
-            />
-        </label>
-        <label className="mb-1 w-100" htmlFor="email">
-            <input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="Email address"
-            /> 
-        </label>
-        <label className="mb-2 w-100" htmlFor="password">
-        <input
-              id="password"
-              name="password"
-              type="password"
-              placeholder="Create a password"
-            />
-        </label>
-        <br/>
-        
-          <Button className="w-100 btn-green no-border mt-3 mb-4" type="btn-green">Sign up</Button>
-
+        <h1 className="h2 text-orange bold pt-0 mb-3 text-center">{editingdata.signUp}</h1>
+          <p className="text-grey mb-3 text-center">{editingdata.para1}</p>
+          <form onSubmit={handleSubmit}>
+            {errorMsg ? <p style={{ color: 'red' }}>{errorMsg}</p> : null}
+            <label className="mb-1 w-100" htmlFor="name">
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder={editingdata.placeholder1}
+              />
+            </label>
+            <label className="mb-1 w-100" htmlFor="email">
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder={editingdata.placeholder2}
+              /> 
+            </label>
+            <label className="mb-2 w-100" htmlFor="password">
+              <input
+                id="password"
+                name="password"
+                type="password"
+                placeholder={editingdata.placeholder3}
+              />
+            </label>
+            <br/>
+            <Button className="w-100 btn-green no-border mt-3 mb-4" type="btn-green">{editingdata.signUp}</Button>
           </form>
           </div>
           </Col>
@@ -86,3 +124,27 @@ const SignupPage = () => {
 };
 
 export default SignupPage;
+/**
+* Fetch data with getStaticProps based on 'preview' mode
+*/
+// ERROR: angry at not being typescript file
+// export const getStaticProps: GetStaticProps = async function({preview, previewData,}) {
+//   if (preview) {
+//     return getGithubPreviewProps({
+//       ...previewData,
+//       fileRelativePath: 'content/home.json',
+//       parse: parseJson,
+//     })
+//   }
+//   return {
+//     props: {
+//       sourceProvider: null,
+//       error: null,
+//       preview: false,
+//       file: {
+//         fileRelativePath: 'content/home.json',
+//         data: (await import('../content/home.json')).default,
+//       },
+//     },
+//   }
+// }

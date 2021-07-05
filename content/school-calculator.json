@@ -2,6 +2,17 @@
     "header":"School Carbon Calculator",
     "para1":"Calculate how much carbon your corporation must offset to reach net-zero",
     "select":"Select...",
+    "placeholder1":"Number of buildings",
+    "placeholder2":"Size of building",
+    "placeholder3":"Number of vehicles",
+    "placeholder4":"Average Km per day",
+    "placeholder5":"Number of employees",
+    "placeholder6":"Number of buses",
+    "placeholder7":"Number of students",
+    "placeholder8":"Average Annual Km",
+    "placeholder9":"Number of flights",
+
+
     "heatingHeader1":"Heating & Electricity",
     "heatingSizeHeader":"How many square feet is the building?",
     "heatingSize1":"<5000",
