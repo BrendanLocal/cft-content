@@ -16,6 +16,7 @@ import Parallax from 'parallax-js'
 import ReactMarkdown from 'react-markdown'
 
 export default function Power({ file }) {
+
   const formOptions = {
     label: 'What is a Smart Forest',
     fields: [
@@ -101,7 +102,7 @@ export default function Power({ file }) {
   return (  
     <div>
       <Head>
-        <title>Canada's Forest Trust</title>
+        <title>{editingdata.title}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#054218"></meta>
       </Head>
