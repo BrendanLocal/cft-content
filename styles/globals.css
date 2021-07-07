@@ -38,7 +38,7 @@ body {
 }
 
 html {
-  font-size: 15px;
+  font-size: 16px;
 }
 
 a {
@@ -156,6 +156,16 @@ h1, .h1  {
 
 h1.drop, .h1.drop {
   text-shadow: 0px 2px 10px rgb(0 0 0 / 30%);
+}
+
+h1.hero, h1.hero {
+  font-weight: 500!important;
+  letter-spacing: -3px;
+}
+
+h2.hero, h2.hero {
+  font-weight: 900!important;
+  letter-spacing: 1px;
 }
 
 .emphasis {
@@ -370,12 +380,12 @@ hr {
   background: url("/play-icon.svg");
   background-size: contain;
   background-repeat: no-repeat;
-  width: 1em;
-  height: 1em;
+  width: 1.1em;
+  height: 1.1em;
   position: relative;
   display: inline-block;
   margin: 0 10px 0 -2px;
-  top:2px;
+  top: 3px;
 }
 
 .signin-btn {
@@ -452,6 +462,12 @@ hr {
 .btn-large {
   font-size: 1.2rem;
   padding: 12px 20px;
+}
+
+.btn-xl {
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  padding: 15px 30px 20px 30px;
 }
 
 .btn:hover {
@@ -799,7 +815,6 @@ main {
 .parallaxLayer {
   position: absolute;
   min-height: 90vh;
-
   width: 100vw;
   z-index: -90;
   object-fit: cover;
@@ -960,6 +975,10 @@ div>p {
 
 .bg-mildgreen {
   background-color: #00823B;
+}
+
+.bg-orange {
+  background-color: #FF4D24;
 }
 
 .bg-brown {
@@ -1841,6 +1860,28 @@ span.authorTitle {
   transition: all .5s ease;
 }
 
+.action-card {
+  box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
+}
+
+.action-card:hover {
+box-shadow: 0px 2px 20px 6px rgba(0, 0, 0, 0.2);
+transition: all .5s ease;
+}
+
+.action-card a:after {
+  content: url(/navArrow.svg);
+  margin-left: 5px;
+  width: 20px;
+  display: inline-block;
+  color: #fff;
+}
+
+.action-card a:hover {
+transform: translateX(3px);
+transition: all .5s ease;
+}
+
 .corporate-card {
     background: url('/corporate-smart-forest-lopacity.png');
     background-size: cover;
@@ -1997,17 +2038,18 @@ transition: all .5s ease;
 
 .forest-choice {
   text-transform: none!important;
-  font-size: 21px;
-  font-weight: 400!important;
+  font-size: 20px;
+  font-weight: 500!important;
   letter-spacing: 0px!important;
-  line-height: 33px!important;
+  padding: 5px 20px 0px 20px;
+  line-height: 24px;
 }
 
 
 .forest-choice::after {
   content: url(/navArrow.svg);
   margin-left: 5px;
-  width: 20px;
+  width: 22px;
   display: inline-block;
   color: #FF4D24!important;
 }
@@ -2169,16 +2211,6 @@ width: 100%;
   text-shadow: 0px 1px 8px rgb(0 0 0 / 90%);
 }
 
-.container .image-gallery-content .image-gallery-slide .image-gallery-image a .share-btn svg {
-  background-position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 20px;
-  height: 20px;
-  text-shadow: 0px 1px 8px rgb(0 0 0 / 90%);
-  z-index: 4;
-}
-
 .image-gallery-index {
   background: none;
   color: #fff;
@@ -2323,21 +2355,13 @@ z-index: 999;
 
 @media screen and (max-width: 1024px) and (min-width: 577px){
   .parallaxLayers {
-
-    min-height: 95vh;
+    min-height: 80vh;
   }
 
   .v-full {
     min-height: 95vh;
   }
 
-  #ticker {
-    height: 5vh;
-  }
-
-  .v-10 {
-height: 5vh;
-  }
 
   .align-bottom-social {
     bottom: 6vh;
@@ -2395,20 +2419,31 @@ height: 5vh;
 }
 
 
+
 /* Mobile */
 
 @media screen and (max-width: 576px){
+
+  h1.hero, h1.hero {
+    margin-top: 0px!important;
+    font-size: calc(3.1rem + 1.5vw);
+    line-height: calc(3.2rem + 1.5vw);
+  }
+  
+  h2.hero, h2.hero {
+    font-size: calc(3.6rem + 1.5vw);
+    line-height: calc(3.7rem + 1.5vw);
+    margin-bottom: 0px!important;
+    padding-bottom: 0px!important;
+  }
+
+  
 .smallCaps {
 font-size: .9em;
 }
 
-.parallaxLayer {
-  position: absolute;
-  min-height: 90vh;
-  width: 100vw;
-  z-index: -90;
-  object-fit: cover;
-  
+.parallaxLayers {
+  min-height: 60vh;
 }
 
 .carousel-indicators {
@@ -2426,7 +2461,7 @@ font-size: .9em;
 }
 
 .phases {
-  background: url('/5Phases-mob.jpg')!important;
+  background: url('/5Phases-mob.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
