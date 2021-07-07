@@ -2426,8 +2426,8 @@ z-index: 999;
 
   h1.hero, h1.hero {
     margin-top: 0px!important;
-    font-size: calc(3.1rem + 1.5vw);
-    line-height: calc(3.2rem + 1.5vw);
+    font-size: calc(2.8rem + 1.5vw);
+    line-height: calc(2.9rem + 1.5vw);
   }
   
   h2.hero, h2.hero {
