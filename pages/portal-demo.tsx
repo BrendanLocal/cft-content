@@ -119,18 +119,17 @@ const [sliderData,setSliderData] = React.useState({
       {
         original: '/landing-image.png',
         thumbnail: '/landing-image-thumb.png',
-        description: '10:10PM 10/10/2025'
-        
+        description: '10:10AM 10/10/2025'
       },
       {
         original: '/landing-image.png',
         thumbnail: '/landing-image-thumb.png',
-        description: '10:15PM 10/10/2025'
+        description: '10:15AM 10/10/2025'
       },
       {
         original: '/landing-image.png',
         thumbnail: '/landing-image-thumb.png',
-        description: '10:20PM 10/10/2025'
+        description: '10:20AM 10/10/2025'
       }
     ]
 
@@ -199,19 +198,19 @@ return (
                 Image Gallery
                 </Tab>
             </TabList>
-            
+
             <TabPanel className="mt-3">
               
               <Map location={location}/>
               <Row className="borderGrid pt-3">
                 <Col>
                 <Row>
-                  <Col className="ps-1">
+                  <Col className="ps-lg-1">
                   <span className="h2 bold text-green ps-0 mb-0">{userData ? userData.location : ''}</span>
                   </Col>
                 </Row>
                 <Row>
-                  <Col className="ps-1">
+                  <Col className="ps-lg-2">
                   <span className="p text-small">{userData ? userData.country : ''}</span>
                   </Col>
                 </Row>
@@ -401,9 +400,12 @@ return (
               </TabPanel>
               
               <TabPanel className="mt-3 justify-content-center">
-
+                  
+                <Container>
                   <ImageGallery items={images} showPlayButton={false} showIndex={true} />
-                    
+                
+                </Container>
+
               </TabPanel>
 
               </Tabs>

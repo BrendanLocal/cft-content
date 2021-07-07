@@ -2142,6 +2142,7 @@ width: 100%;
 
 .image-gallery-content .image-gallery-slide .image-gallery-image {
   cursor: default;
+  display: block;
 }
 
 .image-gallery-thumbnail.active, .image-gallery-thumbnail:hover {
@@ -2168,12 +2169,13 @@ width: 100%;
   text-shadow: 0px 1px 8px rgb(0 0 0 / 90%);
 }
 
-.share-btn {
-  background: url('/share-btn.svg');
-  height: 28px;
-  width: 28px;
-  top: 0;
-  right: 0;
+.container .image-gallery-content .image-gallery-slide .image-gallery-image a .share-btn svg {
+  background-position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  text-shadow: 0px 1px 8px rgb(0 0 0 / 90%);
   z-index: 4;
 }
 

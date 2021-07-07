@@ -202,19 +202,19 @@ return (
                ForestCast<sup>™</sup>
                 </Tab>
             </TabList>
-            
+
             <TabPanel className="mt-3">
               
               <Map location={location}/>
               <Row className="borderGrid pt-3">
                 <Col>
                 <Row>
-                <Col className="ps-1">
+                <Col className="ps-lg-1">
                   <span className="h2 bold text-green ps-0 mb-0">{user ? user.location : ''}</span>
                   </Col>
                 </Row>
                 <Row>
-                <Col className="ps-1">
+                <Col className="ps-lg-1">
                   <span className="p text-small">{user ? user.country : ''}</span>
                   </Col>
                 </Row>
