@@ -152,19 +152,19 @@ export default function Home({ file, href, children}) {
             <li className="p-0" data-dest="#intro">
               <a href="#intro" className="text-white bold no-underline">{editingdata.menu1}</a>
             </li>
-            <li className="p-0" data-dest="#what">
+            <li className="p-0 d-none" data-dest="#what">
               <a href="#what"  className="text-white bold no-underline">{editingdata.menu2}</a>
             </li>
-            <li className="p-0" data-dest="#how">
+            <li className="p-0 d-none" data-dest="#how">
               <a href="#how" className="text-white bold no-underline">{editingdata.menu3}</a>
             </li> 
-            <li className="p-0" data-dest="#who">
+            <li className="p-0 d-none" data-dest="#who">
               <a href="#who" className="text-white bold no-underline">{editingdata.menu4}</a>
             </li> 
             <li className="p-0" data-dest="#you">
               <a href="#you" className="text-white bold no-underline">{editingdata.menu5}</a>
             </li>
-            <li className="p-0" data-dest="#calculate" >
+            <li className="p-0 d-none" data-dest="#calculate" >
               <a href="#calculate" className="text-white bold no-underline">{editingdata.menu6}</a>
             </li>
           </ul>
@@ -182,43 +182,41 @@ export default function Home({ file, href, children}) {
             strength={200}
           >
             <Container id="intro" fluid className="v-full d-flex py-5 flex-column z-0">
-              <Row className="justify-content-center align-items-center py-5">
-                <Col className="col-10 col-lg-8 col-xl-6 py-5 p-md-1">
-                  <h1 className=" text-white drop mt-3 mb-5"><ReactMarkdown>{editingdata.part1_header1}</ReactMarkdown></h1>
-                  <h2 className="h1 mb-5 mt-3 text-white bold"><ReactMarkdown>{editingdata.part1_header2}</ReactMarkdown></h2>
+              <Row className="justify-content-center align-items-center py-6">
+                <Col className="col-11 col-lg-8 col-xl-6 py-5 p-md-1">
+                  <h1 className="text-center text-white drop hero mt-5 mb-4"><ReactMarkdown>{editingdata.part1_header1}</ReactMarkdown></h1>
+                  <h2 className="h1 text-center mb-5 pb-5 text-white hero bold"><ReactMarkdown>{editingdata.part1_header2}</ReactMarkdown></h2>
                 </Col>
               </Row>
               <Fade bottom>
-              <Row className="justify-content-center  pb-5">
-              <Col className="col-10 col-lg-8 col-xl-6 p-md-1 mb-5 py-5">
-              <ReactMarkdown className="intro-par text-white bold pe-5 py-3">{editingdata.part1_header3}</ReactMarkdown>
-                  </Col>
-                </Row>
-              </Fade>
-              <Fade bottom>
-                <Row className="justify-content-center pb-4 ">
-                  <Col className="col-10 col-lg-8 pe-lg-0 p-0">
+                <Row className="justify-content-center pb-4">
+                  <Col className="col-10 col-md-6 col-lg-8 pe-lg-0 p-0">
                     <h2 className="intro-par text-center text-white bold pb-0"><ReactMarkdown>{editingdata.part1_header4}</ReactMarkdown></h2>
                   </Col>
                 </Row>
-                <Row className="justify-content-center pb-5 align-items-stretch mb-5">
-                <Col className="col-10 col-lg-3 col-xl-2  mx-3 mb-4">
+                <Row className="justify-content-center pb-5 align-items-stretch mb-5 mb-sm-0">
+                <Col className="col-10 col-md-8 col-lg-4 col-xl-2 mx-1 mb-4">
                   <div className="roundedBox card no-border bg-white p-4 h-100">
-                  <ReactMarkdown className="large text-green">{editingdata.part1_box1para}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey m-2">{editingdata.part1_box1para}</ReactMarkdown>
                     </div>
                   </Col>
-                  <Col className="col-10 col-lg-3 col-xl-2  mx-3 mb-4">
+                  <Col className="col-10 col-md-8 col-lg-4 col-xl-2 mx-1 mb-4">
                     <div className="roundedBox card no-border bg-white p-4 h-100">
-                    <ReactMarkdown className="large text-green">{editingdata.part1_box2para}</ReactMarkdown>
+                    <ReactMarkdown className="text-grey m-2">{editingdata.part1_box2para}</ReactMarkdown>
                     </div>
                   </Col>
-                  <Col className="col-10 col-lg-3 col-xl-2  mx-3 mb-4">
+                  <Col className="col-10 col-md-8 col-lg-4 col-xl-2 mx-1 mb-4">
                     <div className="roundedBox card no-border bg-white p-4 h-100">
-                    <ReactMarkdown className="large text-green">{editingdata.part1_box3para}</ReactMarkdown>
+                    <ReactMarkdown className="text-grey m-2">{editingdata.part1_box3para}</ReactMarkdown>
                     </div>
                   </Col>
-                  <Col className="text-center col-10 col-lg-12 pb-5 mt-4 ">
-                    <a className="btn btn-large btn-green intro-cta" onClick={handleShow}>{editingdata.part1_button1}</a>
+                  <Col className="col-10 col-md-8 col-lg-4 col-xl-2 mx-1 mb-4">
+                    <div className="roundedBox card no-border bg-white p-4 h-100">
+                    <ReactMarkdown className="text-grey m-2">{editingdata.part1_box4para}</ReactMarkdown>
+                    </div>
+                  </Col>
+                  <Col className="text-center col-10 col-lg-12 pb-5 mt-4">
+                    <a className="btn btn-xl btn-green intro-cta" onClick={handleShow}>{editingdata.part1_button1}</a>
                   </Col>
                 </Row>
               </Fade>
@@ -227,7 +225,7 @@ export default function Home({ file, href, children}) {
         </Parallax>
         
 
-        <Container id="what" fluid className="v-full z-999 bg-green align-items-center p-5 container-drop-heavy">
+        <Container id="what" fluid className="v-full z-999 bg-green align-items-center p-5 container-drop-heavy d-none">
           <Fade bottom>
             <Row className="py-5 align-items-center justify-content-center mt-2 ms-lg-1">
               <Col className="order-2 order-lg-1 col-12 p-5 col-md-4 text-white ms-lg-5 pe-lg-2">
@@ -242,7 +240,7 @@ export default function Home({ file, href, children}) {
           </Fade>
         </Container>
 
-        <Container id="how" fluid className="v-full z-999 bg-green p-5">
+        <Container id="how" fluid className="v-full z-999 bg-green p-5 d-none">
           <Fade bottom>
             <Row className="py-5 align-items-center justify-content-center p-4">
               <Col className="col-12 col-md-5 p-5">
@@ -259,7 +257,7 @@ export default function Home({ file, href, children}) {
           </Fade>
         </Container>
 
-        <Container  id="who" fluid className="v-full z-999 bg-green py-5 mt-4 mb-4">
+        <Container  id="who" fluid className="v-full z-999 bg-green py-5 mt-4 mb-4 d-none">
           <Fade bottom>
           <Row className="pe-5 align-items-center justify-content-center  align-items-stretch protorow pb-0 mb-0 ms-lg-5">
             <Col className="col-10 col-md-3 text-white mb-5 py-5 px-5 me-5 ms-5">
@@ -273,39 +271,60 @@ export default function Home({ file, href, children}) {
           </Fade>
         </Container>
 
-        <Container id="you" fluid className="v-full z-999 bg-green pt-5 mt-0">
+        <Container id="you" fluid className="v-full z-999 bg-green py-6 container-drop-heavy">
           <Fade bottom>
-          <Row  className="align-items-center justify-content-center pt-4 mt-0">
+          <Row  className="align-items-center justify-content-center pt-5 mt-0">
               <Col className="col-10 col-lg-6 pe-lg-0 mb-2 pt-0 mt-0">
                 <h2 className="text-center text-orange bold pt-0 mt-0"><ReactMarkdown>{editingdata.part5_header1}</ReactMarkdown></h2>
               </Col>
             </Row>
-          <Row className="justify-content-center align-items-stretch">
-            <Col className="col-11 col-md-6 col-lg-6 pe-lg-0 m-3">
-              <div className="roundedBox card bg-green no-border py-4 d-flex flex-column drop corporate-card">
+          <Row className="justify-content-center align-items-stretch pb-5">
+            <Col className="col-10 col-md-8 pe-lg-0 m-3">
+              <div className="roundedBox card bg-mildgreen no-border py-3 d-flex flex-column drop action-card">
+                <Link href="/build-your-smart-forest">
+                  <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button1}</a>
+                </Link>
+              </div>
+            </Col>
+            <Col className="col-10 col-md-8 pe-lg-0 m-3">
+              <div className="roundedBox card bg-green no-border py-3 d-flex flex-column drop corporate-card">
                 <Link href="/build-your-smart-forest#corporate">
-                  <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop py-1">{editingdata.part5_button1}</a>
+                  <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button2}</a>
                 </Link>
               </div>
             </Col>
-            <Col className="col-11 col-md-6 col-lg-6 pe-lg-0 m-3">
-              <div className="roundedBox card bg-green no-border py-4 d-flex flex-column drop school-card">
+            <Col className="col-10 col-md-8 pe-lg-0 m-3">
+              <div className="roundedBox card bg-green no-border py-3 d-flex flex-column drop school-card">
                 <Link href="/build-your-smart-forest#school">
-                  <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop py-1">{editingdata.part5_button2}</a>
+                  <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button3}</a>
                 </Link>
               </div>
             </Col>
-            <Col className="col-11 col-md-6 col-lg-6 pe-lg-0 m-3">
-              <div className="roundedBox card bg-green no-border py-4 d-flex flex-column drop legacy-card">
+            <Col className="col-10 col-md-8 pe-lg-0 m-3">
+              <div className="roundedBox card bg-mildgreen no-border py-3 d-flex flex-column drop action-card">
+                <Link href="/build-your-smart-forest#school">
+                  <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button4}</a>
+                </Link>
+              </div>
+            </Col>
+            <Col className="col-10 col-md-8 pe-lg-0 m-3">
+              <div className="roundedBox card bg-green no-border py-3 d-flex flex-column drop legacy-card">
                 <Link href="/build-your-smart-forest#legacy" >
-                  <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop py-1">{editingdata.part5_button3}</a>
+                  <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button5}</a>
                 </Link>
               </div>
             </Col>
-            <Col className="col-11 col-md-6 col-lg-6 pe-lg-0 m-3">
-              <div className="roundedBox card bg-green no-border py-4 d-flex flex-column drop communal-card">
+            <Col className="col-10 col-md-8 pe-lg-0 m-3">
+              <div className="roundedBox card bg-green no-border py-3 d-flex flex-column drop communal-card">
                 <Link href="/build-your-smart-forest#communal" >
-                  <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop py-1">{editingdata.part5_button4}</a>
+                  <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop 1">{editingdata.part5_button6}</a>
+                </Link>
+              </div>
+            </Col>
+            <Col className="col-10 col-md-8 pe-lg-0 m-3">
+              <div className="roundedBox card bg-mildgreen no-border py-3 d-flex flex-column drop action-card">
+                <Link href="/about">
+                  <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button7}</a>
                 </Link>
               </div>
             </Col>
@@ -313,7 +332,7 @@ export default function Home({ file, href, children}) {
           </Fade>
         </Container>
       
-        <Container id="calculate" fluid className="v-full z-999 bg-green pt-5 mt-0 mb-5">
+        <Container id="calculate" fluid className="v-full z-999 bg-green pt-5 mt-0 mb-5 d-none">
           <Fade bottom>
             <Row className="align-items-center justify-content-center pt-4">
               <Col className="col-10 col-lg-7 pe-lg-0 mb-4">
