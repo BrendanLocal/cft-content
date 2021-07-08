@@ -501,9 +501,24 @@ hr {
     border-radius: 0;
 }
 
+.textButtonAlt, .btn-text {
+  -webkit-appearance: initial;
+    border: none;
+    background: none;
+    text-shadow: none;
+    padding: 0;
+    border-radius: 0;
+}
+
 .textButton.text-orange, .btn-text.text-orange {
 text-decoration: underline;
 }
+
+.textButtonAlt.text-orange, .btn-text.text-orange {
+  text-decoration: none;
+  }
+  
+
 
 .textButton.text-mildgreen, .btn-text.text-mildgreen {
   color: #00823B;
@@ -516,6 +531,23 @@ text-decoration: underline;
 .textButton:hover, .btn-text:hover {
   background: none;
   box-shadow: none;
+  color: #fff;
+}
+
+.textButtonAlt:hover, .btn-text:hover {
+  transform: translateX(3px);
+  transition: all .5s ease;
+  background: none;
+  box-shadow: none;
+  color: #fff;
+}
+
+.textButtonAlt:before {
+  content: url(/navArrow.svg);
+  transform: rotate(0deg);
+  margin-right: 8px;
+  width: 16px;
+  display: inline-block;
   color: #fff;
 }
 
@@ -2362,10 +2394,6 @@ z-index: 999;
     min-height: 95vh;
   }
 
-
-  .align-bottom-social {
-    bottom: 6vh;
-  }
 
   .phases {
     background: url('/5Phases-mob.jpg')!important;
