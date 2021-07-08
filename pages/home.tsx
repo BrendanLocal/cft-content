@@ -301,23 +301,23 @@ export default function Home({ file, href, children}) {
               </div>
             </Col>
             <Col className="col-10 col-md-8 pe-lg-0 m-3">
-              <div className="roundedBox card bg-mildgreen no-border py-3 d-flex flex-column drop action-card">
-                <Link href="/build-your-smart-forest#school">
-                  <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button4}</a>
-                </Link>
-              </div>
-            </Col>
-            <Col className="col-10 col-md-8 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border py-3 d-flex flex-column drop legacy-card">
                 <Link href="/build-your-smart-forest#legacy" >
-                  <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button5}</a>
+                  <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button4}</a>
                 </Link>
               </div>
             </Col>
             <Col className="col-10 col-md-8 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border py-3 d-flex flex-column drop communal-card">
                 <Link href="/build-your-smart-forest#communal" >
-                  <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop 1">{editingdata.part5_button6}</a>
+                  <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop 1">{editingdata.part5_button5}</a>
+                </Link>
+              </div>
+            </Col>
+            <Col className="col-10 col-md-8 pe-lg-0 m-3">
+              <div className="roundedBox card bg-mildgreen no-border py-3 d-flex flex-column drop action-card">
+                <Link href="/build-your-smart-forest#school">
+                  <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button6}</a>
                 </Link>
               </div>
             </Col>
@@ -325,6 +325,13 @@ export default function Home({ file, href, children}) {
               <div className="roundedBox card bg-mildgreen no-border py-3 d-flex flex-column drop action-card">
                 <Link href="/about">
                   <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button7}</a>
+                </Link>
+              </div>
+            </Col>
+            <Col className="col-10 col-md-8 pe-lg-0 m-3">
+              <div className="roundedBox card bg-mildgreen no-border py-3 d-flex flex-column drop action-card">
+                <Link href="/about">
+                  <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button8}</a>
                 </Link>
               </div>
             </Col>
