@@ -535,7 +535,9 @@ export default function Build({ file }) {
             <Row className="text-center justify-content-center">
               <Col className="col-11 col-lg-8 text-white">
                 <h2 className="bold py-3 text-white tight-drop-light">
+                <ReactMarkdown rehypePlugins={[rehypeRaw]} >
                   {editingdata.part4_header1}
+                  </ReactMarkdown>
                 </h2>
               </Col>
             </Row>
@@ -746,7 +748,9 @@ export default function Build({ file }) {
             <Row className="text-center justify-content-center">
               <Col className="col-11 col-lg-8 text-white">
                 <h2 className="bold py-3 text-white tight-drop-light">
+                <ReactMarkdown rehypePlugins={[rehypeRaw]} >
                   {editingdata.part5_header1}
+                  </ReactMarkdown>
                 </h2>
               </Col>
             </Row>
@@ -959,7 +963,12 @@ export default function Build({ file }) {
           <Fade bottom>
             <Row className="text-center justify-content-center">
               <Col className="col-11 col-lg-8 text-white">
-                <h2 className="bold py-3 text-white tight-drop-light">{editingdata.part6_header1}</h2>
+                <h2 className="bold py-3 text-white tight-drop-light">
+                  
+                <ReactMarkdown rehypePlugins={[rehypeRaw]} >
+                  {editingdata.part6_header1}
+                  </ReactMarkdown>
+                  </h2>
               </Col>
             </Row>
           </Fade>
@@ -1137,7 +1146,10 @@ export default function Build({ file }) {
           <Fade bottom>
             <Row className="text-center justify-content-center">
               <Col className="col-11 col-lg-8 text-white">
-                <h2 className="bold py-3 text-white tight-drop-light">{editingdata.part7_header1}</h2>
+                <h2 className="bold py-3 text-white tight-drop-light">
+                <ReactMarkdown rehypePlugins={[rehypeRaw]} >
+                  {editingdata.part7_header1}
+                  </ReactMarkdown></h2>
               </Col>
             </Row>
           </Fade>
