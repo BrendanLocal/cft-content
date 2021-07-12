@@ -501,7 +501,7 @@ hr {
     border-radius: 0;
 }
 
-.textButtonAlt, .btn-text {
+.textButtonAlt {
   -webkit-appearance: initial;
     border: none;
     background: none;
@@ -514,7 +514,7 @@ hr {
 text-decoration: underline;
 }
 
-.textButtonAlt.text-orange, .btn-text.text-orange {
+.textButtonAlt.text-orange {
   text-decoration: none;
   }
   
@@ -534,7 +534,7 @@ text-decoration: underline;
   color: #fff;
 }
 
-.textButtonAlt:hover, .btn-text:hover {
+.textButtonAlt:hover {
   transform: translateX(3px);
   transition: all .5s ease;
   background: none;
@@ -1096,6 +1096,10 @@ div>p {
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+.intro-btn:hover {
+  box-shadow: none;
 }
 
 
