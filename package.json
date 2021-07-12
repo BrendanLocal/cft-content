@@ -97,6 +97,7 @@
     "react-tinacms-inline": "^0.41.0",
     "react-transition-group": "^4.4.1",
     "react-visibility-sensor": "^5.1.1",
+    "rehype-raw": "^5.1.0",
     "rellax": "^1.12.1",
     "sass": "^1.34.0",
     "sendgrid": "^5.2.3",
