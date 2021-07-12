@@ -24,7 +24,7 @@ export default function Power({ file }) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const formOptions = {
-    label: "About",
+    label: "Inside CFT",
     fields: [
       {name: 'pageName', component: 'markdown' },
       {name: 'pageURL', component: 'markdown' },
@@ -529,7 +529,7 @@ export const getStaticProps: GetStaticProps = async function ({
   if (preview) {
     return getGithubPreviewProps({
       ...previewData,
-      fileRelativePath: "content/about.json",
+      fileRelativePath: "content/inside.json",
       parse: parseJson,
     });
   }
@@ -539,8 +539,8 @@ export const getStaticProps: GetStaticProps = async function ({
       error: null,
       preview: false,
       file: {
-        fileRelativePath: "content/about.json",
-        data: (await import("../content/about.json")).default,
+        fileRelativePath: "content/inside.json",
+        data: (await import("../content/inside.json")).default,
       },
     },
   };

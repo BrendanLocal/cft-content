@@ -178,11 +178,7 @@ return(
 
               <li><img onClick={toggleSearch} src="/searchIcon.svg"></img>
               </li>
-              <li>
-                 <div  className={isPlaying ? 'mute' : null} ><img className="soundPlaying" onClick={() => toggleSound()} src="/soundIcon.svg"></img><img className="soundMute" src="/muteIcon.svg"></img></div>
-
-
-              </li>
+           
             </ul>
           </div>
         </div>

@@ -340,8 +340,6 @@ export default function Build({ file }) {
               <h1 className="text-orange mb-5 bold">{editingdata.part1_header1}</h1>
               <p className="large my-5 op-9">{editingdata.part1_para1}</p>
               <p className="text-white text-left smallcaps intro-links-header op-5 mt-4 mb-3">{editingdata.part1_header2}</p>
-              <a href="#the-plan" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.part1_menu1}</a>
-              <a href="#our-forests" className="btn btn-text text-left text-orange intro-links  no-underline">{editingdata.part1_menu2}</a>
             </Col>
           </Row>
         </Container>
@@ -505,25 +503,6 @@ export default function Build({ file }) {
                   <p className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part3_box4para1}</p>
                   <a href="#communal" className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">{editingdata.learnMore}</a>
                 </div>
-              </Col>
-            </Row>
-          </Fade>
-          <Fade bottom>
-            <Row className="pb-5 align-items-center justify-content-center my-5">
-              <Col className="col-10 col-lg-7 p-5 bg-brown roundedBox innerShadow">
-                <Row className="justify-content-center my-3">
-                  <Col className="text-center">
-                    <h3 className="text-orange bold mb-2">{editingdata.part3_box5header1}</h3>
-                    <p className="text-white medium mb-2">{editingdata.part3_box5para1}</p>
-                  </Col>
-                </Row>
-                <Row className="justify-content-center">
-                  <Col className="text-center">
-                    <Button className="px-5" variant="green">
-                      {editingdata.part3_box5button}
-                    </Button>
-                  </Col>
-                </Row>
               </Col>
             </Row>
           </Fade>
