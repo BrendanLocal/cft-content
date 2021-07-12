@@ -22,6 +22,8 @@ import {
   useGithubToolbarPlugins,
 } from"react-tinacms-github";
 
+import DigitalSign from "../components/digitalSign";
+
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 export default function Build({ file }) {
@@ -522,6 +524,8 @@ export default function Build({ file }) {
             </Row>
           </Fade>
 
+          
+
           <Fade bottom>
             <Row className="text-center  justify-content-center mb-4">
               <Col className="col-11 col-lg-7">
@@ -718,6 +722,10 @@ export default function Build({ file }) {
                 </div>
               </Col>
             </Row>
+          </Fade>
+
+          <Fade bottom>
+          <DigitalSign/>
           </Fade>
         </Container>
 
