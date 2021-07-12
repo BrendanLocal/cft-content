@@ -1,11 +1,22 @@
-
-
 {
-  "pageName":"Contact Us",
-  "pageURL":"contact",
-  "title": "Contact Us",
-  "name": "Canada's Forest Trust",
-  "address": "Street Address, Ottawa, Ontario, CANADA",
-  "additionalInfo": "info tbd",
+  "title":"Canada's Forest Trust - Contact",
+  "leftHeader":"Canada's Forest Trust",
+  "leftAddress":"Street Address, Ottawa, Ontario, CANADA",
+  "leftPara":"info tbd",
+  "leftEmail":"Email TBD",
+  "leftPhone":"Phone TBD",
+  "header": "Contact Us",
+
+  "name":"Your Name",
+  "email":"Your Email",
+  "intHeader":"Your Interest(s)",
+  "intCorp":"Corporate Forests",
+  "intSchool":"School Forests",
+  "intLeg":"Legacy Forests",
+  "intComm":"Communal Forests",
+  "messageHeader":"Your Message",
+  "messagePlaceholder":"Tell us about yourself, the organization, school, or community that you represent, and the impact you would like to make...",
+  "submit":"Submit",
+  
   "contactSuccess": "Thank you for reaching out."
 }
