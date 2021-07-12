@@ -1700,6 +1700,13 @@ z-index:999;
 
 /* Forms */
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+
 input[type=checkbox] {
   margin-right: 10px;
 }
@@ -2317,6 +2324,39 @@ ul.plus li:before {
   margin-right: 10px;
   width: 1.5em;
   left: -2em;
+}
+
+/* Digital Sign */
+
+.signImageContainer {
+position: relative;
+
+}
+
+.signTextBottom {
+  width: 94%;
+  bottom: 11%;
+text-align: center;
+font-size: 12px;
+}
+
+.signImageText {
+  position: absolute;
+color: #000;
+}
+
+.signTextForest {
+  top: 27%;
+    width: 10%;
+    left: 40%;
+    font-size: 17px;
+}
+
+.signTextAcres {
+  bottom: 25%;
+    width: 40%;
+    left: 40%;
+    font-size: 17px;
 }
 
 /* Search */
