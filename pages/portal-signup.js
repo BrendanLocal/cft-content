@@ -11,6 +11,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+
+import { useCurrentUser } from '../hooks/index';
 import styles from '../styles/Home.module.css'
 import Fade from 'react-reveal/Fade';
 import Modal from 'react-bootstrap/Modal';
@@ -45,15 +47,17 @@ const SignupPage = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  /*
   const [editingdata, form] = useGithubJsonForm(file, formOptions)
   usePlugin(form)
   useGithubToolbarPlugins()
-
+  */
+ 
 
   const [user, { mutate }] = useCurrentUser();
   const [errorMsg, setErrorMsg] = useState('');
   useEffect(() => {
-    // redirect to home if user is authenticated
+    /*redirect to home if user is authenticated*/
     if (user) Router.replace('/home');
   }, [user]);
 
@@ -84,8 +88,8 @@ const SignupPage = () => {
           <Col className="col-12 col-md-8 col-lg-5 col-xl-4 p-5">
           <div className="roundedBox no-border card-drop p-5 pb-4 bg-white mt-3">
 
-        <h1 className="h2 text-orange bold pt-0 mb-3 text-center">{editingdata.signUp}</h1>
-          <p className="text-grey mb-3 text-center">{editingdata.para1}</p>
+        <h1 className="h2 text-orange bold pt-0 mb-3 text-center">Sign Up</h1>
+          <p className="text-grey mb-3 text-center">Please enter the following credentials to create an account.</p>
           <form onSubmit={handleSubmit}>
             {errorMsg ? <p style={{ color: 'red' }}>{errorMsg}</p> : null}
             <label className="mb-1 w-100" htmlFor="name">
@@ -93,7 +97,7 @@ const SignupPage = () => {
                 id="name"
                 name="name"
                 type="text"
-                placeholder={editingdata.placeholder1}
+                placeholder="Client's Name"
               />
             </label>
             <label className="mb-1 w-100" htmlFor="email">
@@ -101,7 +105,7 @@ const SignupPage = () => {
                 id="email"
                 name="email"
                 type="email"
-                placeholder={editingdata.placeholder2}
+                placeholder="Client's Email"
               /> 
             </label>
             <label className="mb-2 w-100" htmlFor="password">
@@ -109,11 +113,11 @@ const SignupPage = () => {
                 id="password"
                 name="password"
                 type="password"
-                placeholder={editingdata.placeholder3}
+                placeholder="Client Password (temporary)"
               />
             </label>
             <br/>
-            <Button className="w-100 btn-green no-border mt-3 mb-4" type="btn-green">{editingdata.signUp}</Button>
+            <Button className="w-100 btn-green no-border mt-3 mb-4" type="btn-green">Register</Button>
           </form>
           </div>
           </Col>
@@ -125,26 +129,26 @@ const SignupPage = () => {
 
 export default SignupPage;
 /**
-* Fetch data with getStaticProps based on 'preview' mode
-*/
-// ERROR: angry at not being typescript file
-// export const getStaticProps: GetStaticProps = async function({preview, previewData,}) {
-//   if (preview) {
-//     return getGithubPreviewProps({
-//       ...previewData,
-//       fileRelativePath: 'content/home.json',
-//       parse: parseJson,
-//     })
-//   }
-//   return {
-//     props: {
-//       sourceProvider: null,
-//       error: null,
-//       preview: false,
-//       file: {
-//         fileRelativePath: 'content/home.json',
-//         data: (await import('../content/home.json')).default,
-//       },
-//     },
-//   }
-// }
+ Fetch data with getStaticProps based on 'preview' mode
+ export const getStaticProps: GetStaticProps = async function({preview, previewData,}) {
+  if (preview) {
+    return getGithubPreviewProps({
+      ...previewData,
+      fileRelativePath: 'content/portal-signup.json',
+      parse: parseJson,
+    })
+  }
+  return {
+    props: {
+      sourceProvider: null,
+      error: null,
+      preview: false,
+      file: {
+        fileRelativePath: 'content/portal-signup.json',
+        data: (await import('../content/portal-signup.json')).default,
+      },
+    },
+  }
+}
+
+**/
