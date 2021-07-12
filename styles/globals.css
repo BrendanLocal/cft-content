@@ -2147,6 +2147,32 @@ ul.plus li:before {
   left: -2em;
 }
 
+/* Digital Sign */
+
+.signImageContainer {
+position: relative;
+
+}
+
+.signTextBottom {
+  width: 94%;
+  bottom: 11%;
+text-align: center;
+font-size: 12px;
+}
+
+.signImageText {
+  position: absolute;
+color: #000;
+}
+
+.signTextForest {
+  top: 27%;
+    width: 10%;
+    left: 40%;
+    font-size: 17px;
+}
+
 /* Search */
 
 #searchComponent {

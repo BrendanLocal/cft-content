@@ -17,6 +17,8 @@ import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Slide } from 'react-slideshow-image';
 
+import DigitalSign from "../components/digitalSign";
+
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 export default function Build({ file }) {
@@ -423,6 +425,12 @@ return (
             <Button className="btn-large" variant="green">Build a Corporate Smart Forest™</Button>
             </Col>
       
+        </Row>
+
+        <Row>
+          <Col>
+          <DigitalSign/>
+          </Col>
         </Row>
 
 
