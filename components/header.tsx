@@ -33,27 +33,77 @@ const Header = ()=> {
       path: "/build-your-smart-forest"
     },
     {
-      key: "navItem4",
+      key: "navItem2-1",
+      label: "^ Corporate",
+      path: "/build-your-smart-forest"
+    },
+    {
+      key: "navItem2-2",
+      label: "^ School",
+      path: "/build-your-smart-forest"
+    },
+    {
+      key: "navItem2-3",
+      label: "^ Individuals",
+      path: "/build-your-smart-forest"
+    },
+    {
+      key: "navItem2-4",
+      label: "^ Communities",
+      path: "/build-your-smart-forest"
+    },
+    {
+      key: "navItem3",
       label: "Your Smart Forest",
       path: "/portal"
     },
     {
-      key: "navItem5",
+      key: "navItem4",
       label: "Carbon Calculators",
       path: "/carbon-calculator"
     },
     {
-      key: "navItem6",
+      key: "navItem4-1",
+      label: "^ Corporate",
+      path: "/carbon-calculator"
+    },
+    {
+      key: "navItem4-2",
+      label: "^ School",
+      path: "/carbon-calculator"
+    },
+    {
+      key: "navItem4-3",
+      label: "^ Personal",
+      path: "/carbon-calculator"
+    },
+    {
+      key: "navItem5",
       label: "Net-Zero Calculator",
       path: "/smart-forest-calculator"
     },
     {
-      key: "navItem7",
+      key: "navItem5-1",
+      label: "^ Corporate",
+      path: "/smart-forest-calculator"
+    },
+    {
+      key: "navItem5-2",
+      label: "^ School",
+      path: "/smart-forest-calculator"
+    },
+    {
+      key: "navItem5-3",
+      label: "^ Personal",
+      path: "/smart-forest-calculator"
+    },
+    {
+      key: "navItem6",
       label: "About",
       path: "/about"
     },
     {
-      key: "navItem8",
+      key: "navItem7",
       label: "Contact",
       path: "/contact"
     }
@@ -128,11 +178,54 @@ const Header = ()=> {
           <div className="row">
             <div className="col-10 col-md-9">
               <ul className="py-5 py-sm-0">
-                {navItems.map(item =>
-                  <li key={item.key} className="slimlineBottom" onClick={toggleClass}>
-                    <Link href={item.path} >{item.label}</Link>
-                  </li>
-                )}
+                <li className="slimlineBottom" onClick={toggleClass}>
+                  <Link href="/what-is-a-smart-forest">What is a Smart Forest?</Link>
+                </li>
+                <li className="slimlineBottom" onClick={toggleClass}>
+                  <Link href="/build-your-smart-forest">Build a Smart Forest</Link>
+                </li>
+                <li className="subHeader slimlineBottom" onClick={toggleClass}>
+                  <Link href="/build-your-smart-forest#corporate">Corporate</Link>
+                </li>
+                <li className="subHeader slimlineBottom" onClick={toggleClass}>
+                  <Link href="/build-your-smart-forest#school">School</Link>
+                </li>
+                <li className="subHeader slimlineBottom" onClick={toggleClass}>
+                  <Link href="/build-your-smart-forest#communities">Communities</Link>
+                </li>
+                <li className="slimlineBottom" onClick={toggleClass}>
+                  <Link href="/portal">Your Smart Forest</Link>
+                </li>
+                <li className="slimlineBottom" onClick={toggleClass}>
+                  <Link href="/carbon-calculator">Carbon Calculators</Link>
+                </li>
+                <li className="subHeader slimlineBottom" onClick={toggleClass}>
+                  <Link href="/carbon-calculator#corporate">Corporate</Link>
+                </li>
+                <li className="subHeader slimlineBottom" onClick={toggleClass}>
+                  <Link href="/carbon-calculator#school">School</Link>
+                </li>
+                <li className="subHeader slimlineBottom" onClick={toggleClass}>
+                  <Link href="/carbon-calculator#personal">Personal</Link>
+                </li>
+                <li className="slimlineBottom" onClick={toggleClass}>
+                  <Link href="/carbon-calculator">Net-Zero Calculator</Link>
+                </li>
+                <li className="subHeader slimlineBottom" onClick={toggleClass}>
+                  <Link href="/smart-forest-calculator#personal">Corporate</Link>
+                </li>
+                <li className="subHeader slimlineBottom" onClick={toggleClass}>
+                  <Link href="/smart-forest-calculator#personal">School</Link>
+                </li>
+                <li className="subHeader slimlineBottom" onClick={toggleClass}>
+                  <Link href="/smart-forest-calculator#personal">Personal</Link>
+                </li>
+                <li className="slimlineBottom" onClick={toggleClass}>
+                  <Link href="/about">About</Link>
+                </li>
+                <li className="slimlineBottom" onClick={toggleClass}>
+                  <Link href="/contact">Contact</Link>
+                </li>
               </ul>
             </div>
           </div>
