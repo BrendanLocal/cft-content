@@ -339,7 +339,7 @@ li a, a.underline {
   font-weight: 200;
 }
 
-.bold, a.bold {
+.bold, .bold p, a.bold {
 
   font-weight: 700;
 }
