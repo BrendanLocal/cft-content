@@ -215,7 +215,7 @@ const Header = ()=> {
                   <Link href="/smart-forest-calculator#personal">Corporate</Link>
                 </li>
                 <li className="ms-4 ms-md-5 subheader" onClick={toggleClass}>
-                  <Link href="/smart-forest-calculator#personal">School</Link>
+                  <Link href="/smart-forest-calculator#school">School</Link>
                 </li>
                 <li className="ms-4 ms-md-5 subheader mb-2" onClick={toggleClass}>
                   <Link href="/smart-forest-calculator#personal">Personal</Link>
