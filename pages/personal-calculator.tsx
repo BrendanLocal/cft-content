@@ -2,6 +2,8 @@ import * as React from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+
+import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Link from 'next/link'
 import { useRouter } from "next/router";
@@ -10,6 +12,8 @@ import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 import { useGithubJsonForm, useGithubToolbarPlugins } from "react-tinacms-github";
 import { usePlugin } from "tinacms";
 import { useState } from "react";
+import NumericInput from 'react-numeric-input';
+import { Accordion } from "react-bootstrap";
 
 const Lang = () => {
 var language ="en";
@@ -192,17 +196,24 @@ export default function App({ file, href, children}) {
     smallGas	:{mult:	0.14836	,miles: null},
     smallDiesel	:{mult:	0.13721	,miles: null},
     smallHybrid	:{mult:	0.10275	,miles: null},
+    smallPlug	:{mult:	0.02935	,miles: null},
+    smallElectric	:{mult:	0	,miles: null},
     mediumGas	:{mult:	0.18659	,miles: null},
 
     rentalGas	:{mult:	0.18659	,miles: null},
     mediumDiesel	:{mult:	0.16637	,miles: null},
     mediumHybrid	:{mult:	0.10698	,miles: null},
+    mediumPlug	:{mult:	0.07083	,miles: null},
+    mediumElectric	:{mult:	0	,miles: null},
     largeGas	:{mult:	0.27087	,miles: null},
     largeDiesel	:{mult:	0.20419	,miles: null},
     largeHybrid	:{mult:	0.1448	,miles: null},
+    largePlug	:{mult:	0.07731	,miles: null},
+    largeElectric	:{mult:	0	,miles: null},
     motorbikeGas	:{mult:	0.11337	,miles: null},
     planeGas	:{mult:	2.54306	,miles: null},
 
+    heliGas	:{mult:	2.54306	,miles: null},
     jetGas	:{mult:	2.54306	,miles: null},
     yachtGas	:{mult:	2.54	,miles: null},
     yachtDiesel	:{mult:	2.35	,miles: null},
@@ -260,7 +271,7 @@ export default function App({ file, href, children}) {
   }
 
   const changeYear = (event) => {
-    setYear(event.target.value);
+    setYear(event.getValueAsNumber);
   }
 
   const changeHeat = (event) => {
@@ -280,7 +291,7 @@ export default function App({ file, href, children}) {
   }
 
   const changeYearTwo = (event) => {
-    setYearTwo(event.target.value);
+    setYearTwo(event.getValueAsNumber);
   }
 
   const changeHeatTwo = (event) => {
@@ -479,9 +490,8 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="number">{editingdata.heat1Months}</label>
                   <br />
-                  <input onChange={changeYear} type="number" min="0" onKeyPress={(event) => {
-                    if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                  }} placeholder="Month(s) per year in residence"/>
+                  <NumericInput onChange={changeYear} strict="true" precision={0} step={1} min={0} max={12} value={selectYear} placeholder="Month(s) per year in residence"/>
+                  
                 </Col>
               </Row>
 
@@ -621,16 +631,27 @@ export default function App({ file, href, children}) {
 
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
-                <Col className="col-12">
+              <Col className="col-12">
                   <h3 className="text-green">{editingdata.vehicleHeader}</h3>
+
                   <p className="text-grey">{editingdata.vehiclePara1}</p>
-                  <hr/>
                 </Col>
                 <Col>
+              <Accordion>
+              <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="0">
+                            
                   <h5 className="smallCaps text-small text-green">{editingdata.vehicleSmall}</h5>
+
                   <p className="text-small op-6">{editingdata.vehicleSmallDesc}</p>
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="0">
+                
+                <div>
+                
                   <Row>
                     <Col className="col">
+
                       {editingdata.vehicleGas}
                       <input onChange={calculateMiles} name="smallGas" type="number" min="0" onKeyPress={(event) => {
                         if (!/[0-9]/.test(event.key)) {event.preventDefault();}
@@ -653,10 +674,33 @@ export default function App({ file, href, children}) {
                       }} placeholder="Annual KM (hybrid)"/>
                     </Col>
                   </Row>
-                  <hr/>
-                  
+                  <Row>
+                    <Col className="col">
+                      <input onChange={calculateMiles} name="smallPlug" type="number" min="0" onKeyPress={(event) => {
+                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                      }} placeholder="Annual KM (plug-in hybrid)"/>
+                    </Col>
+                  </Row>
+
+                  <Row>
+                    <Col className="col">
+                      {editingdata.vehicleElectric}
+                      <input onChange={calculateMiles} name="smallElectric" type="number" min="0" onKeyPress={(event) => {
+                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                      }} placeholder="Annual KM (battery electric)"/>
+                    </Col>
+                  </Row>
+                  </div>
+                </Accordion.Collapse>
+                </Card>
+                <Card>
+                <Accordion.Toggle as={Card.Header} eventKey="1">
                   <h5 className="smallCaps text-small text-green">{editingdata.vehicleMed}</h5>
                   <p className="text-small op-6">{editingdata.vehicleMedDesc}</p>
+                  </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="1">
+
+                              <div>
                   <Row>
                     <Col className="col">
                       {editingdata.vehicleGas}
@@ -681,10 +725,32 @@ export default function App({ file, href, children}) {
                       }} placeholder="Annual KM (hybrid)"/>
                     </Col>
                   </Row>
-                  <hr/>
+                  <Row>
+                    <Col className="col">
+                      <input onChange={calculateMiles} name="mediumPlug" type="number" min="0" onKeyPress={(event) => {
+                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                      }} placeholder="Annual KM (plug-in hybrid)"/>
+                    </Col>
+                  </Row>
 
+                  <Row>
+                    <Col className="col">
+                      {editingdata.vehicleElectric}
+                      <input onChange={calculateMiles} name="mediumElectric" type="number" min="0" onKeyPress={(event) => {
+                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                      }} placeholder="Annual KM (battery electric)"/>
+                    </Col>
+                  </Row>
+                  </div>
+                </Accordion.Collapse>
+                </Card>
+                <Card>
+                <Accordion.Toggle as={Card.Header} eventKey="2">
                   <h5 className="smallCaps text-small text-green">{editingdata.vehicleLarge}</h5>
                   <p className="text-small op-6">{editingdata.vehicleLargeDesc}</p>
+                  </Accordion.Toggle>
+                  <Accordion.Collapse eventKey="2">
+                              <div>
                   <Row>
                     <Col className="col">
                       {editingdata.vehicleGas}
@@ -709,6 +775,22 @@ export default function App({ file, href, children}) {
                       }} placeholder="Annual KM (hybrid)"/>
                     </Col>
                   </Row>
+                  <Row>
+                    <Col className="col">
+                      <input onChange={calculateMiles} name="largePlug" type="number" min="0" onKeyPress={(event) => {
+                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                      }} placeholder="Annual KM (plug-in hybrid)"/>
+                    </Col>
+                  </Row>
+
+                  <Row>
+                    <Col className="col">
+                      {editingdata.vehicleElectric}
+                      <input onChange={calculateMiles} name="largeElectric" type="number" min="0" onKeyPress={(event) => {
+                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                      }} placeholder="Annual KM (battery electric)"/>
+                    </Col>
+                  </Row>
                   <hr/>
 
                   <h5 className="smallCaps text-small text-green">{editingdata.vehicleMoto}</h5>
@@ -721,31 +803,57 @@ export default function App({ file, href, children}) {
                       }} placeholder="Annual KM (gas)"/>
                     </Col>
                   </Row> 
-                  <hr/>
-
-                  <h5 className="smallCaps text-small text-green">{editingdata.vehiclePlane}</h5>
-                  <p className="text-small op-6">{editingdata.vehiclePlaneDesc}</p>
+                  </div>
+                </Accordion.Collapse>
+                </Card>
+              <Card>
+            <Accordion.Toggle as={Card.Header} eventKey="3">
+                  <h5 className="smallCaps text-small text-green">Private Aircraft</h5>
+                  <p className="text-small op-6">Personally owned aircraft, prop planes, helicopters, jets, etc.</p>
+                  </Accordion.Toggle>
+                  <Accordion.Collapse eventKey="3">
+                              <div>
                   <Row>
                     <Col className="col">
-                      {editingdata.vehicleAvitation}
+
+                  <h5 className="smallCaps text-small text-green">{editingdata.vehiclePlane}</h5>
                       <input onChange={calculateMiles} name="jetGas" type="number" min="0" onKeyPress={(event) => {
                         if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                       }} placeholder="Annual litres of fuel"/>
                     </Col>
                   </Row> 
                   
-                  <h5 className="smallCaps text-small text-green">{editingdata.vehicleJet}</h5>
-                  <p className="text-small op-6">{editingdata.vehicleJetDesc}</p>
                   <Row>
                     <Col className="col">
-                      {editingdata.vehicleAvitation}
+
+                  <h5 className="smallCaps text-small text-green">{editingdata.vehicleJet}</h5>
                       <input onChange={calculateMiles} name="planeGas" type="number" min="0" onKeyPress={(event) => {
                         if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                       }} placeholder="Annual litres of fuel"/>
                     </Col>
                   </Row> 
-                  <hr/>
+                  <Row>
+                    <Col className="col">
 
+                  <h5 className="smallCaps text-small text-green">{editingdata.vehicleHeli}</h5>
+                      <input onChange={calculateMiles} name="heliGas" type="number" min="0" onKeyPress={(event) => {
+                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                      }} placeholder="Annual litres of fuel"/>
+                    </Col>
+                  </Row>
+                  
+                  </div>
+                </Accordion.Collapse>
+
+                </Card>
+              <Card>
+                <Accordion.Toggle as={Card.Header} eventKey="4">
+                  <h5 className="smallCaps text-small text-green">Recreational Vehicles</h5>
+                  <p className="text-small op-6">Personally owned recreational vehicles, such as yachts, ATVs, and more.</p>
+                  </Accordion.Toggle>
+                  <Accordion.Collapse eventKey="4">
+
+                              <div>
                   <h5 className="smallCaps text-small text-green">{editingdata.VehicleOther}</h5>
                   <Row>
                     <Col className="col">
@@ -759,7 +867,6 @@ export default function App({ file, href, children}) {
                       }} placeholder="Marine Unleaded Litres per year"/>
                     </Col>
                   </Row> 
-                  <hr/>
 
                   <Row>
                     <Col className="col">
@@ -769,7 +876,6 @@ export default function App({ file, href, children}) {
                       }} placeholder="Litres per year"/>
                     </Col>
                   </Row> 
-                  <hr/>
 
                   <Row>
                     <Col className="col">
@@ -779,7 +885,6 @@ export default function App({ file, href, children}) {
                       }} placeholder="Litres per year"/>
                     </Col>
                   </Row> 
-                  <hr/>
 
                   <Row>
                     <Col className="col">
@@ -789,11 +894,18 @@ export default function App({ file, href, children}) {
                       }} placeholder="Litres per year"/>
                     </Col>
                   </Row> 
+</div>
+                  </Accordion.Collapse>
+
+                </Card>
+                </Accordion>
+
                 </Col>
               </Row>
             </div>
           
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
+            
               <Row>
                 <Col>
                   <h3 className="text-green">{editingdata.flightHeader}</h3>
@@ -890,12 +1002,7 @@ export default function App({ file, href, children}) {
                   <hr/>
                 </Col>
               </Row>
-              <Row>
-                <Col className="col-12 col-xl-4">{editingdata.publicBus}</Col>
-                <Col className="col-xl-4">
-                  <input onChange={calculateTransitMiles} name="publicCar" type="number" placeholder="Average Km per day"/>
-                </Col>
-              </Row>
+              
               <Row>
                 <Col className="col-12 col-xl-4">{editingdata.publicTaxi}</Col>
                 <Col className="col-xl-4">
@@ -910,6 +1017,12 @@ export default function App({ file, href, children}) {
                   <input onChange={calculateTransitMiles} name="publicSubway" type="number" min="0" onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                   }} placeholder="Average Km per day"/>
+                </Col>
+              </Row>
+              <Row>
+                <Col className="col-12 col-xl-4">{editingdata.publicBus}</Col>
+                <Col className="col-xl-4">
+                  <input onChange={calculateTransitMiles} name="publicCar" type="number" placeholder="Average Km per day"/>
                 </Col>
               </Row>
             </div>
