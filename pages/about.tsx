@@ -18,6 +18,7 @@ import {
   useGithubJsonForm,
   useGithubToolbarPlugins,
 } from "react-tinacms-github";
+import Header from "../components/header";
 
 export default function Power({ file }) {
   const [show, setShow] = useState(false);
@@ -114,6 +115,7 @@ export default function Power({ file }) {
 
   return (
     <div>
+      <Header/>
       <Head>
         <title>Canada's Forest Trust</title>
         <link rel="icon" href="/favicon.ico" />

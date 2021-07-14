@@ -12,6 +12,7 @@ import dynamic from 'next/dynamic';
 import Button from 'react-bootstrap/Button';
 import { useCurrentUser } from '../hooks/index';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import Header from "../components/header";
 
 import Slider from 'react-input-slider';
 
@@ -143,7 +144,7 @@ const [sliderData,setSliderData] = React.useState({
 return (
 
 <div>
-
+  <Header/>
   <Head>
     <title>Canada's Forest Trust</title>
     <link rel="icon" href="/favicon.ico" />

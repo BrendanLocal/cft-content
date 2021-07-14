@@ -10,6 +10,7 @@ import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 import { useGithubJsonForm, useGithubToolbarPlugins } from "react-tinacms-github";
 import { usePlugin } from "tinacms";
 import { useState } from "react";
+import Header from "../components/header";
 
 const Lang = () => {
 var language ="en";
@@ -435,6 +436,7 @@ export default function App({ file, href, children}) {
 
   return (
     <div className="bg-legacy">
+      <Header/>
       <Container className="p-5">
         <Row className="justify-content-center">
           <Col className="col-11 col-lg-10 pt-5 align-items-center my-4 pt-5">

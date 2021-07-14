@@ -10,6 +10,7 @@ import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 import { useGithubJsonForm, useGithubToolbarPlugins } from "react-tinacms-github";
 import { usePlugin } from "tinacms";
 import { useState } from "react";
+import Header from "../components/header";
 
 const Lang = () => {
 var language ="en";
@@ -45,6 +46,7 @@ export default function CarbonCalc({ file, href, children}) {
 
   return (
     <div>
+      <Header/>
       <Container className="py-5 mb-5">
         <Row className="justify-content-center mt-5">
           <Col className="col-11 col-lg-10 pt-5">

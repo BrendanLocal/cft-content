@@ -17,6 +17,7 @@ import Modal from 'react-bootstrap/Modal';
 import ReactPlayer from 'react-player'
 import { Parallax, Background } from 'react-parallax';
 import ReactMarkdown from 'react-markdown'
+import Header from "../components/header";
 
 const Lang = () => {
   var language ="en";
@@ -116,6 +117,7 @@ export default function Home({ file, href, children}) {
 
   return (
     <div className={styles.homeParallax}>
+      <Header/>
       <Head>
         <title>{editingdata.title}</title>
         <link rel="icon" href="/favicon.ico" />

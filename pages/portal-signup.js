@@ -14,9 +14,10 @@ import Button from 'react-bootstrap/Button';
 import styles from '../styles/Home.module.css'
 import Fade from 'react-reveal/Fade';
 import Modal from 'react-bootstrap/Modal';
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player';
 import { Parallax, Background } from 'react-parallax';
-import ReactMarkdown from 'react-markdown'
+import ReactMarkdown from 'react-markdown';
+import Header from "../components/header";
 
 
 const Lang = () => {
@@ -79,6 +80,7 @@ const SignupPage = () => {
 
   return (
     <div>
+      <Header/>
       <Container className="py-5">
          <Row className="flex justify-content-center py-5 mb-5">
           <Col className="col-12 col-md-8 col-lg-5 col-xl-4 p-5">

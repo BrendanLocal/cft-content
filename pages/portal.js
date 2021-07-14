@@ -1,6 +1,3 @@
-
-
-
 import React, { useState, useRef, useEffect } from 'react';
 import Head from 'next/head'
 import Link from 'next/link'
@@ -15,11 +12,9 @@ import Col from 'react-bootstrap/Col';
 import Map from '../components/portalMap';
 import { useRouter } from 'next/router';
 import { useCurrentUser } from '../hooks/index';
-
 import Button from 'react-bootstrap/Button';
-
-
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import Header from "../components/header";
 
 
 export default function Portal({ file }) {
@@ -60,7 +55,7 @@ const router = useRouter();
 return (
 
 <div>
-
+  <Header/>
   <Head>
     <title>Canada's Forest Trust</title>
     <link rel="icon" href="/favicon.ico" />

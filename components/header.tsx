@@ -1,6 +1,5 @@
 import React, { useState, useEffect, MouseEvent} from 'react';
 import { render } from 'react-dom';
-import Link from 'next/link'
 import { signIn, signOut, useSession } from 'next-auth/client'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -8,6 +7,9 @@ import Col from 'react-bootstrap/Col';
 import useSound from 'use-sound';
 import Search from '../components/search';
 import { useCurrentUser } from '../hooks/index';
+import Link from 'next/link'
+//import { HashLink } from 'react-router-hash-link';
+
 
 const Header = ()=> {
 
@@ -185,7 +187,7 @@ const Header = ()=> {
                   <Link href="/build-your-smart-forest">Build a Smart Forest</Link>
                 </li>
                 <li className="ms-4 ms-md-5 subheader" onClick={toggleClass}>
-                  <Link href="/build-your-smart-forest#corporate">Corporate Smart Forest</Link>
+                  {/* <HashLink smooth to="/build-your-smart-forest#corporate">Corporate Smart Forest</HashLink> */}
                 </li>
                 <li className="ms-4 ms-md-5 subheader" onClick={toggleClass}>
                   <Link href="/build-your-smart-forest#school">School Smart Forest</Link>

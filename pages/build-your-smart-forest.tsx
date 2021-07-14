@@ -21,6 +21,7 @@ import {
   useGithubJsonForm,
   useGithubToolbarPlugins,
 } from"react-tinacms-github";
+import Header from "../components/header";
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
@@ -279,6 +280,7 @@ export default function Build({ file }) {
 
   return (
     <div>
+      <Header/>
       <Head>
         <title>{editingdata.title}</title>
         <link rel="icon" href="/favicon.ico" />
