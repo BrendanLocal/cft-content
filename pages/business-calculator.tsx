@@ -10,6 +10,7 @@ import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { usePlugin } from 'tinacms'
 import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
 import { useState } from "react";
+import Header from "../components/header";
 
 const Lang = () => {
   var language ="en";
@@ -371,9 +372,8 @@ const Lang = () => {
     let total = vehicleSub + subtotalBuild + transitSub + flightSub + freightSub;
 
     return (
-
-
     <div className="bg-corp">
+      <Header/>
       <Container className="p-5">
         <Row className="justify-content-center">
           <Col className="col-11 col-lg-10 pt-5 align-items-center my-4 pt-5">

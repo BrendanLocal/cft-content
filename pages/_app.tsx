@@ -6,36 +6,37 @@ import $ from 'jquery';
 import React, { useState, useEffect, MouseEvent, Fragment} from 'react';
 import App,  { AppProps } from 'next/app'
 import { TinaCMS, TinaProvider } from 'tinacms'
+import Footer from "../components/footer";
+import NewsTicker from "../components/newsTicker";
+import { Flipper, Flipped } from 'react-flip-toolkit'
+import { PageTransition } from 'next-page-transitions'
+import { Provider } from 'next-auth/client'
+import { MarkdownFieldPlugin, HtmlFieldPlugin } from 'react-tinacms-editor'
+import 'swiper/swiper-bundle.css';
 import {
   GithubClient,
   TinacmsGithubProvider,
   GithubMediaStore,
 } from 'react-tinacms-github'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import { createMemoryHistory } from 'history';
+
 
 import Header from "../components/header";
-import Footer from "../components/footer";
-
-import NewsTicker from "../components/newsTicker";
 
 
-import { Flipper, Flipped } from 'react-flip-toolkit'
-
-import { PageTransition } from 'next-page-transitions'
-
-import { Provider } from 'next-auth/client'
-import { MarkdownFieldPlugin, HtmlFieldPlugin } from 'react-tinacms-editor'
-import 'swiper/swiper-bundle.css';
 
 
 export default class Site extends App {
 
-  
-
   cms: TinaCMS
-  
-  constructor(props) {
 
-    
+  constructor(props) {
     super(props)
 
     const github = new GithubClient({
@@ -46,7 +47,6 @@ export default class Site extends App {
       baseBranch: process.env.BASE_BRANCH, // e.g. 'master' or 'main' on newer repos
     })
     
-
     /**
      * 1. Create the TinaCMS instance
      */
@@ -68,65 +68,58 @@ export default class Site extends App {
       sidebar: props.pageProps.preview,
       toolbar: props.pageProps.preview,
       plugins: [MarkdownFieldPlugin],
-      
     })
-    
   }
 
-  render() {
-    
-    
-    const { Component, pageProps, router} = this.props
-    return (
 
-    
+  
+  render() {
+    const history = createMemoryHistory();
+    const { Component, pageProps, router} = this.props
+
+
+    return (
+      
       <TinaProvider cms={this.cms}>
         <TinacmsGithubProvider
           onLogin={onLogin}
           onLogout={onLogout}
           error={pageProps.error}
         > 
-
         <Provider session={pageProps.session}>
+          <PageTransition timeout={800}
+            classNames="page-transition"
+            loadingClassNames="loading-indicator"
+            skipInitialTransition={true}
+          >
+            <div>
 
-<Header />
-
-<PageTransition timeout={800}
-  classNames="page-transition"
-  loadingClassNames="loading-indicator"
-  skipInitialTransition={true}>
-  <div>
-          <Component {...pageProps} />
-          </div>
+      <Header/>
+              <Component {...pageProps} />
+            </div>
           </PageTransition>
+        </Provider>
 
-          </Provider>
-
-          <style jsx global>{`
-          .page-transition-enter {
-            opacity: 0;
-          }
-          .page-transition-enter-active {
-            opacity: 1;
-            transition: opacity 1200ms;
-          }
-          .page-transition-exit {
-            opacity: 1;
-
-            transform: translateX(0vw);
-          }
-          .page-transition-exit-active {
-            opacity: 0;
-            
-            transition:  opacity 1200ms;
-          }
-        `}</style>
-
-          <NewsTicker />
-
-  <Footer/>
-
-  <EditLink cms={this.cms} />
+        <style jsx global>
+          {`
+            .page-transition-enter {opacity: 0;}
+            .page-transition-enter-active {
+              opacity: 1;
+              transition: opacity 1200ms;
+            }
+            .page-transition-exit {
+              opacity: 1;
+              transform: translateX(0vw);
+            }
+            .page-transition-exit-active {
+              opacity: 0;
+              transition:  opacity 1200ms;
+            }
+          `}
+        </style>
+        <NewsTicker />
+        <Footer/>
+        <EditLink cms={this.cms} />
         </TinacmsGithubProvider>
       </TinaProvider>
     )

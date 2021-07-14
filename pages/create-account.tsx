@@ -7,6 +7,7 @@ import { getGithubPreviewProps, parseJson } from 'next-tinacms-github';
 import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github';
 import file from 'react-player/file';
 import { usePlugin } from 'tinacms';
+import Header from "../components/header";
 
 const Lang = () => {
   var language ="en";
@@ -64,8 +65,9 @@ const SignupPage = (file) => {
   };
 
   return (
-    <>
+    <div>
       <Head>
+      <Header/>
         <title>{editingdata.signUp}</title>
       </Head>
       <div>
@@ -100,7 +102,7 @@ const SignupPage = (file) => {
         </form>
         <p style={{ color: '#777', textAlign: 'center' }}>{editingdata.Note}</p>
       </div>
-    </>
+    </div>
   );
 };
 

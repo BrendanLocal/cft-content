@@ -14,6 +14,7 @@ import Rellax from"rellax";
 import ReactPlayer from 'react-player';
 import Parallax from 'parallax-js'
 import ReactMarkdown from 'react-markdown'
+import Header from "../components/header";
 
 export default function Power({ file }) {
 
@@ -101,6 +102,7 @@ export default function Power({ file }) {
 
   return (  
     <div>
+      <Header/>
       <Head>
         <title>{editingdata.title}</title>
         <link rel="icon" href="/favicon.ico" />

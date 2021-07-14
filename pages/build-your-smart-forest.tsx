@@ -21,12 +21,29 @@ import {
   useGithubJsonForm,
   useGithubToolbarPlugins,
 } from"react-tinacms-github";
-
 import DigitalSign from "../components/digitalSign";
+import { useRouter } from "next/router";
+import ScrollableAnchor from "react-scrollable-anchor";
+
+import Header from "../components/header";
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 export default function Build({ file }) {
+
+  const Lang = () => {
+    var language ="en";
+      const router = useRouter();
+      if(router.query.lang){ 
+      const lan = JSON.stringify(router.query.lang);
+      language = JSON.parse(lan)
+      }
+      if(router.ref){
+
+      }
+      return (language)
+    } 
+
   const formOptions = {
     label:"Build Your Forest",
     fields: [
@@ -281,6 +298,8 @@ export default function Build({ file }) {
 
   return (
     <div>
+
+<Header/>
       <Head>
         <title>{editingdata.title}</title>
         <link rel="icon" href="/favicon.ico" />
@@ -511,6 +530,7 @@ export default function Build({ file }) {
         </Container>
 
         {/* Corporate Forests */}
+        <ScrollableAnchor id={"corporate"}>
         <Container fluid id="corporate" className="bg-corp sectionPad">
           <Fade bottom>
             <Row className="text-center justify-content-center">
@@ -728,8 +748,9 @@ export default function Build({ file }) {
           <DigitalSign/>
           </Fade>
         </Container>
-
+        </ScrollableAnchor>
         {/* School Forests */}
+        <ScrollableAnchor id={"school"}>
         <Container fluid id="school" className="bg-school sectionPad">
           <Fade bottom>
             <Row className="text-center justify-content-center">
@@ -944,8 +965,9 @@ export default function Build({ file }) {
             </Row>
           </Fade>
         </Container>
-
+        </ScrollableAnchor>
         {/* Legacy Forests */}
+        <ScrollableAnchor id={"legacy"}>
         <Container fluid id="legacy" className="bg-legacy sectionPad">
           <Fade bottom>
             <Row className="text-center justify-content-center">
@@ -1127,8 +1149,9 @@ export default function Build({ file }) {
             </Row>
           </Fade>
         </Container>
-
+        </ScrollableAnchor>
         {/* Communal Forests */}
+        <ScrollableAnchor id={"communal"}>
         <Container fluid id="communal" className="bg-communal sectionPad">
           <Fade bottom>
             <Row className="text-center justify-content-center">
@@ -1312,7 +1335,7 @@ export default function Build({ file }) {
             </Row>
           </Fade>
         </Container>
-
+        </ScrollableAnchor>
         <Container fluid className="bg-green p-5 section-pad my-0">
           <Row className="justify-content-center pt-3">
             <Col className="col-12 col-md-4 col-lg-3  pe-lg-0 m-3">

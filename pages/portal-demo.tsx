@@ -12,6 +12,7 @@ import Map from '../components/portalMap'
 import ImageGallery from 'react-image-gallery';
 import Slider from 'react-input-slider';
 import Button from 'react-bootstrap/Button';
+import Header from "../components/header";
 
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
@@ -137,7 +138,7 @@ const [sliderData,setSliderData] = React.useState({
 return (
 
 <div>
-
+  <Header/>
   <Head>
     <title>Canada's Forest Trust</title>
     <link rel="icon" href="/favicon.ico" />

@@ -1,6 +1,5 @@
 import React, { useState, useEffect, MouseEvent} from 'react';
 import { render } from 'react-dom';
-import Link from 'next/link'
 import { signIn, signOut, useSession } from 'next-auth/client'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -8,6 +7,9 @@ import Col from 'react-bootstrap/Col';
 import useSound from 'use-sound';
 import Search from '../components/search';
 import { useCurrentUser } from '../hooks/index';
+import Link from 'next/link'
+
+
 
 const Header = ()=> {
 

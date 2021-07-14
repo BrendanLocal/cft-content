@@ -12,6 +12,7 @@ import { GetStaticProps } from 'next';
 import { getGithubPreviewProps, parseJson } from 'next-tinacms-github';
 import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github';
 import { usePlugin } from 'tinacms';
+import Header from "../components/header";
 
 const Lang = () => {
   var language ="en";
@@ -44,8 +45,8 @@ const Lang = () => {
     useBodyClass('splash');
 
   return (
-
     <div>
+      <Header/>
       <Head>
         <title>{editingdata.title}</title>
         <link rel="icon" href="/favicon.ico" />

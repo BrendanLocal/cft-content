@@ -10,6 +10,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { useRouter } from 'next/router';
+import Header from "../components/header";
 
 const Lang = () => {
   var language ="en";
@@ -44,6 +45,7 @@ const Lang = () => {
 
     return (
       <form onSubmit={handleSubmit}>
+        <Header/>
         <Row className="">
           <Col>
             <label htmlFor="name" className="labelCaps">{editingdata.name}</label>
