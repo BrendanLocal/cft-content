@@ -178,53 +178,53 @@ const Header = ()=> {
           <div className="row">
             <div className="col-10 col-md-9">
               <ul className="py-5 py-sm-0">
-                <li className="slimlineBottom" onClick={toggleClass}>
-                  <Link href="/what-is-a-smart-forest">What is a Smart Forest?</Link>
-                </li>
-                <li className="slimlineBottom" onClick={toggleClass}>
-                  <Link href="/build-your-smart-forest">Build a Smart Forest</Link>
-                </li>
-                <li className="subHeader slimlineBottom" onClick={toggleClass}>
-                  <Link href="/build-your-smart-forest#corporate">Corporate</Link>
-                </li>
-                <li className="subHeader slimlineBottom" onClick={toggleClass}>
-                  <Link href="/build-your-smart-forest#school">School</Link>
-                </li>
-                <li className="subHeader slimlineBottom" onClick={toggleClass}>
-                  <Link href="/build-your-smart-forest#communities">Communities</Link>
-                </li>
-                <li className="slimlineBottom" onClick={toggleClass}>
-                  <Link href="/portal">Your Smart Forest</Link>
-                </li>
-                <li className="slimlineBottom" onClick={toggleClass}>
-                  <Link href="/carbon-calculator">Carbon Calculators</Link>
-                </li>
-                <li className="subHeader slimlineBottom" onClick={toggleClass}>
-                  <Link href="/carbon-calculator#corporate">Corporate</Link>
-                </li>
-                <li className="subHeader slimlineBottom" onClick={toggleClass}>
-                  <Link href="/carbon-calculator#school">School</Link>
-                </li>
-                <li className="subHeader slimlineBottom" onClick={toggleClass}>
-                  <Link href="/carbon-calculator#personal">Personal</Link>
-                </li>
-                <li className="slimlineBottom" onClick={toggleClass}>
-                  <Link href="/carbon-calculator">Net-Zero Calculator</Link>
-                </li>
-                <li className="subHeader slimlineBottom" onClick={toggleClass}>
-                  <Link href="/smart-forest-calculator#personal">Corporate</Link>
-                </li>
-                <li className="subHeader slimlineBottom" onClick={toggleClass}>
-                  <Link href="/smart-forest-calculator#personal">School</Link>
-                </li>
-                <li className="subHeader slimlineBottom" onClick={toggleClass}>
-                  <Link href="/smart-forest-calculator#personal">Personal</Link>
-                </li>
-                <li className="slimlineBottom" onClick={toggleClass}>
+                <li className="slimlineBottom slimlineTop" onClick={toggleClass}>
                   <Link href="/about">About</Link>
                 </li>
-                <li className="slimlineBottom" onClick={toggleClass}>
-                  <Link href="/contact">Contact</Link>
+                <li onClick={toggleClass}>
+                  <Link href="/build-your-smart-forest">Build a Smart Forest</Link>
+                </li>
+                <li className="ms-4 ms-md-5 subheader" onClick={toggleClass}>
+                  <Link href="/build-your-smart-forest#corporate">Corporate Smart Forest</Link>
+                </li>
+                <li className="ms-4 ms-md-5 subheader" onClick={toggleClass}>
+                  <Link href="/build-your-smart-forest#school">School Smart Forest</Link>
+                </li>
+                <li className="ms-4 ms-md-5 subheader" onClick={toggleClass}>
+                  <Link href="/build-your-smart-forest#legacy">Legacy Smart Forest</Link>
+                </li>
+                <li className="ms-4 ms-md-5 subheader mb-2" onClick={toggleClass}>
+                  <Link href="/build-your-smart-forest#communal">Communal Smart Forest</Link>
+                </li>
+                <li className="slimlineTop" onClick={toggleClass}>
+                  <Link href="/carbon-calculator">Carbon Calculators</Link>
+                </li>
+                <li className="ms-4 ms-md-5 subheader" onClick={toggleClass}>
+                  <Link href="/carbon-calculator#corporate">Corporate</Link>
+                </li>
+                <li className="ms-4 ms-md-5 subheader" onClick={toggleClass}>
+                  <Link href="/carbon-calculator#school">School</Link>
+                </li>
+                <li className="ms-4 ms-md-5 subheader mb-2" onClick={toggleClass}>
+                  <Link href="/carbon-calculator#personal">Personal</Link>
+                </li>
+                <li className="slimlineTop" onClick={toggleClass}>
+                  <Link href="/carbon-calculator">Net-Zero Calculators</Link>
+                </li>
+                <li className="ms-4 ms-md-5 subheader" onClick={toggleClass}>
+                  <Link href="/smart-forest-calculator#personal">Corporate</Link>
+                </li>
+                <li className="ms-4 ms-md-5 subheader" onClick={toggleClass}>
+                  <Link href="/smart-forest-calculator#personal">School</Link>
+                </li>
+                <li className="ms-4 ms-md-5 subheader mb-2" onClick={toggleClass}>
+                  <Link href="/smart-forest-calculator#personal">Personal</Link>
+                </li>
+                <li className="slimlineBottom slimlineTop" onClick={toggleClass}>
+                  <Link href="/portal">Your Smart Forest Portal</Link>
+                </li>
+                <li className="" onClick={toggleClass}>
+                  <Link href="/contact">Contact Us</Link>
                 </li>
               </ul>
             </div>
@@ -252,7 +252,7 @@ const Header = ()=> {
                   <li>
                     <img onClick={toggleSearch} src="/searchIcon.svg"></img>
                   </li>
-                  <li>
+                  <li className="d-none">
                     <div className={isPlaying ? 'mute' : null} ><img className="soundPlaying" onClick={() => toggleSound()} src="/soundIcon.svg"></img><img className="soundMute" src="/muteIcon.svg"></img></div>
                   </li>
                 </ul>

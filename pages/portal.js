@@ -71,7 +71,7 @@ return (
   <main className="bg-green">
     <Container className="bg-green py-5">
       <Row className="justify-content-center d-flex pt-5 mt-5">
-        <Col className="col-xl-10 ">
+        <Col className="col-10 col-md-7 col-lg-8 ">
         <h1 className="h2 text-orange text-center bold py-3">
           Welcome to our Customer Portal!
         </h1>
@@ -116,9 +116,9 @@ return (
         <div className="roundedBox no-border card-drop p-5 pb-4 bg-white">
 
         <h3 className="text-green text-center">Demo Portal</h3>
-        <p className="text-grey large mb-4 pb-2 text-center">Try out the customer portal for yourself, using data from our founder's own portal.</p>
+        <p className="text-grey large mb-3 pb-2 text-center">Try out the customer portal for yourself, using data from our founder's own portal.</p>
 <Link href="portal-demo">
-        <Button className="w-100 my-4" variant="green">Enter the demo portal</Button></Link>
+        <Button className="w-100 mb-4" variant="green">Enter the demo portal</Button></Link>
         </div>
         </Col>
       </Row>
