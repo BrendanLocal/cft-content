@@ -18,9 +18,22 @@ import {
   TinacmsGithubProvider,
   GithubMediaStore,
 } from 'react-tinacms-github'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import { createMemoryHistory } from 'history';
+
+
+import Header from "../components/header";
+
+
 
 
 export default class Site extends App {
+
   cms: TinaCMS
 
   constructor(props) {
@@ -58,9 +71,15 @@ export default class Site extends App {
     })
   }
 
+
+  
   render() {
+    const history = createMemoryHistory();
     const { Component, pageProps, router} = this.props
+
+
     return (
+      
       <TinaProvider cms={this.cms}>
         <TinacmsGithubProvider
           onLogin={onLogin}
@@ -74,6 +93,8 @@ export default class Site extends App {
             skipInitialTransition={true}
           >
             <div>
+
+      <Header/>
               <Component {...pageProps} />
             </div>
           </PageTransition>

@@ -8,7 +8,7 @@ import useSound from 'use-sound';
 import Search from '../components/search';
 import { useCurrentUser } from '../hooks/index';
 import Link from 'next/link'
-//import { HashLink } from 'react-router-hash-link';
+
 
 
 const Header = ()=> {
@@ -187,7 +187,7 @@ const Header = ()=> {
                   <Link href="/build-your-smart-forest">Build a Smart Forest</Link>
                 </li>
                 <li className="ms-4 ms-md-5 subheader" onClick={toggleClass}>
-                  {/* <HashLink smooth to="/build-your-smart-forest#corporate">Corporate Smart Forest</HashLink> */}
+                  <Link href="/build-your-smart-forest#corporate">Corporate Smart Forest</Link>
                 </li>
                 <li className="ms-4 ms-md-5 subheader" onClick={toggleClass}>
                   <Link href="/build-your-smart-forest#school">School Smart Forest</Link>
