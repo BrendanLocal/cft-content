@@ -38,9 +38,6 @@ export default function Build({ file }) {
       const lan = JSON.stringify(router.query.lang);
       language = JSON.parse(lan)
       }
-      if(router.ref){
-
-      }
       return (language)
     } 
 
