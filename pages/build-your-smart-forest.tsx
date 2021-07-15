@@ -15,7 +15,6 @@ import Parallax from"parallax-js";
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from"swiper";
 import { Swiper, SwiperSlide } from"swiper/react";
 import { Slide } from"react-slideshow-image";
-import rehypeRaw from 'rehype-raw'
 import ReactMarkdown from"react-markdown";
 import {
   useGithubJsonForm,
@@ -533,7 +532,7 @@ export default function Build({ file }) {
             <Row className="text-center justify-content-center">
               <Col className="col-11 col-lg-8 text-white">
                 <h2 className="bold py-3 text-white tight-drop-light">
-                <ReactMarkdown rehypePlugins={[rehypeRaw]} >
+                <ReactMarkdown>
                   {editingdata.part4_header1}
                   </ReactMarkdown>
                 </h2>
@@ -575,7 +574,7 @@ export default function Build({ file }) {
           <Fade bottom>
             <Row id="corp-about" className="text-center justify-content-center py-4 px-5 mt-5">
               <Col className="col-12 col-lg-7">
-                <ReactMarkdown rehypePlugins={[rehypeRaw]} className="emphasis-2 text-orange tight-drop-light mb-3">
+                <ReactMarkdown className="emphasis-2 text-orange tight-drop-light mb-3">
                   {editingdata.part4_para1}
                 </ReactMarkdown>
               </Col>
@@ -753,7 +752,7 @@ export default function Build({ file }) {
             <Row className="text-center justify-content-center">
               <Col className="col-11 col-lg-8 text-white">
                 <h2 className="bold py-3 text-white tight-drop-light">
-                <ReactMarkdown rehypePlugins={[rehypeRaw]} >
+                <ReactMarkdown>
                   {editingdata.part5_header1}
                   </ReactMarkdown>
                 </h2>
@@ -971,7 +970,7 @@ export default function Build({ file }) {
               <Col className="col-11 col-lg-8 text-white">
                 <h2 className="bold py-3 text-white tight-drop-light">
                   
-                <ReactMarkdown rehypePlugins={[rehypeRaw]} >
+                <ReactMarkdown>
                   {editingdata.part6_header1}
                   </ReactMarkdown>
                   </h2>
@@ -1154,7 +1153,7 @@ export default function Build({ file }) {
             <Row className="text-center justify-content-center">
               <Col className="col-11 col-lg-8 text-white">
                 <h2 className="bold py-3 text-white tight-drop-light">
-                <ReactMarkdown rehypePlugins={[rehypeRaw]} >
+                <ReactMarkdown>
                   {editingdata.part7_header1}
                   </ReactMarkdown></h2>
               </Col>
