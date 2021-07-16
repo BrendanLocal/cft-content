@@ -211,10 +211,10 @@ const Header = ()=> {
                   <Link href="/carbon-calculator#personal">Personal</Link>
                 </li>
                 <li className="slimlineTop" onClick={toggleClass}>
-                  <Link href="/carbon-calculator">Net-Zero Calculators</Link>
+                  <Link href="/smart-forest-calculator">Net-Zero Calculators</Link>
                 </li>
                 <li className="ms-4 ms-md-5 subheader" onClick={toggleClass}>
-                  <Link href="/smart-forest-calculator#personal">Corporate</Link>
+                  <Link href="/smart-forest-calculator#corporate">Corporate</Link>
                 </li>
                 <li className="ms-4 ms-md-5 subheader" onClick={toggleClass}>
                   <Link href="/smart-forest-calculator#school">School</Link>

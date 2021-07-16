@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from"react";
 import Head from"next/head";
+import Dropdown from "react-bootstrap/Dropdown";
 import Fade from"react-reveal/Fade";
 import Link from"next/link";
 import { getGithubPreviewProps, parseJson } from"next-tinacms-github";
@@ -304,7 +305,7 @@ export default function Build({ file }) {
 
       <Row className="justify-content-left p-0 m-0 d-none d-lg-block d-xl-block">
         <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
-          <p className="text-white mx-2 mt-0 mb-0 bold op-6 pe-5">
+          <p className="text-white mx-2 mt-0 mb-0 bold op-6 pe-5 caps">
             {editingdata.pageName}
           </p>
           <ul>
@@ -350,13 +351,15 @@ export default function Build({ file }) {
       <main className="bg-green py-5">
         <Container id="intro" className="bg-green py-5 px-5">
           <Row className="justify-content-center d-flex pb-5 mb-5 py-5 px-5">
-            <Col className="col-12 col-lg-5 stickyTop mb-5 p-3">
+            <Col className="col-12 col-lg-5 stickyTop mb-5 p-3 d-none d-lg-block">
               <object type="image/svg+xml" data="/build2-svg.svg" />
             </Col>
-            <Col className="col-12 col-lg-5 text-white p-4 pb-0 intro-order">
+            <Col className="col-12 col-lg-5 text-white p-3 pb-0 intro-order">
               <h1 className="text-orange mb-5 bold">{editingdata.part1_header1}</h1>
-              <p className="large my-5 op-9">{editingdata.part1_para1}</p>
-              <p className="text-white text-left smallcaps intro-links-header op-5 mt-4 mb-3">{editingdata.part1_header2}</p>
+              <p className="large my-5 op-9 pe-lg-3 pe-xl-5">{editingdata.part1_para1}</p>
+              <ReactMarkdown className="text-white text-left smallcaps intro-links-header op-5 mt-4 mb-3">{editingdata.part1_header2}</ReactMarkdown>
+              <a href="#the-plan" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.part1_menu1}</a>
+              <a href="#our-forests" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.part1_menu2}</a>
             </Col>
           </Row>
         </Container>
@@ -364,7 +367,7 @@ export default function Build({ file }) {
         <Container id="the-plan" className="v-full z-999 bg-green p-5">
           <Fade bottom>
             <Row className="justify-content-center align-items-center my-4">
-              <Col className="col-sm-11 col-md-10 col-lg-9 text-center text-white">
+              <Col className="col-sm-10 col-md-9 col-lg-8  text-center text-white">
                 <h2 className="text-orange bold mb-2">{editingdata.part2_header3}</h2>
                 <p className="medium mt-0 mb-0 px-lg-4 mb-2">{editingdata.part2_para2}</p>
               </Col>
@@ -372,7 +375,7 @@ export default function Build({ file }) {
           </Fade>
           <Fade bottom>
             <Row className="justify-content-center align-items-center px-3">
-              <Carousel className="col-12 col-md-12 col-lg-11 col-xl-10  d-flex bg-brown roundedBox innerShadow-heavy px-0"
+              <Carousel className="col-12 col-md-10 col-lg-10 d-flex bg-brown roundedBox px-0"
                 activeIndex={index} onSelect={handleSelect} 
                 nextIcon={ <span aria-hidden="false" className="carousel-control-next-icon"/>}
                 nextLabel=""
@@ -389,16 +392,7 @@ export default function Build({ file }) {
                     <h3 className="smallCaps text-left tight-drop bold mb-1">{editingdata.part2_step1header1}</h3>
                     <p className="h3 text-left tight-drop mb-4">{editingdata.part2_step1para1}</p>
 
-                    <div className="card card-drop no-border bg-white px-4 py-2 op-8 mb-2">
-                      <ul className="text-grey text-left checkMark pe-3 pb-0">
-                        <li className="pb-0">{editingdata.part2_step1box1}</li>
-                      </ul>
-                    </div>
-                    <div className="card card-drop no-border bg-white px-4 py-2 op-8">
-                      <ul className="text-grey text-left checkMark pe-3 pb-0">
-                        <li className="pb-0">{editingdata.part2_step1box2}</li>
-                      </ul>
-                    </div>
+                    
                   </Carousel.Caption>
                 </Carousel.Item>
 
@@ -408,17 +402,7 @@ export default function Build({ file }) {
                     <h3 className="smallCaps text-left tight-drop bold mb-1">{editingdata.part2_step2header1}</h3>
                     <p className="h3 text-left tight-drop mb-4">{editingdata.part2_step2para1}</p>
 
-                    <div className="card card-drop no-border bg-white px-4 py-2 op-8 mb-2">
-                      <ul className="text-grey text-left checkMark pe-3 pb-0">
-                        <li className="pb-0">{editingdata.part2_step2box1}</li>
-                      </ul>
-                    </div>
-
-                    <div className="card card-drop no-border bg-white px-4 py-2 op-8">
-                      <ul className="text-grey text-left checkMark pe-3 pb-0">
-                        <li className="pb-0">{editingdata.part2_step2box2}</li>
-                      </ul>
-                    </div>
+                    
                   </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item interval={100000}>
@@ -427,17 +411,7 @@ export default function Build({ file }) {
                     <h3 className="smallCaps text-left tight-drop bold mb-1">{editingdata.part2_step3header1}</h3>
                     <p className="h3 text-left tight-drop mb-4">{editingdata.part2_step3para1}</p>
 
-                    <div className="card card-drop no-border bg-white px-4 py-2 op-8 mb-2">
-                      <ul className="text-grey text-left checkMark pe-3 pb-0">
-                        <li className="pb-0">{editingdata.part2_step3box1}</li>
-                      </ul>
-                    </div>
-
-                    <div className="card card-drop no-border bg-white px-4 py-2 op-8">
-                      <ul className="text-grey text-left checkMark pe-3 pb-0">
-                        <li className="pb-0">{editingdata.part2_step3box2}</li>
-                      </ul>
-                    </div>
+                  
                   </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item interval={100000}>
@@ -445,17 +419,7 @@ export default function Build({ file }) {
                   <Carousel.Caption className="col-9 col-md-8 col-lg-6 col-xl-4">
                     <h3 className="smallCaps text-left tight-drop bold mb-1">{editingdata.part2_step4header1}</h3>
                     <p className="h3 text-left tight-drop mb-4">{editingdata.part2_step4para1}</p>
-                    <div className="card card-drop no-border bg-white px-4 py-2 op-8 mb-2">
-                      <ul className="text-grey text-left checkMark pe-3 pb-0">
-                        <li className="pb-0">{editingdata.part2_step4box1}</li>
-                      </ul>
-                    </div>
-
-                    <div className="card card-drop no-border bg-white px-4 py-2 op-8">
-                      <ul className="text-grey text-left checkMark pe-3 pb-0">
-                        <li className="pb-0">{editingdata.part2_step4box2}</li>
-                      </ul>
-                    </div>
+                    
                   </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item interval={100000}>
@@ -463,35 +427,26 @@ export default function Build({ file }) {
                   <Carousel.Caption className="col-9 col-md-8 col-lg-6 col-xl-4">
                     <h3 className="smallCaps text-left tight-drop bold mb-1">{editingdata.part2_step5header1}</h3>
                     <p className="h3 text-left tight-drop mb-4">{editingdata.part2_step5para1}</p>
-                    <div className="card card-drop no-border bg-white px-4 py-2 op-8 mb-2">
-                      <ul className="text-grey text-left checkMark pe-3 pb-0">
-                        <li className="pb-0">{editingdata.part2_step5box1}</li>
-                      </ul>
-                    </div>
-
-                    <div className="card card-drop no-border bg-white px-4 py-2 op-8">
-                      <ul className="text-grey text-left checkMark pe-3 pb-0">
-                        <li className="pb-0">{editingdata.part2_step5box2}</li>
-                      </ul>
-                    </div>
+                    
                   </Carousel.Caption>
                 </Carousel.Item>
               </Carousel>
             </Row>
           </Fade>
         </Container>
+
         <Container id="our-forests" fluid className="v-full z-999 bg-green py-5">
           <Fade bottom>
             <Row className="pt-5 align-items-center justify-content-center">
-              <Col className="col-10 col-lg-7 pe-lg-0 mt-5">
+              <Col className="col-10 col-md-9 col-lg-7 pe-lg-0 mt-5">
                 <h2 className="text-center text-orange bold">{editingdata.part3_header1}</h2>
                 <ReactMarkdown className="text-center text-white medium mb-4">{editingdata.part3_para1}</ReactMarkdown>
               </Col>
             </Row>
           </Fade>
           <Fade bottom>
-            <Row className="justify-content-center pb-5 align-items-stretch my-4">
-              <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+            <Row className="justify-content-center pb-5 align-items-stretch my-4 px-md-5 mx-lg-5 px-lg-5 mx-xl-0 px-xl-0">
+              <Col className="col-10 col-md-5 col-xl-2 pe-lg-0 m-3">
                 <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
                   <h4 className="text-white tight-drop-light">{editingdata.part3_box1header1}</h4>
                   <p className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part3_box1para1}</p>
@@ -500,21 +455,21 @@ export default function Build({ file }) {
                   </a>
                 </div>
               </Col>
-              <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+              <Col className="col-10 col-md-5 col-xl-2 pe-lg-0 m-3">
                 <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
                   <h4 className="text-white tight-drop-light">{editingdata.part3_box2header1}</h4>
                   <p className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part3_box2para1}</p>
                   <a href="#school" className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">{editingdata.learnMore}</a>
                 </div>
               </Col>
-              <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+              <Col className="col-10 col-md-5 col-xl-2 pe-lg-0 m-3">
                 <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
                   <h4 className="text-white tight-drop-light">{editingdata.part3_box3header1}</h4>
                   <p className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part3_box3para1}</p>
                   <a href="#legacy" className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">{editingdata.learnMore}</a>
                 </div>
               </Col>
-              <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+              <Col className="col-10 col-md-5 col-xl-2 pe-lg-0 m-3">
                 <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop communal-card">
                   <h4 className="text-white tight-drop-light">{editingdata.part3_box4header1}</h4>
                   <p className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part3_box4para1}</p>
@@ -530,8 +485,8 @@ export default function Build({ file }) {
         <Container fluid id="corporate" className="bg-corp sectionPad">
           <Fade bottom>
             <Row className="text-center justify-content-center">
-              <Col className="col-11 col-lg-8 text-white">
-                <h2 className="bold py-3 text-white tight-drop-light">
+              <Col className="col-11 col-md-9 text-white">
+                <h2 className="emphasis-2 bold pt-3 text-white tight-drop-light">
                 <ReactMarkdown>
                   {editingdata.part4_header1}
                   </ReactMarkdown>
@@ -539,47 +494,75 @@ export default function Build({ file }) {
               </Col>
             </Row>
           </Fade>
-
           
-
           <Fade bottom>
             <Row className="text-center  justify-content-center mb-4">
-              <Col className="col-11 col-lg-7">
-                <Row className="horizTab  justify-content-center">
-                  <Col className="col-5 col-md-3 mb-3">
-                    <Button href="#corp-about" variant="text text-orange tight-drop-light smallCaps down-links">
+              <Col className="col-11 col-md-8">
+                <Row className="horizTab justify-content-center">
+                  <Dropdown className="col-5 col-md-3 mb-3">
+                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
                       {editingdata.part4_menu1}
-                    </Button>
-                  </Col>
-                  <Col className="col-5 col-md-3 mb-3">
-                    <Button href="#corp-testimonial" variant="text text-orange tight-drop-light smallCaps down-links">
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Row className="p-4">
+                        <Col>
+                        <h3 className="text-green thin">
+                        <ReactMarkdown>
+                        {editingdata.part4_box1header}
+                        </ReactMarkdown>
+                        </h3>
+                          <ReactMarkdown className="text-grey">
+                          {editingdata.part4_box1header}
+                          </ReactMarkdown>
+                        </Col>
+                      </Row>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                  <Dropdown className="col-5 col-md-3 mb-3">
+                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
                       {editingdata.part4_menu2}
-                    </Button>
-                  </Col>
-                  <Col className="col-5 col-md-3 mb-3">
-                    <Button href="#corp-bottom-line" variant="text text-orange tight-drop-light smallCaps down-links" >
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Row className="p-4">
+                        <Col>
+                        <p>gday</p>
+                        </Col>
+                      </Row>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                  <Dropdown className="col-5 col-md-3 mb-3">
+                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
                       {editingdata.part4_menu3}
-                    </Button>
-                  </Col>
-                  <Col className="col-5 col-md-3 mb-3">
-                    <Button href="#corp-contact" variant="text text-orange tight-drop-light smallCaps down-links">
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Row className="p-4">
+                        <Col>
+                        <p>gday</p>
+                        </Col>
+                      </Row>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                  <Dropdown className="col-5 col-md-3 mb-3">
+                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
                       {editingdata.part4_menu4}
-                    </Button>
-                  </Col>
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Row className="p-4">
+                        <Col>
+                        <p>gday</p>
+                        </Col>
+                      </Row>
+                    </Dropdown.Menu>
+                  </Dropdown>
                 </Row>
               </Col>
             </Row>
           </Fade>
 
           <Fade bottom>
-            <Row id="corp-about" className="text-center justify-content-center py-4 px-5 mt-5">
-              <Col className="col-12 col-lg-7">
-                <ReactMarkdown className="emphasis-2 text-orange tight-drop-light mb-3">
-                  {editingdata.part4_para1}
-                </ReactMarkdown>
-              </Col>
-              <Col className="col-12 col-lg-7">
-                <p className="lead text-white bold mb-2">{editingdata.part4_para2}</p>
+            <Row className="text-center justify-content-center py-3 px-5 mt-5">
+              <Col className="col-12 col-md-7">
+                <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.part4_para2}</h2>
               </Col>
             </Row>
             <Row className="text-center justify-content-center mb-5 pb-0">
@@ -592,110 +575,45 @@ export default function Build({ file }) {
           </Fade>
 
           <Fade bottom>
-            <Row className="justify-content-center align-items-center my-5">
+            <Row className="justify-content-center align-items-center my-5 d-none">
               <Col className="col-1 horizTab"></Col>
             </Row>
           </Fade>
 
           <Fade bottom>
-            <Row className="text-center justify-content-center mb-3 p-4 pb-0">
-              <Col className="col-11 col-lg-7 pb-0">
-                <p className="text-white large mb-3">{editingdata.part4_para3}</p>
-              </Col>
-            </Row>
-          </Fade>
-
-          <Fade bottom>
-            <Row className="d-flex align-items-stretch px-5 justify-content-center pb-5">
-              <Col className="col-12 col-md-3 mb-3">
-                <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch card-hover">
-                  <h4 className="thin text-green">{editingdata.part4_box1header}</h4>
-                  <p className="flex-fill pb-3">{editingdata.part4_box1para}</p>
-                  <Button className="modal-btn" variant="btn-text text text-left">
-                    {editingdata.part4_box1button}
-                  </Button>
+            <Row className="justify-content-center  align-items-stretch mx-lg-5">
+                <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.calc_box1para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.calc_box1para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.calc_box1para3}</ReactMarkdown>
+                  <Link href="/carbon-calculator#corporate">
+                    <Button variant="green" className="calc-btn">{editingdata.calc_box1button1}</Button>
+                  </Link>
                 </div>
               </Col>
-
-              <Col className="col-12 col-md-3 mb-3">
-                <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch card-hover">
-                  <h4 className="thin text-green">{editingdata.part4_box2header}</h4>
-                  <p className="flex-fill pb-3">{editingdata.part4_box2para}</p>
-                  <Button className="modal-btn" variant="btn-text text text-left">
-                    {editingdata.part4_box2button}
-                  </Button>
+              <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.calc_box2para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.calc_box2para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.calc_box2para3}</ReactMarkdown>
+                  <Link href="/smart-forest-calculator#corporate">
+                    <Button variant="green" className="calc-btn">{editingdata.calc_box2button1}</Button>
+                  </Link>
                 </div>
               </Col>
-
-              <Col className="col-12 col-md-3 mb-3">
-                <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch card-hover">
-                  <h4 className="thin text-green">{editingdata.part4_box3header}</h4>
-                  <p className="flex-fill pb-3">{editingdata.part4_box3para}</p>
-                  <Button className="modal-btn" variant="btn-text text text-left">
-                    {editingdata.part4_box3button}
-                  </Button>
+              <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.calc_box3para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.calc_box3para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.calc_box3para3}</ReactMarkdown>
+                  <Link href="/#corporate">
+                    <Button variant="green" className="calc-btn">{editingdata.calc_box3button1}</Button>
+                  </Link>
                 </div>
               </Col>
             </Row>
-          </Fade>
 
-          <Fade bottom>
-            <Row id="corp-testimonial" className="justify-content-center align-items-center my-5">
-              <Carousel
-                className="col-11 col-lg-8 bg-brown roundedBox innerShadow p-5 m-4 px-0"
-                activeIndex={index}
-                onSelect={handleSelect}
-                nextIcon={ <span aria-hidden="false" className="carousel-control-next-icon"/>}
-                nextLabel=""
-                prevIcon={ <span aria-hidden="true" className="carousel-control-prev-icon"/>}
-                prevLabel="">
-                <Carousel.Item interval={100000} className="justify-content-center">
-                  <div className="d-block w-100 blockquote-bg mb-4 align-items-center d-flex">
-                    <div className="px-lg-5 pt-lg-4 mx-5">
-                      <h3 className="text-left blockquote text-orange">{editingdata.part4_quote1para}</h3>
-                      <p className="text-left text-white my-0 mx-5 bold">{editingdata.part4_quote1name}</p>
-                      <p className="text-left text-white mx-5 px-3 italic op-6">{editingdata.part4_quote1title}</p>
-                    </div>
-                  </div>
-                </Carousel.Item>
-
-                <Carousel.Item interval={100000} className="justify-content-center">
-                  <div className="d-block w-100 blockquote-bg mb-4 align-items-center d-flex">
-                    <div className="px-lg-5 pt-lg-4 mx-5">
-                      <h3 className="text-left blockquote text-orange">{editingdata.part4_quote2para}</h3>
-                      <p className="text-left text-white my-0 mx-5 bold">{editingdata.part4_quote2name}</p>
-                      <p className="text-left text-white mx-5 px-3 italic op-6">{editingdata.part4_quote2tile}</p>
-                    </div>
-                  </div>
-                </Carousel.Item>
-              </Carousel>
-            </Row>
-          </Fade>
-
-          <Fade bottom>
-            <Row id="corp-bottom-line" className="justify-content-center pt-5 mb-3">
-              <Col className="col-10 col-md-8">
-                <h2 className="text-center text-orange tight-drop-light bold mb-3">{editingdata.part4_header2}</h2>
-                <p className="lead px-lg-4 text-center tight-drop-light text-white mb-2">{editingdata.part4_para4}</p>
-              </Col>
-            </Row>
-          </Fade>
-
-          <Fade bottom>
-            <Row className="justify-content-center d-flex pb-5 mx-5 mb-3">
-              <Col className="col-12 col-md-7 col-lg-7 bg-green roundedBox innerShadow px-3 pt-5 pb-4 m-4 mt-2">
-                <p className="text-white large bold text-center">
-                  {editingdata.part4_pointsheader}
-                </p>
-                <ul className="text-white checkMark px-5 mx-3">
-                  <li>{editingdata.part4_pointspara1}</li>
-                  <li>{editingdata.part4_pointspara2}</li>
-                  <li>{editingdata.part4_pointspara3}</li>
-                  <li>{editingdata.part4_pointspara4}</li>
-                  <li>{editingdata.part4_pointspara5}</li>
-                </ul>
-              </Col>
-            </Row>
           </Fade>
 
           <Fade bottom>
@@ -714,37 +632,14 @@ export default function Build({ file }) {
             </Row>
           </Fade>
 
-          <Fade bottom>
-            <Row className="justify-content-center  align-items-stretch mx-lg-5 mb-4">
-              <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="large text-green mb-2">{editingdata.part4_calcbox1header}</p>
-                  <p className="text-grey mb-4">{editingdata.part4_calcbox1para}</p>
-                  <Link href="carbon-calculator">
-                    <Button variant="green" className="mt-3">
-                      {editingdata.part4_calcbox1button}
-                    </Button>
-                  </Link>
-                </div>
-              </Col>
-
-              <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="large text-green mb-2">{editingdata.part4_calcbox2header}</p>
-                  <p className="text-grey mb-4">{editingdata.part4_calcbox2para}</p>
-                  <Button variant="green" className="mt-3">
-                    {editingdata.part4_calcbox2button}
-                  </Button>
-                </div>
-              </Col>
-            </Row>
-          </Fade>
 
           <Fade bottom>
           <DigitalSign/>
           </Fade>
         </Container>
         </ScrollableAnchor>
+
+
         {/* School Forests */}
         <ScrollableAnchor id={"school"}>
         <Container fluid id="school" className="bg-school sectionPad">

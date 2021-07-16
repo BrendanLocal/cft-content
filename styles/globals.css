@@ -227,6 +227,10 @@ font-size: calc(1rem + .4vw);
 font-weight: 600;
 }
 
+.caps {
+  text-transform: uppercase;
+}
+
 .smallCaps {
   text-transform: uppercase;
   color: #fff;
@@ -950,10 +954,11 @@ padding: 10%;
 }
 
 .z-0 {
-  z-index: 0;
+  z-index: 0!important;
 }
+
 .z-999 {
-  z-index: 999;
+  z-index: 999!important;
   position: relative;
 }
 
@@ -1386,7 +1391,7 @@ footer {
 }
 
 .intro-links{
-  margin: 10px 35px 10px 0px;
+  margin: 10px 0px 10px 0px;
   font-size: 16px;
   letter-spacing: 0.2px!important;
 }
@@ -1406,7 +1411,6 @@ transition: all .5s ease;
 }
 
 .intro-links-header {
-  
   font-size: 12px;
   font-weight: 700;
 }
@@ -1430,6 +1434,35 @@ transition: all .5s ease;
 transform: translateY(3px)!important;
 transition: all .5s ease;
 }
+
+.dropdown-links{
+  font-size: 16px;
+  text-decoration: none!important;
+  box-shadow: none!important;
+}
+
+.dropdown-links:focus{
+  color: #fff;
+}
+
+.dropdown-menu {
+  position: relative;
+  top: 100%;
+  z-index: 1000!important;
+  display: none;
+  min-width: 30rem;
+  padding: .5rem 0;
+  margin: 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: none;
+  border-radius: .25rem;
+}
+
 
 
 
@@ -1813,6 +1846,10 @@ span.authorTitle {
   border: none;
 }
 
+.calculate-card .calc-btn {
+  bottom: 20px;
+}
+
 .calculate-card:hover {
   transform: translateY(-10px);
   transition: all 1s;
@@ -1883,6 +1920,10 @@ span.authorTitle {
 
 .w-100 {
   width: 100%!important;
+}
+
+.w-300 {
+  width: 300px!important;
 }
 
 .card-hover.modal-btn:hover {
