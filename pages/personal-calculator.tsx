@@ -188,10 +188,24 @@ export default function App({ file, href, children}) {
   const [selectEnergyThree, setEnergyThree] = React.useState("");
 
 
+  const [selectNumFour, setNumFour] = React.useState("");
+  const [selectYearFour, setYearFour] = React.useState(0);
+  const [selectSizeFour, setSizeFour] = React.useState("");
+  const [selectHeatFour, setHeatFour] = React.useState("");
+  const [selectEnergyFour, setEnergyFour] = React.useState("");
+
+  const [selectNumFive, setNumFive] = React.useState("");
+  const [selectYearFive, setYearFive] = React.useState(0);
+  const [selectSizeFive, setSizeFive] = React.useState("");
+  const [selectHeatFive, setHeatFive] = React.useState("");
+  const [selectEnergyFive, setEnergyFive] = React.useState("");
+
   const [buildSub, setBuildSub] = React.useState(0);
   const [getFam, setFam] = React.useState("myself");
   const [getFamTwo, setFamTwo] = React.useState("myself");
   const [getFamThree, setFamThree] = React.useState("myself");
+  const [getFamFour, setFamFour] = React.useState("myself");
+  const [getFamFive, setFamFive] = React.useState("myself");
 
 
 
@@ -213,12 +227,31 @@ export default function App({ file, href, children}) {
   let buildSizeThree = null;
   let heatTypeThree = null;
   let energyTypeThree = null;
+
+
+  let buildNumFour = 1;
+  let buildYearFour = 1;
+  let buildSizeFour = null;
+  let heatTypeFour = null;
+  let energyTypeFour = null;
+
+
+  let buildNumFive = 1;
+  let buildYearFive = 1;
+  let buildSizeFive = null;
+  let heatTypeFive = null;
+  let energyTypeFive = null;
+
   let subtotalVehicle = 0;
   let subtotalFlight = 0;
   let subtotalPublicTransport = 0;
   let subtotalBuildTwo = 0;
 
   let subtotalBuildThree = 0;
+
+  let subtotalBuildFour = 0;
+
+  let subtotalBuildFive = 0;
   let totalBuild = 0;
 
   buildSize = Number(selectSize);
@@ -238,6 +271,18 @@ export default function App({ file, href, children}) {
   heatTypeThree = selectHeatThree;
   energyTypeThree = selectEnergyThree;
 
+
+  buildNumFour = Number(selectNumFour);
+  buildYearFour = selectYearFour;
+  buildSizeFour = Number(selectSizeFour);
+  heatTypeFour = selectHeatFour;
+  energyTypeFour = selectEnergyFour;
+
+  buildNumFive = Number(selectNumFive);
+  buildYearFive = selectYearFive;
+  buildSizeFive = Number(selectSizeFive);
+  heatTypeFive = selectHeatFive;
+  energyTypeFive = selectEnergyFive;
 
   //vehicle multiplier
   const [vehicleSub, setVehicle] = React.useState(0);
@@ -312,6 +357,18 @@ export default function App({ file, href, children}) {
     setFamThree(event.target.value);
   }
 
+
+  const changeFamFour = (event) => {
+    setFamFour(event.target.value);
+  }
+
+
+
+  const changeFamFive = (event) => {
+    setFamFive(event.target.value);
+  }
+
+
   const changeSize = (event) => {
     setSize(event.target.value);
   }
@@ -373,6 +430,52 @@ export default function App({ file, href, children}) {
   const changeEnergyThree = (event) => {
     setEnergyThree(event.target.value);
   }
+
+
+
+  const changeNumFour = (event) => {
+    setNumFour(event.target.value);
+  }
+
+  const changeSizeFour= (event) => {
+    setSizeFour(event.target.value);
+  }
+
+  const changeYearFour = (event) => {
+    setYearFour(event.target.value);
+  }
+
+  const changeHeatFour = (event) => {
+    setHeatFour(event.target.value);
+  }
+
+  const changeEnergyFour = (event) => {
+    setEnergyFour(event.target.value);
+  }
+
+  
+
+
+  const changeNumFive = (event) => {
+    setNumFive(event.target.value);
+  }
+
+  const changeSizeFive= (event) => {
+    setSizeFive(event.target.value);
+  }
+
+  const changeYearFive = (event) => {
+    setYearFive(event.target.value);
+  }
+
+  const changeHeatFive = (event) => {
+    setHeatFive(event.target.value);
+  }
+
+  const changeEnergyFive = (event) => {
+    setEnergyFive(event.target.value);
+  }
+
 
   /* array using data from the spreadsheet, including multipliers */
   const buildArray = {
@@ -467,6 +570,31 @@ export default function App({ file, href, children}) {
       (((buildArray[buildSizeThree][heatTypeThree] * energySavingsMult[energyTypeThree])/buildNumThree)+((buildYearThree/12)* 1444)/buildNumThree)/1000);
 
   totalBuild =  Number(subtotalBuild) + Number(subtotalBuildTwo) + Number(subtotalBuildThree)
+  }
+
+
+
+  if (buildSize && heatType && energyType && buildSizeTwo && heatTypeTwo && energyTypeTwo && buildSizeThree && heatTypeThree && energyTypeThree  && buildSizeFour && heatTypeFour && energyTypeFour) 
+  {
+    if(getFamFour == "family"){
+      buildNumFour = 1
+    }
+    subtotalBuildFour = Number(
+      (((buildArray[buildSizeFour][heatTypeFour] * energySavingsMult[energyTypeFour])/buildNumFour)+((buildYearFour/12)* 1444)/buildNumFour)/1000);
+
+  totalBuild =  Number(subtotalBuild) + Number(subtotalBuildTwo) + Number(subtotalBuildThree)+ Number(subtotalBuildFour)
+  }
+
+
+  if (buildSize && heatType && energyType && buildSizeTwo && heatTypeTwo && energyTypeTwo && buildSizeThree && heatTypeThree && energyTypeThree  && buildSizeFour && heatTypeFour && energyTypeFour   && buildSizeFive && heatTypeFive && energyTypeFive) 
+  {
+    if(getFamFive == "family"){
+      buildNumFive = 1
+    }
+    subtotalBuildFive = Number(
+      (((buildArray[buildSizeFive][heatTypeFive] * energySavingsMult[energyTypeFive])/buildNumFive)+((buildYearFive/12)* 1444)/buildNumFive)/1000);
+
+  totalBuild =  Number(subtotalBuild) + Number(subtotalBuildTwo) + Number(subtotalBuildThree) + Number(subtotalBuildFour) + Number(subtotalBuildFive)
   }
 
   /* function to calculate the 'vehicle' section */
@@ -815,6 +943,186 @@ export default function App({ file, href, children}) {
            </div>
          </Accordion.Collapse>
          </Card>
+            {/* residence 4 */}
+            <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="2">
+                            
+                  <h5 className="smallCaps text-small text-green">4th Residence</h5>
+
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="2">
+                              <div>
+              
+              <Row className="mb-3">
+                <Col>
+                <label htmlFor="number">{editingdata.heat4CalcHeader}</label>
+                <br />
+                <input className="me-2" onChange={changeFamFour} type="radio" id="myself" name="calculateWhoFour" value="myself"/>
+                  <label>{editingdata.heat3Calc1}</label><br></br>
+                <input className="me-2" onChange={changeFamFour} type="radio" id="family" name="calculateWhoFour" value="family"/>
+                <label>{editingdata.heat3Calc2}</label>
+                <br></br>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <label htmlFor="number">{editingdata.Heat3People}</label>
+                  <br />
+                  <input onChange={changeNumFour} type="number" min={0} max={12} onKeyPress={(event) => {
+                    if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                  }} placeholder="Number of people in your household" />
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="number">{editingdata.heat3Months}</label>
+                  <br />
+                  <input onChange={changeYearFour} type="number" min={0} onKeyPress={(event) => {
+                    if (!/[0-9]/.test(event.key)) {event.preventDefault();} 
+                  }} placeholder="Month(s) per year in residence"/>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="size">{editingdata.heat3Size}</label>
+                  <br />
+                  <select name="size" value={selectSizeFour} onChange={changeSizeFour}>
+                    <option value="" hidden>{editingdata.select}</option>
+                    <option value='1000'>{editingdata.heatSize1}</option>
+                    <option value='1500'>{editingdata.heatSize2}</option>
+                    <option value='2000'>{editingdata.heatSize3}</option>
+                    <option value='2500'>{editingdata.heatSize4}</option>
+                    <option value='5000'>{editingdata.heatSize5}</option>
+                    <option value='7500'>{editingdata.heatSize6}</option>
+                    <option value='10000'>{editingdata.heatSize7}</option>
+                    <option value='10001'>{editingdata.heatSize8}</option>
+                  </select>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="heat">{editingdata.heat3Source}</label>
+                  <br />
+                  <select name="heat" value={selectHeatFour} onChange={changeHeatFour}>
+                    <option value="" hidden>{editingdata.select}</option>
+                    <option value='gas'>{editingdata.heatSource1}</option>
+                    <option value='oil'>{editingdata.heatSource2}</option>
+                    <option value='electric'>{editingdata.heatSource3}</option>
+                    <option value='wood'>{editingdata.heatSource4}</option>
+                  </select>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="energy">{editingdata.heat3Savings}</label>
+                  <br />
+                  <select name="energy" value={selectEnergyFour} onChange={changeEnergyFour}>
+                    <option value="" hidden>{editingdata.select}</option>
+                    <option value='none'>{editingdata.heatSavings1}</option>
+                    <option value='light'>{editingdata.heatSavings2}</option>
+                    <option value='moderate'>{editingdata.heatSavings3}</option>
+                    <option value='extensive'>{editingdata.heatSavings4}</option>
+                  </select>
+                </Col>
+              </Row> 
+           </div>
+         </Accordion.Collapse>
+         </Card>
+            {/* residence 5 */}
+            <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="3">
+                            
+                  <h5 className="smallCaps text-small text-green">5th Residence</h5>
+
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="3">
+                              <div>
+              
+              <Row className="mb-3">
+                <Col>
+                <label htmlFor="number">{editingdata.heat3CalcHeader}</label>
+                <br />
+                <input className="me-2" onChange={changeFamFive} type="radio" id="myself" name="calculateWhoFive" value="myself"/>
+                  <label>{editingdata.heat3Calc1}</label><br></br>
+                <input className="me-2" onChange={changeFamFive} type="radio" id="family" name="calculateWhoFive" value="family"/>
+                <label>{editingdata.heat3Calc2}</label>
+                <br></br>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <label htmlFor="number">{editingdata.Heat3People}</label>
+                  <br />
+                  <input onChange={changeNumFive} type="number" min={0} max={12} onKeyPress={(event) => {
+                    if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                  }} placeholder="Number of people in your household" />
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="number">{editingdata.heat3Months}</label>
+                  <br />
+                  <input onChange={changeYearFive} type="number" min={0} onKeyPress={(event) => {
+                    if (!/[0-9]/.test(event.key)) {event.preventDefault();} 
+                  }} placeholder="Month(s) per year in residence"/>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="size">{editingdata.heat3Size}</label>
+                  <br />
+                  <select name="size" value={selectSizeFive} onChange={changeSizeFive}>
+                    <option value="" hidden>{editingdata.select}</option>
+                    <option value='1000'>{editingdata.heatSize1}</option>
+                    <option value='1500'>{editingdata.heatSize2}</option>
+                    <option value='2000'>{editingdata.heatSize3}</option>
+                    <option value='2500'>{editingdata.heatSize4}</option>
+                    <option value='5000'>{editingdata.heatSize5}</option>
+                    <option value='7500'>{editingdata.heatSize6}</option>
+                    <option value='10000'>{editingdata.heatSize7}</option>
+                    <option value='10001'>{editingdata.heatSize8}</option>
+                  </select>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="heat">{editingdata.heat3Source}</label>
+                  <br />
+                  <select name="heat" value={selectHeatFive} onChange={changeHeatFive}>
+                    <option value="" hidden>{editingdata.select}</option>
+                    <option value='gas'>{editingdata.heatSource1}</option>
+                    <option value='oil'>{editingdata.heatSource2}</option>
+                    <option value='electric'>{editingdata.heatSource3}</option>
+                    <option value='wood'>{editingdata.heatSource4}</option>
+                  </select>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="energy">{editingdata.heat3Savings}</label>
+                  <br />
+                  <select name="energy" value={selectEnergyFive} onChange={changeEnergyFive}>
+                    <option value="" hidden>{editingdata.select}</option>
+                    <option value='none'>{editingdata.heatSavings1}</option>
+                    <option value='light'>{editingdata.heatSavings2}</option>
+                    <option value='moderate'>{editingdata.heatSavings3}</option>
+                    <option value='extensive'>{editingdata.heatSavings4}</option>
+                  </select>
+                </Col>
+              </Row> 
+           </div>
+         </Accordion.Collapse>
+         </Card>
+     
+        
          </Accordion>
 
             </div>
