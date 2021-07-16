@@ -476,9 +476,12 @@ hr {
 
 .btn:hover {
   color: #fff;
-  transform: scale(1.03);
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
   transition: all .5s;
+}
+
+.btn:not(.dropdown-toggle):hover {
+  transform: scale(1.03);
 }
 
 .btn-white:hover {
@@ -1419,6 +1422,8 @@ transition: all .5s ease;
 .down-links{
   font-size: 14px;
   letter-spacing: 0.1px!important;
+  z-index:999;
+transition: transform .5s ease;
 }
 
 .down-links:after {
@@ -1432,10 +1437,10 @@ transition: all .5s ease;
 
 .down-links:hover {
 transform: translateY(3px)!important;
-transition: all .5s ease;
+transition: transform .5s ease;
 }
 
-.dropdown-links{
+.dropdown-links {
   font-size: 16px;
   text-decoration: none!important;
   box-shadow: none!important;
@@ -1443,6 +1448,7 @@ transition: all .5s ease;
 
 .dropdown-links:focus{
   color: #fff;
+  z-index:999;
 }
 
 .dropdown-menu {
@@ -1820,6 +1826,12 @@ span.authorTitle {
   font-weight: 200;
 }
 
+.react-reveal {
+  position: relative;
+  z-index: -999 !important;
+}
+
+
 /* Card Details */
 
 .card-drop {
@@ -1866,7 +1878,8 @@ span.authorTitle {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  
+  z-index: -99;
+    position: relative;
 }
 
 .bg-school {
