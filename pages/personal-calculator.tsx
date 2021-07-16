@@ -26,6 +26,19 @@ var language ="en";
   return (language)
 }
 
+const addDataIntoCache = (cacheName, url, response) => {
+  // Coverting our respons into Actual Response form
+  const data = new Response(JSON.stringify(response));
+
+  if ('caches' in window) {
+    // Opening given cache and putting our data into it
+    caches.open(cacheName).then((cache) => {
+      cache.put(url, data);
+      alert('Data Added into cache!')
+    });
+  }
+};
+
 export default function App({ file, href, children}) {
   
   const formOptions = {
@@ -1600,7 +1613,7 @@ export default function App({ file, href, children}) {
             <div className="bg-brown p-5 innerShadow roundedBox">
               <p className="smallCaps text-orange">{editingdata.box1Header}</p>
               <h3 className="text-white mb-4 px-2 px-lg-5">{editingdata.box1Para}</h3>
-              <Button className="btn-large mt-1" variant="green">{editingdata.box1Button}</Button>
+              <Button onClick={addDataIntoCache} className="btn-large mt-1" variant="green">{editingdata.box1Button}</Button>
             </div>
           </Col>
         </Row>
