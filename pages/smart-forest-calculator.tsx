@@ -22,6 +22,17 @@ const Lang = () => {
   return (language)
 }
 
+
+const NodeCache = require( "node-cache" );
+const myCache = new NodeCache();
+
+const personalTotal = myCache.get( "myKey" );
+if ( personalTotal == undefined ){
+    // handle miss!
+} else {
+  alert(personalTotal)
+}
+
 export default function App({ file, href, children}) {
   
   const formOptions = {

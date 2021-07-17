@@ -13,8 +13,7 @@ import { useGithubJsonForm, useGithubToolbarPlugins } from "react-tinacms-github
 import { usePlugin, useWatchFormValues } from "tinacms";
 import { useState } from "react";
 import Header from "../components/header";
-import { Accordion } from "react-bootstrap";
-import { InputNumber } from 'rsuite';
+import Accordion from "react-bootstrap/Accordion";
 
 const Lang = () => {
 var language ="en";
@@ -26,18 +25,10 @@ var language ="en";
   return (language)
 }
 
-const addDataIntoCache = (cacheName, url, response) => {
-  // Coverting our respons into Actual Response form
-  const data = new Response(JSON.stringify(response));
+const NodeCache = require( "node-cache" );
+const myCache = new NodeCache();
 
-  if ('caches' in window) {
-    // Opening given cache and putting our data into it
-    caches.open(cacheName).then((cache) => {
-      cache.put(url, data);
-      alert('Data Added into cache!')
-    });
-  }
-};
+
 
 export default function App({ file, href, children}) {
   
@@ -673,6 +664,14 @@ export default function App({ file, href, children}) {
 
   /* calculate the 'total' here by adding on the other subtotals */
   let total = vehicleSub + totalBuild + (flightSub/1000) + (publicTransportSub/1000);
+
+
+
+const addDataIntoCache = () => {
+  if(total > 0){
+  const success = myCache.set( "personalTotal", total, 10000 );
+}
+}
 
   return (
     <div className="bg-legacy">
