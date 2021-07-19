@@ -11,6 +11,8 @@ import { usePlugin } from 'tinacms'
 import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
 import { useState } from "react";
 import Header from "../components/header";
+import Accordion from "react-bootstrap/Accordion";
+import Card from 'react-bootstrap/Card';
 
 const Lang = () => {
   var language ="en";
@@ -206,9 +208,13 @@ const Lang = () => {
       carGas: {mult:0.15179,count: null, miles: null},
       carDiesel: {mult:0.16748,count: null, miles: null},
       carHybrid: {mult:0.10487,count: null, miles: null},
+      carPlug: {mult:0.02935, count: null, miles: null},
+      carElectric: {mult:0.000001, count: null, miles: null},
       truckGas: {mult:0.27807,count: null, miles: null},
       truckDiesel: {mult:0.20419,count: null, miles: null},
       truckHybrid: {mult:0.11518,count: null, miles: null},
+      truckPlug: {mult:0.07731, count: null, miles: null},
+      truckElectric: {mult:0.000001, count: null, miles: null},
       deliveryGas: {mult:0.21962,count: null, miles: null},
       deliveryDiesel: {mult:0.2471,count: null, miles: null},
       semiNonFrig: {mult:0.8654,count: null, miles: null},
@@ -245,6 +251,7 @@ const Lang = () => {
     let buildType = null;
     let buildSize = null;
     let buildNum = 1;
+
     let subtotalVehicle = 0;
     let subtotalTransit = 0;
     let subtotalFlight = 0;
@@ -268,20 +275,134 @@ const Lang = () => {
     }
 
 
+    const [selectBuildTwo, setBuildTwo] = React.useState("");
+    const [selectSizeTwo, setSizeTwo] = React.useState("");
+    const [selectNumTwo, setNumTwo] = React.useState("");
+
+    let buildTypeTwo = null;
+    let buildSizeTwo = null;
+    let buildNumTwo = 1;
+    buildTypeTwo = selectBuildTwo;
+    buildSizeTwo = Number(selectSizeTwo);
+    buildNumTwo = Number(selectNumTwo);
+
+    const changeBuildTwo = (event) => {
+      setBuildTwo(event.target.value);
+    };
+    const changeSizeTwo = (event) => {
+      setSizeTwo(event.target.value);
+    }
+    const changeNumTwo = (event) => {
+      setNumTwo(event.target.value);
+    }
+
+
+    const [selectBuildThree, setBuildThree] = React.useState("");
+    const [selectSizeThree, setSizeThree] = React.useState("");
+    const [selectNumThree, setNumThree] = React.useState("");
+
+    let buildTypeThree = null;
+    let buildSizeThree = null;
+    let buildNumThree = 1;
+    buildTypeThree = selectBuildThree;
+    buildSizeThree = Number(selectSizeThree);
+    buildNumThree = Number(selectNumThree);
+
+    const changeBuildThree = (event) => {
+      setBuildThree(event.target.value);
+    };
+    const changeSizeThree = (event) => {
+      setSizeThree(event.target.value);
+    }
+    const changeNumThree = (event) => {
+      setNumThree(event.target.value);
+    }
+
+
+
+
+    const [selectBuildFour, setBuildFour] = React.useState("");
+    const [selectSizeFour, setSizeFour] = React.useState("");
+    const [selectNumFour, setNumFour] = React.useState("");
+
+    let buildTypeFour = null;
+    let buildSizeFour = null;
+    let buildNumFour = 1;
+    buildTypeFour = selectBuildFour;
+    buildSizeFour = Number(selectSizeFour);
+    buildNumFour = Number(selectNumFour);
+
+    const changeBuildFour = (event) => {
+      setBuildFour(event.target.value);
+    };
+    const changeSizeFour = (event) => {
+      setSizeFour(event.target.value);
+    }
+    const changeNumFour = (event) => {
+      setNumFour(event.target.value);
+    }
+
+
+
+
+    const [selectBuildFive, setBuildFive] = React.useState("");
+    const [selectSizeFive, setSizeFive] = React.useState("");
+    const [selectNumFive, setNumFive] = React.useState("");
+
+    let buildTypeFive = null;
+    let buildSizeFive = null;
+    let buildNumFive = 1;
+    buildTypeFive = selectBuildFive;
+    buildSizeFive = Number(selectSizeFive);
+    buildNumFive = Number(selectNumFive);
+
+    const changeBuildFive = (event) => {
+      setBuildFive(event.target.value);
+    };
+    const changeSizeFive = (event) => {
+      setSizeFive(event.target.value);
+    }
+    const changeNumFive = (event) => {
+      setNumFive(event.target.value);
+    }
+
+
+
     const buildArray = {
-      "5000":{	Office:17364.7272966102,	Medical:11745.2006980804,	School:4757.66316027602,	Care:12771.2658005338,	Warehouse:9099.64324928882,	Hotel:9690.54436545558,	Hospital:37996.8383017167,	Food:31883.4665465874,	Restaurant:31883.4665465874,	Retail:14238.4420898752,	Other:21150.1136386494	},
-      "10000":{	Office:36410.3314832734,	Medical:31652.8432142392,	School:50910.7964173328,	Care:38785.1544490552,	Warehouse:33615.6982670747,	Hotel:40569.5408950621,	Hospital:37996.8383017167,	Food:69291.7802772103,	Restaurant:69291.7802772103,	Retail:34880.9486788779,	Other:41842.7553285601	},
-      "50000":{	Office:107974.850039479,	Medical:121467.615511552,	School:126421.429416638,	Care:135848.999758979,	Warehouse:86165.0149485114,	Hotel:110204.71235101,	Hospital:378941.441441445,	Food:336771.355336677,	Restaurant:336771.355336677,	Retail:130500.101484575,	Other:87631.4688550379	},
-      "100000":{	Office:192271.827419795,	Medical:189560.602466795,	School:128368.440095647,	Care:217415.857796719,	Warehouse:107078.502637714,	Hotel:221974.440768748,	Hospital:474328.650611625,	Food:325826.606327465,	Restaurant:325826.606327465,	Retail:111670.883868581,	Other:127024.366414023	},
-      "150000":{	Office:384543.65483959,	Medical:379121.204933589,	School:256736.880191293,	Care:434831.715593438,	Warehouse:214157.005275428,	Hotel:443948.881537496,	Hospital:948657.301223249,	Food:651653.21265493,	Restaurant:651653.21265493,	Retail:223341.767737162,	Other:254048.732828046	},
-      "200000":{	Office:769087.30967918,	Medical:758242.409867179,	School:513473.760382587,	Care:869663.431186876,	Warehouse:428314.010550856,	Hotel:887897.763074991,	Hospital:1897314.6024465,	Food:1303306.42530986,	Restaurant:1303306.42530986,	Retail:446683.535474323,	Other:508097.465656091	},
-      "200001":{	Office:2234861.05228483,	Medical:5452546.29629634,	School:1112764.55026456,	Care:1377046.13095239,	Warehouse:1092785.89654373,	Hotel:1861523.06967986,	Hospital:5946424.34988185,	Food:1439977.47747749,	Restaurant:1439977.47747749,	Retail:2446129.79207279,	Other:1848813.90303718	}
+      "5000": {	Office:17364.7272966102,	Medical:11745.2006980804,	School:4757.66316027602,	Care:12771.2658005338,	Warehouse:9099.64324928882,	Hotel:9690.54436545558,	Hospital:37996.8383017167,	Food:31883.4665465874,	Restaurant:31883.4665465874,	Retail:14238.4420898752,	Other:21150.1136386494,	},
+"10000": {	Office:36410.3314832734,	Medical:31652.8432142392,	School:50910.7964173328,	Care:38785.1544490552,	Warehouse:33615.6982670747,	Hotel:40569.5408950621,	Hospital:37996.8383017167,	Food:69291.7802772103,	Restaurant:69291.7802772103,	Retail:34880.9486788779,	Other:41842.7553285601,	},
+"25000": {	Office:72820.6629665468,	Medical:63305.6864284785,	School:101821.592834666,	Care:77570.3088981104,	Warehouse:67231.3965341494,	Hotel:81139.0817901241,	Hospital:75993.6766034333,	Food:138583.560554421,	Restaurant:138583.560554421,	Retail:69761.8973577557,	Other:83685.5106571202,	},
+"50000": {	Office:107974.850039479,	Medical:121467.615511552,	School:126421.429416638,	Care:135848.999758979,	Warehouse:86165.0149485114,	Hotel:110204.71235101,	Hospital:378941.441441445,	Food:336771.355336677,	Restaurant:336771.355336677,	Retail:130500.101484575,	Other:87631.4688550379,	},
+"75000": {	Office:192271.827419795,	Medical:189560.602466795,	School:128368.440095647,	Care:217415.857796719,	Warehouse:107078.502637714,	Hotel:221974.440768748,	Hospital:474328.650611625,	Food:325826.606327465,	Restaurant:325826.606327465,	Retail:111670.883868581,	Other:127024.366414023,	},
+"100000": {	Office:288407.741129692,	Medical:284340.903700192,	School:192552.66014347,	Care:326123.786695078,	Warehouse:160617.753956571,	Hotel:332961.661153122,	Hospital:711492.975917437,	Food:488739.909491198,	Restaurant:488739.909491198,	Retail:167506.325802871,	Other:190536.549621034,	},
+"125000": {	Office:384543.65483959,	Medical:379121.204933589,	School:256736.880191293,	Care:434831.715593438,	Warehouse:214157.005275428,	Hotel:443948.881537496,	Hospital:948657.301223249,	Food:651653.21265493,	Restaurant:651653.21265493,	Retail:223341.767737162,	Other:254048.732828046,	},
+"200000": {	Office:769087.30967918,	Medical:758242.409867179,	School:513473.760382587,	Care:869663.431186876,	Warehouse:428314.010550856,	Hotel:887897.763074991,	Hospital:1897314.6024465,	Food:1303306.42530986,	Restaurant:1303306.42530986,	Retail:446683.535474323,	Other:508097.465656091,	},
+"350000": {	Office:1345902.79193856,	Medical:1326924.21726756,	School:898579.080669527,	Care:1521911.00457703,	Warehouse:749549.518463998,	Hotel:1553821.08538124,	Hospital:3320300.55428137,	Food:2280786.24429226,	Restaurant:2280786.24429226,	Retail:781696.187080065,	Other:889170.56489816,	},
+"500000": {	Office:2691805.58387713,	Medical:2653848.43453513,	School:1797158.16133905,	Care:3043822.00915407,	Warehouse:1499099.036928,	Hotel:3107642.17076247,	Hospital:6640601.10856275,	Food:4561572.48858451,	Restaurant:4561572.48858451,	Retail:1563392.37416013,	Other:1778341.12979632,	}
     }
 
 
     if (buildType && buildNum && buildSize) {
       subtotalBuild = Number((buildArray[buildSize][buildType] * buildNum /1000))
     }
+
+    if (buildTypeTwo && buildNumTwo && buildSizeTwo) {
+      subtotalBuild += Number((buildArray[buildSizeTwo][buildTypeTwo] * buildNumTwo /1000))
+    }
+
+    if (buildTypeThree && buildNumThree && buildSizeThree) {
+      subtotalBuild += Number((buildArray[buildSizeThree][buildTypeThree] * buildNumThree /1000))
+    }
+
+    if (buildTypeFour && buildNumFour && buildSizeFour) {
+      subtotalBuild += Number((buildArray[buildSizeFour][buildTypeFour] * buildNumFour /1000))
+    }
+
+    if (buildTypeFive && buildNumFive && buildSizeFive) {
+      subtotalBuild += Number((buildArray[buildSizeFive][buildTypeFive] * buildNumFive /1000))
+    }
+
+
 
     const calculateVehicle=()=> {
       subtotalVehicle = 0
@@ -390,7 +511,7 @@ const Lang = () => {
             <Row>
               <Col>
               <h4 className="text-green">
-                {editingdata.box1Header}
+                Building Types
               </h4>
               <hr/>
               </Col>
@@ -433,7 +554,9 @@ const Lang = () => {
             </Row>
             <Row>
               <Col> 
-              <label htmlFor="building">{editingdata.businessTypeHeader}</label><br />
+              <hr/>
+              <h5>Primary Building</h5>
+              <label htmlFor="building">What kind of building do you have?</label><br />
               <select name="building" onChange={changeBuild} value={selectBuild}>
                 <option value="" hidden>{editingdata.select}</option>
                 <option value='Office'>{editingdata.commercialSpace1}</option>
@@ -457,13 +580,16 @@ const Lang = () => {
               <label htmlFor="size">{editingdata.squareFeetHeader}</label><br />
               <select name="size" value={selectSize} onChange={changeSize}>
                 <option value="" hidden>{editingdata.select}</option>
-                <option value='5000'>{editingdata.squareFeet1}</option>
-                <option value='10000'>{editingdata.squareFeet2}</option>
-                <option value='50000'>{editingdata.squareFeet3}</option>
-                <option value='100000'>{editingdata.squareFeet4}</option>
-                <option value='150000'>{editingdata.squareFeet5}</option>
-                <option value='200000'>{editingdata.squareFeet6}</option>
-                <option value='200001'>{editingdata.squareFeet7}</option>
+                <option value='5000'>less than 5000</option>
+                <option value='10000'>5000-10,000</option>
+                <option value='25000'>10,000-25,000</option>
+                <option value='50000'>25,000-50,000</option>
+                <option value='75000'>50,000-75,000</option>
+                <option value='100000'>75,000-100,000</option>
+                <option value='125000'>100,000-125,000</option>
+                <option value='200000'>150,000-200,000</option>
+                <option value='350000'>200,000-350,000</option>
+                <option value='500000'>500,000+</option>
               </select>
               </Col>
             </Row>
@@ -479,6 +605,273 @@ const Lang = () => {
                 } placeholder="Number of buildings of this type"/>
               </Col>
             </Row>
+          <hr/>
+<h6 className="pt-3">Additional Buildings</h6>
+
+              <Accordion>
+
+              {/* Building Type 2 */}
+              <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="0">
+                              Building Type 2
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="0">
+                              <div>
+                             
+            <Row>
+              <Col> 
+              <label htmlFor="building">What kind of building is this?</label><br />
+              <select name="building" onChange={changeBuildTwo} value={selectBuildTwo}>
+                <option value="" hidden>{editingdata.select}</option>
+                <option value='Office'>{editingdata.commercialSpace1}</option>
+                <option value='Medical'>{editingdata.commercialSpace2}</option>
+                <option value='School'>{editingdata.commercialSpace3}</option>
+                <option value='Care'>{editingdata.commercialSpace4}</option>
+                <option value='Warehouse'>{editingdata.commercialSpace5}</option>
+                <option value='Hotel'>{editingdata.commercialSpace6}</option>
+                <option value='Hospital'>{editingdata.commercialSpace7}</option>
+                <option value='Food'>{editingdata.commercialSpace8}</option>
+                <option value='Restaurant'>{editingdata.commercialSpace9}</option>
+                <option value='Retail'>{editingdata.commercialSpace10}</option>
+                <option value='Other'>{editingdata.commercialSpace11}</option>
+              </select>
+              </Col>
+            </Row>
+
+
+            <Row>
+              <Col>
+              <label htmlFor="size">{editingdata.squareFeetHeader}</label><br />
+              <select name="size" value={selectSizeTwo} onChange={changeSizeTwo}>
+                <option value="" hidden>{editingdata.select}</option>
+                <option value='5000'>less than 5000</option>
+                <option value='10000'>5000-10,000</option>
+                <option value='25000'>10,000-25,000</option>
+                <option value='50000'>25,000-50,000</option>
+                <option value='75000'>50,000-75,000</option>
+                <option value='100000'>75,000-100,000</option>
+                <option value='125000'>100,000-125,000</option>
+                <option value='200000'>150,000-200,000</option>
+                <option value='350000'>200,000-350,000</option>
+                <option value='500000'>500,000+</option>
+              </select>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <label htmlFor="number">{editingdata.buildingNumberHeader}</label><br />
+                <input  onChange={changeNumTwo} type="number" min="0" 
+                  onKeyPress={(event) => {
+                    if (!/[0-9]/.test(event.key)) {
+                      event.preventDefault();
+                    }
+                  }
+                } placeholder="Number of buildings of this type"/>
+              </Col>
+            </Row>
+          
+
+                              </div>
+         </Accordion.Collapse>
+         </Card>
+
+
+ {/* Building Type 3 */}
+ <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="1">
+                              Building Type 3
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="1">
+                              <div>
+                             
+            <Row>
+              <Col> 
+              <label htmlFor="building">What kind of building is this?</label><br />
+              <select name="building" onChange={changeBuildThree} value={selectBuildThree}>
+                <option value="" hidden>{editingdata.select}</option>
+                <option value='Office'>{editingdata.commercialSpace1}</option>
+                <option value='Medical'>{editingdata.commercialSpace2}</option>
+                <option value='School'>{editingdata.commercialSpace3}</option>
+                <option value='Care'>{editingdata.commercialSpace4}</option>
+                <option value='Warehouse'>{editingdata.commercialSpace5}</option>
+                <option value='Hotel'>{editingdata.commercialSpace6}</option>
+                <option value='Hospital'>{editingdata.commercialSpace7}</option>
+                <option value='Food'>{editingdata.commercialSpace8}</option>
+                <option value='Restaurant'>{editingdata.commercialSpace9}</option>
+                <option value='Retail'>{editingdata.commercialSpace10}</option>
+                <option value='Other'>{editingdata.commercialSpace11}</option>
+              </select>
+              </Col>
+            </Row>
+
+
+            <Row>
+              <Col>
+              <label htmlFor="size">{editingdata.squareFeetHeader}</label><br />
+              <select name="size" value={selectSizeThree} onChange={changeSizeThree}>
+              <option value="" hidden>{editingdata.select}</option>
+                <option value='5000'>less than 5000</option>
+                <option value='10000'>5000-10,000</option>
+                <option value='25000'>10,000-25,000</option>
+                <option value='50000'>25,000-50,000</option>
+                <option value='75000'>50,000-75,000</option>
+                <option value='100000'>75,000-100,000</option>
+                <option value='125000'>100,000-125,000</option>
+                <option value='200000'>150,000-200,000</option>
+                <option value='350000'>200,000-350,000</option>
+                <option value='500000'>500,000+</option>
+              </select>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <label htmlFor="number">{editingdata.buildingNumberHeader}</label><br />
+                <input  onChange={changeNumThree} type="number" min="0" 
+                  onKeyPress={(event) => {
+                    if (!/[0-9]/.test(event.key)) {
+                      event.preventDefault();
+                    }
+                  }
+                } placeholder="Number of buildings of this type"/>
+              </Col>
+            </Row>
+          
+
+                              </div>
+         </Accordion.Collapse>
+         </Card>
+
+ {/* Building Type 4 */}
+ <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="2">
+                              Building Type 4
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="2">
+                              <div>
+                             
+            <Row>
+              <Col> 
+              <label htmlFor="building">What kind of building is this?</label><br />
+              <select name="building" onChange={changeBuildFour} value={selectBuildFour}>
+                <option value="" hidden>{editingdata.select}</option>
+                <option value='Office'>{editingdata.commercialSpace1}</option>
+                <option value='Medical'>{editingdata.commercialSpace2}</option>
+                <option value='School'>{editingdata.commercialSpace3}</option>
+                <option value='Care'>{editingdata.commercialSpace4}</option>
+                <option value='Warehouse'>{editingdata.commercialSpace5}</option>
+                <option value='Hotel'>{editingdata.commercialSpace6}</option>
+                <option value='Hospital'>{editingdata.commercialSpace7}</option>
+                <option value='Food'>{editingdata.commercialSpace8}</option>
+                <option value='Restaurant'>{editingdata.commercialSpace9}</option>
+                <option value='Retail'>{editingdata.commercialSpace10}</option>
+                <option value='Other'>{editingdata.commercialSpace11}</option>
+              </select>
+              </Col>
+            </Row>
+
+
+            <Row>
+              <Col>
+              <label htmlFor="size">{editingdata.squareFeetHeader}</label><br />
+              <select name="size" value={selectSizeFour} onChange={changeSizeFour}>
+              <option value="" hidden>{editingdata.select}</option>
+                <option value='5000'>less than 5000</option>
+                <option value='10000'>5000-10,000</option>
+                <option value='25000'>10,000-25,000</option>
+                <option value='50000'>25,000-50,000</option>
+                <option value='75000'>50,000-75,000</option>
+                <option value='100000'>75,000-100,000</option>
+                <option value='125000'>100,000-125,000</option>
+                <option value='200000'>150,000-200,000</option>
+                <option value='350000'>200,000-350,000</option>
+                <option value='500000'>500,000+</option>
+              </select>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <label htmlFor="number">{editingdata.buildingNumberHeader}</label><br />
+                <input  onChange={changeNumFour} type="number" min="0" 
+                  onKeyPress={(event) => {
+                    if (!/[0-9]/.test(event.key)) {
+                      event.preventDefault();
+                    }
+                  }
+                } placeholder="Number of buildings of this type"/>
+              </Col>
+            </Row>
+          
+
+                              </div>
+         </Accordion.Collapse>
+         </Card>
+
+          {/* Building Type 5 */}
+          <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="3">
+                              Building Type 5
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="3">
+                              <div>
+                             
+            <Row>
+              <Col> 
+              <label htmlFor="building">What kind of building is this?</label><br />
+              <select name="building" onChange={changeBuildFive} value={selectBuildFive}>
+                <option value="" hidden>{editingdata.select}</option>
+                <option value='Office'>{editingdata.commercialSpace1}</option>
+                <option value='Medical'>{editingdata.commercialSpace2}</option>
+                <option value='School'>{editingdata.commercialSpace3}</option>
+                <option value='Care'>{editingdata.commercialSpace4}</option>
+                <option value='Warehouse'>{editingdata.commercialSpace5}</option>
+                <option value='Hotel'>{editingdata.commercialSpace6}</option>
+                <option value='Hospital'>{editingdata.commercialSpace7}</option>
+                <option value='Food'>{editingdata.commercialSpace8}</option>
+                <option value='Restaurant'>{editingdata.commercialSpace9}</option>
+                <option value='Retail'>{editingdata.commercialSpace10}</option>
+                <option value='Other'>{editingdata.commercialSpace11}</option>
+              </select>
+              </Col>
+            </Row>
+
+
+            <Row>
+              <Col>
+              <label htmlFor="size">{editingdata.squareFeetHeader}</label><br />
+              <select name="size" value={selectSizeFive} onChange={changeSizeFive}>
+              <option value="" hidden>{editingdata.select}</option>
+                <option value='5000'>less than 5000</option>
+                <option value='10000'>5000-10,000</option>
+                <option value='25000'>10,000-25,000</option>
+                <option value='50000'>25,000-50,000</option>
+                <option value='75000'>50,000-75,000</option>
+                <option value='100000'>75,000-100,000</option>
+                <option value='125000'>100,000-125,000</option>
+                <option value='200000'>150,000-200,000</option>
+                <option value='350000'>200,000-350,000</option>
+                <option value='500000'>500,000+</option>
+              </select>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <label htmlFor="number">{editingdata.buildingNumberHeader}</label><br />
+                <input  onChange={changeNumFive} type="number" min="0" 
+                  onKeyPress={(event) => {
+                    if (!/[0-9]/.test(event.key)) {
+                      event.preventDefault();
+                    }
+                  }
+                } placeholder="Number of buildings of this type"/>
+              </Col>
+            </Row>
+          
+
+                              </div>
+         </Accordion.Collapse>
+         </Card>
+</Accordion>
+
           </div>
 
           <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
@@ -536,6 +929,36 @@ const Lang = () => {
                     }  placeholder={editingdata.vehiclePlaceholder2} />
                   </Col>
                 </Row>
+                <Row>
+                  <Col className="col-10 col-xl-4">
+                    Plug-In Hybrid
+                  </Col>
+                  <Col className="col-6 col-xl-4">
+                    <input onChange={calculateCount} name="carPlug" type="number" min="0" onKeyPress={
+                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                    }  placeholder={editingdata.vehiclePlaceholder1} />
+                  </Col>
+                  <Col className="col-6 col-xl-4">
+                    <input onChange={calculateMiles} name="carPlug" type="number" min="0" onKeyPress={
+                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                    }  placeholder={editingdata.vehiclePlaceholder2} />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col className="col-10 col-xl-4">
+                    Plug-In Electric
+                  </Col>
+                  <Col className="col-6 col-xl-4">
+                    <input onChange={calculateCount} name="carElectric" type="number" min="0" onKeyPress={
+                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                    }  placeholder={editingdata.vehiclePlaceholder1} />
+                  </Col>
+                  <Col className="col-6 col-xl-4">
+                    <input onChange={calculateMiles} name="carElectric" type="number" min="0" onKeyPress={
+                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                    }  placeholder={editingdata.vehiclePlaceholder2} />
+                  </Col>
+                </Row>
               </Col>
             </Row>
             <hr/>
@@ -577,6 +1000,32 @@ const Lang = () => {
                   </Col>
                   <Col className="col-6 col-xl-4">
                     <input onChange={calculateMiles} name="truckHybrid" type="number" min="0" onKeyPress={
+                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                    }   placeholder={editingdata.vehiclePlaceholder2} />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col className="col-10 col-xl-4">Plug-In Hybrid</Col>
+                  <Col className="col-6 col-xl-4">
+                    <input onChange={calculateCount} name="truckPlug" type="number" min="0" onKeyPress={
+                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                    }   placeholder={editingdata.vehiclePlaceholder1} />
+                  </Col>
+                  <Col className="col-6 col-xl-4">
+                    <input onChange={calculateMiles} name="truckPlug" type="number" min="0" onKeyPress={
+                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                    }   placeholder={editingdata.vehiclePlaceholder2} />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col className="col-10 col-xl-4">Plug-In Electric</Col>
+                  <Col className="col-6 col-xl-4">
+                    <input onChange={calculateCount} name="truckElectric" type="number" min="0" onKeyPress={
+                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                    }   placeholder={editingdata.vehiclePlaceholder1} />
+                  </Col>
+                  <Col className="col-6 col-xl-4">
+                    <input onChange={calculateMiles} name="truckElectric" type="number" min="0" onKeyPress={
                       (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                     }   placeholder={editingdata.vehiclePlaceholder2} />
                   </Col>
