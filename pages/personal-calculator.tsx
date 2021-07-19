@@ -25,9 +25,6 @@ var language ="en";
   return (language)
 }
 
-const NodeCache = require( "node-cache" );
-const myCache = new NodeCache();
-
 
 
 export default function App({ file, href, children}) {
@@ -667,11 +664,6 @@ export default function App({ file, href, children}) {
 
 
 
-const addDataIntoCache = () => {
-  if(total > 0){
-  const success = myCache.set( "personalTotal", total, 10000 );
-}
-}
 
   return (
     <div className="bg-legacy">
@@ -1612,7 +1604,7 @@ const addDataIntoCache = () => {
             <div className="bg-brown p-5 innerShadow roundedBox">
               <p className="smallCaps text-orange">{editingdata.box1Header}</p>
               <h3 className="text-white mb-4 px-2 px-lg-5">{editingdata.box1Para}</h3>
-              <Button onClick={addDataIntoCache} className="btn-large mt-1" variant="green">{editingdata.box1Button}</Button>
+              <Link href={total > 0 ? "smart-forest-calculator?personal="+total : "smart-forest-calculator"}><Button className="btn-large mt-1" variant="green">{editingdata.box1Button}</Button></Link>
             </div>
           </Col>
         </Row>

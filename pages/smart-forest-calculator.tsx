@@ -26,11 +26,11 @@ const Lang = () => {
 const NodeCache = require( "node-cache" );
 const myCache = new NodeCache();
 
-const personalTotal = myCache.get( "myKey" );
+const personalTotal = myCache.get( "personalTotal" );
 if ( personalTotal == undefined ){
-    // handle miss!
+  console.log("oops!")
 } else {
-  alert(personalTotal)
+  console.log(personalTotal)
 }
 
 export default function App({ file, href, children}) {
