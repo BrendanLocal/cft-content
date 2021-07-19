@@ -34,8 +34,8 @@ const DigitalSign = ()=> {
 
   return (
     <React.Fragment>
-      <Row className="justify-content-center text-white">
-        <Col className="col-12 col-md-3">
+      <Row className="justify-content-center text-white mb-5">
+        <Col className="col-10 col-md-8 col-lg-3 col-xl-3 mb-4">
           <label htmlFor="forest-name">Choose a name for your forest:</label>
           <br />
           <input name="forest-name" onChange={changeName} type="text" placeholder="Forest Name" />
@@ -62,7 +62,7 @@ const DigitalSign = ()=> {
             <option value="signbg_green.jpg">Summer</option>
           </select>
         </Col>
-        <Col className="col-12 col-md-5 signImagebuilder">
+        <Col className="col-10 col-md-8 col-lg-6 col-xl-5 signImagebuilder pe-lg-0">
           <div className="signImageContainer">
             <img src={selectBG}/>
             <div className="signImageText signTextForest">
