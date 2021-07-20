@@ -75,15 +75,15 @@
   "vehiclePlaceholder1":"Number of Vehicles",
   "vehiclePlaceholder2":"Average Km per day",
 
-  "commuteHeader":"Employee Commute",
-  "commutePara":"Please input the following information for your employees' daily commute:",
+  "commuteHeader":"Employee Personal Commute (optional)",
+  "commutePara":"Please input the following information for your employees' daily personal commute:",
   "commuteCar":"Car",
   "commuteBus":"Bus",
   "commuteTrain":"Train",
 
-  "travelHeader":"Employee Travel",
+  "travelHeader":"Employee Business Travel",
   "travelPara":"Please input the following information for your employees:",
-  "travelEmp":"Employees that fly",
+  "travelEmp":"Employees that fly for work",
   "travelShort":"Short (<2 hrs)",
   "travelShort1":"All",
   "travelMed":"Medium (2-4hrs)",
@@ -95,7 +95,7 @@
   "travelLong3":"Business Class",
   "travelLong4":"First Class",
   "travelNights":"Nights spent in hotels",
-  "travelPlaceholder1":"Number of employees who fly",
+  "travelPlaceholder1":"Number of employees who fly for work",
   "travelPlaceholder2":"Flights per employee",
   "travelPlaceholder3":"Nights per employee",
 

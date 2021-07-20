@@ -2229,8 +2229,6 @@ padding: 5px 0;
 .panelHead {
   font-size: 1.4em;
   font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
 }
 
 .mapboxgl-map {
@@ -2261,8 +2259,13 @@ cursor: pointer;
 border-bottom: none !important;
   
 }
+
 .tabRow {
   text-align: center;
+}
+
+.border-top-green {
+  border-top: solid .25px #bbb;
 }
 
 .forestSlider {
