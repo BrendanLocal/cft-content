@@ -44,8 +44,9 @@ const DigitalSign = ()=> {
   };
 
   const changeImage = (event) => {
-    setForestImage(ImageDisplay);
-    //
+    setForestImage(event.target.value);
+    //setForestImage(ImageDisplay);
+    // I was using the ImageDisplay for a little while but it was causing a headache so I Went back to the event target value
     // I assume we gotta drop some other method calls in here for things to work 
     // but we have the path going into the div that is displaying in the wrong place. progress!
   };
