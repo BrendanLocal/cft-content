@@ -84,6 +84,7 @@
     "react-native": "^0.64.1",
     "react-numeric-input": "^2.2.3",
     "react-parallax": "^3.3.0",
+    "react-pdf": "^5.3.2",
     "react-player": "^2.9.0",
     "react-reveal": "^1.2.2",
     "react-router": "^5.2.0",

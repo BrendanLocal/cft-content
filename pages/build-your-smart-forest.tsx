@@ -6,11 +6,13 @@ import Link from"next/link";
 import { getGithubPreviewProps, parseJson } from"next-tinacms-github";
 import { GetStaticProps } from"next";
 import { usePlugin } from"tinacms";
+import Image from "react-bootstrap/Image"; 
 import Container from"react-bootstrap/Container";
 import Row from"react-bootstrap/Row";
 import Col from"react-bootstrap/Col";
 import Button from"react-bootstrap/Button";
 import Carousel from"react-bootstrap/Carousel";
+import { Document } from 'react-pdf';
 import Rellax from"rellax";
 import Parallax from"parallax-js";
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from"swiper";
@@ -104,88 +106,88 @@ export default function Build({ file }) {
       {name: 'part3_box5header1', component: 'markdown' },
       {name: 'part3_box5para1', component: 'markdown' },
       {name: 'part3_box5button', component: 'markdown' },
-      {name: 'part4_header1', component: 'markdown' },
-      {name: 'part4_menu1', component: 'markdown' },
-      {name: 'part4_menu2', component: 'markdown' },
-      {name: 'part4_menu3', component: 'markdown' },
-      {name: 'part4_menu4', component: 'markdown' },
-      {name: 'part4_para1', component: 'markdown' },
-      {name: 'part4_para2', component: 'markdown' },
-      {name: 'part4_button1', component: 'markdown' },
-      {name: 'part4_para3', component: 'markdown' },
-      {name: 'part4_box1header', component: 'markdown' },
-      {name: 'part4_box1para', component: 'markdown' },
-      {name: 'part4_box1button', component: 'markdown' },
-      {name: 'part4_box2header', component: 'markdown' },
-      {name: 'part4_box2para', component: 'markdown' },
-      {name: 'part4_box2button', component: 'markdown' },
-      {name: 'part4_box3header', component: 'markdown' },
-      {name: 'part4_box3para', component: 'markdown' },
-      {name: 'part4_box3button', component: 'markdown' },
-      {name: 'part4_quote1para', component: 'markdown' },
-      {name: 'part4_quote1name', component: 'markdown' },
-      {name: 'part4_quote1title', component: 'markdown' },
-      {name: 'part4_quote2para', component: 'markdown' },
-      {name: 'part4_quote2name', component: 'markdown' },
-      {name: 'part4_quote2tile', component: 'markdown' },
-      {name: 'part4_header2', component: 'markdown' },
-      {name: 'part4_para4', component: 'markdown' },
-      {name: 'part4_pointsheader', component: 'markdown' },
-      {name: 'part4_pointspara1', component: 'markdown' },
-      {name: 'part4_pointspara2', component: 'markdown' },
-      {name: 'part4_pointspara3', component: 'markdown' },
-      {name: 'part4_pointspara4', component: 'markdown' },
-      {name: 'part4_pointspara5', component: 'markdown' },
-      {name: 'part4_header3', component: 'markdown' },
-      {name: 'part4_para5', component: 'markdown' },
-      {name: 'part4_button', component: 'markdown' },
-      {name: 'part4_calcbox1header', component: 'markdown' },
-      {name: 'part4_calcbox1para', component: 'markdown' },
-      {name: 'part4_calcbox1button', component: 'markdown' },
-      {name: 'part4_calcbox2header', component: 'markdown' },
-      {name: 'part4_calcbox2para', component: 'markdown' },
-      {name: 'part4_calcbox2button', component: 'markdown' },
-      {name: 'part5_header1', component: 'markdown' },
-      {name: 'part5_menu1', component: 'markdown' },
-      {name: 'part5_menu2', component: 'markdown' },
-      {name: 'part5_menu3', component: 'markdown' },
-      {name: 'part5_menu4', component: 'markdown' },
-      {name: 'part5_para1', component: 'markdown' },
-      {name: 'part5_para2', component: 'markdown' },
-      {name: 'part5_button1', component: 'markdown' },
-      {name: 'part5_para3', component: 'markdown' },
-      {name: 'part5_box1header', component: 'markdown' },
-      {name: 'part5_box1para', component: 'markdown' },
-      {name: 'part5_box1button', component: 'markdown' },
-      {name: 'part5_box2header', component: 'markdown' },
-      {name: 'part5_box2para', component: 'markdown' },
-      {name: 'part5_box2button', component: 'markdown' },
-      {name: 'part5_box3header', component: 'markdown' },
-      {name: 'part5_box3para', component: 'markdown' },
-      {name: 'part5_box3button', component: 'markdown' },
-      {name: 'part5_quote1para', component: 'markdown' },
-      {name: 'part5_quote1name', component: 'markdown' },
-      {name: 'part5_quote1title', component: 'markdown' },
-      {name: 'part5_quote2para', component: 'markdown' },
-      {name: 'part5_quote2name', component: 'markdown' },
-      {name: 'part5_quote2tile', component: 'markdown' },
-      {name: 'part5_header2', component: 'markdown' },
-      {name: 'part5_para4', component: 'markdown' },
-      {name: 'part5_pointsheader', component: 'markdown' },
-      {name: 'part5_pointspara1', component: 'markdown' },
-      {name: 'part5_pointspara2', component: 'markdown' },
-      {name: 'part5_pointspara3', component: 'markdown' },
-      {name: 'part5_pointspara4', component: 'markdown' },
-      {name: 'part5_pointspara5', component: 'markdown' },
-      {name: 'part5_header3', component: 'markdown' },
-      {name: 'part5_para5', component: 'markdown' },
-      {name: 'part5_button', component: 'markdown' },
-      {name: 'part5_calcbox1header', component: 'markdown' },
-      {name: 'part5_calcbox1para', component: 'markdown' },
-      {name: 'part5_calcbox1button', component: 'markdown' },
-      {name: 'part5_calcbox2header', component: 'markdown' },
-      {name: 'part5_calcbox2para', component: 'markdown' },
-      {name: 'part5_calcbox2button', component: 'markdown' },
+      {name: 'corp_header1', component: 'markdown' },
+      {name: 'corp_menu1', component: 'markdown' },
+      {name: 'corp_menu2', component: 'markdown' },
+      {name: 'corp_menu3', component: 'markdown' },
+      {name: 'corp_menu4', component: 'markdown' },
+      {name: 'corp_para1', component: 'markdown' },
+      {name: 'corp_para2', component: 'markdown' },
+      {name: 'corp_button1', component: 'markdown' },
+      {name: 'corp_para3', component: 'markdown' },
+      {name: 'corp_box1header', component: 'markdown' },
+      {name: 'corp_box1para', component: 'markdown' },
+      {name: 'corp_box1button', component: 'markdown' },
+      {name: 'corp_box2header', component: 'markdown' },
+      {name: 'corp_box2para', component: 'markdown' },
+      {name: 'corp_box2button', component: 'markdown' },
+      {name: 'corp_box3header', component: 'markdown' },
+      {name: 'corp_box3para', component: 'markdown' },
+      {name: 'corp_box3button', component: 'markdown' },
+      {name: 'corp_quote1para', component: 'markdown' },
+      {name: 'corp_quote1name', component: 'markdown' },
+      {name: 'corp_quote1title', component: 'markdown' },
+      {name: 'corp_quote2para', component: 'markdown' },
+      {name: 'corp_quote2name', component: 'markdown' },
+      {name: 'corp_quote2tile', component: 'markdown' },
+      {name: 'corp_header2', component: 'markdown' },
+      {name: 'corp_para4', component: 'markdown' },
+      {name: 'corp_pointsheader', component: 'markdown' },
+      {name: 'corp_pointspara1', component: 'markdown' },
+      {name: 'corp_pointspara2', component: 'markdown' },
+      {name: 'corp_pointspara3', component: 'markdown' },
+      {name: 'corp_pointspara4', component: 'markdown' },
+      {name: 'corp_pointspara5', component: 'markdown' },
+      {name: 'corp_header3', component: 'markdown' },
+      {name: 'corp_para5', component: 'markdown' },
+      {name: 'corp_button', component: 'markdown' },
+      {name: 'corp_calcbox1header', component: 'markdown' },
+      {name: 'corp_calcbox1para', component: 'markdown' },
+      {name: 'corp_calcbox1button', component: 'markdown' },
+      {name: 'corp_calcbox2header', component: 'markdown' },
+      {name: 'corp_calcbox2para', component: 'markdown' },
+      {name: 'corp_calcbox2button', component: 'markdown' },
+      {name: 'school_header1', component: 'markdown' },
+      {name: 'school_menu1', component: 'markdown' },
+      {name: 'school_menu2', component: 'markdown' },
+      {name: 'school_menu3', component: 'markdown' },
+      {name: 'school_menu4', component: 'markdown' },
+      {name: 'school_para1', component: 'markdown' },
+      {name: 'school_para2', component: 'markdown' },
+      {name: 'school_button1', component: 'markdown' },
+      {name: 'school_para3', component: 'markdown' },
+      {name: 'school_box1header', component: 'markdown' },
+      {name: 'school_box1para', component: 'markdown' },
+      {name: 'school_box1button', component: 'markdown' },
+      {name: 'school_box2header', component: 'markdown' },
+      {name: 'school_box2para', component: 'markdown' },
+      {name: 'school_box2button', component: 'markdown' },
+      {name: 'school_box3header', component: 'markdown' },
+      {name: 'school_box3para', component: 'markdown' },
+      {name: 'school_box3button', component: 'markdown' },
+      {name: 'school_quote1para', component: 'markdown' },
+      {name: 'school_quote1name', component: 'markdown' },
+      {name: 'school_quote1title', component: 'markdown' },
+      {name: 'school_quote2para', component: 'markdown' },
+      {name: 'school_quote2name', component: 'markdown' },
+      {name: 'school_quote2tile', component: 'markdown' },
+      {name: 'school_header2', component: 'markdown' },
+      {name: 'school_para4', component: 'markdown' },
+      {name: 'school_pointsheader', component: 'markdown' },
+      {name: 'school_pointspara1', component: 'markdown' },
+      {name: 'school_pointspara2', component: 'markdown' },
+      {name: 'school_pointspara3', component: 'markdown' },
+      {name: 'school_pointspara4', component: 'markdown' },
+      {name: 'school_pointspara5', component: 'markdown' },
+      {name: 'school_header3', component: 'markdown' },
+      {name: 'school_para5', component: 'markdown' },
+      {name: 'school_button', component: 'markdown' },
+      {name: 'school_calcbox1header', component: 'markdown' },
+      {name: 'school_calcbox1para', component: 'markdown' },
+      {name: 'school_calcbox1button', component: 'markdown' },
+      {name: 'school_calcbox2header', component: 'markdown' },
+      {name: 'school_calcbox2para', component: 'markdown' },
+      {name: 'school_calcbox2button', component: 'markdown' },
       {name: 'part6_header1', component: 'markdown' },
       {name: 'part6_menu1', component: 'markdown' },
       {name: 'part6_menu2', component: 'markdown' },
@@ -349,12 +351,12 @@ export default function Build({ file }) {
       </Row>
 
       <main className="bg-green py-5">
-        <Container id="intro" className="bg-green py-5 px-5">
+        <Container id="intro" className="bg-green py-5 px-4">
           <Row className="justify-content-center d-flex pb-5 mb-5 py-5 px-5">
             <Col className="col-12 col-lg-5 stickyTop mb-5 p-3 d-none d-lg-block">
               <object type="image/svg+xml" data="/build2-svg.svg" />
             </Col>
-            <Col className="col-12 col-lg-5 text-white p-3 pb-0 intro-order">
+            <Col className="col-12 col-lg-5 text-white pe-xl-5 p-3 pb-0 intro-order">
               <h1 className="text-orange mb-5 bold">{editingdata.part1_header1}</h1>
               <p className="large my-5 op-9 pe-lg-3 pe-xl-5">{editingdata.part1_para1}</p>
               <ReactMarkdown className="text-white text-left smallcaps intro-links-header op-5 mt-4 mb-3">{editingdata.part1_header2}</ReactMarkdown>
@@ -367,15 +369,15 @@ export default function Build({ file }) {
         <Container id="the-plan" className="v-full z-999 bg-green p-5">
           <Fade bottom>
             <Row className="justify-content-center align-items-center my-4">
-              <Col className="col-sm-10 col-md-9 col-lg-8  text-center text-white">
-                <h2 className="text-orange bold mb-2">{editingdata.part2_header3}</h2>
+              <Col className="col-12 col-md-11 col-lg-10 col-xl-8 text-center text-white">
+                <h2 className="text-orange bold mb-2 px-md-3 px-lg-0">{editingdata.part2_header3}</h2>
                 <p className="medium mt-0 mb-0 px-lg-4 mb-2">{editingdata.part2_para2}</p>
               </Col>
             </Row>
           </Fade>
           <Fade bottom>
             <Row className="justify-content-center align-items-center px-3">
-              <Carousel className="col-12 col-md-10 col-lg-10 d-flex bg-brown roundedBox px-0"
+              <Carousel className="col-12 col-lg-10 d-flex bg-brown roundedBox px-0"
                 activeIndex={index} onSelect={handleSelect} 
                 nextIcon={ <span aria-hidden="false" className="carousel-control-next-icon"/>}
                 nextLabel=""
@@ -383,12 +385,12 @@ export default function Build({ file }) {
                 prevLabel="">
                 <Carousel.Item interval={500000}>
                   <div className="d-block w-100 phases"></div>
-                  <Carousel.Caption></Carousel.Caption>
+                  <Carousel.Caption><p></p></Carousel.Caption>
                 </Carousel.Item>
 
                 <Carousel.Item interval={100000}>
                   <div className="d-block w-100 phase1"></div>
-                  <Carousel.Caption className="col-9 col-md-8 col-lg-6 col-xl-4">
+                  <Carousel.Caption className="col-9 col-md-6 col-xl-4">
                     <h3 className="smallCaps text-left tight-drop bold mb-1">{editingdata.part2_step1header1}</h3>
                     <p className="h3 text-left tight-drop mb-4">{editingdata.part2_step1para1}</p>
 
@@ -398,7 +400,7 @@ export default function Build({ file }) {
 
                 <Carousel.Item interval={100000}>
                   <div className="d-block w-100 phase2"></div>
-                  <Carousel.Caption className="col-9 col-md-8 col-lg-6 col-xl-4">
+                  <Carousel.Caption className="col-9 col-md-6 col-xl-4">
                     <h3 className="smallCaps text-left tight-drop bold mb-1">{editingdata.part2_step2header1}</h3>
                     <p className="h3 text-left tight-drop mb-4">{editingdata.part2_step2para1}</p>
 
@@ -407,7 +409,7 @@ export default function Build({ file }) {
                 </Carousel.Item>
                 <Carousel.Item interval={100000}>
                   <div className="d-block w-100 phase3"></div>
-                  <Carousel.Caption className="col-9 col-md-8 col-lg-6 col-xl-4">
+                  <Carousel.Caption className="col-9 col-md-6 col-xl-4">
                     <h3 className="smallCaps text-left tight-drop bold mb-1">{editingdata.part2_step3header1}</h3>
                     <p className="h3 text-left tight-drop mb-4">{editingdata.part2_step3para1}</p>
 
@@ -416,7 +418,7 @@ export default function Build({ file }) {
                 </Carousel.Item>
                 <Carousel.Item interval={100000}>
                   <div className="d-block w-100 phase4"></div>
-                  <Carousel.Caption className="col-9 col-md-8 col-lg-6 col-xl-4">
+                  <Carousel.Caption className="col-9 col-md-6 col-xl-4">
                     <h3 className="smallCaps text-left tight-drop bold mb-1">{editingdata.part2_step4header1}</h3>
                     <p className="h3 text-left tight-drop mb-4">{editingdata.part2_step4para1}</p>
                     
@@ -424,7 +426,7 @@ export default function Build({ file }) {
                 </Carousel.Item>
                 <Carousel.Item interval={100000}>
                   <div className="d-block w-100 phase5"></div>
-                  <Carousel.Caption className="col-9 col-md-8 col-lg-6 col-xl-4">
+                  <Carousel.Caption className="col-9 col-md-6 col-xl-4">
                     <h3 className="smallCaps text-left tight-drop bold mb-1">{editingdata.part2_step5header1}</h3>
                     <p className="h3 text-left tight-drop mb-4">{editingdata.part2_step5para1}</p>
                     
@@ -438,9 +440,9 @@ export default function Build({ file }) {
         <Container id="our-forests" fluid className="v-full z-999 bg-green py-5">
           <Fade bottom>
             <Row className="pt-5 align-items-center justify-content-center">
-              <Col className="col-10 col-md-9 col-lg-7 pe-lg-0 mt-5">
-                <h2 className="text-center text-orange bold">{editingdata.part3_header1}</h2>
-                <ReactMarkdown className="text-center text-white medium mb-4">{editingdata.part3_para1}</ReactMarkdown>
+              <Col className="col-10 col-md-9 col-xl-7 pe-lg-0 mt-5">
+                <h2 className="text-center text-orange bold px-md-3 px-lg-0">{editingdata.part3_header1}</h2>
+                <ReactMarkdown className="text-center text-white medium mb-2">{editingdata.part3_para1}</ReactMarkdown>
               </Col>
             </Row>
           </Fade>
@@ -487,8 +489,8 @@ export default function Build({ file }) {
             <Row className="text-center justify-content-center">
               <Col className="col-11 col-md-9 text-white">
                 <h2 className="emphasis-2 bold pt-3 text-white tight-drop-light">
-                <ReactMarkdown>
-                  {editingdata.part4_header1}
+                  <ReactMarkdown>
+                    {editingdata.corp_header1}
                   </ReactMarkdown>
                 </h2>
               </Col>
@@ -496,60 +498,92 @@ export default function Build({ file }) {
           </Fade>
           
           <Fade bottom>
-            <Row className="text-center  justify-content-center mb-4">
-              <Col className="col-11 col-md-8">
+            <Row className="text-center justify-content-center mb-4">
+              <Col className="col-11 col-md-8 mb-4">
                 <Row className="horizTab justify-content-center">
-                  <Dropdown className="col-5 col-md-3 mb-3">
+                  <Dropdown className="col-10 col-lg-3 col-xl-4">
                     <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
-                      {editingdata.part4_menu1}
+                      {editingdata.corpdropdown_menuheader1}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       <Row className="p-4">
                         <Col>
-                        <h3 className="text-green thin">
+                        <h5 className="text-green mb-0 thin">
                         <ReactMarkdown>
-                        {editingdata.part4_box1header}
+                        {editingdata.corpdropdown_box1header1}
                         </ReactMarkdown>
-                        </h3>
-                          <ReactMarkdown className="text-grey">
-                          {editingdata.part4_box1header}
+                        </h5>
+                          <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
+                          {editingdata.corpdropdown_box1para1}
+                          </ReactMarkdown>
+                          <h5 className="text-green mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.corpdropdown_box1header2}
+                        </ReactMarkdown>
+                        </h5>
+                          <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
+                          {editingdata.corpdropdown_box1para2}
+                          </ReactMarkdown>
+                          <h5 className="text-green mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.corpdropdown_box1header3}
+                        </ReactMarkdown>
+                        </h5>
+                          <ReactMarkdown className="text-grey mt-0 dropdown-text">
+                          {editingdata.corpdropdown_box1para3}
                           </ReactMarkdown>
                         </Col>
                       </Row>
                     </Dropdown.Menu>
                   </Dropdown>
-                  <Dropdown className="col-5 col-md-3 mb-3">
-                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
-                      {editingdata.part4_menu2}
+                  <Dropdown className="col-10 col-lg-4 col-xl-4">
+                  <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
+                      {editingdata.corpdropdown_menuheader2}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       <Row className="p-4">
                         <Col>
-                        <p>gday</p>
+                        <h5 className="text-green medium mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.corpdropdown_quote1para}
+                        </ReactMarkdown>
+                        </h5>
+                        <ReactMarkdown>
+                        {editingdata.corpdropdown_quote1name}
+                        </ReactMarkdown>
+                        <ReactMarkdown className="text-small mb-4">
+                        {editingdata.corpdropdown_quote1title}
+                        </ReactMarkdown>
+                        <h5 className="text-green medium mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.corpdropdown_quote2para}
+                        </ReactMarkdown>
+                        </h5>
+                        <ReactMarkdown>
+                        {editingdata.corpdropdown_quote2name}
+                        </ReactMarkdown>
+                        <ReactMarkdown className="text-small">
+                        {editingdata.corpdropdown_quote2title}
+                        </ReactMarkdown>
                         </Col>
                       </Row>
                     </Dropdown.Menu>
                   </Dropdown>
-                  <Dropdown className="col-5 col-md-3 mb-3">
+                  <Dropdown className="col-10 col-lg-4 col-xl-4">
                     <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
-                      {editingdata.part4_menu3}
+                      {editingdata.corpdropdown_menuheader3}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       <Row className="p-4">
                         <Col>
-                        <p>gday</p>
-                        </Col>
-                      </Row>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                  <Dropdown className="col-5 col-md-3 mb-3">
-                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
-                      {editingdata.part4_menu4}
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                      <Row className="p-4">
-                        <Col>
-                        <p>gday</p>
+                        <p className="text-green bold text-left mb-3">{editingdata.corpdropdown_pointsheader}</p>
+                        <ul className="text-grey dropdown-text checkMark px-3 mx-3">
+                          <li><ReactMarkdown>{editingdata.corpdropdown_pointspara1}</ReactMarkdown></li>
+                          <li><ReactMarkdown>{editingdata.corpdropdown_pointspara2}</ReactMarkdown></li>
+                          <li><ReactMarkdown>{editingdata.corpdropdown_pointspara3}</ReactMarkdown></li>
+                          <li><ReactMarkdown>{editingdata.corpdropdown_pointspara4}</ReactMarkdown></li>
+                          <li><ReactMarkdown>{editingdata.corpdropdown_pointspara5}</ReactMarkdown></li>
+                        </ul>
                         </Col>
                       </Row>
                     </Dropdown.Menu>
@@ -561,54 +595,63 @@ export default function Build({ file }) {
 
           <Fade bottom>
             <Row className="text-center justify-content-center py-3 px-5 mt-5">
-              <Col className="col-12 col-md-7">
-                <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.part4_para2}</h2>
+              <Col className="col-12 col-md-9 col-lg-7">
+                <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.corp_header2}</h2>
+                <Document file="/ECOSYSTEMBENEFITS-Corp.pdf" />
               </Col>
             </Row>
-            <Row className="text-center justify-content-center mb-5 pb-0">
-              <Col className="col-10 text-center pb-3">
+            <Row className="text-center justify-content-center px-3 mb-5 pb-5">
+              <Col className="col-10 col-md-6 col-lg-7 col-xl-8 text-center pb-3 pe-lg-0">
                 <Button className="btn-large" variant="green">
-                  {editingdata.part4_button1}
+                  <a href="#corp-calc-steps">{editingdata.corp_button1}</a>
                 </Button>
               </Col>
             </Row>
           </Fade>
+          
 
           <Fade bottom>
-            <Row className="justify-content-center align-items-center my-5 d-none">
+            <Row className="justify-content-center align-items-center my-5">
               <Col className="col-1 horizTab"></Col>
             </Row>
           </Fade>
 
-          <Fade bottom>
-            <Row className="justify-content-center  align-items-stretch mx-lg-5">
-                <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+        <Fade bottom>
+        <ScrollableAnchor id={"corp-calc-steps"}>
+            <Row id="corp-calc-steps" className="pt-5 align-items-center justify-content-center mt-5 mb-3">
+              <Col className="col-10 pe-lg-0">
+                <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
+              </Col>
+            </Row>
+        </ScrollableAnchor>
+            <Row className="justify-content-center  align-items-stretch px-lg-5 mx-lg-5 mb-5 pb-5">
+                <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.calc_box1para1}</ReactMarkdown>
-                  <ReactMarkdown className="large text-green mb-3">{editingdata.calc_box1para2}</ReactMarkdown>
-                  <ReactMarkdown className="text-grey mb-3">{editingdata.calc_box1para3}</ReactMarkdown>
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.corpcalc_box1para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.corpcalc_box1para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.corpcalc_box1para3}</ReactMarkdown>
                   <Link href="/carbon-calculator#corporate">
-                    <Button variant="green" className="calc-btn">{editingdata.calc_box1button1}</Button>
+                    <Button variant="green" className="calc-btn">{editingdata.corpcalc_box1button1}</Button>
                   </Link>
                 </div>
               </Col>
-              <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.calc_box2para1}</ReactMarkdown>
-                  <ReactMarkdown className="large text-green mb-3">{editingdata.calc_box2para2}</ReactMarkdown>
-                  <ReactMarkdown className="text-grey mb-3">{editingdata.calc_box2para3}</ReactMarkdown>
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.corpcalc_box2para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.corpcalc_box2para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.corpcalc_box2para3}</ReactMarkdown>
                   <Link href="/smart-forest-calculator#corporate">
-                    <Button variant="green" className="calc-btn">{editingdata.calc_box2button1}</Button>
+                    <Button variant="green" className="calc-btn">{editingdata.corpcalc_box2button1}</Button>
                   </Link>
                 </div>
               </Col>
-              <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.calc_box3para1}</ReactMarkdown>
-                  <ReactMarkdown className="large text-green mb-3">{editingdata.calc_box3para2}</ReactMarkdown>
-                  <ReactMarkdown className="text-grey mb-3">{editingdata.calc_box3para3}</ReactMarkdown>
-                  <Link href="/#corporate">
-                    <Button variant="green" className="calc-btn">{editingdata.calc_box3button1}</Button>
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.corpcalc_box3para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.corpcalc_box3para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.corpcalc_box3para3}</ReactMarkdown>
+                  <Link href="/smart-forest-calculator#corporate">
+                    <Button variant="green" className="calc-btn">{editingdata.corpcalc_box3button1}</Button>
                   </Link>
                 </div>
               </Col>
@@ -617,16 +660,16 @@ export default function Build({ file }) {
           </Fade>
 
           <Fade bottom>
-            <Row id="corp-contact" className="pt-4 align-items-center justify-content-center mb-3">
-              <Col className="col-10 col-lg-7 pe-lg-0">
-                <h2 className="text-center text-orange bold tight-drop-light">{editingdata.part4_header3}</h2>
-                <p className="text-center px-lg-4 text-white large mb-2">{editingdata.part4_para5}</p>
+            <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
+              <Col className="col-10 col-md-8 col-lg-9 col-xl-7 pe-lg-0">
+                <h2 className="text-center text-orange bold tight-drop-light">{editingdata.corp_header3}</h2>
+                <p className="text-center px-lg-4 text-white large mb-2">{editingdata.corp_para5}</p>
               </Col>
             </Row>
-            <Row className="text-center justify-content-center mb-5 pb-5">
+            <Row className="text-center justify-content-center mb-5 pb-4">
               <Col className="col-10 text-center pb-5 pe-lg-0">
                 <Button className="btn-large px-5" variant="green">
-                  {editingdata.part4_button}
+                  {editingdata.corp_button}
                 </Button>
               </Col>
             </Row>
@@ -634,6 +677,11 @@ export default function Build({ file }) {
 
 
           <Fade bottom>
+          <Row className="pt-4 align-items-center justify-content-center mb-3">
+              <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
+                <h2 className="text-center text-orange bold tight-drop-light">Envision your forest</h2>
+              </Col>
+            </Row>
           <DigitalSign/>
           </Fade>
         </Container>
@@ -643,68 +691,125 @@ export default function Build({ file }) {
         {/* School Forests */}
         <ScrollableAnchor id={"school"}>
         <Container fluid id="school" className="bg-school sectionPad">
-          <Fade bottom>
+        <Fade bottom>
             <Row className="text-center justify-content-center">
-              <Col className="col-11 col-lg-8 text-white">
-                <h2 className="bold py-3 text-white tight-drop-light">
+              <Col className="col-11 col-md-9 text-white">
+                <h2 className="emphasis-2 bold pt-3 text-white tight-drop-light">
                 <ReactMarkdown>
-                  {editingdata.part5_header1}
+                  {editingdata.school_header1}
                   </ReactMarkdown>
                 </h2>
               </Col>
             </Row>
           </Fade>
-
+          
           <Fade bottom>
             <Row className="text-center  justify-content-center mb-4">
-              <Col className="col-11 col-lg-7">
-                <Row className="horizTab  justify-content-center">
-                  <Col className="col-5 col-md-3 mb-3">
-                    <Link href="#school-1">
-                      <Button variant="text text-orange smallCaps tight-drop-light down-links">
-                        {editingdata.part5_menu1}
-                      </Button>
-                    </Link>
-                  </Col>
-                  <Col className="col-5 col-md-3 mb-3">
-                    <Link href="#school-2">
-                      <Button variant="text text-orange smallCaps tight-drop-light down-links">
-                        {editingdata.part5_menu2}
-                      </Button>
-                    </Link>
-                  </Col>
-                  <Col className="col-5 col-md-3 mb-3">
-                    <Link href="#school-3">
-                      <Button variant="text text-orange smallCaps tight-drop-light down-links">
-                        {editingdata.part5_menu3}
-                      </Button>
-                    </Link>
-                  </Col>
-                  <Col className="col-5 col-md-3 mb-3">
-                    <Link href="#school-4">
-                      <Button variant="text text-orange smallCaps tight-drop-light down-links">
-                        {editingdata.part5_menu4}
-                      </Button>
-                    </Link>
-                  </Col>
+              <Col className="col-11 col-md-8 mb-4">
+                <Row className="horizTab justify-content-center">
+                  <Dropdown className="col-10 col-lg-4 col-xl-4">
+                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
+                      {editingdata.schooldropdown_menuheader1}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Row className="p-4">
+                        <Col>
+                        <h5 className="text-green mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.schooldropdown_box1header1}
+                        </ReactMarkdown>
+                        </h5>
+                          <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
+                          {editingdata.schooldropdown_box1para1}
+                          </ReactMarkdown>
+                          <h5 className="text-green mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.schooldropdown_box1header2}
+                        </ReactMarkdown>
+                        </h5>
+                          <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
+                          {editingdata.schooldropdown_box1para2}
+                          </ReactMarkdown>
+                          <h5 className="text-green mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.schooldropdown_box1header3}
+                        </ReactMarkdown>
+                        </h5>
+                          <ReactMarkdown className="text-grey mt-0 dropdown-text">
+                          {editingdata.schooldropdown_box1para3}
+                          </ReactMarkdown>
+                        </Col>
+                      </Row>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                  <Dropdown className="col-10 col-lg-4 col-xl-4">
+                  <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
+                      {editingdata.schooldropdown_menuheader2}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Row className="p-4">
+                        <Col>
+                        <h5 className="text-green medium mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.schooldropdown_quote1para}
+                        </ReactMarkdown>
+                        </h5>
+                        <ReactMarkdown>
+                        {editingdata.schooldropdown_quote1name}
+                        </ReactMarkdown>
+                        <ReactMarkdown className="text-small mb-4">
+                        {editingdata.schooldropdown_quote1title}
+                        </ReactMarkdown>
+                        <h5 className="text-green medium mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.schooldropdown_quote2para}
+                        </ReactMarkdown>
+                        </h5>
+                        <ReactMarkdown>
+                        {editingdata.schooldropdown_quote2name}
+                        </ReactMarkdown>
+                        <ReactMarkdown className="text-small">
+                        {editingdata.schooldropdown_quote2title}
+                        </ReactMarkdown>
+                        </Col>
+                      </Row>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                  <Dropdown className="col-10 col-lg-4 col-xl-4">
+                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
+                      {editingdata.schooldropdown_menuheader3}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Row className="p-4">
+                        <Col>
+                        <p className="text-green bold text-left mb-3">{editingdata.schooldropdown_pointsheader}</p>
+                        <ul className="text-grey dropdown-text checkMark px-3 mx-3">
+                          <li><ReactMarkdown>{editingdata.schooldropdown_pointspara1}</ReactMarkdown></li>
+                          <li><ReactMarkdown>{editingdata.schooldropdown_pointspara2}</ReactMarkdown></li>
+                          <li><ReactMarkdown>{editingdata.schooldropdown_pointspara3}</ReactMarkdown></li>
+                          <li><ReactMarkdown>{editingdata.schooldropdown_pointspara4}</ReactMarkdown></li>
+                          <li><ReactMarkdown>{editingdata.schooldropdown_pointspara5}</ReactMarkdown></li>
+                        </ul>
+                        </Col>
+                      </Row>
+                    </Dropdown.Menu>
+                  </Dropdown>
                 </Row>
               </Col>
             </Row>
           </Fade>
 
           <Fade bottom>
-            <Row id="school-1" className="text-center justify-content-center py-4 px-4 mt-5">
-              <Col className="col-11 col-lg-7">
-                <p className="emphasis text-orange tight-drop-light mb-4">{editingdata.part5_para1}</p>
-              </Col>
-              <Col className="col-11 col-lg-7">
-                <p className="lead text-white bold mb-3">{editingdata.part5_para2}</p>
+            <Row className="text-center justify-content-center py-3 px-5 mt-5">
+              <Col className="col-12 col-md-9 col-lg-7">
+                <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.school_para1}</h2>
+                <Document file="/ECOSYSTEMBENEFITS-School.pdf" />
               </Col>
             </Row>
-            <Row className="text-center justify-content-center mb-5 pb-0">
-              <Col className="col-10 text-center pb-3">
+            <Row className="text-center justify-content-center px-3 mb-5 pb-5">
+              <Col className="col-10 col-md-6 col-lg-7 col-xl-8 text-center pb-3 pe-lg-0">
                 <Button className="btn-large" variant="green">
-                  {editingdata.part5_button1}
+                  <a href="#school-calc-steps">{editingdata.school_button1}</a>
                 </Button>
               </Col>
             </Row>
@@ -716,213 +821,184 @@ export default function Build({ file }) {
             </Row>
           </Fade>
 
-          <Fade bottom>
-            <Row className="text-center justify-content-center mb-3 p-4 pb-0">
-              <Col className="col-11 col-lg-7 pb-0">
-                <p className="text-white large mb-3">{editingdata.part5_para3}</p>
+        <Fade bottom>
+        <ScrollableAnchor id={"school-calc-steps"}>
+            <Row id="school-calc-steps" className="pt-5 align-items-center justify-content-center mt-5 mb-3">
+              <Col className="col-10 pe-lg-0">
+                <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
               </Col>
             </Row>
-          </Fade>
-
-          <Fade bottom>
-            <Row className="d-flex align-items-stretch px-5 justify-content-center pb-5">
-              <Col className="col-12 col-md-3 mb-3">
-                <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch card-hover">
-                  <h4 className="thin text-green">{editingdata.part5_box1header}</h4>
-                  <p className="flex-fill pb-3">{editingdata.part5_box1para}</p>
-                  <Button className="modal-btn" variant="btn-text text text-left">
-                    {editingdata.part5_box1button}
-                  </Button>
+        </ScrollableAnchor>
+            <Row className="justify-content-center  align-items-stretch px-lg-5 mx-lg-5 mb-5 pb-5">
+                <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.schoolcalc_box1para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.schoolcalc_box1para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.schoolcalc_box1para3}</ReactMarkdown>
+                  <Link href="/carbon-calculator#school">
+                    <Button variant="green" className="calc-btn">{editingdata.schoolcalc_box1button1}</Button>
+                  </Link>
                 </div>
               </Col>
-
-              <Col className="col-12 col-md-3 mb-3">
-                <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch card-hover">
-                  <h4 className="thin text-green">{editingdata.part5_box2header}</h4>
-                  <p className="flex-fill pb-3">{editingdata.part5_box2para}</p>
-                  <Button className="modal-btn" variant="btn-text text text-left" >
-                    {editingdata.learnMore}
-                  </Button>
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.schoolcalc_box2para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.schoolcalc_box2para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.schoolcalc_box2para3}</ReactMarkdown>
+                  <Link href="/smart-forest-calculator#school">
+                    <Button variant="green" className="calc-btn">{editingdata.schoolcalc_box2button1}</Button>
+                  </Link>
                 </div>
               </Col>
-
-              <Col className="col-12 col-md-3 mb-3">
-                <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch card-hover">
-                  <h4 className="thin text-green">{editingdata.part5_box3header}</h4>
-                  <p className="flex-fill pb-3">{editingdata.part5_box3para}</p>
-                  <Button className="modal-btn" variant="btn-text text text-left">
-                    {editingdata.learnMore}
-                  </Button>
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.schoolcalc_box3para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.schoolcalc_box3para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.schoolcalc_box3para3}</ReactMarkdown>
+                  <Link href="/smart-forest-calculator#school">
+                    <Button variant="green" className="calc-btn">{editingdata.schoolcalc_box3button1}</Button>
+                  </Link>
                 </div>
               </Col>
             </Row>
+
           </Fade>
 
           <Fade bottom>
-            <Row id="school-2" className="justify-content-center align-items-center my-5">
-              <Carousel className="col-11 col-lg-8 bg-brown roundedBox  innerShadow p-5 m-4 px-0"
-                activeIndex={index}
-                onSelect={handleSelect}
-                nextIcon={ <span aria-hidden="false" className="carousel-control-next-icon"/>}
-                nextLabel=""
-                prevIcon={ <span aria-hidden="true" className="carousel-control-prev-icon"/>}
-                prevLabel="">
-                <Carousel.Item interval={100000} className="justify-content-center">
-                  <div className="d-block w-100 blockquote-bg mb-4 align-items-center d-flex">
-                    <div className="px-lg-5 pt-lg-4 mx-5">
-                      <h3 className="text-left blockquote text-orange">{editingdata.part5_quote1para}</h3>
-                      <p className="text-left text-white my-0 mx-5 bold">{editingdata.part5_quote1name}</p>
-                      <p className="text-left text-white mx-5 px-3 italic op-6">{editingdata.part5_quote1title}</p>
-                    </div>
-                  </div>
-                </Carousel.Item>
-
-                <Carousel.Item interval={100000}>
-                  <div className="d-block w-100 blockquote-bg mb-4 align-items-center d-flex">
-                    <div className="px-lg-5 pt-lg-4 mx-5">
-                      <h3 className="text-left blockquote text-orange">{editingdata.part5_quote2para}</h3>
-                      <p className="text-left text-white my-0 mx-5 bold">{editingdata.part5_quote2name}</p>
-                      <p className="text-left text-white mx-5 px-3 italic op-6">{editingdata.part5_quote2tile}</p>
-                    </div>
-                  </div>
-                </Carousel.Item>
-              </Carousel>
-            </Row>
-          </Fade>
-
-          <Fade bottom>
-            <Row id="school-3" className="justify-content-center pt-5 mb-3">
-              <Col className="col-11 col-md-7">
-                <h2 className="text-center text-orange tight-drop-light bold mb-3">{editingdata.part5_header2}</h2>
-                <p className="lead px-3 text-center tight-drop-light text-white mb-2">{editingdata.part5_para4}</p>
+            <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
+              <Col className="col-10 col-md-8 col-lg-9 col-xl-7 pe-lg-0">
+                <h2 className="text-center text-orange bold tight-drop-light">{editingdata.school_header3}</h2>
+                <p className="text-center px-lg-4 text-white large mb-2">{editingdata.school_para3}</p>
               </Col>
             </Row>
-          </Fade>
-          
-          <Fade bottom>
-            <Row className="justify-content-center d-flex pb-5 mx-5 mb-5">
-              <Col className="col-12 col-md-7 col-lg-7 bg-green roundedBox innerShadow px-5 pt-5 pb-4 m-4 mt-2">
-                <p className="text-white large bold text-center mb-3">{editingdata.part5_pointsheader}</p>
-                <ul className="text-white checkMark px-3 mx-3">
-                  <li><ReactMarkdown>{editingdata.part5_pointspara1}</ReactMarkdown></li>
-                  <li><ReactMarkdown>{editingdata.part5_pointspara2}</ReactMarkdown></li>
-                  <li><ReactMarkdown>{editingdata.part5_pointspara3}</ReactMarkdown></li>
-                  <li><ReactMarkdown>{editingdata.part5_pointspara4}</ReactMarkdown></li>
-                  <li><ReactMarkdown>{editingdata.part5_pointspara5}</ReactMarkdown></li>
-                </ul>
-              </Col>
-            </Row>
-          </Fade>
-
-          <Fade bottom>
-            <Row id="school-4" className="pt-4 align-items-center justify-content-center mb-3">
-              <Col className="col-10 col-lg-7 pe-lg-0">
-                <h2 className="text-center text-orange bold tight-drop-light">{editingdata.part5_header3}</h2>
-                <p className="text-center px-lg-5 text-white large mb-2">{editingdata.part5_para5}</p>
-              </Col>
-            </Row>
-            <Row className="text-center justify-content-center mb-5 pb-5">
+            <Row className="text-center justify-content-center mb-5 pb-4">
               <Col className="col-10 text-center pb-5 pe-lg-0">
                 <Button className="btn-large px-5" variant="green">
-                  {editingdata.part5_button}
+                  {editingdata.school_button3}
                 </Button>
               </Col>
             </Row>
           </Fade>
 
           <Fade bottom>
-            <Row className="justify-content-center  align-items-stretch mx-lg-5  mb-4">
-              <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="large text-green mb-2">{editingdata.part5_calcbox1header}</p>
-                  <p className="text-grey mb-4">{editingdata.part5_calcbox1para}</p>
-                  <Link href="carbon-calculator">
-                    <Button variant="green" className="mt-3">
-                      {editingdata.part5_calcbox1button}
-                    </Button>
-                  </Link>
-                </div>
-              </Col>
-
-              <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="large text-green mb-2">{editingdata.part5_calcbox2header}</p>
-                  <p className="text-grey mb-4">{editingdata.part5_calcbox2para}</p>
-                  <Button variant="green" className="mt-3">
-                    {editingdata.part5_calcbox2button}
-                  </Button>
-                </div>
+          <Row className="pt-4 align-items-center justify-content-center mb-3">
+              <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
+                <h2 className="text-center text-orange bold tight-drop-light">Envision your forest</h2>
               </Col>
             </Row>
+          <DigitalSign/>
           </Fade>
         </Container>
         </ScrollableAnchor>
+
         {/* Legacy Forests */}
         <ScrollableAnchor id={"legacy"}>
         <Container fluid id="legacy" className="bg-legacy sectionPad">
-          <Fade bottom>
+        <Fade bottom>
             <Row className="text-center justify-content-center">
-              <Col className="col-11 col-lg-8 text-white">
-                <h2 className="bold py-3 text-white tight-drop-light">
-                  
+              <Col className="col-11 col-md-9 text-white">
+                <h2 className="emphasis-2 bold pt-3 text-white tight-drop-light">
                 <ReactMarkdown>
-                  {editingdata.part6_header1}
+                  {editingdata.legacy_header1}
                   </ReactMarkdown>
-                  </h2>
+                </h2>
               </Col>
             </Row>
           </Fade>
-
+          
           <Fade bottom>
             <Row className="text-center  justify-content-center mb-4">
-              <Col className="col-11 col-lg-7">
-                <Row className="horizTab  justify-content-center">
-                  <Col className="col-5 col-md-3 mb-3">
-                    <Link href="#legacy-1">
-                      <Button variant="text text-orange smallCaps tight-drop-light down-links">
-                        {editingdata.part6_menu1}
-                      </Button>
-                    </Link>
-                  </Col>
-                  <Col className="col-5 col-md-3 mb-3">
-                    <Link href="#legacy-2">
-                      <Button variant="text text-orange smallCaps tight-drop-light down-links">
-                        {editingdata.part6_menu2}
-                      </Button>
-                    </Link>
-                  </Col>
-                  <Col className="col-5 col-md-3 mb-3">
-                    <Link href="#legacy-3">
-                      <Button variant="text text-orange smallCaps tight-drop-light down-links">
-                        {editingdata.part6_menu3}
-                      </Button>
-                    </Link>
-                  </Col>
-                  <Col className="col-5 col-md-3 mb-3">
-                    <Link href="#legacy-4">
-                      <Button variant="text text-orange smallCaps tight-drop-light down-links">
-                        {editingdata.part6_menu4}
-                      </Button>
-                    </Link>
-                  </Col>
+              <Col className="col-11 col-md-8 mb-4">
+                <Row className="horizTab justify-content-center">
+                  <Dropdown className="col-10 col-lg-4 col-xl-4">
+                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
+                      {editingdata.legacydropdown_menuheader1}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Row className="p-4">
+                        <Col>
+                        <h5 className="text-green mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.legacydropdown_box1header1}
+                        </ReactMarkdown>
+                        </h5>
+                        </Col>
+                      </Row>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                  <Dropdown className="col-10 col-lg-4 col-xl-4">
+                  <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
+                      {editingdata.legacydropdown_menuheader2}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Row className="p-4">
+                        <Col>
+                        <h5 className="text-green medium mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.legacydropdown_quote1para}
+                        </ReactMarkdown>
+                        </h5>
+                        <ReactMarkdown>
+                        {editingdata.legacydropdown_quote1name}
+                        </ReactMarkdown>
+                        <ReactMarkdown className="text-small mb-4">
+                        {editingdata.legacydropdown_quote1title}
+                        </ReactMarkdown>
+                        <h5 className="text-green medium mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.legacydropdown_quote2para}
+                        </ReactMarkdown>
+                        </h5>
+                        <ReactMarkdown>
+                        {editingdata.legacydropdown_quote2name}
+                        </ReactMarkdown>
+                        <ReactMarkdown className="text-small">
+                        {editingdata.legacydropdown_quote2title}
+                        </ReactMarkdown>
+                        </Col>
+                      </Row>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                  <Dropdown className="col-10 col-lg-4 col-xl-4">
+                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
+                      {editingdata.legacydropdown_menuheader3}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Row className="p-4">
+                        <Col>
+                        <h5 className="text-green medium mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.legacydropdown_pointsheader0}
+                        </ReactMarkdown>
+                        </h5>
+                        <p className="text-green bold text-left mb-3">{editingdata.legacydropdown_pointsheader}</p>
+                        <ul className="text-grey dropdown-text checkMark px-3 mx-3">
+                          <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara1}</ReactMarkdown></li>
+                          <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara2}</ReactMarkdown></li>
+                          <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara3}</ReactMarkdown></li>
+                          <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara4}</ReactMarkdown></li>
+                          <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara5}</ReactMarkdown></li>
+                        </ul>
+                        </Col>
+                      </Row>
+                    </Dropdown.Menu>
+                  </Dropdown>
                 </Row>
               </Col>
             </Row>
           </Fade>
 
           <Fade bottom>
-            <Row id="legacy-1" className="text-center justify-content-center py-4 px-3 mt-5">
-              <Col className="col-11 col-lg-7">
-                <p className="emphasis text-orange tight-drop-light mb-4">{editingdata.part6_para1}</p>
-              </Col>
-              <Col className="col-11 col-lg-7">
-                <p className="lead text-white bold mb-2">{editingdata.part6_para2}</p>
+            <Row className="text-center justify-content-center py-3 px-4 mt-5">
+              <Col className="col-12 col-md-9 col-lg-7">
+                <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.legacy_para1}</h2>
+                <Document file="/ECOSYSTEMBENEFITS-Legacy.pdf" />
               </Col>
             </Row>
-            <Row className="text-center justify-content-center mb-5 pb-0">
-              <Col className="col-10 text-center pb-3">
+            <Row className="text-center justify-content-center px-3 mb-5 pb-5">
+              <Col className="col-10 col-md-6 col-lg-7 col-xl-8 text-center pb-3 pe-lg-0">
                 <Button className="btn-large" variant="green">
-                  {editingdata.part6_button1}
+                  <a href="#legacy-calc-steps">{editingdata.legacy_button1}</a>
                 </Button>
               </Col>
             </Row>
@@ -933,179 +1009,199 @@ export default function Build({ file }) {
               <Col className="col-1 horizTab"></Col>
             </Row>
           </Fade>
-          
-          <Fade bottom>
-            <Row className="text-center justify-content-center mb-3 p-4 pb-5">
-              <Col className="col-10 col-lg-7 pb-0">
-                <p className="text-white large mb-3">{editingdata.part6_para3}</p>
+
+        <Fade bottom>
+        <ScrollableAnchor id={"legacy-calc-steps"}>
+            <Row id="legacy-calc-steps" className="pt-5 align-items-center justify-content-center mt-5 mb-3">
+              <Col className="col-10 pe-lg-0">
+                <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
               </Col>
             </Row>
+        </ScrollableAnchor>
+            <Row className="justify-content-center  align-items-stretch px-lg-5 mx-lg-5 mb-5 pb-5">
+                <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.legacycalc_box1para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.legacycalc_box1para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.legacycalc_box1para3}</ReactMarkdown>
+                  <Link href="/carbon-calculator#legacy">
+                    <Button variant="green" className="calc-btn">{editingdata.legacycalc_box1button1}</Button>
+                  </Link>
+                </div>
+              </Col>
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.legacycalc_box2para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.legacycalc_box2para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.legacycalc_box2para3}</ReactMarkdown>
+                  <Link href="/smart-forest-calculator#legacy">
+                    <Button variant="green" className="calc-btn">{editingdata.legacycalc_box2button1}</Button>
+                  </Link>
+                </div>
+              </Col>
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.legacycalc_box3para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.legacycalc_box3para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.legacycalc_box3para3}</ReactMarkdown>
+                  <Link href="/smart-forest-calculator#legacy">
+                    <Button variant="green" className="calc-btn">{editingdata.legacycalc_box3button1}</Button>
+                  </Link>
+                </div>
+              </Col>
+            </Row>
+
           </Fade>
 
           <Fade bottom>
-            <Row id="legacy-2" className="justify-content-center align-items-center my-5">
-              <Carousel className="col-11 col-lg-8 bg-brown roundedBox  innerShadow p-5 m-4 px-0"
-                activeIndex={index}
-                onSelect={handleSelect}
-                nextIcon={ <span aria-hidden="false" className="carousel-control-next-icon"/>}
-                nextLabel=""
-                prevIcon={ <span aria-hidden="true" className="carousel-control-prev-icon"/>}
-                prevLabel="">
-                <Carousel.Item interval={100000} className="justify-content-center">
-                  <div className="d-block w-100 blockquote-bg mb-4 align-items-center d-flex">
-                    <div className="px-lg-5 pt-lg-4 mx-5">
-                      <h3 className="text-left blockquote text-orange">{editingdata.part6_quote1para}</h3>
-                      <p className="text-left text-white my-0 mx-5 bold">{editingdata.part6_quote1name}</p>
-                      <p className="text-left text-white mx-5 px-3 italic op-6">{editingdata.part6_quote1title}</p>
-                    </div>
-                  </div>
-                </Carousel.Item>
-
-                <Carousel.Item interval={100000}>
-                  <div className="d-block w-100 blockquote-bg mb-4 align-items-center d-flex">
-                    <div className="px-lg-5 pt-lg-4 mx-5">
-                      <h3 className="text-left blockquote text-orange">{editingdata.part6_quote2para}</h3>
-                      <p className="text-left text-white my-0 mx-5 bold">{editingdata.part6_quote2name}</p>
-                      <p className="text-left text-white mx-5 px-3 italic op-6">{editingdata.part6_quote2tile}</p>
-                    </div>
-                  </div>
-                </Carousel.Item>
-              </Carousel>
-            </Row>
-          </Fade>
-
-          <Fade bottom>
-            <Row id="legacy-3" className="justify-content-center pt-5 mb-3">
-              <Col className="col-11 col-md-7">
-                <h2 className="text-center text-orange tight-drop-light bold mb-3">{editingdata.part6_header2}</h2>
-                <p className="lead px-3 text-center tight-drop-light text-white mb-2">{editingdata.part6_para4}</p>
+            <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
+              <Col className="col-10 col-md-8 col-lg-9 col-xl-7 pe-lg-0">
+                <h2 className="text-center text-orange bold tight-drop-light">{editingdata.legacy_header3}</h2>
+                <p className="text-center px-lg-4 text-white large mb-2">{editingdata.legacy_para3}</p>
               </Col>
             </Row>
-          </Fade>
-          
-          <Fade bottom>
-            <Row className="justify-content-center d-flex pb-5 mx-5 mb-5">
-              <Col className="justify-content-center align-items-center col-12 col-lg-7 bg-green roundedBox innerShadow px-3 pt-5 pb-4 m-4 mt-2">
-                <p className="text-white large bold text-center mb-3">{editingdata.part6_pointsheader}</p>
-                <ul className="text-white checkMark px-5 mx-5">
-                  <li className="ms-lg-5">{editingdata.part6_pointspara1}</li>
-                  <li className="ms-lg-5">{editingdata.part6_pointspara2}</li>
-                  <li className="ms-lg-5">{editingdata.part6_pointspara3}</li>
-                  <li className="ms-lg-5">{editingdata.part6_pointspara4}</li>
-                  <li className="ms-lg-5">{editingdata.part6_pointspara5}</li>
-                  <li className="ms-lg-5">{editingdata.part6_pointspara6}</li>
-                </ul>
-              </Col>
-            </Row>
-          </Fade>
-
-          <Fade bottom>
-            <Row id="legacy-4" className="pt-4 align-items-center justify-content-center mb-3">
-              <Col className="col-10 col-lg-7 pe-lg-0">
-                <h2 className="text-center text-orange bold tight-drop-light">{editingdata.part6_header3}</h2>
-              </Col>
-            </Row>
-            <Row className="text-center justify-content-center mb-5 pb-5">
+            <Row className="text-center justify-content-center mb-5 pb-4">
               <Col className="col-10 text-center pb-5 pe-lg-0">
                 <Button className="btn-large px-5" variant="green">
-                  {editingdata.part6_button}
+                  {editingdata.legacy_button3}
                 </Button>
               </Col>
             </Row>
           </Fade>
 
           <Fade bottom>
-            <Row className="justify-content-center  align-items-stretch mx-lg-5  mb-4">
-              <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="large text-green mb-2">{editingdata.part6_calcbox1header}</p>
-                  <p className="text-grey mb-5">{editingdata.part6_calcbox1para}</p>
-                  <Link href="carbon-calculator">
-                    <Button variant="green" className="mt-3">
-                      {editingdata.part6_calcbox1button}
-                    </Button>
-                  </Link>
-                </div>
-              </Col>
-
-              <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="large text-green mb-2">{editingdata.part6_calcbox2header}</p>
-                  <p className="text-grey mb-4">{editingdata.part6_calcbox2para}</p>
-                  <Button variant="green" className="mt-3">
-                    {editingdata.part6_calcbox2button}
-                  </Button>
-                </div>
+          <Row className="pt-4 align-items-center justify-content-center mb-3">
+              <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
+                <h2 className="text-center text-orange bold tight-drop-light">Envision your forest</h2>
               </Col>
             </Row>
+          <DigitalSign/>
           </Fade>
         </Container>
         </ScrollableAnchor>
+
         {/* Communal Forests */}
         <ScrollableAnchor id={"communal"}>
         <Container fluid id="communal" className="bg-communal sectionPad">
-          <Fade bottom>
+        <Fade bottom>
             <Row className="text-center justify-content-center">
-              <Col className="col-11 col-lg-8 text-white">
-                <h2 className="bold py-3 text-white tight-drop-light">
+              <Col className="col-11 col-md-9 text-white">
+                <h2 className="emphasis-2 bold pt-3 text-white tight-drop-light">
                 <ReactMarkdown>
-                  {editingdata.part7_header1}
-                  </ReactMarkdown></h2>
-              </Col>
-            </Row>
-          </Fade>
-
-          <Fade bottom>
-            <Row className="text-center  justify-content-center mb-4">
-              <Col className="col-11 col-lg-7">
-                <Row className="horizTab  justify-content-center">
-                  <Col className="col-5 col-md-3 mb-3">
-                    <Link href="#comm-1">
-                      <Button variant="text text-orange smallCaps tight-drop-light down-links">
-                        {editingdata.part7_menu1}
-                      </Button>
-                    </Link>
-                  </Col>
-                  <Col className="col-5 col-md-3 mb-3">
-                    <Link href="#comm-2">
-                      <Button variant="text text-orange smallCaps tight-drop-light down-links">
-                        {editingdata.part7_menu2}
-                      </Button>
-                    </Link>
-                  </Col>
-                  <Col className="col-5 col-md-3 mb-3">
-                    <Link href="#comm-3">
-                      <Button variant="text text-orange smallCaps tight-drop-light down-links">
-                        {editingdata.part7_menu3}
-                      </Button>
-                    </Link>
-                  </Col>
-                  <Col className="col-5 col-md-3 mb-3">
-                    <Link href="#comm-4">
-                      <Button variant="text text-orange smallCaps tight-drop-light down-links">
-                        {editingdata.part7_menu4}
-                      </Button>
-                    </Link>
-                  </Col>
-                </Row>
+                  {editingdata.communal_header1}
+                  </ReactMarkdown>
+                </h2>
               </Col>
             </Row>
           </Fade>
           
-
           <Fade bottom>
-            <Row id="comm-1" className="text-center justify-content-center py-4 px-5 mt-5">
-              <Col className="col-12 col-lg-8">
-                <p className="emphasis text-orange tight-drop-light mb-4">{editingdata.part7_para1}</p>
-              </Col>
-              <Col className="col-12 col-lg-8">
-                <p className="lead text-white bold mb-2">{editingdata.part7_para2}</p>
+            <Row className="text-center  justify-content-center mb-4">
+              <Col className="col-11 col-md-8 mb-4">
+                <Row className="horizTab justify-content-center">
+                  <Dropdown className="col-10 col-lg-4 col-xl-4">
+                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
+                      {editingdata.communaldropdown_menuheader1}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Row className="p-4">
+                        <Col>
+                        <h5 className="text-green mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.communaldropdown_box1header1}
+                        </ReactMarkdown>
+                        </h5>
+                          <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
+                          {editingdata.communaldropdown_box1para1}
+                          </ReactMarkdown>
+                          <h5 className="text-green mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.communaldropdown_box1header2}
+                        </ReactMarkdown>
+                        </h5>
+                          <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
+                          {editingdata.communaldropdown_box1para2}
+                          </ReactMarkdown>
+                          <h5 className="text-green mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.communaldropdown_box1header3}
+                        </ReactMarkdown>
+                        </h5>
+                          <ReactMarkdown className="text-grey mt-0 dropdown-text">
+                          {editingdata.communaldropdown_box1para3}
+                          </ReactMarkdown>
+                        </Col>
+                      </Row>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                  <Dropdown className="col-10 col-lg-4 col-xl-4">
+                  <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
+                      {editingdata.communaldropdown_menuheader2}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Row className="p-4">
+                        <Col>
+                        <h5 className="text-green medium mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.communaldropdown_quote1para}
+                        </ReactMarkdown>
+                        </h5>
+                        <ReactMarkdown>
+                        {editingdata.communaldropdown_quote1name}
+                        </ReactMarkdown>
+                        <ReactMarkdown className="text-small mb-4">
+                        {editingdata.communaldropdown_quote1title}
+                        </ReactMarkdown>
+                        <h5 className="text-green medium mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.communaldropdown_quote2para}
+                        </ReactMarkdown>
+                        </h5>
+                        <ReactMarkdown>
+                        {editingdata.communaldropdown_quote2name}
+                        </ReactMarkdown>
+                        <ReactMarkdown className="text-small">
+                        {editingdata.communaldropdown_quote2title}
+                        </ReactMarkdown>
+                        </Col>
+                      </Row>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                  <Dropdown className="col-10 col-lg-4 col-xl-4">
+                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
+                      {editingdata.communaldropdown_menuheader3}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Row className="p-4">
+                        <Col>
+                        <p className="text-green bold text-left mb-3">{editingdata.communaldropdown_pointsheader}</p>
+                        <ul className="text-grey dropdown-text checkMark px-3 mx-3">
+                          <li><ReactMarkdown>{editingdata.communaldropdown_pointspara1}</ReactMarkdown></li>
+                          <li><ReactMarkdown>{editingdata.communaldropdown_pointspara2}</ReactMarkdown></li>
+                          <li><ReactMarkdown>{editingdata.communaldropdown_pointspara3}</ReactMarkdown></li>
+                          <li><ReactMarkdown>{editingdata.communaldropdown_pointspara4}</ReactMarkdown></li>
+                        </ul>
+                        </Col>
+                      </Row>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </Row>
               </Col>
             </Row>
-            <Row className="text-center justify-content-center mb-5 pb-0">
-              <Col className="col-10 text-center pb-3">
+          </Fade>
+
+          <Fade bottom>
+            <Row className="text-center justify-content-center py-3 px-5 mt-5">
+              <Col className="col-12 col-md-9 col-lg-7">
+                <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.communal_para1}</h2>
+                <ReactMarkdown className="text-white large tight-drop-light mb-4">{editingdata.communal_para2}</ReactMarkdown>
+                <Document file="/ECOSYSTEMBENEFITS-Community.pdf" />
+              </Col>
+            </Row>
+            <Row className="text-center justify-content-center px-3 mb-5 pb-5">
+              <Col className="col-10 col-md-6 col-lg-7 col-xl-8 text-center pb-3 pe-lg-0">
                 <Button className="btn-large" variant="green">
-                  {editingdata.part7_button1}
+                  <a href="#communal-calc-steps">{editingdata.communal_button1}</a>
                 </Button>
               </Col>
             </Row>
@@ -1117,149 +1213,76 @@ export default function Build({ file }) {
             </Row>
           </Fade>
 
-          <Fade bottom>
-            <Row className="text-center justify-content-center mb-3 p-4 pb-5">
-              <Col className="col-10 col-lg-7 pb-0">
-                <p className="text-white large mb-3">{editingdata.part7_para3}</p>
+        <Fade bottom>
+        <ScrollableAnchor id={"communal-calc-steps"}>
+            <Row id="communal-calc-steps" className="pt-5 align-items-center justify-content-center mt-5 mb-3">
+              <Col className="col-10 pe-lg-0">
+                <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
               </Col>
             </Row>
+        </ScrollableAnchor>
+            <Row className="justify-content-center  align-items-stretch px-lg-5 mx-lg-5 mb-5 pb-5">
+                <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.communalcalc_box1para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.communalcalc_box1para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.communalcalc_box1para3}</ReactMarkdown>
+                  <Link href="/carbon-calculator#communal">
+                    <Button variant="green" className="calc-btn">{editingdata.communalcalc_box1button1}</Button>
+                  </Link>
+                </div>
+              </Col>
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.communalcalc_box2para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.communalcalc_box2para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.communalcalc_box2para3}</ReactMarkdown>
+                  <Link href="/smart-forest-calculator#communal">
+                    <Button variant="green" className="calc-btn">{editingdata.communalcalc_box2button1}</Button>
+                  </Link>
+                </div>
+              </Col>
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.communalcalc_box3para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.communalcalc_box3para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.communalcalc_box3para3}</ReactMarkdown>
+                  <Link href="/smart-forest-calculator#communal">
+                    <Button variant="green" className="calc-btn">{editingdata.communalcalc_box3button1}</Button>
+                  </Link>
+                </div>
+              </Col>
+            </Row>
+
           </Fade>
 
           <Fade bottom>
-            <Row id="comm-2" className="justify-content-center align-items-center my-5">
-              <Carousel className="col-11 col-lg-8 bg-brown roundedBox  innerShadow p-5 m-4 px-0" 
-                activeIndex={index}
-                onSelect={handleSelect}
-                nextIcon={ <span aria-hidden="false" className="carousel-control-next-icon"/>}
-                nextLabel=""
-                prevIcon={ <span aria-hidden="true" className="carousel-control-prev-icon"/>}
-                prevLabel=""
-              >
-                <Carousel.Item
-                  interval={100000}
-                  className="justify-content-center"
-                >
-                  <div className="d-block w-100 blockquote-bg mb-4 align-items-center d-flex">
-                    <div className="px-lg-5 pt-lg-4 mx-5">
-                      <h3 className="text-left blockquote text-orange">{editingdata.part7_quote1para}</h3>
-                      <p className="text-left text-white my-0 mx-5 bold">{editingdata.part7_quote1name}</p>
-                      <p className="text-left text-white mx-5 px-3 italic op-6">{editingdata.part7_quote1title}</p>
-                    </div>
-                  </div>
-                </Carousel.Item>
-
-                <Carousel.Item interval={100000}>
-                  <div className="d-block w-100 blockquote-bg mb-4 align-items-center d-flex">
-                    <div className="px-lg-5 pt-lg-4 mx-5">
-                      <h3 className="text-left blockquote text-orange">{editingdata.part7_quote2para}</h3>
-                      <p className="text-left text-white my-0 mx-5 bold">{editingdata.part7_quote2name}</p>
-                      <p className="text-left text-white mx-5 px-3 italic op-6">{editingdata.part7_quote2tile}</p>
-                    </div>
-                  </div>
-                </Carousel.Item>
-              </Carousel>
-            </Row>
-          </Fade>
-          
-          <Fade bottom>
-            <Row id="comm-3" className="justify-content-center pt-5 px-5 mb-3">
-              <Col className="col-11 col-md-8">
-                <h2 className="text-center text-orange tight-drop-light bold mb-3">{editingdata.part7_header2}</h2>
-                <p className="lead px-3 px-lg-5 text-center tight-drop-light text-white mb-2">{editingdata.part7_para4}</p>
+            <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
+              <Col className="col-10 col-md-8 col-lg-9 col-xl-7 pe-lg-0">
+                <h2 className="text-center text-orange bold tight-drop-light">{editingdata.communal_header3}</h2>
+                <p className="text-center px-lg-4 text-white large mb-2">{editingdata.communal_para3}</p>
               </Col>
             </Row>
-          </Fade>
-
-          <Fade bottom>
-            <Row className="justify-content-center d-flex pb-5 mx-5 mb-5">
-              <Col className="col-12 col-lg-7 bg-green roundedBox innerShadow px-3 pt-5 pb-4 m-4 mt-2">
-                <p className="text-white large bold text-center mb-3">{editingdata.part7_pointsheader}</p>
-                <ul className="text-white checkMark px-5 mx-3">
-                  <li><ReactMarkdown>{editingdata.part7_pointspara1}</ReactMarkdown></li>
-                  <li><ReactMarkdown>{editingdata.part7_pointspara2}</ReactMarkdown></li>
-                  <li><ReactMarkdown>{editingdata.part7_pointspara3}</ReactMarkdown></li>
-                  <li><ReactMarkdown>{editingdata.part7_pointspara4}</ReactMarkdown></li>
-                </ul>
-              </Col>
-            </Row>
-          </Fade>
-
-          <Fade bottom>
-            <Row id="comm-4" className="pt-4 align-items-center justify-content-center mb-3">
-              <Col className="col-10 col-lg-7 pe-lg-0">
-                <h2 className="text-center text-orange bold tight-drop-light">{editingdata.part7_header3}</h2>
-                <p className="text-center px-lg-5 text-white large mb-2">{editingdata.part7_para5}</p>
-              </Col>
-            </Row>
-            <Row className="text-center justify-content-center mb-5 pb-5">
+            <Row className="text-center justify-content-center mb-5 pb-4">
               <Col className="col-10 text-center pb-5 pe-lg-0">
                 <Button className="btn-large px-5" variant="green">
-                  {editingdata.part7_button}
+                  {editingdata.communal_button3}
                 </Button>
               </Col>
             </Row>
           </Fade>
 
           <Fade bottom>
-            <Row className="justify-content-center  align-items-stretch mx-lg-5  mb-4">
-              <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="large text-green mb-2">{editingdata.part7_calcbox1header}</p>
-                  <p className="text-grey mb-5">{editingdata.part7_calcbox1para}</p>
-                  <Link href="carbon-calculator">
-                    <Button variant="green" className="mt-3">
-                      {editingdata.part7_calcbox1button}
-                    </Button>
-                  </Link>
-                </div>
-              </Col>
-
-              <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="large text-green mb-2">{editingdata.part7_calcbox2header}</p>
-                  <p className="text-grey mb-4">{editingdata.part7_calcbox2para}</p>
-                  <Button variant="green" className="mt-3">
-                    {editingdata.part7_calcbox2button}
-                  </Button>
-                </div>
+          <Row className="pt-4 align-items-center justify-content-center mb-3">
+              <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
+                <h2 className="text-center text-orange bold tight-drop-light">Envision your forest</h2>
               </Col>
             </Row>
+          <DigitalSign/>
           </Fade>
         </Container>
         </ScrollableAnchor>
-        <Container fluid className="bg-green p-5 section-pad my-0">
-          <Row className="justify-content-center pt-3">
-            <Col className="col-12 col-md-4 col-lg-3  pe-lg-0 m-3">
-              <div className="roundedBox card bg-white no-border p-4 h-100 d-flex flex-column card-hover">
-                <h4 className="text-green">{editingdata.part8_box1header}</h4>
-                <p className="flex-fill pb-3 text-grey">{editingdata.part8_box1para}</p>
-                <Link href="business-calculator">
-                  <a className="btn btn-text modal-btn text-left text-orange bold no-underline">{editingdata.tryIt}</a>
-                </Link>
-              </div>
-            </Col>
 
-            <Col className="col-12 col-md-4 col-lg-3  pe-lg-0 m-3">
-              <div className="roundedBox card bg-white no-border p-4 h-100 d-flex flex-column card-hover">
-                <h4 className="text-green">{editingdata.part8_box2header}</h4>
-                <p className="flex-fill pb-3 text-grey">{editingdata.part8_box2para}</p>
-                <Link href="offset-calculator">
-                  <a className="btn btn-text modal-btn text-left text-orange bold no-underline">{editingdata.tryIt}</a>
-                </Link>
-              </div>
-            </Col>
-
-            <Col className="col-12 col-md-4 col-lg-3 pe-lg-0 m-3">
-              <div className="roundedBox card bg-white no-border p-4 h-100 d-flex flex-column card-hover">
-                <h4 className="text-green">{editingdata.part8_box3header}</h4>
-                <p className="flex-fill pb-3 text-grey">{editingdata.part8_box3para}</p>
-                <Link href="portal-demo">
-                  <a className="btn btn-text modal-btn text-left text-orange bold no-underline me-5">{editingdata.tryIt}</a>
-                </Link>
-              </div>
-            </Col>
-          </Row>
-        </Container>
       </main>
     </div>
   );

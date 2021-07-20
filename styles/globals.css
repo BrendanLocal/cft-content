@@ -78,7 +78,7 @@ hr.thick {
 
 .carousel-indicators {
   margin-right: 40%;
-    margin-bottom: .9rem;
+    margin-bottom: 1.5rem;
     margin-left: 40%;
 }
 
@@ -151,7 +151,7 @@ p {
 h1, .h1  {
   font-size: calc(4rem + 1.5vw);
   line-height: calc(4.1rem + 1.5vw);
-  font-weight: 200;
+  font-weight: 200
 }
 
 h1.drop, .h1.drop {
@@ -172,14 +172,14 @@ h2.hero, h2.hero {
   font-size: calc(3rem + 1.5vw);
   line-height: calc(3rem + 1.5vw);
   font-weight: 900;
-  letter-spacing: -3px;
+  letter-spacing: -2px;
 }
 
 .emphasis-2 {
   font-size: calc(3rem + 1.5vw);
   line-height: calc(3rem + 1.5vw);
   font-weight: 600;
-  letter-spacing: -3px;
+  letter-spacing: -2px;
 }
 
 .blockquote {
@@ -238,9 +238,14 @@ font-weight: 600;
   font-weight: 700;
   z-index:999;
 }
+
  .text-small {
   font-size: 12px;
 }
+
+ .dropdown-text {
+   font-size: 14px;
+ }
 
 .smallCaps.small {
   font-size: 12px;
@@ -664,12 +669,12 @@ text-decoration: underline;
 }
 
 .phases {
-  content: url('/5Phases.jpg');
-    object-fit: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 42rem;
-    border-radius: 10px;
+  background: url('/5Phases.jpg');
+  background-size: 101%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 660px;
+  border-radius: 10px;
 }
 
 .phase1 {
@@ -677,7 +682,7 @@ text-decoration: underline;
     background-size: 101%;
     background-position: center;
     background-repeat: no-repeat;
-    height: 42rem;
+    height: 660px;
     border-radius: 10px;
 }
 
@@ -686,7 +691,7 @@ text-decoration: underline;
   background-size: 101%;
   background-position: center;
   background-repeat: no-repeat;
-  height: 42rem;
+  height: 660px;
   border-radius: 10px;
 }
 
@@ -695,7 +700,7 @@ text-decoration: underline;
     background-size: 101%;
     background-position: center;
     background-repeat: no-repeat;
-    height: 42rem;
+    height: 660px;
     border-radius: 10px;
 }
 
@@ -704,7 +709,7 @@ text-decoration: underline;
     background-size: 101%;
     background-position: center;
     background-repeat: no-repeat;
-    height: 42rem;
+    height: 660px;
     border-radius: 10px;
 }
 
@@ -713,7 +718,7 @@ text-decoration: underline;
     background-size: 101%;
     background-position: center;
     background-repeat: no-repeat;
-    height: 42rem;
+    height: 660px;
     border-radius: 10px;
 }
 
@@ -1452,24 +1457,19 @@ transition: transform .5s ease;
 }
 
 .dropdown-menu {
-  position: relative;
-  top: 100%;
-  z-index: 1000!important;
+  min-width: 26rem;
   display: none;
-  min-width: 30rem;
   padding: .5rem 0;
   margin: 0;
-  font-size: 1rem;
   color: #212529;
   text-align: left;
   list-style: none;
   background-color: #fff;
   background-clip: padding-box;
   border: none;
+  box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
   border-radius: .25rem;
 }
-
-
 
 
 /* Sidebar */
@@ -1481,6 +1481,7 @@ div.container-fluid, div.container {
 #sidebar {
   position: fixed;
   left: 110vw;
+  top:0;
   transition: left 900ms;
   z-index:100;
   width: 100%;
@@ -1856,10 +1857,14 @@ span.authorTitle {
 .calculate-card {
   box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
   border: none;
+  position: relative;
+  height: 400px!important;
 }
 
-.calculate-card .calc-btn {
-  bottom: 20px;
+.calc-btn {
+  position: absolute;
+  bottom: 4%;
+  width: 83%;
 }
 
 .calculate-card:hover {
@@ -1883,9 +1888,10 @@ span.authorTitle {
 }
 
 .bg-school {
-
+  z-index: -99;
+  position: relative;
   background-image: url('/school-smart-forest-lopacity.png');
-
+  
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -1894,9 +1900,10 @@ span.authorTitle {
 
 .bg-legacy {
 
-  
+  z-index: -99;
+  position: relative;  
   background-image: url('/legacy-smart-forest-lopacity.png');
-
+  
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -1910,6 +1917,8 @@ span.authorTitle {
   background-position: 50% 100%;
   background-repeat: no-repeat;
   background-size: 100%;
+  z-index: -99;
+  position: relative; 
 }
 
 /* Our Smart Forests Cards */
@@ -2220,8 +2229,6 @@ padding: 5px 0;
 .panelHead {
   font-size: 1.4em;
   font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
 }
 
 .mapboxgl-map {
@@ -2252,8 +2259,13 @@ cursor: pointer;
 border-bottom: none !important;
   
 }
+
 .tabRow {
   text-align: center;
+}
+
+.border-top-green {
+  border-top: solid .25px #bbb;
 }
 
 .forestSlider {
@@ -2362,9 +2374,10 @@ width: 100%;
 
 
 ul.checkMark li{
-  position: relative;
-left: 1.5em;
-padding: 15px 0;
+position: relative;
+left: .5em;
+padding: 5px 0 0 0;
+text-align: left;
 }
 
 ul.checkMark li:before {
@@ -2377,8 +2390,9 @@ ul.checkMark li:before {
 
 ul.plus li{
   position: relative;
-left: 1.5em;
-padding: 10px 0;
+left: .5em;
+padding: 5px 0 0 0;
+text-align: left;
 }
 
 ul.plus li:before {
@@ -2427,6 +2441,8 @@ color: #000;
 #searchComponent {
   position: fixed;
   height: 0;
+  left:0;
+  top:0;
   width: 100vw;
   background: rgba(0,0,0,0);
   z-index: 999;
@@ -2497,6 +2513,20 @@ z-index: 999;
     min-height: 80vh;
   }
 
+
+  .calculate-card {
+    box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
+    border: none;
+    position: relative;
+    height: 420px!important;
+  }
+
+  .calc-btn {
+    width: 81%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
   .v-full {
     min-height: 95vh;
   }
@@ -2522,54 +2552,160 @@ z-index: 999;
     position: absolute;
   }
 
+  .carousel-control-next-icon {
+    margin-left: 50%;
+  }
+  
+  .carousel-control-prev-icon {
+    margin-right: 50%;
+  }
+
+  .carousel-indicators {
+    margin-right: 35%;
+    margin-left: 35%;
+    margin-bottom: 1rem;
+  }
+  
+  .carousel-caption {
+    position: absolute;
+    right: 15%;
+    top: 3.5rem;
+    left: 13%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #fff;
+    text-align: center;
+  }
+
   .phases {
-    background: url('/5Phases-mob.jpg')!important;
+    background: url('/5Phases.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: 44rem;
+      height: 460px;
   }
   
   .phase1 {
-    background: url('/Phase1-mob.jpg');
+    background: url('/Phase1.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: 44rem;
+      height: 460px;
   }
   
   .phase2 {
-    background: url('/Phase2-mob.jpg');
+    background: url('/Phase2.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: 44rem;
+      height: 460px;
   }
   
   .phase3 {
-    background: url('/Phase3-mob.jpg');
+    background: url('/Phase3.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: 44rem;
+      height: 460px;
   }
   
   .phase4 {
-    background: url('/Phase4-mob.jpg');
+    background: url('/Phase4.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: 44rem;
+      height: 460px;
   }
   
   .phase5 {
-    background: url('/Phase5-mob.jpg');
+    background: url('/Phase5.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: 44rem;
+      height: 460px;
   }
 
+
+}
+
+
+@media screen and (max-width: 768px) and (min-width: 577px){
+
+  .dropdown-menu {
+    min-width: 20rem;
+  }
+
+  .calculate-card {
+    box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
+    border: none;
+    position: relative;
+    height: 250px!important;
+  }
+  
+  .calc-btn {
+    position: absolute;
+    bottom: 5%;
+    width: 91%;
+  }
+
+  .carousel-caption {
+    position: absolute;
+    right: 15%;
+    top: 3.5rem;
+    left: 13%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #fff;
+    text-align: center;
+  }
+
+  .phases {
+    background: url('/5Phases.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 410px;
+  }
+  
+  .phase1 {
+    background: url('/Phase1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 410px;
+  }
+  
+  .phase2 {
+    background: url('/Phase2.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 410px;
+  }
+  
+  .phase3 {
+    background: url('/Phase3.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 410px;
+  }
+  
+  .phase4 {
+    background: url('/Phase4.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 410px;
+  }
+  
+  .phase5 {
+    background: url('/Phase5.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 410px;
+  }
 
 }
 
@@ -2592,6 +2728,17 @@ z-index: 999;
     padding-bottom: 0px!important;
   }
 
+  .dropdown-menu {
+    min-width: 20rem;
+  }
+
+  .calculate-card {
+    height: 360px!important;
+  }
+
+  .calc-btn {
+    width: 85%;
+  }
   
 .smallCaps {
 font-size: .9em;
@@ -2601,18 +2748,29 @@ font-size: .9em;
   min-height: 60vh;
 }
 
+.carousel-control-next-icon {
+  margin-left: 50%;
+}
+
+.carousel-control-prev-icon {
+  margin-right: 50%;
+}
+
 .carousel-indicators {
   margin-right: 20%;
-    margin-bottom: .9rem;
-    margin-left: 20%;
+  margin-left: 20%;
+  margin-bottom: .6rem;
 }
 
 .carousel-caption {
-  top: 3.5rem;
-}
-
-.carousel-caption p {
-  bottom: 3.5rem;
+  position: absolute;
+  padding-right: 20px;
+  top: 2rem;
+  left: 15%;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  color: #fff;
+  text-align: center;
 }
 
 .phases {
@@ -2620,7 +2778,7 @@ font-size: .9em;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 46rem;
+    height: 560px;
 }
 
 .phase1 {
@@ -2628,7 +2786,7 @@ font-size: .9em;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 46rem;
+    height: 560px;
 }
 
 .phase2 {
@@ -2636,7 +2794,7 @@ font-size: .9em;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 46rem;
+    height: 560px;
 }
 
 .phase3 {
@@ -2644,7 +2802,7 @@ font-size: .9em;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 46rem;
+    height: 560px;
 }
 
 .phase4 {
@@ -2652,7 +2810,7 @@ font-size: .9em;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 46rem;
+    height: 560px;
 }
 
 .phase5 {
@@ -2660,7 +2818,7 @@ font-size: .9em;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 46rem;
+    height: 560px;
 }
 
 .protorow {
@@ -2729,6 +2887,7 @@ font-size: .9em;
 .nudge {
   margin-right: 0px;
 }
+
 
 }
 
