@@ -4,11 +4,22 @@ import Link from 'next/link'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faImage } from '@fortawesome/free-solid-svg-icons'
 
+//HereStarts image testing imports
+
+import ImageDisplay from '../components/ImageDisplay.js';
+import imageClient from '../components/imageClient.js';
+import * as imageServer from '../components/imageServer.js';
+import Spinner from '../components/imageSpinner.js';
+
+//  HereEnds image testing imports
 
 const DigitalSign = ()=> {
   const [forestName, setForestName] = React.useState("");
   const [forestAcres, setForestAcres] = React.useState(0);
+  const [forestImage, setForestImage] = React.useState("");
   const [selectCopy, setCopy] = React.useState("");
   const [selectBG, setBG] = React.useState("signbg_forest.jpg");
   const [selectLogo, setLogo] = React.useState("");
@@ -31,6 +42,28 @@ const DigitalSign = ()=> {
   const changeName = (event) => {
     setForestName(event.target.value);
   };
+
+  const changeImage = (event) => {
+    setForestImage(ImageDisplay);
+    //
+    // I assume we gotta drop some other method calls in here for things to work 
+    // but we have the path going into the div that is displaying in the wrong place. progress!
+  };
+
+  // this was part of the imageClient file to display the image that has been upload
+  // render() {
+  //   const { uploading, images } = this.state
+
+  //   const content = () => {
+  //     switch(true) {
+  //       case uploading:
+  //         return <Spinner />
+  //       case images.length > 0:
+  //         return <Images images={images} removeImage={this.removeImage} />
+  //       default:
+  //         return <Buttons onChange={this.onChange} />
+  //     }
+  //   }
 
   return (
     <React.Fragment>
@@ -61,6 +94,19 @@ const DigitalSign = ()=> {
             <option value="signbg_forest.jpg">Spring</option>
             <option value="signbg_green.jpg">Summer</option>
           </select>
+          {/* This was stored in another file but it made it easier to just put it here, 
+              I assume its no biggie. though the styles probs gotta get tidied*/}
+          <br />
+          <label htmlFor="forest-name">Upload an image for your sign</label>
+          <div className='buttons fadein'>
+            <div className='button'>
+              <label htmlFor='single'>
+                <FontAwesomeIcon icon={faImage} color='#3B5998' size='10x' />
+              </label>
+              <input type='file' id='single' onChange={changeImage} /> 
+            </div>
+          </div>
+          {/*  */}
         </Col>
         <Col className="col-12 col-md-5 signImagebuilder">
           <div className="signImageContainer">
@@ -69,6 +115,8 @@ const DigitalSign = ()=> {
               {forestName? "The " : ""}
               {forestName}
               {forestName? " Forest" : ""}
+              <br />
+              {forestImage}
             </div>
             <div className="signImageText signTextAcres">
               {forestAcres? forestAcres : ""}
