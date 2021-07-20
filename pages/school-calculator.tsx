@@ -263,46 +263,29 @@ const Lang = () => {
   /* array using data from the spreadsheet, including multipliers */
 
   const buildArrayTwo = {
-    "5000":{
-      none: 0,
-      office:13701.48346, 
-      industrial:7179.992482,
-      others:16688.30884
-    },
-    "10000":{
-      none: 0,
-      office:28729.24786,
-      industrial:26524.1674,
-      others:33015.65352
-    },
-    "50000":{
-      none: 0,
-      office:85196.594,
-      industrial:67987.73782,
-      others:69144.83022
-
-    },
-    "200000":{
-      none: 0,
-      office:404560.9958,
-      industrial:225304.9042,
-      others:267273.1874
-
-    },
-    "200001":{
-      none: 0,
-      office:1763397.214,
-      industrial:862252.9814,
-      others:1458790.148
-    }
+    "5000":{	"office": 	13701.48346	, "industrial": 	7179.992482	, "others": 	16688.30884	, none:0	},
+"10000":{	"office": 	28729.24786	, "industrial": 	26524.1674	, "others": 	33015.65352	, none:1	},
+"25000":{	"office": 	57458.49571	, "industrial": 	53048.3348	, "others": 	66031.30704	, none:2	},
+"50000":{	"office": 	85196.594	, "industrial": 	67987.73782	, "others": 	69144.83022	, none:3	},
+"75000":{	"office": 	101140.2489	, "industrial": 	56326.22605	, "others": 	66818.29685	, none:4	},
+"100000":{	"office": 	202280.4979	, "industrial": 	112652.4521	, "others": 	133636.5937	, none:5	},
+"125000":{	"office": 	269707.3305	, "industrial": 	150203.2695	, "others": 	178182.1249	, none:6	},
+"150000":{	"office": 	404560.9958	, "industrial": 	225304.9042	, "others": 	267273.1874	, none:7	},
+"200000":{	"office": 	881698.6069	, "industrial": 	431126.4907	, "others": 	729395.0741	, none:8	},
+"200001":{	"office": 	1763397.214	, "industrial": 	862252.9814	, "others": 	1458790.148	, none:9	}
   }
 
   const buildArray = {
-    "5000":	4757.66316,
-    "10000":	50910.79642,
-    "50000":	126421.4294,
-    "200000":	342315.8403,
-    "200001":	1112764.55
+    "5000":	4757.66316	,
+"10000":	50910.79642	,
+"25000":	101821.5928	,
+"50000":	126421.4294	,
+"75000":	85578.96006	,
+"100000":	171157.9201	,
+"125000":	228210.5602	,
+"150000":	342315.8403	,
+"200000":	556382.2751	,
+"200001":	1112764.55	
   }
 
   if (schoolNumTwo)
@@ -478,11 +461,16 @@ const Lang = () => {
                   <label htmlFor="size">{editingdata.heatingSizeHeader}</label><br />
                   <select name="size" value={selectSize} onChange={changeSize}>
                     <option value="" hidden>{editingdata.select}</option>
-                    <option value='5000'>{editingdata.heatingSize1}</option>
-                    <option value='10000'>{editingdata.heatingSize2}</option>
-                    <option value='50000'>{editingdata.heatingSize3}</option>
-                    <option value='200000'>{editingdata.heatingSize3}</option>
-                    <option value='200001'>{editingdata.heatingSize4}</option>
+                  <option value='5000'>less than 5000</option>
+                  <option value='10000'>5000-10,000</option>
+                  <option value='25000'>10,000-25,000</option>
+                  <option value='50000'>25,000-50,000</option>
+                  <option value='75000'>50,000-75,000</option>
+                  <option value='100000'>75,000-100,000</option>
+                  <option value='125000'>100,00-125,000</option>
+                  <option value='150000'>125,000-150,000</option>
+                  <option value='200000'>150,000-200,000</option>
+                  <option value='200000'>200,000+</option>
                   </select>
                 </Col>
               </Row>
@@ -501,7 +489,7 @@ const Lang = () => {
               <Row>
                 <Col>
                 <label htmlFor="type">{editingdata.heatingOtherTypeHeader}</label><br />
-                <select name="type" value={selectType} onChange={changeTypeThree}>
+                <select name="type" value={selectTypeThree} onChange={changeTypeThree}>
                   <option value="" hidden>{editingdata.select}</option>
                   <option value='none'>{editingdata.heatingOtherType1}</option>
                   <option value='office'>{editingdata.heatingOtherType2}</option>
@@ -514,13 +502,18 @@ const Lang = () => {
               <Row>
                 <Col>
                 <label htmlFor="size">{editingdata.heatingOtherSizeHeader}</label><br />
-                <select name="size" value={selectSizeTwo} onChange={changeSizeThree}>
+                <select name="size" value={selectSizeThree} onChange={changeSizeThree}>
                   <option value="" hidden>{editingdata.select}</option>
-                  <option value='5000'>{editingdata.heatingOtherSize1}</option>
-                  <option value='10000'>{editingdata.heatingOtherSize2}</option>
-                  <option value='50000'>{editingdata.heatingOtherSize3}</option>
-                  <option value='200000'>{editingdata.heatingOtherSize4}</option>
-                  <option value='200001'>{editingdata.heatingOtherSize5}</option>
+                  <option value='5000'>less than 5000</option>
+                  <option value='10000'>5000-10,000</option>
+                  <option value='25000'>10,000-25,000</option>
+                  <option value='50000'>25,000-50,000</option>
+                  <option value='75000'>50,000-75,000</option>
+                  <option value='100000'>75,000-100,000</option>
+                  <option value='125000'>100,00-125,000</option>
+                  <option value='150000'>125,000-150,000</option>
+                  <option value='200000'>150,000-200,000</option>
+                  <option value='200000'>200,000+</option>
                 </select>
                 </Col>
               </Row>
@@ -549,7 +542,7 @@ const Lang = () => {
               <Row>
                 <Col>
                 <label htmlFor="type">{editingdata.heatingOtherTypeHeader}</label><br />
-                <select name="type" value={selectType} onChange={changeTypeFour}>
+                <select name="type" value={selectTypeFour} onChange={changeTypeFour}>
                   <option value="" hidden>{editingdata.select}</option>
                   <option value='none'>{editingdata.heatingOtherType1}</option>
                   <option value='office'>{editingdata.heatingOtherType2}</option>
@@ -562,13 +555,18 @@ const Lang = () => {
               <Row>
                 <Col>
                 <label htmlFor="size">{editingdata.heatingOtherSizeHeader}</label><br />
-                <select name="size" value={selectSizeTwo} onChange={changeSizeFour}>
+                <select name="size" value={selectSizeFour} onChange={changeSizeFour}>
                   <option value="" hidden>{editingdata.select}</option>
-                  <option value='5000'>{editingdata.heatingOtherSize1}</option>
-                  <option value='10000'>{editingdata.heatingOtherSize2}</option>
-                  <option value='50000'>{editingdata.heatingOtherSize3}</option>
-                  <option value='200000'>{editingdata.heatingOtherSize4}</option>
-                  <option value='200001'>{editingdata.heatingOtherSize5}</option>
+                  <option value='5000'>less than 5000</option>
+                  <option value='10000'>5000-10,000</option>
+                  <option value='25000'>10,000-25,000</option>
+                  <option value='50000'>25,000-50,000</option>
+                  <option value='75000'>50,000-75,000</option>
+                  <option value='100000'>75,000-100,000</option>
+                  <option value='125000'>100,00-125,000</option>
+                  <option value='150000'>125,000-150,000</option>
+                  <option value='200000'>150,000-200,000</option>
+                  <option value='200000'>200,000+</option>
                 </select>
                 </Col>
               </Row>
@@ -597,7 +595,7 @@ const Lang = () => {
               <Row>
                 <Col>
                 <label htmlFor="type">{editingdata.heatingOtherTypeHeader}</label><br />
-                <select name="type" value={selectType} onChange={changeTypeFive}>
+                <select name="type" value={selectTypeFive} onChange={changeTypeFive}>
                   <option value="" hidden>{editingdata.select}</option>
                   <option value='none'>{editingdata.heatingOtherType1}</option>
                   <option value='office'>{editingdata.heatingOtherType2}</option>
@@ -610,13 +608,18 @@ const Lang = () => {
               <Row>
                 <Col>
                 <label htmlFor="size">{editingdata.heatingOtherSizeHeader}</label><br />
-                <select name="size" value={selectSizeTwo} onChange={changeSizeFive}>
+                <select name="size" value={selectSizeFive} onChange={changeSizeFive}>
                   <option value="" hidden>{editingdata.select}</option>
-                  <option value='5000'>{editingdata.heatingOtherSize1}</option>
-                  <option value='10000'>{editingdata.heatingOtherSize2}</option>
-                  <option value='50000'>{editingdata.heatingOtherSize3}</option>
-                  <option value='200000'>{editingdata.heatingOtherSize4}</option>
-                  <option value='200001'>{editingdata.heatingOtherSize5}</option>
+                  <option value='5000'>less than 5000</option>
+                  <option value='10000'>5000-10,000</option>
+                  <option value='25000'>10,000-25,000</option>
+                  <option value='50000'>25,000-50,000</option>
+                  <option value='75000'>50,000-75,000</option>
+                  <option value='100000'>75,000-100,000</option>
+                  <option value='125000'>100,00-125,000</option>
+                  <option value='150000'>125,000-150,000</option>
+                  <option value='200000'>150,000-200,000</option>
+                  <option value='200000'>200,000+</option>
                 </select>
                 </Col>
               </Row>
@@ -645,7 +648,7 @@ const Lang = () => {
               <Row>
                 <Col>
                 <label htmlFor="type">{editingdata.heatingOtherTypeHeader}</label><br />
-                <select name="type" value={selectType} onChange={changeTypeSix}>
+                <select name="type" value={selectTypeSix} onChange={changeTypeSix}>
                   <option value="" hidden>{editingdata.select}</option>
                   <option value='none'>{editingdata.heatingOtherType1}</option>
                   <option value='office'>{editingdata.heatingOtherType2}</option>
@@ -658,13 +661,18 @@ const Lang = () => {
               <Row>
                 <Col>
                 <label htmlFor="size">{editingdata.heatingOtherSizeHeader}</label><br />
-                <select name="size" value={selectSizeTwo} onChange={changeSizeSix}>
+                <select name="size" value={selectSizeSix} onChange={changeSizeSix}>
                   <option value="" hidden>{editingdata.select}</option>
-                  <option value='5000'>{editingdata.heatingOtherSize1}</option>
-                  <option value='10000'>{editingdata.heatingOtherSize2}</option>
-                  <option value='50000'>{editingdata.heatingOtherSize3}</option>
-                  <option value='200000'>{editingdata.heatingOtherSize4}</option>
-                  <option value='200001'>{editingdata.heatingOtherSize5}</option>
+                  <option value='5000'>less than 5000</option>
+                  <option value='10000'>5000-10,000</option>
+                  <option value='25000'>10,000-25,000</option>
+                  <option value='50000'>25,000-50,000</option>
+                  <option value='75000'>50,000-75,000</option>
+                  <option value='100000'>75,000-100,000</option>
+                  <option value='125000'>100,00-125,000</option>
+                  <option value='150000'>125,000-150,000</option>
+                  <option value='200000'>150,000-200,000</option>
+                  <option value='200000'>200,000+</option>
                 </select>
                 </Col>
               </Row>

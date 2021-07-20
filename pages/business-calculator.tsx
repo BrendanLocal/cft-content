@@ -219,7 +219,9 @@ const Lang = () => {
       deliveryDiesel: {mult:0.2471,count: null, miles: null},
       semiNonFrig: {mult:0.8654,count: null, miles: null},
       semiFrig: {mult:1.0142,count: null, miles: null},
-      jetNum: {mult:2.9237,count: null, miles: null}
+      jetNum: {mult:2.9237,count: null, miles: null},
+      planeGas	:{mult:	2.54306	,miles: null},
+      heliGas	:{mult:	2.54306	,miles: null}
     });
 
     const [transitArray, setTransitArray] = React.useState({
@@ -1112,6 +1114,40 @@ const Lang = () => {
                 }   placeholder={editingdata.vehiclePlaceholder2} />
               </Col>
             </Row>
+
+            <Row>
+              <Col className="col-10 col-xl-4">
+                <h5 className="smallCaps text-small text-green">Private Plane</h5>
+              </Col>
+              <Col className="col-6 col-xl-4">
+                <input onChange={calculateCount} name="planeGas" type="number" min="0" onKeyPress={
+                  (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                }   placeholder={editingdata.vehiclePlaceholder1} />
+              </Col>
+              <Col className="col-6 col-xl-4">
+                <input onChange={calculateMiles} name="planeGas" type="number" min="0" onKeyPress={
+                  (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                }   placeholder={editingdata.vehiclePlaceholder2} />
+              </Col>
+            </Row>
+
+            <Row>
+              <Col className="col-10 col-xl-4">
+                <h5 className="smallCaps text-small text-green">Private Helicopter</h5>
+              </Col>
+              <Col className="col-6 col-xl-4">
+                <input onChange={calculateCount} name="heliGas" type="number" min="0" onKeyPress={
+                  (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                }   placeholder={editingdata.vehiclePlaceholder1} />
+              </Col>
+              <Col className="col-6 col-xl-4">
+                <input onChange={calculateMiles} name="heliGas" type="number" min="0" onKeyPress={
+                  (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                }   placeholder={editingdata.vehiclePlaceholder2} />
+              </Col>
+            </Row>
+
+            
           </div>
           <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
             <Row>
