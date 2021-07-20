@@ -2413,6 +2413,29 @@ z-index: 999;
   cursor: pointer;
 }
 
+.create-book-photo-picker {
+  display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+  background: #00823B!important;
+  padding: 10px 20px 10px 20px;
+    border-radius: 6px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    font-weight: 900 !important;
+    margin-bottom: 10px;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+    margin-top: 0 !important;
+    width: 100% !important;
+}
+
 
 /* Tablet */
 

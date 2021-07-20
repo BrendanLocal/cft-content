@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faImage } from '@fortawesome/free-solid-svg-icons'
 
@@ -13,19 +14,25 @@ import ImageDisplay from '../components/ImageDisplay.js';
 import imageClient from '../components/imageClient.js';
 import * as imageServer from '../components/imageServer.js';
 import Spinner from '../components/imageSpinner.js';
+import ImageUpload from 'image-upload-react'
+
 
 //  HereEnds image testing imports
 
 const DigitalSign = ()=> {
+
+  const [imageSrc, setImageSrc] = useState()
+ 
+  const handleImageSelect = (e) => {
+    setImageSrc(URL.createObjectURL(e.target.files[0]))
+  }
+
   const [forestName, setForestName] = React.useState("");
   const [forestAcres, setForestAcres] = React.useState(0);
-  const [forestImage, setForestImage] = React.useState("");
+  const [logoImage, setLogoImage] = React.useState("");
   const [selectCopy, setCopy] = React.useState("");
   const [selectBG, setBG] = React.useState("signbg_forest.jpg");
-  const [selectLogo, setLogo] = React.useState("");
-  const logoUpload = (event) => { 
-    setLogo(event.target.value);
-  };
+  
   
   const changeCopy = (event) => {
     setCopy(event.target.value);
@@ -43,8 +50,8 @@ const DigitalSign = ()=> {
     setForestName(event.target.value);
   };
 
-  const changeImage = (event) => {
-    setForestImage(event.target.value);
+  const changeLogoImage = (event) => {
+    setLogoImage(event.target.value);
     //setForestImage(ImageDisplay);
     // I was using the ImageDisplay for a little while but it was causing a headache so I Went back to the event target value
     // I assume we gotta drop some other method calls in here for things to work 
@@ -99,14 +106,14 @@ const DigitalSign = ()=> {
               I assume its no biggie. though the styles probs gotta get tidied*/}
           <br />
           <label htmlFor="forest-name">Upload an image for your sign</label>
-          <div className='buttons fadein'>
-            <div className='button'>
-              <label htmlFor='single'>
-                <FontAwesomeIcon icon={faImage} color='#3B5998' size='10x' />
-              </label>
-              <input type='file' id='single' onChange={changeImage} /> 
-            </div>
-          </div>
+          
+          
+          <ImageUpload
+      handleImageSelect={handleImageSelect}
+      setImageSrc={setImageSrc}
+      
+    />
+
           {/*  */}
         </Col>
         <Col className="col-12 col-md-5 signImagebuilder">
@@ -117,7 +124,7 @@ const DigitalSign = ()=> {
               {forestName}
               {forestName? " Forest" : ""}
               <br />
-              {forestImage}
+              <img src={imageSrc}></img>
             </div>
             <div className="signImageText signTextAcres">
               {forestAcres? forestAcres : ""}
