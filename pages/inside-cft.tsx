@@ -163,7 +163,6 @@ export default function Power({ file }) {
             </Col>
           </Row>
 
-          <Fade bottom>
             <Row className="justify-content-center align-items-center ">
               <Carousel
                 className="col-11 col-lg-7 bg-brown roundedBox  innerShadow p-5 mx-4 px-0 mb-4"
@@ -215,9 +214,8 @@ export default function Power({ file }) {
                 </Carousel.Item>
               </Carousel>
             </Row>
-          </Fade>
+          
 
-          <Fade bottom>
             <Row className="align-items-center justify-content-center my-2">
               <Col className="col-10 col-lg-7 pe-lg-0">
                 <h3 className="text-center text-orange bold">{editingdata.part1_para6}</h3>
@@ -228,7 +226,6 @@ export default function Power({ file }) {
                 <Button variant="green">{editingdata.part1_button}</Button>
               </Col>
             </Row>
-          </Fade>
         </Container>
 
         <Container fluid id="team" className="bg-brown innerShadow-heavy py-6">

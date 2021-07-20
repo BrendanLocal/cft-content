@@ -102,7 +102,7 @@ const Header = ()=> {
     {
       key: "navItem6",
       label: "About",
-      path: "/about"
+      path: "/inside-cft"
     },
     {
       key: "navItem7",
@@ -181,7 +181,7 @@ const Header = ()=> {
             <div className="col-10 col-md-9">
               <ul className="py-5 py-sm-0">
                 <li className="slimlineBottom slimlineTop" onClick={toggleClass}>
-                  <Link href="/about">Inside CFT</Link>
+                  <Link href="/inside-cft">Inside CFT</Link>
                 </li>
                 <li onClick={toggleClass}>
                   <Link href="/build-your-smart-forest">Build a Smart Forest</Link>

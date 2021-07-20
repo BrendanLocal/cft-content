@@ -2167,9 +2167,10 @@ transition: all .5s ease;
 
 
 .about-hero {
-  background: url('/placeholder-forest.jpg');
+  background: url('/inside-cft.jpg');
     background-size: cover;
     height: 540px;
+    background-position: center;
   
 }
 
