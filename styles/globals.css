@@ -1481,6 +1481,7 @@ div.container-fluid, div.container {
 #sidebar {
   position: fixed;
   left: 110vw;
+  top:0;
   transition: left 900ms;
   z-index:100;
   width: 100%;
@@ -2435,6 +2436,8 @@ color: #000;
 #searchComponent {
   position: fixed;
   height: 0;
+  left:0;
+  top:0;
   width: 100vw;
   background: rgba(0,0,0,0);
   z-index: 999;
@@ -2879,6 +2882,7 @@ font-size: .9em;
 .nudge {
   margin-right: 0px;
 }
+
 
 }
 
