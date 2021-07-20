@@ -352,8 +352,8 @@ export default function Build({ file }) {
 
       <main className="bg-green py-5">
         <Container id="intro" className="bg-green py-5 px-4">
-          <Row className="justify-content-center d-flex pb-5 mb-5 py-5 px-5">
-            <Col className="col-12 col-lg-5 stickyTop mb-5 p-3 d-none d-lg-block">
+          <Row className="justify-content-center d-flex mt-xl-0 mt-lg-5 mb-5 ms-xl-5 ms-lg-4 py-5 px-5">
+            <Col className="col-12 col-lg-5 stickyTop mb-5 p-3 pe-2 d-none d-lg-block">
               <object type="image/svg+xml" data="/build2-svg.svg" />
             </Col>
             <Col className="col-12 col-lg-5 text-white pe-xl-5 p-3 pb-0 intro-order">
@@ -594,7 +594,7 @@ export default function Build({ file }) {
           </Fade>
 
           <Fade bottom>
-            <Row className="text-center justify-content-center py-3 px-5 mt-5">
+            <Row className="text-center justify-content-center py-3 px-xl-3 px-lg-2 px-5 mt-5">
               <Col className="col-12 col-md-9 col-lg-7">
                 <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.corp_header2}</h2>
                 <Document file="/ECOSYSTEMBENEFITS-Corp.pdf" />
