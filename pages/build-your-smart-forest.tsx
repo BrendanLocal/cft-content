@@ -12,6 +12,7 @@ import Row from"react-bootstrap/Row";
 import Col from"react-bootstrap/Col";
 import Button from"react-bootstrap/Button";
 import Carousel from"react-bootstrap/Carousel";
+import { Document } from 'react-pdf';
 import Rellax from"rellax";
 import Parallax from"parallax-js";
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from"swiper";
@@ -596,6 +597,7 @@ export default function Build({ file }) {
             <Row className="text-center justify-content-center py-3 px-5 mt-5">
               <Col className="col-12 col-md-9 col-lg-7">
                 <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.corp_header2}</h2>
+                <Document file="/ECOSYSTEMBENEFITS-Corp.pdf" />
               </Col>
             </Row>
             <Row className="text-center justify-content-center px-3 mb-5 pb-5">
@@ -801,6 +803,7 @@ export default function Build({ file }) {
             <Row className="text-center justify-content-center py-3 px-5 mt-5">
               <Col className="col-12 col-md-9 col-lg-7">
                 <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.school_para1}</h2>
+                <Document file="/ECOSYSTEMBENEFITS-School.pdf" />
               </Col>
             </Row>
             <Row className="text-center justify-content-center px-3 mb-5 pb-5">
@@ -989,6 +992,7 @@ export default function Build({ file }) {
             <Row className="text-center justify-content-center py-3 px-4 mt-5">
               <Col className="col-12 col-md-9 col-lg-7">
                 <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.legacy_para1}</h2>
+                <Document file="/ECOSYSTEMBENEFITS-Legacy.pdf" />
               </Col>
             </Row>
             <Row className="text-center justify-content-center px-3 mb-5 pb-5">
@@ -1191,6 +1195,7 @@ export default function Build({ file }) {
               <Col className="col-12 col-md-9 col-lg-7">
                 <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.communal_para1}</h2>
                 <ReactMarkdown className="text-white large tight-drop-light mb-4">{editingdata.communal_para2}</ReactMarkdown>
+                <Document file="/ECOSYSTEMBENEFITS-Community.pdf" />
               </Col>
             </Row>
             <Row className="text-center justify-content-center px-3 mb-5 pb-5">
