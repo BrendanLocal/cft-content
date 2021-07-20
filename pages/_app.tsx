@@ -94,7 +94,6 @@ export default class Site extends App {
           >
             <div>
 
-      <Header/>
               <Component {...pageProps} />
             </div>
           </PageTransition>
