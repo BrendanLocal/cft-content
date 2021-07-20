@@ -1,6 +1,6 @@
 {
     "header":"School Carbon Calculator",
-    "para1":"Calculate how much carbon your corporation must offset to reach net-zero",
+    "para1":"Calculate how much carbon your elementary or secondary school must offset to reach net-zero",
     "select":"Select...",
     "placeholder1":"Number of buildings",
     "placeholder2":"Size of building",
@@ -14,7 +14,7 @@
 
 
     "heatingHeader1":"Heating & Electricity",
-    "heatingSizeHeader":"How many square feet is the building?",
+    "heatingSizeHeader":"How many square feet is your main structure?",
     "heatingSize1":"<5000",
     "heatingSize2":"5000-10,000",
     "heatingSize3":"10,000-50,000",
@@ -37,24 +37,24 @@
     "heatingOtherAmountHeader":"How many of this building type is used by your school?",
     "heatingOtherResidencyHeader":"If your school provides room and board, what size is the residence building (Sq. Ft.)?",
 
-    "empCommuteHeader":"Employee Commute",
+    "empCommuteHeader":"Employee Commute (optional)",
     "empCommutePara":"Please input the following information for your employees' daily commute:",
     "empCommuteCar":"Car",
     "empCommuteBus":"Bus",
     "empCommuteTrain":"Train",
 
-    "stuCommuteHeader":"Student Commute",
+    "stuCommuteHeader":"Student Commute (optional)",
     "stuCommutePara":"Please input the following information for your employees' daily commute:",
     "stuCommuteGas":"Gasoline",
     "stuCommuteDiesel":"Diesel",
     "stuCommutePropane":"Propane",
     "stuCommuteBus":"How many students commute by city bus?",
-    "stuCommuteDrop":"How many students are usually picked up/dropped off by car?",
+    "stuCommuteDrop":"Approximately how many cars are usually picking up/dropped off students per day?",
     "stuCommuteTrain":"How many students primarily commute by train?",
 
     "otherTransportHeader1":"Other Transportation?",
     "otherTransportPara1":"Please input the information to determine the C02 emissions for transportation other than the sudents' daily commute:",
-    "otherTransportHeader2":"FIELD TRIPS (WITHIN SCHOOL HOURS)",
+    "otherTransportHeader2":"FIELD TRIPS by bus (WITHIN SCHOOL HOURS)",
     "otherTransportGas":"Gasoline",
     "otherTransportDiesel":"Diesel",
     "otherTransportPropane":"Propane",

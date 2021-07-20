@@ -12,6 +12,9 @@ import { usePlugin } from "tinacms";
 import { useState } from "react";
 import Header from "../components/header";
 
+import Accordion from "react-bootstrap/Accordion";
+import Card from 'react-bootstrap/Card';
+
 const Lang = () => {
   var language ="en";
     const router = useRouter();
@@ -48,6 +51,26 @@ const Lang = () => {
   const [selectNum, setNum] = React.useState("");
   const [selectNumTwo, setNumTwo] = React.useState("");
 
+
+  const [selectTypeThree, setTypeThree] = React.useState("");
+  const [selectSizeThree, setSizeThree] = React.useState("");
+  const [selectNumThree, setNumThree] = React.useState("");
+
+
+  const [selectTypeFour, setTypeFour] = React.useState("");
+  const [selectSizeFour, setSizeFour] = React.useState("");
+  const [selectNumFour, setNumFour] = React.useState("");
+
+
+  const [selectTypeFive, setTypeFive] = React.useState("");
+  const [selectSizeFive, setSizeFive] = React.useState("");
+  const [selectNumFive, setNumFive] = React.useState("");
+
+
+  const [selectTypeSix, setTypeSix] = React.useState("");
+  const [selectSizeSix, setSizeSix] = React.useState("");
+  const [selectNumSix, setNumSix] = React.useState("");
+
   let buildSize = null;
   let schoolType = null;
   let schoolNum = 1;
@@ -62,12 +85,54 @@ const Lang = () => {
   let subtotalVehicle = 0;
   let subtotalFlight = 0;
 
+
+  let schoolTypeThree = null;
+  let schoolSizeThree = 1;
+  let schoolNumThree = 1;
+
+
+  let schoolTypeFour = null;
+  let schoolSizeFour = 1;
+  let schoolNumFour = 1;
+
+
+  let schoolTypeFive = null;
+  let schoolSizeFive = 1;
+  let schoolNumFive = 1;
+
+
+  let schoolTypeSix = null;
+  let schoolSizeSix = 1;
+  let schoolNumSix = 1;
+
   buildSize = Number(selectSize);
   schoolType = selectType;
   schoolSize = Number(selectSizeTwo);
   schoolNum = Number(selectNum);
   schoolNumTwo = Number(selectNumTwo);
   buildSizeTwo = Number(selectSizeTwo);
+
+
+
+
+  schoolTypeThree = selectTypeThree;
+  schoolSizeThree = Number(selectSizeThree);
+  schoolNumThree = Number(selectNumThree);
+
+
+  schoolTypeFour = selectTypeFour;
+  schoolSizeFour = Number(selectSizeFour);
+  schoolNumFour = Number(selectNumFour);
+
+
+  schoolTypeFive = selectTypeFive;
+  schoolSizeFive = Number(selectSizeFive);
+  schoolNumFive = Number(selectNumFive);
+
+
+  schoolTypeSix = selectTypeSix;
+  schoolSizeSix = Number(selectSizeSix);
+  schoolNumSix = Number(selectNumSix);
 
   //employee commute
   const [transitArray, setTransitArray] = React.useState({
@@ -93,14 +158,16 @@ const Lang = () => {
   const [vehicleArray, setVehicleArray] = React.useState({
     carGas: {mult:1.22885, miles: null},
     carDiesel: {mult:0.74350344, miles: null},
-    carPropane: {mult:0.897182946, miles: null}
+    carPropane: {mult:0.897182946, miles: null},
+    trainMiles: {mult:0.06214, miles: null}
   });
 
   //other vehicle multiplier
   const [otherVehicleSub, setOtherVehicle] = React.useState(0);
   const [otherVehicleArray, setOtherVehicleArray] = React.useState({
     van: {mult:0.14853, miles: null},
-    car: {mult:0.1743, miles: null}
+    car: {mult:0.1743, miles: null},
+    bus: {mult:1.22885, miles: null}
   });
 
   //flight multiplier
@@ -136,49 +203,89 @@ const Lang = () => {
     setNumTwo(event.target.value);
   }
 
+
+
+  const changeTypeThree = (event) => {
+    setTypeThree(event.target.value);
+  }
+
+  const changeSizeThree = (event) => {
+    setSizeThree(event.target.value);
+  }
+
+  const changeNumThree = (event) => {
+    setNumThree(event.target.value);
+  }
+
+
+
+  const changeTypeFour = (event) => {
+    setTypeFour(event.target.value);
+  }
+
+  const changeSizeFour = (event) => {
+    setSizeFour(event.target.value);
+  }
+
+  const changeNumFour = (event) => {
+    setNumFour(event.target.value);
+  }
+
+
+
+  const changeTypeFive = (event) => {
+    setTypeFive(event.target.value);
+  }
+
+  const changeSizeFive = (event) => {
+    setSizeFive(event.target.value);
+  }
+
+  const changeNumFive = (event) => {
+    setNumFive(event.target.value);
+  }
+
+
+
+  const changeTypeSix = (event) => {
+    setTypeSix(event.target.value);
+  }
+
+  const changeSizeSix = (event) => {
+    setSizeSix(event.target.value);
+  }
+
+  const changeNumSix = (event) => {
+    setNumSix(event.target.value);
+  }
+
+
   /* array using data from the spreadsheet, including multipliers */
 
   const buildArrayTwo = {
-    "5000":{
-      none: 0,
-      office:13701.48346, 
-      industrial:7179.992482,
-      others:16688.30884
-    },
-    "10000":{
-      none: 0,
-      office:28729.24786,
-      industrial:26524.1674,
-      others:33015.65352
-    },
-    "50000":{
-      none: 0,
-      office:85196.594,
-      industrial:67987.73782,
-      others:69144.83022
-
-    },
-    "200000":{
-      none: 0,
-      office:404560.9958,
-      industrial:225304.9042,
-      others:267273.1874
-
-    },
-    "200001":{
-      none: 0,
-      office:1763397.214,
-      industrial:862252.9814,
-      others:1458790.148
-    }
+    "5000":{	"office": 	13701.48346	, "industrial": 	7179.992482	, "others": 	16688.30884	, none:0	},
+"10000":{	"office": 	28729.24786	, "industrial": 	26524.1674	, "others": 	33015.65352	, none:1	},
+"25000":{	"office": 	57458.49571	, "industrial": 	53048.3348	, "others": 	66031.30704	, none:2	},
+"50000":{	"office": 	85196.594	, "industrial": 	67987.73782	, "others": 	69144.83022	, none:3	},
+"75000":{	"office": 	101140.2489	, "industrial": 	56326.22605	, "others": 	66818.29685	, none:4	},
+"100000":{	"office": 	202280.4979	, "industrial": 	112652.4521	, "others": 	133636.5937	, none:5	},
+"125000":{	"office": 	269707.3305	, "industrial": 	150203.2695	, "others": 	178182.1249	, none:6	},
+"150000":{	"office": 	404560.9958	, "industrial": 	225304.9042	, "others": 	267273.1874	, none:7	},
+"200000":{	"office": 	881698.6069	, "industrial": 	431126.4907	, "others": 	729395.0741	, none:8	},
+"200001":{	"office": 	1763397.214	, "industrial": 	862252.9814	, "others": 	1458790.148	, none:9	}
   }
 
   const buildArray = {
-    "5000":	4757.66316,
-    "10000":	50910.79642,
-    "50000":	126421.4294,
-    "200000":	342315.8403,
-    "200001":	1112764.55
+    "5000":	4757.66316	,
+"10000":	50910.79642	,
+"25000":	101821.5928	,
+"50000":	126421.4294	,
+"75000":	85578.96006	,
+"100000":	171157.9201	,
+"125000":	228210.5602	,
+"150000":	342315.8403	,
+"200000":	556382.2751	,
+"200001":	1112764.55	
   }
 
   if (schoolNumTwo)
@@ -204,6 +311,22 @@ const Lang = () => {
       i += Number(buildArrayTwo[buildSizeTwo][schoolType]) * schoolNum
     }
     subtotalBuild = i;
+  }
+
+  if(schoolSizeThree && schoolTypeThree && schoolNumThree) {
+    subtotalBuild += Number(buildArrayTwo[schoolSizeThree][schoolTypeThree]) * schoolNumThree
+  }
+
+  if(schoolSizeFour && schoolTypeFour && schoolNumFour) {
+    subtotalBuild += Number(buildArrayTwo[schoolSizeFour][schoolTypeFour]) * schoolNumFour
+  }
+
+  if(schoolSizeFive && schoolTypeFive && schoolNumFive) {
+    subtotalBuild += Number(buildArrayTwo[schoolSizeFive][schoolTypeFive]) * schoolNumFive
+  }
+
+  if(schoolSizeSix && schoolTypeSix && schoolNumSix) {
+    subtotalBuild += Number(buildArrayTwo[schoolSizeSix][schoolTypeSix]) * schoolNumSix
   }
 
   /* function to calculate the 'vehicle' section */
@@ -338,25 +461,40 @@ const Lang = () => {
                   <label htmlFor="size">{editingdata.heatingSizeHeader}</label><br />
                   <select name="size" value={selectSize} onChange={changeSize}>
                     <option value="" hidden>{editingdata.select}</option>
-                    <option value='5000'>{editingdata.heatingSize1}</option>
-                    <option value='10000'>{editingdata.heatingSize2}</option>
-                    <option value='50000'>{editingdata.heatingSize3}</option>
-                    <option value='200000'>{editingdata.heatingSize3}</option>
-                    <option value='200001'>{editingdata.heatingSize4}</option>
+                  <option value='5000'>less than 5000</option>
+                  <option value='10000'>5000-10,000</option>
+                  <option value='25000'>10,000-25,000</option>
+                  <option value='50000'>25,000-50,000</option>
+                  <option value='75000'>50,000-75,000</option>
+                  <option value='100000'>75,000-100,000</option>
+                  <option value='125000'>100,00-125,000</option>
+                  <option value='150000'>125,000-150,000</option>
+                  <option value='200000'>150,000-200,000</option>
+                  <option value='200000'>200,000+</option>
                   </select>
                 </Col>
               </Row>
               <hr/>
                 <h5 className="smallCaps text-small text-green">{editingdata.heatingOtherHeader}</h5>
+
+                <Accordion>
+
+{/* Alt Building Type 1 */}
+<Card>
+              <Accordion.Toggle as={Card.Header} eventKey="0">
+                Additional Building Type 1
+              </Accordion.Toggle>
+              <Accordion.Collapse eventKey="0">
+                <div>
               <Row>
                 <Col>
                 <label htmlFor="type">{editingdata.heatingOtherTypeHeader}</label><br />
-                <select name="type" value={selectType} onChange={changeType}>
+                <select name="type" value={selectTypeThree} onChange={changeTypeThree}>
                   <option value="" hidden>{editingdata.select}</option>
-                  <option value='none'>{editingdata.heatingOtherType1}"</option>
-                  <option value='office'>{editingdata.heatingOtherType2}"</option>
-                  <option value='industrial'>{editingdata.heatingOtherType3}"</option>
-                  <option value='others'>{editingdata.heatingOtherType4}"</option>
+                  <option value='none'>{editingdata.heatingOtherType1}</option>
+                  <option value='office'>{editingdata.heatingOtherType2}</option>
+                  <option value='industrial'>{editingdata.heatingOtherType3}</option>
+                  <option value='others'>{editingdata.heatingOtherType4}</option>
                 </select>
                 </Col>
               </Row>
@@ -364,13 +502,18 @@ const Lang = () => {
               <Row>
                 <Col>
                 <label htmlFor="size">{editingdata.heatingOtherSizeHeader}</label><br />
-                <select name="size" value={selectSizeTwo} onChange={changeSizeTwo}>
+                <select name="size" value={selectSizeThree} onChange={changeSizeThree}>
                   <option value="" hidden>{editingdata.select}</option>
-                  <option value='5000'>{editingdata.heatingOtherSize1}</option>
-                  <option value='10000'>{editingdata.heatingOtherSize2}</option>
-                  <option value='50000'>{editingdata.heatingOtherSize3}</option>
-                  <option value='200000'>{editingdata.heatingOtherSize4}</option>
-                  <option value='200001'>{editingdata.heatingOtherSize5}</option>
+                  <option value='5000'>less than 5000</option>
+                  <option value='10000'>5000-10,000</option>
+                  <option value='25000'>10,000-25,000</option>
+                  <option value='50000'>25,000-50,000</option>
+                  <option value='75000'>50,000-75,000</option>
+                  <option value='100000'>75,000-100,000</option>
+                  <option value='125000'>100,00-125,000</option>
+                  <option value='150000'>125,000-150,000</option>
+                  <option value='200000'>150,000-200,000</option>
+                  <option value='200000'>200,000+</option>
                 </select>
                 </Col>
               </Row>
@@ -378,12 +521,178 @@ const Lang = () => {
               <Row>
                 <Col>
                   <label htmlFor="type">{editingdata.heatingOtherAmountHeader}</label><br />
-                  <input onChange={changeNum} name="type" type="number" min="0" onKeyPress={
+                  <input onChange={changeNumThree} name="type" type="number" min="0" onKeyPress={
                     (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                   }  placeholder={editingdata.placeholder1} />
                 </Col>
               </Row>
 
+              </div>
+
+              </Accordion.Collapse>
+         </Card>
+         
+         {/* Alt Building Type 2 */}
+<Card>
+              <Accordion.Toggle as={Card.Header} eventKey="1">
+              Additional Building Type 2
+              </Accordion.Toggle>
+              <Accordion.Collapse eventKey="1">
+                <div>
+              <Row>
+                <Col>
+                <label htmlFor="type">{editingdata.heatingOtherTypeHeader}</label><br />
+                <select name="type" value={selectTypeFour} onChange={changeTypeFour}>
+                  <option value="" hidden>{editingdata.select}</option>
+                  <option value='none'>{editingdata.heatingOtherType1}</option>
+                  <option value='office'>{editingdata.heatingOtherType2}</option>
+                  <option value='industrial'>{editingdata.heatingOtherType3}</option>
+                  <option value='others'>{editingdata.heatingOtherType4}</option>
+                </select>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                <label htmlFor="size">{editingdata.heatingOtherSizeHeader}</label><br />
+                <select name="size" value={selectSizeFour} onChange={changeSizeFour}>
+                  <option value="" hidden>{editingdata.select}</option>
+                  <option value='5000'>less than 5000</option>
+                  <option value='10000'>5000-10,000</option>
+                  <option value='25000'>10,000-25,000</option>
+                  <option value='50000'>25,000-50,000</option>
+                  <option value='75000'>50,000-75,000</option>
+                  <option value='100000'>75,000-100,000</option>
+                  <option value='125000'>100,00-125,000</option>
+                  <option value='150000'>125,000-150,000</option>
+                  <option value='200000'>150,000-200,000</option>
+                  <option value='200000'>200,000+</option>
+                </select>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="type">{editingdata.heatingOtherAmountHeader}</label><br />
+                  <input onChange={changeNumFour} name="type" type="number" min="0" onKeyPress={
+                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                  }  placeholder={editingdata.placeholder1} />
+                </Col>
+              </Row>
+
+              </div>
+
+              </Accordion.Collapse>
+         </Card>
+ 
+ {/* Alt Building Type 3 */}
+<Card>
+              <Accordion.Toggle as={Card.Header} eventKey="2">
+              Additional Building Type 3
+              </Accordion.Toggle>
+              <Accordion.Collapse eventKey="2">
+                <div>
+              <Row>
+                <Col>
+                <label htmlFor="type">{editingdata.heatingOtherTypeHeader}</label><br />
+                <select name="type" value={selectTypeFive} onChange={changeTypeFive}>
+                  <option value="" hidden>{editingdata.select}</option>
+                  <option value='none'>{editingdata.heatingOtherType1}</option>
+                  <option value='office'>{editingdata.heatingOtherType2}</option>
+                  <option value='industrial'>{editingdata.heatingOtherType3}</option>
+                  <option value='others'>{editingdata.heatingOtherType4}</option>
+                </select>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                <label htmlFor="size">{editingdata.heatingOtherSizeHeader}</label><br />
+                <select name="size" value={selectSizeFive} onChange={changeSizeFive}>
+                  <option value="" hidden>{editingdata.select}</option>
+                  <option value='5000'>less than 5000</option>
+                  <option value='10000'>5000-10,000</option>
+                  <option value='25000'>10,000-25,000</option>
+                  <option value='50000'>25,000-50,000</option>
+                  <option value='75000'>50,000-75,000</option>
+                  <option value='100000'>75,000-100,000</option>
+                  <option value='125000'>100,00-125,000</option>
+                  <option value='150000'>125,000-150,000</option>
+                  <option value='200000'>150,000-200,000</option>
+                  <option value='200000'>200,000+</option>
+                </select>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="type">{editingdata.heatingOtherAmountHeader}</label><br />
+                  <input onChange={changeNumFive} name="type" type="number" min="0" onKeyPress={
+                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                  }  placeholder={editingdata.placeholder1} />
+                </Col>
+              </Row>
+
+              </div>
+
+              </Accordion.Collapse>
+         </Card>
+ 
+ {/* Alt Building Type 4 */}
+ <Card>
+              <Accordion.Toggle as={Card.Header} eventKey="3">
+              Additional Building Type 4
+              </Accordion.Toggle>
+              <Accordion.Collapse eventKey="3">
+                <div>
+              <Row>
+                <Col>
+                <label htmlFor="type">{editingdata.heatingOtherTypeHeader}</label><br />
+                <select name="type" value={selectTypeSix} onChange={changeTypeSix}>
+                  <option value="" hidden>{editingdata.select}</option>
+                  <option value='none'>{editingdata.heatingOtherType1}</option>
+                  <option value='office'>{editingdata.heatingOtherType2}</option>
+                  <option value='industrial'>{editingdata.heatingOtherType3}</option>
+                  <option value='others'>{editingdata.heatingOtherType4}</option>
+                </select>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                <label htmlFor="size">{editingdata.heatingOtherSizeHeader}</label><br />
+                <select name="size" value={selectSizeSix} onChange={changeSizeSix}>
+                  <option value="" hidden>{editingdata.select}</option>
+                  <option value='5000'>less than 5000</option>
+                  <option value='10000'>5000-10,000</option>
+                  <option value='25000'>10,000-25,000</option>
+                  <option value='50000'>25,000-50,000</option>
+                  <option value='75000'>50,000-75,000</option>
+                  <option value='100000'>75,000-100,000</option>
+                  <option value='125000'>100,00-125,000</option>
+                  <option value='150000'>125,000-150,000</option>
+                  <option value='200000'>150,000-200,000</option>
+                  <option value='200000'>200,000+</option>
+                </select>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="type">{editingdata.heatingOtherAmountHeader}</label><br />
+                  <input onChange={changeNumSix} name="type" type="number" min="0" onKeyPress={
+                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                  }  placeholder={editingdata.placeholder1} />
+                </Col>
+              </Row>
+
+              </div>
+
+              </Accordion.Collapse>
+         </Card>
+ 
+
+         </Accordion>
               <Row>
                 <Col>
                   <label htmlFor="energy">{editingdata.heatingOtherResidencyHeader}</label>
@@ -394,7 +703,6 @@ const Lang = () => {
                 </Col>
               </Row> 
             </div>
-
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
                 <Col>
@@ -449,7 +757,7 @@ const Lang = () => {
               <Row>
                 <Col>
                   <h3 className="text-green">{editingdata.stuCommuteHeader}</h3>
-                  <p className="text-grey">{editingdata.stuCommutePara}</p>
+                  <p className="text-grey">Please input the following information for your students' daily school bus commute (daily round trips):</p>
                 </Col>
               </Row>
               <Row>
@@ -491,6 +799,7 @@ const Lang = () => {
                   }  placeholder={editingdata.placeholder4} />
                 </Col>
               </Row>
+              <hr/>
               <Row>
                 <Col className="col-12">
                   <label htmlFor="type">{editingdata.stuCommuteBus}</label>
@@ -575,6 +884,17 @@ const Lang = () => {
                       }  placeholder={editingdata.placeholder8} />
                     </Col>
                   </Row>
+                 
+                  <hr/>
+                  <h5 className="smallCaps text-small text-green">Field trips by train (WITHIN SCHOOL HOURS)</h5>
+                  <Row>
+                    <Col className="col-10 col-xl-4">Train</Col>
+                    <Col className="col-6 col-xl-4">
+                      <input onChange={calculateMiles} name="trainMiles" type="number" min="0" onKeyPress={
+                        (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                      }  placeholder={editingdata.placeholder8} />
+                    </Col>
+                  </Row>
                 </Col>
               </Row>
             </div>
@@ -596,6 +916,14 @@ const Lang = () => {
                     <Col  className="col-10 col-xl-4">{editingdata.otherVehicleCar}</Col>
                     <Col className="col-6 col-xl-4">
                       <input onChange={calculateOtherTransitMiles} name="car" type="number" min="0" onKeyPress={
+                        (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                      }  placeholder={editingdata.placeholder8} />
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col  className="col-10 col-xl-4">Bus (gas)</Col>
+                    <Col className="col-6 col-xl-4">
+                      <input onChange={calculateOtherTransitMiles} name="bus" type="number" min="0" onKeyPress={
                         (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                       }  placeholder={editingdata.placeholder8} />
                     </Col>
@@ -640,30 +968,6 @@ const Lang = () => {
               </Row>
             </div>
 
-            <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
-              <Row>
-                <Col className="col-12">
-                  <h3 className="text-green">{editingdata.otherVehicleHeader}</h3>
-                  <hr/>
-                <Row>
-                  <Col className="col-12 col-xl-4">{editingdata.otherVehicleVan}</Col>
-                  <Col className="col-xl-4">
-                    <input onChange={calculateOtherTransitMiles} name="carGas" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }  placeholder={editingdata.placeholder8} />
-                  </Col>
-                </Row>
-                <Row>
-                  <Col  className="col-10 col-xl-4">{editingdata.otherVehicleCar}</Col>
-                    <Col className="col-6 col-xl-4">
-                      <input onChange={calculateOtherTransitMiles} name="carDiesel" type="number" min="0" onKeyPress={
-                        (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                      }  placeholder={editingdata.placeholder8} />
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
-            </div>
 
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
