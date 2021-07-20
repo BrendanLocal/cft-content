@@ -1863,7 +1863,7 @@ span.authorTitle {
 .calc-btn {
   position: absolute;
   bottom: 4%;
-  width: 84%;
+  width: 83%;
 }
 
 .calculate-card:hover {
@@ -1916,6 +1916,8 @@ span.authorTitle {
   background-position: 50% 100%;
   background-repeat: no-repeat;
   background-size: 100%;
+  z-index: -99;
+  position: relative; 
 }
 
 /* Our Smart Forests Cards */
