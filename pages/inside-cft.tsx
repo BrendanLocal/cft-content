@@ -20,6 +20,8 @@ import {
 } from "react-tinacms-github";
 import Header from "../components/header";
 
+import ReactPlayer from 'react-player'
+
 export default function Power({ file }) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -226,6 +228,21 @@ export default function Power({ file }) {
                 <Button variant="green">{editingdata.part1_button}</Button>
               </Col>
             </Row>
+        </Container>
+
+        <Container fluid id="video" className="bg-green">
+        <Row className="justify-content-center align-items-center ps-lg-4 ms-lg-4">
+            <Col className="col-12 col-lg-5 d-flex ms-lg-4 mb-2 nudge">
+            
+            <ReactPlayer playing playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4'/>
+           
+            </Col>
+            <Col className="col-12 col-lg-3 d-flex ms-lg-4 mb-2 nudge">
+              <p className="text-white">
+              CFT was established by Gary Zed, an entrepreneur with a reputation for taking on tough challenges and getting things done. A leader with a national vision, Gary heads up a team that is committed to making CFT the most talked about climate success story in the decades ahead.
+              </p>
+            </Col>
+          </Row>
         </Container>
 
         <Container fluid id="team" className="bg-brown innerShadow-heavy py-6">
