@@ -4,22 +4,17 @@ import Link from 'next/link'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import ImageUpload from 'image-upload-react'
+
 
 const DigitalSign = ()=> {
-
-  const [imageSrc, setImageSrc] = useState("")
- 
-  const handleImageSelect = (e) => {
-    setImageSrc(URL.createObjectURL(e.target.files[0]))
-  }
-
   const [forestName, setForestName] = React.useState("");
   const [forestAcres, setForestAcres] = React.useState(0);
-  const [logoImage, setLogoImage] = React.useState("");
   const [selectCopy, setCopy] = React.useState("");
   const [selectBG, setBG] = React.useState("signbg_forest.jpg");
-  
+  const [selectLogo, setLogo] = React.useState("");
+  const logoUpload = (event) => { 
+    setLogo(event.target.value);
+  };
   
   const changeCopy = (event) => {
     setCopy(event.target.value);
@@ -66,13 +61,6 @@ const DigitalSign = ()=> {
             <option value="signbg_forest.jpg">Spring</option>
             <option value="signbg_green.jpg">Summer</option>
           </select>
-          <label htmlFor="forest-name">Upload an image for your sign</label>
-          <div className="upload-button">
-          <ImageUpload
-            handleImageSelect={handleImageSelect}
-            setImageSrc={setImageSrc}
-          />
-          </div>
         </Col>
         <Col className="col-10 col-md-8 col-lg-6 col-xl-5 signImagebuilder pe-lg-0">
           <div className="signImageContainer">
