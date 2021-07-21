@@ -1,38 +1,272 @@
-import React, { useState, useRef, useEffect } from 'react';
-import Head from 'next/head'
-import Fade from 'react-reveal/Fade';
-import Link from 'next/link'
-import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
-import { GetStaticProps } from 'next'
-import { usePlugin } from 'tinacms'
-import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-import Carousel from 'react-bootstrap/Carousel';
-import Rellax from "rellax";
-import Parallax from 'parallax-js'
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Slide } from 'react-slideshow-image';
+import React, { useState, useRef, useEffect } from"react";
+import Head from"next/head";
+import Dropdown from "react-bootstrap/Dropdown";
+import Fade from"react-reveal/Fade";
+import Link from"next/link";
+import { getGithubPreviewProps, parseJson } from"next-tinacms-github";
+import { GetStaticProps } from"next";
+import { usePlugin } from"tinacms";
+import Image from "react-bootstrap/Image"; 
+import Container from"react-bootstrap/Container";
+import Row from"react-bootstrap/Row";
+import Col from"react-bootstrap/Col";
+import Button from"react-bootstrap/Button";
+import Carousel from"react-bootstrap/Carousel";
+import Rellax from"rellax";
+import Parallax from"parallax-js";
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from"swiper";
+import { Swiper, SwiperSlide } from"swiper/react";
+import { Slide } from"react-slideshow-image";
+import ReactMarkdown from"react-markdown";
+import {
+  useGithubJsonForm,
+  useGithubToolbarPlugins,
+} from"react-tinacms-github";
+import DigitalSign from "../components/digitalSign";
+import { useRouter } from "next/router";
+import ScrollableAnchor from "react-scrollable-anchor";
+import Header from "../components/header";
+import PDFViewer from '../components/PDFViewer';
+
+import PDFJSBackend from '../middlewares/pdfjs';
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 export default function Build({ file }) {
 
-const formOptions = {
-label: 'Build Your Forest',
-fields: [{ name: 'title', component: 'text' }],
-}
+  const Lang = () => {
+    var language ="en";
+      const router = useRouter();
+      if(router.query.lang){ 
+      const lan = JSON.stringify(router.query.lang);
+      language = JSON.parse(lan)
+      }
+      return (language)
+    } 
 
-const [editingdata, form] = useGithubJsonForm(file, formOptions)
-usePlugin(form)
-useGithubToolbarPlugins()
+  const formOptions = {
+    label:"Build Your Forest",
+    fields: [
+      {name: 'pageName', component: 'markdown' },
+      {name: 'pageURL', component: 'markdown' },
+      {name: 'title', component: 'markdown' },
+      {name: 'buildForest', component: 'markdown' },
+      {name: 'menu1', component: 'markdown' },
+      {name: 'menu2', component: 'markdown' },
+      {name: 'menu3', component: 'markdown' },
+      {name: 'menu4', component: 'markdown' },
+      {name: 'menu5', component: 'markdown' },
+      {name: 'menu6', component: 'markdown' },
+      {name: 'menu7', component: 'markdown' },
+      {name: 'step1', component: 'markdown' },
+      {name: 'step2', component: 'markdown' },
+      {name: 'step3', component: 'markdown' },
+      {name: 'testimonials', component: 'markdown' },
+      {name: 'benefits', component: 'markdown' },
+      {name: 'learnMore', component: 'markdown' },
+      {name: 'watchVideo', component: 'markdown' },
+      {name: 'startBuilding', component: 'markdown' },
+      {name: 'tryIt', component: 'markdown' },
+      {name: 'part1_header1', component: 'markdown' },
+      {name: 'part1_para1', component: 'markdown' },
+      {name: 'part1_header2', component: 'markdown' },
+      {name: 'part1_menu1', component: 'markdown' },
+      {name: 'part1_menu2', component: 'markdown' },
+      {name: 'part2_header3', component: 'markdown' },
+      {name: 'part2_para2', component: 'markdown' },
+      {name: 'part2_step1header1', component: 'markdown' },
+      {name: 'part2_step1para1', component: 'markdown' },
+      {name: 'part2_step1box1', component: 'markdown' },
+      {name: 'part2_step1box2', component: 'markdown' },
+      {name: 'part2_step2header1', component: 'markdown' },
+      {name: 'part2_step2para1', component: 'markdown' },
+      {name: 'part2_step2box1', component: 'markdown' },
+      {name: 'part2_step2box2', component: 'markdown' },
+      {name: 'part2_step3header1', component: 'markdown' },
+      {name: 'part2_step3para1', component: 'markdown' },
+      {name: 'part2_step3box1', component: 'markdown' },
+      {name: 'part2_step3box2', component: 'markdown' },
+      {name: 'part2_step4header1', component: 'markdown' },
+      {name: 'part2_step4para1', component: 'markdown' },
+      {name: 'part2_step4box1', component: 'markdown' },
+      {name: 'part2_step4box2', component: 'markdown' },
+      {name: 'part2_step5header1', component: 'markdown' },
+      {name: 'part2_step5para1', component: 'markdown' },
+      {name: 'part2_step5box1', component: 'markdown' },
+      {name: 'part2_step5box2', component: 'markdown' },
+      {name: 'part3_header1', component: 'markdown' },
+      {name: 'part3_para1', component: 'markdown' },
+      {name: 'part3_box1header1', component: 'markdown' },
+      {name: 'part3_box1para1', component: 'markdown' },
+      {name: 'part3_box2header1', component: 'markdown' },
+      {name: 'part3_box2para1', component: 'markdown' },
+      {name: 'part3_box3header1', component: 'markdown' },
+      {name: 'part3_box3para1', component: 'markdown' },
+      {name: 'part3_box4header1', component: 'markdown' },
+      {name: 'part3_box4para1', component: 'markdown' },
+      {name: 'part3_box5header1', component: 'markdown' },
+      {name: 'part3_box5para1', component: 'markdown' },
+      {name: 'part3_box5button', component: 'markdown' },
+      {name: 'corp_header1', component: 'markdown' },
+      {name: 'corp_menu1', component: 'markdown' },
+      {name: 'corp_menu2', component: 'markdown' },
+      {name: 'corp_menu3', component: 'markdown' },
+      {name: 'corp_menu4', component: 'markdown' },
+      {name: 'corp_para1', component: 'markdown' },
+      {name: 'corp_para2', component: 'markdown' },
+      {name: 'corp_button1', component: 'markdown' },
+      {name: 'corp_para3', component: 'markdown' },
+      {name: 'corp_box1header', component: 'markdown' },
+      {name: 'corp_box1para', component: 'markdown' },
+      {name: 'corp_box1button', component: 'markdown' },
+      {name: 'corp_box2header', component: 'markdown' },
+      {name: 'corp_box2para', component: 'markdown' },
+      {name: 'corp_box2button', component: 'markdown' },
+      {name: 'corp_box3header', component: 'markdown' },
+      {name: 'corp_box3para', component: 'markdown' },
+      {name: 'corp_box3button', component: 'markdown' },
+      {name: 'corp_quote1para', component: 'markdown' },
+      {name: 'corp_quote1name', component: 'markdown' },
+      {name: 'corp_quote1title', component: 'markdown' },
+      {name: 'corp_quote2para', component: 'markdown' },
+      {name: 'corp_quote2name', component: 'markdown' },
+      {name: 'corp_quote2tile', component: 'markdown' },
+      {name: 'corp_header2', component: 'markdown' },
+      {name: 'corp_para4', component: 'markdown' },
+      {name: 'corp_pointsheader', component: 'markdown' },
+      {name: 'corp_pointspara1', component: 'markdown' },
+      {name: 'corp_pointspara2', component: 'markdown' },
+      {name: 'corp_pointspara3', component: 'markdown' },
+      {name: 'corp_pointspara4', component: 'markdown' },
+      {name: 'corp_pointspara5', component: 'markdown' },
+      {name: 'corp_header3', component: 'markdown' },
+      {name: 'corp_para5', component: 'markdown' },
+      {name: 'corp_button', component: 'markdown' },
+      {name: 'corp_calcbox1header', component: 'markdown' },
+      {name: 'corp_calcbox1para', component: 'markdown' },
+      {name: 'corp_calcbox1button', component: 'markdown' },
+      {name: 'corp_calcbox2header', component: 'markdown' },
+      {name: 'corp_calcbox2para', component: 'markdown' },
+      {name: 'corp_calcbox2button', component: 'markdown' },
+      {name: 'school_header1', component: 'markdown' },
+      {name: 'school_menu1', component: 'markdown' },
+      {name: 'school_menu2', component: 'markdown' },
+      {name: 'school_menu3', component: 'markdown' },
+      {name: 'school_menu4', component: 'markdown' },
+      {name: 'school_para1', component: 'markdown' },
+      {name: 'school_para2', component: 'markdown' },
+      {name: 'school_button1', component: 'markdown' },
+      {name: 'school_para3', component: 'markdown' },
+      {name: 'school_box1header', component: 'markdown' },
+      {name: 'school_box1para', component: 'markdown' },
+      {name: 'school_box1button', component: 'markdown' },
+      {name: 'school_box2header', component: 'markdown' },
+      {name: 'school_box2para', component: 'markdown' },
+      {name: 'school_box2button', component: 'markdown' },
+      {name: 'school_box3header', component: 'markdown' },
+      {name: 'school_box3para', component: 'markdown' },
+      {name: 'school_box3button', component: 'markdown' },
+      {name: 'school_quote1para', component: 'markdown' },
+      {name: 'school_quote1name', component: 'markdown' },
+      {name: 'school_quote1title', component: 'markdown' },
+      {name: 'school_quote2para', component: 'markdown' },
+      {name: 'school_quote2name', component: 'markdown' },
+      {name: 'school_quote2tile', component: 'markdown' },
+      {name: 'school_header2', component: 'markdown' },
+      {name: 'school_para4', component: 'markdown' },
+      {name: 'school_pointsheader', component: 'markdown' },
+      {name: 'school_pointspara1', component: 'markdown' },
+      {name: 'school_pointspara2', component: 'markdown' },
+      {name: 'school_pointspara3', component: 'markdown' },
+      {name: 'school_pointspara4', component: 'markdown' },
+      {name: 'school_pointspara5', component: 'markdown' },
+      {name: 'school_header3', component: 'markdown' },
+      {name: 'school_para5', component: 'markdown' },
+      {name: 'school_button', component: 'markdown' },
+      {name: 'school_calcbox1header', component: 'markdown' },
+      {name: 'school_calcbox1para', component: 'markdown' },
+      {name: 'school_calcbox1button', component: 'markdown' },
+      {name: 'school_calcbox2header', component: 'markdown' },
+      {name: 'school_calcbox2para', component: 'markdown' },
+      {name: 'school_calcbox2button', component: 'markdown' },
+      {name: 'part6_header1', component: 'markdown' },
+      {name: 'part6_menu1', component: 'markdown' },
+      {name: 'part6_menu2', component: 'markdown' },
+      {name: 'part6_menu3', component: 'markdown' },
+      {name: 'part6_menu4', component: 'markdown' },
+      {name: 'part6_para1', component: 'markdown' },
+      {name: 'part6_para2', component: 'markdown' },
+      {name: 'part6_button1', component: 'markdown' },
+      {name: 'part6_para3', component: 'markdown' },
+      {name: 'part6_quote1para', component: 'markdown' },
+      {name: 'part6_quote1name', component: 'markdown' },
+      {name: 'part6_quote1title', component: 'markdown' },
+      {name: 'part6_quote2para', component: 'markdown' },
+      {name: 'part6_quote2name', component: 'markdown' },
+      {name: 'part6_quote2tile', component: 'markdown' },
+      {name: 'part6_header2', component: 'markdown' },
+      {name: 'part6_para4', component: 'markdown' },
+      {name: 'part6_pointsheader', component: 'markdown' },
+      {name: 'part6_pointspara1', component: 'markdown' },
+      {name: 'part6_pointspara2', component: 'markdown' },
+      {name: 'part6_pointspara3', component: 'markdown' },
+      {name: 'part6_pointspara4', component: 'markdown' },
+      {name: 'part6_pointspara5', component: 'markdown' },
+      {name: 'part6_pointspara6', component: 'markdown' },
+      {name: 'part6_header3', component: 'markdown' },
+      {name: 'part6_button', component: 'markdown' },
+      {name: 'part6_calcbox1header', component: 'markdown' },
+      {name: 'part6_calcbox1para', component: 'markdown' },
+      {name: 'part6_calcbox1button', component: 'markdown' },
+      {name: 'part6_calcbox2header', component: 'markdown' },
+      {name: 'part6_calcbox2para', component: 'markdown' },
+      {name: 'part6_calcbox2button', component: 'markdown' },
+      {name: 'part7_header1', component: 'markdown' },
+      {name: 'part7_menu1', component: 'markdown' },
+      {name: 'part7_menu2', component: 'markdown' },
+      {name: 'part7_menu3', component: 'markdown' },
+      {name: 'part7_menu4', component: 'markdown' },
+      {name: 'part7_para1', component: 'markdown' },
+      {name: 'part7_para2', component: 'markdown' },
+      {name: 'part7_button1', component: 'markdown' },
+      {name: 'part7_para3', component: 'markdown' },
+      {name: 'part7_quote1para', component: 'markdown' },
+      {name: 'part7_quote1name', component: 'markdown' },
+      {name: 'part7_quote1title', component: 'markdown' },
+      {name: 'part7_quote2para', component: 'markdown' },
+      {name: 'part7_quote2name', component: 'markdown' },
+      {name: 'part7_quote2tile', component: 'markdown' },
+      {name: 'part7_header2', component: 'markdown' },
+      {name: 'part7_para4', component: 'markdown' },
+      {name: 'part7_pointsheader', component: 'markdown' },
+      {name: 'part7_pointspara1', component: 'markdown' },
+      {name: 'part7_pointspara2', component: 'markdown' },
+      {name: 'part7_pointspara3', component: 'markdown' },
+      {name: 'part7_pointspara4', component: 'markdown' },
+      {name: 'part7_header3', component: 'markdown' },
+      {name: 'part7_para5', component: 'markdown' },
+      {name: 'part7_button', component: 'markdown' },
+      {name: 'part7_calcbox1header', component: 'markdown' },
+      {name: 'part7_calcbox1para', component: 'markdown' },
+      {name: 'part7_calcbox1button', component: 'markdown' },
+      {name: 'part7_calcbox2header', component: 'markdown' },
+      {name: 'part7_calcbox2para', component: 'markdown' },
+      {name: 'part7_calcbox2button', component: 'markdown' },
+      {name: 'part8_box1header', component: 'markdown' },
+      {name: 'part8_box1para', component: 'markdown' },
+      {name: 'part8_box2header', component: 'markdown' },
+      {name: 'part8_box2para', component: 'markdown' },
+      {name: 'part8_box3header', component: 'markdown' },
+      {name: 'part8_box3para', component: 'markdown' }],
+  };
 
-const slideProperties = {
-indicators: i => (<span className="sliderDot" />)
-}
+  const [editingdata, form] = useGithubJsonForm(file, formOptions);
+  usePlugin(form);
+  useGithubToolbarPlugins();
+
+  const slideProperties = {
+    indicators: (i) => <span className="sliderDot" />,
+  };
 
   const [index, setIndex] = useState(0);
 
@@ -41,1183 +275,1067 @@ indicators: i => (<span className="sliderDot" />)
   };
 
   useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        const id = entry.target.getAttribute('id');
-        if (entry.intersectionRatio > 0.0 ) {
-          if (document.querySelector(`.left-sidenav li[data-dest="#${id}"]`)){
-            document.querySelector(`.left-sidenav li[data-dest="#${id}"]`).classList.add('active');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const id = entry.target.getAttribute("id");
+        if (entry.intersectionRatio > 0.0) {
+          if (document.querySelector(`.left-sidenav li[data-dest="#${id}"]`)) {
+            document.querySelector(`.left-sidenav li[data-dest="#${id}"]`).classList.add("active");
           }
         } else {
-          if (document.querySelector(`.left-sidenav li[data-dest="#${id}"]`)){
-            document.querySelector(`.left-sidenav li[data-dest="#${id}"]`).classList.remove('active');
+          if (document.querySelector(`.left-sidenav li[data-dest="#${id}"]`)) {
+            document.querySelector(`.left-sidenav li[data-dest="#${id}"]`).classList.remove("active");
           }
         }
       });
     });
-    
+
     // Track all div containers that have an `id` applied
-    document.querySelectorAll('div[id]').forEach((id) => {
-      observer.observe(id);});
-  },[]);
+    document.querySelectorAll("div[id]").forEach((id) => {
+      observer.observe(id);
+    });
+  }, []);
 
-return (
+  return (
+    <div>
 
-<div>
+<Header/>
+      <Head>
+        <title>{editingdata.title}</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content="#054218"></meta>
+      </Head>
 
-  <Head>
-    <title>Canada's Forest Trust</title>
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="theme-color" content="#054218">
-    </meta>
-  </Head>
-
-  <Row className="justify-content-left p-0 m-0 d-none d-lg-block d-xl-block">
+      <Row className="justify-content-left p-0 m-0 d-none d-lg-block d-xl-block">
         <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
-          <p className="text-white mx-2 mt-0 mb-0 bold op-6 pe-5">BUILD YOUR SMART FOREST</p>
+          <p className="text-white mx-2 mt-0 mb-0 bold op-6 pe-5 caps">
+            {editingdata.pageName}
+          </p>
           <ul>
             <li className="p-0" data-dest="#intro">
               <a href="#intro" className="text-white bold no-underline">
-               INTRO
+                {editingdata.menu1}
               </a>
             </li>
             <li className="p-0" data-dest="#the-plan">
               <a href="#the-plan" className="text-white bold no-underline">
-                THE PLAN
+                {editingdata.menu2}
               </a>
             </li>
-            <li className="p-0" data-dest="#our-forests">             
+            <li className="p-0" data-dest="#our-forests">
               <a href="#our-forests" className="text-white bold no-underline">
-                OUR FORESTS
+                {editingdata.menu3}
               </a>
             </li>
-            <li className="p-0" data-dest="#corporate">             
+            <li className="p-0" data-dest="#corporate">
               <a href="#corporate" className="text-white bold no-underline">
-                CORPORATE
+                {editingdata.menu4}
               </a>
             </li>
-            <li className="p-0" data-dest="#school">             
+            <li className="p-0" data-dest="#school">
               <a href="#school" className="text-white bold no-underline">
-                SCHOOL
+                {editingdata.menu5}
               </a>
             </li>
-            <li className="p-0" data-dest="#legacy">             
+            <li className="p-0" data-dest="#legacy">
               <a href="#legacy" className="text-white bold no-underline">
-                LEGACY
+                {editingdata.menu6}
               </a>
             </li>
-            <li className="p-0" data-dest="#communal">             
+            <li className="p-0" data-dest="#communal">
               <a href="#communal" className="text-white bold no-underline">
-                COMMUNAL
+                {editingdata.menu7}
               </a>
             </li>
-          </ul>        
+          </ul>
         </Col>
       </Row>
 
       <main className="bg-green py-5">
-    <Container id="intro" className="bg-green py-5 px-5">
-      <Row className="justify-content-center d-flex pb-5 mb-5 py-5 px-5">
-        
-        <Col className="col-12 col-lg-5 stickyTop mb-5 p-3">
-         
-       <object type="image/svg+xml" data="/build2-svg.svg"/>
-        </Col> 
-      
-      <Col className="col-12 col-lg-5 text-white p-4 pb-0 intro-order">
-        <h1 className="text-orange mb-5 bold">
-        Build Your Smart Forest™
-        </h1>
-        <p className="large my-5 op-9">An opportunity for youth, individuals, families, farmers, landowners, Indigenous communities, and corporate Canada to come together to build a better environment and achieve a net-zero future.</p>
-        
-
-        <p className="text-white text-left smallcaps intro-links-header op-5 mt-4 mb-3">ON THIS PAGE</p>
-        <a href="#the-plan" className="btn btn-text text-left intro-links text-orange bold no-underline ">The Smart Forest Action Plan</a>
-              <a href="#our-forests" className="btn btn-text text-left text-orange intro-links  no-underline">Our Smart Forests</a>
-
-        </Col>               
-      </Row>
-    </Container>
-
-
-    <Container id="the-plan" className="v-full z-999 bg-green p-5">
-    <Fade bottom>
-      <Row className="justify-content-center align-items-center my-4">
-        <Col className="col-sm-11 col-md-10 col-lg-9 text-center text-white">
-        <h2 className=" text-orange bold mb-2">CFT’s Smart Forest Action Plan</h2>
-        <p className="medium mt-0 mb-0 px-lg-4 mb-2">When you invest in a Smart Forest, we keep you  informed on its progress - from site selection to planting to ongoing maintenance and carbon and biodiversity footprint impact. CFT manages the forest landscape from the moment you buy your forest.</p>
-        </Col>
-      </Row>
-      </Fade>
-      <Fade bottom>
-      <Row className="justify-content-center align-items-center px-3">
-        
-        <Carousel className="col-12 col-md-12 col-lg-11 col-xl-10  d-flex bg-brown roundedBox innerShadow-heavy px-0" activeIndex={index} onSelect={handleSelect} nextIcon={<span aria-hidden="false" className="carousel-control-next-icon" />} nextLabel="" prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" />} prevLabel="" > 
-          
-          <Carousel.Item interval={500000}>
-          <div className="d-block w-100 phases"></div>
-            <Carousel.Caption>
-              
-            </Carousel.Caption>
-          </Carousel.Item>
-
-          <Carousel.Item interval={100000}>
-          <div className="d-block w-100 phase1"></div>
-            <Carousel.Caption className="col-9 col-md-8 col-lg-6 col-xl-4">
-              <h3 className="smallCaps text-left tight-drop bold mb-1">PROCURE</h3>
-              <p className="h3 text-left tight-drop mb-4">Acquire land across Canada.</p>
-              
-              <div className="card card-drop no-border bg-white px-4 py-2 op-8 mb-2 ">
-                <ul className="text-grey text-left checkMark pe-3 pb-0">
-                  <li className="pb-0">Identify appropriate areas for Smart Forests across Canada</li>
-                </ul>
-              </div>
-
-              <div className="card card-drop no-border bg-white px-4 py-2 op-8">
-                <ul className="text-grey text-left checkMark pe-3 pb-0">
-                <li className="pb-0">Secure seedlings that will thrive in the local environment</li>
-                </ul>
-              </div>
-            </Carousel.Caption>
-          </Carousel.Item>
-          
-          <Carousel.Item interval={100000}>
-          <div className="d-block w-100 phase2 " ></div>
-            <Carousel.Caption className="col-9 col-md-8 col-lg-6 col-xl-4">
-              <h3 className="smallCaps text-left tight-drop bold mb-1">PREPARE</h3>
-              <p className="h3 text-left tight-drop mb-4">Assess, plan, and complete site preparation for planting.</p>
-              
-              <div className="card card-drop no-border bg-white px-4 py-2 op-8 mb-2 ">
-                <ul className="text-grey text-left checkMark pe-3 pb-0">
-                  <li className="pb-0">Identify appropriate areas for Smart Forests across Canada</li>
-                </ul>
-              </div>
-
-              <div className="card card-drop no-border bg-white px-4 py-2 op-8">
-                <ul className="text-grey text-left checkMark pe-3 pb-0">
-                <li className="pb-0">Secure seedlings that will thrive in the local environment</li>
-                </ul>
-              </div>
-            
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item interval={100000}>
-          <div className="d-block w-100 phase3 " ></div>
-            <Carousel.Caption className="col-9 col-md-8 col-lg-6 col-xl-4">
-              <h3 className="smallCaps text-left tight-drop bold mb-1">PLANT</h3>
-              <p className="h3 text-left tight-drop mb-4">Strategically plant seedlings to ensure optimal growth and carbon sequestration.</p>
-              
-              <div className="card card-drop no-border bg-white px-4 py-2 op-8 mb-2 ">
-                <ul className="text-grey text-left checkMark pe-3 pb-0">
-                  <li className="pb-0">Identify appropriate areas for Smart Forests across Canada</li>
-                </ul>
-              </div>
-
-              <div className="card card-drop no-border bg-white px-4 py-2 op-8">
-                <ul className="text-grey text-left checkMark pe-3 pb-0">
-                <li className="pb-0">Secure seedlings that will thrive in the local environment</li>
-                </ul>
-              </div>
-            
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item interval={100000}>
-          <div className="d-block w-100 phase4 "></div>
-            <Carousel.Caption className="col-9 col-md-8 col-lg-6 col-xl-4">
-              <h3 className="smallCaps text-left tight-drop bold mb-1">PRESERVE</h3>
-              <p className="h3 text-left tight-drop mb-4">Perform innovative forest management activities to maintain the forest and maximize its impact.</p>
-              <div className="card card-drop no-border bg-white px-4 py-2 op-8 mb-2 ">
-                <ul className="text-grey text-left checkMark pe-3 pb-0">
-                  <li className="pb-0">Identify appropriate areas for Smart Forests across Canada</li>
-                </ul>
-              </div>
-
-              <div className="card card-drop no-border bg-white px-4 py-2 op-8">
-                <ul className="text-grey text-left checkMark pe-3 pb-0">
-                <li className="pb-0">Secure seedlings that will thrive in the local environment</li>
-                </ul>
-              </div>
-           
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item interval={100000}>
-          <div className="d-block w-100 phase5 " ></div>
-            <Carousel.Caption className="col-9 col-md-8 col-lg-6 col-xl-4">
-              <h3 className="smallCaps text-left tight-drop bold mb-1">PROTECT</h3>
-              <p className="h3 text-left tight-drop mb-4">Audit, and set a no clear-cut guarantee on every forest.</p>
-              <div className="card card-drop no-border bg-white px-4 py-2 op-8 mb-2 ">
-                <ul className="text-grey text-left checkMark pe-3 pb-0">
-                  <li className="pb-0">Identify appropriate areas for Smart Forests across Canada</li>
-                </ul>
-              </div>
-
-              <div className="card card-drop no-border bg-white px-4 py-2 op-8">
-                <ul className="text-grey text-left checkMark pe-3 pb-0">
-                <li className="pb-0">Secure seedlings that will thrive in the local environment</li>
-                </ul>
-              </div>
-
-            </Carousel.Caption>
-          </Carousel.Item>
-        </Carousel>
- 
-      </Row>
-      </Fade>
-    </Container>
-
-    
-    
-    <Container id="our-forests" fluid className="v-full z-999 bg-green py-5">
-      
-    <Fade bottom>
-      <Row className="pt-5 align-items-center justify-content-center">
-        <Col className="col-10 col-lg-7 pe-lg-0 mt-5">
-          <h2 className="text-center text-orange bold">Start making a difference now—and far into the future</h2>
-          <p className="text-center text-white medium mb-4">Each Smart Forest has a <span className="bold">‘planting prescription’</span>. This is the unique mix of species that’s right for the local climate, soil conditions, drainage, and land history. This optimal habitat maximizes the positive impacts the Forest will make, including carbon sequestration, oxygen production and water absorption.</p>
-        </Col>
-      </Row>
-    </Fade>  
-    <Fade bottom>
-      <Row className="justify-content-center pb-5 align-items-stretch my-4">
-            <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
-              <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
-                <h4 className="text-white tight-drop-light">Corporate Forests</h4>
-                <p className="flex-fill pb-3 text-white tight-drop mb-3">Meet ESG goals and demonstrate results</p>
-                
-                  <a href="#corporate" className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">LEARN MORE</a>
-                
-              </div>
+        <Container id="intro" className="bg-green py-5 px-4">
+          <Row className="justify-content-center d-flex mt-xl-0 mt-lg-5 mb-5 ms-xl-5 ms-lg-4 py-5 px-5">
+            <Col className="col-12 col-lg-5 stickyTop mb-5 p-3 pe-2 d-none d-lg-block">
+              <object type="image/svg+xml" data="/build2-svg.svg" />
             </Col>
-            <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
-              <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
-                <h4 className="text-white tight-drop-light">School Forests</h4>
-                <p className="flex-fill pb-3 text-white tight-drop mb-3">Give students the tools to positively impact their future</p>
-                  <a href="#school" className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">LEARN MORE</a>
-              </div>
-            </Col>
-            <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
-              <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
-                <h4 className="text-white tight-drop-light">Legacy Forests</h4>
-                <p className="flex-fill pb-3 text-white tight-drop mb-3">Protect the planet for future generations</p>
-               
-                  <a href="#legacy" className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">LEARN MORE</a>
-                
-              </div>
-            </Col>
-            <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
-              <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop communal-card">
-                <h4 className="text-white tight-drop-light">Communal Forests</h4>
-                <p className="flex-fill pb-3 text-white tight-drop mb-3">Make a difference by coming together</p>
-               
-                  <a href="#communal" className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">LEARN MORE</a>
-                
-              </div>
+            <Col className="col-12 col-lg-5 text-white pe-xl-5 p-3 pb-0 intro-order">
+              <h1 className="text-orange mb-5 bold">{editingdata.part1_header1}</h1>
+              <p className="large my-5 op-9 pe-lg-3 pe-xl-5">{editingdata.part1_para1}</p>
+              <ReactMarkdown className="text-white text-left smallcaps intro-links-header op-5 mt-4 mb-3">{editingdata.part1_header2}</ReactMarkdown>
+              <a href="#the-plan" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.part1_menu1}</a>
+              <a href="#our-forests" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.part1_menu2}</a>
             </Col>
           </Row>
-        </Fade>
+        </Container>
 
-        <Fade bottom>
-        <Row className="pb-5 align-items-center justify-content-center my-5">
-          <Col className="col-10 col-lg-7 p-5 bg-brown roundedBox innerShadow">
-            <Row className="justify-content-center my-3">
-                <Col className="text-center">
-                  <h3 className="text-orange bold mb-2">Build your Smart Forest today</h3>
-                  <p className="text-white medium mb-2">Make your impact on climate change, now and for generations to come.</p>
-                </Col>
-            </Row>
-            <Row className="justify-content-center">
-                <Col className="text-center">
-                    <Button className="px-5" variant="green">Invest</Button>
-                    </Col>    
-              </Row>
-            </Col>
-          </Row>
-        </Fade>
-     
-    </Container>
-
-    {/* Corporate Forests */}
-  <Container fluid id="corporate" className="bg-corp sectionPad">
-      
-    <Fade bottom>
-      <Row className="text-center justify-content-center">
-        <Col className="col-11 col-lg-8 text-white ">
-        <h2 className=" bold py-3 text-white tight-drop-light ">
-          CORPORATE SMART FORESTS<span className="text-orange">™</span></h2>
-        </Col>
-      </Row>
-    </Fade>
-
-    <Fade bottom>
-      <Row className=" text-center  justify-content-center mb-4">
-            <Col className="col-11 col-lg-7">
-              <Row className=" horizTab  justify-content-center">
-                <Col className="col-5 col-md-3 mb-3">
-                <Button href="#corp-about" variant="text text-orange tight-drop-light smallCaps down-links">ABOUT</Button>
-                </Col>
-                <Col className="col-5 col-md-3 mb-3">
-                <Button href="#corp-testimonial" variant="text text-orange tight-drop-light smallCaps down-links">TESTIMONIAL</Button>
-                </Col>
-                <Col className="col-5 col-md-3 mb-3">
-                <Button href="#corp-bottom-line" variant="text text-orange tight-drop-light smallCaps down-links">BOTTOM LINE</Button>
-                </Col>
-                <Col className="col-5 col-md-3 mb-3">
-                <Button href="#corp-contact" variant="text text-orange tight-drop-light smallCaps down-links">CONTACT</Button>
-                </Col>
-              </Row>
-            </Col>
-        </Row>
-      </Fade>
-
-      <Fade bottom>
-      <Row id="corp-about" className="text-center justify-content-center py-4 px-5 mt-5">
-      <Col className="col-12 col-lg-7">
-        <p className="emphasis-2 text-orange tight-drop-light mb-3">Don’t just care for the environment. <span className="emphasis text-white">Prove it.</span></p>
-        </Col>
-        <Col className="col-12 col-lg-7">
-        <p className="lead text-white bold mb-2">If ESG is not a box you’d like to tick, but a change you’d like to make, work with us.</p>
-        
-        </Col>
-      </Row>
-      <Row className="text-center justify-content-center mb-5 pb-0">
-
-          <Col className="col-10 text-center pb-3">
-            <Button className="btn-large" variant="green">Start Investing Today</Button>
-            </Col>
-      
-        </Row>
-      </Fade>
-
-      <Fade bottom>
-      <Row className="justify-content-center align-items-center my-5">
-        <Col className="col-1 horizTab">
-        
-        </Col>
-      </Row>
-      </Fade>
-
-      <Fade bottom>
-      <Row className="text-center justify-content-center mb-3 p-4 pb-0">
-        <Col className="col-11 col-lg-7 pb-0">
-            <p className="text-white large mb-3">
-              An investment in a Corporate Smart Forest is an opportunity for corporations across Canada to reimagine
-              their sustainability strategy and invest for long-term ROI. This is a turnkey and sustainable approach for
-              corporations to meet net-zero and ESG commitments, offering:
-            </p>
-          </Col>
-      </Row>
-      </Fade>
-
-      <Fade bottom>
-        <Row className="d-flex align-items-stretch px-5 justify-content-center pb-5">
-  
-            <Col className="col-12 col-md-3 mb-3">
-            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch card-hover">
-              <h4 className="thin text-green">Proprietary impact calculators </h4>
-              <p className="flex-fill pb-3">Calculate your net-zero carbon footprint and determine the size of forest
-                needed to offset your emissions.</p>
-              <Button className="modal-btn" variant="btn-text text text-left">Try the Calculators</Button>
-            </div>
-            </Col>
-            
-            <Col className="col-12 col-md-3 mb-3">
-            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch card-hover">
-              <h4 className="thin text-green">Real-time monitoring</h4>
-              <p className="flex-fill pb-3">A secure, customized portal to watch your forest grow and build engagement
-                campaigns that bring the journey to life for shareholders, employees, and customers.</p>
-                <Button className="modal-btn" variant="btn-text text text-left">Try the Portal</Button>
-            </div>
-            </Col>
-            
-          <Col className="col-12 col-md-3 mb-3">
-            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch card-hover">
-              <h4 className="thin text-green">Transparency and reporting</h4>
-              <p className="flex-fill pb-3">Demonstrate your commitment to sustainability and the significance of your
-                impact with a no clear-cut guarantee on each Smart Forest. Keep stakeholders informed with an annual
-                report on performance.</p>
-                <Button className="modal-btn" variant="btn-text text text-left">Reporting</Button>
-            </div>
-            </Col>
-        </Row>
-        </Fade>
-        
-
-        <Fade bottom>
-            <Row id="corp-testimonial" className="justify-content-center align-items-center my-5">
-            <Carousel className="col-11 col-lg-8 bg-brown roundedBox innerShadow p-5 m-4 px-0" activeIndex={index} onSelect={handleSelect} nextIcon={<span aria-hidden="false" className="carousel-control-next-icon" />} nextLabel="" prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" />} prevLabel="" > 
-          
-              <Carousel.Item interval={100000} className="justify-content-center">
-              
-                  <div className="d-block w-100 blockquote-bg mb-4 align-items-center d-flex">
-                    <div className="px-lg-5 pt-lg-4 mx-5">
-                    <h3 className="text-left blockquote text-orange">
-                      “We need 50 shades of green to catalyze and support all companies towards net zero… Companies will need to show how they plan to meet their net-zero targets through the appropriate mix of emission reductions and credible carbon offsets, including nature-based solutions such as reforestation.”
-                      </h3>
-                    <p className="text-left text-white my-0 mx-5 bold">— Mark Carney</p>
-                    <p className="text-left text-white mx-5 px-3 italic op-6">UN Special Envoy for Climate Action and Finance</p>
-                    </div>
-                  </div>
-                  
-              </Carousel.Item>
-
-                <Carousel.Item interval={100000} className="justify-content-center">
-
-                  <div className="d-block w-100 blockquote-bg mb-4 align-items-center d-flex">
-                  <div className="px-lg-5 pt-lg-4 mx-5">
-                      <h3 className="text-left blockquote text-orange">
-                      “[Younger generations] have a different kind of investment in the future…A lot of the adults in the world aren’t going to be here by the time some climate conditions start taking effect in the world.”
-                        </h3>
-                      <p className="text-left text-white my-0 mx-5 bold">— Xiuhtezcatl Martinez</p>
-                   <p className="text-left text-white mx-5 px-3 italic op-6">Youth Director of Earth Guardians</p>                    </div>
-                    </div>
-                  
-                </Carousel.Item>
-              
-              </Carousel>
+        <Container id="the-plan" className="v-full z-999 bg-green p-5">
+          <Fade bottom>
+            <Row className="justify-content-center align-items-center my-4">
+              <Col className="col-12 col-md-11 col-lg-10 col-xl-8 text-center text-white">
+                <h2 className="text-orange bold mb-2 px-md-3 px-lg-0">{editingdata.part2_header3}</h2>
+                <p className="medium mt-0 mb-0 px-lg-4 mb-2">{editingdata.part2_para2}</p>
+              </Col>
             </Row>
           </Fade>
-
-
-    <Fade bottom>
-      <Row id="corp-bottom-line" className="justify-content-center pt-5 mb-3">
-        <Col className="col-10 col-md-8 ">
-        <h2 className="text-center text-orange tight-drop-light bold mb-3">From balance sheet to bottom line.</h2>
-        <p className="lead px-lg-4 text-center tight-drop-light text-white mb-2">Corporate Smart Forests are good for the environment and for your business.</p>
-        </Col>
-      </Row>
-      </Fade>
-
-    <Fade bottom>
-      <Row className="justify-content-center d-flex pb-5 mx-5 mb-3">
-          <Col className="col-12 col-md-7 col-lg-7 bg-green roundedBox innerShadow px-3 pt-5 pb-4 m-4 mt-2">
-        <p className="text-white large bold text-center mb-3">An investment in a Smart Forest allows your corporation to:
-        </p>
-          <ul className="text-white checkMark px-5 mx-3">
-            <li>
-            Drive immediate CO2 reductions from the atmosphere 
-            </li>
-            <li>
-            Secure ESG benefits that protect and foster growth throughout Canada
-            </li>
-            <li>
-            Reduce your cumulative impacts on the environment and society
-            </li>
-            <li>
-            Boost the economy through the creation of local jobs
-            </li>
-            <li>
-            Add shareholder value by strengthening long-term financial and operational performance
-            </li>
-          </ul>       
-        </Col>      
-      </Row>
-    </Fade>
-
-    <Fade bottom>
-      <Row id="corp-contact" className="pt-4 align-items-center justify-content-center mb-3">
-        <Col className="col-10 col-lg-7 pe-lg-0">
-          <h2 className="text-center text-orange bold tight-drop-light">Start building your ESG portfolio.</h2>
-          <p className="text-center px-lg-4 text-white large mb-2">Our team is available to meet with your ESG leaders to discuss your custom Corporate Forest program. Our agreements range in length, and offset contributions start as soon as the land is procured and preparation begins.</p>
-
-        </Col>
-      </Row>
-      <Row className="text-center justify-content-center mb-5 pb-5 ">
-
-          <Col className="col-10 text-center pb-5 pe-lg-0">
-            <Button className="btn-large px-5" variant="green">Contact Us</Button>
-            </Col>
-      
-        </Row>
-    </Fade>  
-    
-
-    
-    <Fade bottom>
-      <Row className="justify-content-center  align-items-stretch mx-lg-5 mb-4">
-
-           <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="large text-green mb-2">Calculate your net-zero carbon footprint</p>
-                  <p className="text-grey mb-4">Learn how much carbon your corporation generates in an average year.</p>
-                  <Link href="carbon-calculator">
-                    <Button variant="green" className="mt-3">Calculate your carbon footprint</Button>
-                  </Link>
-                </div>
-              </Col>
-
-              <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="large text-green mb-2">Determine your net zero Smart Forest target</p>
-                  <p className="text-grey mb-4">See how many acres your corporation must plant to reach a net-zero emissions target.</p>
-                  <Button variant="green" className="mt-3">Calculate your NET ZERO target</Button>
-                </div>
-              </Col>
-  
-      </Row>
-    </Fade>
-
-  </Container>
-    
-
-
-    {/* School Forests */}
-    <Container fluid id="school" className="bg-school sectionPad">
-    <Fade bottom>
-      <Row className="text-center justify-content-center">
-        <Col className="col-11 col-lg-8 text-white ">
-        <h2 className=" bold py-3 text-white tight-drop-light ">
-          SCHOOL SMART FORESTS<span className="text-orange">™</span></h2>
-        </Col>
-      </Row>
-    </Fade>
-    
-
-    <Fade bottom>
-      <Row className=" text-center  justify-content-center mb-4">
-            <Col className="col-11 col-lg-7">
-              <Row className=" horizTab  justify-content-center">
-                <Col className="col-5 col-md-3 mb-3">
-                <Link href="#school-1"><Button variant="text text-orange smallCaps tight-drop-light down-links">ABOUT</Button></Link>
-                </Col>
-                <Col className="col-5 col-md-3 mb-3">
-                <Link href="#school-2"><Button variant="text text-orange smallCaps tight-drop-light down-links">TESTIMONIALS</Button></Link>
-                </Col>
-                <Col className="col-5 col-md-3 mb-3">
-                <Link href="#school-3"><Button variant="text text-orange smallCaps tight-drop-light down-links">STUDENTS</Button></Link>
-                </Col>
-                <Col className="col-5 col-md-3 mb-3">
-                <Link href="#school-4"><Button variant="text text-orange smallCaps tight-drop-light down-links">CONTACT</Button></Link>
-                </Col>
-              </Row>
-            </Col>
-        </Row>
-      </Fade>
-
-      
-      <Fade bottom>
-      <Row id="school-1" className="text-center justify-content-center py-4 px-4 mt-5">
-        <Col className="col-11 col-lg-7">
-        <p className="emphasis text-orange tight-drop-light mb-4">Study climate action in real time.</p>
-        </Col>
-        <Col className="col-11 col-lg-7">
-        <p className="lead text-white bold mb-2">Student Smart Forests protect our planet and teach us how to tackle climate change.</p>
-        
-        </Col>
-      </Row>
-      <Row className="text-center justify-content-center mb-5 pb-0">
-
-          <Col className="col-10 text-center pb-3">
-            <Button className="btn-large" variant="green">Start Building Today</Button>
-            </Col>
-      
-        </Row>
-      </Fade>
-
-      <Fade bottom>
-      <Row className="justify-content-center align-items-center my-5">
-        <Col className="col-1 horizTab">
-        
-        </Col>
-      </Row>
-      </Fade>
-
-      <Fade bottom>
-      <Row className="text-center justify-content-center mb-3 p-4 pb-0">
-        <Col className="col-11 col-lg-7 pb-0">
-            <p className="text-white large mb-3">
-            From climate strikes to online activism, students are taking action on climate change. With their future at stake, they’re looking for meaningful ways to steer things back on course.
-            </p>
-          </Col>
-      </Row>
-      </Fade>
-
-      <Fade bottom>
-        <Row className="d-flex align-items-stretch px-5 justify-content-center pb-5">
-  
-            <Col className="col-12 col-md-3 mb-3">
-            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch card-hover">
-              <h4 className="thin text-green">See the change you make</h4>
-              <p className="flex-fill pb-3">A Smart Forest offers an opportunity to educate students about environmental stewardship with digital tools to track its effects in real time.</p>
-              <Button className="modal-btn" variant="btn-text text text-left">TRY THE PORTAL</Button>
-            </div>
-            </Col>
-            
-            <Col className="col-12 col-md-3 mb-3">
-            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch card-hover">
-              <h4 className="thin text-green">Local fundraising, global impact</h4>
-              <p className="flex-fill pb-3">An easy-to-execute program that taps into students’ interests and demonstrates its immediate and long-term benefits.</p>
-                <Button className="modal-btn" variant="btn-text text text-left">LEARN MORE</Button>
-            </div>
-            </Col>
-            
-          <Col className="col-12 col-md-3 mb-3">
-            <div className="roundedBox bg-white p-4 h-100 d-flex flex-column align-self-stretch card-hover">
-              <h4 className="thin text-green">Be part of Canadian history</h4>
-              <p className="flex-fill pb-3">The School Smart Forest™ Ambassadors program names the environmental stewards who have created a more sustainable future for all.</p>
-                <Button className="modal-btn" variant="btn-text text text-left">LEARN MORE</Button>
-            </div>
-            </Col>
-        </Row>
-        </Fade>
-        
-
-        <Fade bottom>
-            <Row id="school-2" className="justify-content-center align-items-center my-5">
-            <Carousel className="col-11 col-lg-8 bg-brown roundedBox  innerShadow p-5 m-4 px-0" activeIndex={index} onSelect={handleSelect} nextIcon={<span aria-hidden="false" className="carousel-control-next-icon" />} nextLabel="" prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" />} prevLabel="" > 
-          
-          <Carousel.Item interval={100000} className="justify-content-center">
-          
-              <div className="d-block w-100 blockquote-bg mb-4 align-items-center d-flex">
-                <div className="px-lg-5 pt-lg-4 mx-5">
-                      <h3 className="text-left blockquote text-orange">
-                      “Time is much shorter than we think. Failure means disaster. The changes required are enormous and we must all contribute in every part of our daily life. Especially us in the rich countries where no nation is doing nearly enough.”
-                        </h3>
-                      <p className="text-left text-white my-0 mx-5 bold">— Greta Thunberg</p>
-                <p className="text-left text-white mx-5 px-3 italic op-6">Climate Activist</p>                    </div>
-                    </div>
-                  
-              </Carousel.Item>
+          <Fade bottom>
+            <Row className="justify-content-center align-items-center px-3">
+              <Carousel className="col-12 col-lg-10 d-flex bg-brown roundedBox px-0"
+                activeIndex={index} onSelect={handleSelect} 
+                nextIcon={ <span aria-hidden="false" className="carousel-control-next-icon"/>}
+                nextLabel=""
+                prevIcon={ <span aria-hidden="true" className="carousel-control-prev-icon"/>}
+                prevLabel="">
+                <Carousel.Item interval={500000}>
+                  <div className="d-block w-100 phases"></div>
+                  <Carousel.Caption><p></p></Carousel.Caption>
+                </Carousel.Item>
 
                 <Carousel.Item interval={100000}>
+                  <div className="d-block w-100 phase1"></div>
+                  <Carousel.Caption className="col-9 col-md-6 col-xl-4">
+                    <h3 className="smallCaps text-left tight-drop bold mb-1">{editingdata.part2_step1header1}</h3>
+                    <p className="h3 text-left tight-drop mb-4">{editingdata.part2_step1para1}</p>
 
-                <div className="d-block w-100 blockquote-bg mb-4 align-items-center d-flex">
-                <div className="px-lg-5 pt-lg-4 mx-5">
-                      <h3 className="text-left blockquote text-orange">
-                      “[Younger generations] have a different kind of investment in the future…A lot of the adults in the world aren’t going to be here by the time some climate conditions start taking effect in the world.”
-                        </h3>
-                      <p className="text-left text-white my-0 mx-5 bold">— Xiuhtezcatl Martinez</p>
-                <p className="text-left text-white mx-5 px-3 italic op-6">Youth Director of Earth Guardians</p>                    </div>
-                    </div>
-                  
+                    
+                  </Carousel.Caption>
                 </Carousel.Item>
-              
-              </Carousel>
-            </Row>
-          </Fade>
-
-
-    <Fade bottom>
-      <Row id="school-3" className="justify-content-center pt-5 mb-3">
-        <Col className="col-11 col-md-7 ">
-        <h2 className="text-center text-orange tight-drop-light bold mb-3">Students make great teachers. Give them a forest to manage.</h2>
-        <p className="lead px-3 text-center tight-drop-light text-white mb-2">Spark a life-long connection to the environment and teach valuable skills.</p>
-        </Col>
-      </Row>
-      </Fade>
-
-    <Fade bottom>
-      <Row className="justify-content-center d-flex pb-5 mx-5 mb-5">
-          <Col className="col-12 col-md-7 col-lg-7 bg-green roundedBox innerShadow px-5 pt-5 pb-4 m-4 mt-2">
-        <p className="text-white large bold text-center mb-3">Raising funds to build a forest is:
-        </p>
-
-          <ul className="text-white checkMark px-3 mx-3">
-    
-            <li>
-            <span className="bold">Healthy.</span> Zero calories and carbon-free. No sales of chocolate bars, cookie dough or other consumable items. 
-            </li>
-            <li>
-            <span className="bold">Sustainable.</span> No packaging or unused products. Forest stewardship reduces the carbon footprint of all Canadians.
-
-            </li>
-            <li>
-            <span className="bold">Safe, Secure and Easy.</span> All transactions are online, No door-to-door sales, cash handling, or post-fundraising deliveries required.            </li>
-            <li>
-            <span className="bold">Impactful.</span> Supports the health of the planet, scholarships, student employment, school programs, and community needs. 
-            </li>
-            <li>
-            <span className="bold">Empowering.</span> Enables students to take action against the devastating effects of climate change, inspires leadership and builds organizational skills.
-            </li>
-          </ul>
-        
-        </Col>      
-      </Row>
-    </Fade>
-
-
-<Fade bottom>
-      <Row id="school-4" className="pt-4 align-items-center justify-content-center mb-3">
-        <Col className="col-10 col-lg-7 pe-lg-0">
-          <h2 className="text-center text-orange bold tight-drop-light">Get involved in the future today.</h2>
-          <p className="text-center px-lg-5 text-white large mb-2">Work with our team to establish a secure online program to sell seedlings for your School Forest. Your school keeps 50% of proceeds to support school initiatives.</p>
-
-        </Col>
-      </Row>
-      <Row className="text-center justify-content-center mb-5 pb-5 ">
-
-          <Col className="col-10 text-center pb-5 pe-lg-0">
-            <Button className="btn-large px-5" variant="green">Contact Us</Button>
-            </Col>
-      
-        </Row>
-    </Fade>  
-    
-
-    
-    <Fade bottom>
-      <Row className="justify-content-center  align-items-stretch mx-lg-5  mb-4">
-
-           <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="large text-green mb-2">Calculate your net-zero carbon footprint</p>
-                  <p className="text-grey mb-4">Learn how much carbon your school generates in an average year.</p>
-                  <Link href="carbon-calculator">
-                    <Button variant="green" className="mt-3">Calculate your carbon footprint</Button>
-                  </Link>
-                </div>
-              </Col>
-
-              <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="large text-green mb-2">Determine your net zero Smart Forest target</p>
-                  <p className="text-grey mb-4">See how many acres your school must plant to reach a net-zero emissions target.</p>
-                  <Button variant="green" className="mt-3">Calculate your NET ZERO target</Button>
-                </div>
-              </Col>
-  
-      </Row>
-    </Fade>
-
-     
-    </Container>
-    
-    {/* Legacy Forests */}
-    <Container fluid id="legacy" className="bg-legacy sectionPad">
-
-    <Fade bottom>
-      <Row className="text-center justify-content-center">
-        <Col className="col-11 col-lg-8 text-white ">
-        <h2 className=" bold py-3 text-white tight-drop-light ">
-          LEGACY SMART FORESTS<span className="text-orange">™</span></h2>
-        </Col>
-      </Row>
-    </Fade>
-
-    <Fade bottom>
-      <Row className=" text-center  justify-content-center mb-4">
-            <Col className="col-11 col-lg-7">
-              <Row className=" horizTab  justify-content-center">
-                <Col className="col-5 col-md-3 mb-3">
-                <Link href="#legacy-1"><Button variant="text text-orange smallCaps tight-drop-light down-links">ABOUT</Button></Link>
-                </Col>
-                <Col className="col-5 col-md-3 mb-3">
-                <Link href="#legacy-2"><Button variant="text text-orange smallCaps tight-drop-light down-links">TESTIMONIALS</Button></Link>
-                </Col>
-                <Col className="col-5 col-md-3 mb-3">
-                <Link href="#legacy-3"><Button variant="text text-orange smallCaps tight-drop-light down-links">GROWTH</Button></Link>
-                </Col>
-                <Col className="col-5 col-md-3 mb-3">
-                <Link href="#legacy-4"><Button variant="text text-orange smallCaps tight-drop-light down-links">CONTACT</Button></Link>
-                </Col>
-              </Row>
-            </Col>
-        </Row>
-      </Fade>
-
-      
-      <Fade bottom>
-      <Row id="legacy-1" className="text-center justify-content-center py-4 px-3 mt-5">
-        <Col className="col-11 col-lg-7">
-        <p className="emphasis text-orange tight-drop-light mb-4">Leave a legacy that will grow for centuries.</p>
-        </Col>
-        <Col className="col-11 col-lg-7">
-        <p className="lead text-white bold mb-2">Give cleaner air, thriving wildlife habitats, and a healthier planet to future generations.</p>
-        
-        </Col>
-      </Row>
-      <Row className="text-center justify-content-center mb-5 pb-0">
-
-          <Col className="col-10 text-center pb-3">
-            <Button className="btn-large" variant="green">Start Building Today</Button>
-            </Col>
-      
-        </Row>
-      </Fade>
-
-      <Fade bottom>
-      <Row className="justify-content-center align-items-center my-5">
-        <Col className="col-1 horizTab">
-        
-        </Col>
-      </Row>
-      </Fade>
-
-
-      <Fade bottom>
-      <Row className="text-center justify-content-center mb-3 p-4 pb-5">
-        <Col className="col-10 col-lg-7 pb-0">
-            <p className="text-white large mb-3">
-            A Legacy Forest is your opportunity to invest in the future of our planet. Diversify your portfolio with  acres of reforested land, plentiful wildlife, cleaner air and water preservation. It's an investment that will pay off with lasting environmental, social, and economic returns for all Canadians in the years to come. 
-            </p>
-          </Col>
-      </Row>
-      </Fade>
-        
-
-        <Fade bottom>
-            <Row id="legacy-2" className="justify-content-center align-items-center my-5">
-            <Carousel className="col-11 col-lg-8 bg-brown roundedBox  innerShadow p-5 m-4 px-0" activeIndex={index} onSelect={handleSelect} nextIcon={<span aria-hidden="false" className="carousel-control-next-icon" />} nextLabel="" prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" />} prevLabel="" > 
-          
-          <Carousel.Item interval={100000} className="justify-content-center">
-          
-              <div className="d-block w-100 blockquote-bg mb-4 align-items-center d-flex">
-                <div className="px-lg-5 pt-lg-4 mx-5">
-                      <h3 className="text-left blockquote text-orange">
-                    "We are running the most dangerous experiment in history right now, which is to see how much carbon dioxide the atmosphere can handle before there is a climate catastrophe."
-                      </h3>
-                    <p className="text-left text-white my-0 mx-5 bold">— Elon Musk</p>
-                    <p className="text-left text-white mx-5 px-3 italic op-6">CEO of Tesla</p>
-                  </div>
-                  </div>
-                  
-              </Carousel.Item>
 
                 <Carousel.Item interval={100000}>
+                  <div className="d-block w-100 phase2"></div>
+                  <Carousel.Caption className="col-9 col-md-6 col-xl-4">
+                    <h3 className="smallCaps text-left tight-drop bold mb-1">{editingdata.part2_step2header1}</h3>
+                    <p className="h3 text-left tight-drop mb-4">{editingdata.part2_step2para1}</p>
 
-                <div className="d-block w-100 blockquote-bg mb-4 align-items-center d-flex">
-                  <div className="px-lg-5 pt-lg-4 mx-5">
-                      <h3 className="text-left blockquote text-orange">
-                      “[Younger generations] have a different kind of investment in the future…A lot of the adults in the world aren’t going to be here by the time some climate conditions start taking effect in the world.”
-                        </h3>
-                      <p className="text-left text-white my-0 mx-5 bold">— Xiuhtezcatl Martinez</p>
-                    <p className="text-left text-white mx-5 px-3 italic op-6">Youth Director of Earth Guardians</p>                    </div>
-                    </div>
-                  
+                    
+                  </Carousel.Caption>
                 </Carousel.Item>
-              
+                <Carousel.Item interval={100000}>
+                  <div className="d-block w-100 phase3"></div>
+                  <Carousel.Caption className="col-9 col-md-6 col-xl-4">
+                    <h3 className="smallCaps text-left tight-drop bold mb-1">{editingdata.part2_step3header1}</h3>
+                    <p className="h3 text-left tight-drop mb-4">{editingdata.part2_step3para1}</p>
+
+                  
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item interval={100000}>
+                  <div className="d-block w-100 phase4"></div>
+                  <Carousel.Caption className="col-9 col-md-6 col-xl-4">
+                    <h3 className="smallCaps text-left tight-drop bold mb-1">{editingdata.part2_step4header1}</h3>
+                    <p className="h3 text-left tight-drop mb-4">{editingdata.part2_step4para1}</p>
+                    
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item interval={100000}>
+                  <div className="d-block w-100 phase5"></div>
+                  <Carousel.Caption className="col-9 col-md-6 col-xl-4">
+                    <h3 className="smallCaps text-left tight-drop bold mb-1">{editingdata.part2_step5header1}</h3>
+                    <p className="h3 text-left tight-drop mb-4">{editingdata.part2_step5para1}</p>
+                    
+                  </Carousel.Caption>
+                </Carousel.Item>
               </Carousel>
             </Row>
           </Fade>
+        </Container>
 
+        <Container id="our-forests" fluid className="v-full z-999 bg-green py-5">
+          <Fade bottom>
+            <Row className="pt-5 align-items-center justify-content-center">
+              <Col className="col-10 col-md-9 col-xl-7 pe-lg-0 mt-5">
+                <h2 className="text-center text-orange bold px-md-3 px-lg-0">{editingdata.part3_header1}</h2>
+                <ReactMarkdown className="text-center text-white medium mb-2">{editingdata.part3_para1}</ReactMarkdown>
+              </Col>
+            </Row>
+          </Fade>
+          <Fade bottom>
+            <Row className="justify-content-center pb-5 align-items-stretch my-4 px-md-5 mx-lg-5 px-lg-5 mx-xl-0 px-xl-0">
+              <Col className="col-10 col-md-5 col-xl-2 pe-lg-0 m-3">
+                <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
+                  <h4 className="text-white tight-drop-light">{editingdata.part3_box1header1}</h4>
+                  <p className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part3_box1para1}</p>
+                  <a href="#corporate" className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">
+                    {editingdata.learnMore}
+                  </a>
+                </div>
+              </Col>
+              <Col className="col-10 col-md-5 col-xl-2 pe-lg-0 m-3">
+                <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
+                  <h4 className="text-white tight-drop-light">{editingdata.part3_box2header1}</h4>
+                  <p className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part3_box2para1}</p>
+                  <a href="#school" className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">{editingdata.learnMore}</a>
+                </div>
+              </Col>
+              <Col className="col-10 col-md-5 col-xl-2 pe-lg-0 m-3">
+                <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
+                  <h4 className="text-white tight-drop-light">{editingdata.part3_box3header1}</h4>
+                  <p className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part3_box3para1}</p>
+                  <a href="#legacy" className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">{editingdata.learnMore}</a>
+                </div>
+              </Col>
+              <Col className="col-10 col-md-5 col-xl-2 pe-lg-0 m-3">
+                <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop communal-card">
+                  <h4 className="text-white tight-drop-light">{editingdata.part3_box4header1}</h4>
+                  <p className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part3_box4para1}</p>
+                  <a href="#communal" className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">{editingdata.learnMore}</a>
+                </div>
+              </Col>
+            </Row>
+          </Fade>
+        </Container>
 
-    <Fade bottom>
-      <Row id="legacy-3" className="justify-content-center pt-5 mb-3">
-        <Col className="col-11 col-md-7 ">
-        <h2 className="text-center text-orange tight-drop-light bold mb-3">Make a long term investment.</h2>
-        <p className="lead px-3 text-center tight-drop-light text-white mb-2">Lead by example. Preserve and protect our planet now—and for future generations.</p>
-        </Col>
-      </Row>
-      </Fade>
-
-    <Fade bottom>
-      <Row className="justify-content-center d-flex pb-5 mx-5 mb-5">
-          <Col className="justify-content-center align-items-center col-12 col-lg-7 bg-green roundedBox innerShadow px-3 pt-5 pb-4 m-4 mt-2">
-        <p className="text-white large bold text-center mb-3">Generate remarkable returns by investing in:
-        </p>
-
-          <ul className="text-white checkMark px-5 mx-5">
+        {/* Corporate Forests */}
+        <ScrollableAnchor id={"corporate"}>
+        <Container fluid id="corporate" className="bg-corp sectionPad">
+          <Fade bottom>
+            <Row className="text-center justify-content-center">
+              <Col className="col-11 col-md-9 text-white">
+                <h2 className="emphasis-2 bold pt-3 text-white tight-drop-light">
+                  <ReactMarkdown>
+                    {editingdata.corp_header1}
+                  </ReactMarkdown>
+                </h2>
+              </Col>
+            </Row>
+          </Fade>
           
-          <li className="ms-lg-5">
-            Our planet's future
-            </li>
-          <li className="ms-lg-5">
-            Biodiversity
-            </li>
-            <li className="ms-lg-5">
-            Air purification
-            </li>
-            <li className="ms-lg-5">
-            Local economies 
-            </li>
-            <li className="ms-lg-5">
-            Student programs </li>
-            <li className="ms-lg-5">
-            A proven, positive impact on climate change 
-            </li>
-          </ul>
-
-        </Col>      
-      </Row>
-    </Fade> 
-
-    
-  <Fade bottom>
-      <Row id="legacy-4" className="pt-4 align-items-center justify-content-center mb-3">
-        <Col className="col-10 col-lg-7 pe-lg-0">
-          <h2 className="text-center text-orange bold tight-drop-light">Start building your legacy.</h2>
-        </Col>
-      </Row>
-      <Row className="text-center justify-content-center mb-5 pb-5 ">
-
-          <Col className="col-10 text-center pb-5 pe-lg-0">
-            <Button className="btn-large px-5" variant="green">Contact Us</Button>
-            </Col>
-      
-        </Row>
-    </Fade>  
-
-    
-    <Fade bottom>
-      <Row className="justify-content-center  align-items-stretch mx-lg-5  mb-4">
-
-           <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="large text-green mb-2">Calculate your net-zero carbon footprint</p>
-                  <p className="text-grey mb-5">Learn how much carbon you generate in an average year.</p>
-                  <Link href="carbon-calculator">
-                    <Button variant="green" className="mt-3">Calculate your carbon footprint</Button>
-                  </Link>
-                </div>
+          <Fade bottom>
+            <Row className="text-center justify-content-center mb-4">
+              <Col className="col-11 col-md-8 mb-4">
+                <Row className="horizTab justify-content-center">
+                  <Dropdown className="col-10 col-lg-3 col-xl-4">
+                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
+                      {editingdata.corpdropdown_menuheader1}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Row className="p-4">
+                        <Col>
+                        <h5 className="text-green mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.corpdropdown_box1header1}
+                        </ReactMarkdown>
+                        </h5>
+                          <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
+                          {editingdata.corpdropdown_box1para1}
+                          </ReactMarkdown>
+                          <h5 className="text-green mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.corpdropdown_box1header2}
+                        </ReactMarkdown>
+                        </h5>
+                          <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
+                          {editingdata.corpdropdown_box1para2}
+                          </ReactMarkdown>
+                          <h5 className="text-green mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.corpdropdown_box1header3}
+                        </ReactMarkdown>
+                        </h5>
+                          <ReactMarkdown className="text-grey mt-0 dropdown-text">
+                          {editingdata.corpdropdown_box1para3}
+                          </ReactMarkdown>
+                        </Col>
+                      </Row>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                  <Dropdown className="col-10 col-lg-4 col-xl-4">
+                  <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
+                      {editingdata.corpdropdown_menuheader2}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Row className="p-4">
+                        <Col>
+                        <h5 className="text-green medium mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.corpdropdown_quote1para}
+                        </ReactMarkdown>
+                        </h5>
+                        <ReactMarkdown>
+                        {editingdata.corpdropdown_quote1name}
+                        </ReactMarkdown>
+                        <ReactMarkdown className="text-small mb-4">
+                        {editingdata.corpdropdown_quote1title}
+                        </ReactMarkdown>
+                        <h5 className="text-green medium mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.corpdropdown_quote2para}
+                        </ReactMarkdown>
+                        </h5>
+                        <ReactMarkdown>
+                        {editingdata.corpdropdown_quote2name}
+                        </ReactMarkdown>
+                        <ReactMarkdown className="text-small">
+                        {editingdata.corpdropdown_quote2title}
+                        </ReactMarkdown>
+                        </Col>
+                      </Row>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                  <Dropdown className="col-10 col-lg-4 col-xl-4">
+                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
+                      {editingdata.corpdropdown_menuheader3}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Row className="p-4">
+                        <Col>
+                        <p className="text-green bold text-left mb-3">{editingdata.corpdropdown_pointsheader}</p>
+                        <ul className="text-grey dropdown-text checkMark px-3 mx-3">
+                          <li><ReactMarkdown>{editingdata.corpdropdown_pointspara1}</ReactMarkdown></li>
+                          <li><ReactMarkdown>{editingdata.corpdropdown_pointspara2}</ReactMarkdown></li>
+                          <li><ReactMarkdown>{editingdata.corpdropdown_pointspara3}</ReactMarkdown></li>
+                          <li><ReactMarkdown>{editingdata.corpdropdown_pointspara4}</ReactMarkdown></li>
+                          <li><ReactMarkdown>{editingdata.corpdropdown_pointspara5}</ReactMarkdown></li>
+                        </ul>
+                        </Col>
+                      </Row>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </Row>
               </Col>
+            </Row>
+          </Fade>
 
-              <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="large text-green mb-2">Determine your net zero Smart Forest target</p>
-                  <p className="text-grey mb-4">See how many acres you need to plant to reach a net-zero emissions target.</p>
-                  <Button variant="green" className="mt-3">Calculate your NET ZERO target</Button>
-                </div>
+          <Fade bottom>
+            <Row className="text-center justify-content-center py-3 px-xl-3 px-lg-2 px-5 mt-5">
+              <Col className="col-12 col-md-9 col-lg-7">
+                <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.corp_header2}</h2>
+                
+<PDFViewer 
+          backend={PDFJSBackend}
+          src='../../ECOSYSTEMBENEFITS-Corp.pdf'
+        />
               </Col>
-  
-      </Row>
-    </Fade>
-     
-    </Container>
-    
+            </Row>
+            <Row className="text-center justify-content-center px-3 mb-5 pb-5">
+              <Col className="col-10 col-md-6 col-lg-7 col-xl-8 text-center pb-3 pe-lg-0">
+                <Button className="btn-large" variant="green">
+                  <a href="#corp-calc-steps">{editingdata.corp_button1}</a>
+                </Button>
+              </Col>
+            </Row>
+          </Fade>
+          
 
-    {/* Communal Forests */}
-    <Container fluid id="communal" className="bg-communal sectionPad">
-
-    <Fade bottom>
-      <Row className="text-center justify-content-center">
-        <Col className="col-11 col-lg-8 text-white ">
-        <h2 className=" bold py-3 text-white tight-drop-light ">
-          COMMUNAL SMART FORESTS<span className="text-orange">™</span></h2>
-        </Col>
-      </Row>
-    </Fade>
-
-    <Fade bottom>
-      <Row className=" text-center  justify-content-center mb-4">
-            <Col className="col-11 col-lg-7">
-              <Row className=" horizTab  justify-content-center">
-                <Col className="col-5 col-md-3 mb-3">
-                <Link href="#comm-1"><Button variant="text text-orange smallCaps tight-drop-light down-links">ABOUT</Button></Link>
-                </Col>
-                <Col className="col-5 col-md-3 mb-3">
-                <Link href="#comm-2"><Button variant="text text-orange smallCaps tight-drop-light down-links">TESTIMONIALS</Button></Link>
-                </Col>
-                <Col className="col-5 col-md-3 mb-3">
-                <Link href="#comm-3"><Button variant="text text-orange smallCaps tight-drop-light down-links">COMMUNITY</Button></Link>
-                </Col>
-                <Col className="col-5 col-md-3 mb-3">
-                <Link href="#comm-4"><Button variant="text text-orange smallCaps tight-drop-light down-links">CONTACT</Button></Link>
-                </Col>
-              </Row>
-            </Col>
-        </Row>
-      </Fade>
-
-      
-      <Fade bottom>
-      <Row id="comm-1" className="text-center justify-content-center py-4 px-5 mt-5">
-        <Col className="col-12 col-lg-8">
-        <p className="emphasis text-orange tight-drop-light mb-4">Work together to protect future communities.</p>
-        </Col>
-        <Col className="col-12 col-lg-8">
-        <p className="lead text-white bold mb-2">Every Canadian can take action on climate change.</p>
-        
-        </Col>
-      </Row>
-      <Row className="text-center justify-content-center mb-5 pb-0">
-
-          <Col className="col-10 text-center pb-3">
-            <Button className="btn-large" variant="green">Start Building Today</Button>
-            </Col>
-      
-        </Row>
-      </Fade>
-
-      <Fade bottom>
-      <Row className="justify-content-center align-items-center my-5">
-        <Col className="col-1 horizTab">
-        
-        </Col>
-      </Row>
-      </Fade>
-
-      <Fade bottom>
-      <Row className="text-center justify-content-center mb-3 p-4 pb-5">
-        <Col className="col-10 col-lg-7 pb-0">
-            <p className="text-white large mb-3">
-            Each plant, animal, and microbe in the forest contributes something unique and essential to the ecosystem: a forest is a community that is greater than the sum of its parts. This simple, but powerful fact inspired the Communal ForestTM initiative. It’s an opportunity for every individual in Canada to play a part and help build a forest.
-            </p>
-          </Col>
-      </Row>
-      </Fade>
-        
+          <Fade bottom>
+            <Row className="justify-content-center align-items-center my-5">
+              <Col className="col-1 horizTab"></Col>
+            </Row>
+          </Fade>
 
         <Fade bottom>
-            <Row id="comm-2" className="justify-content-center align-items-center my-5">
-            <Carousel className="col-11 col-lg-8 bg-brown roundedBox  innerShadow p-5 m-4 px-0" activeIndex={index} onSelect={handleSelect} nextIcon={<span aria-hidden="false" className="carousel-control-next-icon" />} nextLabel="" prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" />} prevLabel="" > 
-          
-          <Carousel.Item interval={100000} className="justify-content-center">
-          
-              <div className="d-block w-100 blockquote-bg mb-4 align-items-center d-flex">
-                <div className="px-lg-5 pt-lg-4 mx-5">
-                      <h3 className="text-left blockquote text-orange">
-                    "What you do makes a difference, and you have to decide what kind of difference you want to make."
-                      </h3>
-                    <p className="text-left text-white my-0 mx-5 bold">— Dr. Jane Goodall</p>
-                    <p className="text-left text-white mx-5 px-3 italic op-6"></p>
-                  </div>
-                  </div>
-                  
-              </Carousel.Item>
-
-                <Carousel.Item interval={100000}>
-
-                <div className="d-block w-100 blockquote-bg mb-4 align-items-center d-flex">
-                  <div className="px-lg-5 pt-lg-4 mx-5">
-                      <h3 className="text-left blockquote text-orange">
-                      “[Younger generations] have a different kind of investment in the future…A lot of the adults in the world aren’t going to be here by the time some climate conditions start taking effect in the world.”
-                        </h3>
-                      <p className="text-left text-white my-0 mx-5 bold">— Xiuhtezcatl Martinez</p>
-                      <p className="text-left text-white mx-5 px-3 italic op-6">Youth Director of Earth Guardians</p>                    </div>
-                    </div>
-                  
-                </Carousel.Item>
-              
-              </Carousel>
+        <ScrollableAnchor id={"corp-calc-steps"}>
+            <Row id="corp-calc-steps" className="pt-5 align-items-center justify-content-center mt-5 mb-3">
+              <Col className="col-10 pe-lg-0">
+                <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
+              </Col>
             </Row>
-          </Fade>
-
-    <Fade bottom>
-      <Row id="comm-3" className="justify-content-center pt-5 px-5 mb-3">
-        <Col className="col-11 col-md-8 ">
-        <h2 className="text-center text-orange tight-drop-light bold mb-3">A forest is a community. And a community can build a forest.</h2>
-        <p className="lead px-3 px-lg-5 text-center tight-drop-light text-white mb-2">Communal Forests are created by the thousands of Canadians who are here for change.</p>
-        </Col>
-      </Row>
-      </Fade>
-
-    <Fade bottom>
-      <Row className="justify-content-center d-flex pb-5 mx-5 mb-5">
-          <Col className="col-12 col-lg-7 bg-green roundedBox innerShadow px-3 pt-5 pb-4 m-4 mt-2">
-        <p className="text-white large bold text-center mb-3">A Communal Forest is:
-        </p>
-
-          <ul className="text-white checkMark px-5 mx-3">
-          <li>
-            <span className="bold">Accessible.</span> Anyone can take part without walking out the front door.  
-            </li>
-            <li>
-            <span className="bold">Accountable.</span> Canada’s Forest Trust issues annual audits and reports so you can see the impact your forest makes.
-            </li>
-            <li>
-            <span className="bold">Trackable.</span> See maintenance, preservation, growth measurements, and more through the online portal and dashboard.</li>
-            <li>
-            <span className="bold">Forever.</span> Every communal forest will be protected by insurance and a no clear-cut guarantee.
-            </li>
-          </ul>
-
-        </Col>      
-      </Row>
-    </Fade> 
-
-    <Fade bottom>
-      <Row id="comm-4" className="pt-4 align-items-center justify-content-center mb-3">
-        <Col className="col-10 col-lg-7 pe-lg-0">
-          <h2 className="text-center text-orange bold tight-drop-light">Join your fellow Canadians and make a change for the better.</h2>
-          <p className="text-center px-lg-5 text-white large mb-2">Anyone can do their part to offset their carbon footprint—large or small. Use our calculators to see what kind of impact you can make. Once a Communal Forest is started, our online portals will show you how it’s progressing.</p>
-
-        </Col>
-      </Row>
-      <Row className="text-center justify-content-center mb-5 pb-5 ">
-
-          <Col className="col-10 text-center pb-5 pe-lg-0">
-            <Button className="btn-large px-5" variant="green">Contact Us</Button>
-            </Col>
-      
-        </Row>
-    </Fade>  
-
-    
-    <Fade bottom>
-      <Row className="justify-content-center  align-items-stretch mx-lg-5 ">
-
-           <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+        </ScrollableAnchor>
+            <Row className="justify-content-center  align-items-stretch px-lg-5 mx-lg-5 mb-5 pb-5">
+                <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="large text-green mb-2">Calculate your net-zero carbon footprint</p>
-                  <p className="text-grey mb-3">Learn how much carbon your community generate in an average year.</p>
-                  <Link href="carbon-calculator">
-                    <Button variant="green" className="mt-5">Calculate your carbon footprint</Button>
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.corpcalc_box1para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.corpcalc_box1para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.corpcalc_box1para3}</ReactMarkdown>
+                  <Link href="/business-calculator">
+                    <Button variant="green" className="calc-btn">{editingdata.corpcalc_box1button1}</Button>
                   </Link>
                 </div>
               </Col>
-
-              <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <p className="large text-green mb-2">Determine your net zero Smart Forest target</p>
-                  <p className="text-grey mb-4">See how many acres your community needs to plant to reach a net-zero emissions target.</p>
-                  <Button variant="green" className="mt-3">Calculate your NET ZERO target</Button>
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.corpcalc_box2para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.corpcalc_box2para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.corpcalc_box2para3}</ReactMarkdown>
+                  <Link href="/smart-forest-corp">
+                    <Button variant="green" className="calc-btn">{editingdata.corpcalc_box2button1}</Button>
+                  </Link>
                 </div>
               </Col>
-  
-      </Row>
-    </Fade>
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.corpcalc_box3para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.corpcalc_box3para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.corpcalc_box3para3}</ReactMarkdown>
+                  <Link href="/net-negative-corp">
+                    <Button variant="green" className="calc-btn">{editingdata.corpcalc_box3button1}</Button>
+                  </Link>
+                </div>
+              </Col>
+            </Row>
 
-     
-    </Container>
+          </Fade>
 
-  <Container fluid className="bg-green p-5 section-pad my-0">
-    <Row className="justify-content-center pt-3">
-    <Col className="col-12 col-md-4 col-lg-3  pe-lg-0 m-3">
-        <div className="roundedBox card bg-white no-border p-4 h-100 d-flex flex-column card-hover">
-        <h4 className="text-green">Net-Zero Carbon Calculator</h4>
-        <p className="flex-fill pb-3 text-grey">Determine your corporate, school, or individual carbon footprint and learn how you can get to net-zero.</p>
-       
-        <Link href="business-calculator"><a className="btn btn-text modal-btn text-left text-orange bold no-underline ">TRY IT</a></Link>
-        </div>
-        </Col>
+          <Fade bottom>
+            <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
+              <Col className="col-10 col-md-8 col-lg-9 col-xl-7 pe-lg-0">
+                <h2 className="text-center text-orange bold tight-drop-light">{editingdata.corp_header3}</h2>
+                <p className="text-center px-lg-4 text-white large mb-2">{editingdata.corp_para5}</p>
+              </Col>
+            </Row>
+            <Row className="text-center justify-content-center mb-5 pb-4">
+              <Col className="col-10 text-center pb-5 pe-lg-0">
+              <Link href="/contact">
+                <Button className="btn-large px-5" variant="green">
+                  {editingdata.corp_button}
+                </Button>
+                </Link>
+              </Col>
+            </Row>
+          </Fade>
 
-        <Col className="col-12 col-md-4 col-lg-3  pe-lg-0 m-3">
-        <div className="roundedBox card bg-white no-border p-4 h-100 d-flex flex-column card-hover">
-        <h4 className="text-green">Smart Forest™ Calculator</h4>
-        <p className="flex-fill pb-3 text-grey ">Find out how many acres of Smart Forest you need to plant to get to a net-negative carbon footprint.</p>
-       
-        <Link href="offset-calculator"><a className="btn btn-text modal-btn text-left text-orange bold no-underline ">TRY IT</a></Link>
-        </div>
-        </Col>
 
-        <Col className="col-12 col-md-4 col-lg-3 pe-lg-0 m-3">
-        <div className="roundedBox card bg-white no-border p-4 h-100 d-flex flex-column card-hover">
-        <h4 className="text-green">Customer Portal Demo</h4>
-        <p className="flex-fill pb-3 text-grey ">See just how impactful a Smart Forest can be.</p>
-       
-        <Link href="portal-demo"><a className="btn btn-text modal-btn text-left text-orange bold no-underline me-5">TRY IT</a></Link>
-        </div>
-        </Col>
-      </Row>
-    </Container>
-    
-  </main>
-</div>
-)
+          <Fade bottom>
+          <Row className="pt-4 align-items-center justify-content-center mb-3">
+              <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
+                <h2 className="text-center text-orange bold tight-drop-light">Envision your forest</h2>
+              </Col>
+            </Row>
+          <DigitalSign/>
+          </Fade>
+        </Container>
+        </ScrollableAnchor>
+
+
+        {/* School Forests */}
+        <ScrollableAnchor id={"school"}>
+        <Container fluid id="school" className="bg-school sectionPad">
+        <Fade bottom>
+            <Row className="text-center justify-content-center">
+              <Col className="col-11 col-md-9 text-white">
+                <h2 className="emphasis-2 bold pt-3 text-white tight-drop-light">
+                <ReactMarkdown>
+                  {editingdata.school_header1}
+                  </ReactMarkdown>
+                </h2>
+              </Col>
+            </Row>
+          </Fade>
+          
+          <Fade bottom>
+            <Row className="text-center  justify-content-center mb-4">
+              <Col className="col-11 col-md-8 mb-4">
+                <Row className="horizTab justify-content-center">
+                  <Dropdown className="col-10 col-lg-4 col-xl-4">
+                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
+                      {editingdata.schooldropdown_menuheader1}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Row className="p-4">
+                        <Col>
+                        <h5 className="text-green mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.schooldropdown_box1header1}
+                        </ReactMarkdown>
+                        </h5>
+                          <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
+                          {editingdata.schooldropdown_box1para1}
+                          </ReactMarkdown>
+                          <h5 className="text-green mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.schooldropdown_box1header2}
+                        </ReactMarkdown>
+                        </h5>
+                          <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
+                          {editingdata.schooldropdown_box1para2}
+                          </ReactMarkdown>
+                          <h5 className="text-green mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.schooldropdown_box1header3}
+                        </ReactMarkdown>
+                        </h5>
+                          <ReactMarkdown className="text-grey mt-0 dropdown-text">
+                          {editingdata.schooldropdown_box1para3}
+                          </ReactMarkdown>
+                        </Col>
+                      </Row>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                  <Dropdown className="col-10 col-lg-4 col-xl-4">
+                  <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
+                      {editingdata.schooldropdown_menuheader2}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Row className="p-4">
+                        <Col>
+                        <h5 className="text-green medium mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.schooldropdown_quote1para}
+                        </ReactMarkdown>
+                        </h5>
+                        <ReactMarkdown>
+                        {editingdata.schooldropdown_quote1name}
+                        </ReactMarkdown>
+                        <ReactMarkdown className="text-small mb-4">
+                        {editingdata.schooldropdown_quote1title}
+                        </ReactMarkdown>
+                        <h5 className="text-green medium mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.schooldropdown_quote2para}
+                        </ReactMarkdown>
+                        </h5>
+                        <ReactMarkdown>
+                        {editingdata.schooldropdown_quote2name}
+                        </ReactMarkdown>
+                        <ReactMarkdown className="text-small">
+                        {editingdata.schooldropdown_quote2title}
+                        </ReactMarkdown>
+                        </Col>
+                      </Row>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                  <Dropdown className="col-10 col-lg-4 col-xl-4">
+                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
+                      {editingdata.schooldropdown_menuheader3}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Row className="p-4">
+                        <Col>
+                        <p className="text-green bold text-left mb-3">{editingdata.schooldropdown_pointsheader}</p>
+                        <ul className="text-grey dropdown-text checkMark px-3 mx-3">
+                          <li><ReactMarkdown>{editingdata.schooldropdown_pointspara1}</ReactMarkdown></li>
+                          <li><ReactMarkdown>{editingdata.schooldropdown_pointspara2}</ReactMarkdown></li>
+                          <li><ReactMarkdown>{editingdata.schooldropdown_pointspara3}</ReactMarkdown></li>
+                          <li><ReactMarkdown>{editingdata.schooldropdown_pointspara4}</ReactMarkdown></li>
+                          <li><ReactMarkdown>{editingdata.schooldropdown_pointspara5}</ReactMarkdown></li>
+                        </ul>
+                        </Col>
+                      </Row>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </Row>
+              </Col>
+            </Row>
+          </Fade>
+
+          <Fade bottom>
+            <Row className="text-center justify-content-center py-3 px-5 mt-5">
+              <Col className="col-12 col-md-9 col-lg-7">
+                <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.school_para1}</h2>
+                
+                <PDFViewer 
+          backend={PDFJSBackend}
+          src='../../ECOSYSTEMBENEFITS-School.pdf'
+        />
+              </Col>
+            </Row>
+            <Row className="text-center justify-content-center px-3 mb-5 pb-5">
+              <Col className="col-10 col-md-6 col-lg-7 col-xl-8 text-center pb-3 pe-lg-0">
+                <Button className="btn-large" variant="green">
+                  <a href="#school-calc-steps">{editingdata.school_button1}</a>
+                </Button>
+              </Col>
+            </Row>
+          </Fade>
+
+          <Fade bottom>
+            <Row className="justify-content-center align-items-center my-5">
+              <Col className="col-1 horizTab"></Col>
+            </Row>
+          </Fade>
+
+        <Fade bottom>
+        <ScrollableAnchor id={"school-calc-steps"}>
+            <Row id="school-calc-steps" className="pt-5 align-items-center justify-content-center mt-5 mb-3">
+              <Col className="col-10 pe-lg-0">
+                <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
+              </Col>
+            </Row>
+        </ScrollableAnchor>
+            <Row className="justify-content-center  align-items-stretch px-lg-5 mx-lg-5 mb-5 pb-5">
+                <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.schoolcalc_box1para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.schoolcalc_box1para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.schoolcalc_box1para3}</ReactMarkdown>
+                  <Link href="/school-calculator">
+                    <Button variant="green" className="calc-btn">{editingdata.schoolcalc_box1button1}</Button>
+                  </Link>
+                </div>
+              </Col>
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.schoolcalc_box2para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.schoolcalc_box2para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.schoolcalc_box2para3}</ReactMarkdown>
+                  <Link href="/smart-forest-school">
+                    <Button variant="green" className="calc-btn">{editingdata.schoolcalc_box2button1}</Button>
+                  </Link>
+                </div>
+              </Col>
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.schoolcalc_box3para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.schoolcalc_box3para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.schoolcalc_box3para3}</ReactMarkdown>
+                  <Link href="/net-negative-school">
+                    <Button variant="green" className="calc-btn">{editingdata.schoolcalc_box3button1}</Button>
+                  </Link>
+                </div>
+              </Col>
+            </Row>
+
+          </Fade>
+
+          <Fade bottom>
+            <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
+              <Col className="col-10 col-md-8 col-lg-9 col-xl-7 pe-lg-0">
+                <h2 className="text-center text-orange bold tight-drop-light">{editingdata.school_header3}</h2>
+                <p className="text-center px-lg-4 text-white large mb-2">{editingdata.school_para3}</p>
+              </Col>
+            </Row>
+            <Row className="text-center justify-content-center mb-5 pb-4">
+              <Col className="col-10 text-center pb-5 pe-lg-0">
+                <Link href="/contact">
+                <Button className="btn-large px-5" variant="green">
+                  {editingdata.school_button3}
+                </Button>
+                </Link>
+              </Col>
+            </Row>
+          </Fade>
+
+          <Fade bottom>
+          <Row className="pt-4 align-items-center justify-content-center mb-3">
+              <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
+                <h2 className="text-center text-orange bold tight-drop-light">Envision your forest</h2>
+              </Col>
+            </Row>
+          <DigitalSign/>
+          </Fade>
+        </Container>
+        </ScrollableAnchor>
+
+        {/* Legacy Forests */}
+        <ScrollableAnchor id={"legacy"}>
+        <Container fluid id="legacy" className="bg-legacy sectionPad">
+        <Fade bottom>
+            <Row className="text-center justify-content-center">
+              <Col className="col-11 col-md-9 text-white">
+                <h2 className="emphasis-2 bold pt-3 text-white tight-drop-light">
+                <ReactMarkdown>
+                  {editingdata.legacy_header1}
+                  </ReactMarkdown>
+                </h2>
+              </Col>
+            </Row>
+          </Fade>
+          
+          <Fade bottom>
+            <Row className="text-center  justify-content-center mb-4">
+              <Col className="col-11 col-md-8 mb-4">
+                <Row className="horizTab justify-content-center">
+                  <Dropdown className="col-10 col-lg-4 col-xl-4">
+                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
+                      {editingdata.legacydropdown_menuheader1}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Row className="p-4">
+                        <Col>
+                        <h5 className="text-green mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.legacydropdown_box1header1}
+                        </ReactMarkdown>
+                        </h5>
+                        </Col>
+                      </Row>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                  <Dropdown className="col-10 col-lg-4 col-xl-4">
+                  <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
+                      {editingdata.legacydropdown_menuheader2}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Row className="p-4">
+                        <Col>
+                        <h5 className="text-green medium mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.legacydropdown_quote1para}
+                        </ReactMarkdown>
+                        </h5>
+                        <ReactMarkdown>
+                        {editingdata.legacydropdown_quote1name}
+                        </ReactMarkdown>
+                        <ReactMarkdown className="text-small mb-4">
+                        {editingdata.legacydropdown_quote1title}
+                        </ReactMarkdown>
+                        <h5 className="text-green medium mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.legacydropdown_quote2para}
+                        </ReactMarkdown>
+                        </h5>
+                        <ReactMarkdown>
+                        {editingdata.legacydropdown_quote2name}
+                        </ReactMarkdown>
+                        <ReactMarkdown className="text-small">
+                        {editingdata.legacydropdown_quote2title}
+                        </ReactMarkdown>
+                        </Col>
+                      </Row>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                  <Dropdown className="col-10 col-lg-4 col-xl-4">
+                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
+                      {editingdata.legacydropdown_menuheader3}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Row className="p-4">
+                        <Col>
+                        <h5 className="text-green medium mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.legacydropdown_pointsheader0}
+                        </ReactMarkdown>
+                        </h5>
+                        <p className="text-green bold text-left mb-3">{editingdata.legacydropdown_pointsheader}</p>
+                        <ul className="text-grey dropdown-text checkMark px-3 mx-3">
+                          <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara1}</ReactMarkdown></li>
+                          <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara2}</ReactMarkdown></li>
+                          <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara3}</ReactMarkdown></li>
+                          <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara4}</ReactMarkdown></li>
+                          <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara5}</ReactMarkdown></li>
+                        </ul>
+                        </Col>
+                      </Row>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </Row>
+              </Col>
+            </Row>
+          </Fade>
+
+          <Fade bottom>
+            <Row className="text-center justify-content-center py-3 px-4 mt-5">
+              <Col className="col-12 col-md-9 col-lg-7">
+                <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.legacy_para1}</h2>
+
+                <PDFViewer 
+          backend={PDFJSBackend}
+          src='../../ECOSYSTEMBENEFITS-Legacy.pdf'
+        />
+              </Col>
+            </Row>
+            <Row className="text-center justify-content-center px-3 mb-5 pb-5">
+              <Col className="col-10 col-md-6 col-lg-7 col-xl-8 text-center pb-3 pe-lg-0">
+                <Button className="btn-large" variant="green">
+                  <a href="#legacy-calc-steps">{editingdata.legacy_button1}</a>
+                </Button>
+              </Col>
+            </Row>
+          </Fade>
+
+          <Fade bottom>
+            <Row className="justify-content-center align-items-center my-5">
+              <Col className="col-1 horizTab"></Col>
+            </Row>
+          </Fade>
+
+        <Fade bottom>
+        <ScrollableAnchor id={"legacy-calc-steps"}>
+            <Row id="legacy-calc-steps" className="pt-5 align-items-center justify-content-center mt-5 mb-3">
+              <Col className="col-10 pe-lg-0">
+                <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
+              </Col>
+            </Row>
+        </ScrollableAnchor>
+            <Row className="justify-content-center  align-items-stretch px-lg-5 mx-lg-5 mb-5 pb-5">
+                <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.legacycalc_box1para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.legacycalc_box1para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.legacycalc_box1para3}</ReactMarkdown>
+                  <Link href="/personal-calculator">
+                    <Button variant="green" className="calc-btn">{editingdata.legacycalc_box1button1}</Button>
+                  </Link>
+                </div>
+              </Col>
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.legacycalc_box2para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.legacycalc_box2para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.legacycalc_box2para3}</ReactMarkdown>
+                  <Link href="/smart-forest-personal">
+                    <Button variant="green" className="calc-btn">{editingdata.legacycalc_box2button1}</Button>
+                  </Link>
+                </div>
+              </Col>
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.legacycalc_box3para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.legacycalc_box3para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.legacycalc_box3para3}</ReactMarkdown>
+                  <Link href="/net-negative-personal">
+                    <Button variant="green" className="calc-btn">{editingdata.legacycalc_box3button1}</Button>
+                  </Link>
+                </div>
+              </Col>
+            </Row>
+
+          </Fade>
+
+          <Fade bottom>
+            <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
+              <Col className="col-10 col-md-8 col-lg-9 col-xl-7 pe-lg-0">
+                <h2 className="text-center text-orange bold tight-drop-light">{editingdata.legacy_header3}</h2>
+                <p className="text-center px-lg-4 text-white large mb-2">{editingdata.legacy_para3}</p>
+              </Col>
+            </Row>
+            <Row className="text-center justify-content-center mb-5 pb-4">
+              <Col className="col-10 text-center pb-5 pe-lg-0">
+                <Link href="/contact">
+                <Button className="btn-large px-5" variant="green">
+                  {editingdata.legacy_button3}
+                </Button>
+                </Link>
+              </Col>
+            </Row>
+          </Fade>
+
+          <Fade bottom>
+          <Row className="pt-4 align-items-center justify-content-center mb-3">
+              <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
+                <h2 className="text-center text-orange bold tight-drop-light">Envision your forest</h2>
+              </Col>
+            </Row>
+          <DigitalSign/>
+          </Fade>
+        </Container>
+        </ScrollableAnchor>
+
+        {/* Communal Forests */}
+        <ScrollableAnchor id={"communal"}>
+        <Container fluid id="communal" className="bg-communal sectionPad">
+        <Fade bottom>
+            <Row className="text-center justify-content-center">
+              <Col className="col-11 col-md-9 text-white">
+                <h2 className="emphasis-2 bold pt-3 text-white tight-drop-light">
+                <ReactMarkdown>
+                  {editingdata.communal_header1}
+                  </ReactMarkdown>
+                </h2>
+              </Col>
+            </Row>
+          </Fade>
+          
+          <Fade bottom>
+            <Row className="text-center  justify-content-center mb-4">
+              <Col className="col-11 col-md-8 mb-4">
+                <Row className="horizTab justify-content-center">
+                  <Dropdown className="col-10 col-lg-4 col-xl-4">
+                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
+                      {editingdata.communaldropdown_menuheader1}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Row className="p-4">
+                        <Col>
+                        <h5 className="text-green mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.communaldropdown_box1header1}
+                        </ReactMarkdown>
+                        </h5>
+                          <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
+                          {editingdata.communaldropdown_box1para1}
+                          </ReactMarkdown>
+                          <h5 className="text-green mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.communaldropdown_box1header2}
+                        </ReactMarkdown>
+                        </h5>
+                          <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
+                          {editingdata.communaldropdown_box1para2}
+                          </ReactMarkdown>
+                          <h5 className="text-green mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.communaldropdown_box1header3}
+                        </ReactMarkdown>
+                        </h5>
+                          <ReactMarkdown className="text-grey mt-0 dropdown-text">
+                          {editingdata.communaldropdown_box1para3}
+                          </ReactMarkdown>
+                        </Col>
+                      </Row>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                  <Dropdown className="col-10 col-lg-4 col-xl-4">
+                  <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
+                      {editingdata.communaldropdown_menuheader2}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Row className="p-4">
+                        <Col>
+                        <h5 className="text-green medium mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.communaldropdown_quote1para}
+                        </ReactMarkdown>
+                        </h5>
+                        <ReactMarkdown>
+                        {editingdata.communaldropdown_quote1name}
+                        </ReactMarkdown>
+                        <ReactMarkdown className="text-small mb-4">
+                        {editingdata.communaldropdown_quote1title}
+                        </ReactMarkdown>
+                        <h5 className="text-green medium mb-0 thin">
+                        <ReactMarkdown>
+                        {editingdata.communaldropdown_quote2para}
+                        </ReactMarkdown>
+                        </h5>
+                        <ReactMarkdown>
+                        {editingdata.communaldropdown_quote2name}
+                        </ReactMarkdown>
+                        <ReactMarkdown className="text-small">
+                        {editingdata.communaldropdown_quote2title}
+                        </ReactMarkdown>
+                        </Col>
+                      </Row>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                  <Dropdown className="col-10 col-lg-4 col-xl-4">
+                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
+                      {editingdata.communaldropdown_menuheader3}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Row className="p-4">
+                        <Col>
+                        <p className="text-green bold text-left mb-3">{editingdata.communaldropdown_pointsheader}</p>
+                        <ul className="text-grey dropdown-text checkMark px-3 mx-3">
+                          <li><ReactMarkdown>{editingdata.communaldropdown_pointspara1}</ReactMarkdown></li>
+                          <li><ReactMarkdown>{editingdata.communaldropdown_pointspara2}</ReactMarkdown></li>
+                          <li><ReactMarkdown>{editingdata.communaldropdown_pointspara3}</ReactMarkdown></li>
+                          <li><ReactMarkdown>{editingdata.communaldropdown_pointspara4}</ReactMarkdown></li>
+                        </ul>
+                        </Col>
+                      </Row>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </Row>
+              </Col>
+            </Row>
+          </Fade>
+
+          <Fade bottom>
+            <Row className="text-center justify-content-center py-3 px-5 mt-5">
+              <Col className="col-12 col-md-9 col-lg-7">
+                <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.communal_para1}</h2>
+                <ReactMarkdown className="text-white large tight-drop-light mb-4">{editingdata.communal_para2}</ReactMarkdown>
+                
+                <PDFViewer 
+          backend={PDFJSBackend}
+          src='../../ECOSYSTEMBENEFITS-Community.pdf'
+        />
+              </Col>
+            </Row>
+            <Row className="text-center justify-content-center px-3 mb-5 pb-5">
+              <Col className="col-10 col-md-6 col-lg-7 col-xl-8 text-center pb-3 pe-lg-0">
+                <Button className="btn-large" variant="green">
+                  <a href="#communal-calc-steps">{editingdata.communal_button1}</a>
+                </Button>
+              </Col>
+            </Row>
+          </Fade>
+
+          <Fade bottom>
+            <Row className="justify-content-center align-items-center my-5">
+              <Col className="col-1 horizTab"></Col>
+            </Row>
+          </Fade>
+
+        <Fade bottom>
+        <ScrollableAnchor id={"communal-calc-steps"}>
+            <Row id="communal-calc-steps" className="pt-5 align-items-center justify-content-center mt-5 mb-3">
+              <Col className="col-10 pe-lg-0">
+                <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
+              </Col>
+            </Row>
+        </ScrollableAnchor>
+            <Row className="justify-content-center  align-items-stretch px-lg-5 mx-lg-5 mb-5 pb-5">
+                <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.communalcalc_box1para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.communalcalc_box1para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.communalcalc_box1para3}</ReactMarkdown>
+                  <Link href="/personal-calculator">
+                    <Button variant="green" className="calc-btn">{editingdata.communalcalc_box1button1}</Button>
+                  </Link>
+                </div>
+              </Col>
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.communalcalc_box2para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.communalcalc_box2para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.communalcalc_box2para3}</ReactMarkdown>
+                  <Link href="/smart-forest-personal">
+                    <Button variant="green" className="calc-btn">{editingdata.communalcalc_box2button1}</Button>
+                  </Link>
+                </div>
+              </Col>
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
+                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.communalcalc_box3para1}</ReactMarkdown>
+                  <ReactMarkdown className="large text-green mb-3">{editingdata.communalcalc_box3para2}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey mb-3">{editingdata.communalcalc_box3para3}</ReactMarkdown>
+                  <Link href="/net-zero-personal">
+                    <Button variant="green" className="calc-btn">{editingdata.communalcalc_box3button1}</Button>
+                  </Link>
+                </div>
+              </Col>
+            </Row>
+
+          </Fade>
+
+          <Fade bottom>
+            <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
+              <Col className="col-10 col-md-8 col-lg-9 col-xl-7 pe-lg-0">
+                <h2 className="text-center text-orange bold tight-drop-light">{editingdata.communal_header3}</h2>
+                <p className="text-center px-lg-4 text-white large mb-2">{editingdata.communal_para3}</p>
+              </Col>
+            </Row>
+            <Row className="text-center justify-content-center mb-5 pb-4">
+              <Col className="col-10 text-center pb-5 pe-lg-0">
+                <Link href="/contact">
+                <Button className="btn-large px-5" variant="green">
+                  {editingdata.communal_button3}
+                </Button>
+                </Link>
+              </Col>
+            </Row>
+          </Fade>
+
+          <Fade bottom>
+          <Row className="pt-4 align-items-center justify-content-center mb-3">
+              <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
+                <h2 className="text-center text-orange bold tight-drop-light">Envision your forest</h2>
+              </Col>
+            </Row>
+          <DigitalSign/>
+          </Fade>
+        </Container>
+        </ScrollableAnchor>
+
+      </main>
+    </div>
+  );
 }
 
 /**
-* Fetch data with getStaticProps based on 'preview' mode
-*/
-export const getStaticProps: GetStaticProps = async function({
-preview,
-previewData,
+ * Fetch data with getStaticProps based on 'preview' mode
+ */
+export const getStaticProps: GetStaticProps = async function ({
+  preview,
+  previewData,
 }) {
-if (preview) {
-return getGithubPreviewProps({
-...previewData,
-fileRelativePath: 'content/build.json',
-parse: parseJson,
-})
-}
-return {
-props: {
-sourceProvider: null,
-error: null,
-preview: false,
-file: {
-fileRelativePath: 'content/build.json',
-data: (await import('../content/build.json')).default,
-},
-},
-}
-}
+  if (preview) {
+    return getGithubPreviewProps({
+      ...previewData,
+      fileRelativePath:"content/build.json",
+      parse: parseJson,
+    });
+  }
+  return {
+    props: {
+      sourceProvider: null,
+      error: null,
+      preview: false,
+      file: {
+        fileRelativePath:"content/build.json",
+        data: (await import("../content/build.json")).default,
+      },
+    },
+  };
+};

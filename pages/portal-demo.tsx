@@ -9,9 +9,10 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Map from '../components/portalMap'
-
+import ImageGallery from 'react-image-gallery';
 import Slider from 'react-input-slider';
 import Button from 'react-bootstrap/Button';
+import Header from "../components/header";
 
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
@@ -114,10 +115,65 @@ const [sliderData,setSliderData] = React.useState({
 })
 
 
+    const images = [
+      {
+        original: '/portal-gallery-3.jpg',
+        thumbnail: '/portal-gallery-tb-3.jpg',
+        description: 'Image Description'
+      },
+      {
+        original: '/portal-gallery-4.jpg',
+        thumbnail: '/portal-gallery-tb-4.jpg',
+        description: 'Image Description'
+      },
+      {
+        original: '/portal-gallery-9.jpg',
+        thumbnail: '/portal-gallery-tb-9.jpg',
+        description: 'Image Description'
+      },
+      {
+        original: '/portal-gallery-10.jpg',
+        thumbnail: '/portal-gallery-tb-10.jpg',
+        description: 'Image Description'
+      },
+      {
+        original: '/portal-gallery-1.jpg',
+        thumbnail: '/portal-gallery-tb-1.jpg',
+        description: 'Image Description'
+      },
+      {
+        original: '/portal-gallery-2.jpg',
+        thumbnail: '/portal-gallery-tb-2.jpg',
+        description: 'Image Description'
+      },
+      {
+        original: '/portal-gallery-5.jpg',
+        thumbnail: '/portal-gallery-tb-5.jpg',
+        description: 'Image Description'
+      },
+      {
+        original: '/portal-gallery-7.jpg',
+        thumbnail: '/portal-gallery-tb-7.jpg',
+        description: 'Image Description'
+      },      
+      {
+        original: '/portal-gallery-8.jpg',
+        thumbnail: '/portal-gallery-tb-8.jpg',
+        description: 'Image Description'
+      },
+      {
+        original: '/portal-gallery-6.jpg',
+        thumbnail: '/portal-gallery-tb-6.jpg',
+        description: 'Image Description'
+      }
+
+    ]
+
+
 return (
 
 <div>
-
+  <Header/>
   <Head>
     <title>Canada's Forest Trust</title>
     <link rel="icon" href="/favicon.ico" />
@@ -125,268 +181,90 @@ return (
     </meta>
   </Head>
 
-  <main className="bg-green">
-    <Container className="bg-green py-5 my-5">
-      <Row className="justify-content-center d-flex mb-4 pt-lg-5">
-        <Col className="col-xl-10 ">
+  <main className="bg-green ">
+    <Container className="bg-green pt-5 mt-5 px-0">
+      <Row className="justify-content-center d-flex mb-3 pt-lg-5">
+        <Col className="col-10 mt-5 mt-lg-0 mt-xl-0">
         <h1 className="h2 bold text-orange text-center">
           {editingdata.greeting} {userData.displayname}
         </h1>
         </Col>
       </Row>
-      <Row className="flex justify-content-center">
-        <Col className="col-xl-8 roundedBox bg-white card-drop">
 
-        <Tabs>
-          <Row>
-            <Col className="col-lg-3 p-4 pe-1 bg-offwhite roundedBoxLeft">
-
+      <Row className="flex justify-content-center p-0 m-0">
+       <Col className="col-12 bg-white card-drop p-0 m-0">
+        <Tabs className="p-0 m-0">
+          <Row className="p-0 m-0">
+            <Col className="col-12 col-lg-3 p-5 bg-offwhite d-none d-lg-block">
             <TabList>
-              <span className="smallCaps small text-green panelHead ">Profile</span>
-              <Tab>
-                My Smart Forest</Tab>
-                
-              <Tab>Grow My Impact</Tab>
+              <span className="smallCaps small text-green panelHead mb-1">Profile</span>
+              <Tab className="my-2">Smart Forest Intelligence Dashboard</Tab>       
+              <Tab className="op-5 my-2" disabled>Grow My Impact</Tab>
+              <Tab className="op-5 my-2" disabled>Edit My Information</Tab>
               <br />
-              <span className="smallCaps small text-green panelHead ">Campaigns</span>
-              
-              <Tab>
-
-                Active
-              </Tab>
-              <Tab>
-
-                Previous
-              </Tab>
-
+              <span className="smallCaps small text-green panelHead mb-1">Campaigns</span> 
+              <Tab className="op-5 my-2" disabled>New +</Tab>
+              <Tab className="op-5 my-2" disabled>Active</Tab>
+              <Tab className="op-5 my-2" disabled>Previous</Tab>
             </TabList>
             </Col>
             
-            <Col className="col-lg-9 p-5 pt-4">
-           
+            <Col className="col-12 col-lg-9 p-5 pt-4">    
             <TabPanel>
-            <h2 className="panelHead text-center text-green mb-2 ">My Smart Forest</h2>
-            <Tabs>
-              <TabList className="tabRow mb-0">
-            <Tab className="link bold text-orange">
-                Dashboard
-                </Tab>
-              <Tab className="link bold text-orange">
-                ForestCast<sup>™</sup>
-                </Tab>
-            </TabList>
-            <TabPanel>
+              <h3 className="text-center text-grey mt-3 mb-2 px-3">Smart Forest Intelligence Dashboard</h3>
+              <Tabs>
+                <TabList className="tabRow mb-0 px-0">
+                  <Tab className="link bold text-orange my-2 mx-5 mx-md-3">
+                  YOUR FOREST
+                  </Tab>
+                  <Tab className="link bold text-orange my-2 mx-5 mx-md-3">
+                  GALLERY
+                  </Tab>
+                  <Tab className="link bold text-orange my-2 mx-5 mx-md-3">
+                  FORESTCASTER
+                  </Tab>
+              </TabList>
+
+       {/* Dashboard */}
+            <TabPanel >
+              <Row className="flex justify-content-center mt-3">
+                <Col className="col-12 col-md-4 col-lg-4 py-3 px-2">
+                <img src="/dashboard1.svg"/> 
+                </Col>
+                <Col className="col-12 col-md-4 col-lg-4 py-3 px-2">
+                <img src="/dashboard2.svg"/> 
+                </Col>
+                <Col className="col-12 col-md-4 col-lg-4 py-3 px-2">
+                <img src="/dashboard3.svg"/> 
+                </Col>
+              </Row>
+                          
+              </TabPanel>
+
+        {/* Image Gallery */}      
+
+            <TabPanel className="py-3">
+
+                  <ImageGallery items={images} showPlayButton={false} showIndex={true} /> 
+            
+              </TabPanel>
               
-              <Map location={location}/>
-              <Row className="borderGrid pt-3">
-                <Col>
+        {/* Forestcaster */}      
+              <TabPanel>
                 <Row>
-                  <Col className="ps-1">
-                  <span className="h2 bold text-green ps-0 mb-0">{userData ? userData.location : ''}</span>
+                  <Col className="col-12 col-md-8 col-xl-8 p-0">
+                    <img src="/portal-gallery-forestcast-grid.svg"/> 
+                  </Col>
+                  <Col className="col-12 col-md-4 col-xl-4 p-0 px-">
+                    <img src="/portal-gallery-forestcast-data.svg"/> 
                   </Col>
                 </Row>
-                <Row>
-                  <Col className="ps-1">
-                  <span className="p text-small">{userData ? userData.country : ''}</span>
-                  </Col>
-                </Row>
-                </Col>
-                <Col>
-                <Row>
-                  <Col>
-                  <span className="h2 bold text-green mb-0">{userData ? userData.trees : ''}</span>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                  <span className="p text-small">Trees</span>
-                  </Col>
-                </Row>
-                </Col>
-                <Col>
-                <Row>
-                  <Col>
-                  <span className="h2 bold text-green mb-0">{userData ? userData.acres : ''}</span>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                  <span className="p text-small">Acres</span>
-                  </Col>
-                </Row>
-                </Col>
-              </Row>
-              <Row className="py-3">
-                <Col>
-                <Row>
-                  <Col>
-                  <span className="h4 text-green">{userData ? userData.type : ''}</span>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                  <span className="p text-small">Forest Type</span>
-                  </Col>
-                </Row>
-                </Col>
-                <Col>
-                <Row>
-                  <Col>
-                  <span className="h4 text-green">{userData ? userData.status : ''}</span>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                  <span className="p text-small">Build Status</span>
-                  </Col>
-                </Row>
-                </Col>
-                <Col>
-                <Row>
-                  <Col>
-                  <span className="h4 text-green">{userData ? userData.net : ''}%</span>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                  <span className="p text-small">To Net Zero</span>
-                  </Col>
-                </Row>
-                </Col>
-                <Col>
-                <Row>
-                  <Col>
-                  <span className="h4 text-green">{userData ? userData.engagement : ''}</span>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                  <span className="p text-small">People Engaged</span>
-                  </Col>
-                </Row>
-                </Col>
-                <Col>
-                <Row>
-                  <Col>
-                  <span className="h4 text-green">{userData ? userData.biodiversity : ''}%</span>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                  <span className="p text-small">Biodiversity Protected</span>
-                  </Col>
-                </Row>
-                </Col>
-              </Row>
-              <Row>
-              <hr className="thick"/>
-              </Row>
+                
               </TabPanel>
 
-            <TabPanel className="pt-0">
-            <div className="forestImages"><img src="/trees-platform.png"/><img className="overlay" src={"/trees-year-"+state.x+".png"}/></div>
-             <p className="smallCaps small text-center text-green">{state.x} years</p>
-      <Slider 
-      styles={{
-        track: {
-          margin: "0 3%",
-  width: "94% !important"
-        },
-        active: {
-          backgroundColor: '#054218'
-        },
-        thumb: { backgroundColor: '#00823B'
-        },
-        disabled: {
-          opacity: 0.5
-        }
-      }}
-
-        x={state.x}
-        xstep={5}
-        onChange={({ x }) => setState(state => ({ ...state, x }))}
-      />
-   
-      
-      <Row className="numRow">
-      <Col>0</Col>
-      <Col>10</Col>
-      <Col>20</Col>
-      <Col>30</Col>
-      <Col>40</Col>
-      <Col>50</Col>
-      <Col>60</Col>
-      <Col>70</Col>
-      <Col>80</Col>
-      <Col>90</Col>
-      <Col>100</Col>
-      </Row>
-      <Row className="pt-5">
-      <Col className="px-4">
-                <Row>
-                  <Col >
-                  <span className="h4 text-green">{sliderData[state.x].height} meters</span>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                  <span className="p text-small">Average Height</span>
-                  </Col>
-                </Row>
-      </Col>
-      <Col className="px-4">
-                <Row>
-                  <Col>
-                  <span className="h4 text-green">{sliderData[state.x].volume} m3/ha</span>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                  <span className="p text-small">Estimated Volume</span>
-                  </Col>
-                </Row>
-      </Col>
-      <Col className="px-4">
-                <Row>
-                  <Col>
-                  <span className="h4 text-green">{sliderData[state.x].carbon} T/ha</span>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                  <span className="p text-small">Estimated CO2 Sequestered</span>
-                  </Col>
-                </Row>
-      </Col>
-
-      <Col className="px-4">
-                <Row>
-                  <Col>
-                  <span className="h4 text-green">{sliderData[state.x].jobs}</span>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                  <span className="p text-small">Estimated Jobs</span>
-                  </Col>
-                </Row>
-      </Col>
-      </Row>
-   
-              </TabPanel>
               </Tabs>
             </TabPanel>
-            <TabPanel>
-              <h2 className="panelHead text-center text-green mb-2 ">Grow My Impact</h2>
-            </TabPanel>
-
-            <TabPanel>
-              <h2 className="panelHead text-center text-green mb-2 ">Active Campaigns</h2>
-            </TabPanel>
-
-            <TabPanel>
-              <h2 className="panelHead text-center text-green mb-2 ">Previous Campaigns</h2>
-            </TabPanel>
+            
             </Col>
 
           </Row>

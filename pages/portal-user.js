@@ -12,6 +12,7 @@ import dynamic from 'next/dynamic';
 import Button from 'react-bootstrap/Button';
 import { useCurrentUser } from '../hooks/index';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import Header from "../components/header";
 
 import Slider from 'react-input-slider';
 
@@ -143,7 +144,7 @@ const [sliderData,setSliderData] = React.useState({
 return (
 
 <div>
-
+  <Header/>
   <Head>
     <title>Canada's Forest Trust</title>
     <link rel="icon" href="/favicon.ico" />
@@ -153,7 +154,7 @@ return (
 
   <main className="bg-green">
     <Container className="bg-green py-5 my-5">
-      <Row className="justify-content-center d-flex mb-4 pt-lg-5">
+      <Row className="justify-content-center d-flex mb-3 pt-lg-5">
         <Col className="col-xl-10 ">
         <h1 className="h2 text-orange text-center">
           Welcome Back, {user ? user.name : 'stranger'}
@@ -202,18 +203,19 @@ return (
                ForestCast<sup>™</sup>
                 </Tab>
             </TabList>
-            <TabPanel>
+
+            <TabPanel className="mt-3">
               
               <Map location={location}/>
               <Row className="borderGrid pt-3">
                 <Col>
                 <Row>
-                <Col className="ps-1">
+                <Col className="ps-lg-1">
                   <span className="h2 bold text-green ps-0 mb-0">{user ? user.location : ''}</span>
                   </Col>
                 </Row>
                 <Row>
-                <Col className="ps-1">
+                <Col className="ps-lg-1">
                   <span className="p text-small">{user ? user.country : ''}</span>
                   </Col>
                 </Row>
