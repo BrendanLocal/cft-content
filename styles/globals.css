@@ -411,6 +411,10 @@ hr {
   border: none;
 }
 
+.video-size {
+  width: 100%!important;
+  height: 100%!important;
+}
 
 .modal-btn {
   color: #FF4D24;
@@ -2169,7 +2173,7 @@ transition: all .5s ease;
 .about-hero {
   background: url('/inside-cft.jpg');
     background-size: cover;
-    height: 540px;
+    height: 400px;
     background-position: center;
   
 }
@@ -2514,6 +2518,9 @@ z-index: 999;
     min-height: 80vh;
   }
 
+  .about-hero {
+      height: 300px;
+  }
 
   .calculate-card {
     box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
@@ -2636,6 +2643,16 @@ z-index: 999;
     min-width: 20rem;
   }
 
+  .video-size {
+    width: 100%!important;
+    height: 100%!important;
+  }
+
+  .about-hero {
+    height: 200px;
+    position: initial;
+}
+
   .calculate-card {
     box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
     border: none;
@@ -2721,12 +2738,23 @@ z-index: 999;
     font-size: calc(2.8rem + 1.5vw);
     line-height: calc(2.9rem + 1.5vw);
   }
+
+  h1.hero-alt, h1.hero-alt {
+    margin-top: 0px!important;
+    font-size: calc(2.8rem + 1.5vw);
+    line-height: calc(2.9rem + 1.5vw);
+  }
   
   h2.hero, h2.hero {
     font-size: calc(3.6rem + 1.5vw);
     line-height: calc(3.7rem + 1.5vw);
     margin-bottom: 0px!important;
     padding-bottom: 0px!important;
+  }
+
+  .video-size {
+    width: 100%!important;
+    height: 100%!important;
   }
 
   .dropdown-menu {
@@ -2743,6 +2771,11 @@ z-index: 999;
   
 .smallCaps {
 font-size: .9em;
+}
+
+.about-hero {
+  height: 200px;
+  position: initial;
 }
 
 .parallaxLayers {
