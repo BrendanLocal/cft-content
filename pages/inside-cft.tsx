@@ -151,8 +151,8 @@ export default function Power({ file }) {
               <p className="large op-9 pt-3">{editingdata.para2}</p>
               <p className="large op-9">{editingdata.para3}</p>
               <p className="text-white text-left smallcaps intro-links-header op-5 mt-5 mb-3">{editingdata.header2}</p>
-              <a href="#commitment" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.link1}</a>
-              <a href="#forever" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.link2}</a>
+              <a href="#growing" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.link1}</a>
+              <a href="#team" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.link2}</a>
             </Col>
           </Row>
         </Container>

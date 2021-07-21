@@ -96,7 +96,7 @@ return (
           />
         </label><br/>
         <Button className="btn-green signin-btn mb-3 w-100" type="submit">Sign in</Button><br/>
-        <Link href="/become-a-customer" className="text-center">
+        <Link href="/contact" className="text-center">
         <a className="text-orange text-small text-center textButton modal-btn bold" >Become a customer</a></Link> <br/>
         <Link href="/forgot-password" className="text-center">
           <a className="text-orange text-small text-center textButton modal-btn" >Forgot password?</a>

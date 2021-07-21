@@ -630,7 +630,7 @@ export default function Build({ file }) {
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.corpcalc_box1para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.corpcalc_box1para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-3">{editingdata.corpcalc_box1para3}</ReactMarkdown>
-                  <Link href="/carbon-calculator#corporate">
+                  <Link href="/business-calculator">
                     <Button variant="green" className="calc-btn">{editingdata.corpcalc_box1button1}</Button>
                   </Link>
                 </div>
@@ -640,7 +640,7 @@ export default function Build({ file }) {
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.corpcalc_box2para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.corpcalc_box2para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-3">{editingdata.corpcalc_box2para3}</ReactMarkdown>
-                  <Link href="/smart-forest-calculator#corporate">
+                  <Link href="/smart-forest-corp">
                     <Button variant="green" className="calc-btn">{editingdata.corpcalc_box2button1}</Button>
                   </Link>
                 </div>
@@ -650,7 +650,7 @@ export default function Build({ file }) {
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.corpcalc_box3para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.corpcalc_box3para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-3">{editingdata.corpcalc_box3para3}</ReactMarkdown>
-                  <Link href="/smart-forest-calculator#corporate">
+                  <Link href="/net-negative-corp">
                     <Button variant="green" className="calc-btn">{editingdata.corpcalc_box3button1}</Button>
                   </Link>
                 </div>
@@ -668,9 +668,11 @@ export default function Build({ file }) {
             </Row>
             <Row className="text-center justify-content-center mb-5 pb-4">
               <Col className="col-10 text-center pb-5 pe-lg-0">
+              <Link href="/contact">
                 <Button className="btn-large px-5" variant="green">
                   {editingdata.corp_button}
                 </Button>
+                </Link>
               </Col>
             </Row>
           </Fade>
@@ -835,7 +837,7 @@ export default function Build({ file }) {
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.schoolcalc_box1para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.schoolcalc_box1para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-3">{editingdata.schoolcalc_box1para3}</ReactMarkdown>
-                  <Link href="/carbon-calculator#school">
+                  <Link href="/school-calculator">
                     <Button variant="green" className="calc-btn">{editingdata.schoolcalc_box1button1}</Button>
                   </Link>
                 </div>
@@ -845,7 +847,7 @@ export default function Build({ file }) {
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.schoolcalc_box2para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.schoolcalc_box2para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-3">{editingdata.schoolcalc_box2para3}</ReactMarkdown>
-                  <Link href="/smart-forest-calculator#school">
+                  <Link href="/smart-forest-school">
                     <Button variant="green" className="calc-btn">{editingdata.schoolcalc_box2button1}</Button>
                   </Link>
                 </div>
@@ -855,7 +857,7 @@ export default function Build({ file }) {
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.schoolcalc_box3para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.schoolcalc_box3para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-3">{editingdata.schoolcalc_box3para3}</ReactMarkdown>
-                  <Link href="/smart-forest-calculator#school">
+                  <Link href="/net-negative-school">
                     <Button variant="green" className="calc-btn">{editingdata.schoolcalc_box3button1}</Button>
                   </Link>
                 </div>
@@ -873,9 +875,11 @@ export default function Build({ file }) {
             </Row>
             <Row className="text-center justify-content-center mb-5 pb-4">
               <Col className="col-10 text-center pb-5 pe-lg-0">
+                <Link href="/contact">
                 <Button className="btn-large px-5" variant="green">
                   {editingdata.school_button3}
                 </Button>
+                </Link>
               </Col>
             </Row>
           </Fade>
@@ -1024,7 +1028,7 @@ export default function Build({ file }) {
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.legacycalc_box1para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.legacycalc_box1para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-3">{editingdata.legacycalc_box1para3}</ReactMarkdown>
-                  <Link href="/carbon-calculator#legacy">
+                  <Link href="/personal-calculator">
                     <Button variant="green" className="calc-btn">{editingdata.legacycalc_box1button1}</Button>
                   </Link>
                 </div>
@@ -1034,7 +1038,7 @@ export default function Build({ file }) {
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.legacycalc_box2para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.legacycalc_box2para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-3">{editingdata.legacycalc_box2para3}</ReactMarkdown>
-                  <Link href="/smart-forest-calculator#legacy">
+                  <Link href="/smart-forest-personal">
                     <Button variant="green" className="calc-btn">{editingdata.legacycalc_box2button1}</Button>
                   </Link>
                 </div>
@@ -1044,7 +1048,7 @@ export default function Build({ file }) {
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.legacycalc_box3para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.legacycalc_box3para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-3">{editingdata.legacycalc_box3para3}</ReactMarkdown>
-                  <Link href="/smart-forest-calculator#legacy">
+                  <Link href="/net-negative-personal">
                     <Button variant="green" className="calc-btn">{editingdata.legacycalc_box3button1}</Button>
                   </Link>
                 </div>
@@ -1062,9 +1066,11 @@ export default function Build({ file }) {
             </Row>
             <Row className="text-center justify-content-center mb-5 pb-4">
               <Col className="col-10 text-center pb-5 pe-lg-0">
+                <Link href="/contact">
                 <Button className="btn-large px-5" variant="green">
                   {editingdata.legacy_button3}
                 </Button>
+                </Link>
               </Col>
             </Row>
           </Fade>
@@ -1227,7 +1233,7 @@ export default function Build({ file }) {
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.communalcalc_box1para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.communalcalc_box1para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-3">{editingdata.communalcalc_box1para3}</ReactMarkdown>
-                  <Link href="/carbon-calculator#communal">
+                  <Link href="/personal-calculator">
                     <Button variant="green" className="calc-btn">{editingdata.communalcalc_box1button1}</Button>
                   </Link>
                 </div>
@@ -1237,7 +1243,7 @@ export default function Build({ file }) {
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.communalcalc_box2para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.communalcalc_box2para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-3">{editingdata.communalcalc_box2para3}</ReactMarkdown>
-                  <Link href="/smart-forest-calculator#communal">
+                  <Link href="/smart-forest-personal">
                     <Button variant="green" className="calc-btn">{editingdata.communalcalc_box2button1}</Button>
                   </Link>
                 </div>
@@ -1247,7 +1253,7 @@ export default function Build({ file }) {
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.communalcalc_box3para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.communalcalc_box3para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-3">{editingdata.communalcalc_box3para3}</ReactMarkdown>
-                  <Link href="/smart-forest-calculator#communal">
+                  <Link href="/net-zero-personal">
                     <Button variant="green" className="calc-btn">{editingdata.communalcalc_box3button1}</Button>
                   </Link>
                 </div>
@@ -1265,9 +1271,11 @@ export default function Build({ file }) {
             </Row>
             <Row className="text-center justify-content-center mb-5 pb-4">
               <Col className="col-10 text-center pb-5 pe-lg-0">
+                <Link href="/contact">
                 <Button className="btn-large px-5" variant="green">
                   {editingdata.communal_button3}
                 </Button>
+                </Link>
               </Col>
             </Row>
           </Fade>
