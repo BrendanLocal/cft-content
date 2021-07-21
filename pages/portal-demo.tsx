@@ -227,7 +227,7 @@ return (
 
        {/* Dashboard */}
             <TabPanel >
-              <Row className="flex justify-content-center border-top-green mt-3">
+              <Row className="flex justify-content-center mt-3">
                 <Col className="col-12 col-md-4 col-lg-4 py-3 px-2">
                 <img src="/dashboard1.svg"/> 
                 </Col>
