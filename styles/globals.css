@@ -2346,6 +2346,31 @@ color: #000;
     font-size: 17px;
 }
 
+.upload-button > div {
+  width: 100% !important;
+  height: 50px !important;
+}
+
+.upload-button svg {
+  height: 70%;
+  position: absolute;
+  left: 2%;
+}
+
+
+
+.create-book-image-input-container:hover, .create-book-photo-picker:hover, .upload-button svg:hover, .upload-button:hover, .upload-button > div:hover, .create-book-photo-input:hover {
+  cursor: pointer;
+}
+
+.create-book-photo-input:after {
+  content: 'Upload a Logo';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
 /* Search */
 
 #searchComponent {
@@ -2422,7 +2447,6 @@ z-index: 999;
     text-decoration: none;
     vertical-align: middle;
   background: #00823B!important;
-  padding: 10px 20px 10px 20px;
     border-radius: 6px;
     font-size: 13px;
     text-transform: uppercase;
@@ -2434,6 +2458,7 @@ z-index: 999;
     transition: all .5s;
     margin-top: 0 !important;
     width: 100% !important;
+    height: 100% !important;
 }
 
 
