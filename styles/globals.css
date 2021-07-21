@@ -1832,6 +1832,9 @@ span.authorTitle {
   z-index: -999 !important;
 }
 
+#viewer {
+  height: 500px !important;
+}
 
 /* Card Details */
 
@@ -2428,6 +2431,13 @@ color: #000;
     width: 10%;
     left: 40%;
     font-size: 17px;
+}
+
+.signImage {
+  position: absolute;
+    top: 27%;
+    right: 24%;
+    width: 19%;
 }
 
 .signTextAcres {
