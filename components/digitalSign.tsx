@@ -15,7 +15,7 @@ const DigitalSign = ()=> {
   }
 
   const [forestName, setForestName] = React.useState("");
-  const [forestAcres, setForestAcres] = React.useState(0);
+  const [forestAcres, setForestAcres] = React.useState(0); 
   const [logoImage, setLogoImage] = React.useState("");
   const [selectCopy, setCopy] = React.useState("");
   const [selectBG, setBG] = React.useState("signbg_forest.jpg");
