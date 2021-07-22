@@ -13,8 +13,7 @@ const DigitalSign = ()=> {
   const handleImageSelect = (e) => {
     setImageSrc(URL.createObjectURL(e.target.files[0]))
   }
-
-const DigitalSign = ()=> {
+  
   const [forestName, setForestName] = React.useState("");
   const [forestAcres, setForestAcres] = React.useState(0); 
   const [logoImage, setLogoImage] = React.useState("");
