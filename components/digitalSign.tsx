@@ -13,13 +13,16 @@ const DigitalSign = ()=> {
   const handleImageSelect = (e) => {
     setImageSrc(URL.createObjectURL(e.target.files[0]))
   }
-
+  
   const [forestName, setForestName] = React.useState("");
-  const [forestAcres, setForestAcres] = React.useState(0);
+  const [forestAcres, setForestAcres] = React.useState(0); 
   const [logoImage, setLogoImage] = React.useState("");
   const [selectCopy, setCopy] = React.useState("");
   const [selectBG, setBG] = React.useState("signbg_forest.jpg");
-  
+  const [selectLogo, setLogo] = React.useState("");
+  const logoUpload = (event) => { 
+    setLogo(event.target.value);
+  };
   
   const changeCopy = (event) => {
     setCopy(event.target.value);
@@ -66,7 +69,7 @@ const DigitalSign = ()=> {
             <option value="signbg_forest.jpg">Spring</option>
             <option value="signbg_green.jpg">Summer</option>
           </select>
-          <label htmlFor="forest-name">Upload an image for your sign</label>
+ <label htmlFor="forest-name">Upload an image for your sign</label>
           <div className="upload-button">
           <ImageUpload
             handleImageSelect={handleImageSelect}
