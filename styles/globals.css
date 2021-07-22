@@ -2149,6 +2149,12 @@ transition: all .5s ease;
 
 /* About Page */
 
+
+.video-size {
+  width: 100%!important;
+  height: 100%!important;
+}
+
 .about-card {
   box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
   
@@ -2169,7 +2175,7 @@ transition: all .5s ease;
 .about-hero {
   background: url('/inside-cft.jpg');
     background-size: cover;
-    height: 540px;
+    height: 400px;
     background-position: center;
   
 }
@@ -2595,6 +2601,10 @@ z-index: 999;
     min-height: 95vh;
   }
 
+  .about-hero {
+    height: 300px;
+}
+
   .sidebar {
     padding: 30px 100px 0px 20px;
     z-index:10;
@@ -2771,6 +2781,17 @@ z-index: 999;
       height: 410px;
   }
 
+  .video-size {
+    width: 100%!important;
+    height: 100%!important;
+  }
+
+  .about-hero {
+    height: 200px;
+    position: initial;
+}
+
+
 }
 
 
@@ -2784,12 +2805,23 @@ z-index: 999;
     font-size: calc(2.8rem + 1.5vw);
     line-height: calc(2.9rem + 1.5vw);
   }
-  
+
+  h1.hero-alt, h1.hero-alt {
+    margin-top: 0px!important;
+    font-size: calc(2.8rem + 1.5vw);
+    line-height: calc(2.9rem + 1.5vw);
+  }
+
   h2.hero, h2.hero {
     font-size: calc(3.6rem + 1.5vw);
     line-height: calc(3.7rem + 1.5vw);
     margin-bottom: 0px!important;
     padding-bottom: 0px!important;
+  }
+
+  .video-size {
+    width: 100%!important;
+    height: 100%!important;
   }
 
   .dropdown-menu {
@@ -2950,6 +2982,11 @@ font-size: .9em;
 
 .nudge {
   margin-right: 0px;
+}
+
+.about-hero {
+  height: 200px;
+  position: initial;
 }
 
 
