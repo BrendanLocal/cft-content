@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ImageUpload from 'image-upload-react'
+import { exportComponentAsPNG } from 'react-component-export-image';
 
 const DigitalSign = ()=> {
 
@@ -16,10 +17,8 @@ const DigitalSign = ()=> {
 
   const [forestName, setForestName] = React.useState("");
   const [forestAcres, setForestAcres] = React.useState(0);
-  const [logoImage, setLogoImage] = React.useState("");
   const [selectCopy, setCopy] = React.useState("");
   const [selectBG, setBG] = React.useState("signbg_forest.jpg");
-  
   
   const changeCopy = (event) => {
     setCopy(event.target.value);
@@ -68,19 +67,22 @@ const DigitalSign = ()=> {
           </select>
           <label htmlFor="forest-name">Upload an image for your sign</label>
           <div className="upload-button">
-          <ImageUpload
-            handleImageSelect={handleImageSelect}
-            setImageSrc={setImageSrc}
-          />
+            <ImageUpload
+              handleImageSelect={handleImageSelect}
+              setImageSrc={setImageSrc}
+            />
           </div>
+          <label htmlFor="forest-name">Download your sign</label>
+          {/* I Can't quite get it to grab the SignImageContainer correctly */}
+          <button onClick={() => exportComponentAsPNG(signImageContainer)}>
+            Export As PNG
+          </button>
         </Col>
         <Col className="col-12 col-md-5 signImagebuilder">
           <div className="signImageContainer">
             <img src={selectBG}/>
             <div className="signImageText signTextForest">
-              {forestName? "The " : ""}
-              {forestName}
-              {forestName? " Forest" : ""}
+              <span>{forestName? "The " : ""} {forestName} {forestName? " Forest" : ""}</span>
               <br />
               <img src={imageSrc}></img>
             </div>
