@@ -159,7 +159,7 @@ const Header = ()=> {
           <Row className="pt-5">
             <Col className="align-content-start d-flex flex-column">
               <h3 className="text-white">Search</h3>
-              <div className="searchBox"><img src="/searchIcon.svg"/><img className="closeSearch" onClick={toggleSearch} src="/close.svg"/></div>
+              <div className="searchBox"><img src="/searchIcon.svg"/><Search /><img className="closeSearch" onClick={toggleSearch} src="/close.svg"/></div>
             </Col>
           </Row>
         </Container>
