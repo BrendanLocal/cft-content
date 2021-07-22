@@ -20,7 +20,8 @@ import {
   useGithubToolbarPlugins,
 } from "react-tinacms-github";
 import Header from "../components/header";
-
+import PDFViewer from '../components/PDFViewer';
+import PDFJSBackend from '../middlewares/pdfjs';
 import ReactPlayer from 'react-player'
 
 export default function Power({ file }) {
@@ -407,7 +408,10 @@ export default function Power({ file }) {
           <Fade bottom>
             <Row className="align-items-center justify-content-center">
               <Col className="col-8">          
-              <Document file="/CFT-Q&A.pdf" />
+              <PDFViewer 
+          backend={PDFJSBackend}
+          src='../../CFT-QA.pdf'
+        />
               </Col>
             </Row>
           </Fade>

@@ -182,7 +182,7 @@ return (
   </Head>
 
   <main className="bg-green ">
-    <Container className="bg-green pt-5 mt-5 px-0">
+    <Container fluid className="bg-green pt-5 mt-5 px-0">
       <Row className="justify-content-center d-flex mb-3 pt-lg-5">
         <Col className="col-10 mt-5 mt-lg-0 mt-xl-0">
         <h1 className="h2 bold text-orange text-center">
@@ -191,8 +191,8 @@ return (
         </Col>
       </Row>
 
-      <Row className="flex justify-content-center p-0 m-0">
-       <Col className="col-12 bg-white card-drop p-0 m-0">
+      <Row className="flex bg-white  justify-content-center p-0 m-0">
+       <Col className="col-12 card-drop p-0 m-0">
         <Tabs className="p-0 m-0">
           <Row className="p-0 m-0">
             <Col className="col-12 col-lg-3 p-5 bg-offwhite d-none d-lg-block">
