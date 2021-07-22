@@ -202,25 +202,25 @@ const Header = ()=> {
                   <Link href="/carbon-calculator">Carbon Calculators</Link>
                 </li>
                 <li className="ms-4 ms-md-5 subheader" onClick={toggleClass}>
-                  <Link href="/carbon-calculator#corporate">Corporate</Link>
+                  <Link href="/business-calculator">Corporate</Link>
                 </li>
                 <li className="ms-4 ms-md-5 subheader" onClick={toggleClass}>
-                  <Link href="/carbon-calculator#school">School</Link>
+                  <Link href="/school-calculator">School</Link>
                 </li>
                 <li className="ms-4 ms-md-5 subheader mb-2" onClick={toggleClass}>
-                  <Link href="/carbon-calculator#personal">Personal</Link>
+                  <Link href="/personal-calculator">Personal</Link>
                 </li>
                 <li className="slimlineTop" onClick={toggleClass}>
                   <Link href="/smart-forest-calculator">Net-Zero Calculators</Link>
                 </li>
                 <li className="ms-4 ms-md-5 subheader" onClick={toggleClass}>
-                  <Link href="/smart-forest-calculator#corporate">Corporate</Link>
+                  <Link href="/smart-forest-corp">Corporate</Link>
                 </li>
                 <li className="ms-4 ms-md-5 subheader" onClick={toggleClass}>
-                  <Link href="/smart-forest-calculator#school">School</Link>
+                  <Link href="/smart-forest-school">School</Link>
                 </li>
                 <li className="ms-4 ms-md-5 subheader mb-2" onClick={toggleClass}>
-                  <Link href="/smart-forest-calculator#personal">Personal</Link>
+                  <Link href="/smart-forest-personal">Personal</Link>
                 </li>
                 <li className="slimlineBottom slimlineTop" onClick={toggleClass}>
                   <Link href="/portal">Your Smart Forest Portal</Link>
