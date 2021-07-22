@@ -1,13 +1,18 @@
 import React, { useState, useEffect, MouseEvent} from 'react';
 import { render } from 'react-dom';
-import Link from 'next/link'
+import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import ImageUpload from 'image-upload-react'
-import { exportComponentAsPNG } from 'react-component-export-image';
+import ImageUpload from 'image-upload-react';
+import * as htmlToImage from 'html-to-image';
+import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
 
-const DigitalSign = ()=> {
+
+const DigitalSign = ({ signBG, signForestName, signImg, signAcres, signCopy })=> {
+
+
+  
 
   const [imageSrc, setImageSrc] = useState("")
  
@@ -35,6 +40,24 @@ const DigitalSign = ()=> {
   const changeName = (event) => {
     setForestName(event.target.value);
   };
+
+  useEffect(() => {
+  var node = document.getElementById('signImage');
+
+  
+htmlToImage.toPng(node)
+  .then(function (dataUrl) {
+    var img = new Image();
+    img.src = dataUrl;
+    document.getElementById('imageresult').appendChild(img);
+  })
+  .catch(function (error) {
+    console.error('oops, something went wrong!', error);
+  });
+
+});
+
+
 
   return (
     <React.Fragment>
@@ -74,12 +97,12 @@ const DigitalSign = ()=> {
           </div>
           <label htmlFor="forest-name">Download your sign</label>
           {/* I Can't quite get it to grab the SignImageContainer correctly */}
-          <button onClick={() => exportComponentAsPNG(signImageContainer)}>
+          <button >
             Export As PNG
           </button>
         </Col>
         <Col className="col-12 col-md-5 signImagebuilder">
-          <div className="signImageContainer">
+        <div id="signImage" className="signImageContainer">
             <img src={selectBG}/>
             <div className="signImageText signTextForest">
               <span>{forestName? "The " : ""} {forestName} {forestName? " Forest" : ""}</span>
@@ -94,7 +117,9 @@ const DigitalSign = ()=> {
               {selectCopy}
             </div>
           </div>
+          <div id="imageresult"></div>
         </Col>
+        
       </Row>
     </React.Fragment>
   )
