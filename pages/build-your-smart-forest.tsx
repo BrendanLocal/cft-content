@@ -599,12 +599,11 @@ export default function Build({ file }) {
               <Col className="col-12 col-md-9 col-lg-7">
                 <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.corp_header2}</h2>
                 
-<PDFViewer 
-          backend={PDFJSBackend}
-          src='../../ECOSYSTEMBENEFITS-Corp.pdf'
-        />
+
+                <img src="../../ECOSYSTEMBENEFITS-Corp.jpg"/>
               </Col>
             </Row>
+            
             <Row className="text-center justify-content-center px-3 mb-5 pb-5">
               <Col className="col-10 col-md-6 col-lg-7 col-xl-8 text-center pb-3 pe-lg-0">
                 <Button className="btn-large" variant="green">
@@ -810,11 +809,8 @@ export default function Build({ file }) {
             <Row className="text-center justify-content-center py-3 px-5 mt-5">
               <Col className="col-12 col-md-9 col-lg-7">
                 <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.school_para1}</h2>
+                <img src="../../ECOSYSTEMBENEFITS-School.jpg"/>
                 
-                <PDFViewer 
-          backend={PDFJSBackend}
-          src='../../ECOSYSTEMBENEFITS-School.pdf'
-        />
               </Col>
             </Row>
             <Row className="text-center justify-content-center px-3 mb-5 pb-5">
@@ -1006,10 +1002,8 @@ export default function Build({ file }) {
               <Col className="col-12 col-md-9 col-lg-7">
                 <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.legacy_para1}</h2>
 
-                <PDFViewer 
-          backend={PDFJSBackend}
-          src='../../ECOSYSTEMBENEFITS-Legacy.pdf'
-        />
+                <img src="../../ECOSYSTEMBENEFITS-Legacy.jpg"/>
+
               </Col>
             </Row>
             <Row className="text-center justify-content-center px-3 mb-5 pb-5">
@@ -1215,10 +1209,8 @@ export default function Build({ file }) {
                 <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.communal_para1}</h2>
                 <ReactMarkdown className="text-white large tight-drop-light mb-4">{editingdata.communal_para2}</ReactMarkdown>
                 
-                <PDFViewer 
-          backend={PDFJSBackend}
-          src='../../ECOSYSTEMBENEFITS-Community.pdf'
-        />
+                <img src="../../ECOSYSTEMBENEFITS-Community.jpg"/>
+
               </Col>
             </Row>
             <Row className="text-center justify-content-center px-3 mb-5 pb-5">
