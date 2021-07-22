@@ -1886,13 +1886,14 @@ span.authorTitle {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  z-index: -99;
-    position: relative;
+}
+
+.bg-corp.container-fluid, .bg-school.container-fluid, .bg-legacy.container-fluid, .bg-communal.container-fluid {
+  position: relative;
+  z-index:-999;
 }
 
 .bg-school {
-  z-index: -99;
-  position: relative;
   background-image: url('/school-smart-forest-lopacity.png') ;
   
   background-attachment: fixed;
@@ -1903,8 +1904,6 @@ span.authorTitle {
 
 .bg-legacy {
 
-  z-index: -99;
-  position: relative;  
   background-image: url('/legacy-smart-forest-lopacity.png');
   
   background-attachment: fixed;
@@ -1920,8 +1919,6 @@ span.authorTitle {
   background-position: 50% 100%;
   background-repeat: no-repeat;
   background-size: 100%;
-  z-index: -99;
-  position: relative; 
 }
 
 /* Our Smart Forests Cards */
