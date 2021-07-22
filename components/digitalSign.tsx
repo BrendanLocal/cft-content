@@ -64,7 +64,7 @@ const DigitalSign = ()=> {
           </select>
           <label htmlFor="bgOptions">Select a background for your image:</label><br />
           <select name="bgOptions"  onChange={changeBG} value={selectBG} >
-            <option value="signbg_forest2.jpg" hidden>Select...</option>
+            <option value="signbg_forest.jpg" hidden>Select...</option>
             <option value="signbg_fall.jpg">Fall</option>
             <option value="signbg_forest.jpg">Spring</option>
             <option value="signbg_green.jpg">Summer</option>
@@ -84,9 +84,9 @@ const DigitalSign = ()=> {
               {forestName? "The " : ""}
               {forestName}
               {forestName? " Forest" : ""}
+              <br />
+              <img src={imageSrc}></img>
             </div>
-            
-            <img className="signImageLogo" src={imageSrc}></img>
             <div className="signImageText signTextAcres">
               {forestAcres? forestAcres : ""}
               {forestAcres? " Acres" : ""}
