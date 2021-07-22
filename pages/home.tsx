@@ -314,7 +314,7 @@ export default function Home({ file, href, children}) {
                 </Link>
               </div>
             </Col>
-            <Col className="col-10 col-md-8 pe-lg-0 m-3">
+            <Col className="col-10 col-md-8 pe-lg-0 m-3 d-none">
               <div className="roundedBox card bg-mildgreen no-border py-3 d-flex flex-column drop action-card">
                 <Link href="/build-your-smart-forest#school">
                   <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button6}</a>
@@ -323,7 +323,7 @@ export default function Home({ file, href, children}) {
             </Col>
             <Col className="col-10 col-md-8 pe-lg-0 m-3">
               <div className="roundedBox card bg-mildgreen no-border py-3 d-flex flex-column drop action-card">
-                <Link href="/about">
+                <Link href="/carbon-calculator">
                   <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button7}</a>
                 </Link>
               </div>

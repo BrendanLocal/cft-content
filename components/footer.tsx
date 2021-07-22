@@ -5,10 +5,62 @@ import Link from 'next/link'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
 import Button from 'react-bootstrap/Button';
-
+import { useForm, ValidationError } from '@formspree/react';
 import Rellax from "rellax";
+
+function NewsletterForm() {
+  const [state, handleSubmit] = useForm("mwkanyjv");
+  if (state.succeeded) {
+      return <p>Thanks for joining!</p>;
+  }
+  return (
+      <form onSubmit={handleSubmit}>
+
+      <input
+        id="FirstName"
+        type="text" 
+        name="FirstName"
+        placeholder="First Name*"
+        required
+      />
+      <ValidationError 
+        prefix="FirstName" 
+        field="FirstName"
+        errors={state.errors}
+      />
+
+      <input
+        id="LastName"
+        type="text" 
+        name="LastName"
+        placeholder="Last Name (Optional)"
+      />
+      <ValidationError 
+        prefix="LastName" 
+        field="LastName"
+        errors={state.errors}
+      />
+
+      <input
+        id="email"
+        type="email" 
+        name="email"
+        placeholder="Email*"
+      />
+      <ValidationError 
+        prefix="Email" 
+        field="email"
+        errors={state.errors}
+      />
+      
+      <button type="submit" className="btn btn-green btn-full" disabled={state.submitting}>
+        Subscribe
+      </button>
+    </form>
+  );
+}
+
 
 const Footer = ()=> {
 
@@ -44,10 +96,10 @@ return(
     <Row >
       <Col className="col-12 col-md-6 col-lg-3 p-3">
       <h4>Canada's Forest Trust</h4>
-      <Link href="/contact"><a className="btn text-orange textButton text-left d-block">Home</a></Link>
-      <Link href="/about"><a className="btn text-orange textButton text-left d-block">Inside CFT</a></Link>
-      <Link href="/about#"><a className="btn text-orange textButton text-left d-block">What is a Smart Forest?</a></Link>
-      <Link href="/build-your-smart-forest"><a className="btn text-orange textButton text-left d-block">Build A Smart Forest</a></Link>
+      <Link href="/home"><a className="btn text-orange textButton text-left d-block">Home</a></Link>
+      <Link href="/inside-cft"><a className="btn text-orange textButton text-left d-block">Inside CFT</a></Link>
+      <Link href="/inside-cft#what"><a className="btn text-orange textButton text-left d-block">What is a Smart Forest?</a></Link>
+      <Link href="/build-your-smart-forest"><a className="btn text-orange textButton text-left d-block">Build Your Smart Forest</a></Link>
       <Link href="/build-your-smart-forest#corporate"><a className="btn text-orange textButtonAlt arrow-before text-left d-block ms-3">CORPORATIONS</a></Link>
       <Link href="/build-your-smart-forest#school"><a className="btn text-orange textButtonAlt text-left d-block ms-3">SCHOOLS</a></Link>
       <Link href="/build-your-smart-forest#legacy"><a className="btn text-orange textButtonAlt text-left d-block ms-3">INDIVIDUALS</a></Link>
@@ -56,30 +108,28 @@ return(
       <Col className="col-12 col-md-6 col-lg-3 p-3">
       <h4>Calculate Your Impact</h4>
       <Link href="/carbon-calculator"><a className="btn text-orange textButton text-left d-block">Carbon Calculator</a></Link>
-      <Link href="/"><a className="btn text-orange textButtonAlt arrow-before text-left d-block ms-3">Corporate</a></Link>
-      <Link href="/"><a className="btn text-orange textButtonAlt text-left d-block ms-3">School</a></Link>
-      <Link href="/"><a className="btn text-orange textButtonAlt text-left d-block ms-3">Personal</a></Link>
+      <Link href="/business-calculator"><a className="btn text-orange textButtonAlt arrow-before text-left d-block ms-3">Corporate</a></Link>
+      <Link href="/school-calculator"><a className="btn text-orange textButtonAlt text-left d-block ms-3">School</a></Link>
+      <Link href="/personal-calculator"><a className="btn text-orange textButtonAlt text-left d-block ms-3">Personal</a></Link>
       <Link href="/smart-forest-calculator"><a className="btn text-orange textButton text-left d-block">Net-Zero Calculator</a></Link>
-      <Link href="/"><a className="btn text-orange textButtonAlt arrow-before text-left d-block ms-3">Corporate</a></Link>
-      <Link href="/"><a className="btn text-orange textButtonAlt text-left d-block ms-3">School</a></Link>
-      <Link href="/"><a className="btn text-orange textButtonAlt text-left d-block ms-3">Personal</a></Link>
+      <Link href="/smart-forest-corp"><a className="btn text-orange textButtonAlt arrow-before text-left d-block ms-3">Corporate</a></Link>
+      <Link href="/smart-forest-school"><a className="btn text-orange textButtonAlt text-left d-block ms-3">School</a></Link>
+      <Link href="/smart-forest-personal"><a className="btn text-orange textButtonAlt text-left d-block ms-3">Personal</a></Link>
       </Col>
       <Col className="col-12 col-md-6 col-lg-3 p-3">
       <h4>Other</h4>
       <Link href="/portal"><a className="btn text-orange textButton text-left d-block">Sign In</a></Link>
       <Link href="/contact"><a className="btn text-orange textButton text-left d-block">Contact Us</a></Link>
       <Link href="/annual-reports"><a className="btn text-orange textButton text-left d-block">Annual Reports</a></Link>
-      <Link href="/"><a className="btn text-orange textButton text-left d-block">Terms & Conditions</a></Link>
-      <Link href="/"><a className="btn text-orange textButton text-left d-block">Privacy</a></Link>
-      <Link href="/"><a className="btn text-orange textButton text-left d-block">Commitment to a Fair & Equitable workplace</a></Link>
+      <Link href="/terms-and-conditions"><a className="btn text-orange textButton text-left d-block">Terms & Conditions</a></Link>
+      <Link href="/privacy"><a className="btn text-orange textButton text-left d-block">Privacy</a></Link>
+      <Link href="/commitment"><a className="btn text-orange textButton text-left d-block">Commitment to a Fair & Equitable workplace</a></Link>
       </Col>
       <Col className="col-12 col-md-6 col-lg-3 p-3 pe-4">
       <h4>Join Our Newsletter</h4>
       <p className="mb-3 op-8">Provide your email to receive regular updates and the latest Canada’s Forest Trust news.</p>
-      <input className="mb-1 no-border" type="text" placeholder="First Name*"></input>
-      <input className="mb-1 no-border" type="text" placeholder="Last Name (Optional)"></input>
-      <input className="mb-3 no-border" type="text" placeholder="Email*"></input>
-      <Button variant="green btn-full">Subscribe</Button>
+      <NewsletterForm/>
+      
       </Col>
     </Row>
     <Row className="pt-3 pb-5">
