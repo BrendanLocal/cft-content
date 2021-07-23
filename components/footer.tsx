@@ -120,10 +120,10 @@ return(
       <h4>Other</h4>
       <Link href="/portal"><a className="btn text-orange textButton text-left d-block">Sign In</a></Link>
       <Link href="/contact"><a className="btn text-orange textButton text-left d-block">Contact Us</a></Link>
-      <Link href="/annual-reports"><a className="btn text-orange textButton text-left d-block">Annual Reports</a></Link>
+      {/* <Link href="/annual-reports"><a className="btn text-orange textButton text-left d-block">Annual Reports</a></Link>
       <Link href="/terms-and-conditions"><a className="btn text-orange textButton text-left d-block">Terms & Conditions</a></Link>
       <Link href="/privacy"><a className="btn text-orange textButton text-left d-block">Privacy</a></Link>
-      <Link href="/commitment"><a className="btn text-orange textButton text-left d-block">Commitment to a Fair & Equitable workplace</a></Link>
+<Link href="/commitment"><a className="btn text-orange textButton text-left d-block">Commitment to a Fair & Equitable workplace</a></Link>*/}
       </Col>
       <Col className="col-12 col-md-6 col-lg-3 p-3 pe-4">
       <h4>Join Our Newsletter</h4>
