@@ -13,7 +13,9 @@ import ImageGallery from 'react-image-gallery';
 import Slider from 'react-input-slider';
 import Button from 'react-bootstrap/Button';
 import Header from "../components/header";
+import Link from 'next/link';
 
+import { useCurrentUser } from '../hooks/index';
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
@@ -25,6 +27,12 @@ fields: [{ name: 'title', component: 'text' }],
 }
 
 
+const [user] = useCurrentUser();
+
+const [isActive, setActive] = useState(false);
+const toggleClass = () => {
+  setActive(!isActive);
+};
 const [state, setState] = useState({ x: 0 });
 
 const [editingdata, form] = useGithubJsonForm(file, formOptions)
@@ -173,7 +181,6 @@ const [sliderData,setSliderData] = React.useState({
 return (
 
 <div>
-  <Header/>
   <Head>
     <title>Canada's Forest Trust</title>
     <link rel="icon" href="/favicon.ico" />
@@ -182,7 +189,21 @@ return (
   </Head>
 
   <main className="bg-green ">
-    <Container fluid className="bg-green pt-5 mt-5 px-0">
+    <Container fluid className="portalLogo">
+        <Row>
+          <Col className="p-4">
+            <Link href="/home">
+            <img className="logo" src="/cft-logo-white.svg" />
+            </Link>
+          </Col>
+          <Col className="text-right p-4">
+              
+                <Link href={ user? "/portal-user" : "/portal" } ><a className="smallCaps textButton">{ user? "Your Portal" : "Sign in" }</a></Link>
+                
+          </Col>
+          </Row>
+     </Container>
+    <Container fluid className="bg-green px-0">
       <Row className="justify-content-center d-flex mb-3 pt-lg-5">
         <Col className="col-10 mt-5 mt-lg-0 mt-xl-0">
         <h1 className="h2 bold text-orange text-center">
