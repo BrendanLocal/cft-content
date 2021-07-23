@@ -115,27 +115,22 @@ const Header = ()=> {
     {
       icon: "/fbookIcon.svg",
       label: "Facebook",
-      path: "#"
+      path: "https://www.facebook.com/canadasforest"
     },
     {
       icon: "/twtIcon.svg",
       label: "Twitter",
-      path: "#"
-    },
-    {
-      icon: "/ytubeIcon.svg",
-      label: "YouTube",
-      path: "#"
+      path: "https://twitter.com/CanadasForest"
     },
     {
       icon: "/instaIcon.svg",
       label: "Instagram",
-      path: "#"
+      path: "https://www.instagram.com/canadasforest/?hl=en"
     },
     {
-      icon: "/tiktokIcon.svg",
-      label: "TikTok",
-      path: "#"
+      icon: "/linkedinIcon.svg",
+      label: "LinkedIn",
+      path: "https://linkedin.com/company/canadas-forest-trust"
     }
   ]
 
