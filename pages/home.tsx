@@ -136,7 +136,7 @@ export default function Home({ file, href, children}) {
           </Row>
           <Row className="justify-content-center align-items-center ps-lg-4 ms-lg-4">
             <Col className="col-12 d-flex ms-lg-4 mb-2 nudge">
-              <ReactPlayer playing playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4'/>
+              <ReactPlayer playing playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4' className="video-size"/>
             </Col>
           </Row>
         </Modal.Body>
