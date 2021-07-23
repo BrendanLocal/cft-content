@@ -55,9 +55,7 @@ const DigitalSign = ()=> {
           <select name="copyOptions"  onChange={changeCopy} value={selectCopy} >
             <option value="" hidden>Select...</option>
             <option>This Smart Forest is Growing to Net-Zero</option>
-            <option>Smart Forest - Carbon Offsetting in progress</option>
             <option>Growing to Net-Zero</option>
-            <option>Do Not Disturb- Carbon Offsetting in Progress</option>
             <option>Smart Forest- Breathing Made Easy</option>
             <option>Smart Forest- For the sake of Wildlife</option>
             <option>Smart Forest – It is easy being green!</option>
