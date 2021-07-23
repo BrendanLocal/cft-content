@@ -23,6 +23,7 @@ import Header from "../components/header";
 import PDFViewer from '../components/PDFViewer';
 import PDFJSBackend from '../middlewares/pdfjs';
 import ReactPlayer from 'react-player'
+import ScrollableAnchor from "react-scrollable-anchor";
 
 export default function Power({ file }) {
   const [show, setShow] = useState(false);
@@ -153,6 +154,7 @@ export default function Power({ file }) {
       </Row>
 
       <main>
+      <ScrollableAnchor id={"intro"}>
         <Container id="intro" className="bg-green z-999 py-5 px-5">
           <Row className="justify-content-center d-flex mt-xl-0 mt-lg-4 mb-5 ms-xl-5 ms-lg-2 py-5 px-3">
             <Col className="col-12 col-md-11 col-lg-5 stickyTop roundedBox innerShadow-heavy mt-5 m-3 p-0 about-hero"></Col>
@@ -177,7 +179,8 @@ export default function Power({ file }) {
             </Col>
           </Row>
         </Container>
-
+</ScrollableAnchor>
+<ScrollableAnchor id={"video"}>
         <Container id="video" className="v-full z-999 bg-green py-5">
         <Fade bottom>
             <Row className="justify-content-center align-items-center my-4">
@@ -202,7 +205,8 @@ export default function Power({ file }) {
           </Row>
         </Fade> 
       </Container>
-
+      </ScrollableAnchor>
+<ScrollableAnchor id={"the-plan"}>
         <Container id="the-plan" className="v-full z-999 bg-green p-5 pe-lg-3 mb-5">
           <Fade bottom>
             <Row className="justify-content-center align-items-center my-4">
@@ -274,7 +278,8 @@ export default function Power({ file }) {
             </Row>
           </Fade>
         </Container>
-
+        </ScrollableAnchor>
+<ScrollableAnchor id={"what"}>
         <Container id="what" fluid className="v-full z-999 bg-green py-5">
           <Fade bottom>
             <Row className="pt-5 align-items-center justify-content-center">
@@ -310,7 +315,8 @@ export default function Power({ file }) {
             </Row>
           </Fade>
         </Container>
-
+        </ScrollableAnchor>
+<ScrollableAnchor id={"team"}>
         <Container fluid id="team" className="bg-brown innerShadow-heavy py-6">
           <Row className="justify-content-center pt-5 mb-2">
             <Col className="col-11 col-lg-8 text-center pt-3 ">
@@ -396,7 +402,8 @@ export default function Power({ file }) {
             </Col>
           </Row>
         </Container>
-
+        </ScrollableAnchor>
+<ScrollableAnchor id={"qna"}>
         <Container id="qna" fluid className="v-full z-999 bg-green py-5">
           <Fade bottom>
             <Row className="align-items-center justify-content-center py-5 ">
@@ -416,7 +423,7 @@ export default function Power({ file }) {
             </Row>
           </Fade>
         </Container>
-
+        </ScrollableAnchor>
         <Modal show={show} onHide={handleClose}>
           <Modal.Header className="d-none" closeButton>
             <Modal.Title className="d-none"></Modal.Title>
