@@ -119,52 +119,52 @@ const [sliderData,setSliderData] = React.useState({
       {
         original: '/portal-gallery-3.jpg',
         thumbnail: '/portal-gallery-tb-3.jpg',
-        description: 'Image Description'
+        description: ''
       },
       {
         original: '/portal-gallery-4.jpg',
         thumbnail: '/portal-gallery-tb-4.jpg',
-        description: 'Image Description'
+        description: ''
       },
       {
         original: '/portal-gallery-9.jpg',
         thumbnail: '/portal-gallery-tb-9.jpg',
-        description: 'Image Description'
+        description: ''
       },
       {
         original: '/portal-gallery-10.jpg',
         thumbnail: '/portal-gallery-tb-10.jpg',
-        description: 'Image Description'
+        description: ''
       },
       {
         original: '/portal-gallery-1.jpg',
         thumbnail: '/portal-gallery-tb-1.jpg',
-        description: 'Image Description'
+        description: ''
       },
       {
         original: '/portal-gallery-2.jpg',
         thumbnail: '/portal-gallery-tb-2.jpg',
-        description: 'Image Description'
+        description: ''
       },
       {
         original: '/portal-gallery-5.jpg',
         thumbnail: '/portal-gallery-tb-5.jpg',
-        description: 'Image Description'
+        description: ''
       },
       {
         original: '/portal-gallery-7.jpg',
         thumbnail: '/portal-gallery-tb-7.jpg',
-        description: 'Image Description'
+        description: ''
       },      
       {
         original: '/portal-gallery-8.jpg',
         thumbnail: '/portal-gallery-tb-8.jpg',
-        description: 'Image Description'
+        description: ''
       },
       {
         original: '/portal-gallery-6.jpg',
         thumbnail: '/portal-gallery-tb-6.jpg',
-        description: 'Image Description'
+        description: ''
       }
 
     ]
