@@ -8,11 +8,7 @@ import ImageUpload from 'image-upload-react';
 import * as htmlToImage from 'html-to-image';
 import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
 
-
 const DigitalSign = ({ signBG, signForestName, signImg, signAcres, signCopy })=> {
-
-
-  
 
   const [imageSrc, setImageSrc] = useState("")
  
@@ -41,23 +37,19 @@ const DigitalSign = ({ signBG, signForestName, signImg, signAcres, signCopy })=>
     setForestName(event.target.value);
   };
 
-  useEffect(() => {
-  var node = document.getElementById('signImage');
+  function CreateImage(){
+    var node = document.getElementById('signImage');
 
-  
-htmlToImage.toPng(node)
-  .then(function (dataUrl) {
-    var img = new Image();
-    img.src = dataUrl;
-    document.getElementById('imageresult').appendChild(img);
-  })
-  .catch(function (error) {
-    console.error('oops, something went wrong!', error);
-  });
-
-});
-
-
+    htmlToImage.toPng(node)
+    .then(function (dataUrl) {
+      var img = new Image();
+      img.src = dataUrl;
+      document.getElementById('imageresult').replaceWith(img);
+    })
+    .catch(function (error) {
+      console.error('oops, something went wrong!', error);
+    });
+  }
 
   return (
     <React.Fragment>
@@ -96,16 +88,17 @@ htmlToImage.toPng(node)
             />
           </div>
           <label htmlFor="forest-name">Download your sign</label>
+          <br />
           {/* I Can't quite get it to grab the SignImageContainer correctly */}
-          <button >
+          <button onClick={CreateImage}>
             Export As PNG
           </button>
         </Col>
         <Col className="col-12 col-md-5 signImagebuilder">
-        <div id="signImage" className="signImageContainer">
+          <div id="signImage" className="signImageContainer">
             <img src={selectBG}/>
             <div className="signImageText signTextForest">
-              <span>{forestName? "The " : ""} {forestName} {forestName? " Forest" : ""}</span>
+              {forestName? "The " : ""} {forestName} {forestName? " Forest" : ""}
               <br />
               <img src={imageSrc}></img>
             </div>
@@ -119,7 +112,6 @@ htmlToImage.toPng(node)
           </div>
           <div id="imageresult"></div>
         </Col>
-        
       </Row>
     </React.Fragment>
   )
