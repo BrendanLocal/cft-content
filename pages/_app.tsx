@@ -93,6 +93,30 @@ export default class Site extends App {
             skipInitialTransition={true}
           >
             <div>
+            <link
+  rel="preload"
+  href="/GT-America-Extended-Light.woff"
+  as="font"
+  type="font/woff"
+/>
+<link
+  rel="preload"
+  href="/GT-America-Extended-Bold.woff"
+  as="font"
+  type="font/woff"
+/>
+<link
+  rel="preload"
+  href="/GT-America-Extended-Medium.woff"
+  as="font"
+  type="font/woff"
+/>
+<link
+  rel="preload"
+  href="/GT-America-Extended-Thin.woff"
+  as="font"
+  type="font/woff"
+/>
 
               <Component {...pageProps} />
             </div>
