@@ -539,7 +539,7 @@ export default function Build({ file }) {
                   </Dropdown>
                   <Dropdown className="col-10 col-lg-4 col-xl-4">
                   <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
-                      {editingdata.corpdropdown_menuheader2}
+                      {editingdata.quotes}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       <Row className="p-4">
@@ -750,7 +750,7 @@ export default function Build({ file }) {
                   </Dropdown>
                   <Dropdown className="col-10 col-lg-4 col-xl-4">
                   <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
-                      {editingdata.schooldropdown_menuheader2}
+                      {editingdata.quotes}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       <Row className="p-4">
@@ -937,7 +937,7 @@ export default function Build({ file }) {
                   </Dropdown>
                   <Dropdown className="col-10 col-lg-4 col-xl-4">
                   <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
-                      {editingdata.legacydropdown_menuheader2}
+                      {editingdata.quotes}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       <Row className="p-4">
@@ -1149,7 +1149,7 @@ export default function Build({ file }) {
                   </Dropdown>
                   <Dropdown className="col-10 col-lg-4 col-xl-4">
                   <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
-                      {editingdata.communaldropdown_menuheader2}
+                      {editingdata.quotes}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       <Row className="p-4">
