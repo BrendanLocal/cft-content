@@ -2,15 +2,18 @@ import * as React from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+
+import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Link from 'next/link'
 import { useRouter } from "next/router";
 import { GetStaticProps } from "next";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 import { useGithubJsonForm, useGithubToolbarPlugins } from "react-tinacms-github";
-import { usePlugin } from "tinacms";
+import { usePlugin, useWatchFormValues } from "tinacms";
 import { useState } from "react";
 import Header from "../components/header";
+import Accordion from "react-bootstrap/Accordion";
 
 const Lang = () => {
 var language ="en";
@@ -21,6 +24,8 @@ var language ="en";
   }
   return (language)
 }
+
+
 
 export default function App({ file, href, children}) {
   
@@ -60,6 +65,26 @@ export default function App({ file, href, children}) {
       {name: 'heat2Size', component: 'markdown' },
       {name: 'heat2Source', component: 'markdown' },
       {name: 'heat2Savings', component: 'markdown' },
+      {name: 'heat3Title', component: 'markdown' },
+      {name: 'heat3Para', component: 'markdown' },
+      {name: 'heat3CalcHeader', component: 'markdown' },
+      {name: 'heat3Calc1', component: 'markdown' },
+      {name: 'heat3Calc2', component: 'markdown' },
+      {name: 'Heat3People', component: 'markdown' },
+      {name: 'heat3Months', component: 'markdown' },
+      {name: 'heat3Size', component: 'markdown' },
+      {name: 'heat3Source', component: 'markdown' },
+      {name: 'heat3Savings', component: 'markdown' },
+      {name: 'heat4Title', component: 'markdown' },
+      {name: 'heat4Para', component: 'markdown' },
+      {name: 'heat4CalcHeader', component: 'markdown' },
+      {name: 'heat4Calc1', component: 'markdown' },
+      {name: 'heat4Calc2', component: 'markdown' },
+      {name: 'Heat4People', component: 'markdown' },
+      {name: 'heat4Months', component: 'markdown' },
+      {name: 'heat4Size', component: 'markdown' },
+      {name: 'heat4Source', component: 'markdown' },
+      {name: 'heat4Savings', component: 'markdown' },
       {name: 'heatSize1', component: 'markdown' },
       {name: 'heatSize2', component: 'markdown' },
       {name: 'heatSize3', component: 'markdown' },
@@ -146,17 +171,46 @@ export default function App({ file, href, children}) {
 
   const [selectSize, setSize] = React.useState("");
   const [selectNum, setNum] = React.useState("");
-  const [selectYear, setYear] = React.useState("");
+  const [selectYear, setYear] = React.useState(0);
   const [selectHeat, setHeat] = React.useState("");
   const [selectEnergy, setEnergy] = React.useState("");
+
+
   const [selectNumTwo, setNumTwo] = React.useState("");
-  const [selectYearTwo, setYearTwo] = React.useState("");
+  const [selectYearTwo, setYearTwo] = React.useState(0);
   const [selectSizeTwo, setSizeTwo] = React.useState("");
   const [selectHeatTwo, setHeatTwo] = React.useState("");
   const [selectEnergyTwo, setEnergyTwo] = React.useState("");
+
+
+  const [selectNumThree, setNumThree] = React.useState("");
+  const [selectYearThree, setYearThree] = React.useState(0);
+  const [selectSizeThree, setSizeThree] = React.useState("");
+  const [selectHeatThree, setHeatThree] = React.useState("");
+  const [selectEnergyThree, setEnergyThree] = React.useState("");
+
+
+  const [selectNumFour, setNumFour] = React.useState("");
+  const [selectYearFour, setYearFour] = React.useState(0);
+  const [selectSizeFour, setSizeFour] = React.useState("");
+  const [selectHeatFour, setHeatFour] = React.useState("");
+  const [selectEnergyFour, setEnergyFour] = React.useState("");
+
+  const [selectNumFive, setNumFive] = React.useState("");
+  const [selectYearFive, setYearFive] = React.useState(0);
+  const [selectSizeFive, setSizeFive] = React.useState("");
+  const [selectHeatFive, setHeatFive] = React.useState("");
+  const [selectEnergyFive, setEnergyFive] = React.useState("");
+
   const [buildSub, setBuildSub] = React.useState(0);
-  const [getFam, setFam] = React.useState(true);
-  const [getFamTwo, setFamTwo] = React.useState(true);
+  const [getFam, setFam] = React.useState("myself");
+  const [getFamTwo, setFamTwo] = React.useState("myself");
+  const [getFamThree, setFamThree] = React.useState("myself");
+  const [getFamFour, setFamFour] = React.useState("myself");
+  const [getFamFive, setFamFive] = React.useState("myself");
+
+
+
 
   let buildType = null;
   let buildSize = null;
@@ -170,22 +224,67 @@ export default function App({ file, href, children}) {
   let buildSizeTwo = null;
   let heatTypeTwo = null;
   let energyTypeTwo = null;
+  let buildNumThree = 1;
+  let buildYearThree = 1;
+  let buildSizeThree = null;
+  let heatTypeThree = null;
+  let energyTypeThree = null;
+
+
+  let buildNumFour = 1;
+  let buildYearFour = 1;
+  let buildSizeFour = null;
+  let heatTypeFour = null;
+  let energyTypeFour = null;
+
+
+  let buildNumFive = 1;
+  let buildYearFive = 1;
+  let buildSizeFive = null;
+  let heatTypeFive = null;
+  let energyTypeFive = null;
+
   let subtotalVehicle = 0;
   let subtotalFlight = 0;
   let subtotalPublicTransport = 0;
   let subtotalBuildTwo = 0;
+
+  let subtotalBuildThree = 0;
+
+  let subtotalBuildFour = 0;
+
+  let subtotalBuildFive = 0;
   let totalBuild = 0;
 
   buildSize = Number(selectSize);
   buildNum = Number(selectNum);
-  buildYear = Number(selectYear);
+  buildYear = selectYear;
   heatType = selectHeat;
   energyType = selectEnergy;
   buildNumTwo = Number(selectNumTwo);
-  buildYearTwo = Number(selectYearTwo);
+  buildYearTwo = selectYearTwo;
   buildSizeTwo = Number(selectSizeTwo);
   heatTypeTwo = selectHeatTwo;
   energyTypeTwo = selectEnergyTwo;
+
+  buildNumThree = Number(selectNumThree);
+  buildYearThree = selectYearThree;
+  buildSizeThree = Number(selectSizeThree);
+  heatTypeThree = selectHeatThree;
+  energyTypeThree = selectEnergyThree;
+
+
+  buildNumFour = Number(selectNumFour);
+  buildYearFour = selectYearFour;
+  buildSizeFour = Number(selectSizeFour);
+  heatTypeFour = selectHeatFour;
+  energyTypeFour = selectEnergyFour;
+
+  buildNumFive = Number(selectNumFive);
+  buildYearFive = selectYearFive;
+  buildSizeFive = Number(selectSizeFive);
+  heatTypeFive = selectHeatFive;
+  energyTypeFive = selectEnergyFive;
 
   //vehicle multiplier
   const [vehicleSub, setVehicle] = React.useState(0);
@@ -193,23 +292,34 @@ export default function App({ file, href, children}) {
     smallGas	:{mult:	0.14836	,miles: null},
     smallDiesel	:{mult:	0.13721	,miles: null},
     smallHybrid	:{mult:	0.10275	,miles: null},
+    smallPlug	:{mult:	0.02935	,miles: null},
+    smallElectric	:{mult:	0	,miles: null},
     mediumGas	:{mult:	0.18659	,miles: null},
 
     rentalGas	:{mult:	0.18659	,miles: null},
     mediumDiesel	:{mult:	0.16637	,miles: null},
     mediumHybrid	:{mult:	0.10698	,miles: null},
+    mediumPlug	:{mult:	0.07083	,miles: null},
+    mediumElectric	:{mult:	0	,miles: null},
     largeGas	:{mult:	0.27087	,miles: null},
     largeDiesel	:{mult:	0.20419	,miles: null},
     largeHybrid	:{mult:	0.1448	,miles: null},
+    largePlug	:{mult:	0.07731	,miles: null},
+    largeElectric	:{mult:	0	,miles: null},
     motorbikeGas	:{mult:	0.11337	,miles: null},
     planeGas	:{mult:	2.54306	,miles: null},
 
+    heliGas	:{mult:	2.54306	,miles: null},
     jetGas	:{mult:	2.54306	,miles: null},
     yachtGas	:{mult:	2.54	,miles: null},
     yachtDiesel	:{mult:	2.35	,miles: null},
     atvGas	:{mult:	2.3	,miles: null},
     sbsGas	:{mult:	2.3	,miles: null},
-    snowGas	:{mult:	2.3	,miles: null}
+    snowGas	:{mult:	2.3	,miles: null},
+    scootGas	:{mult:	2.3	,miles: null},
+    seaGas	:{mult:	2.3	,miles: null},
+    lawnGas	:{mult:	2.3	,miles: null},
+    tractorGas	:{mult:	2.3	,miles: null}
   });
 
   //flight multiplier
@@ -236,21 +346,30 @@ export default function App({ file, href, children}) {
   const [publicTransportSub, setPublicTransport] = React.useState(0);
 
   //onchange methods
+
   const changeFam = (event) => {
-    if(event.target.value == "myself"){
-      setFam(true);
-    } else {
-      setFam(false);
-    }
-  }
+    setFam(event.target.value);
+}
 
   const changeFamTwo = (event) => {
-    if(event.target.value == "myself"){
-      setFamTwo(true);
-    } else {
-      setFamTwo(false);
-    }
+    setFamTwo(event.target.value);
   }
+
+  const changeFamThree = (event) => {
+    setFamThree(event.target.value);
+  }
+
+
+  const changeFamFour = (event) => {
+    setFamFour(event.target.value);
+  }
+
+
+
+  const changeFamFive = (event) => {
+    setFamFive(event.target.value);
+  }
+
 
   const changeSize = (event) => {
     setSize(event.target.value);
@@ -291,6 +410,74 @@ export default function App({ file, href, children}) {
   const changeEnergyTwo = (event) => {
     setEnergyTwo(event.target.value);
   }
+
+
+
+  const changeNumThree = (event) => {
+    setNumThree(event.target.value);
+  }
+
+  const changeSizeThree = (event) => {
+    setSizeThree(event.target.value);
+  }
+
+  const changeYearThree = (event) => {
+    setYearThree(event.target.value);
+  }
+
+  const changeHeatThree = (event) => {
+    setHeatThree(event.target.value);
+  }
+
+  const changeEnergyThree = (event) => {
+    setEnergyThree(event.target.value);
+  }
+
+
+
+  const changeNumFour = (event) => {
+    setNumFour(event.target.value);
+  }
+
+  const changeSizeFour= (event) => {
+    setSizeFour(event.target.value);
+  }
+
+  const changeYearFour = (event) => {
+    setYearFour(event.target.value);
+  }
+
+  const changeHeatFour = (event) => {
+    setHeatFour(event.target.value);
+  }
+
+  const changeEnergyFour = (event) => {
+    setEnergyFour(event.target.value);
+  }
+
+  
+
+
+  const changeNumFive = (event) => {
+    setNumFive(event.target.value);
+  }
+
+  const changeSizeFive= (event) => {
+    setSizeFive(event.target.value);
+  }
+
+  const changeYearFive = (event) => {
+    setYearFive(event.target.value);
+  }
+
+  const changeHeatFive = (event) => {
+    setHeatFive(event.target.value);
+  }
+
+  const changeEnergyFive = (event) => {
+    setEnergyFive(event.target.value);
+  }
+
 
   /* array using data from the spreadsheet, including multipliers */
   const buildArray = {
@@ -353,23 +540,64 @@ export default function App({ file, href, children}) {
       
   if (buildSize && heatType && energyType)
   {
-    if(!getFam){
+    if(getFam == "family"){
       buildNum = 1
     }
+    
     subtotalBuild = Number(
       (((buildArray[buildSize][heatType] * energySavingsMult[energyType])/buildNum)+((buildYear/12)* 1444)/buildNum)/1000);
+
+
+  totalBuild = Number(subtotalBuild)
   }
 
-  if (buildSizeTwo && heatTypeTwo && energyTypeTwo) 
+  if (buildSize && heatType && energyType && buildSizeTwo && heatTypeTwo && energyTypeTwo) 
   {
-    if(!getFamTwo){
+    if(getFamTwo == "family"){
       buildNumTwo = 1
     }
     subtotalBuildTwo = Number(
       (((buildArray[buildSizeTwo][heatTypeTwo] * energySavingsMult[energyTypeTwo])/buildNumTwo)+((buildYearTwo/12)* 1444)/buildNumTwo)/1000);
+
+  totalBuild = Number(subtotalBuild) + Number(subtotalBuildTwo)
   }
 
-  totalBuild = Number(subtotalBuild + subtotalBuildTwo)
+
+  if (buildSize && heatType && energyType && buildSizeTwo && heatTypeTwo && energyTypeTwo && buildSizeThree && heatTypeThree && energyTypeThree) 
+  {
+    if(getFamThree == "family"){
+      buildNumThree = 1
+    }
+    subtotalBuildThree = Number(
+      (((buildArray[buildSizeThree][heatTypeThree] * energySavingsMult[energyTypeThree])/buildNumThree)+((buildYearThree/12)* 1444)/buildNumThree)/1000);
+
+  totalBuild =  Number(subtotalBuild) + Number(subtotalBuildTwo) + Number(subtotalBuildThree)
+  }
+
+
+
+  if (buildSize && heatType && energyType && buildSizeTwo && heatTypeTwo && energyTypeTwo && buildSizeThree && heatTypeThree && energyTypeThree  && buildSizeFour && heatTypeFour && energyTypeFour) 
+  {
+    if(getFamFour == "family"){
+      buildNumFour = 1
+    }
+    subtotalBuildFour = Number(
+      (((buildArray[buildSizeFour][heatTypeFour] * energySavingsMult[energyTypeFour])/buildNumFour)+((buildYearFour/12)* 1444)/buildNumFour)/1000);
+
+  totalBuild =  Number(subtotalBuild) + Number(subtotalBuildTwo) + Number(subtotalBuildThree)+ Number(subtotalBuildFour)
+  }
+
+
+  if (buildSize && heatType && energyType && buildSizeTwo && heatTypeTwo && energyTypeTwo && buildSizeThree && heatTypeThree && energyTypeThree  && buildSizeFour && heatTypeFour && energyTypeFour   && buildSizeFive && heatTypeFive && energyTypeFive) 
+  {
+    if(getFamFive == "family"){
+      buildNumFive = 1
+    }
+    subtotalBuildFive = Number(
+      (((buildArray[buildSizeFive][heatTypeFive] * energySavingsMult[energyTypeFive])/buildNumFive)+((buildYearFive/12)* 1444)/buildNumFive)/1000);
+
+  totalBuild =  Number(subtotalBuild) + Number(subtotalBuildTwo) + Number(subtotalBuildThree) + Number(subtotalBuildFour) + Number(subtotalBuildFive)
+  }
 
   /* function to calculate the 'vehicle' section */
   const calculateVehicle=()=> {
@@ -432,7 +660,10 @@ export default function App({ file, href, children}) {
   }
 
   /* calculate the 'total' here by adding on the other subtotals */
-  let total = vehicleSub + totalBuild + flightSub + publicTransportSub;
+  let total = vehicleSub + totalBuild + (flightSub/1000) + (publicTransportSub/1000);
+
+
+
 
   return (
     <div className="bg-legacy">
@@ -460,10 +691,12 @@ export default function App({ file, href, children}) {
                 <Col>
                 <label htmlFor="number">{editingdata.heat1CalcHeader}</label>
                 <br />
-                <input className="me-2" onChange={changeFam} type="radio" id="myself" name="calculateWho" value="myself" checked/>
+                <input className="me-2" onChange={changeFam} type="radio" id="myself" name="calculateWho" value="myself"  />
                   <label>{editingdata.heat1Calc1}</label><br></br>
-                <input className="me-2" onChange={changeFam} type="radio" id="family" name="calculateWho" value="family"/>
+                <input className="me-2" onChange={changeFam} type="radio" id="family" name="calculateWho" value="family"
+                 />
                 <label>{editingdata.heat1Calc2}</label>
+               
                 <br></br>
                 </Col>
               </Row>
@@ -481,9 +714,12 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="number">{editingdata.heat1Months}</label>
                   <br />
-                  <input onChange={changeYear} type="number" min="0" onKeyPress={(event) => {
+
+                  <input type="number" onChange={changeYear}  min={0} max={12} 
+                   placeholder="Month(s) per year in residence"  onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                  }} placeholder="Month(s) per year in residence"/>
+                  }} />
+                  
                 </Col>
               </Row>
 
@@ -532,24 +768,25 @@ export default function App({ file, href, children}) {
                   </select>
                 </Col>
               </Row> 
-            </div>
 
+              {/* residence 2 */}
+              <Accordion>
+              <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="0">
+                            
+                  <h5 className="smallCaps text-small text-green">2nd Residence</h5>
 
-            <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
-              <Row>
-                <Col>
-                  <h4 className="text-green">{editingdata.heat2Title}</h4>
-                  <hr/>
-                </Col>
-                <h5 className="smallCaps text-small text-green">{editingdata.heat2Para}</h5>
-              </Row>
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="0">
+                              <div>
+              
               <Row className="mb-3">
                 <Col>
                 <label htmlFor="number">{editingdata.heat2CalcHeader}</label>
                 <br />
-                <input className="me-2" onChange={changeFam} type="radio" id="myself" name="calculateWho" value="myself" checked/>
+                <input className="me-2" onChange={changeFamTwo} type="radio" id="myself" name="calculateWhoTwo" value="myself"/>
                   <label>{editingdata.heat2Calc1}</label><br></br>
-                <input className="me-2" onChange={changeFam} type="radio" id="family" name="calculateWho" value="family"/>
+                <input className="me-2" onChange={changeFamTwo} type="radio" id="family" name="calculateWhoTwo" value="family"/>
                 <label>{editingdata.heat2Calc2}</label>
                 <br></br>
                 </Col>
@@ -558,7 +795,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="number">{editingdata.Heat2People}</label>
                   <br />
-                  <input onChange={changeNum} type="number" min="0" onKeyPress={(event) => {
+                  <input onChange={changeNumTwo} type="number" min={0} max={12} onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                   }} placeholder="Number of people in your household"/>
                 </Col>
@@ -568,9 +805,9 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="number">{editingdata.heat2Months}</label>
                   <br />
-                  <input onChange={changeYear} type="number" min="0" onKeyPress={(event) => {
-                    if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                  }} placeholder="Month(s) per year in residence"/>
+                  <input onChange={changeYearTwo} type="number" min="0" onKeyPress={(event) => {
+                    if (!/[0-9]/.test(event.key)) {event.preventDefault();} 
+                  }} placeholder="Month(s) per year in residence"  value={selectYearTwo}/>
                 </Col>
               </Row>
 
@@ -578,7 +815,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="size">{editingdata.heat2Size}</label>
                   <br />
-                  <select name="size" value={selectSize} onChange={changeSize}>
+                  <select name="size" value={selectSizeTwo} onChange={changeSizeTwo}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='1000'>{editingdata.heatSize1}</option>
                     <option value='1500'>{editingdata.heatSize2}</option>
@@ -596,7 +833,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="heat">{editingdata.heat2Source}</label>
                   <br />
-                  <select name="heat" value={selectHeat} onChange={changeHeat}>
+                  <select name="heat" value={selectHeatTwo} onChange={changeHeatTwo}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='gas'>{editingdata.heatSource1}</option>
                     <option value='oil'>{editingdata.heatSource2}</option>
@@ -610,7 +847,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="energy">{editingdata.heat2Savings}</label>
                   <br />
-                  <select name="energy" value={selectEnergy} onChange={changeEnergy}>
+                  <select name="energy" value={selectEnergyTwo} onChange={changeEnergyTwo}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='none'>{editingdata.heatSavings1}</option>
                     <option value='light'>{editingdata.heatSavings2}</option>
@@ -619,20 +856,307 @@ export default function App({ file, href, children}) {
                   </select>
                 </Col>
               </Row> 
+           </div>
+         </Accordion.Collapse>
+         </Card>
+
+              {/* residence 3 */}
+              <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="1">
+                            
+                  <h5 className="smallCaps text-small text-green">3rd Residence</h5>
+
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="1">
+                              <div>
+              
+              <Row className="mb-3">
+                <Col>
+                <label htmlFor="number">{editingdata.heat3CalcHeader}</label>
+                <br />
+                <input className="me-2" onChange={changeFamThree} type="radio" id="myself" name="calculateWhoThree" value="myself"/>
+                  <label>{editingdata.heat3Calc1}</label><br></br>
+                <input className="me-2" onChange={changeFamThree} type="radio" id="family" name="calculateWhoThree" value="family"/>
+                <label>{editingdata.heat3Calc2}</label>
+                <br></br>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <label htmlFor="number">{editingdata.Heat3People}</label>
+                  <br />
+                  <input onChange={changeNumThree} type="number" min={0} max={12} onKeyPress={(event) => {
+                    if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                  }} placeholder="Number of people in your household" />
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="number">{editingdata.heat3Months}</label>
+                  <br />
+                  <input onChange={changeYearThree} type="number" min={0} onKeyPress={(event) => {
+                    if (!/[0-9]/.test(event.key)) {event.preventDefault();} 
+                  }} placeholder="Month(s) per year in residence"/>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="size">{editingdata.heat3Size}</label>
+                  <br />
+                  <select name="size" value={selectSizeThree} onChange={changeSizeThree}>
+                    <option value="" hidden>{editingdata.select}</option>
+                    <option value='1000'>{editingdata.heatSize1}</option>
+                    <option value='1500'>{editingdata.heatSize2}</option>
+                    <option value='2000'>{editingdata.heatSize3}</option>
+                    <option value='2500'>{editingdata.heatSize4}</option>
+                    <option value='5000'>{editingdata.heatSize5}</option>
+                    <option value='7500'>{editingdata.heatSize6}</option>
+                    <option value='10000'>{editingdata.heatSize7}</option>
+                    <option value='10001'>{editingdata.heatSize8}</option>
+                  </select>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="heat">{editingdata.heat3Source}</label>
+                  <br />
+                  <select name="heat" value={selectHeatThree} onChange={changeHeatThree}>
+                    <option value="" hidden>{editingdata.select}</option>
+                    <option value='gas'>{editingdata.heatSource1}</option>
+                    <option value='oil'>{editingdata.heatSource2}</option>
+                    <option value='electric'>{editingdata.heatSource3}</option>
+                    <option value='wood'>{editingdata.heatSource4}</option>
+                  </select>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="energy">{editingdata.heat3Savings}</label>
+                  <br />
+                  <select name="energy" value={selectEnergyThree} onChange={changeEnergyThree}>
+                    <option value="" hidden>{editingdata.select}</option>
+                    <option value='none'>{editingdata.heatSavings1}</option>
+                    <option value='light'>{editingdata.heatSavings2}</option>
+                    <option value='moderate'>{editingdata.heatSavings3}</option>
+                    <option value='extensive'>{editingdata.heatSavings4}</option>
+                  </select>
+                </Col>
+              </Row> 
+           </div>
+         </Accordion.Collapse>
+         </Card>
+            {/* residence 4 */}
+            <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="2">
+                            
+                  <h5 className="smallCaps text-small text-green">4th Residence</h5>
+
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="2">
+                              <div>
+              
+              <Row className="mb-3">
+                <Col>
+                <label htmlFor="number">{editingdata.heat4CalcHeader}</label>
+                <br />
+                <input className="me-2" onChange={changeFamFour} type="radio" id="myself" name="calculateWhoFour" value="myself"/>
+                  <label>{editingdata.heat3Calc1}</label><br></br>
+                <input className="me-2" onChange={changeFamFour} type="radio" id="family" name="calculateWhoFour" value="family"/>
+                <label>{editingdata.heat3Calc2}</label>
+                <br></br>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <label htmlFor="number">{editingdata.Heat3People}</label>
+                  <br />
+                  <input onChange={changeNumFour} type="number" min={0} max={12} onKeyPress={(event) => {
+                    if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                  }} placeholder="Number of people in your household" />
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="number">{editingdata.heat3Months}</label>
+                  <br />
+                  <input onChange={changeYearFour} type="number" min={0} onKeyPress={(event) => {
+                    if (!/[0-9]/.test(event.key)) {event.preventDefault();} 
+                  }} placeholder="Month(s) per year in residence"/>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="size">{editingdata.heat3Size}</label>
+                  <br />
+                  <select name="size" value={selectSizeFour} onChange={changeSizeFour}>
+                    <option value="" hidden>{editingdata.select}</option>
+                    <option value='1000'>{editingdata.heatSize1}</option>
+                    <option value='1500'>{editingdata.heatSize2}</option>
+                    <option value='2000'>{editingdata.heatSize3}</option>
+                    <option value='2500'>{editingdata.heatSize4}</option>
+                    <option value='5000'>{editingdata.heatSize5}</option>
+                    <option value='7500'>{editingdata.heatSize6}</option>
+                    <option value='10000'>{editingdata.heatSize7}</option>
+                    <option value='10001'>{editingdata.heatSize8}</option>
+                  </select>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="heat">{editingdata.heat3Source}</label>
+                  <br />
+                  <select name="heat" value={selectHeatFour} onChange={changeHeatFour}>
+                    <option value="" hidden>{editingdata.select}</option>
+                    <option value='gas'>{editingdata.heatSource1}</option>
+                    <option value='oil'>{editingdata.heatSource2}</option>
+                    <option value='electric'>{editingdata.heatSource3}</option>
+                    <option value='wood'>{editingdata.heatSource4}</option>
+                  </select>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="energy">{editingdata.heat3Savings}</label>
+                  <br />
+                  <select name="energy" value={selectEnergyFour} onChange={changeEnergyFour}>
+                    <option value="" hidden>{editingdata.select}</option>
+                    <option value='none'>{editingdata.heatSavings1}</option>
+                    <option value='light'>{editingdata.heatSavings2}</option>
+                    <option value='moderate'>{editingdata.heatSavings3}</option>
+                    <option value='extensive'>{editingdata.heatSavings4}</option>
+                  </select>
+                </Col>
+              </Row> 
+           </div>
+         </Accordion.Collapse>
+         </Card>
+            {/* residence 5 */}
+            <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="3">
+                            
+                  <h5 className="smallCaps text-small text-green">5th Residence</h5>
+
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="3">
+                              <div>
+              
+              <Row className="mb-3">
+                <Col>
+                <label htmlFor="number">{editingdata.heat3CalcHeader}</label>
+                <br />
+                <input className="me-2" onChange={changeFamFive} type="radio" id="myself" name="calculateWhoFive" value="myself"/>
+                  <label>{editingdata.heat3Calc1}</label><br></br>
+                <input className="me-2" onChange={changeFamFive} type="radio" id="family" name="calculateWhoFive" value="family"/>
+                <label>{editingdata.heat3Calc2}</label>
+                <br></br>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <label htmlFor="number">{editingdata.Heat3People}</label>
+                  <br />
+                  <input onChange={changeNumFive} type="number" min={0} max={12} onKeyPress={(event) => {
+                    if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                  }} placeholder="Number of people in your household" />
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="number">{editingdata.heat3Months}</label>
+                  <br />
+                  <input onChange={changeYearFive} type="number" min={0} onKeyPress={(event) => {
+                    if (!/[0-9]/.test(event.key)) {event.preventDefault();} 
+                  }} placeholder="Month(s) per year in residence"/>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="size">{editingdata.heat3Size}</label>
+                  <br />
+                  <select name="size" value={selectSizeFive} onChange={changeSizeFive}>
+                    <option value="" hidden>{editingdata.select}</option>
+                    <option value='1000'>{editingdata.heatSize1}</option>
+                    <option value='1500'>{editingdata.heatSize2}</option>
+                    <option value='2000'>{editingdata.heatSize3}</option>
+                    <option value='2500'>{editingdata.heatSize4}</option>
+                    <option value='5000'>{editingdata.heatSize5}</option>
+                    <option value='7500'>{editingdata.heatSize6}</option>
+                    <option value='10000'>{editingdata.heatSize7}</option>
+                    <option value='10001'>{editingdata.heatSize8}</option>
+                  </select>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="heat">{editingdata.heat3Source}</label>
+                  <br />
+                  <select name="heat" value={selectHeatFive} onChange={changeHeatFive}>
+                    <option value="" hidden>{editingdata.select}</option>
+                    <option value='gas'>{editingdata.heatSource1}</option>
+                    <option value='oil'>{editingdata.heatSource2}</option>
+                    <option value='electric'>{editingdata.heatSource3}</option>
+                    <option value='wood'>{editingdata.heatSource4}</option>
+                  </select>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="energy">{editingdata.heat3Savings}</label>
+                  <br />
+                  <select name="energy" value={selectEnergyFive} onChange={changeEnergyFive}>
+                    <option value="" hidden>{editingdata.select}</option>
+                    <option value='none'>{editingdata.heatSavings1}</option>
+                    <option value='light'>{editingdata.heatSavings2}</option>
+                    <option value='moderate'>{editingdata.heatSavings3}</option>
+                    <option value='extensive'>{editingdata.heatSavings4}</option>
+                  </select>
+                </Col>
+              </Row> 
+           </div>
+         </Accordion.Collapse>
+         </Card>
+     
+        
+         </Accordion>
+
             </div>
+
 
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
-                <Col className="col-12">
+              <Col className="col-12">
                   <h3 className="text-green">{editingdata.vehicleHeader}</h3>
+
                   <p className="text-grey">{editingdata.vehiclePara1}</p>
-                  <hr/>
                 </Col>
                 <Col>
+              <Accordion>
+              <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="0">
+                            
                   <h5 className="smallCaps text-small text-green">{editingdata.vehicleSmall}</h5>
+
                   <p className="text-small op-6">{editingdata.vehicleSmallDesc}</p>
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="0">
+                
+                <div>
+                
                   <Row>
                     <Col className="col">
+
                       {editingdata.vehicleGas}
                       <input onChange={calculateMiles} name="smallGas" type="number" min="0" onKeyPress={(event) => {
                         if (!/[0-9]/.test(event.key)) {event.preventDefault();}
@@ -655,10 +1179,33 @@ export default function App({ file, href, children}) {
                       }} placeholder="Annual KM (hybrid)"/>
                     </Col>
                   </Row>
-                  <hr/>
-                  
+                  <Row>
+                    <Col className="col">
+                      <input onChange={calculateMiles} name="smallPlug" type="number" min="0" onKeyPress={(event) => {
+                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                      }} placeholder="Annual KM (plug-in hybrid)"/>
+                    </Col>
+                  </Row>
+
+                  <Row>
+                    <Col className="col">
+                      {editingdata.vehicleElectric}
+                      <input onChange={calculateMiles} name="smallElectric" type="number" min="0" onKeyPress={(event) => {
+                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                      }} placeholder="Annual KM (battery electric)"/>
+                    </Col>
+                  </Row>
+                  </div>
+                </Accordion.Collapse>
+                </Card>
+                <Card>
+                <Accordion.Toggle as={Card.Header} eventKey="1">
                   <h5 className="smallCaps text-small text-green">{editingdata.vehicleMed}</h5>
                   <p className="text-small op-6">{editingdata.vehicleMedDesc}</p>
+                  </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="1">
+
+                              <div>
                   <Row>
                     <Col className="col">
                       {editingdata.vehicleGas}
@@ -683,10 +1230,32 @@ export default function App({ file, href, children}) {
                       }} placeholder="Annual KM (hybrid)"/>
                     </Col>
                   </Row>
-                  <hr/>
+                  <Row>
+                    <Col className="col">
+                      <input onChange={calculateMiles} name="mediumPlug" type="number" min="0" onKeyPress={(event) => {
+                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                      }} placeholder="Annual KM (plug-in hybrid)"/>
+                    </Col>
+                  </Row>
 
+                  <Row>
+                    <Col className="col">
+                      {editingdata.vehicleElectric}
+                      <input onChange={calculateMiles} name="mediumElectric" type="number" min="0" onKeyPress={(event) => {
+                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                      }} placeholder="Annual KM (battery electric)"/>
+                    </Col>
+                  </Row>
+                  </div>
+                </Accordion.Collapse>
+                </Card>
+                <Card>
+                <Accordion.Toggle as={Card.Header} eventKey="2">
                   <h5 className="smallCaps text-small text-green">{editingdata.vehicleLarge}</h5>
                   <p className="text-small op-6">{editingdata.vehicleLargeDesc}</p>
+                  </Accordion.Toggle>
+                  <Accordion.Collapse eventKey="2">
+                              <div>
                   <Row>
                     <Col className="col">
                       {editingdata.vehicleGas}
@@ -711,6 +1280,22 @@ export default function App({ file, href, children}) {
                       }} placeholder="Annual KM (hybrid)"/>
                     </Col>
                   </Row>
+                  <Row>
+                    <Col className="col">
+                      <input onChange={calculateMiles} name="largePlug" type="number" min="0" onKeyPress={(event) => {
+                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                      }} placeholder="Annual KM (plug-in hybrid)"/>
+                    </Col>
+                  </Row>
+
+                  <Row>
+                    <Col className="col">
+                      {editingdata.vehicleElectric}
+                      <input onChange={calculateMiles} name="largeElectric" type="number" min="0" onKeyPress={(event) => {
+                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                      }} placeholder="Annual KM (battery electric)"/>
+                    </Col>
+                  </Row>
                   <hr/>
 
                   <h5 className="smallCaps text-small text-green">{editingdata.vehicleMoto}</h5>
@@ -723,31 +1308,57 @@ export default function App({ file, href, children}) {
                       }} placeholder="Annual KM (gas)"/>
                     </Col>
                   </Row> 
-                  <hr/>
-
-                  <h5 className="smallCaps text-small text-green">{editingdata.vehiclePlane}</h5>
-                  <p className="text-small op-6">{editingdata.vehiclePlaneDesc}</p>
+                  </div>
+                </Accordion.Collapse>
+                </Card>
+              <Card>
+            <Accordion.Toggle as={Card.Header} eventKey="3">
+                  <h5 className="smallCaps text-small text-green">Private Aircraft</h5>
+                  <p className="text-small op-6">Personally owned aircraft, prop planes, helicopters, jets, etc.</p>
+                  </Accordion.Toggle>
+                  <Accordion.Collapse eventKey="3">
+                              <div>
                   <Row>
                     <Col className="col">
-                      {editingdata.vehicleAvitation}
+
+                  <h5 className="smallCaps text-small text-green">{editingdata.vehiclePlane}</h5>
                       <input onChange={calculateMiles} name="jetGas" type="number" min="0" onKeyPress={(event) => {
                         if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                       }} placeholder="Annual litres of fuel"/>
                     </Col>
                   </Row> 
                   
-                  <h5 className="smallCaps text-small text-green">{editingdata.vehicleJet}</h5>
-                  <p className="text-small op-6">{editingdata.vehicleJetDesc}</p>
                   <Row>
                     <Col className="col">
-                      {editingdata.vehicleAvitation}
+
+                  <h5 className="smallCaps text-small text-green">{editingdata.vehicleJet}</h5>
                       <input onChange={calculateMiles} name="planeGas" type="number" min="0" onKeyPress={(event) => {
                         if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                       }} placeholder="Annual litres of fuel"/>
                     </Col>
                   </Row> 
-                  <hr/>
+                  <Row>
+                    <Col className="col">
 
+                  <h5 className="smallCaps text-small text-green">{editingdata.vehicleHeli}</h5>
+                      <input onChange={calculateMiles} name="heliGas" type="number" min="0" onKeyPress={(event) => {
+                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                      }} placeholder="Annual litres of fuel"/>
+                    </Col>
+                  </Row>
+                  
+                  </div>
+                </Accordion.Collapse>
+
+                </Card>
+              <Card>
+                <Accordion.Toggle as={Card.Header} eventKey="4">
+                  <h5 className="smallCaps text-small text-green">Recreational Vehicles</h5>
+                  <p className="text-small op-6">Personally owned recreational vehicles, such as yachts, ATVs, and more.</p>
+                  </Accordion.Toggle>
+                  <Accordion.Collapse eventKey="4">
+
+                              <div>
                   <h5 className="smallCaps text-small text-green">{editingdata.VehicleOther}</h5>
                   <Row>
                     <Col className="col">
@@ -761,7 +1372,6 @@ export default function App({ file, href, children}) {
                       }} placeholder="Marine Unleaded Litres per year"/>
                     </Col>
                   </Row> 
-                  <hr/>
 
                   <Row>
                     <Col className="col">
@@ -771,7 +1381,6 @@ export default function App({ file, href, children}) {
                       }} placeholder="Litres per year"/>
                     </Col>
                   </Row> 
-                  <hr/>
 
                   <Row>
                     <Col className="col">
@@ -781,7 +1390,6 @@ export default function App({ file, href, children}) {
                       }} placeholder="Litres per year"/>
                     </Col>
                   </Row> 
-                  <hr/>
 
                   <Row>
                     <Col className="col">
@@ -791,11 +1399,56 @@ export default function App({ file, href, children}) {
                       }} placeholder="Litres per year"/>
                     </Col>
                   </Row> 
+
+
+
+                  <Row>
+                    <Col className="col">
+                      Seadoo
+                      <input onChange={calculateMiles} name="seaGas" type="number" min="0" onKeyPress={(event) => {
+                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                      }} placeholder="Litres per year"/>
+                    </Col>
+                  </Row> 
+
+                  <Row>
+                    <Col className="col">
+                      Scooter
+                      <input onChange={calculateMiles} name="scootGas" type="number" min="0" onKeyPress={(event) => {
+                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                      }} placeholder="Litres per year"/>
+                    </Col>
+                  </Row> 
+
+                  <Row>
+                    <Col className="col">
+                      Lawn Mower/Tractor
+                      <input onChange={calculateMiles} name="lawnGas" type="number" min="0" onKeyPress={(event) => {
+                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                      }} placeholder="Litres per year"/>
+                    </Col>
+                  </Row> 
+
+                  <Row>
+                    <Col className="col">
+                      Tractor/Farm Equipment
+                      <input onChange={calculateMiles} name="tractorGas" type="number" min="0" onKeyPress={(event) => {
+                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                      }} placeholder="Litres per year"/>
+                    </Col>
+                  </Row> 
+</div>
+                  </Accordion.Collapse>
+
+                </Card>
+                </Accordion>
+
                 </Col>
               </Row>
             </div>
           
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
+            
               <Row>
                 <Col>
                   <h3 className="text-green">{editingdata.flightHeader}</h3>
@@ -892,12 +1545,7 @@ export default function App({ file, href, children}) {
                   <hr/>
                 </Col>
               </Row>
-              <Row>
-                <Col className="col-12 col-xl-4">{editingdata.publicBus}</Col>
-                <Col className="col-xl-4">
-                  <input onChange={calculateTransitMiles} name="publicCar" type="number" placeholder="Average Km per day"/>
-                </Col>
-              </Row>
+              
               <Row>
                 <Col className="col-12 col-xl-4">{editingdata.publicTaxi}</Col>
                 <Col className="col-xl-4">
@@ -912,6 +1560,12 @@ export default function App({ file, href, children}) {
                   <input onChange={calculateTransitMiles} name="publicSubway" type="number" min="0" onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                   }} placeholder="Average Km per day"/>
+                </Col>
+              </Row>
+              <Row>
+                <Col className="col-12 col-xl-4">{editingdata.publicBus}</Col>
+                <Col className="col-xl-4">
+                  <input onChange={calculateTransitMiles} name="publicCar" type="number" placeholder="Average Km per day"/>
                 </Col>
               </Row>
             </div>
@@ -930,11 +1584,11 @@ export default function App({ file, href, children}) {
               </Row>
               <hr/>
               <Row>
-                <Col>{editingdata.dataType3}</Col><Col className="text-right bold">{flightSub > 0 ? flightSub.toFixed(2) : "--"}</Col>
+                <Col>{editingdata.dataType3}</Col><Col className="text-right bold">{flightSub > 0 ? (flightSub/1000).toFixed(2) : "--"}</Col>
               </Row>
               <hr/>
               <Row>
-                <Col>{editingdata.dataType4}</Col><Col className="text-right bold">{publicTransportSub > 0 ? publicTransportSub.toFixed(2) : "--"}</Col>
+                <Col>{editingdata.dataType4}</Col><Col className="text-right bold">{publicTransportSub > 0 ? (publicTransportSub/1000).toFixed(2) : "--"}</Col>
               </Row>
               <hr/>
               <span className="smallCaps text-small">{editingdata.dataTotal}</span><br/>
@@ -950,7 +1604,7 @@ export default function App({ file, href, children}) {
             <div className="bg-brown p-5 innerShadow roundedBox">
               <p className="smallCaps text-orange">{editingdata.box1Header}</p>
               <h3 className="text-white mb-4 px-2 px-lg-5">{editingdata.box1Para}</h3>
-              <Button className="btn-large mt-1" variant="green">{editingdata.box1Button}</Button>
+              <Link href={total > 0 ? "smart-forest-calculator?personal="+total : "smart-forest-calculator"}><Button className="btn-large mt-1" variant="green">{editingdata.box1Button}</Button></Link>
             </div>
           </Col>
         </Row>

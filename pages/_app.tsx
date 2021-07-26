@@ -94,7 +94,6 @@ export default class Site extends App {
           >
             <div>
 
-      <Header/>
               <Component {...pageProps} />
             </div>
           </PageTransition>
@@ -117,8 +116,9 @@ export default class Site extends App {
             }
           `}
         </style>
-        <NewsTicker />
         <Footer/>
+
+        <NewsTicker />
         <EditLink cms={this.cms} />
         </TinacmsGithubProvider>
       </TinaProvider>

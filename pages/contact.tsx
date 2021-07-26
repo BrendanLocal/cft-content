@@ -61,13 +61,13 @@ const Lang = () => {
           <Col>
             <label htmlFor="interests" className="labelCaps">{editingdata.intHeader}</label>
             <Row>
-              <Col className="col-12 col-sm-6">
+              <Col className="col-12 col-lg-6">
                 <input type="checkbox" id="corporate" name="corporate" value="corporate" />
                 <label htmlFor="corporate">{editingdata.intCorp}</label><br/>
                 <input type="checkbox" id="legacy" name="legacy" value="legacy" />
                 <label htmlFor="legacy">{editingdata.intLeg}</label>
               </Col>
-              <Col className="col-12 col-sm-6">
+              <Col className="col-12 col-lg-6">
                 <input type="checkbox" id="school" name="school" value="school" />
                 <label htmlFor="school">{editingdata.intSchool}</label><br/>
                 <input type="checkbox" id="communal" name="communal" value="communal" />
@@ -105,15 +105,7 @@ const Lang = () => {
             </Col>
           </Row>
           <Row className="justify-content-center">
-            <Col className="col-12 col-sm-3 col-xl-2 p2 mb-3 d-flex align-items-stretch">
-              <div className="roundedBox bg-brown innerShadow text-white p-4">
-                <h3>{editingdata.name}</h3>
-                <p className="large">{editingdata.address}</p>
-                <p>{editingdata.additionalInfo}</p>
-                <Button variant="orange btn-full">{editingdata.leftEmail}</Button>
-                <Button variant="orange btn-full">{editingdata.leftPhone}</Button>
-              </div>
-            </Col>
+            
             <Col className="col-12 col-sm-7 col-xl-5 p2">
               <div className=" roundedBox innerShadow text-white p-4">
                 <ContactForm />
