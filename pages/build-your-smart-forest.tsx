@@ -685,7 +685,7 @@ export default function Build({ file }) {
           <Fade bottom>
           <Row className="pt-4 align-items-center justify-content-center mb-3">
               <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
-                <h2 className="text-center text-orange bold tight-drop-light">Envision your forest</h2>
+                <h2 className="text-center text-orange bold tight-drop-light">See Your Forest</h2>
               </Col>
             </Row>
           <DigitalSign/>
@@ -892,7 +892,7 @@ export default function Build({ file }) {
           <Fade bottom>
           <Row className="pt-4 align-items-center justify-content-center mb-3">
               <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
-                <h2 className="text-center text-orange bold tight-drop-light">Envision your forest</h2>
+                <h2 className="text-center text-orange bold tight-drop-light">See Your Forest</h2>
               </Col>
             </Row>
           <DigitalSign/>
@@ -987,6 +987,7 @@ export default function Build({ file }) {
                           <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara3}</ReactMarkdown></li>
                           <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara4}</ReactMarkdown></li>
                           <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara5}</ReactMarkdown></li>
+                          <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara6}</ReactMarkdown></li>
                         </ul>
                         </Col>
                       </Row>
@@ -1085,7 +1086,7 @@ export default function Build({ file }) {
           <Fade bottom>
           <Row className="pt-4 align-items-center justify-content-center mb-3">
               <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
-                <h2 className="text-center text-orange bold tight-drop-light">Envision your forest</h2>
+                <h2 className="text-center text-orange bold tight-drop-light">See Your Forest</h2>
               </Col>
             </Row>
           <DigitalSign/>
@@ -1292,7 +1293,7 @@ export default function Build({ file }) {
           <Fade bottom>
           <Row className="pt-4 align-items-center justify-content-center mb-3">
               <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
-                <h2 className="text-center text-orange bold tight-drop-light">Envision your forest</h2>
+                <h2 className="text-center text-orange bold tight-drop-light">See Your Forest</h2>
               </Col>
             </Row>
           <DigitalSign/>
