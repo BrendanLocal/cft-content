@@ -554,7 +554,7 @@ export default function Build({ file }) {
                   </Col>
                   <Col className="col-5 col-md-3 mb-3">
                     <Button href="#corp-testimonial" variant="text text-orange tight-drop-light smallCaps down-links">
-                      {editingdata.part4_menu2}
+                      {editingdata.quotes}
                     </Button>
                   </Col>
                   <Col className="col-5 col-md-3 mb-3">
@@ -775,7 +775,7 @@ export default function Build({ file }) {
                   <Col className="col-5 col-md-3 mb-3">
                     <Link href="#school-2">
                       <Button variant="text text-orange smallCaps tight-drop-light down-links">
-                        {editingdata.part5_menu2}
+                        {editingdata.quotes}
                       </Button>
                     </Link>
                   </Col>
@@ -993,7 +993,7 @@ export default function Build({ file }) {
                   <Col className="col-5 col-md-3 mb-3">
                     <Link href="#legacy-2">
                       <Button variant="text text-orange smallCaps tight-drop-light down-links">
-                        {editingdata.part6_menu2}
+                        {editingdata.quotes}
                       </Button>
                     </Link>
                   </Col>
@@ -1175,7 +1175,7 @@ export default function Build({ file }) {
                   <Col className="col-5 col-md-3 mb-3">
                     <Link href="#comm-2">
                       <Button variant="text text-orange smallCaps tight-drop-light down-links">
-                        {editingdata.part7_menu2}
+                        {editingdata.quotes}
                       </Button>
                     </Link>
                   </Col>
