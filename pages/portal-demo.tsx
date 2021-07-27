@@ -249,13 +249,13 @@ return (
        {/* Dashboard */}
             <TabPanel >
               <Row className="flex justify-content-center mt-3">
-                <Col className="col-12 col-md-4 col-lg-4 py-3 px-2">
+                <Col className="col-12 col-md-6 col-lg-6 col-xl-4 py-3 px-4">
                 <img src="/dashboard1.svg"/> 
                 </Col>
-                <Col className="col-12 col-md-4 col-lg-4 py-3 px-2">
+                <Col className="col-12 col-md-6 col-lg-6 col-xl-4 py-3 px-4">
                 <img src="/dashboard2.svg"/> 
                 </Col>
-                <Col className="col-12 col-md-4 col-lg-4 py-3 px-2">
+                <Col className="col-12 col-md-6 col-lg-6 col-xl-4 py-3 px-4">
                 <img src="/dashboard3.svg"/> 
                 </Col>
               </Row>
