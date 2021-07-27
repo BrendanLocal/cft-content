@@ -1135,39 +1135,11 @@ export default function Build({ file }) {
                     <Dropdown.Menu>
                       <Row className="p-4">
                         <Col>
-                        <h5 className="text-green medium mb-0">
+                        <h5 className="text-green medium thin mb-0">
                         <ReactMarkdown>
                           {editingdata.communaldropdown_box1header1}
                         </ReactMarkdown>
-                        <ReactMarkdown>
-                          {editingdata.communaldropdown_box1header2}
-                        </ReactMarkdown>
-                        <ReactMarkdown>
-                          {editingdata.communaldropdown_box1header3}
-                        </ReactMarkdown>
-                        <ReactMarkdown>
-                          {editingdata.communaldropdown_box1header4}
-                        </ReactMarkdown>
-    
-                          <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
-                          {editingdata.communaldropdown_box1para1}
-                          </ReactMarkdown>
-
-                        <ReactMarkdown>
-                        {editingdata.communaldropdown_box1header2}
-                        </ReactMarkdown>
-                        
-                          <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
-                          {editingdata.communaldropdown_box1para2}
-                          </ReactMarkdown>
                           
-                        <ReactMarkdown>
-                        {editingdata.communaldropdown_box1header3}
-                        </ReactMarkdown>
-                        
-                          <ReactMarkdown className="text-grey mt-0 dropdown-text">
-                          {editingdata.communaldropdown_box1para3}
-                          </ReactMarkdown>
                           </h5>
                         </Col>
                       </Row>
