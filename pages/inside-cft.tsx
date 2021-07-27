@@ -129,8 +129,8 @@ export default function Power({ file }) {
 
       <Row className="justify-content-left p-0 m-0 d-none d-lg-block d-xl-block">
         <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
-          <p className="text-white m-2 bold op-6 mt-4">{editingdata.home}</p>
-          <ul>
+          <p className="text-white m-2 bold op-6 mt-4 d-none">{editingdata.home}</p>
+          <ul className="mt-5">
             <li className="p-0" data-dest="#intro">
               <a href="#intro" className="text-white bold no-underline">INTRO</a>
             </li>

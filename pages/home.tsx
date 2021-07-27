@@ -147,8 +147,8 @@ export default function Home({ file, href, children}) {
 
       <Row className="justify-content-left p-0 m-0 d-none d-lg-block d-xl-block">
         <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
-          <ReactMarkdown className="text-white m-2 bold op-6">{editingdata.home}</ReactMarkdown>
-          <ul>
+          <ReactMarkdown className="text-white m-2 bold op-6 d-none">{editingdata.home}</ReactMarkdown>
+          <ul className="mt-5">
             <li className="p-0" data-dest="#intro">
               <a href="#intro" className="text-white bold no-underline">{editingdata.menu1}</a>
             </li>
@@ -194,24 +194,24 @@ export default function Home({ file, href, children}) {
                     <h2 className="intro-par text-center text-white bold pb-0"><ReactMarkdown>{editingdata.part1_header4}</ReactMarkdown></h2>
                   </Col>
                 </Row>
-                <Row className="justify-content-center pb-5 align-items-stretch mb-5 mb-sm-0">
-                <Col className="col-10 col-md-8 col-lg-4 col-xl-2 mx-1 mb-4">
-                  <div className="roundedBox card no-border bg-white p-4 h-100">
+                <Row className="justify-content-center pb-5 align-items-stretch mb-5 mb-sm-0 px-lg-3 mx-lg-3 px-xl-5 mx-xl-5">
+                <Col className="col-10 col-md-8 col-lg-5 col-xl-3 mb-4">
+                  <div className="roundedBox card no-border bg-white mx-1 p-4 h-100">
                   <ReactMarkdown className="text-grey m-2">{editingdata.part1_box1para}</ReactMarkdown>
                     </div>
                   </Col>
-                  <Col className="col-10 col-md-8 col-lg-4 col-xl-2 mx-1 mb-4">
-                    <div className="roundedBox card no-border bg-white p-4 h-100">
+                  <Col className="col-10 col-md-8 col-lg-5 col-xl-3 mb-4">
+                    <div className="roundedBox card no-border bg-white mx-1 p-4 h-100">
                     <ReactMarkdown className="text-grey m-2">{editingdata.part1_box2para}</ReactMarkdown>
                     </div>
                   </Col>
-                  <Col className="col-10 col-md-8 col-lg-4 col-xl-2 mx-1 mb-4">
-                    <div className="roundedBox card no-border bg-white p-4 h-100">
+                  <Col className="col-10 col-md-8 col-lg-5 col-xl-3 mb-4">
+                    <div className="roundedBox card no-border bg-white mx-1 p-4 h-100">
                     <ReactMarkdown className="text-grey m-2">{editingdata.part1_box3para}</ReactMarkdown>
                     </div>
                   </Col>
-                  <Col className="col-10 col-md-8 col-lg-4 col-xl-2 mx-1 mb-4">
-                    <div className="roundedBox card no-border bg-white p-4 h-100">
+                  <Col className="col-10 col-md-8 col-lg-5 col-xl-3 mb-4">
+                    <div className="roundedBox card no-border bg-white mx-1 p-4 h-100">
                     <ReactMarkdown className="text-grey m-2">{editingdata.part1_box4para}</ReactMarkdown>
                     </div>
                   </Col>

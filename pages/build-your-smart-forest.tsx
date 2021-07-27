@@ -311,7 +311,7 @@ export default function Build({ file }) {
           <p className="text-white mx-2 mt-0 mb-0 bold op-6 pe-5 caps d-none">
             {editingdata.pageName}
           </p>
-          <ul>
+          <ul className="mt-4">
             <li className="p-0" data-dest="#intro">
               <a href="#intro" className="text-white bold no-underline">
                 {editingdata.menu1}
@@ -606,30 +606,15 @@ export default function Build({ file }) {
               </Col>
             </Row>
             
-            <Row className="text-center justify-content-center px-3 mb-5 pb-5">
-              <Col className="col-10 col-md-6 col-lg-7 col-xl-8 text-center pb-3 pe-lg-0">
-                <Button className="btn-large" variant="green">
-                  <a href="#corp-calc-steps">{editingdata.corp_button1}</a>
-                </Button>
-              </Col>
-            </Row>
           </Fade>
-          
 
-          <Fade bottom>
-            <Row className="justify-content-center align-items-center my-5">
-              <Col className="col-1 horizTab"></Col>
-            </Row>
-          </Fade>
 
         <Fade bottom>
-        <ScrollableAnchor id={"corp-calc-steps"}>
             <Row id="corp-calc-steps" className="pt-5 align-items-center justify-content-center mt-5 mb-3">
               <Col className="col-10 pe-lg-0">
                 <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
               </Col>
             </Row>
-        </ScrollableAnchor>
             <Row className="justify-content-center  align-items-stretch px-lg-5 mx-lg-5 mb-5 pb-5">
                 <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
@@ -814,30 +799,16 @@ export default function Build({ file }) {
                 <img src="../../ECOSYSTEMBENEFITS-School.jpg"/>
                 
               </Col>
-            </Row>
-            <Row className="text-center justify-content-center px-3 mb-5 pb-5">
-              <Col className="col-10 col-md-6 col-lg-7 col-xl-8 text-center pb-3 pe-lg-0">
-                <Button className="btn-large" variant="green">
-                  <a href="#school-calc-steps">{editingdata.school_button1}</a>
-                </Button>
-              </Col>
-            </Row>
+            </Row>    
           </Fade>
 
-          <Fade bottom>
-            <Row className="justify-content-center align-items-center my-5">
-              <Col className="col-1 horizTab"></Col>
-            </Row>
-          </Fade>
-
+          
         <Fade bottom>
-        <ScrollableAnchor id={"school-calc-steps"}>
             <Row id="school-calc-steps" className="pt-5 align-items-center justify-content-center mt-5 mb-3">
               <Col className="col-10 pe-lg-0">
                 <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
               </Col>
             </Row>
-        </ScrollableAnchor>
             <Row className="justify-content-center  align-items-stretch px-lg-5 mx-lg-5 mb-5 pb-5">
                 <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
@@ -876,8 +847,8 @@ export default function Build({ file }) {
           <Fade bottom>
             <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
               <Col className="col-10 col-md-8 col-lg-9 col-xl-7 pe-lg-0">
-                <h2 className="text-center text-orange bold tight-drop-light">{editingdata.school_header3}</h2>
-                <p className="text-center px-lg-4 text-white large mb-2">{editingdata.school_para3}</p>
+                <h2 className="text-center text-orange bold tight-drop-light">Get Involved Today</h2>
+                <p className="text-center text-white large mb-2">Our team is available to meet with you to discuss your custom School Smart Forest program. Our agreements range in length, and carbon sequestration starts as soon as the land is prepared and planting begins.</p>
               </Col>
             </Row>
             <Row className="text-center justify-content-center mb-5 pb-4">
@@ -1009,29 +980,14 @@ export default function Build({ file }) {
 
               </Col>
             </Row>
-            <Row className="text-center justify-content-center px-3 mb-5 pb-5">
-              <Col className="col-10 col-md-6 col-lg-7 col-xl-8 text-center pb-3 pe-lg-0">
-                <Button className="btn-large" variant="green">
-                  <a href="#legacy-calc-steps">{editingdata.legacy_button1}</a>
-                </Button>
-              </Col>
-            </Row>
-          </Fade>
-
-          <Fade bottom>
-            <Row className="justify-content-center align-items-center my-5">
-              <Col className="col-1 horizTab"></Col>
-            </Row>
           </Fade>
 
         <Fade bottom>
-        <ScrollableAnchor id={"legacy-calc-steps"}>
             <Row id="legacy-calc-steps" className="pt-5 align-items-center justify-content-center mt-5 mb-3">
               <Col className="col-10 pe-lg-0">
                 <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
               </Col>
             </Row>
-        </ScrollableAnchor>
             <Row className="justify-content-center  align-items-stretch px-lg-5 mx-lg-5 mb-5 pb-5">
                 <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
@@ -1225,29 +1181,14 @@ export default function Build({ file }) {
 
               </Col>
             </Row>
-            <Row className="text-center justify-content-center px-3 mb-5 pb-5">
-              <Col className="col-10 col-md-6 col-lg-7 col-xl-8 text-center pb-3 pe-lg-0">
-                <Button className="btn-large" variant="green">
-                  <a href="#communal-calc-steps">{editingdata.communal_button1}</a>
-                </Button>
-              </Col>
-            </Row>
-          </Fade>
-
-          <Fade bottom>
-            <Row className="justify-content-center align-items-center my-5">
-              <Col className="col-1 horizTab"></Col>
-            </Row>
           </Fade>
 
         <Fade bottom>
-        <ScrollableAnchor id={"communal-calc-steps"}>
             <Row id="communal-calc-steps" className="pt-5 align-items-center justify-content-center mt-5 mb-3">
               <Col className="col-10 pe-lg-0">
                 <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
               </Col>
             </Row>
-        </ScrollableAnchor>
             <Row className="justify-content-center  align-items-stretch px-lg-5 mx-lg-5 mb-5 pb-5">
                 <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
