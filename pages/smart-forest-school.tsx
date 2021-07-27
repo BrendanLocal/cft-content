@@ -117,10 +117,11 @@ export default function App({ file, href, children}) {
   }
 
 
-  const schoolfootprint = localStorage.getItem('schoolfootprint');
   
   
   useEffect(() => {
+
+  const schoolfootprint = localStorage.getItem('schoolfootprint');
   setFootprint(Number(schoolfootprint));
   },[])
 
@@ -149,7 +150,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="footprint">{editingdata.emissionsCarbonHeader}</label>
                   <br />
-                  <input className="mb-4" onChange={changeFootprint} name="type" type="number" min="0" onKeyPress={(event) => {
+                  <input className="mb-4" value={footprint}  onChange={changeFootprint} name="type" type="number" min="0" onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                   }  placeholder={editingdata.emissionsPlaceholder}/>
                   {editingdata.emissionsCarbon}<Link href="carbon-calculator"><a className="underline modal-btn">{editingdata.emissionsLink}</a></Link>

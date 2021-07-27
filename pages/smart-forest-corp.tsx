@@ -104,6 +104,13 @@ export default function App({ file, href, children}) {
   const [footprint, setFootprint] = React.useState(0);
   const [duration, setDuration] = React.useState(0);
 
+
+  useEffect(() => {
+    const businessfootprint = localStorage.getItem('businessfootprint');
+    setFootprint(Number(businessfootprint));
+    },[])
+  
+
   var plantHectares = (duration*footprint)/regionArray.carbon[region];
   var plantTrees = plantHectares*2470;
   const changeRegion = (event) => {
@@ -117,11 +124,6 @@ export default function App({ file, href, children}) {
   }
 
 
-  const businessfootprint = localStorage.getItem('businessfootprint');
-  
-  useEffect(() => {
-  setFootprint(Number(businessfootprint));
-  },[])
 
   return (
     <div>
@@ -148,7 +150,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="footprint">{editingdata.emissionsCarbonHeader}</label>
                   <br />
-                  <input className="mb-4" onChange={changeFootprint} name="type" type="number" min="0" onKeyPress={(event) => {
+                  <input className="mb-4" value={footprint}  onChange={changeFootprint} name="type" type="number" min="0" onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                   }  placeholder={editingdata.emissionsPlaceholder}/>
                   {editingdata.emissionsCarbon}<Link href="carbon-calculator"><a className="underline modal-btn">{editingdata.emissionsLink}</a></Link>

@@ -493,7 +493,9 @@ const Lang = () => {
     }
 
     let total = vehicleSub + subtotalBuild + transitSub + flightSub + freightSub;
+    if (typeof window !== 'undefined') {
   localStorage.setItem('businessfootprint', String(total));
+    }
 
     return (
     <div className="bg-corp">
