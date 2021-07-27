@@ -3000,6 +3000,13 @@ font-size: .9em;
   position: initial;
 }
 
+.emphasis-2 {
+  font-size: calc(2.5rem + 1.5vw);
+  line-height: calc(2.5rem + 1.5vw);
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
 
 }
 
