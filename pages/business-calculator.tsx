@@ -493,6 +493,7 @@ const Lang = () => {
     }
 
     let total = vehicleSub + subtotalBuild + transitSub + flightSub + freightSub;
+  localStorage.setItem('businessfootprint', String(total));
 
     return (
     <div className="bg-corp">
@@ -1427,7 +1428,7 @@ const Lang = () => {
           <div className="bg-brown p-5 innerShadow roundedBox">
             <p className="smallCaps text-orange">{editingdata.box1Header}</p>
           <h3 className="text-white mb-4 px-2 px-lg-5">{editingdata.box1Para}</h3>
-          <Link href="/smart-forest-calculator">
+          <Link href="/smart-forest-corp">
           <a className="btn btn-green btn-large mt-1">{editingdata.box1Button}</a></Link>
           </div>
           </Col>

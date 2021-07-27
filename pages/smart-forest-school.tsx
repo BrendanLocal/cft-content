@@ -9,7 +9,7 @@ import { GetStaticProps } from "next";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 import { useGithubJsonForm, useGithubToolbarPlugins } from "react-tinacms-github";
 import { usePlugin } from "tinacms";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../components/header";
 
 const Lang = () => {
@@ -115,6 +115,14 @@ export default function App({ file, href, children}) {
   const changeDuration = (event) => {
     setDuration(event.target.value);
   }
+
+
+  const schoolfootprint = localStorage.getItem('schoolfootprint');
+  
+  
+  useEffect(() => {
+  setFootprint(Number(schoolfootprint));
+  },[])
 
   return (
     <div>

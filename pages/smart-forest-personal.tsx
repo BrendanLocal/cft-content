@@ -9,7 +9,7 @@ import { GetStaticProps } from "next";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 import { useGithubJsonForm, useGithubToolbarPlugins } from "react-tinacms-github";
 import { usePlugin } from "tinacms";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../components/header";
 
 const Lang = () => {
@@ -23,15 +23,6 @@ const Lang = () => {
 }
 
 
-const NodeCache = require( "node-cache" );
-const myCache = new NodeCache();
-
-const personalTotal = myCache.get( "personalTotal" );
-if ( personalTotal == undefined ){
-  console.log("oops!")
-} else {
-  console.log(personalTotal)
-}
 
 export default function App({ file, href, children}) {
   
@@ -100,9 +91,22 @@ export default function App({ file, href, children}) {
   const [regionArray, setRegionArray] = React.useState({
     carbon: {BC:500,	Prairies:252,	Ontario:347,	Quebec:347,	Atlantic:134 }
   });
+
+ 
   const [region, setRegion] = React.useState("");
   const [footprint, setFootprint] = React.useState(0);
   const [duration, setDuration] = React.useState(0);
+
+  const personalfootprint = localStorage.getItem('personalfootprint');
+  
+  
+  useEffect(() => {
+  setFootprint(Number(personalfootprint));
+  },[])
+
+
+
+
 
   var plantHectares = (duration*footprint)/regionArray.carbon[region];
   var plantTrees = plantHectares*2470;
@@ -141,10 +145,10 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="footprint">{editingdata.emissionsCarbonHeader}</label>
                   <br />
-                  <input className="mb-4" onChange={changeFootprint} name="type" type="number" min="0" onKeyPress={(event) => {
+                  <input className="mb-4" value={footprint} onChange={changeFootprint} name="type" type="number" min="0" onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                   }  placeholder={editingdata.emissionsPlaceholder}/>
-                  {editingdata.emissionsCarbon}<Link href="carbon-calculator"><a className="underline modal-btn">{editingdata.emissionsLink}</a></Link>
+                  {editingdata.emissionsCarbon}<Link href="personal-calculator"><a className="underline modal-btn">{editingdata.emissionsLink}</a></Link>
                 </Col>
               </Row>
               <hr/>

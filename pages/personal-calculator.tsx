@@ -661,6 +661,7 @@ export default function App({ file, href, children}) {
 
   /* calculate the 'total' here by adding on the other subtotals */
   let total = vehicleSub + totalBuild + (flightSub/1000) + (publicTransportSub/1000);
+  localStorage.setItem('personalfootprint', String(total));
 
 
 
@@ -1604,7 +1605,7 @@ export default function App({ file, href, children}) {
             <div className="bg-brown p-5 innerShadow roundedBox">
               <p className="smallCaps text-orange">{editingdata.box1Header}</p>
               <h3 className="text-white mb-4 px-2 px-lg-5">{editingdata.box1Para}</h3>
-              <Link href={total > 0 ? "smart-forest-calculator?personal="+total : "smart-forest-calculator"}><Button className="btn-large mt-1" variant="green">{editingdata.box1Button}</Button></Link>
+              <Link href="smart-forest-personal"><Button className="btn-large mt-1" variant="green">{editingdata.box1Button}</Button></Link>
             </div>
           </Col>
         </Row>

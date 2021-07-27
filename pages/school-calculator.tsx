@@ -434,6 +434,7 @@ const Lang = () => {
 
   /* calculate the 'total' here by adding on the other subtotals */
   let total = vehicleSub + subtotalBuild + flightSub + transitSub + studentCommute + otherVehicleSub;
+  localStorage.setItem('schoolfootprint', String(total));
 
   return (
     <div className="bg-school">
