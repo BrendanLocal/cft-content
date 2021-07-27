@@ -8,7 +8,7 @@ import ImageUpload from 'image-upload-react';
 import * as htmlToImage from 'html-to-image';
 import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
 
-const DigitalSign = ({ signBG, signForestName, signImg, signAcres, signCopy })=> {
+const DigitalSign = ()=> {
 
   const [imageSrc, setImageSrc] = useState("")
  
