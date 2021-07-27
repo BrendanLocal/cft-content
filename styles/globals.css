@@ -323,6 +323,10 @@ li a, a.underline {
   text-decoration: underline;
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 .large {
   font-size: 20px!important;
 }

@@ -308,7 +308,7 @@ export default function Build({ file }) {
 
       <Row className="justify-content-left p-0 m-0 d-none d-lg-block d-xl-block">
         <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
-          <p className="text-white mx-2 mt-0 mb-0 bold op-6 pe-5 caps">
+          <p className="text-white mx-2 mt-0 mb-0 bold op-6 pe-5 caps d-none">
             {editingdata.pageName}
           </p>
           <ul>
@@ -361,8 +361,10 @@ export default function Build({ file }) {
               <h1 className="text-orange mb-5 bold">{editingdata.part1_header1}</h1>
               <p className="large my-5 op-9 pe-lg-3 pe-xl-5">{editingdata.part1_para1}</p>
               <ReactMarkdown className="text-white text-left smallcaps intro-links-header op-5 mt-4 mb-3">{editingdata.part1_header2}</ReactMarkdown>
-              <a href="#the-plan" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.part1_menu1}</a>
-              <a href="#our-forests" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.part1_menu2}</a>
+              <a href="#the-plan" className="btn btn-text text-left intro-links text-orange bold no-underline me-4">{editingdata.part1_menu1}</a>
+              <br/>
+              <a href="#our-forests" className="btn btn-text text-left intro-links text-orange bold no-underline me-4">{editingdata.part1_menu2}</a>
+              <br/>
             </Col>
           </Row>
         </Container>
