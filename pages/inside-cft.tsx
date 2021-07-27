@@ -130,7 +130,7 @@ export default function Power({ file }) {
       <Row className="justify-content-left p-0 m-0 d-none d-lg-block d-xl-block">
         <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
           <p className="text-white m-2 bold op-6 mt-4 d-none">{editingdata.home}</p>
-          <ul className="mt-5">
+          <ul className="mt-4">
             <li className="p-0" data-dest="#intro">
               <a href="#intro" className="text-white bold no-underline">INTRO</a>
             </li>
@@ -343,11 +343,25 @@ export default function Power({ file }) {
                 <TabPanel>
                   {/* First panel starts here */}
                   <Row className="justify-content-center align-items-center">
-                    <Col className="col-12 p-5">
+                    <Col className="col-12 pt-5">
                       <h2 className="text-center bold text-white mb-1">Gary Zed</h2>
-                      <p className="text-center text-white">Founder & CEO</p>
+                      <p className="text-center text-white mb-4">Founder & CEO</p>
+
                     </Col>
                   </Row>
+                  <Row className="justify-content-center align-items-center">
+                  <Col className="col-12 col-md-9">
+                    <img className="card-drop-heavy" src="../../Gary-Zed_Headshot.jpg"/>
+                    </Col>
+                  </Row>
+                  <Row className="justify-content-center align-items-center">
+                  <Col className="mt-4">
+                    <div className="text-orange large text-center text-orange bold intro-cta">
+                      <a href="/contact-us">A message from our founder</a>
+                    </div>
+                    </Col>
+                  </Row>
+
                 </TabPanel>
                 <TabPanel>
                   <Row>
@@ -357,8 +371,6 @@ export default function Power({ file }) {
                     <p className="text-center text-white mb-4">Land Acquisition & Planning</p>
                     <h2 className="text-center bold text-white mb-1 mt-5">Zoebelle Flores</h2>
                     <p className="text-center text-white mb-4">Research & Analytics</p>
-                    <h2 className="text-center bold text-white mb-1 mt-5">Rachel Henry-Smith</h2>
-                    <p className="text-center text-white mb-4">Forester</p>
                     <h2 className="text-center bold text-white mb-1 mt-5">Neeraj Joshi</h2>
                     <p className="text-center text-white mb-4">Information Technology</p>
                     <h2 className="text-center bold text-white mb-1 mt-5">John Jussup</h2>
