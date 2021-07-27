@@ -15,6 +15,10 @@ import { useState } from "react";
 import Header from "../components/header";
 import Accordion from "react-bootstrap/Accordion";
 
+
+var randomstring = require("randomstring");
+randomstring.generate(12);
+
 const Lang = () => {
 var language ="en";
   const router = useRouter();
