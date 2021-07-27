@@ -1122,7 +1122,16 @@ export default function Build({ file }) {
                         <Col>
                         <h5 className="text-green mb-0 thin">
                         <ReactMarkdown>
-                        {editingdata.communaldropdown_box1header1}
+                          {editingdata.communaldropdown_box1header1}
+                        </ReactMarkdown>
+                        <ReactMarkdown>
+                          {editingdata.communaldropdown_box1header2}
+                        </ReactMarkdown>
+                        <ReactMarkdown>
+                          {editingdata.communaldropdown_box1header3}
+                        </ReactMarkdown>
+                        <ReactMarkdown>
+                          {editingdata.communaldropdown_box1header4}
                         </ReactMarkdown>
                         </h5>
                           <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">

@@ -171,7 +171,7 @@ export default function Power({ file }) {
               <br/>
               <a href="#the-plan" className="btn btn-text text-left intro-links text-orange bold no-underline me-4">5 Phase Approach</a>
               <br/>
-              <a href="#what" className="btn btn-text text-left intro-links text-orange bold no-underline me-4">What iss a Smart Forest?</a>
+              <a href="#what" className="btn btn-text text-left intro-links text-orange bold no-underline me-4">What is a Smart Forest?</a>
               <br/>
               <a href="#forever" className="btn btn-text text-left intro-links text-orange bold no-underline me-4">Meet our team</a>
               <br/>
