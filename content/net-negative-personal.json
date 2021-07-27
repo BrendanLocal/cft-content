@@ -4,7 +4,7 @@
   "title": "Net Negative - Personal Calculator",
 
   "header": "Net-Negative Calculator",
-  "para1": "Calculate how many hectares you, your family, your corporation, or your school must invest in to reach a net-negative emissions target",
+  "para1": "Calculate how many acres you, your family, your corporation, or your school must invest in to reach a net-negative emissions target",
   "select": "Select...",
   "emissionsHeader": "Your emissions",
   "emissionsCarbonHeader": "What is your carbon footprint? (Tonnes per year)",
@@ -38,12 +38,12 @@
 
   "dataHeader":"Carbon offset",
   "dataType":"You must plant",
-  "dataType1":"hectares",
+  "dataType1":"acres",
   "dataType2":"trees",
   "dataDisclaimer":"This is only an estimate etc",
 
   "nextHeader":"NEXT STEP",
-  "nextPara":"Calculate how many hectares of Smart Forest you need to invest in to reach a Net-Zero emissions target.",
+  "nextPara":"Calculate how many acres of Smart Forest you need to invest in to reach a Net-Zero emissions target.",
   "nextButton":"CALCULATE YOUR NET NEGATIVE TARGET",
 
   "otherHeader":"Carbon Calculators",

@@ -4,7 +4,7 @@
   "title": "Canada's Forest Trust",
 
   "header": "Net-Zero Calculator",
-  "para1": "Calculate how many hectares you, your family, your corporation, or your school must invest in to reach a net-zero emissions target",
+  "para1": "Calculate how many acres you, your family, your corporation, or your school must invest in to reach a net-zero emissions target",
   "select": "Select...",
   "emissionsHeader": "Your emissions",
   "emissionsCarbonHeader": "What is your carbon footprint? (Tonnes per year)",
@@ -38,7 +38,7 @@
 
   "dataHeader":"Carbon offset",
   "dataType":"You must plant",
-  "dataType1":"hectares",
+  "dataType1":"acres",
   "dataType2":"trees",
   "dataDisclaimer":"This is only an estimate etc",
 
