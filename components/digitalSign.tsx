@@ -1,12 +1,14 @@
 import React, { useState, useEffect, MouseEvent} from 'react';
 import { render } from 'react-dom';
-import Link from 'next/link'
+import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import ImageUpload from 'image-upload-react'
+import ImageUpload from 'image-upload-react';
+import * as htmlToImage from 'html-to-image';
+import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
 
-const DigitalSign = ()=> {
+const DigitalSign = ({ signBG, signForestName, signImg, signAcres, signCopy })=> {
 
   const [imageSrc, setImageSrc] = useState("")
  
@@ -15,8 +17,7 @@ const DigitalSign = ()=> {
   }
   
   const [forestName, setForestName] = React.useState("");
-  const [forestAcres, setForestAcres] = React.useState(0); 
-  const [logoImage, setLogoImage] = React.useState("");
+  const [forestAcres, setForestAcres] = React.useState(0);
   const [selectCopy, setCopy] = React.useState("");
   const [selectBG, setBG] = React.useState("signbg_forest.jpg");
   const [selectLogo, setLogo] = React.useState("");
@@ -39,6 +40,20 @@ const DigitalSign = ()=> {
   const changeName = (event) => {
     setForestName(event.target.value);
   };
+
+  function CreateImage(){
+    var node = document.getElementById('signImage');
+
+    htmlToImage.toPng(node)
+    .then(function (dataUrl) {
+      var img = new Image();
+      img.src = dataUrl;
+      document.getElementById('imageresult').replaceWith(img);
+    })
+    .catch(function (error) {
+      console.error('oops, something went wrong!', error);
+    });
+  }
 
   return (
     <React.Fragment>
@@ -69,11 +84,17 @@ const DigitalSign = ()=> {
           </select>
  <label htmlFor="forest-name">Upload an image for your sign</label>
           <div className="upload-button">
-          <ImageUpload
-            handleImageSelect={handleImageSelect}
-            setImageSrc={setImageSrc}
-          />
+            <ImageUpload
+              handleImageSelect={handleImageSelect}
+              setImageSrc={setImageSrc}
+            />
           </div>
+          <label htmlFor="forest-name">Download your sign</label>
+          <br />
+          {/* I Can't quite get it to grab the SignImageContainer correctly */}
+          <button onClick={CreateImage}>
+            Export As PNG
+          </button>
         </Col>
         <Col className="col-10 col-md-8 col-lg-6 col-xl-5 signImagebuilder pe-lg-0">
           <div className="signImageContainer">
@@ -93,6 +114,7 @@ const DigitalSign = ()=> {
               {selectCopy}
             </div>
           </div>
+          <div id="imageresult"></div>
         </Col>
       </Row>
     </React.Fragment>

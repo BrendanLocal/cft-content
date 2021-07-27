@@ -539,7 +539,7 @@ export default function Build({ file }) {
                   </Dropdown>
                   <Dropdown className="col-10 col-lg-4 col-xl-4">
                   <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
-                      {editingdata.corpdropdown_menuheader2}
+                      {editingdata.quotes}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       <Row className="p-4">
@@ -685,7 +685,7 @@ export default function Build({ file }) {
           <Fade bottom>
           <Row className="pt-4 align-items-center justify-content-center mb-3">
               <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
-                <h2 className="text-center text-orange bold tight-drop-light">Envision your forest</h2>
+                <h2 className="text-center text-orange bold tight-drop-light">See Your Forest</h2>
               </Col>
             </Row>
           <DigitalSign/>
@@ -750,7 +750,7 @@ export default function Build({ file }) {
                   </Dropdown>
                   <Dropdown className="col-10 col-lg-4 col-xl-4">
                   <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
-                      {editingdata.schooldropdown_menuheader2}
+                      {editingdata.quotes}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       <Row className="p-4">
@@ -892,7 +892,7 @@ export default function Build({ file }) {
           <Fade bottom>
           <Row className="pt-4 align-items-center justify-content-center mb-3">
               <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
-                <h2 className="text-center text-orange bold tight-drop-light">Envision your forest</h2>
+                <h2 className="text-center text-orange bold tight-drop-light">See Your Forest</h2>
               </Col>
             </Row>
           <DigitalSign/>
@@ -937,7 +937,7 @@ export default function Build({ file }) {
                   </Dropdown>
                   <Dropdown className="col-10 col-lg-4 col-xl-4">
                   <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
-                      {editingdata.legacydropdown_menuheader2}
+                      {editingdata.quotes}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       <Row className="p-4">
@@ -987,6 +987,7 @@ export default function Build({ file }) {
                           <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara3}</ReactMarkdown></li>
                           <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara4}</ReactMarkdown></li>
                           <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara5}</ReactMarkdown></li>
+                          <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara6}</ReactMarkdown></li>
                         </ul>
                         </Col>
                       </Row>
@@ -1085,7 +1086,7 @@ export default function Build({ file }) {
           <Fade bottom>
           <Row className="pt-4 align-items-center justify-content-center mb-3">
               <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
-                <h2 className="text-center text-orange bold tight-drop-light">Envision your forest</h2>
+                <h2 className="text-center text-orange bold tight-drop-light">See Your Forest</h2>
               </Col>
             </Row>
           <DigitalSign/>
@@ -1121,7 +1122,16 @@ export default function Build({ file }) {
                         <Col>
                         <h5 className="text-green mb-0 thin">
                         <ReactMarkdown>
-                        {editingdata.communaldropdown_box1header1}
+                          {editingdata.communaldropdown_box1header1}
+                        </ReactMarkdown>
+                        <ReactMarkdown>
+                          {editingdata.communaldropdown_box1header2}
+                        </ReactMarkdown>
+                        <ReactMarkdown>
+                          {editingdata.communaldropdown_box1header3}
+                        </ReactMarkdown>
+                        <ReactMarkdown>
+                          {editingdata.communaldropdown_box1header4}
                         </ReactMarkdown>
                         </h5>
                           <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
@@ -1149,7 +1159,7 @@ export default function Build({ file }) {
                   </Dropdown>
                   <Dropdown className="col-10 col-lg-4 col-xl-4">
                   <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
-                      {editingdata.communaldropdown_menuheader2}
+                      {editingdata.quotes}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       <Row className="p-4">
@@ -1292,7 +1302,7 @@ export default function Build({ file }) {
           <Fade bottom>
           <Row className="pt-4 align-items-center justify-content-center mb-3">
               <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
-                <h2 className="text-center text-orange bold tight-drop-light">Envision your forest</h2>
+                <h2 className="text-center text-orange bold tight-drop-light">See Your Forest</h2>
               </Col>
             </Row>
           <DigitalSign/>
