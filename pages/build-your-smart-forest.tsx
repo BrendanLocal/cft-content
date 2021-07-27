@@ -579,7 +579,7 @@ export default function Build({ file }) {
                     <Dropdown.Menu>
                       <Row className="p-4">
                         <Col>
-                        <p className="text-green bold text-left mb-3">{editingdata.corpdropdown_pointsheader}</p>
+                        <h5 className="text-green medium mb-0 thin"><ReactMarkdown>{editingdata.corpdropdown_pointsheader}</ReactMarkdown></h5>
                         <ul className="text-grey dropdown-text checkMark px-3 mx-3">
                           <li><ReactMarkdown>{editingdata.corpdropdown_pointspara1}</ReactMarkdown></li>
                           <li><ReactMarkdown>{editingdata.corpdropdown_pointspara2}</ReactMarkdown></li>
@@ -668,7 +668,6 @@ export default function Build({ file }) {
             </Row>
           </Fade>
 
-
           <Fade bottom>
           <Row className="pt-4 align-items-center justify-content-center mb-3">
               <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
@@ -677,6 +676,26 @@ export default function Build({ file }) {
             </Row>
           <DigitalSign/>
           </Fade>
+
+          <Fade bottom>
+            <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
+              <Col className="col-10 col-md-8 col-lg-9 col-xl-7 pe-lg-0">
+                <h3 className="text-center text-orange bold tight-drop-light">
+                  Find out who’s Indigenous Territory your corporation is on and see the Indigenous territory and community leaders to build relations.
+                  </h3>
+              </Col>
+            </Row>
+            <Row className="text-center justify-content-center">
+              <Col className="col-10 text-center pb-5 pe-lg-0">
+              <Link href="https://native-land.ca/">
+                <Button className="btn-large px-5" variant="green">
+                  NATIVELAND.CA
+                </Button>
+                </Link>
+              </Col>
+            </Row>
+          </Fade>
+
         </Container>
         </ScrollableAnchor>
 
@@ -775,7 +794,7 @@ export default function Build({ file }) {
                     <Dropdown.Menu>
                       <Row className="p-4">
                         <Col>
-                        <p className="text-green bold text-left mb-3">{editingdata.schooldropdown_pointsheader}</p>
+                        <h5 className="text-green medium mb-0 thin"><ReactMarkdown>{editingdata.schooldropdown_pointsheader}</ReactMarkdown></h5>
                         <ul className="text-grey dropdown-text checkMark px-3 mx-3">
                           <li><ReactMarkdown>{editingdata.schooldropdown_pointspara1}</ReactMarkdown></li>
                           <li><ReactMarkdown>{editingdata.schooldropdown_pointspara2}</ReactMarkdown></li>
@@ -870,6 +889,25 @@ export default function Build({ file }) {
             </Row>
           <DigitalSign/>
           </Fade>
+
+          <Fade bottom>
+            <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
+              <Col className="col-10 col-md-8 col-lg-9 col-xl-7 pe-lg-0">
+                <h3 className="text-center text-orange bold tight-drop-light">
+                  Find out who’s Indigenous Territory your school is on and see the Indigenous territory and community leaders to build relations.
+                  </h3>
+              </Col>
+            </Row>
+            <Row className="text-center justify-content-center">
+              <Col className="col-10 text-center pb-5 pe-lg-0">
+              <Link href="https://native-land.ca/">
+                <Button className="btn-large px-5" variant="green">
+                  NATIVELAND.CA
+                </Button>
+                </Link>
+              </Col>
+            </Row>
+          </Fade>
         </Container>
         </ScrollableAnchor>
 
@@ -899,7 +937,7 @@ export default function Build({ file }) {
                     <Dropdown.Menu>
                       <Row className="p-4">
                         <Col>
-                        <h5 className="text-green mb-0 thin">
+                        <h5 className="text-green medium mb-0 thin">
                         <ReactMarkdown>
                         {editingdata.legacydropdown_box1header1}
                         </ReactMarkdown>
@@ -953,7 +991,7 @@ export default function Build({ file }) {
                         {editingdata.legacydropdown_pointsheader0}
                         </ReactMarkdown>
                         </h5>
-                        <p className="text-green bold text-left mb-3">{editingdata.legacydropdown_pointsheader}</p>
+                        <h5 className="text-green medium mb-0 thin"><ReactMarkdown>{editingdata.legacydropdown_pointsheader}</ReactMarkdown></h5>
                         <ul className="text-grey dropdown-text checkMark px-3 mx-3">
                           <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara1}</ReactMarkdown></li>
                           <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara2}</ReactMarkdown></li>
@@ -1049,6 +1087,25 @@ export default function Build({ file }) {
             </Row>
           <DigitalSign/>
           </Fade>
+
+          <Fade bottom>
+            <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
+              <Col className="col-10 col-md-8 col-lg-9 col-xl-7 pe-lg-0">
+                <h3 className="text-center text-orange bold tight-drop-light">
+                  Find out who’s Indigenous Territory your home is on and see the Indigenous territory and community leaders to build relations.
+                  </h3>
+              </Col>
+            </Row>
+            <Row className="text-center justify-content-center">
+              <Col className="col-10 text-center pb-5 pe-lg-0">
+              <Link href="https://native-land.ca/">
+                <Button className="btn-large px-5" variant="green">
+                  NATIVELAND.CA
+                </Button>
+                </Link>
+              </Col>
+            </Row>
+          </Fade>
         </Container>
         </ScrollableAnchor>
 
@@ -1078,7 +1135,7 @@ export default function Build({ file }) {
                     <Dropdown.Menu>
                       <Row className="p-4">
                         <Col>
-                        <h5 className="text-green mb-0 thin">
+                        <h5 className="text-green medium mb-0">
                         <ReactMarkdown>
                           {editingdata.communaldropdown_box1header1}
                         </ReactMarkdown>
@@ -1091,26 +1148,27 @@ export default function Build({ file }) {
                         <ReactMarkdown>
                           {editingdata.communaldropdown_box1header4}
                         </ReactMarkdown>
-                        </h5>
+    
                           <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
                           {editingdata.communaldropdown_box1para1}
                           </ReactMarkdown>
-                          <h5 className="text-green mb-0 thin">
+
                         <ReactMarkdown>
                         {editingdata.communaldropdown_box1header2}
                         </ReactMarkdown>
-                        </h5>
+                        
                           <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
                           {editingdata.communaldropdown_box1para2}
                           </ReactMarkdown>
-                          <h5 className="text-green mb-0 thin">
+                          
                         <ReactMarkdown>
                         {editingdata.communaldropdown_box1header3}
                         </ReactMarkdown>
-                        </h5>
+                        
                           <ReactMarkdown className="text-grey mt-0 dropdown-text">
                           {editingdata.communaldropdown_box1para3}
                           </ReactMarkdown>
+                          </h5>
                         </Col>
                       </Row>
                     </Dropdown.Menu>
@@ -1155,7 +1213,7 @@ export default function Build({ file }) {
                     <Dropdown.Menu>
                       <Row className="p-4">
                         <Col>
-                        <p className="text-green bold text-left mb-3">{editingdata.communaldropdown_pointsheader}</p>
+                        <h5 className="text-green medium mb-0 thin"><ReactMarkdown>{editingdata.communaldropdown_pointsheader}</ReactMarkdown></h5>
                         <ul className="text-grey dropdown-text checkMark px-3 mx-3">
                           <li><ReactMarkdown>{editingdata.communaldropdown_pointspara1}</ReactMarkdown></li>
                           <li><ReactMarkdown>{editingdata.communaldropdown_pointspara2}</ReactMarkdown></li>
@@ -1249,6 +1307,25 @@ export default function Build({ file }) {
               </Col>
             </Row>
           <DigitalSign/>
+          </Fade>
+
+          <Fade bottom>
+            <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
+              <Col className="col-10 col-md-8 col-lg-9 col-xl-7 pe-lg-0">
+                <h3 className="text-center text-orange bold tight-drop-light">
+                  Find out who’s Indigenous Territory your community is on and see the Indigenous territory and community leaders to build relations.
+                  </h3>
+              </Col>
+            </Row>
+            <Row className="text-center justify-content-center">
+              <Col className="col-10 text-center pb-5 pe-lg-0">
+              <Link href="https://native-land.ca/">
+                <Button className="btn-large px-5" variant="green">
+                  NATIVELAND.CA
+                </Button>
+                </Link>
+              </Col>
+            </Row>
           </Fade>
         </Container>
         </ScrollableAnchor>
