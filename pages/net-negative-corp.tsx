@@ -139,7 +139,7 @@ export default function App({ file, href, children}) {
         <Row className="justify-content-center">
           <Col className="p-3 col-11 col-lg-6">
             <div className="card roundedBox no-border bg-green p-4 innerShadow cardSpacing">
-              <p className="lead text-white m-2 calc-intro pe-lg-2">{editingdata.para1}</p>
+              <p className="lead text-white m-2 calc-intro pe-lg-2">Now let's see what it will take to get you to net-NEGATIVE.</p>
             </div>
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
@@ -202,7 +202,7 @@ export default function App({ file, href, children}) {
               <hr/>
               <Row>
                 <Col>
-                  <label htmlFor="additional">How much additional carbon do you want to offset?</label>
+                  <label htmlFor="additional">Plant it forward by adding</label>
                   <br />
                   <select name="additional" value={negative} onChange={changeNegative}>
                     <option value="" hidden>Select...</option>
@@ -218,7 +218,9 @@ export default function App({ file, href, children}) {
           </Col>
           <Col className=" p-3  col-12 col-lg-4 stickyCalc mb-4">
             <div className="text-white p-5 innerShadow roundedBox">
-              <h4 className="mb-0">{editingdata.dataHeader}</h4>
+              <h4 className="mb-0">Grow to net-NEGATIVE</h4>
+              <hr/>
+              <Row><Col className="pb-3">Carbon Sequestered: {footprint.toFixed(2)}</Col></Row>
               <hr/>
               <Row><Col className="pb-3">{editingdata.dataType} {plantHectares > 0 ? plantHectares.toFixed(2) : "--"} {editingdata.dataType1}</Col></Row>
               <hr/>
@@ -228,6 +230,15 @@ export default function App({ file, href, children}) {
         </Row>
 
         
+        <Row className="justify-content-center">
+          <Col className="col-10 align-items-center text-center p-3">
+            <div className="bg-brown p-5 innerShadow roundedBox">
+              <p className="smallCaps text-orange">{editingdata.nextHeader}</p>
+              <h3 className="text-white mb-4 px-2 px-lg-5">Plant it forward.</h3>
+              <Link href="/contact"><Button className="btn-large mt-1" variant="green">{editingdata.nextButton}</Button></Link>
+            </div>
+          </Col>
+        </Row>
 
         <Row className="justify-content-center mt-5">
           <Col className="col-11 col-lg-10 pt-5">
