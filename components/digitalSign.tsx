@@ -88,7 +88,7 @@ const DigitalSign = ()=> {
           </div>
         </Col>
         <Col className="col-11 col-md-9 col-lg-7 col-xl-6 mt-2 signImagebuilder pe-lg-0">
-          <div className="signImageContainer">
+          <div className="signImageContainer card-drop-heavy">
             <img src={selectBG}/>
             <div className="signImageText signTextForest">
               {forestName? "The " : ""}

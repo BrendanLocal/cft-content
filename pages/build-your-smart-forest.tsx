@@ -580,7 +580,7 @@ export default function Build({ file }) {
                       <Row className="p-4">
                         <Col>
                         <h5 className="text-green medium mb-0 thin"><ReactMarkdown>{editingdata.corpdropdown_pointsheader}</ReactMarkdown></h5>
-                        <ul className="text-grey dropdown-text checkMark px-3 mx-3">
+                        <ul className="text-grey dropdown-text checkMark px-1 mx-1">
                           <li><ReactMarkdown>{editingdata.corpdropdown_pointspara1}</ReactMarkdown></li>
                           <li><ReactMarkdown>{editingdata.corpdropdown_pointspara2}</ReactMarkdown></li>
                           <li><ReactMarkdown>{editingdata.corpdropdown_pointspara3}</ReactMarkdown></li>
@@ -596,20 +596,20 @@ export default function Build({ file }) {
             </Row>
           </Fade>
 
-          
-            <Row className="text-center justify-content-center py-3 px-xl-3 px-lg-2 px-5 mt-5">
-              <Col className="col-12 col-md-9 col-lg-7">
+          <Fade bottom>
+            <Row className="text-center justify-content-center py-3 mt-5">
+              <Col className="col-10 col-md-9 col-lg-7">
                 <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.corp_header2}</h2>
                 
 
-                <img src="../../ECOSYSTEMBENEFITS-Corp.jpg"/>
+                <img className="card-drop-heavy" src="../../ECOSYSTEMBENEFITS-Corp.jpg"/>
               </Col>
             </Row>
             
-         
+          </Fade>
 
 
-        
+        <Fade bottom>
             <Row id="corp-calc-steps" className="pt-5 align-items-center justify-content-center mt-5 mb-3">
               <Col className="col-10 pe-lg-0">
                 <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
@@ -648,7 +648,7 @@ export default function Build({ file }) {
               </Col>
             </Row>
 
-          
+          </Fade>
 
           <Fade bottom>
             <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
@@ -795,7 +795,7 @@ export default function Build({ file }) {
                       <Row className="p-4">
                         <Col>
                         <h5 className="text-green medium mb-0 thin"><ReactMarkdown>{editingdata.schooldropdown_pointsheader}</ReactMarkdown></h5>
-                        <ul className="text-grey dropdown-text checkMark px-3 mx-3">
+                        <ul className="text-grey dropdown-text checkMark px-1 mx-1">
                           <li><ReactMarkdown>{editingdata.schooldropdown_pointspara1}</ReactMarkdown></li>
                           <li><ReactMarkdown>{editingdata.schooldropdown_pointspara2}</ReactMarkdown></li>
                           <li><ReactMarkdown>{editingdata.schooldropdown_pointspara3}</ReactMarkdown></li>
@@ -811,15 +811,18 @@ export default function Build({ file }) {
             </Row>
           </Fade>
 
-          
-            <Row className="text-center justify-content-center py-3 px-5 mt-5">
-              <Col className="col-12 col-md-9 col-lg-7">
+          <Fade bottom>
+            <Row className="text-center justify-content-center py-3 mt-5">
+              <Col className="col-10 col-md-9 col-lg-7">
                 <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.school_para1}</h2>
-                <img src="../../ECOSYSTEMBENEFITS-School.jpg"/>
+                <img className="card-drop-heavy" src="../../ECOSYSTEMBENEFITS-School.jpg"/>
                 
               </Col>
             </Row>    
-      
+          </Fade>
+
+          
+        <Fade bottom>
             <Row id="school-calc-steps" className="pt-5 align-items-center justify-content-center mt-5 mb-3">
               <Col className="col-10 pe-lg-0">
                 <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
@@ -858,7 +861,7 @@ export default function Build({ file }) {
               </Col>
             </Row>
 
-         
+          </Fade>
 
           <Fade bottom>
             <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
@@ -989,7 +992,7 @@ export default function Build({ file }) {
                         </ReactMarkdown>
                         </h5>
                         <h5 className="text-green medium mb-0 thin"><ReactMarkdown>{editingdata.legacydropdown_pointsheader}</ReactMarkdown></h5>
-                        <ul className="text-grey dropdown-text checkMark px-3 mx-3">
+                        <ul className="text-grey dropdown-text checkMark px-1 mx-1">
                           <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara1}</ReactMarkdown></li>
                           <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara2}</ReactMarkdown></li>
                           <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara3}</ReactMarkdown></li>
@@ -1006,15 +1009,18 @@ export default function Build({ file }) {
             </Row>
           </Fade>
 
-            <Row className="text-center justify-content-center py-3 px-4 mt-5">
-              <Col className="col-12 col-md-9 col-lg-7">
+          <Fade bottom>
+            <Row className="text-center justify-content-center py-3 mt-5">
+              <Col className="col-10 col-md-9 col-lg-7">
                 <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.legacy_para1}</h2>
 
-                <img src="../../ECOSYSTEMBENEFITS-Legacy.jpg"/>
+                <img className="card-drop-heavy" src="../../ECOSYSTEMBENEFITS-Legacy.jpg"/>
 
               </Col>
             </Row>
+          </Fade>
 
+        <Fade bottom>
             <Row id="legacy-calc-steps" className="pt-5 align-items-center justify-content-center mt-5 mb-3">
               <Col className="col-10 pe-lg-0">
                 <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
@@ -1052,6 +1058,8 @@ export default function Build({ file }) {
                 </div>
               </Col>
             </Row>
+
+          </Fade>
 
           <Fade bottom>
             <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
@@ -1178,7 +1186,7 @@ export default function Build({ file }) {
                       <Row className="p-4">
                         <Col>
                         <h5 className="text-green medium mb-0 thin"><ReactMarkdown>{editingdata.communaldropdown_pointsheader}</ReactMarkdown></h5>
-                        <ul className="text-grey dropdown-text checkMark px-3 mx-3">
+                        <ul className="text-grey dropdown-text checkMark px-1 mx-1">
                           <li><ReactMarkdown>{editingdata.communaldropdown_pointspara1}</ReactMarkdown></li>
                           <li><ReactMarkdown>{editingdata.communaldropdown_pointspara2}</ReactMarkdown></li>
                           <li><ReactMarkdown>{editingdata.communaldropdown_pointspara3}</ReactMarkdown></li>
@@ -1193,17 +1201,19 @@ export default function Build({ file }) {
             </Row>
           </Fade>
 
-
-            <Row className="text-center justify-content-center py-3 px-5 mt-5">
-              <Col className="col-12 col-md-9 col-lg-7">
+          <Fade bottom>
+            <Row className="text-center justify-content-center py-3 mt-5">
+              <Col className="col-10 col-md-9 col-lg-7">
                 <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.communal_para1}</h2>
                 <ReactMarkdown className="text-white large tight-drop-light mb-4">{editingdata.communal_para2}</ReactMarkdown>
                 
-                <img src="../../ECOSYSTEMBENEFITS-Community.jpg"/>
+                <img className="card-drop-heavy" src="../../ECOSYSTEMBENEFITS-Community.jpg"/>
 
               </Col>
             </Row>
+          </Fade>
 
+        <Fade bottom>
             <Row id="communal-calc-steps" className="pt-5 align-items-center justify-content-center mt-5 mb-3">
               <Col className="col-10 pe-lg-0">
                 <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
@@ -1241,6 +1251,8 @@ export default function Build({ file }) {
                 </div>
               </Col>
             </Row>
+
+          </Fade>
 
           <Fade bottom>
             <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
