@@ -12,6 +12,8 @@ import { usePlugin } from "tinacms";
 import { useState } from "react";
 import Header from "../components/header";
 
+import randomstring from "randomstring";
+
 import Accordion from "react-bootstrap/Accordion";
 import Card from 'react-bootstrap/Card';
 
@@ -437,6 +439,31 @@ const Lang = () => {
   if (typeof window !== 'undefined') {
   localStorage.setItem('schoolfootprint', String(total));
   }
+
+
+/* check to see if they have a current session */
+var sessionID = randomstring.generate(12);
+var fullUrl = "https://canadasforesttrust.ca/school-calculator/?session=" + sessionID
+
+if (typeof window !== 'undefined') {
+
+const router = useRouter();
+  if(router.query.session){ 
+    sessionID = JSON.stringify(router.query.session);
+    fullUrl = "https://canadasforesttrust.ca/school-calculator/?session=" +  sessionID
+    }
+    if(localStorage.sessionID){
+    sessionID = localStorage.sessionID;
+    fullUrl = "https://canadasforesttrust.ca/school-calculator/?session=" +  sessionID
+    
+    }
+  if(!localStorage.sessionID){
+    localStorage.setItem('sessionID', sessionID);
+  }
+
+  
+}
+
 
   return (
     <div className="bg-school">

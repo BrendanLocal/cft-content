@@ -11,24 +11,24 @@ import { GetStaticProps } from "next";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 import { useGithubJsonForm, useGithubToolbarPlugins } from "react-tinacms-github";
 import { usePlugin, useWatchFormValues } from "tinacms";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../components/header";
 import Accordion from "react-bootstrap/Accordion";
+import randomstring from "randomstring";
+import { MongoClient } from 'mongodb';
 
 
-var randomstring = require("randomstring");
-randomstring.generate(12);
 
 const Lang = () => {
 var language ="en";
-  const router = useRouter();
+
+const router = useRouter();
   if(router.query.lang){ 
   const lan = JSON.stringify(router.query.lang);
   language = JSON.parse(lan)
   }
   return (language)
 }
-
 
 
 export default function App({ file, href, children}) {
@@ -663,12 +663,47 @@ export default function App({ file, href, children}) {
     calculatePublicTransport()
   }
 
+
+
+
+
   /* calculate the 'total' here by adding on the other subtotals */
   let total = vehicleSub + totalBuild + (flightSub/1000) + (publicTransportSub/1000);
   if (typeof window !== 'undefined') {
   localStorage.setItem('personalfootprint', String(total));
   }
 
+  
+
+
+
+  var personalArray = {sessionID, selectSize, selectNum, selectYear, selectHeat, selectEnergy, selectNumTwo, selectYearTwo, selectSizeTwo, selectHeatTwo, selectEnergyTwo, selectNumThree, selectYearThree, selectSizeThree, selectHeatThree, selectEnergyThree, selectNumFour, selectYearFour, selectSizeFour, selectHeatFour, selectEnergyFour, selectNumFive, selectYearFive, selectSizeFive, selectHeatFive, selectEnergyFive, buildSub, getFam, getFamTwo, getFamThree, getFamFour, getFamFive, vehicleArray }
+
+
+
+/* check to see if they have a current session */
+var sessionID = randomstring.generate(12);
+var fullUrl = "https://canadasforesttrust.ca/personal-calculator/?session=" + sessionID
+
+if (typeof window !== 'undefined') {
+
+const router = useRouter();
+  if(router.query.session){ 
+    sessionID = router.query.session;
+    fullUrl = "https://canadasforesttrust.ca/personal-calculator/?session=" +  sessionID
+
+    localStorage.setItem('sessionID', sessionID);
+    } else if (localStorage.sessionID){
+    sessionID = localStorage.sessionID;
+    fullUrl = "https://canadasforesttrust.ca/personal-calculator/?session=" +  sessionID
+    
+    }
+  if(!localStorage.sessionID){
+    localStorage.setItem('sessionID', sessionID);
+  }
+
+  
+}
 
 
 
@@ -1602,6 +1637,11 @@ export default function App({ file, href, children}) {
               <span className="h2 bold">{total > 0 ? total.toFixed(2) : "--"}</span>
               <p>{total > 0 ? "(Metric Tonnes of CO2 per Year)" : ""}</p>
               <p>{editingdata.dataDisclaimer}</p>
+
+              <Row>
+                <Col className="whiteBorder rounded mt-3 p-3"><p className="text-small">To continue editing your results in the future, save this link in a secure place:</p>
+                <p  className="text-small"><a href={fullUrl}>{fullUrl}</a></p></Col>
+              </Row>
             </div>
           </Col>
         </Row>  
@@ -1647,7 +1687,21 @@ export default function App({ file, href, children}) {
 /**
 * Fetch data with getStaticProps based on 'preview' mode
 */
+
+
 export const getStaticProps: GetStaticProps = async function({preview, previewData,}) {
+
+  
+var sessionID = randomstring.generate(12);
+
+  const client = new MongoClient(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+  client.connect(err => {
+    const collection = client.db("cftdata").collection("calcData");
+          collection.insertOne(sessionID)
+    client.close();
+  });
+
+
   if (preview) {
     return getGithubPreviewProps({
       ...previewData,

@@ -14,6 +14,8 @@ import Header from "../components/header";
 import Accordion from "react-bootstrap/Accordion";
 import Card from 'react-bootstrap/Card';
 
+import randomstring from "randomstring";
+
 const Lang = () => {
   var language ="en";
     const router = useRouter();
@@ -496,6 +498,32 @@ const Lang = () => {
     if (typeof window !== 'undefined') {
   localStorage.setItem('businessfootprint', String(total));
     }
+
+
+
+/* check to see if they have a current session */
+var sessionID = randomstring.generate(12);
+var fullUrl = "https://canadasforesttrust.ca/business-calculator/?session=" + sessionID
+
+if (typeof window !== 'undefined') {
+
+const router = useRouter();
+  if(router.query.session){ 
+    sessionID = JSON.stringify(router.query.session);
+    fullUrl = "https://canadasforesttrust.ca/business-calculator/?session=" +  sessionID
+    }
+    if(localStorage.sessionID){
+    sessionID = localStorage.sessionID;
+    fullUrl = "https://canadasforesttrust.ca/business-calculator/?session=" +  sessionID
+    
+    }
+  if(!localStorage.sessionID){
+    localStorage.setItem('sessionID', sessionID);
+  }
+
+  
+}
+
 
     return (
     <div className="bg-corp">

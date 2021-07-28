@@ -22,6 +22,7 @@ export async function updateUserById(db, id, update) {
   ).then(({ value }) => value);
 }
 
+
 export async function insertUser(db, {
   email, password, name
 }) {
@@ -47,3 +48,5 @@ export async function insertUser(db, {
     })
     .then(({ ops }) => ops[0]);
 }
+
+
