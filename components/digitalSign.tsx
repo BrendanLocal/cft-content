@@ -7,6 +7,8 @@ import Col from 'react-bootstrap/Col';
 import ImageUpload from 'image-upload-react';
 import * as htmlToImage from 'html-to-image';
 import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
+import downloadjs from "downloadjs";
+
 
 const DigitalSign = ()=> {
 
@@ -42,17 +44,10 @@ const DigitalSign = ()=> {
   };
 
   function CreateImage(){
-    var node = document.getElementById('signImage');
-
-    htmlToImage.toPng(node)
-    .then(function (dataUrl) {
-      var img = new Image();
-      img.src = dataUrl;
-      document.getElementById('imageresult').replaceWith(img);
-    })
-    .catch(function (error) {
-      console.error('oops, something went wrong!', error);
-    });
+    htmlToImage.toPng(document.getElementById('signImage'))
+  .then(function (dataUrl) {
+    downloadjs(dataUrl, 'my-forest-sign.png');
+  });
   }
 
   return (
@@ -77,7 +72,7 @@ const DigitalSign = ()=> {
           </select>
           <label htmlFor="bgOptions">Select a background for your image:</label><br />
           <select name="bgOptions"  onChange={changeBG} value={selectBG} >
-            <option value="signbg_forest2.jpg" hidden>Select...</option>
+            <option value="signbg_start.jpg" hidden>Select...</option>
             <option value="signbg_fall.jpg">Fall</option>
             <option value="signbg_forest.jpg">Spring</option>
             <option value="signbg_green.jpg">Summer</option>
