@@ -32,6 +32,7 @@
     "core-js": "^2.6.12",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
+    "downloadjs": "^1.4.7",
     "eslint-plugin-react-hooks": "^4.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
