@@ -1381,6 +1381,10 @@ footer {
   text-decoration: none!important;
 }
 
+.no-bold {
+  font-weight: normal!important;
+}
+
 .slimlineBottom {
   border-bottom: solid 1px #00823B;
 }
