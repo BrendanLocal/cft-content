@@ -1883,13 +1883,13 @@ span.authorTitle {
   box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
   border: none;
   position: relative;
-  height: 400px!important;
+  height: 370px!important;
 }
 
 .calc-btn {
   position: absolute;
   bottom: 4%;
-  width: 83%;
+  width: 87%;
 }
 
 .calculate-card:hover {
@@ -2633,30 +2633,70 @@ z-index: 999;
   cursor: pointer;
 }
 
-@media screen and (max-width: 1350px) and (min-width: 1251px){
-  .calculate-card {
-    box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
-    border: none;
-    position: relative;
-    height: 430px!important;
-  }
+/* Point Break */
+
+@media screen and (max-width: 1399px) and (min-width: 1200px){
+
+.phases {
+  height: 580px;
 }
 
-@media screen and (max-width: 1250px) and (min-width: 1200px){
-  .calculate-card {
-    box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
-    border: none;
-    position: relative;
-    height: 450px!important;
-  }
+.phase1 {
+  height: 580px;
 }
 
-@media screen and (max-width: 1199px) and (min-width: 1067px){
-  .calculate-card {
-    box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
-    border: none;
-    position: relative;
-    height: 400px!important;
+.phase2 {
+  height: 580px;
+}
+
+.phase3 {
+  height: 580px;
+}
+
+.phase4 {
+  height: 580px;
+}
+
+.phase5 {
+  height: 580px;
+}
+
+}
+
+@media screen and (max-width: 1199px) and (min-width: 1025px){
+
+  .phases {
+    height: 480px;
+  }
+  
+  .phase1 {
+    height: 480px;
+  }
+  
+  .phase2 {
+    height: 480px;
+  }
+  
+  .phase3 {
+    height: 480px;
+  }
+  
+  .phase4 {
+    height: 480px;
+  }
+  
+  .phase5 {
+    height: 480px;
+  }
+  
+  }
+
+@media screen and (max-width: 1300px) and (min-width: 1067px){
+
+  .calc-btn {
+    width: 85%;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 }
 
@@ -2665,7 +2705,13 @@ z-index: 999;
     box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
     border: none;
     position: relative;
-    height: 440px!important;
+    height: 420px!important;
+  }
+
+  .calc-btn {
+    width: 80.5%;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 }
 
@@ -2788,52 +2834,29 @@ z-index: 999;
   }
 
   .phases {
-    background: url('/5Phases.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 460px;
+    height: 480px;
   }
   
   .phase1 {
-    background: url('/Phase1.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 460px;
+    height: 480px;
   }
   
   .phase2 {
-    background: url('/Phase2.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 460px;
+    height: 480px;
   }
   
   .phase3 {
-    background: url('/Phase3.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 460px;
+    height: 480px;
   }
   
   .phase4 {
-    background: url('/Phase4.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 460px;
+    height: 480px;
   }
   
   .phase5 {
-    background: url('/Phase5.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 460px;
+    height: 480px;
   }
+
 
 }
 
@@ -2850,6 +2873,31 @@ z-index: 999;
   bottom: 5%;
   width: 92.5%;
 }
+
+.phases {
+  height: 400px;
+}
+
+.phase1 {
+  height: 400px;
+}
+
+.phase2 {
+  height: 400px;
+}
+
+.phase3 {
+  height: 400px;
+}
+
+.phase4 {
+  height: 400px;
+}
+
+.phase5 {
+  height: 400px;
+}
+
 }
 
 @media screen and (max-width: 768px) and (min-width: 577px){
@@ -2889,7 +2937,7 @@ z-index: 999;
   .carousel-caption {
     position: absolute;
     right: 15%;
-    top: 3.5rem;
+    top: 2rem;
     left: 13%;
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
@@ -2897,53 +2945,6 @@ z-index: 999;
     text-align: center;
   }
 
-  .phases {
-    background: url('/5Phases.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 410px;
-  }
-  
-  .phase1 {
-    background: url('/Phase1.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 410px;
-  }
-  
-  .phase2 {
-    background: url('/Phase2.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 410px;
-  }
-  
-  .phase3 {
-    background: url('/Phase3.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 410px;
-  }
-  
-  .phase4 {
-    background: url('/Phase4.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 410px;
-  }
-  
-  .phase5 {
-    background: url('/Phase5.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 410px;
-  }
 
   .video-size {
     width: 100%!important;
@@ -2953,6 +2954,30 @@ z-index: 999;
   .about-hero {
     height: 200px;
     position: initial;
+}
+
+.phases {
+  height: 290px;
+}
+
+.phase1 {
+  height: 290px;
+}
+
+.phase2 {
+  height: 290px;
+}
+
+.phase3 {
+  height: 290px;
+}
+
+.phase4 {
+  height: 290px;
+}
+
+.phase5 {
+  height: 290px;
 }
 
 
@@ -3019,8 +3044,8 @@ font-size: .9em;
 }
 
 .carousel-indicators {
-  margin-right: 20%;
-  margin-left: 20%;
+  margin-right: 34%;
+  margin-left: 34%;
   margin-bottom: .6rem;
 }
 
@@ -3035,53 +3060,6 @@ font-size: .9em;
   text-align: center;
 }
 
-.phases {
-  background: url('/5Phases-mob.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 560px;
-}
-
-.phase1 {
-  background: url('/Phase1-mob.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 560px;
-}
-
-.phase2 {
-  background: url('/Phase2-mob.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 560px;
-}
-
-.phase3 {
-  background: url('/Phase3-mob.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 560px;
-}
-
-.phase4 {
-  background: url('/Phase4-mob.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 560px;
-}
-
-.phase5 {
-  background: url('/Phase5-mob.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 560px;
-}
 
 .protorow {
   background-image: url('/landing-proto.png');
@@ -3194,5 +3172,281 @@ font-weight: 600;
     color: #362B26;
 }
 
+.phases {
+  height: 290px;
 }
 
+.phase1 {
+  height: 290px;
+}
+
+.phase2 {
+  height: 290px;
+}
+
+.phase3 {
+  height: 290px;
+}
+
+.phase4 {
+  height: 290px;
+}
+
+.phase5 {
+  height: 290px;
+}
+
+}
+
+@media screen and (max-width: 530px) {
+
+  .phases {
+    height: 280px;
+  }
+  
+  .phase1 {
+    height: 280px;
+  }
+  
+  .phase2 {
+    height: 280px;
+  }
+  
+  .phase3 {
+    height: 280px;
+  }
+  
+  .phase4 {
+    height: 280px;
+  }
+  
+  .phase5 {
+    height: 280px;
+  }
+
+}
+
+@media screen and (max-width: 530px) {
+
+  .phases {
+    height: 260px;
+  }
+  
+  .phase1 {
+    height: 260px;
+  }
+  
+  .phase2 {
+    height: 260px;
+  }
+  
+  .phase3 {
+    height: 260px;
+  }
+  
+  .phase4 {
+    height: 260px;
+  }
+  
+  .phase5 {
+    height: 260px;
+  }
+
+}
+
+@media screen and (max-width: 497px) {
+
+.phases {
+  background: url('/5Phases-mob.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 660px;
+}
+
+.phase1 {
+  background: url('/Phase1-mob.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 660px;
+}
+
+.phase2 {
+  background: url('/Phase2-mob.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 660px;
+}
+
+.phase3 {
+  background: url('/Phase3-mob.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 660px;
+}
+
+.phase4 {
+  background: url('/Phase4-mob.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 660px;
+}
+
+.phase5 {
+  background: url('/Phase5-mob.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 660px;
+}
+
+.carousel-indicators {
+  margin-right: 25%;
+  margin-left: 25%;
+}
+
+}
+
+@media screen and (max-width: 460px) {
+
+  .phases {
+    height: 600px;
+  }
+  
+  .phase1 {
+    height: 600px;
+  }
+  
+  .phase2 {
+    height: 600px;
+  }
+  
+  .phase3 {
+    height: 600px;
+  }
+  
+  .phase4 {
+    height: 600px;
+  }
+  
+  .phase5 {
+    height: 600px;
+  }
+
+}
+
+@media screen and (max-width: 430px) {
+
+  .phases {
+    height: 550px;
+  }
+  
+  .phase1 {
+    height: 550px;
+  }
+  
+  .phase2 {
+    height: 550px;
+  }
+  
+  .phase3 {
+    height: 550px;
+  }
+  
+  .phase4 {
+    height: 550px;
+  }
+  
+  .phase5 {
+    height: 550px;
+  }
+
+}
+
+@media screen and (max-width: 400px) {
+
+  .phases {
+    height: 525px;
+  }
+  
+  .phase1 {
+    height: 525px;
+  }
+  
+  .phase2 {
+    height: 525px;
+  }
+  
+  .phase3 {
+    height: 525px;
+  }
+  
+  .phase4 {
+    height: 525px;
+  }
+  
+  .phase5 {
+    height: 525px;
+  }
+
+}
+
+@media screen and (max-width: 390px) {
+
+  .phases {
+    height: 480px;
+  }
+  
+  .phase1 {
+    height: 480px;
+  }
+  
+  .phase2 {
+    height: 480px;
+  }
+  
+  .phase3 {
+    height: 480px;
+  }
+  
+  .phase4 {
+    height: 480px;
+  }
+  
+  .phase5 {
+    height: 480px;
+  }
+
+}
+
+@media screen and (max-width: 360px) {
+
+  .phases {
+    height: 430px;
+  }
+  
+  .phase1 {
+    height: 430px;
+  }
+  
+  .phase2 {
+    height: 430px;
+  }
+  
+  .phase3 {
+    height: 430px;
+  }
+  
+  .phase4 {
+    height: 430px;
+  }
+  
+  .phase5 {
+    height: 430px;
+  }
+
+}
