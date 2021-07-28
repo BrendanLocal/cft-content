@@ -30,7 +30,7 @@ const router = useRouter();
   return (language)
 }
 
-
+  
 export default function App({ file, href, children}) {
   
   const formOptions = {
@@ -675,8 +675,6 @@ export default function App({ file, href, children}) {
 
   
 
-
-
   var personalArray = {sessionID, selectSize, selectNum, selectYear, selectHeat, selectEnergy, selectNumTwo, selectYearTwo, selectSizeTwo, selectHeatTwo, selectEnergyTwo, selectNumThree, selectYearThree, selectSizeThree, selectHeatThree, selectEnergyThree, selectNumFour, selectYearFour, selectSizeFour, selectHeatFour, selectEnergyFour, selectNumFive, selectYearFive, selectSizeFive, selectHeatFive, selectEnergyFive, buildSub, getFam, getFamTwo, getFamThree, getFamFour, getFamFive, vehicleArray }
 
 
@@ -685,6 +683,8 @@ export default function App({ file, href, children}) {
 var sessionID = randomstring.generate(12);
 var fullUrl = "https://canadasforesttrust.ca/personal-calculator/?session=" + sessionID
 
+var sharingUrl = "https://canadasforesttrust.ca/personal-calculator-share/?session=" + sessionID
+
 if (typeof window !== 'undefined') {
 
 const router = useRouter();
@@ -692,20 +692,18 @@ const router = useRouter();
     sessionID = router.query.session;
     fullUrl = "https://canadasforesttrust.ca/personal-calculator/?session=" +  sessionID
 
+    sharingUrl = "https://canadasforesttrust.ca/personal-calculator-share/?session=" + sessionID
+
     localStorage.setItem('sessionID', sessionID);
     } else if (localStorage.sessionID){
     sessionID = localStorage.sessionID;
     fullUrl = "https://canadasforesttrust.ca/personal-calculator/?session=" +  sessionID
-    
+    sharingUrl = "https://canadasforesttrust.ca/personal-calculator-share/?session=" + sessionID
     }
   if(!localStorage.sessionID){
     localStorage.setItem('sessionID', sessionID);
   }
-
-  
 }
-
-
 
   return (
     <div className="bg-legacy">
@@ -1640,7 +1638,9 @@ const router = useRouter();
 
               <Row>
                 <Col className="whiteBorder rounded mt-3 p-3"><p className="text-small">To continue editing your results in the future, save this link in a secure place:</p>
-                <p  className="text-small"><a href={fullUrl}>{fullUrl}</a></p></Col>
+                <p  className="pt-3 text-small"><a href={fullUrl}>{fullUrl}</a></p>
+                <p className="text-small pt-5">Share your results on social media with this link:</p>
+                <p  className="pt-3 text-small"><a href={sharingUrl}>{sharingUrl}</a></p></Col>
               </Row>
             </div>
           </Col>
@@ -1689,17 +1689,17 @@ const router = useRouter();
 */
 
 
-export const getStaticProps: GetStaticProps = async function({preview, previewData,}) {
-
-  
 var sessionID = randomstring.generate(12);
 
-  const client = new MongoClient(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
-  client.connect(err => {
-    const collection = client.db("cftdata").collection("calcData");
-          collection.insertOne(sessionID)
-    client.close();
-  });
+export const getStaticProps: GetStaticProps = async function({preview, previewData,}) {
+
+
+const client = new MongoClient(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+client.connect(err => {
+  const collection = client.db("cftdata").collection("calcData");
+        collection.insertOne(sessionID)
+  client.close();
+});
 
 
   if (preview) {
