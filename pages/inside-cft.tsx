@@ -25,6 +25,10 @@ import PDFJSBackend from '../middlewares/pdfjs';
 import ReactPlayer from 'react-player'
 import ScrollableAnchor from "react-scrollable-anchor";
 
+import { configureAnchors } from 'react-scrollable-anchor'
+
+configureAnchors({offset: 20, scrollDuration: 200, scrollUrlHashUpdate: false})
+
 export default function Power({ file }) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
