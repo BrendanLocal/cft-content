@@ -596,7 +596,7 @@ export default function Build({ file }) {
             </Row>
           </Fade>
 
-          <Fade bottom>
+          
             <Row className="text-center justify-content-center py-3 px-xl-3 px-lg-2 px-5 mt-5">
               <Col className="col-12 col-md-9 col-lg-7">
                 <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.corp_header2}</h2>
@@ -606,10 +606,10 @@ export default function Build({ file }) {
               </Col>
             </Row>
             
-          </Fade>
+         
 
 
-        <Fade bottom>
+        
             <Row id="corp-calc-steps" className="pt-5 align-items-center justify-content-center mt-5 mb-3">
               <Col className="col-10 pe-lg-0">
                 <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
@@ -648,7 +648,7 @@ export default function Build({ file }) {
               </Col>
             </Row>
 
-          </Fade>
+          
 
           <Fade bottom>
             <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
@@ -811,7 +811,7 @@ export default function Build({ file }) {
             </Row>
           </Fade>
 
-          <Fade bottom>
+          
             <Row className="text-center justify-content-center py-3 px-5 mt-5">
               <Col className="col-12 col-md-9 col-lg-7">
                 <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.school_para1}</h2>
@@ -819,10 +819,7 @@ export default function Build({ file }) {
                 
               </Col>
             </Row>    
-          </Fade>
-
-          
-        <Fade bottom>
+      
             <Row id="school-calc-steps" className="pt-5 align-items-center justify-content-center mt-5 mb-3">
               <Col className="col-10 pe-lg-0">
                 <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
@@ -861,7 +858,7 @@ export default function Build({ file }) {
               </Col>
             </Row>
 
-          </Fade>
+         
 
           <Fade bottom>
             <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
@@ -1009,7 +1006,6 @@ export default function Build({ file }) {
             </Row>
           </Fade>
 
-          <Fade bottom>
             <Row className="text-center justify-content-center py-3 px-4 mt-5">
               <Col className="col-12 col-md-9 col-lg-7">
                 <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.legacy_para1}</h2>
@@ -1018,9 +1014,7 @@ export default function Build({ file }) {
 
               </Col>
             </Row>
-          </Fade>
 
-        <Fade bottom>
             <Row id="legacy-calc-steps" className="pt-5 align-items-center justify-content-center mt-5 mb-3">
               <Col className="col-10 pe-lg-0">
                 <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
@@ -1058,8 +1052,6 @@ export default function Build({ file }) {
                 </div>
               </Col>
             </Row>
-
-          </Fade>
 
           <Fade bottom>
             <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
@@ -1201,7 +1193,7 @@ export default function Build({ file }) {
             </Row>
           </Fade>
 
-          <Fade bottom>
+
             <Row className="text-center justify-content-center py-3 px-5 mt-5">
               <Col className="col-12 col-md-9 col-lg-7">
                 <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.communal_para1}</h2>
@@ -1211,9 +1203,7 @@ export default function Build({ file }) {
 
               </Col>
             </Row>
-          </Fade>
 
-        <Fade bottom>
             <Row id="communal-calc-steps" className="pt-5 align-items-center justify-content-center mt-5 mb-3">
               <Col className="col-10 pe-lg-0">
                 <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
@@ -1251,8 +1241,6 @@ export default function Build({ file }) {
                 </div>
               </Col>
             </Row>
-
-          </Fade>
 
           <Fade bottom>
             <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
