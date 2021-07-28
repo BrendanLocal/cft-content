@@ -87,7 +87,7 @@ const DigitalSign = ()=> {
             />
           </div>
         </Col>
-        <Col className="col-11 col-md-9 col-lg-7 col-xl-6 mt-2 signImagebuilder pe-lg-0">
+        <Col className="col-11 col-md-9 col-lg-7 col-xl-6 mt-2 mt-lg-3 mt-xl-2 signImagebuilder pe-lg-0">
           <div className="signImageContainer card-drop-heavy">
             <img src={selectBG}/>
             <div className="signImageText signTextForest">
