@@ -27,13 +27,14 @@ import { useRouter } from "next/router";
 import ScrollableAnchor from "react-scrollable-anchor";
 import Header from "../components/header";
 import PDFViewer from '../components/PDFViewer';
-import { configureAnchors } from 'react-scrollable-anchor'
 import PDFJSBackend from '../middlewares/pdfjs';
 
+import { configureAnchors } from 'react-scrollable-anchor'
+
+configureAnchors({offset: 20, scrollDuration: 200, scrollUrlHashUpdate: false})
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
-configureAnchors({offset: 20, scrollDuration: 200, scrollUrlHashUpdate: false})
 
 export default function Build({ file }) {
 
