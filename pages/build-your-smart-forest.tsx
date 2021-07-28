@@ -27,10 +27,13 @@ import { useRouter } from "next/router";
 import ScrollableAnchor from "react-scrollable-anchor";
 import Header from "../components/header";
 import PDFViewer from '../components/PDFViewer';
-
+import { configureAnchors } from 'react-scrollable-anchor'
 import PDFJSBackend from '../middlewares/pdfjs';
 
+
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+
+configureAnchors({offset: 20, scrollDuration: 200, scrollUrlHashUpdate: false})
 
 export default function Build({ file }) {
 
@@ -369,6 +372,7 @@ export default function Build({ file }) {
           </Row>
         </Container>
 
+
         <Container id="the-plan" className="v-full z-999 bg-green p-5">
           <Fade bottom>
             <Row className="justify-content-center align-items-center my-4">
@@ -486,8 +490,11 @@ export default function Build({ file }) {
         </Container>
 
         {/* Corporate Forests */}
+        
         <ScrollableAnchor id={"corporate"}>
         <Container fluid id="corporate" className="bg-corp sectionPad">
+       
+
           <Fade bottom>
             <Row className="text-center justify-content-center">
               <Col className="col-11 col-md-9 text-white">
@@ -695,9 +702,9 @@ export default function Build({ file }) {
               </Col>
             </Row>
           </Fade>
-
+        
         </Container>
-        </ScrollableAnchor>
+          </ScrollableAnchor>
 
 
         {/* School Forests */}
