@@ -615,7 +615,7 @@ export default function Build({ file }) {
                 <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
               </Col>
             </Row>
-            <Row className="justify-content-center  align-items-stretch px-lg-5 mx-lg-5 mb-5 pb-5">
+            <Row className="justify-content-center align-items-stretch px-md-5 mx-md-5 mb-5 pb-5">
                 <Col className="col-10 col-md-9 col-lg-4 col-xl-3 pe-lg-0 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.corpcalc_box1para1}</ReactMarkdown>
