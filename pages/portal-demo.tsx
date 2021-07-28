@@ -204,7 +204,7 @@ return (
           </Row>
      </Container>
     <Container fluid className="bg-green px-0">
-      <Row className="justify-content-center d-flex mb-3 pt-lg-5">
+      <Row className="justify-content-center d-flex mb-3 pt-lg-5 mx-0">
         <Col className="col-10 mt-5 mt-lg-0 mt-xl-0">
         <h1 className="h2 bold text-orange text-center">
           Smart Forest Intelligence Dashboard
@@ -249,13 +249,13 @@ return (
        {/* Dashboard */}
             <TabPanel >
               <Row className="flex justify-content-center mt-3">
-                <Col className="col-12 col-md-6 col-lg-6 col-xl-4 py-3 px-4">
+                <Col className="col-12 col-md-6 col-lg-6 col-xl-4 py-3 px-3">
                 <img src="/dashboard1.svg"/> 
                 </Col>
-                <Col className="col-12 col-md-6 col-lg-6 col-xl-4 py-3 px-4">
+                <Col className="col-12 col-md-6 col-lg-6 col-xl-4 py-3 px-3">
                 <img src="/dashboard2.svg"/> 
                 </Col>
-                <Col className="col-12 col-md-6 col-lg-6 col-xl-4 py-3 px-4">
+                <Col className="col-12 col-md-6 col-lg-6 col-xl-4 py-3 px-3">
                 <img src="/dashboard3.svg"/> 
                 </Col>
               </Row>
@@ -276,7 +276,7 @@ return (
                   <Col className="col-12 col-md-8 col-xl-8 p-0">
                     <img src="/portal-gallery-forestcast-grid.svg"/> 
                   </Col>
-                  <Col className="col-12 col-md-4 col-xl-4 p-0 px-">
+                  <Col className="col-12 col-md-4 col-xl-4 p-0 px-2">
                     <img src="/portal-gallery-forestcast-data.svg"/> 
                   </Col>
                 </Row>
