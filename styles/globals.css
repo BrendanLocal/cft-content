@@ -2860,7 +2860,7 @@ z-index: 999;
 
 }
 
-@media screen and (max-width: 991px) and (min-width: 769px){
+@media screen and (max-width: 991px) and (min-width: 768px){
 .calculate-card {
   box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
   border: none;
@@ -2956,6 +2956,11 @@ z-index: 999;
     position: initial;
 }
 
+
+}
+
+@media screen and (max-width: 767px){
+
 .phases {
   height: 290px;
 }
@@ -2980,9 +2985,7 @@ z-index: 999;
   height: 290px;
 }
 
-
 }
-
 
 
 /* Mobile */
