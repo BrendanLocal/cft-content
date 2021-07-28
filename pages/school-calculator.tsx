@@ -1072,7 +1072,7 @@ const Lang = () => {
               <span className="smallCaps text-small">{editingdata.dataTotal}</span><br/>
               <span className="h2 bold">{total > 0 ? (total/1000).toFixed(2) : "--"}</span>
               <p>{total > 0 ? "(Metric Tonnes of CO2 per Year)" : ""}</p>
-              <p>{editingdata.dataDisclaimer}</p>
+              <p className="text-small">{editingdata.dataDisclaimer}</p>
             </div>
 
           </Col>

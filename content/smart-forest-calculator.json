@@ -39,8 +39,8 @@
   "dataHeader":"Carbon Sequestration",
   "dataType":"You must plant",
   "dataType1":"hectares",
-  "dataType2":"trees",
-  "dataDisclaimer":"This is only an estimate etc",
+  "dataType2":"seedlings",
+  "dataDisclaimer":"This is an estimate of your average carbon footprint per year.",
 
   "nextHeader":"NEXT STEP",
   "nextPara":"Calculate how many hectares of Smart Forest you need to invest in to reach a Net-Zero emissions target.",

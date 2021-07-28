@@ -584,6 +584,7 @@ export default function Build({ file }) {
                           <li><ReactMarkdown>{editingdata.corpdropdown_pointspara3}</ReactMarkdown></li>
                           <li><ReactMarkdown>{editingdata.corpdropdown_pointspara4}</ReactMarkdown></li>
                           <li><ReactMarkdown>{editingdata.corpdropdown_pointspara5}</ReactMarkdown></li>
+                          <li><ReactMarkdown>{editingdata.corpdropdown_pointspara6}</ReactMarkdown></li>
                         </ul>
                         </Col>
                       </Row>
@@ -720,27 +721,30 @@ export default function Build({ file }) {
                     <Dropdown.Menu>
                       <Row className="p-4">
                         <Col>
-                        <h5 className="text-green mb-0 thin">
-                        <ReactMarkdown>
-                        {editingdata.schooldropdown_box1header1}
-                        </ReactMarkdown>
-                        </h5>
+                          <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
+                          {editingdata.schooldropdown_box1para0}
+                          </ReactMarkdown>
+                          <h5 className="text-green mb-0 thin">
+                            <ReactMarkdown>
+                            {editingdata.schooldropdown_box1header1}
+                            </ReactMarkdown>
+                          </h5>
                           <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
                           {editingdata.schooldropdown_box1para1}
                           </ReactMarkdown>
                           <h5 className="text-green mb-0 thin">
-                        <ReactMarkdown>
-                        {editingdata.schooldropdown_box1header2}
-                        </ReactMarkdown>
-                        </h5>
+                          <ReactMarkdown>
+                            {editingdata.schooldropdown_box1header2}
+                            </ReactMarkdown>
+                          </h5>
                           <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
                           {editingdata.schooldropdown_box1para2}
                           </ReactMarkdown>
                           <h5 className="text-green mb-0 thin">
-                        <ReactMarkdown>
-                        {editingdata.schooldropdown_box1header3}
-                        </ReactMarkdown>
-                        </h5>
+                            <ReactMarkdown>
+                            {editingdata.schooldropdown_box1header3}
+                            </ReactMarkdown>
+                          </h5>
                           <ReactMarkdown className="text-grey mt-0 dropdown-text">
                           {editingdata.schooldropdown_box1para3}
                           </ReactMarkdown>
