@@ -67,7 +67,12 @@ function ImageUpload({
           />
         </div>
       ) : null}
-      <div className='create-book-photo-picker _FCdzt' style={style}>
+      <div className='create-book-photo-picker _FCdzt' style={{
+              position: 'absolute',
+              width: '100%',
+              height: '100%',
+              zIndex: 99999999
+            }}>
         {imageSrc ? (
           <div
             className='create-book-image-preview-container _GQrmn'
@@ -100,7 +105,7 @@ function ImageUpload({
             </div>
           </div>
         ) : (
-          'Upload a Logo'
+          'Upload an Image'
         )}
         <div
           className='create-book-image-input-container _1n017'
