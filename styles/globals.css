@@ -2321,7 +2321,7 @@ position: relative;
 }
 
 .signTextBottom {
-  width: 94%;
+  width: 100%;
   bottom: 11%;
 text-align: center;
 font-size: 12px;
@@ -2329,20 +2329,20 @@ font-size: 12px;
 
 .signImageText {
   position: absolute;
-color: #000;
+color: #404040;
 }
 
 .signTextForest {
   top: 27%;
     width: 10%;
-    left: 40%;
+    left: 43%;
     font-size: 17px;
 }
 
 .signTextAcres {
   bottom: 25%;
     width: 40%;
-    left: 40%;
+    left: 43%;
     font-size: 17px;
 }
 
