@@ -53,7 +53,7 @@ const DigitalSign = ()=> {
 
   return (
     <React.Fragment>
-      <Row className="justify-content-center text-white mb-5">
+      <Row className="justify-content-center text-white mb-5 px-lg-5 px-xl-0">
         <Col className="col-10 col-md-9 col-lg-3 col-xl-3 mb-4">
           <label className="text-small" htmlFor="forest-name">Choose a name for your forest:</label>
           <br />
