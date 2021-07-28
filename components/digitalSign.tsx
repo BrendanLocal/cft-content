@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import ImageUpload from 'image-upload-react';
+import ImageUpload from './imageUpload';
 import Button from 'react-bootstrap/Button';
 import * as htmlToImage from 'html-to-image';
 import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
