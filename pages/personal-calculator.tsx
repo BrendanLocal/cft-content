@@ -16,8 +16,12 @@ import Header from "../components/header";
 import Accordion from "react-bootstrap/Accordion";
 import randomstring from "randomstring";
 import { MongoClient } from 'mongodb';
+import createGlobalState from 'global-react-state';
 
+var tempSessionID = randomstring.generate(12);
 
+const [useSessionID, setSessionID, getSessionID] = createGlobalState(tempSessionID);
+const [usePersonalArray, setPersonalArray, getPersonalArray] = createGlobalState({});
 
 const Lang = () => {
 var language ="en";
@@ -32,6 +36,10 @@ const router = useRouter();
 
   
 export default function App({ file, href, children}) {
+
+  const [sessionID, setSessionID] = useSessionID();
+  const [personalArray, setPersonalArray] = usePersonalArray();
+
   
   const formOptions = {
     label: 'Carbon Calculator',
@@ -673,6 +681,7 @@ export default function App({ file, href, children}) {
   localStorage.setItem('personalfootprint', String(total));
   }
 
+  setPersonalArray({sessionID, selectSize, selectNum, selectYear, selectHeat, selectEnergy, selectNumTwo, selectYearTwo, selectSizeTwo, selectHeatTwo, selectEnergyTwo, selectNumThree, selectYearThree, selectSizeThree, selectHeatThree, selectEnergyThree, selectNumFour, selectYearFour, selectSizeFour, selectHeatFour, selectEnergyFour, selectNumFive, selectYearFive, selectSizeFive, selectHeatFive, selectEnergyFive, buildSub, getFam, getFamTwo, getFamThree, getFamFour, getFamFive, vehicleArray, publicTransportArray, flightSub, vehicleSub, flightArray});
 
 
 /* check to see if they have a current session */
@@ -684,27 +693,25 @@ if (typeof window !== 'undefined') {
 
 const router = useRouter();
   if(router.query.session){ 
-    sessionID = router.query.session;
+    setSessionID(router.query.session);
+    var tempSessionID = JSON.stringify(sessionID)
     fullUrl = "https://canadasforesttrust.ca/personal-calculator/?session=" +  sessionID
 
     sharingUrl = "https://canadasforesttrust.ca/personal-calculator-share/?session=" + sessionID
 
-    localStorage.setItem('sessionID', sessionID);
+    localStorage.setItem('sessionID', tempSessionID);
     } else if (localStorage.sessionID){
-    sessionID = localStorage.sessionID;
+    setSessionID(localStorage.sessionID);
     fullUrl = "https://canadasforesttrust.ca/personal-calculator/?session=" +  sessionID
     sharingUrl = "https://canadasforesttrust.ca/personal-calculator-share/?session=" + sessionID
     }
   if(!localStorage.sessionID){
-    localStorage.setItem('sessionID', sessionID);
+
+    var tempSessionID = JSON.stringify(sessionID)
+    localStorage.setItem('sessionID', tempSessionID);
   }
 
 
-
-
-let personalArray = {sessionID, selectSize, selectNum, selectYear, selectHeat, selectEnergy, selectNumTwo, selectYearTwo, selectSizeTwo, selectHeatTwo, selectEnergyTwo, selectNumThree, selectYearThree, selectSizeThree, selectHeatThree, selectEnergyThree, selectNumFour, selectYearFour, selectSizeFour, selectHeatFour, selectEnergyFour, selectNumFive, selectYearFive, selectSizeFive, selectHeatFive, selectEnergyFive, buildSub, getFam, getFamTwo, getFamThree, getFamFour, getFamFive, vehicleArray, publicTransportArray, flightSub, vehicleSub, flightArray}
-
-localStorage.setItem('personalArray', JSON.stringify(personalArray));
 
 
 
@@ -1651,9 +1658,9 @@ localStorage.setItem('personalArray', JSON.stringify(personalArray));
               <Row>
                 <Col className="whiteBorder rounded mt-3 p-3"><p className="text-small">To continue editing your results in the future, save or bookmark this link:</p>
                 <p  className="pt-2 text-small"><a href={fullUrl}>{fullUrl}</a></p>
-                <hr/>
+                {/*<hr/>
                 <p className="text-small">Share your results on social media with this link:</p>
-                <p  className="pt-2 text-small"><a href={sharingUrl}>{sharingUrl}</a></p></Col>
+                <p  className="pt-2 text-small"><a href={sharingUrl}>{sharingUrl}</a></p>*/}</Col>
               </Row>
             </div>
           </Col>
@@ -1702,35 +1709,39 @@ localStorage.setItem('personalArray', JSON.stringify(personalArray));
 */
 
 
-const sessionID = localStorage.getItem('sessionID');
-const personalArray = localStorage.getItem('personalArray') ;
+
 
 export const getStaticProps: GetStaticProps = async function({preview, previewData}) {
 
-  if (typeof window !== 'undefined') {
+  const [sessionID, setSessionID] = useSessionID();
+  const [personalArray, setPersonalArray] = usePersonalArray();
+
+      const databaseName = 'cftdata';
+
+      MongoClient.connect(
+        process.env.MONGODB_URI,
+        { useNewUrlParser: true },
+        (error, client) => {
+          if (error) {
+            return console.log('unable to connect to database');
+          }
+      
+          const db = client.db(databaseName);
+      
+          db.collection('calcData').insertOne({
+            sessionID: sessionID,
+            personalArray: personalArray
+          });
+        }
+      );
+
 
     
 
-  const databaseName = 'cftdata';
-
-  MongoClient.connect(
-    process.env.MONGODB_URI,
-    { useNewUrlParser: true },
-    (error, client) => {
-      if (error) {
-        return console.log('unable to connect to database');
-      }
   
-      const db = client.db(databaseName);
+    
   
-      db.collection('calcData').insertOne({
-        sessionID: sessionID,
-        personalArray: personalArray
-      });
-    }
-  );
-
-}
+  
 
   if (preview) {
     return getGithubPreviewProps({
