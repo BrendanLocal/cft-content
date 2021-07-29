@@ -1132,7 +1132,7 @@ div>p {
 }
 
 
-.splash button {
+.splash button:not(#rcc-confirm-button) {
  opacity: 0;
   transform: translateY(-100%);
 
