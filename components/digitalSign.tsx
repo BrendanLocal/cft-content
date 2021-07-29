@@ -13,7 +13,7 @@ import downloadjs from "downloadjs";
 
 const DigitalSign = ()=> {
 
-  const [imageSrc, setImageSrc] = useState("")
+  const [imageSrc, setImageSrc] = useState("empty")
  
   const handleImageSelect = (e) => {
     setImageSrc(URL.createObjectURL(e.target.files[0]))
