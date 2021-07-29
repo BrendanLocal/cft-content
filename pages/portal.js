@@ -111,9 +111,9 @@ return (
         <div className="roundedBox no-border card-drop p-5 pb-4 bg-white">
 
         <h3 className="text-green text-center mb-4 pb-2">Demo Portal</h3>
-        <p className="text-grey large mb-4 pb-2 text-center">View a sample Smart Forest Intelligence Dashboard</p>
+        <p className="text-grey large mb-4 pb-4 text-center">View a sample version of our <span className="bold">Smart Forest Intelligence Dashboard</span></p>
         <Link href="portal-demo">
-        <Button className="w-100 mb-4 px-0" variant="green">Enter the demo portal</Button>
+        <Button className="w-100 mb-4 px-0" variant="green">Try the demo portal</Button>
         </Link>
         </div>
         </Col>

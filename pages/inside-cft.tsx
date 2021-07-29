@@ -383,6 +383,8 @@ export default function Power({ file }) {
                     <p className="text-center text-white mb-4">Operations & Strategy</p>
                     <h2 className="text-center bold text-white mb-1 mt-5">Taylor Piotrowski</h2>
                     <p className="text-center text-white mb-4">Communications & Creative</p>
+                    <h2 className="text-center bold text-white mb-1 mt-5">Nicholas Tanton</h2>
+                    <p className="text-center text-white mb-4">Forester</p>
                     <h2 className="text-center bold text-white mb-1 mt-5">Laura Wukitsch</h2>
                     <p className="text-center text-white mb-4">Forester</p>
                     </Col>

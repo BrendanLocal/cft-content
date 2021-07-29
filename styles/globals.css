@@ -241,6 +241,7 @@ font-weight: 600;
 
  .text-small {
   font-size: 12px;
+  line-height: 14px;
 }
 
  .dropdown-text {
@@ -329,6 +330,7 @@ li a, a.underline {
 
 .large {
   font-size: 20px!important;
+  line-height: 26px;
 }
 
 .large, .large * {
@@ -1469,14 +1471,14 @@ transition: transform .5s ease;
 }
 
 .dropdown-links {
-  font-size: 16px;
+  font-size: 15px;
   text-decoration: none!important;
   box-shadow: none!important;
 }
 
 .dropdown-links:focus{
   color: #fff;
-  z-index:999;
+  z-index:999!important;
 }
 
 .dropdown-menu {
@@ -1492,6 +1494,7 @@ transition: transform .5s ease;
   border: none;
   box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
   border-radius: .25rem;
+  transform: translate3d(0,50px,0) !important;
 }
 
 
@@ -1884,13 +1887,13 @@ span.authorTitle {
   box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
   border: none;
   position: relative;
-  height: 400px!important;
+  height: 370px!important;
 }
 
 .calc-btn {
   position: absolute;
   bottom: 4%;
-  width: 83%;
+  width: 87%;
 }
 
 .calculate-card:hover {
@@ -2519,13 +2522,15 @@ color: #054217;
 
 .create-book-photo-picker {
   display: inline-block;
+  padding-top: 3px!important;
     font-weight: 400;
     line-height: 1.5;
     color: #ffffff;
     text-align: center;
     text-decoration: none;
     vertical-align: middle;
-  background: #00823B!important;
+  background: none;
+  border: 2px solid #fff;
     border-radius: 6px;
     font-size: 13px;
     text-transform: uppercase;
@@ -2539,6 +2544,21 @@ color: #054217;
     width: 100% !important;
     height: 100% !important;
 }
+
+.create-book-photo-picker:before {
+  content:"";
+  background: url("/upload-btn.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  width: 1.4em;
+  height: 1.4em;
+  position: relative;
+  display: inline-block;
+  margin: 0 10px 0 -2px;
+  top: 5px;
+}
+
 
 
 .signImageLogo {
@@ -2617,12 +2637,120 @@ z-index: 999;
   cursor: pointer;
 }
 
+/* Point Break */
+
+@media screen and (max-width: 1399px) and (min-width: 1200px){
+
+.phases {
+  height: 580px;
+}
+
+.phase1 {
+  height: 580px;
+}
+
+.phase2 {
+  height: 580px;
+}
+
+.phase3 {
+  height: 580px;
+}
+
+.phase4 {
+  height: 580px;
+}
+
+.phase5 {
+  height: 580px;
+}
+
+}
+
+@media screen and (max-width: 1199px) and (min-width: 1025px){
+
+  .phases {
+    height: 480px;
+  }
+  
+  .phase1 {
+    height: 480px;
+  }
+  
+  .phase2 {
+    height: 480px;
+  }
+  
+  .phase3 {
+    height: 480px;
+  }
+  
+  .phase4 {
+    height: 480px;
+  }
+  
+  .phase5 {
+    height: 480px;
+  }
+  
+  }
+
+@media screen and (max-width: 1300px) and (min-width: 1067px){
+
+  .calc-btn {
+    width: 85%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+@media screen and (max-width: 1066px) and (min-width: 1025px){
+  .calculate-card {
+    box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
+    border: none;
+    position: relative;
+    height: 420px!important;
+  }
+
+  .calc-btn {
+    width: 80.5%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
 
 /* Tablet */
 
 @media screen and (max-width: 1024px) and (min-width: 577px){
   .parallaxLayers {
     min-height: 80vh;
+  }
+
+  .create-book-photo-picker {
+    padding-top: 6px!important;
+      font-size: 12px;
+  }
+  
+  .create-book-photo-picker:before {
+    content:"";
+    background: url("/upload-btn.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    width: 1.2em;
+    height: 1.2em;
+    position: relative;
+    display: inline-block;
+    margin: 0 10px 0 -2px;
+    top: 3px;
+  }
+
+  .signTextBottom {
+    width: 100%;
+    bottom: 11%;
+  text-align: center;
+  font-size: .7em!important;
+  font-weight: 600;
   }
 
   .signTextForest {
@@ -2646,13 +2774,13 @@ z-index: 999;
     box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
     border: none;
     position: relative;
-    height: 450px!important;
+    height: 420px!important;
   }
 
   .calc-btn {
     width: 81%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 
   .v-full {
@@ -2710,62 +2838,91 @@ z-index: 999;
   }
 
   .phases {
-    background: url('/5Phases.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 460px;
+    height: 480px;
   }
   
   .phase1 {
-    background: url('/Phase1.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 460px;
+    height: 480px;
   }
   
   .phase2 {
-    background: url('/Phase2.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 460px;
+    height: 480px;
   }
   
   .phase3 {
-    background: url('/Phase3.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 460px;
+    height: 480px;
   }
   
   .phase4 {
-    background: url('/Phase4.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 460px;
+    height: 480px;
   }
   
   .phase5 {
-    background: url('/Phase5.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 460px;
+    height: 480px;
   }
 
 
 }
 
+@media screen and (max-width: 991px) and (min-width: 768px){
+.calculate-card {
+  box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
+  border: none;
+  position: relative;
+  height: 250px!important;
+}
+
+.calc-btn {
+  position: absolute;
+  bottom: 5%;
+  width: 92.5%;
+}
+
+.phases {
+  height: 400px;
+}
+
+.phase1 {
+  height: 400px;
+}
+
+.phase2 {
+  height: 400px;
+}
+
+.phase3 {
+  height: 400px;
+}
+
+.phase4 {
+  height: 400px;
+}
+
+.phase5 {
+  height: 400px;
+}
+
+}
 
 @media screen and (max-width: 768px) and (min-width: 577px){
 
   .dropdown-menu {
     min-width: 20rem;
     transform: translate3d(0,50px,0) !important;
+  }
+
+  .create-book-photo-picker:before {
+    content:"";
+    background: url("/upload-btn.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    width: 1.3em;
+    height: 1.3em;
+    position: relative;
+    display: inline-block;
+    margin: 0 10px 0 -2px;
+    top: 4px;
   }
 
   .calculate-card {
@@ -2784,7 +2941,7 @@ z-index: 999;
   .carousel-caption {
     position: absolute;
     right: 15%;
-    top: 3.5rem;
+    top: 2rem;
     left: 13%;
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
@@ -2792,53 +2949,6 @@ z-index: 999;
     text-align: center;
   }
 
-  .phases {
-    background: url('/5Phases.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 410px;
-  }
-  
-  .phase1 {
-    background: url('/Phase1.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 410px;
-  }
-  
-  .phase2 {
-    background: url('/Phase2.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 410px;
-  }
-  
-  .phase3 {
-    background: url('/Phase3.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 410px;
-  }
-  
-  .phase4 {
-    background: url('/Phase4.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 410px;
-  }
-  
-  .phase5 {
-    background: url('/Phase5.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 410px;
-  }
 
   .video-size {
     width: 100%!important;
@@ -2853,6 +2963,33 @@ z-index: 999;
 
 }
 
+@media screen and (max-width: 767px){
+
+.phases {
+  height: 290px;
+}
+
+.phase1 {
+  height: 290px;
+}
+
+.phase2 {
+  height: 290px;
+}
+
+.phase3 {
+  height: 290px;
+}
+
+.phase4 {
+  height: 290px;
+}
+
+.phase5 {
+  height: 290px;
+}
+
+}
 
 
 /* Mobile */
@@ -2914,8 +3051,8 @@ font-size: .9em;
 }
 
 .carousel-indicators {
-  margin-right: 20%;
-  margin-left: 20%;
+  margin-right: 34%;
+  margin-left: 34%;
   margin-bottom: .6rem;
 }
 
@@ -2930,53 +3067,6 @@ font-size: .9em;
   text-align: center;
 }
 
-.phases {
-  background: url('/5Phases-mob.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 560px;
-}
-
-.phase1 {
-  background: url('/Phase1-mob.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 560px;
-}
-
-.phase2 {
-  background: url('/Phase2-mob.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 560px;
-}
-
-.phase3 {
-  background: url('/Phase3-mob.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 560px;
-}
-
-.phase4 {
-  background: url('/Phase4-mob.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 560px;
-}
-
-.phase5 {
-  background: url('/Phase5-mob.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 560px;
-}
 
 .protorow {
   background-image: url('/landing-proto.png');
@@ -3061,7 +3151,7 @@ font-size: .9em;
   width: 100%;
   bottom: 11%;
 text-align: center;
-font-size: .4em;
+font-size: .45em;
 font-weight: 600;
 }
 
@@ -3089,5 +3179,281 @@ font-weight: 600;
     color: #362B26;
 }
 
+.phases {
+  height: 290px;
 }
 
+.phase1 {
+  height: 290px;
+}
+
+.phase2 {
+  height: 290px;
+}
+
+.phase3 {
+  height: 290px;
+}
+
+.phase4 {
+  height: 290px;
+}
+
+.phase5 {
+  height: 290px;
+}
+
+}
+
+@media screen and (max-width: 530px) {
+
+  .phases {
+    height: 280px;
+  }
+  
+  .phase1 {
+    height: 280px;
+  }
+  
+  .phase2 {
+    height: 280px;
+  }
+  
+  .phase3 {
+    height: 280px;
+  }
+  
+  .phase4 {
+    height: 280px;
+  }
+  
+  .phase5 {
+    height: 280px;
+  }
+
+}
+
+@media screen and (max-width: 530px) {
+
+  .phases {
+    height: 260px;
+  }
+  
+  .phase1 {
+    height: 260px;
+  }
+  
+  .phase2 {
+    height: 260px;
+  }
+  
+  .phase3 {
+    height: 260px;
+  }
+  
+  .phase4 {
+    height: 260px;
+  }
+  
+  .phase5 {
+    height: 260px;
+  }
+
+}
+
+@media screen and (max-width: 497px) {
+
+.phases {
+  background: url('/5Phases-mob.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 660px;
+}
+
+.phase1 {
+  background: url('/Phase1-mob.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 660px;
+}
+
+.phase2 {
+  background: url('/Phase2-mob.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 660px;
+}
+
+.phase3 {
+  background: url('/Phase3-mob.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 660px;
+}
+
+.phase4 {
+  background: url('/Phase4-mob.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 660px;
+}
+
+.phase5 {
+  background: url('/Phase5-mob.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 660px;
+}
+
+.carousel-indicators {
+  margin-right: 25%;
+  margin-left: 25%;
+}
+
+}
+
+@media screen and (max-width: 460px) {
+
+  .phases {
+    height: 600px;
+  }
+  
+  .phase1 {
+    height: 600px;
+  }
+  
+  .phase2 {
+    height: 600px;
+  }
+  
+  .phase3 {
+    height: 600px;
+  }
+  
+  .phase4 {
+    height: 600px;
+  }
+  
+  .phase5 {
+    height: 600px;
+  }
+
+}
+
+@media screen and (max-width: 430px) {
+
+  .phases {
+    height: 550px;
+  }
+  
+  .phase1 {
+    height: 550px;
+  }
+  
+  .phase2 {
+    height: 550px;
+  }
+  
+  .phase3 {
+    height: 550px;
+  }
+  
+  .phase4 {
+    height: 550px;
+  }
+  
+  .phase5 {
+    height: 550px;
+  }
+
+}
+
+@media screen and (max-width: 400px) {
+
+  .phases {
+    height: 525px;
+  }
+  
+  .phase1 {
+    height: 525px;
+  }
+  
+  .phase2 {
+    height: 525px;
+  }
+  
+  .phase3 {
+    height: 525px;
+  }
+  
+  .phase4 {
+    height: 525px;
+  }
+  
+  .phase5 {
+    height: 525px;
+  }
+
+}
+
+@media screen and (max-width: 390px) {
+
+  .phases {
+    height: 480px;
+  }
+  
+  .phase1 {
+    height: 480px;
+  }
+  
+  .phase2 {
+    height: 480px;
+  }
+  
+  .phase3 {
+    height: 480px;
+  }
+  
+  .phase4 {
+    height: 480px;
+  }
+  
+  .phase5 {
+    height: 480px;
+  }
+
+}
+
+@media screen and (max-width: 360px) {
+
+  .phases {
+    height: 430px;
+  }
+  
+  .phase1 {
+    height: 430px;
+  }
+  
+  .phase2 {
+    height: 430px;
+  }
+  
+  .phase3 {
+    height: 430px;
+  }
+  
+  .phase4 {
+    height: 430px;
+  }
+  
+  .phase5 {
+    height: 430px;
+  }
+
+}
