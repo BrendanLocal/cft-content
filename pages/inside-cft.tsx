@@ -164,7 +164,7 @@ export default function Power({ file }) {
             <Col className="col-12 col-md-11 col-lg-5 stickyTop roundedBox innerShadow-heavy mt-5 m-3 p-0 about-hero"></Col>
             <Col className="col-12 col-lg-5 text-white p-4 pb-0 intro-order ">
               <h1 className="text-orange hero-alt bold mb-5 mt-2">{editingdata.header1}</h1>
-              <p className="large mb-3 bold">{editingdata.para1}</p>
+              <p className="large mb-3">{editingdata.para1}</p>
               <p className="large mb-3">{editingdata.para2}</p>
               <p className="large mb-3">{editingdata.para3}</p>
               <p className="large mb-3">{editingdata.para4}</p>
@@ -211,7 +211,7 @@ export default function Power({ file }) {
       </Container>
       </ScrollableAnchor>
 <ScrollableAnchor id={"the-plan"}>
-        <Container id="the-plan" className="v-full z-999 bg-green p-5 pe-lg-3 mb-5">
+        <Container id="the-plan" className="v-full z-999 bg-green p-5 mb-5">
           <Fade bottom>
             <Row className="justify-content-center align-items-center my-4">
               <Col className="col-12 col-md-11 col-lg-8 col-xl-9 text-center text-white">
