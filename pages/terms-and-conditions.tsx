@@ -60,10 +60,10 @@ const Lang = () => {
               <div className="bg-brown roundedBox innerShadow text-white p-5">
               <Row>
                   <Col className="col-1">
-                  <h4 className="bold">1.</h4>
+                  <h2 className="h4 bold">1.</h2>
                   </Col>
                   <Col className="col-11">
-                  <h4 className="bold">Acceptance of Terms</h4>
+                  <h2 className="h4 bold">Acceptance of Terms</h2>
                   </Col>
               </Row>
                 <p className="mb-3">These terms and conditions of use for <a href="/home" className="text-orange">www.canadasforesttrust.ca</a> (the “Website”), constitute a legal agreement and are entered into by and between you and Canada’s Forest Trust Corporation (the “CFT,”  “we,” “us,” “our”). The following terms and conditions, together with our <a href="/privacy" className="text-orange">Privacy Policy</a> (collectively, these “Terms”), govern your access to and use of the Website.</p>
@@ -72,20 +72,20 @@ const Lang = () => {
                 <p className="mb-3">If you do not meet all of these requirements, you must not access or use the Website.</p>
             <Row className="mt-5">
                   <Col className="col-1">
-                  <h4 className="bold">2.</h4>
+                  <h2 className="h4 bold">2.</h2>
                   </Col>
                   <Col className="col-11">
-                  <h4 className="bold">Modifications to the Terms and to the Website</h4>
+                  <h2 className="h4 bold">Modifications to the Terms and to the Website</h2>
                    </Col>
               </Row>
                 <p className="mb-3">We reserve the right in our sole discretion to revise and update these Terms from time to time. Any and all such modifications are effective immediately upon posting and apply to all access to and continued use of the Website. The date the Terms were last updated is indicated at the top of this page. Where required by law, we will notify you in advance of implementing such changes (for example, by notifying you via email) so you can review them before they go into effect. You agree to periodically review these Terms in order to be aware of any such modifications, and your continued use of the Website shall be your acceptance of these.If you do not agree to accept such modifications to the Terms, you must refrain from any further access to or use of the Website.</p>
                 <p className="mb-3">We may change or delete any information or material on the Website at any time without notifying you. We will not be liable if, for any reason, all or any part of the Website is restricted or unavailable at any time.</p>
                 <Row className="mt-5">
                   <Col className="col-1">
-                  <h4 className="bold">3.</h4>
+                  <h2 className="h4 bold">3.</h2>
                   </Col>
                   <Col className="col-11">
-                  <h4 className="bold">Your Use of the Website and Account Set-Up and Security</h4>
+                  <h2 className="h4 bold">Your Use of the Website and Account Set-Up and Security</h2>
                    </Col>
               </Row>
                 <p className="mb-3">The security of your personal information is very important to us. We use physical, electronic, and administrative measures designed to secure your personal information from accidental loss and from unauthorized access, use, alteration, and disclosure.</p>
@@ -98,10 +98,10 @@ const Lang = () => {
                 <p className="mb-3">You are prohibited from attempting to circumvent and from violating the security of this Website, including, without limitation: (a) accessing content and data that is not intended for you; (b) attempting to breach or breaching the security and/or authentication measures which are not authorized; (c) restricting, disrupting or disabling service to users, hosts, servers, or networks; (d) illicitly reproducing TCP/IP packet header; (e) disrupting network services and otherwise disrupting Website owner’s ability to monitor the Website; (f) using any robot, spider, or other automatic device, process, or means to access the Website for any purpose, including monitoring or copying any of the material on the Website; (g) introducing any viruses, trojan horses, worms, logic bombs, or other material that is malicious or technologically harmful; (h) attacking the Website via a denial-of-service attack, distributed denial-of-service attack, flooding, mailbombing, or crashing; and (i) otherwise attempting to interfere with the proper working of the Website.</p>
             <Row className="mt-5">
                   <Col className="col-1">
-                  <h4 className="bold">4.</h4>
+                  <h2 className="h4 bold">4.</h2>
                   </Col>
                   <Col className="col-11">
-                  <h4 className="bold">Intellectual Property Rights and Ownership</h4>
+                  <h2 className="h4 bold">Intellectual Property Rights and Ownership</h2>
                    </Col>
               </Row>
                 <p className="mb-3">You understand and agree that the Website and its entire contents, features, and functionality, including, but not limited to, all information, software, code, text, displays, graphics, photographs, video, audio, design, presentation, selection, and arrangement, are owned by the CFT, its licensors, or other providers of such material and are protected in all forms by intellectual property laws including without limitation, copyright, trademark, patent, trade secret, and any other proprietary rights.</p>
@@ -136,10 +136,10 @@ const Lang = () => {
                 
                 <Row className="mt-5">
                   <Col className="col-1">
-                  <h4 className="bold">5.</h4>
+                  <h2 className="h4 bold">5.</h2>
                   </Col>
                   <Col className="col-11">
-                  <h4 className="bold">Conditions of Use and Site Content Standards</h4>
+                  <h2 className="h4 bold">Conditions of Use and Site Content Standards</h2>
                    </Col>
               </Row>
                 <p className="mb-3">As a condition of your access and use, you agree that you may use the Website only for lawful purposes and in accordance with these Terms.</p>
@@ -219,10 +219,10 @@ const Lang = () => {
 
               <Row className="mt-5">
                   <Col className="col-1">
-                  <h4 className="bold">6.</h4>
+                  <h2 className="h4 bold">6.</h2>
                   </Col>
                   <Col className="col-11">
-                  <h4 className="bold">Site Monitoring and Enforcement, Suspension and Termination</h4>
+                  <h2 className="h4 bold">Site Monitoring and Enforcement, Suspension and Termination</h2>
                    </Col>
               </Row>
               
@@ -259,10 +259,10 @@ const Lang = () => {
 
                 <Row className="mt-5">
                   <Col className="col-1">
-                  <h4 className="bold">7.</h4>
+                  <h2 className="h4 bold">7.</h2>
                   </Col>
                   <Col className="col-11">
-                  <h4 className="bold">No reliance</h4>
+                  <h2 className="h4 bold">No reliance</h2>
                    </Col>
               </Row>
 
@@ -280,10 +280,10 @@ const Lang = () => {
 
               <Row className="mt-5">
                   <Col className="col-1">
-                  <h4 className="bold">8.</h4>
+                  <h2 className="h4 bold">8.</h2>
                   </Col>
                   <Col className="col-11">
-                  <h4 className="bold">Privacy</h4>
+                  <h2 className="h4 bold">Privacy</h2>
                    </Col>
               </Row>
 
@@ -297,12 +297,12 @@ const Lang = () => {
 
               <Row className="mt-5">
                   <Col className="col-1">
-                  <h4 className="bold">9.</h4>
+                  <h2 className="h4 bold">9.</h2>
                   </Col>
                   <Col className="col-11">
-                  <h4 className="bold">
+                  <h2 className="h4 bold">
                   Third-Party Websites
-                      </h4>
+                      </h2>
                    </Col>
               </Row>
 
@@ -320,12 +320,12 @@ const Lang = () => {
 
               <Row className="mt-5">
                   <Col className="col-1">
-                  <h4 className="bold">10.</h4>
+                  <h2 className="h4 bold">10.</h2>
                   </Col>
                   <Col className="col-11">
-                  <h4 className="bold">
+                  <h2 className="h4 bold">
                   Geographic Restrictions
-                      </h4>
+                      </h2>
                    </Col>
               </Row>
 
@@ -335,12 +335,12 @@ const Lang = () => {
 
               <Row className="mt-5">
                   <Col className="col-1">
-                  <h4 className="bold">11.</h4>
+                  <h2 className="h4 bold">11.</h2>
                   </Col>
                   <Col className="col-11">
-                  <h4 className="bold">
+                  <h2 className="h4 bold">
                   Disclaimer of Warranties
-                      </h4>
+                      </h2>
                    </Col>
               </Row>
 
@@ -358,12 +358,12 @@ const Lang = () => {
 
               <Row className="mt-5">
                   <Col className="col-1">
-                  <h4 className="bold">12.</h4>
+                  <h2 className="h4 bold">12.</h2>
                   </Col>
                   <Col className="col-11">
-                  <h4 className="bold">
+                  <h2 className="h4 bold">
                   Limitation on Liability
-                      </h4>
+                      </h2>
                    </Col>
               </Row>
 
@@ -373,12 +373,12 @@ const Lang = () => {
 
               <Row className="mt-5">
                   <Col className="col-1">
-                  <h4 className="bold">13.</h4>
+                  <h2 className="h4 bold">13.</h2>
                   </Col>
                   <Col className="col-11">
-                  <h4 className="bold">
+                  <h2 className="h4 bold">
                   Indemnification
-                      </h4>
+                      </h2>
                    </Col>
               </Row>
 
@@ -388,12 +388,12 @@ const Lang = () => {
 
               <Row className="mt-5">
                   <Col className="col-1">
-                  <h4 className="bold">14.</h4>
+                  <h2 className="h4 bold">14.</h2>
                   </Col>
                   <Col className="col-11">
-                  <h4 className="bold">
+                  <h2 className="h4 bold">
                   Governing Law and Choice of Forum
-                      </h4>
+                      </h2>
                    </Col>
               </Row>
 
@@ -407,12 +407,12 @@ const Lang = () => {
 
               <Row className="mt-5">
                   <Col className="col-1">
-                  <h4 className="bold">15.</h4>
+                  <h2 className="h4 bold">15.</h2>
                   </Col>
                   <Col className="col-11">
-                  <h4 className="bold">
+                  <h2 className="h4 bold">
                       Waiver
-                      </h4>
+                      </h2>
                    </Col>
               </Row>
 
@@ -422,12 +422,12 @@ const Lang = () => {
 
               <Row className="mt-5">
                   <Col className="col-1">
-                  <h4 className="bold">16.</h4>
+                  <h2 className="h4 bold">16.</h2>
                   </Col>
                   <Col className="col-11">
-                  <h4 className="bold">
+                  <h2 className="h4 bold">
                   Severability
-                      </h4>
+                      </h2>
                    </Col>
               </Row>
 
@@ -437,12 +437,12 @@ const Lang = () => {
 
               <Row className="mt-5">
                   <Col className="col-1">
-                  <h4 className="bold">17.</h4>
+                  <h2 className="h4 bold">17.</h2>
                   </Col>
                   <Col className="col-11">
-                  <h4 className="bold">
+                  <h2 className="h4 bold">
                   Entire Agreement
-                      </h4>
+                      </h2>
                    </Col>
               </Row>
 
@@ -452,12 +452,12 @@ const Lang = () => {
 
               <Row className="mt-5">
                   <Col className="col-1">
-                  <h4 className="bold">18.</h4>
+                  <h2 className="h4 bold">18.</h2>
                   </Col>
                   <Col className="col-11">
-                  <h4 className="bold">
+                  <h2 className="h4 bold">
                   Reporting and Contact
-                      </h4>
+                      </h2>
                    </Col>
               </Row>
 

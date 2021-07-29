@@ -1387,6 +1387,10 @@ footer {
   text-decoration: none!important;
 }
 
+.no-text{
+  color:transparent;
+}
+
 .no-bold {
   font-weight: normal!important;
 }
@@ -2570,7 +2574,12 @@ color: #054217;
   top: 63.5%;
   right: 20%;
   width: 10%;
+  text-indent:-9999px
 }
+
+img[src="empty"]{ display:none; }
+
+
 
 /* Search */
 

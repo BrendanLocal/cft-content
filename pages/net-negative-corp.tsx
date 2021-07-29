@@ -1,5 +1,6 @@
 import * as React from "react";
 import Container from 'react-bootstrap/Container';
+import Head from"next/head";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
@@ -119,6 +120,11 @@ export default function App({ file, href, children}) {
   return (
     <div>
       <Header/>
+      <Head>
+        <title>{editingdata.title}</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content="#054218"></meta>
+      </Head>
       <Container className="p-5">
         <Row className="justify-content-center">
           <Col className="col-11 col-lg-10 pt-5 align-items-center my-4 pt-5">
@@ -133,7 +139,7 @@ export default function App({ file, href, children}) {
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
                 <Col>
-                  <h4 className="text-green">{editingdata.emissionsHeader}</h4>
+                  <h2 className="h4 text-green">{editingdata.emissionsHeader}</h2>
                   <hr/>
                 </Col>
               </Row>
@@ -152,7 +158,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="type">{editingdata.emissionsRegion}</label>
                   <br />
-                  <select name="type" value={region} onChange={changeRegion}>
+                  <select name="type" value={region} onChange={changeRegion} aria-label="region">
                     <option value="" hidden>select</option>
                     <option value='BC'>{editingdata.emissionsRegion1}</option>			
                     <option value='Prairies'>{editingdata.emissionsRegion2}</option>
@@ -167,7 +173,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="size">{editingdata.emissionsTimeHeader}</label>
                   <br />
-                  <select name="size" value={duration} onChange={changeDuration}>
+                  <select name="size" value={duration} onChange={changeDuration} aria-label="EmissionsTime">
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='1'>{editingdata.emissionsTime1}</option>
                     <option value='2'>{editingdata.emissionsTime2}</option>
@@ -191,7 +197,7 @@ export default function App({ file, href, children}) {
           </Col>
           <Col className=" p-3  col-12 col-lg-4 stickyCalc mb-4">
             <div className="text-white p-5 innerShadow roundedBox">
-              <h4 className="mb-0">{editingdata.dataHeader}</h4>
+              <h2 className="h4 mb-0">{editingdata.dataHeader}</h2>
               <hr/>
               <Row><Col className="pb-3">{editingdata.dataType} {plantHectares > 0 ? plantHectares.toFixed(2) : "--"} {editingdata.dataType1}</Col></Row>
               <hr/>
@@ -219,7 +225,7 @@ export default function App({ file, href, children}) {
         <Row className="justify-content-center pb-5 mb-5">
           <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
-              <h4 className="text-white tight-drop-light">{editingdata.otherbox1Header}</h4>
+              <h3 className="h4 text-white tight-drop-light">{editingdata.otherbox1Header}</h3>
               <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox1Para}</p>
               <Link href="business-calculator">
                 <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox1button}</a>
@@ -228,7 +234,7 @@ export default function App({ file, href, children}) {
           </Col>
           <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
-              <h4 className="text-white tight-drop-light">{editingdata.otherbox2Header}</h4>
+              <h3 className="h4 text-white tight-drop-light">{editingdata.otherbox2Header}</h3>
               <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox2Para}</p>
               <Link href="school-calculator">
                 <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox2button}</a>
@@ -237,7 +243,7 @@ export default function App({ file, href, children}) {
           </Col>
           <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
-              <h4 className="text-white tight-drop-light">{editingdata.otherbox3Header}</h4>
+              <h3 className="h4 text-white tight-drop-light">{editingdata.otherbox3Header}</h3>
               <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox3Para}</p>
               <Link href="personal-calculator">
                 <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox3button}</a>

@@ -170,7 +170,7 @@ export default function Home({ file, href, children}) {
           </ul>
         </Col>
       </Row>
-      <main id="intro">
+      <main>
         <Parallax className="fadein"
           bgImage='/landingSKY.png'
           bgImageAlt="SKY"
