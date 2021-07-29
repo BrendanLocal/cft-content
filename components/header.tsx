@@ -264,7 +264,7 @@ const Header = ()=> {
           <ul className="socialIcons">
             {socialIcons.map(item =>
               <li key={item.label}>
-                <Link href={item.path}><img src={item.icon}></img></Link>
+                <a href={item.path} target="_blank"><img src={item.icon}></img></a>
               </li>
             )}
           </ul>

@@ -690,7 +690,7 @@ export default function Build({ file }) {
             <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
               <Col className="col-10 col-md-8 col-lg-9 col-xl-7 pe-lg-0">
                 <h3 className="text-center text-orange bold tight-drop-light mt-5">
-                  Find out who’s Indigenous Territory your corporation is on and see the Indigenous territory and community leaders to build relations.
+                  Find out whose Indigenous Territory your corporation is on and see the Indigenous territory and community leaders to build relations.
                   </h3>
               </Col>
             </Row>
@@ -906,17 +906,17 @@ export default function Build({ file }) {
             <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
               <Col className="col-10 col-md-8 col-lg-9 col-xl-7 pe-lg-0">
                 <h3 className="text-center text-orange bold tight-drop-light mt-5">
-                  Find out who’s Indigenous Territory your school is on and see the Indigenous territory and community leaders to build relations.
+                  Find out whose Indigenous Territory your school is on and see the Indigenous territory and community leaders to build relations.
                   </h3>
               </Col>
             </Row>
             <Row className="text-center justify-content-center">
               <Col className="col-10 text-center pb-5 pe-lg-0">
-              <Link href="https://native-land.ca/">
+              <a href="https://native-land.ca/" target="_blank">
                 <Button className="btn-large px-5" variant="green">
                   NATIVELAND.CA
                 </Button>
-                </Link>
+                </a>
               </Col>
             </Row>
           </Fade>
@@ -1104,17 +1104,17 @@ export default function Build({ file }) {
             <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
               <Col className="col-10 col-md-8 col-lg-9 col-xl-7 pe-lg-0">
                 <h3 className="text-center text-orange bold tight-drop-light mt-5">
-                  Find out who’s Indigenous Territory your home is on and see the Indigenous territory and community leaders to build relations.
+                  Find out whose Indigenous Territory your home is on and see the Indigenous territory and community leaders to build relations.
                   </h3>
               </Col>
             </Row>
             <Row className="text-center justify-content-center">
               <Col className="col-10 text-center pb-5 pe-lg-0">
-              <Link href="https://native-land.ca/">
+              <a href="https://native-land.ca/" target="_blank">
                 <Button className="btn-large px-5" variant="green">
                   NATIVELAND.CA
                 </Button>
-                </Link>
+                </a>
               </Col>
             </Row>
           </Fade>
@@ -1297,17 +1297,17 @@ export default function Build({ file }) {
             <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
               <Col className="col-10 col-md-8 col-lg-9 col-xl-7 pe-lg-0">
                 <h3 className="text-center text-orange bold tight-drop-light mt-5">
-                  Find out who’s Indigenous Territory your community is on and see the Indigenous territory and community leaders to build relations.
+                  Find out whose Indigenous Territory your community is on and see the Indigenous territory and community leaders to build relations.
                   </h3>
               </Col>
             </Row>
             <Row className="text-center justify-content-center">
               <Col className="col-10 text-center pb-5 pe-lg-0">
-              <Link href="https://native-land.ca/">
+              <a href="https://native-land.ca/" target="_blank">
                 <Button className="btn-large px-5" variant="green">
                   NATIVELAND.CA
                 </Button>
-                </Link>
+                </a>
               </Col>
             </Row>
           </Fade>

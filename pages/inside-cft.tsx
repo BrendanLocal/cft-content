@@ -164,12 +164,12 @@ export default function Power({ file }) {
             <Col className="col-12 col-md-11 col-lg-5 stickyTop roundedBox innerShadow-heavy mt-5 m-3 p-0 about-hero"></Col>
             <Col className="col-12 col-lg-5 text-white p-4 pb-0 intro-order ">
               <h1 className="text-orange hero-alt bold mb-5 mt-2">{editingdata.header1}</h1>
-              <p className="mb-5 large">{editingdata.para1}</p>
-              <p className="large bold mb-5">{editingdata.para2}</p>
-              <p className="large bold mb-5">{editingdata.para3}</p>
-              <p className="large bold mb-5">{editingdata.para4}</p>
-              <p className="large bold mb-5">{editingdata.para5}</p>
-              <p className="large bold mb-5">{editingdata.para6}</p>
+              <p className="large mb-3 bold">{editingdata.para1}</p>
+              <p className="large mb-3">{editingdata.para2}</p>
+              <p className="large mb-3">{editingdata.para3}</p>
+              <p className="large mb-3">{editingdata.para4}</p>
+              <p className="large mb-3">{editingdata.para5}</p>
+              <p className="large mb-3">{editingdata.para6}</p>
               <p className="text-white text-left smallcaps intro-links-header op-5 mt-5 mb-3">{editingdata.header2}</p>
               <a href="#video" className="btn btn-text text-left intro-links text-orange bold no-underline me-4">Watch our video</a>
               <br/>
@@ -177,9 +177,9 @@ export default function Power({ file }) {
               <br/>
               <a href="#what" className="btn btn-text text-left intro-links text-orange bold no-underline me-4">What is a Smart Forest?</a>
               <br/>
-              <a href="#forever" className="btn btn-text text-left intro-links text-orange bold no-underline me-4">Meet our team</a>
+              <a href="#team" className="btn btn-text text-left intro-links text-orange bold no-underline me-4">Meet our team</a>
               <br/>
-              <a href="#forever" className="btn btn-text text-left intro-links text-orange bold no-underline me-5">Q & A</a>
+              <a href="#qna" className="btn btn-text text-left intro-links text-orange bold no-underline me-5">Q & A</a>
             </Col>
           </Row>
         </Container>
@@ -194,15 +194,15 @@ export default function Power({ file }) {
             </Row>
         </Fade>
         <Fade bottom> 
-        <Row className="justify-content-center pb-5 mb-5">
-            <Col className="col-10 col-lg-7 col-xl-6 mb-3">      
+        <Row className="justify-content-center align-items-center pb-5 mb-5">
+            <Col className="col-10 col-lg-7 col-xl-6 d-flex">      
               <ReactPlayer playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4' className="video-size"/> 
             </Col>
-            <Col className="col-10 col-lg-3 col-xl-3 ">
-              <p className="text-white d-none d-lg-block">
+            <Col className="col-10 col-lg-3 col-xl-3 d-flex">
+              <p className="text-white d-none medium d-lg-block">
               CFT was established by <span className="bold">Gary Zed</span>, an entrepreneur with a reputation for taking on tough challenges and getting things done. A leader with a national vision, Gary heads up a team that is committed to making CFT the most talked about climate success story in the decades ahead.
               </p>
-              <p className="text-white text-center large d-lg-none">
+              <p className="text-white text-center mt-3 large d-lg-none">
               CFT was established by <span className="bold">Gary Zed</span>, an entrepreneur with a reputation for taking on tough challenges and getting things done. A leader with a national vision, Gary heads up a team that is committed to making CFT the most talked about climate success story in the decades ahead.
               </p>
             </Col>
@@ -358,10 +358,10 @@ export default function Power({ file }) {
                     <img className="card-drop-heavy" src="../../Gary-Zed_Headshot.jpg"/>
                     </Col>
                   </Row>
-                  <Row className="justify-content-center align-items-center">
+                  <Row className="justify-content-center align-items-stretch">
                   <Col className="mt-4">
                     <div className="text-orange large text-center text-orange bold intro-cta">
-                      <a href="/contact-us">A message from our founder</a>
+                      <a onClick={handleShow}>A message from our founder</a>
                     </div>
                     </Col>
                   </Row>
@@ -442,34 +442,28 @@ export default function Power({ file }) {
           </Fade>
         </Container>
         </ScrollableAnchor>
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header className="d-none" closeButton>
-            <Modal.Title className="d-none"></Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Row className="justify-content-center align-items-center ">
-              <Col className="col-10 col-md-3 col-lg-4 p-0 mb-lg-5 p-3">
-                <img src="/placeholder-forest.jpg"></img>
-              </Col>
-              <Col className="col-10 col-md-7 col-lg-6 p-4">
-                <p className="h3 text-grey mt-4 mb-0">{editingdata.person13}</p>
-                <p className="h3 smallCaps text-grey thin italic mb-4">{editingdata.person13_title}</p>
-                <p className="large text-greyx">{editingdata.person13_para1}</p>
-                <p className="text-grey">{editingdata.person13_para2}</p>
-              </Col>
-            </Row>
-          </Modal.Body>
 
-          <Modal.Footer className="p-0">
-            <Button
-              className="modal-btn mt-2 me-3 p-0"
-              variant="text-btn"
-              onClick={handleClose}
-            >
-              Close
-            </Button>
-          </Modal.Footer>
-        </Modal>
+      <Modal show={show} className="d-flex align-items-center" onHide={handleClose}>
+        <Modal.Header className="d-none" closeButton>
+          <Modal.Title className="d-none"></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Row className="justify-content-center align-items-center mb-0">
+            <Col>
+              <h3 className="text-green smallCaps text-center">A MESSAGE FROM OUR FOUNDER</h3>
+            </Col>
+          </Row>
+          <Row className="justify-content-center align-items-center">
+            <Col className="col-12 d-flex">
+              <ReactPlayer playing playsinline controls url='./ceo-message.mp4' className="video-size"/>
+            </Col>
+          </Row>
+        </Modal.Body>
+        <Modal.Footer className="p-0">
+          <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleClose}>CLOSE</Button>
+        </Modal.Footer>
+      </Modal>
+
       </main>
     </div>
   );

@@ -207,8 +207,7 @@ return (
       <Row className="justify-content-center d-flex mb-3 pt-lg-5 mx-0">
         <Col className="col-10 mt-5 mt-lg-0 mt-xl-0">
         <h1 className="h2 bold text-orange text-center">
-          Forescaster
-          {/* {editingdata.greeting} {userData.displayname} */}
+          Smart Forest Intelligence Dashboard
         </h1>
         </Col>
       </Row>
