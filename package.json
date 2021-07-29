@@ -90,6 +90,7 @@
     "react-pdf": "^5.3.2",
     "react-pdf-js": "^5.1.0",
     "react-player": "^2.9.0",
+    "react-redux": "^7.2.4",
     "react-reveal": "^1.2.2",
     "react-router": "^5.2.0",
     "react-router-apply-middleware": "^0.0.2",

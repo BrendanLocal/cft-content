@@ -673,14 +673,9 @@ export default function App({ file, href, children}) {
   localStorage.setItem('personalfootprint', String(total));
   }
 
-  
-
-  var personalArray = {sessionID, selectSize, selectNum, selectYear, selectHeat, selectEnergy, selectNumTwo, selectYearTwo, selectSizeTwo, selectHeatTwo, selectEnergyTwo, selectNumThree, selectYearThree, selectSizeThree, selectHeatThree, selectEnergyThree, selectNumFour, selectYearFour, selectSizeFour, selectHeatFour, selectEnergyFour, selectNumFive, selectYearFive, selectSizeFive, selectHeatFive, selectEnergyFive, buildSub, getFam, getFamTwo, getFamThree, getFamFour, getFamFive, vehicleArray }
-
 
 
 /* check to see if they have a current session */
-var sessionID = randomstring.generate(12);
 var fullUrl = "https://canadasforesttrust.ca/personal-calculator/?session=" + sessionID
 
 var sharingUrl = "https://canadasforesttrust.ca/personal-calculator-share/?session=" + sessionID
@@ -703,7 +698,24 @@ const router = useRouter();
   if(!localStorage.sessionID){
     localStorage.setItem('sessionID', sessionID);
   }
+
+
+
+
+let personalArray = {sessionID, selectSize, selectNum, selectYear, selectHeat, selectEnergy, selectNumTwo, selectYearTwo, selectSizeTwo, selectHeatTwo, selectEnergyTwo, selectNumThree, selectYearThree, selectSizeThree, selectHeatThree, selectEnergyThree, selectNumFour, selectYearFour, selectSizeFour, selectHeatFour, selectEnergyFour, selectNumFive, selectYearFive, selectSizeFive, selectHeatFive, selectEnergyFive, buildSub, getFam, getFamTwo, getFamThree, getFamFour, getFamFive, vehicleArray, publicTransportArray, flightSub, vehicleSub, flightArray}
+
+localStorage.setItem('personalArray', JSON.stringify(personalArray));
+
+
+
 }
+
+
+
+  
+
+
+
 
   return (
     <div className="bg-legacy">
@@ -1637,10 +1649,11 @@ const router = useRouter();
               <p>{editingdata.dataDisclaimer}</p>
 
               <Row>
-                <Col className="whiteBorder rounded mt-3 p-3"><p className="text-small">To continue editing your results in the future, save this link in a secure place:</p>
-                <p  className="pt-3 text-small"><a href={fullUrl}>{fullUrl}</a></p>
-                <p className="text-small pt-5">Share your results on social media with this link:</p>
-                <p  className="pt-3 text-small"><a href={sharingUrl}>{sharingUrl}</a></p></Col>
+                <Col className="whiteBorder rounded mt-3 p-3"><p className="text-small">To continue editing your results in the future, save or bookmark this link:</p>
+                <p  className="pt-2 text-small"><a href={fullUrl}>{fullUrl}</a></p>
+                <hr/>
+                <p className="text-small">Share your results on social media with this link:</p>
+                <p  className="pt-2 text-small"><a href={sharingUrl}>{sharingUrl}</a></p></Col>
               </Row>
             </div>
           </Col>
@@ -1689,18 +1702,35 @@ const router = useRouter();
 */
 
 
-var sessionID = randomstring.generate(12);
+const sessionID = localStorage.getItem('sessionID');
+const personalArray = localStorage.getItem('personalArray') ;
 
-export const getStaticProps: GetStaticProps = async function({preview, previewData,}) {
+export const getStaticProps: GetStaticProps = async function({preview, previewData}) {
 
+  if (typeof window !== 'undefined') {
 
-const client = new MongoClient(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
-client.connect(err => {
-  const collection = client.db("cftdata").collection("calcData");
-        collection.insertOne(sessionID)
-  client.close();
-});
+    
 
+  const databaseName = 'cftdata';
+
+  MongoClient.connect(
+    process.env.MONGODB_URI,
+    { useNewUrlParser: true },
+    (error, client) => {
+      if (error) {
+        return console.log('unable to connect to database');
+      }
+  
+      const db = client.db(databaseName);
+  
+      db.collection('calcData').insertOne({
+        sessionID: sessionID,
+        personalArray: personalArray
+      });
+    }
+  );
+
+}
 
   if (preview) {
     return getGithubPreviewProps({
