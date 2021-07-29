@@ -216,7 +216,7 @@ export default function Power({ file }) {
             <Row className="justify-content-center pb-5 align-items-stretch">
             <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
-                <h3 className="h4 text-white tight-drop-light">{editingdata.part4_box1header1}</h3>
+                <h4 className="text-white tight-drop-light">{editingdata.part4_box1header1}</h4>
                 <ReactMarkdown className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part4_box1para1}</ReactMarkdown>
                 <Link href="/build-your-smart-forest#corporate">
                   <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnMore}</a>
@@ -225,7 +225,7 @@ export default function Power({ file }) {
             </Col>
             <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
-                <h3 className="h4 text-white tight-drop-light">{editingdata.part4_box2header1}</h3>
+                <h4 className="text-white tight-drop-light">{editingdata.part4_box2header1}</h4>
                 <ReactMarkdown className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part4_box2para1}</ReactMarkdown>
                 <Link href="/build-your-smart-forest#school">
                   <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnMore}</a>
@@ -234,7 +234,7 @@ export default function Power({ file }) {
             </Col>
             <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
-                <h3 className="h4 text-white tight-drop-light">{editingdata.part4_box3header1}</h3>
+                <h4 className="text-white tight-drop-light">{editingdata.part4_box3header1}</h4>
                 <ReactMarkdown className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part4_box3para1}</ReactMarkdown>
                 <Link href="/build-your-smart-forest#legacy">
                   <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnMore}</a>
@@ -243,7 +243,7 @@ export default function Power({ file }) {
             </Col>
             <Col className="col-10 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop communal-card">
-                <h3 className="h4 text-white tight-drop-light">{editingdata.part4_box4header1}</h3>
+                <h4 className="text-white tight-drop-light">{editingdata.part4_box4header1}</h4>
                 <ReactMarkdown className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part4_box4para1}</ReactMarkdown>
                 <Link href="/build-your-smart-forest#communal">
                   <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.learnMore}</a>

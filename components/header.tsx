@@ -13,10 +13,6 @@ import Link from 'next/link'
 
 const Header = ()=> {
 
-  useEffect(() => {
-    document.documentElement.lang = "en-us";
-  });
-
   const [user] = useCurrentUser();
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -119,26 +115,22 @@ const Header = ()=> {
     {
       icon: "/fbookIcon.svg",
       label: "Facebook",
-      path: "https://www.facebook.com/canadasforest",
-      alt: "Facebook"
+      path: "https://www.facebook.com/canadasforest"
     },
     {
       icon: "/twtIcon.svg",
       label: "Twitter",
-      path: "https://twitter.com/CanadasForest",
-      alt: "Twitter"
+      path: "https://twitter.com/CanadasForest"
     },
     {
       icon: "/instaIcon.svg",
       label: "Instagram",
-      path: "https://www.instagram.com/canadasforest/?hl=en",
-      alt: "Instagram"
+      path: "https://www.instagram.com/canadasforest/?hl=en"
     },
     {
       icon: "/linkedinIcon.svg",
       label: "LinkedIn",
-      path: "https://linkedin.com/company/canadas-forest-trust",
-      alt: "Linked In"
+      path: "https://linkedin.com/company/canadas-forest-trust"
     }
   ]
 
@@ -160,9 +152,9 @@ const Header = ()=> {
       <div id="searchComponent" className={ showSearch ? "searchOpen" : "searchClosed"}>
         <Container className="v-80 d-flex justify-content-center align-items-start pt-5">
           <Row className="pt-5">
-            <Col className="align-content-start d-flex flex-column"> 
+            <Col className="align-content-start d-flex flex-column">
               <h3 className="text-white">Search</h3>
-              <div className="searchBox"><img src="/searchIcon.svg" alt="Search Icon"/><Search /><img className="closeSearch" onClick={toggleSearch} src="/close.svg" alt="close search"/></div>
+              <div className="searchBox"><img src="/searchIcon.svg"/><Search /><img className="closeSearch" onClick={toggleSearch} src="/close.svg"/></div>
             </Col>
           </Row>
         </Container>
@@ -172,7 +164,7 @@ const Header = ()=> {
         <div className="row ">
           <div className="col">
             <Link href="/home">
-            <img className="logo" src="/cft-logo-white.svg" alt="Canada's Forest Trust logo" />
+            <img className="logo" src="/cft-logo-white.svg" />
             </Link>
           </div>
         </div>
@@ -255,10 +247,10 @@ const Header = ()=> {
               <div className="col col d-flex align-items-end justify-content-end menuInterface">
                 <ul className="controlIcons">
                   <li>
-                    <img onClick={toggleSearch} src="/searchIcon.svg" alt="Search Icon"></img>
+                    <img onClick={toggleSearch} src="/searchIcon.svg"></img>
                   </li>
                   <li className="d-none">
-                    <div className={isPlaying ? 'mute' : null} ><img className="soundPlaying" onClick={() => toggleSound()} src="/soundIcon.svg" alt="Sound Icon"></img><img className="soundMute" src="/muteIcon.svg" alt="mute"></img></div>
+                    <div className={isPlaying ? 'mute' : null} ><img className="soundPlaying" onClick={() => toggleSound()} src="/soundIcon.svg"></img><img className="soundMute" src="/muteIcon.svg"></img></div>
                   </li>
                 </ul>
               </div>
@@ -272,7 +264,7 @@ const Header = ()=> {
           <ul className="socialIcons">
             {socialIcons.map(item =>
               <li key={item.label}>
-                <Link href={item.path}><img src={item.icon} alt={item.alt}></img></Link>
+                <Link href={item.path}><img src={item.icon}></img></Link>
               </li>
             )}
           </ul>

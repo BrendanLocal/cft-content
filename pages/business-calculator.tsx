@@ -1,6 +1,5 @@
 import * as React from "react";
 import Container from 'react-bootstrap/Container';
-import Head from"next/head";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
@@ -30,7 +29,7 @@ const Lang = () => {
     const formOptions = {
       label: 'Business Calculator',
       fields: [
-        {name: 'title', component: 'markdown' },
+        {name: 'businessType1', component: 'markdown' },
         {name: 'header', component: 'markdown' },
         {name: 'para1', component: 'markdown' },
         {name: 'select', component: 'markdown' },
@@ -498,11 +497,6 @@ const Lang = () => {
     return (
     <div className="bg-corp">
       <Header/>
-      <Head>
-        <title>{editingdata.title}</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="theme-color" content="#054218"></meta>
-      </Head>
       <Container className="p-5">
         <Row className="justify-content-center">
           <Col className="col-11 col-lg-10 pt-5 align-items-center my-4 pt-5">
@@ -518,16 +512,16 @@ const Lang = () => {
           <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
             <Row>
               <Col>
-              <h2 className="h4 text-green">
+              <h4 className="text-green">
                 Building Types
-              </h2>
+              </h4>
               <hr/>
               </Col>
             </Row>
             <Row>
               <Col> 
-              <label htmlFor="businessType"aria-label="businessType">{editingdata.businessTypeHeader}</label><br />
-              <select name="businessType" aria-label="businessType">
+              <label htmlFor="business">{editingdata.businessTypeHeader}</label><br />
+              <select name="business" >
                 <option value="" hidden>{editingdata.select}</option>
                 <option>{editingdata.businessType1}</option>
                 <option>{editingdata.businessType2}</option>
@@ -563,9 +557,9 @@ const Lang = () => {
             <Row>
               <Col> 
               <hr/>
-              <h3 className="h5">Primary Building</h3>
+              <h5>Primary Building</h5>
               <label htmlFor="building">What kind of building do you have?</label><br />
-              <select name="building" onChange={changeBuild} value={selectBuild}aria-label="buildingType">
+              <select name="building" onChange={changeBuild} value={selectBuild}>
                 <option value="" hidden>{editingdata.select}</option>
                 <option value='Office'>{editingdata.commercialSpace1}</option>
                 <option value='Medical'>{editingdata.commercialSpace2}</option>
@@ -586,7 +580,7 @@ const Lang = () => {
             <Row>
               <Col>
               <label htmlFor="size">{editingdata.squareFeetHeader}</label><br />
-              <select name="size" value={selectSize} onChange={changeSize}aria-label="buildingSize">
+              <select name="size" value={selectSize} onChange={changeSize}>
                 <option value="" hidden>{editingdata.select}</option>
                 <option value='5000'>less than 5000</option>
                 <option value='10000'>5000-10,000</option>
@@ -614,16 +608,17 @@ const Lang = () => {
               </Col>
             </Row>
           <hr/>
-            <h3 className="h6 pt-3">Additional Buildings</h3>
-            <Accordion>
+<h6 className="pt-3">Additional Buildings</h6>
+
+              <Accordion>
 
               {/* Building Type 2 */}
               <Card>
-                <Accordion.Toggle as={Card.Header} eventKey="0">
-                  Building Type 2
-                </Accordion.Toggle>
-                <Accordion.Collapse eventKey="0">
-                  <div>
+                            <Accordion.Toggle as={Card.Header} eventKey="0">
+                              Building Type 2
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="0">
+                              <div>
                              
             <Row>
               <Col> 
@@ -890,7 +885,7 @@ const Lang = () => {
               </Col>
             
               <Col>
-                <h4 className="h5 smallCaps text-small text-green">Cars</h4>
+                <h5 className="smallCaps text-small text-green">Cars</h5>
                 <Row>
                   <Col className="col-12 col-xl-4">
                     {editingdata.vehiclecarGas}
@@ -1447,7 +1442,7 @@ const Lang = () => {
         <Row className="justify-content-center pb-5 mb-5">
           <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
-              <h3 className="h4 text-white tight-drop-light">{editingdata.otherbox1Header}</h3>
+              <h4 className="text-white tight-drop-light">{editingdata.otherbox1Header}</h4>
               <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox1Para}</p>
               <Link href="school-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">other{editingdata.box1button}</a></Link>
             </div>

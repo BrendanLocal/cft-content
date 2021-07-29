@@ -2,7 +2,6 @@ import * as React from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Head from 'next/head'
 
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
@@ -669,11 +668,6 @@ export default function App({ file, href, children}) {
   return (
     <div className="bg-legacy">
       <Header/>
-      <Head>
-        <title>{editingdata.title}</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="theme-color" content="#054218"></meta>
-      </Head>
       <Container className="p-5">
         <Row className="justify-content-center">
           <Col className="col-11 col-lg-10 pt-5 align-items-center my-4 pt-5">
@@ -688,19 +682,22 @@ export default function App({ file, href, children}) {
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
                 <Col>
-                  <h2 className="h4 text-green">{editingdata.heat1Title}</h2>
+                  <h4 className="text-green">{editingdata.heat1Title}</h4>
                   <hr/>
                 </Col>
-                <h3 className="h5 smallCaps text-small text-green">{editingdata.heat1Para}</h3>
+                <h5 className="smallCaps text-small text-green">{editingdata.heat1Para}</h5>
               </Row>
               <Row className="mb-3">
                 <Col>
-                  <label htmlFor="number">{editingdata.heat1CalcHeader}</label>
-                  <br />
-                  <input className="me-2" onChange={changeFam} type="radio" id="myself" name="calculateWho" value="myself" aria-label="myself"/>
+                <label htmlFor="number">{editingdata.heat1CalcHeader}</label>
+                <br />
+                <input className="me-2" onChange={changeFam} type="radio" id="myself" name="calculateWho" value="myself"  />
                   <label>{editingdata.heat1Calc1}</label><br></br>
-                  <input className="me-2" onChange={changeFam} type="radio" id="family" name="calculateWho" value="family" aria-label="family"/>
-                  <label>{editingdata.heat1Calc2}</label><br></br>
+                <input className="me-2" onChange={changeFam} type="radio" id="family" name="calculateWho" value="family"
+                 />
+                <label>{editingdata.heat1Calc2}</label>
+               
+                <br></br>
                 </Col>
               </Row>
               <Row>
@@ -730,7 +727,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="size">{editingdata.heat1Size}</label>
                   <br />
-                  <select name="size" value={selectSize} onChange={changeSize} aria-label="Heating Size">
+                  <select name="size" value={selectSize} onChange={changeSize}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='1000'>{editingdata.heatSize1}</option>
                     <option value='1500'>{editingdata.heatSize2}</option>
@@ -748,7 +745,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="heat">{editingdata.heat1Source}</label>
                   <br />
-                  <select name="heat" value={selectHeat} onChange={changeHeat} aria-label="Heating Type">
+                  <select name="heat" value={selectHeat} onChange={changeHeat}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='gas'>{editingdata.heatSource1}</option>
                     <option value='oil'>{editingdata.heatSource2}</option>
@@ -762,7 +759,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="energy">{editingdata.heat1Savings}</label>
                   <br />
-                  <select name="energy" value={selectEnergy} onChange={changeEnergy} aria-label="heating savings">
+                  <select name="energy" value={selectEnergy} onChange={changeEnergy}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='none'>{editingdata.heatSavings1}</option>
                     <option value='light'>{editingdata.heatSavings2}</option>
@@ -777,7 +774,7 @@ export default function App({ file, href, children}) {
               <Card>
                             <Accordion.Toggle as={Card.Header} eventKey="0">
                             
-                  <h3 className="h5 smallCaps text-small text-green">2nd Residence</h3>
+                  <h5 className="smallCaps text-small text-green">2nd Residence</h5>
 
                             </Accordion.Toggle>
                             <Accordion.Collapse eventKey="0">
@@ -818,7 +815,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="size">{editingdata.heat2Size}</label>
                   <br />
-                  <select name="size" value={selectSizeTwo} onChange={changeSizeTwo} aria-label="heating Size">
+                  <select name="size" value={selectSizeTwo} onChange={changeSizeTwo}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='1000'>{editingdata.heatSize1}</option>
                     <option value='1500'>{editingdata.heatSize2}</option>
@@ -836,7 +833,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="heat">{editingdata.heat2Source}</label>
                   <br />
-                  <select name="heat" value={selectHeatTwo} onChange={changeHeatTwo} aria-label="heating type">
+                  <select name="heat" value={selectHeatTwo} onChange={changeHeatTwo}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='gas'>{editingdata.heatSource1}</option>
                     <option value='oil'>{editingdata.heatSource2}</option>
@@ -850,7 +847,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="energy">{editingdata.heat2Savings}</label>
                   <br />
-                  <select name="energy" value={selectEnergyTwo} onChange={changeEnergyTwo} aria-label="heating savings">
+                  <select name="energy" value={selectEnergyTwo} onChange={changeEnergyTwo}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='none'>{editingdata.heatSavings1}</option>
                     <option value='light'>{editingdata.heatSavings2}</option>
@@ -867,7 +864,7 @@ export default function App({ file, href, children}) {
               <Card>
                             <Accordion.Toggle as={Card.Header} eventKey="1">
                             
-                  <h3 className="h5 smallCaps text-small text-green">3rd Residence</h3>
+                  <h5 className="smallCaps text-small text-green">3rd Residence</h5>
 
                             </Accordion.Toggle>
                             <Accordion.Collapse eventKey="1">
@@ -908,7 +905,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="size">{editingdata.heat3Size}</label>
                   <br />
-                  <select name="size" value={selectSizeThree} onChange={changeSizeThree} aria-label="heating Size">
+                  <select name="size" value={selectSizeThree} onChange={changeSizeThree}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='1000'>{editingdata.heatSize1}</option>
                     <option value='1500'>{editingdata.heatSize2}</option>
@@ -926,7 +923,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="heat">{editingdata.heat3Source}</label>
                   <br />
-                  <select name="heat" value={selectHeatThree} onChange={changeHeatThree} aria-label="heating source">
+                  <select name="heat" value={selectHeatThree} onChange={changeHeatThree}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='gas'>{editingdata.heatSource1}</option>
                     <option value='oil'>{editingdata.heatSource2}</option>
@@ -940,7 +937,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="energy">{editingdata.heat3Savings}</label>
                   <br />
-                  <select name="energy" value={selectEnergyThree} onChange={changeEnergyThree} aria-label="heating savings">
+                  <select name="energy" value={selectEnergyThree} onChange={changeEnergyThree}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='none'>{editingdata.heatSavings1}</option>
                     <option value='light'>{editingdata.heatSavings2}</option>
@@ -956,7 +953,7 @@ export default function App({ file, href, children}) {
             <Card>
                             <Accordion.Toggle as={Card.Header} eventKey="2">
                             
-                  <h3 className="h5 smallCaps text-small text-green">4th Residence</h3>
+                  <h5 className="smallCaps text-small text-green">4th Residence</h5>
 
                             </Accordion.Toggle>
                             <Accordion.Collapse eventKey="2">
@@ -997,7 +994,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="size">{editingdata.heat3Size}</label>
                   <br />
-                  <select name="size" value={selectSizeFour} onChange={changeSizeFour} aria-label="heating Size">
+                  <select name="size" value={selectSizeFour} onChange={changeSizeFour}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='1000'>{editingdata.heatSize1}</option>
                     <option value='1500'>{editingdata.heatSize2}</option>
@@ -1015,7 +1012,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="heat">{editingdata.heat3Source}</label>
                   <br />
-                  <select name="heat" value={selectHeatFour} onChange={changeHeatFour} aria-label="heating source">
+                  <select name="heat" value={selectHeatFour} onChange={changeHeatFour}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='gas'>{editingdata.heatSource1}</option>
                     <option value='oil'>{editingdata.heatSource2}</option>
@@ -1029,7 +1026,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="energy">{editingdata.heat3Savings}</label>
                   <br />
-                  <select name="energy" value={selectEnergyFour} onChange={changeEnergyFour} aria-label="heating savings">
+                  <select name="energy" value={selectEnergyFour} onChange={changeEnergyFour}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='none'>{editingdata.heatSavings1}</option>
                     <option value='light'>{editingdata.heatSavings2}</option>
@@ -1045,7 +1042,7 @@ export default function App({ file, href, children}) {
             <Card>
                             <Accordion.Toggle as={Card.Header} eventKey="3">
                             
-                  <h3 className="h5 smallCaps text-small text-green">5th Residence</h3>
+                  <h5 className="smallCaps text-small text-green">5th Residence</h5>
 
                             </Accordion.Toggle>
                             <Accordion.Collapse eventKey="3">
@@ -1086,7 +1083,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="size">{editingdata.heat3Size}</label>
                   <br />
-                  <select name="size" value={selectSizeFive} onChange={changeSizeFive} aria-label="heating Size">
+                  <select name="size" value={selectSizeFive} onChange={changeSizeFive}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='1000'>{editingdata.heatSize1}</option>
                     <option value='1500'>{editingdata.heatSize2}</option>
@@ -1104,7 +1101,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="heat">{editingdata.heat3Source}</label>
                   <br />
-                  <select name="heat" value={selectHeatFive} onChange={changeHeatFive} aria-label="heating source">
+                  <select name="heat" value={selectHeatFive} onChange={changeHeatFive}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='gas'>{editingdata.heatSource1}</option>
                     <option value='oil'>{editingdata.heatSource2}</option>
@@ -1118,7 +1115,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="energy">{editingdata.heat3Savings}</label>
                   <br />
-                  <select name="energy" value={selectEnergyFive} onChange={changeEnergyFive} aria-label="heating savings">
+                  <select name="energy" value={selectEnergyFive} onChange={changeEnergyFive}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='none'>{editingdata.heatSavings1}</option>
                     <option value='light'>{editingdata.heatSavings2}</option>
@@ -1149,7 +1146,7 @@ export default function App({ file, href, children}) {
               <Card>
                             <Accordion.Toggle as={Card.Header} eventKey="0">
                             
-                  <h3 className="h5 smallCaps text-small text-green">{editingdata.vehicleSmall}</h3>
+                  <h5 className="smallCaps text-small text-green">{editingdata.vehicleSmall}</h5>
 
                   <p className="text-small op-6">{editingdata.vehicleSmallDesc}</p>
                             </Accordion.Toggle>
@@ -1203,7 +1200,7 @@ export default function App({ file, href, children}) {
                 </Card>
                 <Card>
                 <Accordion.Toggle as={Card.Header} eventKey="1">
-                  <h3 className="h5 smallCaps text-small text-green">{editingdata.vehicleMed}</h3>
+                  <h5 className="smallCaps text-small text-green">{editingdata.vehicleMed}</h5>
                   <p className="text-small op-6">{editingdata.vehicleMedDesc}</p>
                   </Accordion.Toggle>
                             <Accordion.Collapse eventKey="1">
@@ -1254,7 +1251,7 @@ export default function App({ file, href, children}) {
                 </Card>
                 <Card>
                 <Accordion.Toggle as={Card.Header} eventKey="2">
-                  <h3 className="h5 smallCaps text-small text-green">{editingdata.vehicleLarge}</h3>
+                  <h5 className="smallCaps text-small text-green">{editingdata.vehicleLarge}</h5>
                   <p className="text-small op-6">{editingdata.vehicleLargeDesc}</p>
                   </Accordion.Toggle>
                   <Accordion.Collapse eventKey="2">
@@ -1301,7 +1298,7 @@ export default function App({ file, href, children}) {
                   </Row>
                   <hr/>
 
-                  <h3 className="h5 smallCaps text-small text-green">{editingdata.vehicleMoto}</h3>
+                  <h5 className="smallCaps text-small text-green">{editingdata.vehicleMoto}</h5>
                   <p className="text-small op-6">{editingdata.vehicleMotoDesc}</p>
                   <Row>
                     <Col className="col">
@@ -1316,7 +1313,7 @@ export default function App({ file, href, children}) {
                 </Card>
               <Card>
             <Accordion.Toggle as={Card.Header} eventKey="3">
-                  <h3 className="h5 smallCaps text-small text-green">Private Aircraft</h3>
+                  <h5 className="smallCaps text-small text-green">Private Aircraft</h5>
                   <p className="text-small op-6">Personally owned aircraft, prop planes, helicopters, jets, etc.</p>
                   </Accordion.Toggle>
                   <Accordion.Collapse eventKey="3">
@@ -1324,7 +1321,7 @@ export default function App({ file, href, children}) {
                   <Row>
                     <Col className="col">
 
-                  <h3 className="h5 smallCaps text-small text-green">{editingdata.vehiclePlane}</h3>
+                  <h5 className="smallCaps text-small text-green">{editingdata.vehiclePlane}</h5>
                       <input onChange={calculateMiles} name="jetGas" type="number" min="0" onKeyPress={(event) => {
                         if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                       }} placeholder="Annual litres of fuel"/>
@@ -1334,7 +1331,7 @@ export default function App({ file, href, children}) {
                   <Row>
                     <Col className="col">
 
-                  <h3 className="h5 smallCaps text-small text-green">{editingdata.vehicleJet}</h3>
+                  <h5 className="smallCaps text-small text-green">{editingdata.vehicleJet}</h5>
                       <input onChange={calculateMiles} name="planeGas" type="number" min="0" onKeyPress={(event) => {
                         if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                       }} placeholder="Annual litres of fuel"/>
@@ -1343,7 +1340,7 @@ export default function App({ file, href, children}) {
                   <Row>
                     <Col className="col">
 
-                  <h3 className="h5 smallCaps text-small text-green">{editingdata.vehicleHeli}</h3>
+                  <h5 className="smallCaps text-small text-green">{editingdata.vehicleHeli}</h5>
                       <input onChange={calculateMiles} name="heliGas" type="number" min="0" onKeyPress={(event) => {
                         if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                       }} placeholder="Annual litres of fuel"/>
@@ -1356,13 +1353,13 @@ export default function App({ file, href, children}) {
                 </Card>
               <Card>
                 <Accordion.Toggle as={Card.Header} eventKey="4">
-                  <h3 className="h5 smallCaps text-small text-green">Recreational Vehicles</h3>
+                  <h5 className="smallCaps text-small text-green">Recreational Vehicles</h5>
                   <p className="text-small op-6">Personally owned recreational vehicles, such as yachts, ATVs, and more.</p>
                   </Accordion.Toggle>
                   <Accordion.Collapse eventKey="4">
 
                               <div>
-                  <h3 className="h5 smallCaps text-small text-green">{editingdata.VehicleOther}</h3>
+                  <h5 className="smallCaps text-small text-green">{editingdata.VehicleOther}</h5>
                   <Row>
                     <Col className="col">
                       {editingdata.vechileYacht}
@@ -1576,7 +1573,7 @@ export default function App({ file, href, children}) {
           
           <Col className=" p-3  col-12 col-lg-4 stickyCalc mb-4">
             <div className="text-white p-5 innerShadow roundedBox bg-green">
-              <h3 className="h4mb-0">{editingdata.dataHeader}</h3>
+              <h4 className="mb-0">{editingdata.dataHeader}</h4>
               <hr/>
               <Row>
                 <Col>{editingdata.dataType1}</Col><Col className="text-right bold">{totalBuild > 0 ? totalBuild.toFixed(2) : "--"}</Col>
@@ -1621,7 +1618,7 @@ export default function App({ file, href, children}) {
         <Row className="justify-content-center pb-5 mb-5">
           <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
-            <h3 className="h4text-white tight-drop-light">{editingdata.otherbox1Header}</h3>
+            <h4 className="text-white tight-drop-light">{editingdata.otherbox1Header}</h4>
             <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox1Para}</p>
             <Link href="business-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox1button}</a></Link>
             </div>
@@ -1629,7 +1626,7 @@ export default function App({ file, href, children}) {
 
           <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
-            <h3 className="h4text-white tight-drop-light">{editingdata.otherbox2Header}</h3>
+            <h4 className="text-white tight-drop-light">{editingdata.otherbox2Header}</h4>
             <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox2Para}</p>
             <Link href="school-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox2button}</a></Link>
             </div>

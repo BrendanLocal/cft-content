@@ -45,7 +45,6 @@ const Lang = () => {
     useBodyClass('splash');
 
   return (
-    <html lang="en">
     <div>
       <Head>
         <title>{editingdata.title}</title>
@@ -58,7 +57,7 @@ const Lang = () => {
 
             <Row className="justify-content-center mt-5 mb-2 p-sm-0 m-sm-0">
                 <Col className="col-12 col-md-8 p-sm-0 m-sm-0 mt-5">
-                <object className="mt-5" type="image/svg+xml" data="/intro-animation.svg" aria-label="intro animation"/> 
+                <object className="mt-5" type="image/svg+xml" data="/intro-animation.svg"/> 
                 </Col>    
             </Row>
 
@@ -77,7 +76,7 @@ const Lang = () => {
         </Container>
       </main>
     </div>  
-    </html>
+
   )
 }
 

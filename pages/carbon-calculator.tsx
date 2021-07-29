@@ -1,6 +1,5 @@
 import * as React from "react";
 import Container from 'react-bootstrap/Container';
-import Head from"next/head";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
@@ -48,11 +47,6 @@ export default function CarbonCalc({ file, href, children}) {
   return (
     <div>
       <Header/>
-      <Head>
-        <title>{editingdata.title}</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="theme-color" content="#054218"></meta>
-      </Head>
       <Container className="py-5 mb-5">
         <Row className="justify-content-center mt-5">
           <Col className="col-11 col-lg-10 pt-5">
@@ -63,7 +57,7 @@ export default function CarbonCalc({ file, href, children}) {
         <Row className="justify-content-center pb-5 mb-5">
           <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
-              <h2 className="h4 text-white tight-drop-light">{editingdata.box1Header}</h2>
+              <h4 className="text-white tight-drop-light">{editingdata.box1Header}</h4>
               <p className="flex-fill pb-3 text-white tight-drop">{editingdata.box1Para}</p>
               <Link href="business-calculator">
                 <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.select}</a>
@@ -73,7 +67,7 @@ export default function CarbonCalc({ file, href, children}) {
 
           <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
-              <h2 className="h4 text-white tight-drop-light">{editingdata.box2Header}</h2>
+              <h4 className="text-white tight-drop-light">{editingdata.box2Header}</h4>
               <p className="flex-fill pb-3 text-white tight-drop">{editingdata.box2Para}</p>
               <Link href="school-calculator">
                 <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.select}</a>
@@ -83,7 +77,7 @@ export default function CarbonCalc({ file, href, children}) {
 
           <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
-              <h2 className="h4 text-white tight-drop-light">{editingdata.box3Header}</h2>
+              <h4 className="text-white tight-drop-light">{editingdata.box3Header}</h4>
               <p className="flex-fill pb-3 text-white tight-drop">{editingdata.box2Para}</p>
               <Link href="personal-calculator">
                 <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.select}</a>

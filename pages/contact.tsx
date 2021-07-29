@@ -108,7 +108,7 @@ const Lang = () => {
           <Row className="justify-content-center">
             
             <Col className="col-12 col-sm-7 col-xl-5 p2">
-              <div className="roundedBox innerShadow text-white p-4">
+              <div className=" roundedBox innerShadow text-white p-4">
                 <ContactForm />
               </div>
             </Col>

@@ -359,7 +359,7 @@ export default function Build({ file }) {
         <Container id="intro" className="bg-green py-5 px-4">
           <Row className="justify-content-center d-flex mt-xl-0 mt-lg-5 mb-5 ms-xl-5 ms-lg-4 py-5 px-5">
             <Col className="col-12 col-lg-5 stickyTop mb-5 p-3 pe-2 d-none d-lg-block">
-              <object type="image/svg+xml" data="/build2-svg.svg"/>
+              <object type="image/svg+xml" data="/build2-svg.svg" />
             </Col>
             <Col className="col-12 col-lg-5 text-white pe-xl-5 p-3 pb-0 intro-order">
               <h1 className="text-orange mb-5 bold">{editingdata.part1_header1}</h1>
@@ -458,7 +458,7 @@ export default function Build({ file }) {
             <Row className="justify-content-center pb-5 align-items-stretch my-4 px-md-5 mx-lg-5 px-lg-5 mx-xl-0 px-xl-0">
               <Col className="col-10 col-md-5 col-xl-2 pe-lg-0 m-3">
                 <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
-                  <h3 className="h4 text-white tight-drop-light">{editingdata.part3_box1header1}</h3>
+                  <h4 className="text-white tight-drop-light">{editingdata.part3_box1header1}</h4>
                   <p className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part3_box1para1}</p>
                   <a href="#corporate" className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">
                     {editingdata.learnMore}
@@ -467,21 +467,21 @@ export default function Build({ file }) {
               </Col>
               <Col className="col-10 col-md-5 col-xl-2 pe-lg-0 m-3">
                 <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
-                  <h3 className="h4 text-white tight-drop-light">{editingdata.part3_box2header1}</h3>
+                  <h4 className="text-white tight-drop-light">{editingdata.part3_box2header1}</h4>
                   <p className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part3_box2para1}</p>
                   <a href="#school" className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">{editingdata.learnMore}</a>
                 </div>
               </Col>
               <Col className="col-10 col-md-5 col-xl-2 pe-lg-0 m-3">
                 <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
-                  <h3 className="h4 text-white tight-drop-light">{editingdata.part3_box3header1}</h3>
+                  <h4 className="text-white tight-drop-light">{editingdata.part3_box3header1}</h4>
                   <p className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part3_box3para1}</p>
                   <a href="#legacy" className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">{editingdata.learnMore}</a>
                 </div>
               </Col>
               <Col className="col-10 col-md-5 col-xl-2 pe-lg-0 m-3">
                 <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop communal-card">
-                  <h3 className="h4 text-white tight-drop-light">{editingdata.part3_box4header1}</h3>
+                  <h4 className="text-white tight-drop-light">{editingdata.part3_box4header1}</h4>
                   <p className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part3_box4para1}</p>
                   <a href="#communal" className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">{editingdata.learnMore}</a>
                 </div>
@@ -611,7 +611,7 @@ export default function Build({ file }) {
                 <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.corp_header2}</h2>
                 
 
-                <img className="card-drop-heavy" src="../../ECOSYSTEMBENEFITS-Corp.jpg" alt="information on corporate smart forests"/>
+                <img className="card-drop-heavy" src="../../ECOSYSTEMBENEFITS-Corp.jpg"/>
               </Col>
             </Row>
             
@@ -827,7 +827,7 @@ export default function Build({ file }) {
             <Row className="text-center justify-content-center py-3 mt-5">
               <Col className="col-10 col-md-9 col-lg-7">
                 <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.school_para1}</h2>
-                <img className="card-drop-heavy" src="../../ECOSYSTEMBENEFITS-School.jpg" alt="information on school smart forests"/>
+                <img className="card-drop-heavy" src="../../ECOSYSTEMBENEFITS-School.jpg"/>
                 
               </Col>
             </Row>    
@@ -1026,7 +1026,7 @@ export default function Build({ file }) {
               <Col className="col-10 col-md-9 col-lg-7">
                 <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.legacy_para1}</h2>
 
-                <img className="card-drop-heavy" src="../../ECOSYSTEMBENEFITS-Legacy.jpg" alt="information on legacy smart forests"/>
+                <img className="card-drop-heavy" src="../../ECOSYSTEMBENEFITS-Legacy.jpg"/>
 
               </Col>
             </Row>
@@ -1219,7 +1219,7 @@ export default function Build({ file }) {
                 <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.communal_para1}</h2>
                 <ReactMarkdown className="text-white large tight-drop-light mb-4">{editingdata.communal_para2}</ReactMarkdown>
                 
-                <img className="card-drop-heavy" src="../../ECOSYSTEMBENEFITS-Community.jpg" alt="information on communal smart forests"/>
+                <img className="card-drop-heavy" src="../../ECOSYSTEMBENEFITS-Community.jpg"/>
 
               </Col>
             </Row>
