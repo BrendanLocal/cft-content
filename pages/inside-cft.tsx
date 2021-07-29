@@ -289,7 +289,7 @@ export default function Power({ file }) {
             <Row className="pt-5 align-items-center justify-content-center">
               <Col className="col-10 col-lg-7 pt-3">
                 <h2 className="text-center text-orange bold mb-2">What is a Smart Forest?</h2>
-                <p className="text-center text-white mb-3">A Smart Forest combines the resilience of a natural ecosystem, developed over millennia, with the predictive capabilities of today’s technologies and Canada’s first peoples. Inside a Smart Forest, biodiversity thrives; outside of it, scientists, students, investors, and conservationists use digital instruments to understand and activate the forest’s role in cleaning our water, purifying our air, and restoring our country’s vast and vital ecosystems.</p>
+                <p className="text-center text-white mb-3">A Smart Forest combines the resilience of a natural ecosystem, developed over millennia, with the predictive capabilities of today’s technologies and Canada’s First Peoples. Inside a Smart Forest, biodiversity thrives; outside of it, scientists, students, investors, and conservationists use digital instruments to understand and activate the forest’s role in cleaning our water, purifying our air, and restoring our country’s vast and vital ecosystems.</p>
               </Col>
             </Row>
           </Fade>
