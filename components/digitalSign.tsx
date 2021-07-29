@@ -82,6 +82,7 @@ const DigitalSign = ()=> {
             <label className="text-small mb-2" htmlFor="forest-name">Upload an image for your sign:</label>
           <div className="upload-button mb-3">
             <ImageUpload
+            imageSrc={imageSrc}
               handleImageSelect={handleImageSelect}
               setImageSrc={setImageSrc}
             />

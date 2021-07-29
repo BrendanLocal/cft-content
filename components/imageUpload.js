@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { FaTrash, FaArrowCircleUp } from 'react-icons/fa'
 
 function ImageUpload({
+  imageSrc,
   setImageSrc,
   handleImageSelect,
   style = {
