@@ -65,7 +65,7 @@ const DigitalSign = ()=> {
 
           <label className="text-small" htmlFor="copyOptions">Select copy for the bottom of the sign:</label>
           <br />
-          <select className="mb-3 no-border input-height" name="copyOptions"  onChange={changeCopy} value={selectCopy} >
+          <select className="mb-3 no-border input-height" name="copyOptions"  onChange={changeCopy} value={selectCopy} aria-label="copyOptions" >
             <option value="" hidden>Select...</option>
             <option>This Smart Forest is Growing to Net-Zero</option>
             <option>Growing to Net-Zero</option>
@@ -75,7 +75,7 @@ const DigitalSign = ()=> {
           </select>
 
           <label className="text-small" htmlFor="bgOptions">Select a background for your image:</label><br />
-          <select className="mb-3 no-border input-height" name="bgOptions"  onChange={changeBG} value={selectBG} >
+          <select className="mb-3 no-border input-height" name="bgOptions"  onChange={changeBG} value={selectBG} aria-label="season" >
             <option value="signbg_start.jpg" hidden>Select...</option>
             <option value="signbg_fall.jpg">Fall</option>
             <option value="signbg_forest.jpg">Spring</option>
