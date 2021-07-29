@@ -1427,6 +1427,10 @@ footer {
   margin-right: 6px;
 }
 
+.footer-links {
+  font-size: 15px;
+}
+
 .intro-links{
   margin: 10px 0px 10px 0px;
   font-size: 16px;

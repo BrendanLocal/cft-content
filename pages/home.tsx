@@ -223,53 +223,6 @@ export default function Home({ file, href, children}) {
             </Container>
           </Parallax>
         </Parallax>
-        
-
-        <Container id="what" fluid className="v-full z-999 bg-green align-items-center p-5 container-drop-heavy d-none">
-          <Fade bottom>
-            <Row className="py-5 align-items-center justify-content-center mt-2 ms-lg-1">
-              <Col className="order-2 order-lg-1 col-12 p-5 col-md-4 text-white ms-lg-5 pe-lg-2">
-                <h2 className="text-orange bold pe-lg-4"><ReactMarkdown>{editingdata.part2_header1}</ReactMarkdown></h2>
-                <ReactMarkdown className="pb-3 mb-2 thin pe-lg-5">{editingdata.part2_para1}</ReactMarkdown>
-                <Link href="/what-is-a-smart-forest"><a className="btn btn-green">{editingdata.part2_button1}</a></Link>
-              </Col>
-              <Col className="order-1 order-lg-2 col-12 col-md-5 p-4 ps-lg-0">
-                <object className="op-8" type="image/svg+xml" data="/power2-svg.svg"/>
-              </Col>
-            </Row>
-          </Fade>
-        </Container>
-
-        <Container id="how" fluid className="v-full z-999 bg-green p-5 d-none">
-          <Fade bottom>
-            <Row className="py-5 align-items-center justify-content-center p-4">
-              <Col className="col-12 col-md-5 p-5">
-                <object type="image/svg+xml" data="/build2-svg.svg"/>
-              </Col>
-              <Col className="col-12 p-5 ps-lg-2 col-md-4 text-white">
-                <h2 className="text-orange bold"><ReactMarkdown>{editingdata.part3_header1}</ReactMarkdown></h2>
-                <ReactMarkdown className="pb-3 mb-2 thin">{editingdata.part3_para1}</ReactMarkdown>
-                <Link href="/build-your-smart-forest" >
-                  <a className="btn btn-green px-lg-5">{editingdata.part3_button1}</a>
-                </Link>
-              </Col>
-            </Row>
-          </Fade>
-        </Container>
-
-        <Container  id="who" fluid className="v-full z-999 bg-green py-5 mt-4 mb-4 d-none">
-          <Fade bottom>
-          <Row className="pe-5 align-items-center justify-content-center  align-items-stretch protorow pb-0 mb-0 ms-lg-5">
-            <Col className="col-10 col-md-3 text-white mb-5 py-5 px-5 me-5 ms-5">
-                <h2 className="text-orange bold"><ReactMarkdown>{editingdata.part4_header1}</ReactMarkdown></h2>
-                <ReactMarkdown className="mb-4 thin">{editingdata.part4_para1}</ReactMarkdown>
-                <svg className="down-arrow d-none" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74 29.46"><path d="M73.41,13.59,60.69.86a2,2,0,0,0-2.83,2.83L67.17,13H0v4H67.17l-9.31,9.31a2,2,0,1,0,2.83,2.83L73.41,16.41A2,2,0,0,0,73.41,13.59Z"/></svg>
-              </Col>
-              <Col className="col-12 col-md-4 p-1">
-              </Col>
-            </Row>
-          </Fade>
-        </Container>
 
         <Container id="you" fluid className="v-full z-999 bg-green py-6 container-drop-heavy">
           <Fade bottom>
@@ -330,7 +283,7 @@ export default function Home({ file, href, children}) {
             </Col>
             <Col className="col-10 col-md-8 pe-lg-0 m-3">
               <div className="roundedBox card bg-mildgreen no-border py-3 d-flex flex-column drop action-card">
-                <Link href="/about">
+                <Link href="/inside-cft">
                   <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button8}</a>
                 </Link>
               </div>
@@ -339,44 +292,6 @@ export default function Home({ file, href, children}) {
           </Fade>
         </Container>
       
-        <Container id="calculate" fluid className="v-full z-999 bg-green pt-5 mt-0 mb-5 d-none">
-          <Fade bottom>
-            <Row className="align-items-center justify-content-center pt-4">
-              <Col className="col-10 col-lg-7 pe-lg-0 mb-4">
-                <h2 className="text-center text-orange bold"><ReactMarkdown>{editingdata.part6_header1}</ReactMarkdown></h2>
-                <ReactMarkdown className="text-center large my-2 text-white">{editingdata.part6_para1}</ReactMarkdown>
-              </Col>
-            </Row>
-            <Row className="justify-content-center  align-items-stretch mx-lg-5">
-                <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.part6_box1para1}</ReactMarkdown>
-                  <ReactMarkdown className="large text-green mb-3">{editingdata.part6_box1para2}</ReactMarkdown>
-                  <ReactMarkdown className="text-grey mb-3">{editingdata.part6_box1para3}</ReactMarkdown>
-                  <Link href="carbon-calculator">
-                    <Button variant="green" className="mt-5">{editingdata.part6_box1button1}</Button>
-                  </Link>
-                </div>
-              </Col>
-              <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.part6_box2para1}</ReactMarkdown>
-                  <ReactMarkdown className="large text-green mb-3">{editingdata.part6_box2para2}</ReactMarkdown>
-                  <ReactMarkdown className="text-grey mb-4">{editingdata.part6_box2para3}</ReactMarkdown>
-                  <Button variant="green mt-3">{editingdata.part6_box2button1}</Button>
-                </div>
-              </Col>
-              <Col className="col-10 col-lg-4 col-xl-3 pe-lg-0 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
-                  <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.part6_box3para1}</ReactMarkdown>
-                  <ReactMarkdown className="large text-green mb-3">{editingdata.part6_box3para2}</ReactMarkdown>
-                  <ReactMarkdown className="text-grey mb-3">{editingdata.part6_box3para3}</ReactMarkdown>
-                  <Button variant="green" className="mt-5">{editingdata.part6_box3button1}</Button>
-                </div>
-              </Col>
-            </Row>
-          </Fade>
-        </Container>
       </main>
     </div>
   )

@@ -696,11 +696,11 @@ export default function Build({ file }) {
             </Row>
             <Row className="text-center justify-content-center">
               <Col className="col-10 text-center pb-5 pe-lg-0">
-              <Link href="https://native-land.ca/">
+              <a href="https://native-land.ca/" target="_blank">
                 <Button className="btn-large px-5" variant="green">
                   NATIVELAND.CA
                 </Button>
-                </Link>
+                </a>
               </Col>
             </Row>
           </Fade>
