@@ -1184,6 +1184,10 @@ div>p {
   transition: all ease .5s;
 }
 
+.CookieConsent {
+  bottom: 70px;
+}
+
 .splash footer {
   opacity: 0;
   transform: translateY(100%);
