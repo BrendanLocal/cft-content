@@ -1,5 +1,6 @@
 import * as React from "react";
 import Container from 'react-bootstrap/Container';
+import Head from 'next/head'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
@@ -438,6 +439,11 @@ const Lang = () => {
   return (
     <div className="bg-school">
       <Header/>
+      <Head>
+        <title>{editingdata.title}</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content="#054218"></meta>
+      </Head>
       <Container className="p-5">
         <Row className="justify-content-center">
           <Col className="col-11 col-lg-10 pt-5 align-items-center my-4 pt-5">
@@ -452,14 +458,14 @@ const Lang = () => {
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
                 <Col>
-                  <h4 className="text-green">{editingdata.heatingHeader1}</h4>
+                  <h2 className="h4 text-green">{editingdata.heatingHeader1}</h2>
                   <hr/>
                 </Col>
               </Row>
               <Row>
                 <Col>
                   <label htmlFor="size">{editingdata.heatingSizeHeader}</label><br />
-                  <select name="size" value={selectSize} onChange={changeSize}>
+                  <select name="size" value={selectSize} onChange={changeSize} aria-label="size">
                     <option value="" hidden>{editingdata.select}</option>
                   <option value='5000'>less than 5000</option>
                   <option value='10000'>5000-10,000</option>
@@ -475,7 +481,7 @@ const Lang = () => {
                 </Col>
               </Row>
               <hr/>
-                <h5 className="smallCaps text-small text-green">{editingdata.heatingOtherHeader}</h5>
+                <h2 className="h5 smallCaps text-small text-green">{editingdata.heatingOtherHeader}</h2>
 
                 <Accordion>
 
@@ -489,7 +495,7 @@ const Lang = () => {
               <Row>
                 <Col>
                 <label htmlFor="type">{editingdata.heatingOtherTypeHeader}</label><br />
-                <select name="type" value={selectTypeThree} onChange={changeTypeThree}>
+                <select name="type" value={selectTypeThree} onChange={changeTypeThree} aria-label="heating Type">
                   <option value="" hidden>{editingdata.select}</option>
                   <option value='none'>{editingdata.heatingOtherType1}</option>
                   <option value='office'>{editingdata.heatingOtherType2}</option>
@@ -502,7 +508,7 @@ const Lang = () => {
               <Row>
                 <Col>
                 <label htmlFor="size">{editingdata.heatingOtherSizeHeader}</label><br />
-                <select name="size" value={selectSizeThree} onChange={changeSizeThree}>
+                <select name="size" value={selectSizeThree} onChange={changeSizeThree} aria-label="size">
                   <option value="" hidden>{editingdata.select}</option>
                   <option value='5000'>less than 5000</option>
                   <option value='10000'>5000-10,000</option>
@@ -542,7 +548,7 @@ const Lang = () => {
               <Row>
                 <Col>
                 <label htmlFor="type">{editingdata.heatingOtherTypeHeader}</label><br />
-                <select name="type" value={selectTypeFour} onChange={changeTypeFour}>
+                <select name="type" value={selectTypeFour} onChange={changeTypeFour} aria-label="heating Type">
                   <option value="" hidden>{editingdata.select}</option>
                   <option value='none'>{editingdata.heatingOtherType1}</option>
                   <option value='office'>{editingdata.heatingOtherType2}</option>
@@ -555,7 +561,7 @@ const Lang = () => {
               <Row>
                 <Col>
                 <label htmlFor="size">{editingdata.heatingOtherSizeHeader}</label><br />
-                <select name="size" value={selectSizeFour} onChange={changeSizeFour}>
+                <select name="size" value={selectSizeFour} onChange={changeSizeFour} aria-label="size">
                   <option value="" hidden>{editingdata.select}</option>
                   <option value='5000'>less than 5000</option>
                   <option value='10000'>5000-10,000</option>
@@ -595,7 +601,7 @@ const Lang = () => {
               <Row>
                 <Col>
                 <label htmlFor="type">{editingdata.heatingOtherTypeHeader}</label><br />
-                <select name="type" value={selectTypeFive} onChange={changeTypeFive}>
+                <select name="type" value={selectTypeFive} onChange={changeTypeFive} aria-label="heating Type">
                   <option value="" hidden>{editingdata.select}</option>
                   <option value='none'>{editingdata.heatingOtherType1}</option>
                   <option value='office'>{editingdata.heatingOtherType2}</option>
@@ -608,7 +614,7 @@ const Lang = () => {
               <Row>
                 <Col>
                 <label htmlFor="size">{editingdata.heatingOtherSizeHeader}</label><br />
-                <select name="size" value={selectSizeFive} onChange={changeSizeFive}>
+                <select name="size" value={selectSizeFive} onChange={changeSizeFive} aria-label="size">
                   <option value="" hidden>{editingdata.select}</option>
                   <option value='5000'>less than 5000</option>
                   <option value='10000'>5000-10,000</option>
@@ -648,7 +654,7 @@ const Lang = () => {
               <Row>
                 <Col>
                 <label htmlFor="type">{editingdata.heatingOtherTypeHeader}</label><br />
-                <select name="type" value={selectTypeSix} onChange={changeTypeSix}>
+                <select name="type" value={selectTypeSix} onChange={changeTypeSix} aria-label="heating Type">
                   <option value="" hidden>{editingdata.select}</option>
                   <option value='none'>{editingdata.heatingOtherType1}</option>
                   <option value='office'>{editingdata.heatingOtherType2}</option>
@@ -661,7 +667,7 @@ const Lang = () => {
               <Row>
                 <Col>
                 <label htmlFor="size">{editingdata.heatingOtherSizeHeader}</label><br />
-                <select name="size" value={selectSizeSix} onChange={changeSizeSix}>
+                <select name="size" value={selectSizeSix} onChange={changeSizeSix} aria-label="size">
                   <option value="" hidden>{editingdata.select}</option>
                   <option value='5000'>less than 5000</option>
                   <option value='10000'>5000-10,000</option>
@@ -756,7 +762,7 @@ const Lang = () => {
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
                 <Col>
-                  <h3 className="text-green">{editingdata.stuCommuteHeader}</h3>
+                  <h2 className="h3 text-green">{editingdata.stuCommuteHeader}</h2>
                   <p className="text-grey">Please input the following information for your students' daily school bus commute (daily round trips):</p>
                 </Col>
               </Row>
@@ -853,13 +859,13 @@ const Lang = () => {
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
                 <Col className="col-12">
-                  <h3 className="text-green">{editingdata.otherTransportHeader1}</h3>
+                  <h2 className="h3 text-green">{editingdata.otherTransportHeader1}</h2>
                   <p className="text-grey">{editingdata.otherTransportPara1}</p>
                   <hr/>
                 </Col>
                 
                 <Col>
-                  <h5 className="smallCaps text-small text-green">{editingdata.otherTransportHeader2}</h5>
+                  <h3 className="h5 smallCaps text-small text-green">{editingdata.otherTransportHeader2}</h3>
                   <Row>
                     <Col className="col-12 col-xl-4">{editingdata.otherTransportGas}</Col>
                     <Col className="col-xl-4">
@@ -886,7 +892,7 @@ const Lang = () => {
                   </Row>
                  
                   <hr/>
-                  <h5 className="smallCaps text-small text-green">Field trips by train (WITHIN SCHOOL HOURS)</h5>
+                  <h3 className="h5 smallCaps text-small text-green">Field trips by train (WITHIN SCHOOL HOURS)</h3>
                   <Row>
                     <Col className="col-10 col-xl-4">Train</Col>
                     <Col className="col-6 col-xl-4">
@@ -1097,7 +1103,7 @@ const Lang = () => {
         <Row className="justify-content-center pb-5 mb-5">
             <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
-                <h4 className="text-white tight-drop-light">{editingdata.otherbox1Header}</h4>
+                <h3 className="h4 text-white tight-drop-light">{editingdata.otherbox1Header}</h3>
                 <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox1Para}</p>
                 <Link href="business-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox1button}</a></Link>
               </div>
@@ -1105,8 +1111,8 @@ const Lang = () => {
 
             <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
-                <h4 className="text-white tight-drop-light">{editingdata.otherbox2Header}</h4>
-                <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox2Para}</p>\
+                <h3 className="h4 text-white tight-drop-light">{editingdata.otherbox2Header}</h3>
+                <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox2Para}</p>
                 <Link href="personal-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox2button}</a></Link>
               </div>
             </Col>

@@ -170,7 +170,7 @@ export default function Power({ file }) {
               <p className="large bold mb-5">{editingdata.para4}</p>
               <p className="large bold mb-5">{editingdata.para5}</p>
               <p className="large bold mb-5">{editingdata.para6}</p>
-              <p className="text-white text-left smallcaps intro-links-header op-5 mt-5 mb-3">{editingdata.header2}</p>
+              <p className="text-left smallcaps intro-links-header mt-5 mb-3">{editingdata.header2}</p>
               <a href="#video" className="btn btn-text text-left intro-links text-orange bold no-underline me-4">Watch our video</a>
               <br/>
               <a href="#the-plan" className="btn btn-text text-left intro-links text-orange bold no-underline me-4">5 Phase Approach</a>
@@ -355,7 +355,7 @@ export default function Power({ file }) {
                   </Row>
                   <Row className="justify-content-center align-items-center">
                   <Col className="col-12 col-md-9">
-                    <img className="card-drop-heavy" src="../../Gary-Zed_Headshot.jpg"/>
+                    <img className="card-drop-heavy" src="../../Gary-Zed_Headshot.jpg" alt="headshot of CEO Gary Zed"/>
                     </Col>
                   </Row>
                   <Row className="justify-content-center align-items-center">
@@ -431,10 +431,7 @@ export default function Power({ file }) {
           <Fade bottom>
             <Row className="align-items-center justify-content-center">
               <Col className="col-8">          
-              <PDFViewer 
-          backend={PDFJSBackend}
-          src='../../CFT-QA.pdf'
-        />
+                <PDFViewer backend={PDFJSBackend} src='../../CFT-QA.pdf' alt="PFT of questions and answers from CFT"/>
               </Col>
             </Row>
           </Fade>

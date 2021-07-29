@@ -59,7 +59,7 @@ const Lang = () => {
             <Col className="col-10 col-lg-7">
               <div className="bg-brown roundedBox innerShadow text-white p-5">
       
-              <h4 className="bold underline">INTRODUCTION</h4>
+              <h2 className="h4 bold underline">INTRODUCTION</h2>
 
                 <p className="mb-3">
                 Canada’s Forest Trust Corporation (the "CFT" or "We") respect your privacy and are committed to protecting it through our compliance with this policy.
@@ -136,7 +136,7 @@ const Lang = () => {
                 Please read this policy carefully to understand our policies and practices for collecting, processing, and storing your information. If you do not agree with our policies and practices, your choice is not to use our Website. By accessing or using this Website, you indicate that you understand, accept, and consent to the practices described in this policy. This policy may change from time to time (see “Changes to Our Privacy Policy”). Your continued use of this Website after we make changes indicates that you accept and consent to those changes, so please check the policy periodically for updates. We will notify you in advance of any material changes to this policy and obtain your consent to any new ways that we collect, use, and disclose your personal information.
                 </p>
 
-                <h4 className="bold underline mt-5">INFORMATION WE COLLECT ABOUT YOU</h4>
+                <h2 className="h4 bold underline mt-5">INFORMATION WE COLLECT ABOUT YOU</h2>
                 <p className="mb-3">
                 We collect and use several types of information from and about you, including:
                 </p>
@@ -182,7 +182,7 @@ const Lang = () => {
                     </Col>
                 </Row>
 
-                <h4 className="bold underline mt-5">HOW WE COLLECT INFORMATION ABOUT YOU</h4>
+                <h2 className="h4 bold underline mt-5">HOW WE COLLECT INFORMATION ABOUT YOU</h2>
 
                 <p className="mb-3">
                 We use different methods to collect your information, including through:
@@ -420,7 +420,7 @@ const Lang = () => {
                 We do not control these third parties' tracking technologies or how they are used. If you have any questions about an advertisement or other targeted content, you should contact the responsible provider directly. For more information about how you can opt out of receiving targeted advertising from many providers, see Choices About How We Use and Disclose Your Information.
                 </p>
 
-                <h4 className="bold underline mt-5">HOW WE USE YOUR INFORMATION</h4>
+                <h2 className="h4 bold underline mt-5">HOW WE USE YOUR INFORMATION</h2>
                 <p className="mb-3">
                 We use information that we collect about you or that you provide to us, including any personal information:
                 </p>
@@ -526,7 +526,7 @@ const Lang = () => {
                 </Row>
                 
 
-                <h4 className="bold underline mt-5">DISCLOSURE OF YOUR INFORMATION</h4>
+                <h2 className="h4 bold underline mt-5">DISCLOSURE OF YOUR INFORMATION</h2>
                 <p className="mb-3">
                 We may disclose aggregated information about our users, and information that does not identify any individual, without restriction.
                 </p>
@@ -631,7 +631,7 @@ const Lang = () => {
                     </Col>
                 </Row>
 
-                <h4 className="bold underline mt-5">TRANSFERRING YOUR PERSONAL INFORMATION</h4>
+                <h2 className="h4 bold underline mt-5">TRANSFERRING YOUR PERSONAL INFORMATION</h2>
                 <p className="mb-3">
                 We may transfer personal information that we collect or that you provide as described in this policy to contractors, service providers, and other third parties we use to support our business (such as analytics and search engine providers that assist us with Website improvement and optimization) and who are contractually obligated to keep personal information confidential, use it only for the purposes for which we disclose it to them, and to process the personal information with the same standards set out in this policy.
                 </p>
@@ -648,7 +648,7 @@ const Lang = () => {
                 By submitting your personal information to us or engaging with the Website, you consent to this transfer, storage, or processing.
                 </p>
 
-                <h4 className="bold underline mt-5">CHOICES ABOUT HOW WE USE AND DISCLOSE YOUR INFORMATION</h4>
+                <h2 className="h4 bold underline mt-5">CHOICES ABOUT HOW WE USE AND DISCLOSE YOUR INFORMATION</h2>
                 <p className="mb-3">
                 We strive to provide you with choices regarding the personal information you provide to us. We have created mechanisms to provide you with the following control over your information: 
                 </p>
@@ -705,7 +705,7 @@ const Lang = () => {
                     </Col>
                 </Row>
 
-                <h4 className="bold underline mt-5">DATA SECURITY</h4>
+                <h2 className="h4 bold underline mt-5">DATA SECURITY</h2>
                 <p className="mb-3">
                 The security of your personal information is very important to us. We use physical, electronic, and administrative measures designed to secure your personal information from accidental loss and from unauthorized access, use, alteration, and disclosure.
                 </p>
@@ -718,17 +718,17 @@ const Lang = () => {
                 Unfortunately, the transmission of information via the Internet is not completely secure. Although we do our best to protect your personal information, we cannot guarantee the security of your personal information transmitted to our Website. Any transmission of personal information is at your own risk. We are not responsible for circumvention of any privacy settings or security measures contained on the Website. 
                 </p>
 
-                <h4 className="bold underline mt-5">DATA RETENTION</h4>
+                <h2 className="h4 bold underline mt-5">DATA RETENTION</h2>
                 <p className="mb-3">
                 Except as otherwise permitted or required by applicable law or regulation, we will only retain your personal information for as long as necessary to fulfill the purposes we collected it for, including for the purposes of satisfying any legal, accounting, or reporting requirements. Under some circumstances we may anonymize your personal information so that it can no longer be associated with you. We reserve the right to use such anonymous and de-identified data for any legitimate business purpose without further notice to you or your consent. 
                 </p>
 
-                <h4 className="bold underline mt-5">CHILDREN UNDER THE AGE OF 13 </h4>
+                <h2 className="h4 bold underline mt-5">CHILDREN UNDER THE AGE OF 13 </h2>
                 <p className="mb-3">
                 While our Website may be visited by children under 13, we do not knowingly collect personal information from children under 13. If you are under 13, you must seek parental consent before accessing the Website and we ask that you do not provide any information on this Website or on or through any of its features, register for an account on the Website, or otherwise provide any information about yourself to us, including your name, address, telephone number, email address, or any screen name or user name you may use. If we learn we have collected or received personal information from a child under 13 without verification of parental consent, we will delete that information. If you believe we might have any information from or about a child under 13, please contact us at <a href="mailto:admin@canadasforesttrust.ca" className="text-orange">admin@canadasforesttrust.ca</a>.
                 </p>
 
-                <h4 className="bold underline mt-5">ACCESSING AND CORRECTING YOUR PERSONAL INFORMATION</h4>
+                <h2 className="h4 bold underline mt-5">ACCESSING AND CORRECTING YOUR PERSONAL INFORMATION</h2>
                 <p className="mb-3">
                 It is important that the personal information we hold about you is accurate and current. Please keep us informed if your personal information changes. By law you have the right to request access to and to correct the personal information that we hold about you.
                 </p>
@@ -786,7 +786,7 @@ const Lang = () => {
                 If you are concerned about our response or would like to correct the information provided, you may contact our <span className="bold">John Jussup</span> at <a href="mailto:jussup1@sympatico.ca" className="text-orange">jussup1@sympatico.ca</a>.
                 </p>
 
-                <h4 className="bold underline mt-5">WITHDRAWING YOUR CONSENT</h4>
+                <h2 className="h4 bold underline mt-5">WITHDRAWING YOUR CONSENT</h2>
                 <p className="mb-3">
                 Where you have provided your consent to the collection, use, and transfer of your personal information, you may have the legal right to withdraw your consent under certain circumstances. To withdraw your consent, if applicable, contact us at <a href="mailto:privacy@canadasforesttrust.ca" className="text-orange">privacy@canadasforesttrust.ca</a>.
                 </p>
@@ -795,12 +795,12 @@ const Lang = () => {
                 Please note that if you withdraw your consent we may not be able to provide you with a particular product or service. We will explain the impact to you at the time to help you with your decision. 
                 </p>
 
-                <h4 className="bold underline mt-5">CHANGES TO OUR PRIVACY POLICY</h4>
+                <h2 className="h4 bold underline mt-5">CHANGES TO OUR PRIVACY POLICY</h2>
                 <p className="mb-3">
                 It is our policy to post any changes we make to our privacy policy on this page. We include the date the privacy policy was last revised at the top of the page. You are responsible for periodically visiting our Website and this privacy policy to check for any changes.
                 </p>
 
-                <h4 className="bold underline mt-5">CONTACT INFORMATION AND CHALLENGING COMPLIANCE</h4>
+                <h2 className="h4 bold underline mt-5">CONTACT INFORMATION AND CHALLENGING COMPLIANCE</h2>
                 <p className="mb-3">
                 We welcome your questions, comments, and requests regarding this privacy policy and our privacy practices. Please contact us at: 
                 </p>

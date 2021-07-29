@@ -96,7 +96,7 @@ return(
   <Container fluid className="bg-brown text-white p-5">
     <Row >
       <Col className="col-12 col-md-6 col-lg-3 p-3">
-        <h4>Canada's Forest Trust</h4>
+        <h3 className="h4">Canada's Forest Trust</h3>
         <Link href="/home"><a className="btn text-orange textButton text-left d-block no-underline">Home</a></Link>
         <Link href="/inside-cft"><a className="btn text-orange textButton text-left d-block no-underline">Inside CFT</a></Link>
         <Link href="/inside-cft#what"><a className="btn text-orange textButton text-left d-block no-underline">What is a Smart Forest?</a></Link>
@@ -107,7 +107,7 @@ return(
         <Link href="/build-your-smart-forest#communal"><a className="btn text-orange textButtonAlt text-left d-block ms-3">COMMUNITIES</a></Link>
       </Col>
       <Col className="col-12 col-md-6 col-lg-3 p-3">
-        <h4>Calculate Your Impact</h4>
+        <h3 className="h4">Calculate Your Impact</h3>
         <Link href="/carbon-calculator"><a className="btn text-orange textButton text-left d-block no-underline">Carbon Calculator</a></Link>
         <Link href="/business-calculator"><a className="btn text-orange textButtonAlt arrow-before text-left d-block ms-3">Corporate</a></Link>
         <Link href="/school-calculator"><a className="btn text-orange textButtonAlt text-left d-block ms-3">School</a></Link>
@@ -118,7 +118,7 @@ return(
         <Link href="/smart-forest-personal"><a className="btn text-orange textButtonAlt text-left d-block ms-3">Personal</a></Link>
       </Col>
       <Col className="col-12 col-md-6 col-lg-3 p-3">
-        <h4>Other</h4>
+        <h3 className="h4">Other</h3>
         <Link href="/portal"><a className="btn text-orange textButton text-left d-block no-underline">Sign In</a></Link>
         <Link href="/contact"><a className="btn text-orange textButton text-left d-block no-underline">Contact Us</a></Link>
         {/* <Link href="/annual-reports"><a className="btn text-orange textButton text-left d-block">Annual Reports</a></Link>
@@ -127,7 +127,7 @@ return(
         <Link href="/commitment"><a className="btn text-orange textButton text-left d-block">Commitment to a Fair & Equitable workplace</a></Link> */}
       </Col>
       <Col className="col-12 col-md-6 col-lg-3 p-3 pe-4">
-      <h4>Join Our Newsletter</h4>
+        <h3 className="h4">Join Our Newsletter</h3>
       <p className="mb-3 op-8">Provide your email to receive regular updates and the latest Canada’s Forest Trust news.</p>
       <NewsletterForm/>
       
