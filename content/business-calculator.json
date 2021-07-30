@@ -1,7 +1,7 @@
 {
   "title":"Canada's Forest Trust",
   "header":"Corporate Carbon Calculator",
-  "para1":"Calculate how much carbon your corporation must offset to reach net-zero",
+  "para1":"Calculate how much carbon your corporation must sequester to reach net-zero",
   "select":"Select...",
   "businessHeader":"Heating & Electricity",
   "businessTypeHeader":"What type of business do you have?",
@@ -120,7 +120,7 @@
   "dataDisclaimer":"This is an estimate of your average carbon footprint per year.",
   
   "box1Header":"NEXT STEP",
-  "box1Para":"Calculate how many hectares of Smart Forest you need to invest in to reach a Net-Zero emissions target.",
+  "box1Para":"Calculate how many acres of Smart Forest you need to invest in to reach a Net-Zero emissions target.",
   "box1Button":"Calculate Your Net-Zero Target",
 
   "otherHeader":"Other Carbon Calculators",

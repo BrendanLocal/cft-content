@@ -205,7 +205,10 @@ export default function App({ file, href, children}) {
             <div className="bg-brown p-5 innerShadow roundedBox">
               <p className="smallCaps text-orange">{editingdata.nextHeader}</p>
               <h3 className="text-white mb-4 px-2 px-lg-5">{editingdata.nextPara}</h3>
-              <Button className="btn-large mt-1" variant="green">{editingdata.nextButton}</Button>
+              {/* FIXME not sure where this link is supposed to go  */}
+              <Link href="/net-negative-personal">
+                <Button className="btn-large mt-1" variant="green">{editingdata.nextButton}</Button>
+              </Link>
             </div>
           </Col>
         </Row>
