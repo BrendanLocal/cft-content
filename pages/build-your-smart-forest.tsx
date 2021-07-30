@@ -624,8 +624,8 @@ export default function Build({ file }) {
                 <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
               </Col>
             </Row>
-            <Row className="justify-content-center align-items-stretch px-lg-5 mx-lg-5 px-xl-5 mx-xl-5 mb-5 pb-5">
-                <Col className="col-10 col-md-9 col-lg-4 pe-lg-0 mb-4">
+            <Row className="justify-content-center px-lg-5 mx-lg-5 px-xl-5 mx-xl-5 mb-5 pb-5">
+                <Col className="col-10 col-md-9 col-lg-4 pe-lg-0 px-xl-3 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.corpcalc_box1para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.corpcalc_box1para2}</ReactMarkdown>
@@ -635,7 +635,7 @@ export default function Build({ file }) {
                   </Link>
                 </div>
               </Col>
-              <Col className="col-10 col-md-9 col-lg-4 pe-lg-0 mb-4">
+              <Col className="col-10 col-md-9 col-lg-4 pe-lg-0 px-xl-3 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.corpcalc_box2para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.corpcalc_box2para2}</ReactMarkdown>
@@ -645,7 +645,7 @@ export default function Build({ file }) {
                   </Link>
                 </div>
               </Col>
-              <Col className="col-10 col-md-9 col-lg-4 pe-lg-0 mb-4">
+              <Col className="col-10 col-md-9 col-lg-4 pe-lg-0 px-xl-3 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.corpcalc_box3para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.corpcalc_box3para2}</ReactMarkdown>

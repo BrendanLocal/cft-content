@@ -55,12 +55,12 @@ const DigitalSign = ()=> {
     <React.Fragment>
       <Row className="justify-content-center text-white mb-5 px-lg-5 px-xl-0">
         <Col className="col-10 col-md-9 col-lg-3 col-xl-3 mb-4">
-          <label className="text-small" htmlFor="forest-name">Choose a name for your forest:</label>
+          <label className="text-small" htmlFor="forest-name">Choose a name for your forest (15 character limit):</label>
           <br />
-          <input className="mb-3 no-border input-height" name="forest-name" onChange={changeName} type="text" placeholder="Forest Name" />
-          <label className="text-small" htmlFor="forest-name">How many acres is your forest:</label>
+          <input className="mb-3 no-border input-height" name="forest-name" onChange={changeName} type="text" maxLength={18} placeholder="Forest Name" />
+          <label className="text-small" htmlFor="forest-name">How many acres is your forest (8 character limit):</label>
           <br />
-          <input className="mb-3 no-border input-height" name="forest-name" onChange={changeAcres} type="text" placeholder="# of acres" />
+          <input className="mb-3 no-border input-height" name="forest-name" onChange={changeAcres} type="text" maxLength={8} placeholder="# of acres" />
           <label className="text-small" htmlFor="copyOptions">Select copy for the bottom of the sign:</label>
           <br />
           <select className="mb-3 no-border input-height" name="copyOptions"  onChange={changeCopy} value={selectCopy} >
@@ -82,7 +82,7 @@ const DigitalSign = ()=> {
             <label className="text-small mb-2" htmlFor="forest-name">Upload an image for your sign:</label>
           <div className="upload-button mb-3">
             <ImageUpload
-            imageSrc={imageSrc}
+              imageSrc={imageSrc}
               handleImageSelect={handleImageSelect}
               setImageSrc={setImageSrc}
             />
