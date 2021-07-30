@@ -687,7 +687,7 @@ export default function Build({ file }) {
           </Fade>
 
           <Fade bottom>
-            <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
+          <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
               <Col className="col-10 col-md-8 col-lg-9 col-xl-7 pe-lg-0">
                 <h3 className="text-center text-orange bold tight-drop-light mt-5">
                   Find out whose Indigenous Territory your corporation is on and see the Indigenous territory and community leaders to build relations.
@@ -840,8 +840,8 @@ export default function Build({ file }) {
                 <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
               </Col>
             </Row>
-            <Row className="justify-content-center  align-items-stretch px-lg-5 mx-lg-5 px-xl-5 mx-xl-5 mb-5 pb-5">
-                <Col className="col-10 col-md-9 col-lg-4 pe-lg-0 mb-4">
+            <Row className="justify-content-center px-lg-5 mx-lg-5 px-xl-5 mx-xl-5 mb-5 pb-5">
+                <Col className="col-10 col-md-9 col-lg-4 pe-lg-0 px-xl-3 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.schoolcalc_box1para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.schoolcalc_box1para2}</ReactMarkdown>
@@ -851,7 +851,7 @@ export default function Build({ file }) {
                   </Link>
                 </div>
               </Col>
-              <Col className="col-10 col-md-9 col-lg-4 pe-lg-0 mb-4">
+              <Col className="col-10 col-md-9 col-lg-4 pe-lg-0 px-xl-3 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.schoolcalc_box2para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.schoolcalc_box2para2}</ReactMarkdown>
@@ -861,7 +861,7 @@ export default function Build({ file }) {
                   </Link>
                 </div>
               </Col>
-              <Col className="col-10 col-md-9 col-lg-4 pe-lg-0 mb-4">
+              <Col className="col-10 col-md-9 col-lg-4 pe-lg-0 px-xl-3 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.schoolcalc_box3para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.schoolcalc_box3para2}</ReactMarkdown>
@@ -903,7 +903,7 @@ export default function Build({ file }) {
           </Fade>
 
           <Fade bottom>
-            <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
+          <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
               <Col className="col-10 col-md-8 col-lg-9 col-xl-7 pe-lg-0">
                 <h3 className="text-center text-orange bold tight-drop-light mt-5">
                   Find out whose Indigenous Territory your school is on and see the Indigenous territory and community leaders to build relations.
@@ -1038,8 +1038,8 @@ export default function Build({ file }) {
                 <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
               </Col>
             </Row>
-            <Row className="justify-content-center  align-items-stretch px-lg-5 mx-lg-5 px-xl-5 mx-xl-5 mb-5 pb-5">
-                <Col className="col-10 col-md-9 col-lg-4 pe-lg-0 mb-4">
+            <Row className="justify-content-center px-lg-5 mx-lg-5 px-xl-5 mx-xl-5 mb-5 pb-5">
+                <Col className="col-10 col-md-9 col-lg-4 pe-lg-0 px-xl-3 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.legacycalc_box1para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.legacycalc_box1para2}</ReactMarkdown>
@@ -1049,7 +1049,7 @@ export default function Build({ file }) {
                   </Link>
                 </div>
               </Col>
-              <Col className="col-10 col-md-9 col-lg-4 pe-lg-0 mb-4">
+              <Col className="col-10 col-md-9 col-lg-4 pe-lg-0 px-xl-3 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.legacycalc_box2para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.legacycalc_box2para2}</ReactMarkdown>
@@ -1059,7 +1059,7 @@ export default function Build({ file }) {
                   </Link>
                 </div>
               </Col>
-              <Col className="col-10 col-md-9 col-lg-4 pe-lg-0 mb-4">
+              <Col className="col-10 col-md-9 col-lg-4 pe-lg-0 px-xl-3 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.legacycalc_box3para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.legacycalc_box3para2}</ReactMarkdown>
@@ -1101,7 +1101,7 @@ export default function Build({ file }) {
           </Fade>
 
           <Fade bottom>
-            <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
+          <Row className="pt-5 align-items-center justify-content-center mt-5 mb-3">
               <Col className="col-10 col-md-8 col-lg-9 col-xl-7 pe-lg-0">
                 <h3 className="text-center text-orange bold tight-drop-light mt-5">
                   Find out whose Indigenous Territory your home is on and see the Indigenous territory and community leaders to build relations.
@@ -1231,8 +1231,8 @@ export default function Build({ file }) {
                 <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
               </Col>
             </Row>
-            <Row className="justify-content-center  align-items-stretch px-lg-5 mx-lg-5 px-xl-5 mx-xl-5 mb-5 pb-5">
-                <Col className="col-10 col-md-9 col-lg-4 pe-lg-0 mb-4">
+            <Row className="justify-content-center px-lg-5 mx-lg-5 px-xl-5 mx-xl-5 mb-5 pb-5">
+                <Col className="col-10 col-md-9 col-lg-4 pe-lg-0 px-xl-3 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.communalcalc_box1para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.communalcalc_box1para2}</ReactMarkdown>
@@ -1242,7 +1242,7 @@ export default function Build({ file }) {
                   </Link>
                 </div>
               </Col>
-              <Col className="col-10 col-md-9 col-lg-4 pe-lg-0 mb-4">
+              <Col className="col-10 col-md-9 col-lg-4 pe-lg-0 px-xl-3 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.communalcalc_box2para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.communalcalc_box2para2}</ReactMarkdown>
@@ -1252,12 +1252,12 @@ export default function Build({ file }) {
                   </Link>
                 </div>
               </Col>
-              <Col className="col-10 col-md-9 col-lg-4 pe-lg-0 mb-4">
+              <Col className="col-10 col-md-9 col-lg-4 pe-lg-0 px-xl-3 mb-4">
                 <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.communalcalc_box3para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.communalcalc_box3para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-3">{editingdata.communalcalc_box3para3}</ReactMarkdown>
-                  <Link href="/net-zero-personal">
+                  <Link href="/net-negative-personal">
                     <Button variant="green" className="calc-btn">{editingdata.communalcalc_box3button1}</Button>
                   </Link>
                 </div>

@@ -244,6 +244,11 @@ font-weight: 600;
   line-height: 14px;
 }
 
+.x-small {
+  font-size: 10px;
+  line-height: 10px;
+}
+
  .dropdown-text {
    font-size: 14px;
  }
@@ -1187,16 +1192,13 @@ div>p {
 .CookieConsent {
   bottom: 70px;
   z-index: 999999!important;
+  background-color: #212529!important;
 }
 
-.CookieConsent.button {
-  color: #F9F9F8!important;
-}
 
 .splash footer {
   opacity: 0;
   transform: translateY(100%);
-
   transition: none;
 }
 
@@ -2576,9 +2578,9 @@ color: #054217;
 
 .signImageLogo {
   position: absolute;
-  top: 50%;
+  top: 58%;
   right: 21%;
-  width: 11%;
+  width: 7%;
 }
 
 /* Search */
