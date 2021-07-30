@@ -89,7 +89,8 @@ const DigitalSign = ()=> {
             <option value="signbg_green.jpg">Summer</option>
           </select>
 
-            <label className="text-small mb-2" htmlFor="forest-name">Upload an image for your sign:</label>
+            <label className="text-small mb-2 bold" htmlFor="forest-name">Upload an image for your sign:</label>
+            
           <div className="upload-button mb-3">
             <ImageUpload
               imageSrc={imageSrc}

@@ -1193,6 +1193,15 @@ div>p {
   bottom: 70px;
   z-index: 999999!important;
   background-color: #212529!important;
+  box-shadow: 0px -1px 10px rgba(0,0,0,.5);
+}
+
+#rcc-confirm-button {
+  background-color: #00823B!important;
+  color: #fff!important;
+  border-radius: 6px!important;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 
