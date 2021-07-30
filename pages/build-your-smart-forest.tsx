@@ -35,7 +35,6 @@ configureAnchors({offset: 20, scrollDuration: 200, scrollUrlHashUpdate: false})
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
-
 export default function Build({ file }) {
 
   const Lang = () => {
@@ -735,9 +734,6 @@ export default function Build({ file }) {
                     <Dropdown.Menu>
                       <Row className="p-4">
                         <Col>
-                          <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
-                          {editingdata.schooldropdown_box1para0}
-                          </ReactMarkdown>
                           <h5 className="text-green mb-0 thin">
                             <ReactMarkdown>
                             {editingdata.schooldropdown_box1header1}
@@ -806,6 +802,11 @@ export default function Build({ file }) {
                     <Dropdown.Menu>
                       <Row className="p-4">
                         <Col>
+                        <h5 className="text-green medium mb-0 thin">
+                            <ReactMarkdown>
+                            {editingdata.schooldropdown_box1para0}
+                            </ReactMarkdown>
+                          </h5>
                         <h5 className="text-green medium mb-0 thin"><ReactMarkdown>{editingdata.schooldropdown_pointsheader}</ReactMarkdown></h5>
                         <ul className="text-grey dropdown-text checkMark px-1 mx-1">
                           <li><ReactMarkdown>{editingdata.schooldropdown_pointspara1}</ReactMarkdown></li>

@@ -21,7 +21,7 @@ const Lang = () => {
     }
     return (language)
   }
-
+ 
   export default function Contact({ file, href, children}) {
   const formOptions = {
     label: 'Contact Page',
