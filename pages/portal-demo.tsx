@@ -188,7 +188,7 @@ return (
     </meta>
   </Head>
 
-  <main className="bg-green ">
+  <main className="bg-green">
     <Container fluid className="portalLogo">
         <Row>
           <Col className="p-4">
