@@ -55,7 +55,7 @@ export default function CarbonCalc({ file, href, children}) {
         </Row>
 
         <Row className="justify-content-center pb-5 mb-5">
-          <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+        <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
               <h4 className="text-white tight-drop-light">{editingdata.box1Header}</h4>
               <p className="flex-fill pb-3 text-white tight-drop">{editingdata.box1Para}</p>
@@ -65,7 +65,7 @@ export default function CarbonCalc({ file, href, children}) {
             </div>
           </Col>
 
-          <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+          <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
               <h4 className="text-white tight-drop-light">{editingdata.box2Header}</h4>
               <p className="flex-fill pb-3 text-white tight-drop">{editingdata.box2Para}</p>
@@ -75,7 +75,7 @@ export default function CarbonCalc({ file, href, children}) {
             </div>
           </Col>
 
-          <Col className="col-12 col-md-4 col-lg-3 col-xl-2 pe-lg-0 m-3">
+          <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
               <h4 className="text-white tight-drop-light">{editingdata.box3Header}</h4>
               <p className="flex-fill pb-3 text-white tight-drop">{editingdata.box2Para}</p>
