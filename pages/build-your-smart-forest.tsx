@@ -17,6 +17,7 @@ import Parallax from"parallax-js";
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from"swiper";
 import { Swiper, SwiperSlide } from"swiper/react";
 import { Slide } from"react-slideshow-image";
+import Modal from 'react-bootstrap/Modal';
 import ReactMarkdown from"react-markdown";
 import {
   useGithubJsonForm,
@@ -26,7 +27,7 @@ import DigitalSign from "../components/digitalSign";
 import { useRouter } from "next/router";
 import ScrollableAnchor from "react-scrollable-anchor";
 import Header from "../components/header";
-import PDFViewer from '../components/PDFViewer';
+import PDFViewer from '../components/PDFViewer'; 
 import PDFJSBackend from '../middlewares/pdfjs';
 
 import { configureAnchors } from 'react-scrollable-anchor'
@@ -263,6 +264,12 @@ export default function Build({ file }) {
       {name: 'part8_box3para', component: 'markdown' }],
   };
 
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+
   const [editingdata, form] = useGithubJsonForm(file, formOptions);
   usePlugin(form);
   useGithubToolbarPlugins();
@@ -308,6 +315,85 @@ export default function Build({ file }) {
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#054218"></meta>
       </Head>
+
+      <Modal show={show} className="d-flex align-items-center" onHide={handleClose}>
+        <Modal.Header className="d-none" closeButton>
+          <Modal.Title className="d-none"></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        <Row id="corp-about" className="p-4 justify-content-center align-items-center">
+          <Col>
+          <h5 className="text-green mb-0 thin">
+          <ReactMarkdown>
+          {editingdata.corpdropdown_box1header1}
+          </ReactMarkdown>
+          </h5>
+            <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
+            {editingdata.corpdropdown_box1para1}
+            </ReactMarkdown>
+            <h5 className="text-green mb-0 thin">
+          <ReactMarkdown>
+          {editingdata.corpdropdown_box1header2}
+          </ReactMarkdown>
+          </h5>
+            <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
+            {editingdata.corpdropdown_box1para2}
+            </ReactMarkdown>
+            <h5 className="text-green mb-0 thin">
+          <ReactMarkdown>
+          {editingdata.corpdropdown_box1header3}
+          </ReactMarkdown>
+          </h5>
+            <ReactMarkdown className="text-grey mt-0 dropdown-text">
+            {editingdata.corpdropdown_box1para3}
+            </ReactMarkdown>
+          </Col>
+        </Row>
+        <Row id="corp-quotes" className="p-4 d-none">
+          <Col>
+          <h5 className="text-green medium mb-0 thin">
+          <ReactMarkdown>
+          {editingdata.corpdropdown_quote1para}
+          </ReactMarkdown>
+          </h5>
+          <ReactMarkdown>
+          {editingdata.corpdropdown_quote1name}
+          </ReactMarkdown>
+          <ReactMarkdown className="text-small mb-4">
+          {editingdata.corpdropdown_quote1title}
+          </ReactMarkdown>
+          <h5 className="text-green medium mb-0 thin">
+          <ReactMarkdown>
+          {editingdata.corpdropdown_quote2para}
+          </ReactMarkdown>
+          </h5>
+          <ReactMarkdown>
+          {editingdata.corpdropdown_quote2name}
+          </ReactMarkdown>
+          <ReactMarkdown className="text-small">
+          {editingdata.corpdropdown_quote2title}
+          </ReactMarkdown>
+          </Col>
+        </Row>
+        <Row id="corp-bottom" className="p-4 d-none">
+          <Col>
+          <h5 className="text-green medium mb-0 thin"><ReactMarkdown>{editingdata.corpdropdown_pointsheader}</ReactMarkdown></h5>
+          <ul className="text-grey dropdown-text checkMark px-1 mx-1">
+            <li><ReactMarkdown>{editingdata.corpdropdown_pointspara1}</ReactMarkdown></li>
+            <li><ReactMarkdown>{editingdata.corpdropdown_pointspara2}</ReactMarkdown></li>
+            <li><ReactMarkdown>{editingdata.corpdropdown_pointspara3}</ReactMarkdown></li>
+            <li><ReactMarkdown>{editingdata.corpdropdown_pointspara4}</ReactMarkdown></li>
+            <li><ReactMarkdown>{editingdata.corpdropdown_pointspara5}</ReactMarkdown></li>
+            <li><ReactMarkdown>{editingdata.corpdropdown_pointspara6}</ReactMarkdown></li>
+          </ul>
+          </Col>
+        </Row>
+        </Modal.Body>
+        <Modal.Footer className="p-0">
+          <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleClose}>CLOSE</Button>
+        </Modal.Footer>
+      </Modal>
+
 
       <Row className="justify-content-left p-0 m-0 d-none d-lg-block d-xl-block">
         <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
@@ -511,94 +597,21 @@ export default function Build({ file }) {
             <Row className="text-center justify-content-center mb-4">
               <Col className="col-11 col-md-8 mb-4">
                 <Row className="horizTab justify-content-center">
-                  <Dropdown className="col-10 col-lg-3 col-xl-4">
-                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
-                      {editingdata.corpdropdown_menuheader1}
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                      <Row className="p-4">
-                        <Col>
-                        <h5 className="text-green mb-0 thin">
-                        <ReactMarkdown>
-                        {editingdata.corpdropdown_box1header1}
-                        </ReactMarkdown>
-                        </h5>
-                          <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
-                          {editingdata.corpdropdown_box1para1}
-                          </ReactMarkdown>
-                          <h5 className="text-green mb-0 thin">
-                        <ReactMarkdown>
-                        {editingdata.corpdropdown_box1header2}
-                        </ReactMarkdown>
-                        </h5>
-                          <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
-                          {editingdata.corpdropdown_box1para2}
-                          </ReactMarkdown>
-                          <h5 className="text-green mb-0 thin">
-                        <ReactMarkdown>
-                        {editingdata.corpdropdown_box1header3}
-                        </ReactMarkdown>
-                        </h5>
-                          <ReactMarkdown className="text-grey mt-0 dropdown-text">
-                          {editingdata.corpdropdown_box1para3}
-                          </ReactMarkdown>
-                        </Col>
-                      </Row>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                  <Dropdown className="col-10 col-lg-4 col-xl-4">
-                  <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
-                      {editingdata.quotes}
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                      <Row className="p-4">
-                        <Col>
-                        <h5 className="text-green medium mb-0 thin">
-                        <ReactMarkdown>
-                        {editingdata.corpdropdown_quote1para}
-                        </ReactMarkdown>
-                        </h5>
-                        <ReactMarkdown>
-                        {editingdata.corpdropdown_quote1name}
-                        </ReactMarkdown>
-                        <ReactMarkdown className="text-small mb-4">
-                        {editingdata.corpdropdown_quote1title}
-                        </ReactMarkdown>
-                        <h5 className="text-green medium mb-0 thin">
-                        <ReactMarkdown>
-                        {editingdata.corpdropdown_quote2para}
-                        </ReactMarkdown>
-                        </h5>
-                        <ReactMarkdown>
-                        {editingdata.corpdropdown_quote2name}
-                        </ReactMarkdown>
-                        <ReactMarkdown className="text-small">
-                        {editingdata.corpdropdown_quote2title}
-                        </ReactMarkdown>
-                        </Col>
-                      </Row>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                  <Dropdown className="col-10 col-lg-4 col-xl-4">
-                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
-                      {editingdata.corpdropdown_menuheader3}
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                      <Row className="p-4">
-                        <Col>
-                        <h5 className="text-green medium mb-0 thin"><ReactMarkdown>{editingdata.corpdropdown_pointsheader}</ReactMarkdown></h5>
-                        <ul className="text-grey dropdown-text checkMark px-1 mx-1">
-                          <li><ReactMarkdown>{editingdata.corpdropdown_pointspara1}</ReactMarkdown></li>
-                          <li><ReactMarkdown>{editingdata.corpdropdown_pointspara2}</ReactMarkdown></li>
-                          <li><ReactMarkdown>{editingdata.corpdropdown_pointspara3}</ReactMarkdown></li>
-                          <li><ReactMarkdown>{editingdata.corpdropdown_pointspara4}</ReactMarkdown></li>
-                          <li><ReactMarkdown>{editingdata.corpdropdown_pointspara5}</ReactMarkdown></li>
-                          <li><ReactMarkdown>{editingdata.corpdropdown_pointspara6}</ReactMarkdown></li>
-                        </ul>
-                        </Col>
-                      </Row>
-                    </Dropdown.Menu>
-                  </Dropdown>
+                  <Col className="col-10 col-lg-3 col-xl-4">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="corp-about">
+                      ABOUT
+                    </a>                 
+                  </Col>
+                  <Col className="col-10 col-lg-3 col-xl-4">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} id="#corp-quotes">
+                      QUOTES
+                    </a>                 
+                  </Col>
+                  <Col className="col-10 col-lg-3 col-xl-4">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} id="#corp-bottom">
+                      BOTTOM LINE
+                    </a>                 
+                  </Col>
                 </Row>
               </Col>
             </Row>

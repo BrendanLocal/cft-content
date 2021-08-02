@@ -1463,7 +1463,7 @@ footer {
 }
 
 .intro-links:hover {
-transform: translateY(3px);
+transform: translateY(3px)!important;
 transition: all .5s ease;
 }
 
@@ -1477,7 +1477,6 @@ transition: all .5s ease;
   font-size: 14px;
   letter-spacing: 0.1px!important;
   z-index:999;
-transition: transform .5s ease;
 }
 
 .down-links:after {
@@ -1495,7 +1494,11 @@ transition: transform .5s ease;
 }
 
 .dropdown-links {
-  font-size: 15px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 900;
+  margin-top: 10px;
+  text-transform: uppercase;
   text-decoration: none!important;
   box-shadow: none!important;
 }
