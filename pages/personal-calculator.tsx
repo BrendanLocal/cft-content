@@ -661,6 +661,9 @@ export default function App({ file, href, children}) {
 
   /* calculate the 'total' here by adding on the other subtotals */
   let total = vehicleSub + totalBuild + (flightSub/1000) + (publicTransportSub/1000);
+  if (typeof window !== 'undefined') {
+  localStorage.setItem('personalfootprint', String(total));
+  }
 
 
 

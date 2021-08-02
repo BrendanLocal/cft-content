@@ -9,7 +9,7 @@ import { GetStaticProps } from "next";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 import { useGithubJsonForm, useGithubToolbarPlugins } from "react-tinacms-github";
 import { usePlugin } from "tinacms";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../components/header";
 
 const Lang = () => {
@@ -116,6 +116,15 @@ export default function App({ file, href, children}) {
     setDuration(event.target.value);
   }
 
+
+  
+  
+  useEffect(() => {
+
+  const schoolfootprint = localStorage.getItem('schoolfootprint');
+  setFootprint(Number(schoolfootprint));
+  },[])
+
   return (
     <div className="bg-school">
       <Header/>
@@ -141,7 +150,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="footprint">{editingdata.emissionsCarbonHeader}</label>
                   <br />
-                  <input className="mb-4" onChange={changeFootprint} name="type" type="number" min="0" onKeyPress={(event) => {
+                  <input className="mb-4" value={footprint}  onChange={changeFootprint} name="type" type="number" min="0" onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                   }  placeholder={editingdata.emissionsPlaceholder}/>
                   {editingdata.emissionsCarbon}<Link href="school-calculator"><a className="underline modal-btn">{editingdata.emissionsLink}</a></Link>

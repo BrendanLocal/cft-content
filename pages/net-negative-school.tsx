@@ -9,7 +9,7 @@ import { GetStaticProps } from "next";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 import { useGithubJsonForm, useGithubToolbarPlugins } from "react-tinacms-github";
 import { usePlugin } from "tinacms";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../components/header";
 
 const Lang = () => {
@@ -23,15 +23,6 @@ const Lang = () => {
 }
 
 
-const NodeCache = require( "node-cache" );
-const myCache = new NodeCache();
-
-const personalTotal = myCache.get( "personalTotal" );
-if ( personalTotal == undefined ){
-  console.log("oops!")
-} else {
-  console.log(personalTotal)
-}
 
 export default function App({ file, href, children}) {
   
@@ -100,11 +91,28 @@ export default function App({ file, href, children}) {
   const [regionArray, setRegionArray] = React.useState({
     carbon: {BC:500,	Prairies:252,	Ontario:347,	Quebec:347,	Atlantic:134 }
   });
+
+ 
   const [region, setRegion] = React.useState("");
   const [footprint, setFootprint] = React.useState(0);
   const [duration, setDuration] = React.useState(0);
+  const [negative, setNegative] = React.useState(0);
+
+
+  useEffect(() => {
+  const schoolfootprint = localStorage.getItem('schoolfootprint');
+  setFootprint(Number(schoolfootprint));
+  },[])
+
+
+
+
 
   var plantHectares = (duration*footprint)/regionArray.carbon[region];
+  
+  if(negative > 0){
+    plantHectares = plantHectares * negative;
+  }
   var plantTrees = plantHectares*2470;
   const changeRegion = (event) => {
     setRegion(event.target.value);
@@ -114,6 +122,9 @@ export default function App({ file, href, children}) {
   }
   const changeDuration = (event) => {
     setDuration(event.target.value);
+  }
+  const changeNegative = (event) => {
+    setNegative(event.target.value);
   }
 
   return (
@@ -141,7 +152,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="footprint">{editingdata.emissionsCarbonHeader}</label>
                   <br />
-                  <input className="mb-4" onChange={changeFootprint} name="type" type="number" min="0" onKeyPress={(event) => {
+                  <input className="mb-4" value={footprint} onChange={changeFootprint} name="type" type="number" min="0" onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                   }  placeholder={editingdata.emissionsPlaceholder}/>
                   {editingdata.emissionsCarbon}<Link href="school-calculator"><a className="underline modal-btn">{editingdata.emissionsLink}</a></Link>
@@ -184,6 +195,22 @@ export default function App({ file, href, children}) {
                     <option value='60'>{editingdata.emissionsTime13}</option>
                     <option value='80'>{editingdata.emissionsTime14}</option>
                     <option value='100'>{editingdata.emissionsTime15}</option>
+                  </select>
+                </Col>
+              </Row>
+
+              <hr/>
+              <Row>
+                <Col>
+                  <label htmlFor="additional">Plant it forward by adding</label>
+                  <br />
+                  <select name="additional" value={negative} onChange={changeNegative}>
+                    <option value="" hidden>Select...</option>
+                    <option value='1.05'>5%</option>
+                    <option value='1.1'>10%</option>
+                    <option value='1.15'>15%</option>
+                    <option value='1.2'>20%</option>
+                    <option value='1.25'>25%</option>
                   </select>
                 </Col>
               </Row>
@@ -256,7 +283,7 @@ export const getStaticProps: GetStaticProps = async function({preview, previewDa
   if (preview) {
     return getGithubPreviewProps({
       ...previewData,
-      fileRelativePath: 'content/smart-forest-calculator.json',
+      fileRelativePath: 'content/net-negative-personal.json',
       parse: parseJson,
     })
   }
@@ -266,8 +293,8 @@ export const getStaticProps: GetStaticProps = async function({preview, previewDa
       error: null,
       preview: false,
       file: {
-        fileRelativePath: 'content/smart-forest-calculator.json',
-        data: (await import('../content/smart-forest-calculator.json')).default,
+        fileRelativePath: 'content/net-negative-personal.json',
+        data: (await import('../content/net-negative-personal.json')).default,
       },
     },
   }

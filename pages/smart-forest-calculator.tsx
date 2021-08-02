@@ -80,7 +80,7 @@ export default function CarbonCalc({ file, href, children}) {
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
               <h4 className="text-white tight-drop-light">Corporate</h4>
               <p className="flex-fill pb-3 text-white tight-drop">Calculate how many acres your corporation must invest in to reach a net-zero emissions target</p>
-              <Link href="smart-forest-corp">
+              <Link href="/smart-forest-corp">
                 <a className="btn btn-text text-left text-orange bold no-underline tight-drop">SELECT</a>
               </Link>
             </div>

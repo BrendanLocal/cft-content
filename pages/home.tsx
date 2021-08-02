@@ -1,12 +1,11 @@
-import React, { useState, useRef, useEffect, Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Head from 'next/head'
 import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { GetStaticProps } from 'next'
 import { usePlugin } from 'tinacms'
-import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github'
-import { useMarkdownForm } from 'next-tinacms-markdown'
+import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -15,7 +14,7 @@ import styles from '../styles/Home.module.css'
 import Fade from 'react-reveal/Fade';
 import Modal from 'react-bootstrap/Modal';
 import ReactPlayer from 'react-player'
-import { Parallax, Background } from 'react-parallax';
+import { Parallax } from 'react-parallax';
 import ReactMarkdown from 'react-markdown'
 import Header from "../components/header";
 
@@ -91,7 +90,6 @@ export default function Home({ file, href, children}) {
   const [editingdata, form] = useGithubJsonForm(file, formOptions)
   usePlugin(form)
   useGithubToolbarPlugins()
-  
 
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
@@ -110,10 +108,18 @@ export default function Home({ file, href, children}) {
     });
     
     // Track all div containers that have an `id` applied
-    document.querySelectorAll('div[id]').forEach((id) => {
-      observer.observe(id);});
-  },[]);
+    document.querySelectorAll('div.page-section').forEach((id) => {
+      observer.observe(id);
+    });
 
+    const hash = window.location.hash;
+    if (hash) {
+      const container = document.getElementById(hash.substring(1));
+      if (container) {
+        container.scrollIntoView();
+      }
+    }
+  }, []);
 
   return (
     <div className={styles.homeParallax}>
@@ -152,25 +158,13 @@ export default function Home({ file, href, children}) {
             <li className="p-0" data-dest="#intro">
               <a href="#intro" className="text-white bold no-underline">{editingdata.menu1}</a>
             </li>
-            <li className="p-0 d-none" data-dest="#what">
-              <a href="#what"  className="text-white bold no-underline">{editingdata.menu2}</a>
-            </li>
-            <li className="p-0 d-none" data-dest="#how">
-              <a href="#how" className="text-white bold no-underline">{editingdata.menu3}</a>
-            </li> 
-            <li className="p-0 d-none" data-dest="#who">
-              <a href="#who" className="text-white bold no-underline">{editingdata.menu4}</a>
-            </li> 
             <li className="p-0" data-dest="#you">
               <a href="#you" className="text-white bold no-underline">{editingdata.menu5}</a>
-            </li>
-            <li className="p-0 d-none" data-dest="#calculate" >
-              <a href="#calculate" className="text-white bold no-underline">{editingdata.menu6}</a>
             </li>
           </ul>
         </Col>
       </Row>
-      <main id="intro">
+      <main>
         <Parallax className="fadein"
           bgImage='/landingSKY.png'
           bgImageAlt="SKY"
@@ -181,7 +175,7 @@ export default function Home({ file, href, children}) {
             bgImageAlt="LAND"
             strength={200}
           >
-            <Container id="intro" fluid className="v-full d-flex py-5 flex-column z-0">
+            <Container id="intro" fluid className="v-full d-flex py-5 flex-column z-0 page-section">
               <Row className="justify-content-center align-items-center py-6">
                 <Col className="col-11 col-lg-8 col-xl-6 py-5 p-md-1">
                   <h1 className="text-center text-white drop hero mt-5 mb-4"><ReactMarkdown>{editingdata.part1_header1}</ReactMarkdown></h1>
@@ -224,7 +218,7 @@ export default function Home({ file, href, children}) {
           </Parallax>
         </Parallax>
 
-        <Container id="you" fluid className="v-full z-999 bg-green py-6 container-drop-heavy">
+        <Container id="you" fluid className="v-full z-999 bg-green py-6 container-drop-heavy page-section">
           <Fade bottom>
           <Row  className="align-items-center justify-content-center pt-5 mt-0">
               <Col className="col-10 col-lg-6 pe-lg-0 mb-2 pt-0 mt-0">

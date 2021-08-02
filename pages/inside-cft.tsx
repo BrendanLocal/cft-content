@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 import { GetStaticProps } from "next";
@@ -10,10 +10,6 @@ import Fade from "react-reveal/Fade";
 import Button from "react-bootstrap/Button";
 import Carousel from "react-bootstrap/Carousel";
 import Modal from "react-bootstrap/Modal";
-import { Document } from 'react-pdf';
-import Rellax from "rellax";
-import Parallax from "parallax-js";
-import { Slide } from "react-slideshow-image";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import {
   useGithubJsonForm,
@@ -22,12 +18,7 @@ import {
 import Header from "../components/header";
 import PDFViewer from '../components/PDFViewer';
 import PDFJSBackend from '../middlewares/pdfjs';
-import ReactPlayer from 'react-player'
-import ScrollableAnchor from "react-scrollable-anchor";
-
-import { configureAnchors } from 'react-scrollable-anchor'
-
-configureAnchors({offset: 20, scrollDuration: 200, scrollUrlHashUpdate: false})
+import ReactPlayer from 'react-player';
 
 export default function Power({ file }) {
   const [show, setShow] = useState(false);
@@ -83,43 +74,48 @@ export default function Power({ file }) {
       {name: 'person13_para2', component: 'markdown' }],
   };
 
+  const [editingdata, form] = useGithubJsonForm(file, formOptions);
+  usePlugin(form);
+  useGithubToolbarPlugins();
+
+  const slideProperties = {
+    indicators: (i) => <span className="sliderDot" />,
+  };
+
   const [index, setIndex] = useState(0);
 
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
 
-  const slideProperties = {
-    indicators: (i) => <span className="sliderDot" />,
-  };
-
-  const [editingdata, form] = useGithubJsonForm(file, formOptions);
-  usePlugin(form);
-  useGithubToolbarPlugins();
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         const id = entry.target.getAttribute("id");
         if (entry.intersectionRatio > 0.0) {
           if (document.querySelector(`.left-sidenav li[data-dest="#${id}"]`)) {
-            document
-              .querySelector(`.left-sidenav li[data-dest="#${id}"]`)
-              .classList.add("active");
+            document.querySelector(`.left-sidenav li[data-dest="#${id}"]`).classList.add("active");
           }
         } else {
           if (document.querySelector(`.left-sidenav li[data-dest="#${id}"]`)) {
-            document
-              .querySelector(`.left-sidenav li[data-dest="#${id}"]`)
-              .classList.remove("active");
+            document.querySelector(`.left-sidenav li[data-dest="#${id}"]`).classList.remove("active");
           }
         }
       });
     });
 
     // Track all div containers that have an `id` applied
-    document.querySelectorAll("div[id]").forEach((id) => {
+    document.querySelectorAll("div.page-section").forEach((id) => {
       observer.observe(id);
     });
+
+    const hash = window.location.hash;
+    if (hash) {
+      const container = document.getElementById(hash.substring(1));
+      if (container) {
+        container.scrollIntoView();
+      }
+    }
   }, []);
 
   return (
@@ -158,8 +154,7 @@ export default function Power({ file }) {
       </Row>
 
       <main>
-      <ScrollableAnchor id={"intro"}>
-        <Container id="intro" className="bg-green z-999 py-5 px-5">
+        <Container id="intro" className="bg-green z-999 py-5 px-5 page-section">
           <Row className="justify-content-center d-flex mt-xl-0 mt-lg-4 mb-5 ms-xl-5 ms-lg-2 py-5 px-3">
             <Col className="col-12 col-md-11 col-lg-5 stickyTop roundedBox innerShadow-heavy mt-5 m-3 p-0 about-hero"></Col>
             <Col className="col-12 col-lg-5 text-white p-4 pb-0 intro-order ">
@@ -183,35 +178,33 @@ export default function Power({ file }) {
             </Col>
           </Row>
         </Container>
-</ScrollableAnchor>
-<ScrollableAnchor id={"video"}>
-        <Container id="video" className="v-full z-999 bg-green py-5">
-        <Fade bottom>
-            <Row className="justify-content-center align-items-center my-4">
-              <Col className="col-12 col-md-11 col-lg-10 col-xl-8 text-center text-white">
-                <h2 className="text-orange bold px-md-3 px-lg-0">Watch our video</h2>
+
+        <Container id="video" className="v-full z-999 bg-green py-5 page-section">
+          <Fade bottom>
+              <Row className="justify-content-center align-items-center my-4">
+                <Col className="col-12 col-md-11 col-lg-10 col-xl-8 text-center text-white">
+                  <h2 className="text-orange bold px-md-3 px-lg-0">Watch our video</h2>
+                </Col>
+              </Row>
+          </Fade>
+          <Fade bottom> 
+          <Row className="justify-content-center align-items-center pb-5 mb-5">
+              <Col className="col-10 col-lg-7 col-xl-6 d-flex">      
+                <ReactPlayer playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4' className="video-size"/> 
+              </Col>
+              <Col className="col-10 col-lg-3 col-xl-3 d-flex">
+                <p className="text-white d-none medium d-lg-block">
+                CFT was established by <span className="bold">Gary Zed</span>, an entrepreneur with a reputation for taking on tough challenges and getting things done. A leader with a national vision, Gary heads up a team that is committed to making CFT the most talked about climate success story in the decades ahead.
+                </p>
+                <p className="text-white text-center mt-3 large d-lg-none">
+                CFT was established by <span className="bold">Gary Zed</span>, an entrepreneur with a reputation for taking on tough challenges and getting things done. A leader with a national vision, Gary heads up a team that is committed to making CFT the most talked about climate success story in the decades ahead.
+                </p>
               </Col>
             </Row>
-        </Fade>
-        <Fade bottom> 
-        <Row className="justify-content-center align-items-center pb-5 mb-5">
-            <Col className="col-10 col-lg-7 col-xl-6 d-flex">      
-              <ReactPlayer playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4' className="video-size"/> 
-            </Col>
-            <Col className="col-10 col-lg-3 col-xl-3 d-flex">
-              <p className="text-white d-none medium d-lg-block">
-              CFT was established by <span className="bold">Gary Zed</span>, an entrepreneur with a reputation for taking on tough challenges and getting things done. A leader with a national vision, Gary heads up a team that is committed to making CFT the most talked about climate success story in the decades ahead.
-              </p>
-              <p className="text-white text-center mt-3 large d-lg-none">
-              CFT was established by <span className="bold">Gary Zed</span>, an entrepreneur with a reputation for taking on tough challenges and getting things done. A leader with a national vision, Gary heads up a team that is committed to making CFT the most talked about climate success story in the decades ahead.
-              </p>
-            </Col>
-          </Row>
-        </Fade> 
-      </Container>
-      </ScrollableAnchor>
-<ScrollableAnchor id={"the-plan"}>
-        <Container id="the-plan" className="v-full z-999 bg-green p-5 mb-5">
+          </Fade> 
+        </Container>
+
+        <Container id="the-plan" className="v-full z-999 bg-green p-5 mb-5 page-section">
           <Fade bottom>
             <Row className="justify-content-center align-items-center my-4">
               <Col className="col-12 col-md-11 col-lg-8 col-xl-9 text-center text-white">
@@ -282,9 +275,8 @@ export default function Power({ file }) {
             </Row>
           </Fade>
         </Container>
-        </ScrollableAnchor>
-<ScrollableAnchor id={"what"}>
-        <Container id="what" fluid className="v-full z-999 bg-green py-5">
+
+        <Container id="what" fluid className="v-full z-999 bg-green py-5 page-section">
           <Fade bottom>
             <Row className="pt-5 align-items-center justify-content-center">
               <Col className="col-10 col-lg-7 pt-3">
@@ -319,9 +311,8 @@ export default function Power({ file }) {
             </Row>
           </Fade>
         </Container>
-        </ScrollableAnchor>
-<ScrollableAnchor id={"team"}>
-        <Container fluid id="team" className="bg-brown innerShadow-heavy py-6">
+
+        <Container fluid id="team" className="bg-brown innerShadow-heavy py-6 page-section">
           <Row className="justify-content-center pt-5 mb-2">
             <Col className="col-11 col-lg-8 text-center pt-3 ">
               <h2 className="text-orange bold">{editingdata.part2_header1}</h2>
@@ -420,9 +411,8 @@ export default function Power({ file }) {
             </Col>
           </Row>
         </Container>
-        </ScrollableAnchor>
-<ScrollableAnchor id={"qna"}>
-        <Container id="qna" fluid className="v-full z-999 bg-green py-5">
+
+        <Container id="qna" fluid className="v-full z-999 bg-green py-5 page-section">
           <Fade bottom>
             <Row className="align-items-center justify-content-center py-5 ">
               <Col className="col-10 col-lg-7 pt-3">
@@ -433,15 +423,11 @@ export default function Power({ file }) {
           <Fade bottom>
             <Row className="align-items-center justify-content-center">
               <Col className="col-8">          
-              <PDFViewer 
-          backend={PDFJSBackend}
-          src='../../CFT-QA.pdf'
-        />
+                <PDFViewer backend={PDFJSBackend} src='../../CFT-QA.pdf' />
               </Col>
             </Row>
           </Fade>
         </Container>
-        </ScrollableAnchor>
 
       <Modal show={show} className="d-flex align-items-center" onHide={handleClose}>
         <Modal.Header className="d-none" closeButton>
