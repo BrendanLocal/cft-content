@@ -13,7 +13,7 @@ import { useState } from "react";
 import Header from "../components/header";
 
 const Lang = () => {
-  var language ="en";
+var language ="en";
   const router = useRouter();
   if(router.query.lang){ 
   const lan = JSON.stringify(router.query.lang);
@@ -22,73 +22,20 @@ const Lang = () => {
   return (language)
 }
 
-
-const NodeCache = require( "node-cache" );
-const myCache = new NodeCache();
-
-const personalTotal = myCache.get( "personalTotal" );
-if ( personalTotal == undefined ){
-  console.log("oops!")
-} else {
-  console.log(personalTotal)
-}
-
-export default function App({ file, href, children}) {
+export default function CarbonCalc({ file, href, children}) {
   
   const formOptions = {
-    label: 'Home Page',
+    label: 'Carbon Calculator',
     fields: [
-      {name: 'pageName', component: 'markdown' },
-      {name: 'pageURL', component: 'markdown' },
-      {name: 'title', component: 'markdown' },
-      {name: 'header', component: 'markdown' },
-      {name: 'select', component: 'markdown' },
-      {name: 'emissionsHeader', component: 'markdown' },
-      {name: 'emissionsCarbonHeader', component: 'markdown' },
-      {name: 'emissionsCarbon', component: 'markdown' },
-      {name: 'emissionsLink', component: 'markdown' },
-      {name: 'emissionsPlaceholder', component: 'markdown' },
-      {name: 'emissionsRegion', component: 'markdown' },
-      {name: 'emissionsRegion1', component: 'markdown' },
-      {name: 'emissionsRegion2', component: 'markdown' },
-      {name: 'emissionsRegion3', component: 'markdown' },
-      {name: 'emissionsRegion4', component: 'markdown' },
-      {name: 'emissionsRegion5', component: 'markdown' },
-      {name: 'emissionsTimeHeader', component: 'markdown' },
-      {name: 'emissionsTime1', component: 'markdown' },
-      {name: 'emissionsTime2', component: 'markdown' },
-      {name: 'emissionsTime3', component: 'markdown' },
-      {name: 'emissionsTime4', component: 'markdown' },
-      {name: 'emissionsTime5', component: 'markdown' },
-      {name: 'emissionsTime6', component: 'markdown' },
-      {name: 'emissionsTime7', component: 'markdown' },
-      {name: 'emissionsTime8', component: 'markdown' },
-      {name: 'emissionsTime9', component: 'markdown' },
-      {name: 'emissionsTime10', component: 'markdown' },
-      {name: 'emissionsTime11', component: 'markdown' },
-      {name: 'emissionsTime12', component: 'markdown' },
-      {name: 'emissionsTime13', component: 'markdown' },
-      {name: 'emissionsTime14', component: 'markdown' },
-      {name: 'emissionsTime15', component: 'markdown' },
-      {name: 'dataHeader', component: 'markdown' },
-      {name: 'dataType', component: 'markdown' },
-      {name: 'dataType1', component: 'markdown' },
-      {name: 'dataType2', component: 'markdown' },
-      {name: 'dataDisclaimer', component: 'markdown' },
-      {name: 'nextHeader', component: 'markdown' },
-      {name: 'nextPara', component: 'markdown' },
-      {name: 'nextButton', component: 'markdown' },
-      {name: 'otherHeader', component: 'markdown' },
-      {name: 'otherbox1Header', component: 'markdown' },
-      {name: 'otherbox1Para', component: 'markdown' },
-      {name: 'otherbox1button', component: 'markdown' },
-      {name: 'otherbox2Header', component: 'markdown' },
-      {name: 'otherbox2Para', component: 'markdown' },
-      {name: 'otherbox2button', component: 'markdown' },
-      {name: 'otherbox3Header', component: 'markdown' },
-      {name: 'otherbox3Para', component: 'markdown' },
-      {name: 'otherbox3button', component: 'markdown' }
-     ]
+      {name: 'header1', component: 'markdown' },
+      {name: 'box1Header', component: 'markdown' },
+      {name: 'box1Para', component: 'markdown' },
+      {name: 'box2Header', component: 'markdown' },
+      {name: 'box2Para', component: 'markdown' },
+      {name: 'box3Header', component: 'markdown' },
+      {name: 'box3Para', component: 'markdown' },
+      {name: 'select', component: 'markdown' }
+      ]
   }
 
   const [show, setShow] = useState(false);
@@ -96,14 +43,14 @@ export default function App({ file, href, children}) {
   const [editingdata, form] = useGithubJsonForm(file, formOptions)
   usePlugin(form)
   useGithubToolbarPlugins()
-
+  
   const [regionArray, setRegionArray] = React.useState({
     carbon: {BC:500,	Prairies:252,	Ontario:347,	Quebec:347,	Atlantic:134 }
   });
   const [region, setRegion] = React.useState("");
   const [footprint, setFootprint] = React.useState(0);
   const [duration, setDuration] = React.useState(0);
-
+  
   var plantHectares = (duration*footprint)/regionArray.carbon[region];
   var plantTrees = plantHectares*2470;
   const changeRegion = (event) => {
@@ -215,35 +162,37 @@ export default function App({ file, href, children}) {
 
         <Row className="justify-content-center mt-5">
           <Col className="col-11 col-lg-10 pt-5">
-            <h2 className=" text-orange text-center pt-5 bold mb-4">{editingdata.otherHeader}</h2>
+            <h1 className="h2 text-orange text-center pt-5 bold mb-4">Select a Net-Zero Calculator</h1>
           </Col>
         </Row>
 
         <Row className="justify-content-center pb-5 mb-5">
-          <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
+        <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
-              <h4 className="text-white tight-drop-light">{editingdata.otherbox1Header}</h4>
-              <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox1Para}</p>
-              <Link href="business-calculator">
-                <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox1button}</a>
+              <h4 className="text-white tight-drop-light">Corporate</h4>
+              <p className="flex-fill pb-3 text-white tight-drop">Calculate how many acres your corporation must invest in to reach a net-zero emissions target</p>
+              <Link href="smart-forest-corp">
+                <a className="btn btn-text text-left text-orange bold no-underline tight-drop">SELECT</a>
               </Link>
             </div>
           </Col>
-          <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
+
+          <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
-              <h4 className="text-white tight-drop-light">{editingdata.otherbox2Header}</h4>
-              <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox2Para}</p>
-              <Link href="school-calculator">
-                <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox2button}</a>
+              <h4 className="text-white tight-drop-light">School</h4>
+              <p className="flex-fill pb-3 text-white tight-drop">Calculate how many acres your school must invest in to reach a net-zero emissions target</p>
+              <Link href="smart-forest-school">
+                <a className="btn btn-text text-left text-orange bold no-underline tight-drop">SELECT</a>
               </Link>
             </div>
           </Col>
-          <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
+
+          <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
-              <h4 className="text-white tight-drop-light">{editingdata.otherbox3Header}</h4>
-              <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox3Para}</p>
-              <Link href="personal-calculator">
-                <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox3button}</a>
+              <h4 className="text-white tight-drop-light">Personal</h4>
+              <p className="flex-fill pb-3 text-white tight-drop">Calculate how many acres you must invest in to reach a net-zero emissions target</p>
+              <Link href="smart-forest-personal">
+                <a className="btn btn-text text-left text-orange bold no-underline tight-drop">SELECT</a>
               </Link>
             </div>
           </Col>
@@ -260,7 +209,7 @@ export const getStaticProps: GetStaticProps = async function({preview, previewDa
   if (preview) {
     return getGithubPreviewProps({
       ...previewData,
-      fileRelativePath: 'content/smart-forest-calculator.json',
+      fileRelativePath: 'content/carbon-calculator.json',
       parse: parseJson,
     })
   }
@@ -270,8 +219,8 @@ export const getStaticProps: GetStaticProps = async function({preview, previewDa
       error: null,
       preview: false,
       file: {
-        fileRelativePath: 'content/smart-forest-calculator.json',
-        data: (await import('../content/smart-forest-calculator.json')).default,
+        fileRelativePath: 'content/carbon-calculator.json',
+        data: (await import('../content/carbon-calculator.json')).default,
       },
     },
   }
