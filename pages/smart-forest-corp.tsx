@@ -189,7 +189,7 @@ export default function App({ file, href, children}) {
               </Row>
             </div>
           </Col>
-          <Col className=" p-3  col-12 col-lg-4 stickyCalc mb-4">
+          <Col className=" p-3  col-11 col-lg-4 stickyCalc mb-4">
             <div className="text-white p-5 innerShadow roundedBox bg-green">
               <h4 className="mb-0">{editingdata.dataHeader}</h4>
               <hr/>
@@ -201,8 +201,8 @@ export default function App({ file, href, children}) {
         </Row>
 
         <Row className="justify-content-center">
-          <Col className="col-10 align-items-center text-center p-3">
-            <div className="bg-brown p-5 innerShadow roundedBox">
+          <Col className="col-11 col-lg-10 align-items-center text-center p-3">
+            <div className="bg-brown p-4 innerShadow roundedBox">
               <p className="smallCaps text-orange mb-3">{editingdata.nextHeader}</p>
               <Link href="net-negative-corp"><Button className="btn-large mt-1" variant="green">{editingdata.nextButton}</Button></Link>
             </div>
