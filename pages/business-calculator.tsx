@@ -494,7 +494,7 @@ const Lang = () => {
 
     let total = vehicleSub + subtotalBuild + transitSub + flightSub + freightSub;
     if (typeof window !== 'undefined') {
-  localStorage.setItem('businessfootprint', String(total));
+      localStorage.setItem('businessfootprint', String(total));
     }
 
     return (
@@ -1429,7 +1429,7 @@ const Lang = () => {
           <Col className="col-10 align-items-center text-center p-3">
           <div className="bg-brown p-5 innerShadow roundedBox">
             <p className="smallCaps text-orange mb-3">{editingdata.box1Header}</p>
-            <Link href="smart-forest-corp"><Button className="btn-large mt-1" variant="green">{editingdata.box1Button}</Button></Link>
+            <Link href="/smart-forest-corp"><Button className="btn-large mt-1" variant="green">{editingdata.box1Button}</Button></Link> {/* NEXT STEP BUTTON */}
           </div>
           </Col>
         </Row>
