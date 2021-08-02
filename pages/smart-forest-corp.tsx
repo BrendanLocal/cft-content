@@ -150,7 +150,7 @@ export default function App({ file, href, children}) {
               <hr/>
               <Row>
                 <Col>
-                  <label htmlFor="type">{editingdata.emissionsRegion}</label>
+                  <label htmlFor="type">In which region is your corporation based?</label>
                   <br />
                   <select name="type" value={region} onChange={changeRegion}>
                     <option value="" hidden>select</option>
