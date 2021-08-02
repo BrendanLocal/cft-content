@@ -41,7 +41,7 @@
     "empCommutePara":"Please input the following information for your employees' daily commute:",
     "empCommuteCar":"Car",
     "empCommuteBus":"Bus",
-    "empCommuteTrain":"Train",
+    "empCommuteTrain":"train/subway",
 
     "stuCommuteHeader":"Student Commute (optional)",
     "stuCommutePara":"Please input the following information for your employees' daily commute:",
@@ -50,7 +50,7 @@
     "stuCommutePropane":"Propane",
     "stuCommuteBus":"How many students commute by city bus?",
     "stuCommuteDrop":"Approximately how many cars are usually picking up/dropped off students per day?",
-    "stuCommuteTrain":"How many students primarily commute by train?",
+    "stuCommuteTrain":"How many students primarily commute by train/subway?",
 
     "otherTransportHeader1":"Other Transportation?",
     "otherTransportPara1":"Please input the information to determine the C02 emissions for transportation other than the sudents' daily commute:",
@@ -93,7 +93,7 @@
     "dataType5":"Other Vehicle",
     "dataType6":"Flights",
     "dataTotal":"TOTAL",
-    "dataDisclaimer":"This is only an estimate etc",
+    "dataDisclaimer":"This is an estimate of your average carbon footprint per year.",
     
     "box1Header":"NEXT STEP",
     "box1Para":"Calculate how many acres of Smart Forest you need to invest in to reach a Net-Zero emissions target.",

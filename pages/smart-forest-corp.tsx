@@ -126,18 +126,18 @@ export default function App({ file, href, children}) {
 
 
   return (
-    <div>
+    <div className="bg-corp">
       <Header/>
       <Container className="p-5">
         <Row className="justify-content-center">
           <Col className="col-11 col-lg-10 pt-5 align-items-center my-4 pt-5">
-            <h1 className="emphasis text-orange text-center bold">{editingdata.header}</h1>
+            <h1 className="emphasis text-orange text-center bold tight-drop-light">Corporate Net-Zero Calculator</h1>
           </Col>
         </Row>
         <Row className="justify-content-center">
           <Col className="p-3 col-11 col-lg-6">
             <div className="card roundedBox no-border bg-green p-4 innerShadow cardSpacing">
-              <p className="lead text-white m-2 calc-intro pe-lg-2">{editingdata.para1}</p>
+              <p className="lead text-white m-2 calc-intro pe-lg-2">Calculate how many acres your corporation must invest in to reach a net-zero emissions target</p>
             </div>
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
@@ -153,13 +153,13 @@ export default function App({ file, href, children}) {
                   <input className="mb-4" value={footprint}  onChange={changeFootprint} name="type" type="number" min="0" onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                   }  placeholder={editingdata.emissionsPlaceholder}/>
-                  {editingdata.emissionsCarbon}<Link href="carbon-calculator"><a className="underline modal-btn">{editingdata.emissionsLink}</a></Link>
+                  {editingdata.emissionsCarbon}<Link href="business-calculator"><a className="underline modal-btn">{editingdata.emissionsLink}</a></Link>
                 </Col>
               </Row>
               <hr/>
               <Row>
                 <Col>
-                  <label htmlFor="type">{editingdata.emissionsRegion}</label>
+                  <label htmlFor="type">In which region is your corporation based?</label>
                   <br />
                   <select name="type" value={region} onChange={changeRegion}>
                     <option value="" hidden>select</option>
@@ -199,7 +199,7 @@ export default function App({ file, href, children}) {
             </div>
           </Col>
           <Col className=" p-3  col-12 col-lg-4 stickyCalc mb-4">
-            <div className="text-white p-5 innerShadow roundedBox">
+            <div className="text-white p-5 innerShadow roundedBox bg-green">
               <h4 className="mb-0">{editingdata.dataHeader}</h4>
               <hr/>
               <Row><Col className="pb-3">{editingdata.dataType} {plantHectares > 0 ? plantHectares.toFixed(2) : "--"} {editingdata.dataType1}</Col></Row>
@@ -212,8 +212,7 @@ export default function App({ file, href, children}) {
         <Row className="justify-content-center">
           <Col className="col-10 align-items-center text-center p-3">
             <div className="bg-brown p-5 innerShadow roundedBox">
-              <p className="smallCaps text-orange">{editingdata.nextHeader}</p>
-              <h3 className="text-white mb-4 px-2 px-lg-5">{editingdata.nextPara}</h3>
+              <p className="smallCaps text-orange mb-3">{editingdata.nextHeader}</p>
               <Link href="net-negative-corp"><Button className="btn-large mt-1" variant="green">{editingdata.nextButton}</Button></Link>
             </div>
           </Col>
@@ -221,12 +220,12 @@ export default function App({ file, href, children}) {
 
         <Row className="justify-content-center mt-5">
           <Col className="col-11 col-lg-10 pt-5">
-            <h2 className=" text-orange text-center pt-5 bold mb-4">{editingdata.otherHeader}</h2>
+            <h2 className=" text-orange text-center pt-5 bold mb-4 tight-drop-light">{editingdata.otherHeader}</h2>
           </Col>
         </Row>
 
         <Row className="justify-content-center pb-5 mb-5">
-          <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
+          <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
               <h4 className="text-white tight-drop-light">{editingdata.otherbox1Header}</h4>
               <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox1Para}</p>
@@ -235,7 +234,7 @@ export default function App({ file, href, children}) {
               </Link>
             </div>
           </Col>
-          <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
+          <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
               <h4 className="text-white tight-drop-light">{editingdata.otherbox2Header}</h4>
               <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox2Para}</p>
@@ -244,7 +243,7 @@ export default function App({ file, href, children}) {
               </Link>
             </div>
           </Col>
-          <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
+          <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
               <h4 className="text-white tight-drop-light">{editingdata.otherbox3Header}</h4>
               <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox3Para}</p>

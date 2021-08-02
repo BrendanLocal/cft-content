@@ -36,11 +36,11 @@
   "emissionsTime14": "80",
   "emissionsTime15": "100",
 
-  "dataHeader":"Carbon offset",
+  "dataHeader":"Carbon Sequestration",
   "dataType":"You must plant",
-  "dataType1":"acres",
-  "dataType2":"trees",
-  "dataDisclaimer":"This is only an estimate etc",
+  "dataType1":"hectares",
+  "dataType2":"seedlings",
+  "dataDisclaimer":"This is an estimate of your average carbon footprint per year.",
 
   "nextHeader":"NEXT STEP",
   "nextPara":"",

@@ -1597,7 +1597,7 @@ export default function App({ file, href, children}) {
               <span className="smallCaps text-small">{editingdata.dataTotal}</span><br/>
               <span className="h2 bold">{total > 0 ? total.toFixed(2) : "--"}</span>
               <p>{total > 0 ? "(Metric Tonnes of CO2 per Year)" : ""}</p>
-              <p>{editingdata.dataDisclaimer}</p>
+              <p className="text-small">{editingdata.dataDisclaimer}</p>
             </div>
           </Col>
         </Row>  
@@ -1605,8 +1605,7 @@ export default function App({ file, href, children}) {
         <Row className="justify-content-center ">
           <Col className="col-10 align-items-center text-center p-3">
             <div className="bg-brown p-5 innerShadow roundedBox">
-              <p className="smallCaps text-orange">{editingdata.box1Header}</p>
-              <h3 className="text-white mb-4 px-2 px-lg-5">{editingdata.box1Para}</h3>
+              <p className="smallCaps text-orange mb-3">{editingdata.box1Header}</p>
               <Link href="smart-forest-personal"><Button className="btn-large mt-1" variant="green">{editingdata.box1Button}</Button></Link>
             </div>
           </Col>
@@ -1619,7 +1618,7 @@ export default function App({ file, href, children}) {
         </Row>
 
         <Row className="justify-content-center pb-5 mb-5">
-          <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
+          <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
             <h4 className="text-white tight-drop-light">{editingdata.otherbox1Header}</h4>
             <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox1Para}</p>
@@ -1627,7 +1626,7 @@ export default function App({ file, href, children}) {
             </div>
           </Col>
 
-          <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
+          <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
             <h4 className="text-white tight-drop-light">{editingdata.otherbox2Header}</h4>
             <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox2Para}</p>

@@ -12,7 +12,8 @@ import Rellax from "rellax";
 function NewsletterForm() {
   const [state, handleSubmit] = useForm("mwkanyjv");
   if (state.succeeded) {
-      return <p>Thanks for joining!</p>;
+      return <p className="newsletter-ty">Thank you for your interest in Canada’s Forest Trust. We will release our first newsletter soon. In the meantime, please follow us on social media </p>;
+
   }
   return (
       <form onSubmit={handleSubmit}>
@@ -95,47 +96,47 @@ return(
   <Container fluid className="bg-brown text-white p-5">
     <Row >
       <Col className="col-12 col-md-6 col-lg-3 p-3">
-      <h4>Canada's Forest Trust</h4>
-      <Link href="/home"><a className="btn text-orange textButton text-left d-block">Home</a></Link>
-      <Link href="/inside-cft"><a className="btn text-orange textButton text-left d-block">Inside CFT</a></Link>
-      <Link href="/inside-cft#what"><a className="btn text-orange textButton text-left d-block">What is a Smart Forest?</a></Link>
-      <Link href="/build-your-smart-forest"><a className="btn text-orange textButton text-left d-block">Build Your Smart Forest</a></Link>
-      <Link href="/build-your-smart-forest#corporate"><a className="btn text-orange textButtonAlt arrow-before text-left d-block ms-3">CORPORATIONS</a></Link>
-      <Link href="/build-your-smart-forest#school"><a className="btn text-orange textButtonAlt text-left d-block ms-3">SCHOOLS</a></Link>
-      <Link href="/build-your-smart-forest#legacy"><a className="btn text-orange textButtonAlt text-left d-block ms-3">INDIVIDUALS</a></Link>
-      <Link href="/build-your-smart-forest#communal"><a className="btn text-orange textButtonAlt text-left d-block ms-3">COMMUNITIES</a></Link>
+        <h3 className="h4">Canada's Forest Trust</h3>
+        <Link href="/home"><a className="btn text-orange textButton text-left d-block no-underline footer-links">Home</a></Link>
+        <Link href="/inside-cft"><a className="btn text-orange textButton text-left d-block no-underline footer-links">Inside CFT</a></Link>
+        <Link href="/inside-cft#what"><a className="btn text-orange textButton text-left d-block no-underline footer-links">What is a Smart Forest?</a></Link>
+        <Link href="/build-your-smart-forest"><a className="btn text-orange textButton text-left d-block no-underline footer-links">Build Your Smart Forest</a></Link>
+        <Link href="/build-your-smart-forest#corporate"><a className="btn text-orange textButtonAlt arrow-before text-left d-block ms-3 no-bold footer-links">CORPORATIONS</a></Link>
+        <Link href="/build-your-smart-forest#school"><a className="btn text-orange textButtonAlt text-left d-block ms-3 no-bold footer-links">SCHOOLS</a></Link>
+        <Link href="/build-your-smart-forest#legacy"><a className="btn text-orange textButtonAlt text-left d-block ms-3 no-bold footer-links">INDIVIDUALS</a></Link>
+        <Link href="/build-your-smart-forest#communal"><a className="btn text-orange textButtonAlt text-left d-block ms-3 no-bold footer-links">COMMUNITIES</a></Link>
       </Col>
       <Col className="col-12 col-md-6 col-lg-3 p-3">
-      <h4>Calculate Your Impact</h4>
-      <Link href="/carbon-calculator"><a className="btn text-orange textButton text-left d-block">Carbon Calculator</a></Link>
-      <Link href="/business-calculator"><a className="btn text-orange textButtonAlt arrow-before text-left d-block ms-3">Corporate</a></Link>
-      <Link href="/school-calculator"><a className="btn text-orange textButtonAlt text-left d-block ms-3">School</a></Link>
-      <Link href="/personal-calculator"><a className="btn text-orange textButtonAlt text-left d-block ms-3">Personal</a></Link>
-      <Link href="/smart-forest-calculator"><a className="btn text-orange textButton text-left d-block">Net-Zero Calculator</a></Link>
-      <Link href="/smart-forest-corp"><a className="btn text-orange textButtonAlt arrow-before text-left d-block ms-3">Corporate</a></Link>
-      <Link href="/smart-forest-school"><a className="btn text-orange textButtonAlt text-left d-block ms-3">School</a></Link>
-      <Link href="/smart-forest-personal"><a className="btn text-orange textButtonAlt text-left d-block ms-3">Personal</a></Link>
+        <h3 className="h4">Calculate Your Impact</h3>
+        <Link href="/carbon-calculator"><a className="btn text-orange textButton text-left d-block no-underline footer-links">Carbon Calculator</a></Link>
+        <Link href="/business-calculator"><a className="btn text-orange textButtonAlt arrow-before text-left d-block ms-3 no-bold footer-links">Corporate</a></Link>
+        <Link href="/school-calculator"><a className="btn text-orange textButtonAlt text-left d-block ms-3 no-bold footer-links">School</a></Link>
+        <Link href="/personal-calculator"><a className="btn text-orange textButtonAlt text-left d-block ms-3 no-bold footer-links">Personal</a></Link>
+        <Link href="/smart-forest-calculator"><a className="btn text-orange textButton text-left d-block no-underline footer-links">Net-Zero Calculator</a></Link>
+        <Link href="/smart-forest-corp"><a className="btn text-orange textButtonAlt arrow-before text-left d-block ms-3 no-bold footer-links">Corporate</a></Link>
+        <Link href="/smart-forest-school"><a className="btn text-orange textButtonAlt text-left d-block ms-3 no-bold footer-links">School</a></Link>
+        <Link href="/smart-forest-personal"><a className="btn text-orange textButtonAlt text-left d-block ms-3 no-bold footer-links">Personal</a></Link>
       </Col>
       <Col className="col-12 col-md-6 col-lg-3 p-3">
-      <h4>Other</h4>
-      <Link href="/portal"><a className="btn text-orange textButton text-left d-block">Sign In</a></Link>
-      <Link href="/contact"><a className="btn text-orange textButton text-left d-block">Contact Us</a></Link>
-      <Link href="/annual-reports"><a className="btn text-orange textButton text-left d-block">Annual Reports</a></Link>
-      <Link href="/terms-and-conditions"><a className="btn text-orange textButton text-left d-block">Terms & Conditions</a></Link>
-      <Link href="/privacy"><a className="btn text-orange textButton text-left d-block">Privacy</a></Link>
-      <Link href="/commitment"><a className="btn text-orange textButton text-left d-block">Commitment to a Fair & Equitable workplace</a></Link>
+        <h3 className="h4">Other</h3>
+        <Link href="/portal"><a className="btn text-orange textButton text-left d-block no-underline footer-links">Sign In</a></Link>
+        <Link href="/contact"><a className="btn text-orange textButton text-left d-block no-underline footer-links">Contact Us</a></Link>
+        <Link href="/annual-reports"><a className="btn text-orange textButton text-left d-block no-underline d-none footer-links">Annual Reports</a></Link>
+        <Link href="/terms-and-conditions"><a className="btn text-orange textButton text-left d-block no-underline footer-links">Terms & Conditions</a></Link>
+        <Link href="/privacy"><a className="btn text-orange textButton text-left d-block no-underline footer-links">Privacy</a></Link>
+        <Link href="/commitment"><a className="btn text-orange textButton text-left d-block no-underline d-none footer-links">Commitment to a Fair & Equitable workplace</a></Link>
       </Col>
       <Col className="col-12 col-md-6 col-lg-3 p-3 pe-4">
-      <h4>Join Our Newsletter</h4>
-      <p className="mb-3 op-8">Provide your email to receive regular updates and the latest Canada’s Forest Trust news.</p>
+        <h3 className="h4">Join Our Newsletter</h3>
+      <p className="mb-3">Provide your email to receive regular updates and the latest Canada’s Forest Trust news.</p>
       <NewsletterForm/>
       
       </Col>
-    </Row>
+    </Row> 
     <Row className="pt-3 pb-5">
       <Col>
       <span>©{(new Date().getFullYear())} Canada's Forest Trust Corporation</span>
-      <p className="text-white text-small op-5 pe-5 mt-1 mb-0">This site is WCAG compliant</p>
+      <p className="text-white text-small bold pe-5 mt-1 mb-0">This site is WCAG compliant</p>
       </Col>
     </Row>
   </Container>

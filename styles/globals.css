@@ -241,6 +241,12 @@ font-weight: 600;
 
  .text-small {
   font-size: 12px;
+  line-height: 14px;
+}
+
+.x-small {
+  font-size: 11px;
+  line-height: 10px;
 }
 
  .dropdown-text {
@@ -323,8 +329,13 @@ li a, a.underline {
   text-decoration: underline;
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 .large {
   font-size: 20px!important;
+  line-height: 26px;
 }
 
 .large, .large * {
@@ -520,6 +531,7 @@ hr {
     text-shadow: none;
     padding: 0;
     border-radius: 0;
+    font-weight: 600!important;
 }
 
 .textButton.text-orange, .btn-text.text-orange {
@@ -571,6 +583,15 @@ text-decoration: underline;
   content: url(/navArrow.svg);
   transform: rotate(90deg)!important;
   margin-top: 3px;
+  width: 24px;
+  margin-left: 10px;
+  position: absolute;
+}
+
+.newsletter-ty:after {
+  content: url(/navArrow.svg);
+  transform: rotate(0deg)!important;
+  margin-top: 1px;
   width: 24px;
   margin-left: 10px;
   position: absolute;
@@ -1116,7 +1137,7 @@ div>p {
 }
 
 
-.splash button {
+.splash button:not(#rcc-confirm-button) {
  opacity: 0;
   transform: translateY(-100%);
 
@@ -1168,10 +1189,25 @@ div>p {
   transition: all ease .5s;
 }
 
+.CookieConsent {
+  bottom: 70px;
+  z-index: 999999!important;
+  background-color: #212529!important;
+  box-shadow: 0px -1px 10px rgba(0,0,0,.5);
+}
+
+#rcc-confirm-button {
+  background-color: #00823B!important;
+  color: #fff!important;
+  border-radius: 6px!important;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+
 .splash footer {
   opacity: 0;
   transform: translateY(100%);
-
   transition: none;
 }
 
@@ -1227,6 +1263,7 @@ div>p {
   z-index: 99;
   }
 
+
   .headerNav {
     left: initial;
     right: 0;
@@ -1237,6 +1274,10 @@ div>p {
 .logoHeader {
   width: 10vw;
   text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+.portalLogo {
+  position: relative;
 }
 
 .logo {
@@ -1362,6 +1403,10 @@ footer {
   text-decoration: none!important;
 }
 
+.no-bold {
+  font-weight: normal!important;
+}
+
 .slimlineBottom {
   border-bottom: solid 1px #00823B;
 }
@@ -1396,6 +1441,10 @@ footer {
 
 .nudge {
   margin-right: 6px;
+}
+
+.footer-links {
+  font-size: 15px;
 }
 
 .intro-links{
@@ -1446,18 +1495,18 @@ transition: transform .5s ease;
 }
 
 .dropdown-links {
-  font-size: 16px;
+  font-size: 15px;
   text-decoration: none!important;
   box-shadow: none!important;
 }
 
 .dropdown-links:focus{
   color: #fff;
-  z-index:999;
+  z-index:999!important;
 }
 
 .dropdown-menu {
-  min-width: 26rem;
+  min-width: 23rem;
   display: none;
   padding: .5rem 0;
   margin: 0;
@@ -1469,6 +1518,7 @@ transition: transform .5s ease;
   border: none;
   box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
   border-radius: .25rem;
+  transform: translate3d(0,50px,0) !important;
 }
 
 
@@ -1861,13 +1911,13 @@ span.authorTitle {
   box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
   border: none;
   position: relative;
-  height: 400px!important;
+  height: 370px!important;
 }
 
 .calc-btn {
   position: absolute;
   bottom: 4%;
-  width: 83%;
+  width: 87%;
 }
 
 .calculate-card:hover {
@@ -1999,7 +2049,7 @@ transition: all .5s ease;
 }
 
 .corporate-card a:hover {
-  transform: translateX(3px);
+  transform: translateX(3px)!important;
   transition: all .5s ease;
 }
 
@@ -2029,7 +2079,7 @@ transition: all .5s ease;
 }
 
 .school-card a:hover {
-transform: translateX(3px);
+transform: translateX(3px)!important;
 transition: all .5s ease;
 }
 
@@ -2058,7 +2108,7 @@ transition: all .5s ease;
 }
 
 .legacy-card a:hover {
-transform: translateX(3px);
+transform: translateX(3px)!important;
 transition: all .5s ease;
 }
 
@@ -2096,7 +2146,7 @@ transition: all .5s ease;
 }
 
 .communal-card a:hover {
-transform: translateX(3px);
+transform: translateX(3px)!important;
 transition: all .5s ease;
 }
 
@@ -2124,7 +2174,7 @@ transition: all .5s ease;
 }
 
 .communal-button a:hover {
-transform: translateX(3px);
+transform: translateX(3px)!important;
 transition: all .5s ease;
 }
 
@@ -2149,6 +2199,12 @@ transition: all .5s ease;
 
 /* About Page */
 
+
+.video-size {
+  width: 100%!important;
+  height: 100%!important;
+}
+
 .about-card {
   box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
   
@@ -2169,7 +2225,7 @@ transition: all .5s ease;
 .about-hero {
   background: url('/inside-cft.jpg');
     background-size: cover;
-    height: 540px;
+    height: 400px;
     background-position: center;
   
 }
@@ -2412,22 +2468,26 @@ position: relative;
 }
 
 .signTextBottom {
-  width: 94%;
+  width: 100%;
   bottom: 11%;
 text-align: center;
-font-size: 12px;
+font-size: .8em;
+font-weight: 600;
+color: #054217;
 }
 
 .signImageText {
   position: absolute;
-color: #000;
+color: #054217;
 }
 
 .signTextForest {
   top: 27%;
-    width: 10%;
-    left: 40%;
-    font-size: 17px;
+    width: 35%;
+    left: 44%;
+    font-size: 2.1em;
+    font-weight: 700;
+    line-height: 1.2em;
 }
 
 .signImage {
@@ -2440,19 +2500,34 @@ color: #000;
 .signTextAcres {
   bottom: 25%;
     width: 40%;
-    left: 40%;
-    font-size: 17px;
+    left: 44%;
+    font-size: 1.5em;
+    color: #362B26;
 }
 
 .upload-button > div {
   width: 100% !important;
-  height: 50px !important;
+  height: 38px !important;
+}
+
+.input-height {
+  height: 30px !important;
+  border-radius: 6px !important;
+}
+
+._FCdzt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 99;
+  box-shadow: none !important;
 }
 
 .upload-button svg {
-  height: 70%;
+  height: 50%;
   position: absolute;
-  left: 2%;
+  left: -2%;
 }
 
 
@@ -2471,13 +2546,15 @@ color: #000;
 
 .create-book-photo-picker {
   display: inline-block;
+  padding-top: 3px!important;
     font-weight: 400;
     line-height: 1.5;
     color: #ffffff;
     text-align: center;
     text-decoration: none;
     vertical-align: middle;
-  background: #00823B!important;
+  background: none;
+  border: 2px solid #fff;
     border-radius: 6px;
     font-size: 13px;
     text-transform: uppercase;
@@ -2492,12 +2569,27 @@ color: #000;
     height: 100% !important;
 }
 
+.create-book-photo-picker:before {
+  content:"";
+  background: url("/upload-btn.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  width: 1.4em;
+  height: 1.4em;
+  position: relative;
+  display: inline-block;
+  margin: 0 10px 0 -2px;
+  top: 5px;
+}
+
+
 
 .signImageLogo {
   position: absolute;
-    top: 24%;
-    right: 23%;
-    width: 19%;
+  top: 58%;
+  right: 21%;
+  width: 7%;
 }
 
 /* Search */
@@ -2569,6 +2661,87 @@ z-index: 999;
   cursor: pointer;
 }
 
+/* Point Break */
+
+@media screen and (max-width: 1399px) and (min-width: 1200px){
+
+.phases {
+  height: 580px;
+}
+
+.phase1 {
+  height: 580px;
+}
+
+.phase2 {
+  height: 580px;
+}
+
+.phase3 {
+  height: 580px;
+}
+
+.phase4 {
+  height: 580px;
+}
+
+.phase5 {
+  height: 580px;
+}
+
+}
+
+@media screen and (max-width: 1199px) and (min-width: 1025px){
+
+  .phases {
+    height: 480px;
+  }
+  
+  .phase1 {
+    height: 480px;
+  }
+  
+  .phase2 {
+    height: 480px;
+  }
+  
+  .phase3 {
+    height: 480px;
+  }
+  
+  .phase4 {
+    height: 480px;
+  }
+  
+  .phase5 {
+    height: 480px;
+  }
+  
+  }
+
+@media screen and (max-width: 1300px) and (min-width: 1067px){
+
+  .calc-btn {
+    width: 85%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+@media screen and (max-width: 1066px) and (min-width: 1025px){
+  .calculate-card {
+    box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
+    border: none;
+    position: relative;
+    height: 420px!important;
+  }
+
+  .calc-btn {
+    width: 80.5%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
 
 /* Tablet */
 
@@ -2577,6 +2750,49 @@ z-index: 999;
     min-height: 80vh;
   }
 
+  .create-book-photo-picker {
+    padding-top: 6px!important;
+      font-size: 12px;
+  }
+  
+  .create-book-photo-picker:before {
+    content:"";
+    background: url("/upload-btn.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    width: 1.2em;
+    height: 1.2em;
+    position: relative;
+    display: inline-block;
+    margin: 0 10px 0 -2px;
+    top: 3px;
+  }
+
+  .signTextBottom {
+    width: 100%;
+    bottom: 11%;
+  text-align: center;
+  font-size: .7em!important;
+  font-weight: 600;
+  }
+
+  .signTextForest {
+    top: 27%;
+      width: 35%;
+      left: 44%;
+      font-size: 1.7em;
+      font-weight: 700;
+      line-height: 1.2em;
+  }
+
+  .signTextAcres {
+    bottom: 25%;
+      width: 40%;
+      left: 44%;
+      font-size: 1.2em;
+      color: #362B26;
+  }
 
   .calculate-card {
     box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
@@ -2587,13 +2803,17 @@ z-index: 999;
 
   .calc-btn {
     width: 81%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 
   .v-full {
     min-height: 95vh;
   }
+
+  .about-hero {
+    height: 300px;
+}
 
   .sidebar {
     padding: 30px 100px 0px 20px;
@@ -2642,61 +2862,91 @@ z-index: 999;
   }
 
   .phases {
-    background: url('/5Phases.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 460px;
+    height: 480px;
   }
   
   .phase1 {
-    background: url('/Phase1.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 460px;
+    height: 480px;
   }
   
   .phase2 {
-    background: url('/Phase2.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 460px;
+    height: 480px;
   }
   
   .phase3 {
-    background: url('/Phase3.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 460px;
+    height: 480px;
   }
   
   .phase4 {
-    background: url('/Phase4.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 460px;
+    height: 480px;
   }
   
   .phase5 {
-    background: url('/Phase5.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 460px;
+    height: 480px;
   }
 
 
 }
 
+@media screen and (max-width: 991px) and (min-width: 768px){
+.calculate-card {
+  box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
+  border: none;
+  position: relative;
+  height: 250px!important;
+}
+
+.calc-btn {
+  position: absolute;
+  bottom: 5%;
+  width: 92.5%;
+}
+
+.phases {
+  height: 400px;
+}
+
+.phase1 {
+  height: 400px;
+}
+
+.phase2 {
+  height: 400px;
+}
+
+.phase3 {
+  height: 400px;
+}
+
+.phase4 {
+  height: 400px;
+}
+
+.phase5 {
+  height: 400px;
+}
+
+}
 
 @media screen and (max-width: 768px) and (min-width: 577px){
 
   .dropdown-menu {
     min-width: 20rem;
+    transform: translate3d(0,50px,0) !important;
+  }
+
+  .create-book-photo-picker:before {
+    content:"";
+    background: url("/upload-btn.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    width: 1.3em;
+    height: 1.3em;
+    position: relative;
+    display: inline-block;
+    margin: 0 10px 0 -2px;
+    top: 4px;
   }
 
   .calculate-card {
@@ -2715,7 +2965,7 @@ z-index: 999;
   .carousel-caption {
     position: absolute;
     right: 15%;
-    top: 3.5rem;
+    top: 2rem;
     left: 13%;
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
@@ -2723,56 +2973,47 @@ z-index: 999;
     text-align: center;
   }
 
-  .phases {
-    background: url('/5Phases.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 410px;
+
+  .video-size {
+    width: 100%!important;
+    height: 100%!important;
   }
-  
-  .phase1 {
-    background: url('/Phase1.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 410px;
-  }
-  
-  .phase2 {
-    background: url('/Phase2.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 410px;
-  }
-  
-  .phase3 {
-    background: url('/Phase3.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 410px;
-  }
-  
-  .phase4 {
-    background: url('/Phase4.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 410px;
-  }
-  
-  .phase5 {
-    background: url('/Phase5.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 410px;
-  }
+
+  .about-hero {
+    height: 200px;
+    position: initial;
+}
+
 
 }
 
+@media screen and (max-width: 767px){
+
+.phases {
+  height: 290px;
+}
+
+.phase1 {
+  height: 290px;
+}
+
+.phase2 {
+  height: 290px;
+}
+
+.phase3 {
+  height: 290px;
+}
+
+.phase4 {
+  height: 290px;
+}
+
+.phase5 {
+  height: 290px;
+}
+
+}
 
 
 /* Mobile */
@@ -2784,7 +3025,14 @@ z-index: 999;
     font-size: calc(2.8rem + 1.5vw);
     line-height: calc(2.9rem + 1.5vw);
   }
+
+  h1.hero-alt, h1.hero-alt {
+    margin-top: 0px!important;
+    font-size: calc(2.8rem + 1.5vw);
+    line-height: calc(2.9rem + 1.5vw);
+  }
   
+
   h2.hero, h2.hero {
     font-size: calc(3.6rem + 1.5vw);
     line-height: calc(3.7rem + 1.5vw);
@@ -2792,8 +3040,14 @@ z-index: 999;
     padding-bottom: 0px!important;
   }
 
+  .video-size {
+    width: 100%!important;
+    height: 100%!important;
+  }
+
   .dropdown-menu {
     min-width: 20rem;
+    transform: translate3d(0,50px,0) !important;
   }
 
   .calculate-card {
@@ -2821,8 +3075,8 @@ font-size: .9em;
 }
 
 .carousel-indicators {
-  margin-right: 20%;
-  margin-left: 20%;
+  margin-right: 34%;
+  margin-left: 34%;
   margin-bottom: .6rem;
 }
 
@@ -2837,53 +3091,6 @@ font-size: .9em;
   text-align: center;
 }
 
-.phases {
-  background: url('/5Phases-mob.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 560px;
-}
-
-.phase1 {
-  background: url('/Phase1-mob.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 560px;
-}
-
-.phase2 {
-  background: url('/Phase2-mob.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 560px;
-}
-
-.phase3 {
-  background: url('/Phase3-mob.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 560px;
-}
-
-.phase4 {
-  background: url('/Phase4-mob.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 560px;
-}
-
-.phase5 {
-  background: url('/Phase5-mob.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 560px;
-}
 
 .protorow {
   background-image: url('/landing-proto.png');
@@ -2952,6 +3159,325 @@ font-size: .9em;
   margin-right: 0px;
 }
 
+.about-hero {
+  height: 200px;
+  position: initial;
+}
+
+.emphasis-2 {
+  font-size: calc(2.5rem + 1.5vw);
+  line-height: calc(2.5rem + 1.5vw);
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.signTextBottom {
+  width: 100%;
+  bottom: 11%;
+text-align: center;
+font-size: .45em;
+font-weight: 600;
+}
+
+.signTextForest {
+  top: 27%;
+    width: 37%;
+    left: 44%;
+    font-size: .95em;
+    font-weight: 700;
+    line-height: em;
+}
+
+.signImage {
+  position: absolute;
+    top: 27%;
+    right: 24%;
+    width: 19%;
+}
+
+.signTextAcres {
+  bottom: 25%;
+    width: 40%;
+    left: 44%;
+    font-size: .7em;
+    color: #362B26;
+}
+
+.phases {
+  height: 290px;
+}
+
+.phase1 {
+  height: 290px;
+}
+
+.phase2 {
+  height: 290px;
+}
+
+.phase3 {
+  height: 290px;
+}
+
+.phase4 {
+  height: 290px;
+}
+
+.phase5 {
+  height: 290px;
+}
 
 }
 
+@media screen and (max-width: 530px) {
+
+  .phases {
+    height: 280px;
+  }
+  
+  .phase1 {
+    height: 280px;
+  }
+  
+  .phase2 {
+    height: 280px;
+  }
+  
+  .phase3 {
+    height: 280px;
+  }
+  
+  .phase4 {
+    height: 280px;
+  }
+  
+  .phase5 {
+    height: 280px;
+  }
+
+}
+
+@media screen and (max-width: 530px) {
+
+  .phases {
+    height: 260px;
+  }
+  
+  .phase1 {
+    height: 260px;
+  }
+  
+  .phase2 {
+    height: 260px;
+  }
+  
+  .phase3 {
+    height: 260px;
+  }
+  
+  .phase4 {
+    height: 260px;
+  }
+  
+  .phase5 {
+    height: 260px;
+  }
+
+}
+
+@media screen and (max-width: 497px) {
+
+.phases {
+  background: url('/5Phases-mob.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 660px;
+}
+
+.phase1 {
+  background: url('/Phase1-mob.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 660px;
+}
+
+.phase2 {
+  background: url('/Phase2-mob.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 660px;
+}
+
+.phase3 {
+  background: url('/Phase3-mob.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 660px;
+}
+
+.phase4 {
+  background: url('/Phase4-mob.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 660px;
+}
+
+.phase5 {
+  background: url('/Phase5-mob.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 660px;
+}
+
+.carousel-indicators {
+  margin-right: 25%;
+  margin-left: 25%;
+}
+
+}
+
+@media screen and (max-width: 460px) {
+
+  .phases {
+    height: 600px;
+  }
+  
+  .phase1 {
+    height: 600px;
+  }
+  
+  .phase2 {
+    height: 600px;
+  }
+  
+  .phase3 {
+    height: 600px;
+  }
+  
+  .phase4 {
+    height: 600px;
+  }
+  
+  .phase5 {
+    height: 600px;
+  }
+
+}
+
+@media screen and (max-width: 430px) {
+
+  .phases {
+    height: 550px;
+  }
+  
+  .phase1 {
+    height: 550px;
+  }
+  
+  .phase2 {
+    height: 550px;
+  }
+  
+  .phase3 {
+    height: 550px;
+  }
+  
+  .phase4 {
+    height: 550px;
+  }
+  
+  .phase5 {
+    height: 550px;
+  }
+
+}
+
+@media screen and (max-width: 400px) {
+
+  .phases {
+    height: 525px;
+  }
+  
+  .phase1 {
+    height: 525px;
+  }
+  
+  .phase2 {
+    height: 525px;
+  }
+  
+  .phase3 {
+    height: 525px;
+  }
+  
+  .phase4 {
+    height: 525px;
+  }
+  
+  .phase5 {
+    height: 525px;
+  }
+
+}
+
+@media screen and (max-width: 390px) {
+
+  .phases {
+    height: 480px;
+  }
+  
+  .phase1 {
+    height: 480px;
+  }
+  
+  .phase2 {
+    height: 480px;
+  }
+  
+  .phase3 {
+    height: 480px;
+  }
+  
+  .phase4 {
+    height: 480px;
+  }
+  
+  .phase5 {
+    height: 480px;
+  }
+
+}
+
+@media screen and (max-width: 360px) {
+
+  .phases {
+    height: 430px;
+  }
+  
+  .phase1 {
+    height: 430px;
+  }
+  
+  .phase2 {
+    height: 430px;
+  }
+  
+  .phase3 {
+    height: 430px;
+  }
+  
+  .phase4 {
+    height: 430px;
+  }
+  
+  .phase5 {
+    height: 430px;
+  }
+
+}

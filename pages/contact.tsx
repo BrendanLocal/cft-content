@@ -21,7 +21,7 @@ const Lang = () => {
     }
     return (language)
   }
-
+ 
   export default function Contact({ file, href, children}) {
   const formOptions = {
     label: 'Contact Page',
@@ -91,6 +91,7 @@ const Lang = () => {
 
   return (
     <div>
+      <Header/>
       <Head>
         <title>{editingdata.title}</title>
         <link rel="icon" href="/favicon.ico" />
@@ -99,15 +100,15 @@ const Lang = () => {
 
       <main className="bg-green py-5">
         <Container className="v-full pt-5 mb-5">
-          <Row className="text-center  py-3">
+          <Row className="text-center py-3">
             <Col>
-            <h1 className="text-orange">{editingdata.header}</h1>
+            <h1 className="bold emphasis text-orange">{editingdata.header}</h1>
             </Col>
           </Row>
           <Row className="justify-content-center">
             
             <Col className="col-12 col-sm-7 col-xl-5 p2">
-              <div className=" roundedBox innerShadow text-white p-4">
+              <div className="roundedBox innerShadow text-white p-4">
                 <ContactForm />
               </div>
             </Col>
