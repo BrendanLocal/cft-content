@@ -53,11 +53,17 @@ const Lang = () => {
       </Head>
 
       <main id="intro">   
-        <Container fluid className="v-full justify-content-center z-999 p-5">
+        <Container fluid className="v-full justify-content-center z-999">
 
-            <Row className="justify-content-center mt-5 mb-2 p-sm-0 m-sm-0">
-                <Col className="col-12 col-md-8 p-sm-0 m-sm-0 mt-5">
-                <object className="mt-5" type="image/svg+xml" data="/intro-animation.svg"/> 
+            <Row className="justify-content-center mt-5 px-5 d-none d-lg-block">
+                <Col className="col-12 px-5">
+                <object className="px-5" type="image/svg+xml" data="/intro-animation.svg"/> 
+                </Col>    
+            </Row>
+
+            <Row className="justify-content-center mt-5 mb-2 d-lg-none">
+                <Col className="col-12">
+                <object className="" type="image/svg+xml" data="/intro-animation.svg"/> 
                 </Col>    
             </Row>
 
@@ -67,7 +73,7 @@ const Lang = () => {
                 </Col>    
             </Row>
 
-            <Row className="justify-content-center d-lg-none mt-5 p-5">
+            <Row className="justify-content-center d-lg-none">
                 <Col className="col-8 text-center">
                 <a href="/home" className="intro-btn btn btn-text text-orange large tight-drop-light no-underline">{editingdata.enter}</a>
                 </Col>    
@@ -76,7 +82,7 @@ const Lang = () => {
         </Container>
       </main>
     </div>  
-
+ 
   )
 }
 

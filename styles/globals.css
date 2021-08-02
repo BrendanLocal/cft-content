@@ -244,6 +244,11 @@ font-weight: 600;
   line-height: 14px;
 }
 
+.x-small {
+  font-size: 11px;
+  line-height: 10px;
+}
+
  .dropdown-text {
    font-size: 14px;
  }
@@ -1132,7 +1137,7 @@ div>p {
 }
 
 
-.splash button {
+.splash button:not(#rcc-confirm-button) {
  opacity: 0;
   transform: translateY(-100%);
 
@@ -1186,12 +1191,23 @@ div>p {
 
 .CookieConsent {
   bottom: 70px;
+  z-index: 999999!important;
+  background-color: #212529!important;
+  box-shadow: 0px -1px 10px rgba(0,0,0,.5);
 }
+
+#rcc-confirm-button {
+  background-color: #00823B!important;
+  color: #fff!important;
+  border-radius: 6px!important;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
 
 .splash footer {
   opacity: 0;
   transform: translateY(100%);
-
   transition: none;
 }
 
@@ -1425,6 +1441,10 @@ footer {
 
 .nudge {
   margin-right: 6px;
+}
+
+.footer-links {
+  font-size: 15px;
 }
 
 .intro-links{
@@ -2567,9 +2587,9 @@ color: #054217;
 
 .signImageLogo {
   position: absolute;
-  top: 63.5%;
-  right: 20%;
-  width: 10%;
+  top: 58%;
+  right: 21%;
+  width: 7%;
 }
 
 /* Search */

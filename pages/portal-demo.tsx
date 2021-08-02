@@ -188,7 +188,7 @@ return (
     </meta>
   </Head>
 
-  <main className="bg-green ">
+  <main className="bg-green">
     <Container fluid className="portalLogo">
         <Row>
           <Col className="p-4">
@@ -204,11 +204,10 @@ return (
           </Row>
      </Container>
     <Container fluid className="bg-green px-0">
-      <Row className="justify-content-center d-flex mb-3 pt-lg-5 mx-0">
+      <Row className="justify-content-center d-flex d-none mb-3 pt-lg-5 mx-0">
         <Col className="col-10 mt-5 mt-lg-0 mt-xl-0">
         <h1 className="h2 bold text-orange text-center">
-          Forescaster
-          {/* {editingdata.greeting} {userData.displayname} */}
+          Smart Forest Intelligence Dashboard
         </h1>
         </Col>
       </Row>
@@ -220,7 +219,7 @@ return (
             <Col className="col-12 col-lg-3 p-5 bg-offwhite d-none d-lg-block">
             <TabList>
               <span className="smallCaps small text-green panelHead mb-1">Profile</span>
-              <Tab className="my-2">Demo Portal</Tab>       
+              <Tab className="my-2">Smart Forest Intelligence Dashboard</Tab>       
               <Tab className="op-5 my-2" disabled>Grow My Impact</Tab>
               <Tab className="op-5 my-2" disabled>Edit My Information</Tab>
               <br />
@@ -233,7 +232,7 @@ return (
             
             <Col className="col-12 col-lg-9 p-5 pt-4">    
             <TabPanel>
-              <h3 className="text-center text-grey mt-3 mb-2 px-3">Demo Portal</h3>
+              <h3 className="text-center text-grey mt-3 mb-2 px-3">Smart Forest Intelligence Dashboard</h3>
               <Tabs>
                 <TabList className="tabRow mb-0 px-0">
                   <Tab className="link bold text-orange my-2 mx-5 mx-md-3">
