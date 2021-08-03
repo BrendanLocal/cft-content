@@ -1460,8 +1460,8 @@ export default function App({ file, href, children}) {
                 <Col className="col-12 col-xl-4">{editingdata.flightShort}</Col>
                 <Col>
                   <Row>
-                    <Col className="col-6 col-md-6">{editingdata.flightShort1}</Col>
-                    <Col className="col-6 col-xl-6">
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightShort1}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
                       <input onChange={calculateFlightCount} name="flyShort" type="number" placeholder="Number of flights"/>
                     </Col>
                   </Row>
@@ -1473,14 +1473,14 @@ export default function App({ file, href, children}) {
                 <Col className="col-10 col-xl-4">{editingdata.flightMed}</Col>
                 <Col>
                   <Row>
-                    <Col className="col-6">{editingdata.flightMed1}</Col>
-                    <Col className="col-6">
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightMed1}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
                       <input onChange={calculateFlightCount} name="flyMediumEco" type="number"placeholder="Number of flights"/>
                     </Col>
                   </Row>
                   <Row>
-                    <Col className="col-6">{editingdata.flightMed2}</Col>
-                    <Col className="col-6">
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightMed2}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
                       <input onChange={calculateFlightCount} name="flyMediumBus" type="number"placeholder="Number of flights"/>
                     </Col>
                   </Row>
@@ -1492,26 +1492,26 @@ export default function App({ file, href, children}) {
                 <Col className="col-10 col-xl-4">{editingdata.flightLong}</Col>
                 <Col className="col-12 col-xl-8">
                   <Row>
-                    <Col>{editingdata.flightLong1}</Col>
-                    <Col>
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightLong1}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
                       <input onChange={calculateFlightCount} name="flyLongEco" type="number" placeholder="Number of flights"/>
                     </Col>
                   </Row>
                   <Row>
-                    <Col>{editingdata.flightLong2}</Col>
-                    <Col>
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightLong2}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
                       <input onChange={calculateFlightCount} name="flyLongEcoPlus" type="number" placeholder="Number of flights"/>
                     </Col>
                   </Row>
                   <Row>
-                    <Col>{editingdata.flightLong3}</Col>
-                    <Col>
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightLong3}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
                       <input onChange={calculateFlightCount} name="flyLongBus" type="number" placeholder="Number of flights"/>
                     </Col>
                   </Row>
                   <Row>
-                    <Col>{editingdata.flightLong4}</Col>
-                    <Col>
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightLong4}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
                       <input onChange={calculateFlightCount} name="flyLongFirst" type="number" placeholder="Number of flights"/>
                     </Col>
                   </Row>
@@ -1520,16 +1520,14 @@ export default function App({ file, href, children}) {
               <hr/>
 
               <Row>
-                <Col className="col-10 col-sm-5 col-xl-4">{editingdata.flightNights}</Col>
-                <Col  className="col-2 col-sm-1 col-xl-4"></Col>
-                <Col className="col-sm-6 col-xl-4">
+                <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightNights}</Col>
+                <Col className="col-12 col-xl-8 col-sm-6">
                   <input onChange={calculateFlightCount} name="flyHotels" type="number" placeholder="Number of nights"/>
                 </Col>
               </Row>
               <Row>
-                <Col className="col-10 col-sm-5 col-xl-4">{editingdata.flightCars}</Col>
-                <Col  className="col-2 col-sm-1 col-xl-4"></Col>
-                <Col className="col-sm-6 col-xl-4">
+                <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightCars}</Col>
+                <Col className="col-12 col-xl-8 col-sm-6">
                   <input onChange={calculateMiles} name="rentalGas" type="number" min="0" onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                   }} placeholder="Annual KM (gas)"/>
@@ -1547,24 +1545,24 @@ export default function App({ file, href, children}) {
               </Row>
               
               <Row>
-                <Col className="col-12 col-xl-4">{editingdata.publicTaxi}</Col>
-                <Col className="col-xl-4">
+                <Col className="col-12 col-xl-4 col-sm-6">{editingdata.publicTaxi}</Col>
+                <Col className="col-12 col-xl-8 col-sm-6">
                   <input onChange={calculateTransitMiles} name="publicTaxi" type="number" min="0" onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                   }} placeholder="Average Km per day"/>
                 </Col>
               </Row>
               <Row>
-                <Col className="col-10 col-xl-4">{editingdata.publicMetro}</Col>
-                <Col className="col-6 col-xl-4">
+                <Col className="col-12 col-xl-4 col-sm-6">{editingdata.publicMetro}</Col>
+                <Col className="col-12 col-xl-8 col-sm-6">
                   <input onChange={calculateTransitMiles} name="publicSubway" type="number" min="0" onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                   }} placeholder="Average Km per day"/>
                 </Col>
               </Row>
               <Row>
-                <Col className="col-12 col-xl-4">{editingdata.publicBus}</Col>
-                <Col className="col-xl-4">
+                <Col className="col-12 col-xl-4 col-sm-6">{editingdata.publicBus}</Col>
+                <Col className="col-12 col-xl-8 col-sm-6">
                   <input onChange={calculateTransitMiles} name="publicCar" type="number" placeholder="Average Km per day"/>
                 </Col>
               </Row>
