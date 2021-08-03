@@ -368,10 +368,10 @@ export default function Build({ file }) {
 
         <Row id="corp-about" className="p-4 justify-content-center align-items-center">
           <Col>
-          <h6 className="text-orange thin mb-4">
+          <h6 className="text-orange text-small mb-4">
           CORPORATE SMART FORESTS / ABOUT
           </h6>
-          <h5 className="text-green mb-0 thin">
+          <h5 className="text-green mb-0">
           <ReactMarkdown>
           {editingdata.corpdropdown_box1header1}
           </ReactMarkdown>
@@ -379,7 +379,7 @@ export default function Build({ file }) {
             <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
             {editingdata.corpdropdown_box1para1}
             </ReactMarkdown>
-            <h5 className="text-green mb-0 thin">
+            <h5 className="text-green mb-0">
           <ReactMarkdown>
           {editingdata.corpdropdown_box1header2}
           </ReactMarkdown>
@@ -387,7 +387,7 @@ export default function Build({ file }) {
             <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
             {editingdata.corpdropdown_box1para2}
             </ReactMarkdown>
-            <h5 className="text-green mb-0 thin">
+            <h5 className="text-green mb-0">
           <ReactMarkdown>
           {editingdata.corpdropdown_box1header3}
           </ReactMarkdown>
@@ -412,10 +412,10 @@ export default function Build({ file }) {
           
         <Row id="corp-quotes" className="p-4">
           <Col>
-          <h6 className="text-orange thin mb-4">
+          <h6 className="text-orange text-small mb-4">
           CORPORATE SMART FORESTS / QUOTES
           </h6>
-          <h5 className="text-green medium mb-0 thin">
+          <h5 className="text-green medium mb-0">
           <ReactMarkdown>
           {editingdata.corpdropdown_quote1para}
           </ReactMarkdown>
@@ -426,7 +426,7 @@ export default function Build({ file }) {
           <ReactMarkdown className="text-small mb-4">
           {editingdata.corpdropdown_quote1title}
           </ReactMarkdown>
-          <h5 className="text-green medium mb-0 thin">
+          <h5 className="text-green medium mb-0">
           <ReactMarkdown>
           {editingdata.corpdropdown_quote2para}
           </ReactMarkdown>
@@ -454,11 +454,11 @@ export default function Build({ file }) {
 
         <Row id="corp-bottom" className="p-4">
           <Col>
-          <h6 className="text-orange thin mb-4">
+          <h6 className="text-orange text-small mb-4">
           CORPORATE SMART FORESTS / BOTTOM LINE
           </h6>
-          <h5 className="text-green medium mb-0 thin"><ReactMarkdown>{editingdata.corpdropdown_pointsheader}</ReactMarkdown></h5>
-          <ul className="text-grey dropdown-text checkMark px-1 mx-1">
+          <h5 className="text-green medium mb-0"><ReactMarkdown>{editingdata.corpdropdown_pointsheader}</ReactMarkdown></h5>
+          <ul className="text-grey dropdown-text checkMark px-1 mx-3">
             <li><ReactMarkdown>{editingdata.corpdropdown_pointspara1}</ReactMarkdown></li>
             <li><ReactMarkdown>{editingdata.corpdropdown_pointspara2}</ReactMarkdown></li>
             <li><ReactMarkdown>{editingdata.corpdropdown_pointspara3}</ReactMarkdown></li>
@@ -486,10 +486,10 @@ export default function Build({ file }) {
 
         <Row id="school-about" className="p-4">
           <Col>
-          <h6 className="text-orange thin mb-4">
+          <h6 className="text-orange text-small mb-4">
           SCHOOL SMART FORESTS / ABOUT
           </h6>
-            <h5 className="text-green mb-0 thin">
+            <h5 className="text-green mb-0">
               <ReactMarkdown>
               {editingdata.schooldropdown_box1header1}
               </ReactMarkdown>
@@ -497,7 +497,7 @@ export default function Build({ file }) {
             <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
               {editingdata.schooldropdown_box1para1}
             </ReactMarkdown>
-            <h5 className="text-green mb-0 thin">
+            <h5 className="text-green mb-0">
               <ReactMarkdown>
                 {editingdata.schooldropdown_box1header2}
               </ReactMarkdown>
@@ -505,7 +505,7 @@ export default function Build({ file }) {
             <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
               {editingdata.schooldropdown_box1para2}
             </ReactMarkdown>
-            <h5 className="text-green mb-0 thin">
+            <h5 className="text-green mb-0">
               <ReactMarkdown>
                 {editingdata.schooldropdown_box1header3}
               </ReactMarkdown>
@@ -531,10 +531,10 @@ export default function Build({ file }) {
 
         <Row id="school-quotes" className="p-4 ">
           <Col>
-          <h6 className="text-orange thin mb-4">
+          <h6 className="text-orange text-small mb-4">
           SCHOOL SMART FORESTS / QUOTES
           </h6>
-            <h5 className="text-green medium mb-0 thin">
+            <h5 className="text-green medium mb-0">
               <ReactMarkdown>
                 {editingdata.schooldropdown_quote1para}
               </ReactMarkdown>
@@ -545,7 +545,7 @@ export default function Build({ file }) {
             <ReactMarkdown className="text-small mb-4">
               {editingdata.schooldropdown_quote1title}
             </ReactMarkdown>
-            <h5 className="text-green medium mb-0 thin">
+            <h5 className="text-green medium mb-0">
               <ReactMarkdown>
                 {editingdata.schooldropdown_quote2para}
               </ReactMarkdown>
@@ -574,20 +574,20 @@ export default function Build({ file }) {
 
         <Row id="school-involved" className="p-4">
           <Col>
-          <h6 className="text-orange thin mb-4">
+          <h6 className="text-orange text-small mb-4">
           SCHOOL SMART FORESTS / GET INVOLVED
           </h6>
-            <h5 className="text-green medium mb-0 thin">
+            <h5 className="text-green medium mb-0">
               <ReactMarkdown>
               {editingdata.schooldropdown_box1para0}
               </ReactMarkdown>
             </h5>
-            <h5 className="text-green medium mb-0 thin">
+            <h5 className="text-green medium mb-0">
               <ReactMarkdown>
                 {editingdata.schooldropdown_pointsheader}
               </ReactMarkdown>
             </h5>
-            <ul className="text-grey dropdown-text checkMark px-1 mx-1">
+            <ul className="text-grey dropdown-text checkMark px-1 mx-3">
               <li><ReactMarkdown>{editingdata.schooldropdown_pointspara1}</ReactMarkdown></li>
               <li><ReactMarkdown>{editingdata.schooldropdown_pointspara2}</ReactMarkdown></li>
               <li><ReactMarkdown>{editingdata.schooldropdown_pointspara3}</ReactMarkdown></li>
@@ -614,10 +614,10 @@ export default function Build({ file }) {
 
         <Row id="legacy-about" className="p-4">
           <Col>
-          <h6 className="text-orange thin mb-4">
+          <h6 className="text-orange text-small mb-4">
           LEGACY SMART FORESTS / ABOUT
           </h6>
-            <h5 className="text-green medium mb-0 thin">
+            <h5 className="text-green medium mb-0">
               <ReactMarkdown>
                 {editingdata.legacydropdown_box1header1}
               </ReactMarkdown>
@@ -640,10 +640,10 @@ export default function Build({ file }) {
 
         <Row id="legacy-quotes" className="p-4">
           <Col>
-          <h6 className="text-orange thin mb-4">
+          <h6 className="text-orange text-small mb-4">
           LEGACY SMART FORESTS / QUOTES
           </h6>
-            <h5 className="text-green medium mb-0 thin">
+            <h5 className="text-green medium mb-0">
               <ReactMarkdown>
                 {editingdata.legacydropdown_quote1para}
               </ReactMarkdown>
@@ -654,7 +654,7 @@ export default function Build({ file }) {
             <ReactMarkdown className="text-small mb-4">
               {editingdata.legacydropdown_quote1title}
             </ReactMarkdown>
-            <h5 className="text-green medium mb-0 thin">
+            <h5 className="text-green medium mb-0">
               <ReactMarkdown>
                 {editingdata.legacydropdown_quote2para}
               </ReactMarkdown>
@@ -683,20 +683,20 @@ export default function Build({ file }) {
 
         <Row id="legacy-investing" className="p-4">
           <Col>
-          <h6 className="text-orange thin mb-4">
+          <h6 className="text-orange text-small mb-4">
           LEGACY SMART FORESTS / IMPACT INVESTING
           </h6>
-            <h5 className="text-green medium mb-0 thin">
+            <h5 className="text-green medium mb-0">
               <ReactMarkdown>
                 {editingdata.legacydropdown_pointsheader0}
               </ReactMarkdown>
             </h5>
-            <h5 className="text-green medium mb-0 thin">
+            <h5 className="text-green medium mb-0">
               <ReactMarkdown>
                 {editingdata.legacydropdown_pointsheader}
               </ReactMarkdown>
             </h5>
-            <ul className="text-grey dropdown-text checkMark px-1 mx-1">
+            <ul className="text-grey dropdown-text checkMark px-1 mx-3">
               <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara1}</ReactMarkdown></li>
               <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara2}</ReactMarkdown></li>
               <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara3}</ReactMarkdown></li>
@@ -724,10 +724,10 @@ export default function Build({ file }) {
 
         <Row id="communal-about" className="p-4">
           <Col>
-          <h6 className="text-orange thin mb-4">
+          <h6 className="text-orange text-small mb-4">
           COMMUNAL SMART FORESTS / ABOUT
           </h6>
-            <h5 className="text-green medium thin mb-0">
+            <h5 className="text-green medium mb-0">
               <ReactMarkdown>
                 {editingdata.communaldropdown_box1header1}
               </ReactMarkdown>
@@ -750,10 +750,10 @@ export default function Build({ file }) {
 
         <Row id="communal-quotes" className="p-4">
           <Col>
-          <h6 className="text-orange thin mb-4">
+          <h6 className="text-orange text-small mb-4">
           COMMUNAL SMART FORESTS / QUOTES
           </h6>
-            <h5 className="text-green medium mb-0 thin">
+            <h5 className="text-green medium mb-0">
               <ReactMarkdown>
                 {editingdata.communaldropdown_quote1para}
               </ReactMarkdown>
@@ -764,7 +764,7 @@ export default function Build({ file }) {
             <ReactMarkdown className="text-small mb-4">
               {editingdata.communaldropdown_quote1title}
             </ReactMarkdown>
-            <h5 className="text-green medium mb-0 thin">
+            <h5 className="text-green medium mb-0">
               <ReactMarkdown>
                 {editingdata.communaldropdown_quote2para}
               </ReactMarkdown>
@@ -794,15 +794,15 @@ export default function Build({ file }) {
 
         <Row id="communal-impact" className="p-4">
           <Col>
-          <h6 className="text-orange thin mb-4">
+          <h6 className="text-orange text-small mb-4">
           COMMUNAL SMART FORESTS / IMPACT
           </h6>
-            <h5 className="text-green medium mb-0 thin">
+            <h5 className="text-green medium mb-0">
               <ReactMarkdown>
                 {editingdata.communaldropdown_pointsheader}
               </ReactMarkdown>
             </h5>
-            <ul className="text-grey dropdown-text checkMark px-1 mx-1">
+            <ul className="text-grey dropdown-text checkMark px-1 mx-3">
               <li><ReactMarkdown>{editingdata.communaldropdown_pointspara1}</ReactMarkdown></li>
               <li><ReactMarkdown>{editingdata.communaldropdown_pointspara2}</ReactMarkdown></li>
               <li><ReactMarkdown>{editingdata.communaldropdown_pointspara3}</ReactMarkdown></li>
