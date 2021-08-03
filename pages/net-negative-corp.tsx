@@ -130,7 +130,7 @@ export default function App({ file, href, children}) {
   return (
     <div className="bg-corp">
       <Header/>
-      <Container className="p-4">
+      <Container className="p-4 pt-5">
         <Row className="justify-content-center">
           <Col className="col-12 col-lg-10 pt-5 align-items-center my-4 pt-5">
             <h1 className="emphasis text-orange text-center bold tight-drop-light">Corporate Net-Negative Calculator</h1>
