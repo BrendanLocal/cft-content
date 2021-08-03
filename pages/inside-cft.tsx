@@ -16,9 +16,10 @@ import {
   useGithubToolbarPlugins,
 } from "react-tinacms-github";
 import Header from "../components/header";
-import PDFViewer from '../components/PDFViewer';
-import PDFJSBackend from '../middlewares/pdfjs';
 import ReactPlayer from 'react-player';
+import { Document, Page } from 'react-pdf';
+import { pdfjs } from 'react-pdf';
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 export default function Power({ file }) {
   const [show, setShow] = useState(false);
@@ -73,6 +74,14 @@ export default function Power({ file }) {
       {name: 'person13_para1', component: 'markdown' },
       {name: 'person13_para2', component: 'markdown' }],
   };
+
+
+  const [numPages, setNumPages] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
+
+  function onDocumentLoadSuccess({ numPages }) {
+    setNumPages(numPages);
+  }
 
   const [editingdata, form] = useGithubJsonForm(file, formOptions);
   usePlugin(form);
@@ -193,7 +202,10 @@ export default function Power({ file }) {
                 <ReactPlayer playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4' className="video-size"/> 
               </Col>
               <Col className="col-10 col-lg-3 col-xl-3 d-flex">
-                <p className="text-white d-none medium d-lg-block">
+              <p className="text-white d-none large d-xl-block">
+                CFT was established by <span className="bold">Gary Zed</span>, an entrepreneur with a reputation for taking on tough challenges and getting things done. A leader with a national vision, Gary heads up a team that is committed to making CFT the most talked about climate success story in the decades ahead.
+                </p>
+                <p className="text-white d-none d-lg-block d-xl-none">
                 CFT was established by <span className="bold">Gary Zed</span>, an entrepreneur with a reputation for taking on tough challenges and getting things done. A leader with a national vision, Gary heads up a team that is committed to making CFT the most talked about climate success story in the decades ahead.
                 </p>
                 <p className="text-white text-center mt-3 large d-lg-none">
@@ -209,7 +221,7 @@ export default function Power({ file }) {
             <Row className="justify-content-center align-items-center my-4">
               <Col className="col-12 col-md-11 col-lg-8 col-xl-9 text-center text-white">
                 <h2 className="text-orange bold mb-2 px-md-3 px-lg-0">CFT’s Smart Forest Action Plan</h2>
-                <p className="medium mt-0 mb-0 px-lg-4 mb-2">When you invest in a Smart Forest, we keep you informed on its progress - from site selection to planting to ongoing maintenance and carbon and biodiversity footprint impact as well as building meaningful relationships with our Indigenous peoples. CFT manages the forest landscape from the moment you buy your forest.</p>
+                <p className="medium mt-0 mb-0 mb-2">When you invest in a Smart Forest, we keep you informed on its progress - from site selection to planting to ongoing maintenance and carbon and biodiversity footprint impact as well as building meaningful relationships with our Indigenous peoples. CFT manages the forest landscape from the moment you buy your forest.</p>
               </Col>
             </Row>
           </Fade>
@@ -414,16 +426,32 @@ export default function Power({ file }) {
 
         <Container id="qna" fluid className="v-full z-999 bg-green py-5 page-section">
           <Fade bottom>
-            <Row className="align-items-center justify-content-center py-5 ">
+            <Row className="align-items-center justify-content-center pt-5">
               <Col className="col-10 col-lg-7 pt-3">
-                <h2 className="text-center text-orange bold mb-2">Q & A</h2>
+                <h2 className="text-center text-orange bold mb-4">Q & A</h2>
               </Col>
             </Row>
           </Fade>
           <Fade bottom>
-            <Row className="align-items-center justify-content-center">
-              <Col className="col-8">          
-                <PDFViewer backend={PDFJSBackend} src='../../CFT-QA.pdf' />
+            <Row className="align-items-center justify-content-center mb-5">
+              <Col className="col-11 col-md-8 col-lg-6">      
+              
+              <Document file="./CFT-QA2.pdf" className="pdf-style card-drop-heavy" onLoadSuccess={onDocumentLoadSuccess}>
+                <Page pageNumber={pageNumber} />
+              </Document>
+
+              <Row className="align-items-center justify-content-center">
+                <Col>
+                
+                </Col>
+                <Col>
+                  <p className="text-white text-center mt-3">Page {pageNumber} of {numPages}</p>
+                </Col>
+                <Col> 
+                
+                </Col>
+              </Row>
+              
               </Col>
             </Row>
           </Fade>

@@ -138,6 +138,7 @@ hr.thick {
     transition: opacity 0.15s ease;
 }
 
+
 /*Text*/
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
@@ -1388,6 +1389,23 @@ text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.6);
 
 /* Footer */
 
+.pdf-style {
+  display: flex;
+}
+
+.react-pdf__Page__canvas {
+  width: 100%!important;
+  height: 100%!important;
+}
+
+.react-pdf__Page__textContent {
+  width: 100%!important;
+  height: 100%!important;
+}
+
+
+/* Footer */
+
 footer {
   position: relative;
   z-index: 1;
@@ -1492,7 +1510,6 @@ transition: all .5s ease;
 transform: translateY(3px)!important;
 transition: transform .5s ease;
 }
-
 
 .dropdown-links {
   font-size: 16px;
