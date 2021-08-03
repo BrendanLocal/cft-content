@@ -319,7 +319,9 @@ export default function Build({ file }) {
         </Modal.Header>
         <Modal.Body>
           
-          {/* EACH ROW IS ITS OWN CONTENT SECTION TO BE DISPLAYED INDIVIDUALLY */}
+      {/* EACH ROW IS ITS OWN CONTENT SECTION TO BE DISPLAYED INDIVIDUALLY */}
+
+          {/* CORPORATE MODALS */}
 
         <Row id="corp-about" className="p-4 justify-content-center align-items-center">
           <Col>
@@ -393,6 +395,8 @@ export default function Build({ file }) {
           </ul>
           </Col>
         </Row>
+
+        {/* SCHOOL MODALS */}
 
         <Row id="school-about" className="p-4 d-none">
           <Col>
@@ -472,6 +476,8 @@ export default function Build({ file }) {
           </Col>
         </Row>
 
+        {/* LEGACY MODALS */}
+
         <Row id="legacy-about" className="p-4 d-none">
           <Col>
             <h5 className="text-green medium mb-0 thin">
@@ -532,6 +538,8 @@ export default function Build({ file }) {
           </Col>
         </Row>
 
+        {/* COMMUNAL MODALS */}
+
         <Row id="communal-about" className="p-4 d-none">
           <Col>
             <h5 className="text-green medium thin mb-0">
@@ -540,7 +548,7 @@ export default function Build({ file }) {
               </ReactMarkdown>
             </h5>
           </Col>
-        </Row>
+        </Row>    
 
         <Row id="communal-quotes" className="p-4 d-none">
           <Col>
@@ -785,6 +793,8 @@ export default function Build({ file }) {
               </Col>
             </Row>
           </Fade>
+
+          {/* CORPORATE MODAL BUTTONS */}
           
           <Fade bottom>
             <Row className="text-center justify-content-center mb-4">
@@ -920,6 +930,7 @@ export default function Build({ file }) {
             </Row>
           </Fade>
 
+          {/* SCHOOL MODAL BUTTONS */}
 
           <Fade bottom>
             <Row className="text-center justify-content-center mb-4">
@@ -1055,6 +1066,8 @@ export default function Build({ file }) {
             </Row>
           </Fade>
 
+          {/* LEGACY MODAL BUTTONS */}
+
           <Fade bottom>
             <Row className="text-center justify-content-center mb-4">
               <Col className="col-11 col-md-8 mb-4">
@@ -1188,6 +1201,8 @@ export default function Build({ file }) {
               </Col>
             </Row>
           </Fade>
+
+          {/* COMMUNAL MODAL BUTTONS */}
 
           <Fade bottom>
             <Row className="text-center justify-content-center mb-4">
