@@ -252,10 +252,53 @@ export default function Build({ file }) {
       {name: 'part8_box3para', component: 'markdown' }],
   };
 
-  const [show, setShow] = useState(false);
+  const [showCorporateModal1, setShowCorporateModal1] = useState(false);
+  const handleCloseCorporateModal1 = () => setShowCorporateModal1(false);
+  const handleShowCorporateModal1 = () => setShowCorporateModal1(true);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const [showCorporateModal2, setShowCorporateModal2] = useState(false);
+  const handleCloseCorporateModal2 = () => setShowCorporateModal2(false);
+  const handleShowCorporateModal2 = () => setShowCorporateModal2(true);
+
+  const [showCorporateModal3, setShowCorporateModal3] = useState(false);
+  const handleCloseCorporateModal3 = () => setShowCorporateModal3(false);
+  const handleShowCorporateModal3 = () => setShowCorporateModal3(true);
+
+  const [showSchoolModal1, setShowSchoolModal1] = useState(false);
+  const handleCloseSchoolModal1 = () => setShowSchoolModal1(false);
+  const handleShowSchoolModal1 = () => setShowSchoolModal1(true);
+
+  const [showSchoolModal2, setShowSchoolModal2] = useState(false);
+  const handleCloseSchoolModal2 = () => setShowSchoolModal2(false);
+  const handleShowSchoolModal2 = () => setShowSchoolModal2(true);
+
+  const [showSchoolModal3, setShowSchoolModal3] = useState(false);
+  const handleCloseSchoolModal3 = () => setShowSchoolModal3(false);
+  const handleShowSchoolModal3 = () => setShowSchoolModal3(true);
+
+  const [showLegacyModal1, setShowLegacyModal1] = useState(false);
+  const handleCloseLegacyModal1 = () => setShowLegacyModal1(false);
+  const handleShowLegacyModal1 = () => setShowLegacyModal1(true);
+
+  const [showLegacyModal2, setShowLegacyModal2] = useState(false);
+  const handleCloseLegacyModal2 = () => setShowLegacyModal2(false);
+  const handleShowLegacyModal2 = () => setShowLegacyModal2(true);
+
+  const [showLegacyModal3, setShowLegacyModal3] = useState(false);
+  const handleCloseLegacyModal3 = () => setShowLegacyModal3(false);
+  const handleShowLegacyModal3 = () => setShowLegacyModal3(true);
+
+  const [showCommunalModal1, setShowCommunalModal1] = useState(false);
+  const handleCloseCommunalModal1 = () => setShowCommunalModal1(false);
+  const handleShowCommunalModal1 = () => setShowCommunalModal1(true);
+
+  const [showCommunalModal2, setShowCommunalModal2] = useState(false);
+  const handleCloseCommunalModal2 = () => setShowCommunalModal2(false);
+  const handleShowCommunalModal2 = () => setShowCommunalModal2(true);
+
+  const [showCommunalModal3, setShowCommunalModal3] = useState(false);
+  const handleCloseCommunalModal3 = () => setShowCommunalModal3(false);
+  const handleShowCommunalModal3 = () => setShowCommunalModal3(true);
 
 
   const [editingdata, form] = useGithubJsonForm(file, formOptions);
@@ -313,7 +356,7 @@ export default function Build({ file }) {
 
       {/* MODAL */}
 
-      <Modal show={show} className="d-flex align-items-center" onHide={handleClose}>
+      <Modal show={showCorporateModal1} className="d-flex align-items-center" onHide={handleCloseCorporateModal1}>
         <Modal.Header className="d-none" closeButton>
           <Modal.Title className="d-none"></Modal.Title>
         </Modal.Header>
@@ -355,7 +398,19 @@ export default function Build({ file }) {
           </Col>
         </Row>
 
-        <Row id="corp-quotes" className="p-4 d-none">
+        </Modal.Body>
+        <Modal.Footer className="p-0">
+          <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleCloseCorporateModal1}>CLOSE</Button>
+        </Modal.Footer>
+      </Modal>
+
+      <Modal show={showCorporateModal2} className="d-flex align-items-center" onHide={handleCloseCorporateModal2}>
+        <Modal.Header className="d-none" closeButton>
+          <Modal.Title className="d-none"></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          
+        <Row id="corp-quotes" className="p-4">
           <Col>
           <h6 className="text-orange thin mb-4">
           CORPORATE SMART FORESTS / QUOTES
@@ -384,8 +439,20 @@ export default function Build({ file }) {
           </ReactMarkdown>
           </Col>
         </Row>
+         
+        </Modal.Body>
+        <Modal.Footer className="p-0">
+          <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleCloseCorporateModal2}>CLOSE</Button>
+        </Modal.Footer>
+      </Modal>
+      
+      <Modal show={showCorporateModal3} className="d-flex align-items-center" onHide={handleCloseCorporateModal3}>
+        <Modal.Header className="d-none" closeButton>
+          <Modal.Title className="d-none"></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
 
-        <Row id="corp-bottom" className="p-4 d-none">
+        <Row id="corp-bottom" className="p-4">
           <Col>
           <h6 className="text-orange thin mb-4">
           CORPORATE SMART FORESTS / BOTTOM LINE
@@ -402,9 +469,22 @@ export default function Build({ file }) {
           </Col>
         </Row>
 
+        </Modal.Body>
+        <Modal.Footer className="p-0">
+          <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleCloseCorporateModal3}>CLOSE</Button>
+        </Modal.Footer>
+      </Modal>
+
+
+      <Modal show={showSchoolModal1} className="d-flex align-items-center" onHide={handleCloseSchoolModal1}>
+        <Modal.Header className="d-none" closeButton>
+          <Modal.Title className="d-none"></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+
         {/* SCHOOL MODALS */}
 
-        <Row id="school-about" className="p-4 d-none">
+        <Row id="school-about" className="p-4">
           <Col>
           <h6 className="text-orange thin mb-4">
           SCHOOL SMART FORESTS / ABOUT
@@ -436,7 +516,20 @@ export default function Build({ file }) {
           </Col>
         </Row>
 
-        <Row id="school-quotes" className="p-4 d-none">
+        </Modal.Body>
+        <Modal.Footer className="p-0">
+          <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleCloseSchoolModal1}>CLOSE</Button>
+        </Modal.Footer>
+      </Modal>
+
+
+      <Modal show={showSchoolModal2} className="d-flex align-items-center" onHide={handleCloseSchoolModal2}>
+        <Modal.Header className="d-none" closeButton>
+          <Modal.Title className="d-none"></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+
+        <Row id="school-quotes" className="p-4 ">
           <Col>
           <h6 className="text-orange thin mb-4">
           SCHOOL SMART FORESTS / QUOTES
@@ -466,7 +559,20 @@ export default function Build({ file }) {
           </Col>
         </Row>
 
-        <Row id="school-involved" className="p-4 d-none">
+        </Modal.Body>
+        <Modal.Footer className="p-0">
+          <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleCloseSchoolModal2}>CLOSE</Button>
+        </Modal.Footer>
+      </Modal>
+
+
+      <Modal show={showSchoolModal3} className="d-flex align-items-center" onHide={handleCloseSchoolModal3}>
+        <Modal.Header className="d-none" closeButton>
+          <Modal.Title className="d-none"></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+
+        <Row id="school-involved" className="p-4">
           <Col>
           <h6 className="text-orange thin mb-4">
           SCHOOL SMART FORESTS / GET INVOLVED
@@ -491,9 +597,22 @@ export default function Build({ file }) {
           </Col>
         </Row>
 
+        </Modal.Body>
+        <Modal.Footer className="p-0">
+          <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleCloseSchoolModal3}>CLOSE</Button>
+        </Modal.Footer>
+      </Modal>
+
+
+      <Modal show={showLegacyModal1} className="d-flex align-items-center" onHide={handleCloseLegacyModal1}>
+        <Modal.Header className="d-none" closeButton>
+          <Modal.Title className="d-none"></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+
         {/* LEGACY MODALS */}
 
-        <Row id="legacy-about" className="p-4 d-none">
+        <Row id="legacy-about" className="p-4">
           <Col>
           <h6 className="text-orange thin mb-4">
           LEGACY SMART FORESTS / ABOUT
@@ -506,7 +625,20 @@ export default function Build({ file }) {
           </Col>
         </Row>
 
-        <Row id="legacy-quotes" className="p-4 d-none">
+        </Modal.Body>
+        <Modal.Footer className="p-0">
+          <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleCloseLegacyModal1}>CLOSE</Button>
+        </Modal.Footer>
+      </Modal>
+
+
+      <Modal show={showLegacyModal2} className="d-flex align-items-center" onHide={handleCloseLegacyModal2}>
+        <Modal.Header className="d-none" closeButton>
+          <Modal.Title className="d-none"></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+
+        <Row id="legacy-quotes" className="p-4">
           <Col>
           <h6 className="text-orange thin mb-4">
           LEGACY SMART FORESTS / QUOTES
@@ -536,7 +668,20 @@ export default function Build({ file }) {
           </Col>
         </Row>
 
-        <Row id="legacy-investing" className="p-4 d-none">
+        </Modal.Body>
+        <Modal.Footer className="p-0">
+          <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleCloseLegacyModal2}>CLOSE</Button>
+        </Modal.Footer>
+      </Modal>
+
+
+      <Modal show={showLegacyModal3} className="d-flex align-items-center" onHide={handleCloseLegacyModal3}>
+        <Modal.Header className="d-none" closeButton>
+          <Modal.Title className="d-none"></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+
+        <Row id="legacy-investing" className="p-4">
           <Col>
           <h6 className="text-orange thin mb-4">
           LEGACY SMART FORESTS / IMPACT INVESTING
@@ -562,9 +707,22 @@ export default function Build({ file }) {
           </Col>
         </Row>
 
+        </Modal.Body>
+        <Modal.Footer className="p-0">
+          <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleCloseLegacyModal3}>CLOSE</Button>
+        </Modal.Footer>
+      </Modal>
+
+
+      <Modal show={showCommunalModal1} className="d-flex align-items-center" onHide={handleCloseCommunalModal1}>
+        <Modal.Header className="d-none" closeButton>
+          <Modal.Title className="d-none"></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+
         {/* COMMUNAL MODALS */}
 
-        <Row id="communal-about" className="p-4 d-none">
+        <Row id="communal-about" className="p-4">
           <Col>
           <h6 className="text-orange thin mb-4">
           COMMUNAL SMART FORESTS / ABOUT
@@ -577,7 +735,20 @@ export default function Build({ file }) {
           </Col>
         </Row>    
 
-        <Row id="communal-quotes" className="p-4 d-none">
+        </Modal.Body>
+        <Modal.Footer className="p-0">
+          <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleCloseCommunalModal1}>CLOSE</Button>
+        </Modal.Footer>
+      </Modal>
+
+
+      <Modal show={showCommunalModal2} className="d-flex align-items-center" onHide={handleCloseCommunalModal2}>
+        <Modal.Header className="d-none" closeButton>
+          <Modal.Title className="d-none"></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+
+        <Row id="communal-quotes" className="p-4">
           <Col>
           <h6 className="text-orange thin mb-4">
           COMMUNAL SMART FORESTS / QUOTES
@@ -607,7 +778,21 @@ export default function Build({ file }) {
           </Col>
         </Row>
 
-        <Row id="communal-impact" className="p-4 d-none">
+        </Modal.Body>
+        <Modal.Footer className="p-0">
+          <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleCloseCommunalModal2}>CLOSE</Button>
+        </Modal.Footer>
+      </Modal>
+
+
+      <Modal show={showCommunalModal3} className="d-flex align-items-center" onHide={handleCloseCommunalModal3}>
+        <Modal.Header className="d-none" closeButton>
+          <Modal.Title className="d-none"></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+
+
+        <Row id="communal-impact" className="p-4">
           <Col>
           <h6 className="text-orange thin mb-4">
           COMMUNAL SMART FORESTS / IMPACT
@@ -628,7 +813,7 @@ export default function Build({ file }) {
 
         </Modal.Body>
         <Modal.Footer className="p-0">
-          <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleClose}>CLOSE</Button>
+          <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleCloseCommunalModal3}>CLOSE</Button>
         </Modal.Footer>
       </Modal>
 
@@ -834,17 +1019,17 @@ export default function Build({ file }) {
               <Col className="col-11 col-md-8 mb-4">
                 <Row className="horizTab justify-content-center">
                   <Col className="col-10 col-lg-3 col-xl-4 my-2">
-                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="corp-about">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowCorporateModal1} data-dest="corp-about">
                       ABOUT
                     </a>                 
                   </Col>
                   <Col className="col-10 col-lg-3 col-xl-4 my-2">
-                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="corp-quotes">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowCorporateModal2} data-dest="corp-quotes">
                       QUOTES
                     </a>                 
                   </Col>
                   <Col className="col-10 col-lg-3 col-xl-4 my-2">
-                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="corp-bottom">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowCorporateModal3} data-dest="corp-bottom">
                       BOTTOM LINE
                     </a>                 
                   </Col>
@@ -970,17 +1155,17 @@ export default function Build({ file }) {
               <Col className="col-11 col-md-8 mb-4">
                 <Row className="horizTab justify-content-center">
                   <Col className="col-10 col-lg-3 col-xl-4 my-2">
-                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="school-about">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowSchoolModal1} data-dest="school-about">
                       ABOUT
                     </a>                 
                   </Col>
                   <Col className="col-10 col-lg-3 col-xl-4 my-2">
-                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="school-quotes">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowSchoolModal2} data-dest="school-quotes">
                       QUOTES
                     </a>                 
                   </Col>
                   <Col className="col-10 col-lg-3 col-xl-4 my-2">
-                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="school-involved">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowSchoolModal3} data-dest="school-involved">
                       GET INVOLVED
                     </a>                 
                   </Col>
@@ -1106,17 +1291,17 @@ export default function Build({ file }) {
               <Col className="col-11 col-md-8 mb-4">
                 <Row className="horizTab justify-content-center">
                   <Col className="col-10 col-lg-3 col-xl-4 my-2">
-                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="legacy-about">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowLegacyModal1} data-dest="legacy-about">
                       ABOUT
                     </a>                 
                   </Col>
                   <Col className="col-10 col-lg-3 col-xl-4 my-2">
-                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="legacy-quotes">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowLegacyModal2} data-dest="legacy-quotes">
                       QUOTES
                     </a>                 
                   </Col>
                   <Col className="col-10 col-lg-3 col-xl-4 my-2">
-                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="legacy-investing">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowLegacyModal3} data-dest="legacy-investing">
                       IMPACT INVESTING
                     </a>                 
                   </Col>
@@ -1242,17 +1427,17 @@ export default function Build({ file }) {
               <Col className="col-11 col-md-8 mb-4">
                 <Row className="horizTab justify-content-center">
                   <Col className="col-10 col-lg-3 col-xl-4 my-2">
-                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="communal-about">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowCommunalModal1} data-dest="communal-about">
                       ABOUT
                     </a>                 
                   </Col>
                   <Col className="col-10 col-lg-3 col-xl-4 my-2">
-                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="communal-quotes">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowCommunalModal2} data-dest="communal-quotes">
                       QUOTES
                     </a>                 
                   </Col>
                   <Col className="col-10 col-lg-3 col-xl-4 my-2">
-                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="communal-impact">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowCommunalModal3} data-dest="communal-impact">
                       IMPACT
                     </a>                 
                   </Col>
