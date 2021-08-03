@@ -1493,19 +1493,23 @@ transform: translateY(3px)!important;
 transition: transform .5s ease;
 }
 
+
 .dropdown-links {
   font-size: 16px;
   letter-spacing: 1px;
   font-weight: 900;
-  margin-top: 10px;
+  margin-left: -16px!important;
   text-transform: uppercase;
   text-decoration: none!important;
   box-shadow: none!important;
 }
 
-.dropdown-links:focus{
+.dropdown-links:after {
+  content: url("/carat-white.svg");
+  margin-left: 6px;
+  top: 5px;
+  position: absolute;
   color: #fff;
-  z-index:999!important;
 }
 
 .dropdown-menu {

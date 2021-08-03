@@ -311,13 +311,21 @@ export default function Build({ file }) {
         <meta name="theme-color" content="#054218"></meta>
       </Head>
 
+      {/* MODAL */}
+
       <Modal show={show} className="d-flex align-items-center" onHide={handleClose}>
         <Modal.Header className="d-none" closeButton>
           <Modal.Title className="d-none"></Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          
+          {/* EACH ROW IS ITS OWN CONTENT SECTION TO BE DISPLAYED INDIVIDUALLY */}
+
         <Row id="corp-about" className="p-4 justify-content-center align-items-center">
           <Col>
+          <h6 className="text-orange thin mb-4">
+          CORPORATE SMART FORESTS / ABOUT
+          </h6>
           <h5 className="text-green mb-0 thin">
           <ReactMarkdown>
           {editingdata.corpdropdown_box1header1}
@@ -344,6 +352,7 @@ export default function Build({ file }) {
             </ReactMarkdown>
           </Col>
         </Row>
+
         <Row id="corp-quotes" className="p-4 d-none">
           <Col>
           <h5 className="text-green medium mb-0 thin">
@@ -370,6 +379,7 @@ export default function Build({ file }) {
           </ReactMarkdown>
           </Col>
         </Row>
+
         <Row id="corp-bottom" className="p-4 d-none">
           <Col>
           <h5 className="text-green medium mb-0 thin"><ReactMarkdown>{editingdata.corpdropdown_pointsheader}</ReactMarkdown></h5>
@@ -383,6 +393,145 @@ export default function Build({ file }) {
           </ul>
           </Col>
         </Row>
+
+        <Row id="school-about" className="p-4 d-none">
+          <Col>
+            <h5 className="text-green mb-0 thin">
+              <ReactMarkdown>
+              {editingdata.schooldropdown_box1header1}
+              </ReactMarkdown>
+            </h5>
+            <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
+              {editingdata.schooldropdown_box1para1}
+            </ReactMarkdown>
+            <h5 className="text-green mb-0 thin">
+              <ReactMarkdown>
+                {editingdata.schooldropdown_box1header2}
+              </ReactMarkdown>
+            </h5>
+            <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
+              {editingdata.schooldropdown_box1para2}
+            </ReactMarkdown>
+            <h5 className="text-green mb-0 thin">
+              <ReactMarkdown>
+                {editingdata.schooldropdown_box1header3}
+              </ReactMarkdown>
+            </h5>
+            <ReactMarkdown className="text-grey mt-0 dropdown-text">
+              {editingdata.schooldropdown_box1para3}
+            </ReactMarkdown>
+          </Col>
+        </Row>
+
+        <Row id="school-quotes" className="p-4 d-none">
+          <Col>
+            <h5 className="text-green medium mb-0 thin">
+              <ReactMarkdown>
+                {editingdata.schooldropdown_quote1para}
+              </ReactMarkdown>
+            </h5>
+            <ReactMarkdown>
+              {editingdata.schooldropdown_quote1name}
+            </ReactMarkdown>
+            <ReactMarkdown className="text-small mb-4">
+              {editingdata.schooldropdown_quote1title}
+            </ReactMarkdown>
+            <h5 className="text-green medium mb-0 thin">
+              <ReactMarkdown>
+                {editingdata.schooldropdown_quote2para}
+              </ReactMarkdown>
+            </h5>
+            <ReactMarkdown>
+              {editingdata.schooldropdown_quote2name}
+            </ReactMarkdown>
+            <ReactMarkdown className="text-small">
+              {editingdata.schooldropdown_quote2title}
+            </ReactMarkdown>
+          </Col>
+        </Row>
+
+        <Row id="school-involved" className="p-4 d-none">
+          <Col>
+            <h5 className="text-green medium mb-0 thin">
+              <ReactMarkdown>
+              {editingdata.schooldropdown_box1para0}
+              </ReactMarkdown>
+            </h5>
+            <h5 className="text-green medium mb-0 thin">
+              <ReactMarkdown>
+                {editingdata.schooldropdown_pointsheader}
+              </ReactMarkdown>
+            </h5>
+            <ul className="text-grey dropdown-text checkMark px-1 mx-1">
+              <li><ReactMarkdown>{editingdata.schooldropdown_pointspara1}</ReactMarkdown></li>
+              <li><ReactMarkdown>{editingdata.schooldropdown_pointspara2}</ReactMarkdown></li>
+              <li><ReactMarkdown>{editingdata.schooldropdown_pointspara3}</ReactMarkdown></li>
+              <li><ReactMarkdown>{editingdata.schooldropdown_pointspara4}</ReactMarkdown></li>
+              <li><ReactMarkdown>{editingdata.schooldropdown_pointspara5}</ReactMarkdown></li>
+            </ul>
+          </Col>
+        </Row>
+
+        <Row id="legacy-about" className="p-4 d-none">
+          <Col>
+            <h5 className="text-green medium mb-0 thin">
+              <ReactMarkdown>
+                {editingdata.legacydropdown_box1header1}
+              </ReactMarkdown>
+            </h5>
+          </Col>
+        </Row>
+
+        <Row id="legacy-quotes" className="p-4 d-none">
+          <Col>
+            <h5 className="text-green medium mb-0 thin">
+              <ReactMarkdown>
+                {editingdata.legacydropdown_quote1para}
+              </ReactMarkdown>
+            </h5>
+            <ReactMarkdown>
+              {editingdata.legacydropdown_quote1name}
+            </ReactMarkdown>
+            <ReactMarkdown className="text-small mb-4">
+              {editingdata.legacydropdown_quote1title}
+            </ReactMarkdown>
+            <h5 className="text-green medium mb-0 thin">
+              <ReactMarkdown>
+                {editingdata.legacydropdown_quote2para}
+              </ReactMarkdown>
+            </h5>
+            <ReactMarkdown>
+              {editingdata.legacydropdown_quote2name}
+            </ReactMarkdown>
+            <ReactMarkdown className="text-small">
+              {editingdata.legacydropdown_quote2title}
+            </ReactMarkdown>
+          </Col>
+        </Row>
+
+        <Row id="legacy-investing" className="p-4 d-none">
+          <Col>
+            <h5 className="text-green medium mb-0 thin">
+              <ReactMarkdown>
+                {editingdata.legacydropdown_pointsheader0}
+              </ReactMarkdown>
+            </h5>
+            <h5 className="text-green medium mb-0 thin">
+              <ReactMarkdown>
+                {editingdata.legacydropdown_pointsheader}
+              </ReactMarkdown>
+            </h5>
+            <ul className="text-grey dropdown-text checkMark px-1 mx-1">
+              <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara1}</ReactMarkdown></li>
+              <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara2}</ReactMarkdown></li>
+              <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara3}</ReactMarkdown></li>
+              <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara4}</ReactMarkdown></li>
+              <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara5}</ReactMarkdown></li>
+              <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara6}</ReactMarkdown></li>
+            </ul>
+          </Col>
+        </Row>
+
         </Modal.Body>
         <Modal.Footer className="p-0">
           <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleClose}>CLOSE</Button>
@@ -588,18 +737,18 @@ export default function Build({ file }) {
             <Row className="text-center justify-content-center mb-4">
               <Col className="col-11 col-md-8 mb-4">
                 <Row className="horizTab justify-content-center">
-                  <Col className="col-10 col-lg-3 col-xl-4">
+                  <Col className="col-10 col-lg-3 col-xl-4 my-2">
                     <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="corp-about">
                       ABOUT
                     </a>                 
                   </Col>
-                  <Col className="col-10 col-lg-3 col-xl-4">
-                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} id="#corp-quotes">
+                  <Col className="col-10 col-lg-3 col-xl-4 my-2">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="corp-quotes">
                       QUOTES
                     </a>                 
                   </Col>
-                  <Col className="col-10 col-lg-3 col-xl-4">
-                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} id="#corp-bottom">
+                  <Col className="col-10 col-lg-3 col-xl-4 my-2">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="corp-bottom">
                       BOTTOM LINE
                     </a>                 
                   </Col>
@@ -717,112 +866,32 @@ export default function Build({ file }) {
               </Col>
             </Row>
           </Fade>
-          
+
+
           <Fade bottom>
-            <Row className="text-center  justify-content-center mb-4">
+            <Row className="text-center justify-content-center mb-4">
               <Col className="col-11 col-md-8 mb-4">
                 <Row className="horizTab justify-content-center">
-                  <Dropdown className="col-10 col-lg-4 col-xl-4">
-                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
-                      {editingdata.schooldropdown_menuheader1}
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                      <Row className="p-4">
-                        <Col>
-                          <h5 className="text-green mb-0 thin">
-                            <ReactMarkdown>
-                            {editingdata.schooldropdown_box1header1}
-                            </ReactMarkdown>
-                          </h5>
-                          <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
-                            {editingdata.schooldropdown_box1para1}
-                          </ReactMarkdown>
-                          <h5 className="text-green mb-0 thin">
-                            <ReactMarkdown>
-                              {editingdata.schooldropdown_box1header2}
-                            </ReactMarkdown>
-                          </h5>
-                          <ReactMarkdown className="text-grey mt-0 mb-4 dropdown-text">
-                            {editingdata.schooldropdown_box1para2}
-                          </ReactMarkdown>
-                          <h5 className="text-green mb-0 thin">
-                            <ReactMarkdown>
-                              {editingdata.schooldropdown_box1header3}
-                            </ReactMarkdown>
-                          </h5>
-                          <ReactMarkdown className="text-grey mt-0 dropdown-text">
-                            {editingdata.schooldropdown_box1para3}
-                          </ReactMarkdown>
-                        </Col>
-                      </Row>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                  <Dropdown className="col-10 col-lg-4 col-xl-4">
-                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
-                      {editingdata.quotes}
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                      <Row className="p-4">
-                        <Col>
-                          <h5 className="text-green medium mb-0 thin">
-                            <ReactMarkdown>
-                              {editingdata.schooldropdown_quote1para}
-                            </ReactMarkdown>
-                          </h5>
-                          <ReactMarkdown>
-                            {editingdata.schooldropdown_quote1name}
-                          </ReactMarkdown>
-                          <ReactMarkdown className="text-small mb-4">
-                            {editingdata.schooldropdown_quote1title}
-                          </ReactMarkdown>
-                          <h5 className="text-green medium mb-0 thin">
-                            <ReactMarkdown>
-                              {editingdata.schooldropdown_quote2para}
-                            </ReactMarkdown>
-                          </h5>
-                          <ReactMarkdown>
-                            {editingdata.schooldropdown_quote2name}
-                          </ReactMarkdown>
-                          <ReactMarkdown className="text-small">
-                            {editingdata.schooldropdown_quote2title}
-                          </ReactMarkdown>
-                        </Col>
-                      </Row>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                  <Dropdown className="col-10 col-lg-4 col-xl-4">
-                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
-                      {editingdata.schooldropdown_menuheader3}
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                      <Row className="p-4">
-                        <Col>
-                          <h5 className="text-green medium mb-0 thin">
-                            <ReactMarkdown>
-                            {editingdata.schooldropdown_box1para0}
-                            </ReactMarkdown>
-                          </h5>
-                          <h5 className="text-green medium mb-0 thin">
-                            <ReactMarkdown>
-                              {editingdata.schooldropdown_pointsheader}
-                            </ReactMarkdown>
-                          </h5>
-                          <ul className="text-grey dropdown-text checkMark px-1 mx-1">
-                            <li><ReactMarkdown>{editingdata.schooldropdown_pointspara1}</ReactMarkdown></li>
-                            <li><ReactMarkdown>{editingdata.schooldropdown_pointspara2}</ReactMarkdown></li>
-                            <li><ReactMarkdown>{editingdata.schooldropdown_pointspara3}</ReactMarkdown></li>
-                            <li><ReactMarkdown>{editingdata.schooldropdown_pointspara4}</ReactMarkdown></li>
-                            <li><ReactMarkdown>{editingdata.schooldropdown_pointspara5}</ReactMarkdown></li>
-                          </ul>
-                        </Col>
-                      </Row>
-                    </Dropdown.Menu>
-                  </Dropdown>
+                  <Col className="col-10 col-lg-3 col-xl-4 my-2">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="school-about">
+                      ABOUT
+                    </a>                 
+                  </Col>
+                  <Col className="col-10 col-lg-3 col-xl-4 my-2">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="school-quotes">
+                      QUOTES
+                    </a>                 
+                  </Col>
+                  <Col className="col-10 col-lg-3 col-xl-4 my-2">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="school-involved">
+                      GET INVOLVED
+                    </a>                 
+                  </Col>
                 </Row>
               </Col>
             </Row>
           </Fade>
-
+          
           <Fade bottom>
             <Row className="text-center justify-content-center py-3 mt-5">
               <Col className="col-10 col-md-9 col-lg-7">
@@ -932,89 +1001,26 @@ export default function Build({ file }) {
               </Col>
             </Row>
           </Fade>
-          
+
           <Fade bottom>
-            <Row className="text-center  justify-content-center mb-4">
+            <Row className="text-center justify-content-center mb-4">
               <Col className="col-11 col-md-8 mb-4">
                 <Row className="horizTab justify-content-center">
-                  <Dropdown className="col-10 col-lg-4 col-xl-4">
-                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
-                      {editingdata.legacydropdown_menuheader1}
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                      <Row className="p-4">
-                        <Col>
-                          <h5 className="text-green medium mb-0 thin">
-                            <ReactMarkdown>
-                              {editingdata.legacydropdown_box1header1}
-                            </ReactMarkdown>
-                          </h5>
-                        </Col>
-                      </Row>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                  <Dropdown className="col-10 col-lg-4 col-xl-4">
-                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
-                      {editingdata.quotes}
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                      <Row className="p-4">
-                        <Col>
-                          <h5 className="text-green medium mb-0 thin">
-                            <ReactMarkdown>
-                              {editingdata.legacydropdown_quote1para}
-                            </ReactMarkdown>
-                          </h5>
-                          <ReactMarkdown>
-                            {editingdata.legacydropdown_quote1name}
-                          </ReactMarkdown>
-                          <ReactMarkdown className="text-small mb-4">
-                            {editingdata.legacydropdown_quote1title}
-                          </ReactMarkdown>
-                          <h5 className="text-green medium mb-0 thin">
-                            <ReactMarkdown>
-                              {editingdata.legacydropdown_quote2para}
-                            </ReactMarkdown>
-                          </h5>
-                          <ReactMarkdown>
-                            {editingdata.legacydropdown_quote2name}
-                          </ReactMarkdown>
-                          <ReactMarkdown className="text-small">
-                            {editingdata.legacydropdown_quote2title}
-                          </ReactMarkdown>
-                        </Col>
-                      </Row>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                  <Dropdown className="col-10 col-lg-4 col-xl-4">
-                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
-                      {editingdata.legacydropdown_menuheader3}
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                      <Row className="p-4">
-                        <Col>
-                          <h5 className="text-green medium mb-0 thin">
-                            <ReactMarkdown>
-                              {editingdata.legacydropdown_pointsheader0}
-                            </ReactMarkdown>
-                          </h5>
-                          <h5 className="text-green medium mb-0 thin">
-                            <ReactMarkdown>
-                              {editingdata.legacydropdown_pointsheader}
-                            </ReactMarkdown>
-                          </h5>
-                          <ul className="text-grey dropdown-text checkMark px-1 mx-1">
-                            <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara1}</ReactMarkdown></li>
-                            <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara2}</ReactMarkdown></li>
-                            <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara3}</ReactMarkdown></li>
-                            <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara4}</ReactMarkdown></li>
-                            <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara5}</ReactMarkdown></li>
-                            <li className="pe-5"><ReactMarkdown>{editingdata.legacydropdown_pointspara6}</ReactMarkdown></li>
-                          </ul>
-                        </Col>
-                      </Row>
-                    </Dropdown.Menu>
-                  </Dropdown>
+                  <Col className="col-10 col-lg-3 col-xl-4 my-2">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="legacy-about">
+                      ABOUT
+                    </a>                 
+                  </Col>
+                  <Col className="col-10 col-lg-3 col-xl-4 my-2">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="legacy-quotes">
+                      QUOTES
+                    </a>                 
+                  </Col>
+                  <Col className="col-10 col-lg-3 col-xl-4 my-2">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="legacy-investing">
+                      IMPACT INVESTING
+                    </a>                 
+                  </Col>
                 </Row>
               </Col>
             </Row>
@@ -1126,6 +1132,30 @@ export default function Build({ file }) {
                     {editingdata.communal_header1}
                   </ReactMarkdown>
                 </h2>
+              </Col>
+            </Row>
+          </Fade>
+
+          <Fade bottom>
+            <Row className="text-center justify-content-center mb-4">
+              <Col className="col-11 col-md-8 mb-4">
+                <Row className="horizTab justify-content-center">
+                  <Col className="col-10 col-lg-3 col-xl-4 my-2">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="school-about">
+                      ABOUT
+                    </a>                 
+                  </Col>
+                  <Col className="col-10 col-lg-3 col-xl-4 my-2">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="school-quotes">
+                      QUOTES
+                    </a>                 
+                  </Col>
+                  <Col className="col-10 col-lg-3 col-xl-4 my-2">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="school-involved">
+                      IMPACT INVESTING
+                    </a>                 
+                  </Col>
+                </Row>
               </Col>
             </Row>
           </Fade>
