@@ -532,6 +532,59 @@ export default function Build({ file }) {
           </Col>
         </Row>
 
+        <Row id="communal-about" className="p-4 d-none">
+          <Col>
+            <h5 className="text-green medium thin mb-0">
+              <ReactMarkdown>
+                {editingdata.communaldropdown_box1header1}
+              </ReactMarkdown>
+            </h5>
+          </Col>
+        </Row>
+
+        <Row id="communal-quotes" className="p-4 d-none">
+          <Col>
+            <h5 className="text-green medium mb-0 thin">
+              <ReactMarkdown>
+                {editingdata.communaldropdown_quote1para}
+              </ReactMarkdown>
+            </h5>
+            <ReactMarkdown>
+              {editingdata.communaldropdown_quote1name}
+            </ReactMarkdown>
+            <ReactMarkdown className="text-small mb-4">
+              {editingdata.communaldropdown_quote1title}
+            </ReactMarkdown>
+            <h5 className="text-green medium mb-0 thin">
+              <ReactMarkdown>
+                {editingdata.communaldropdown_quote2para}
+              </ReactMarkdown>
+            </h5>
+            <ReactMarkdown>
+              {editingdata.communaldropdown_quote2name}
+            </ReactMarkdown>
+            <ReactMarkdown className="text-small">
+              {editingdata.communaldropdown_quote2title}
+            </ReactMarkdown>
+          </Col>
+        </Row>
+
+        <Row id="communal-impact" className="p-4 d-none">
+          <Col>
+            <h5 className="text-green medium mb-0 thin">
+              <ReactMarkdown>
+                {editingdata.communaldropdown_pointsheader}
+              </ReactMarkdown>
+            </h5>
+            <ul className="text-grey dropdown-text checkMark px-1 mx-1">
+              <li><ReactMarkdown>{editingdata.communaldropdown_pointspara1}</ReactMarkdown></li>
+              <li><ReactMarkdown>{editingdata.communaldropdown_pointspara2}</ReactMarkdown></li>
+              <li><ReactMarkdown>{editingdata.communaldropdown_pointspara3}</ReactMarkdown></li>
+              <li><ReactMarkdown>{editingdata.communaldropdown_pointspara4}</ReactMarkdown></li>
+            </ul>
+          </Col>
+        </Row>
+
         </Modal.Body>
         <Modal.Footer className="p-0">
           <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleClose}>CLOSE</Button>
@@ -1141,100 +1194,20 @@ export default function Build({ file }) {
               <Col className="col-11 col-md-8 mb-4">
                 <Row className="horizTab justify-content-center">
                   <Col className="col-10 col-lg-3 col-xl-4 my-2">
-                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="school-about">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="communal-about">
                       ABOUT
                     </a>                 
                   </Col>
                   <Col className="col-10 col-lg-3 col-xl-4 my-2">
-                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="school-quotes">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="communal-quotes">
                       QUOTES
                     </a>                 
                   </Col>
                   <Col className="col-10 col-lg-3 col-xl-4 my-2">
-                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="school-involved">
-                      IMPACT INVESTING
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShow} data-dest="communal-impact">
+                      IMPACT
                     </a>                 
                   </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Fade>
-          
-          <Fade bottom>
-            <Row className="text-center  justify-content-center mb-4">
-              <Col className="col-11 col-md-8 mb-4">
-                <Row className="horizTab justify-content-center">
-                  <Dropdown className="col-10 col-lg-4 col-xl-4">
-                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
-                      {editingdata.communaldropdown_menuheader1}
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                      <Row className="p-4">
-                        <Col>
-                          <h5 className="text-green medium thin mb-0">
-                            <ReactMarkdown>
-                              {editingdata.communaldropdown_box1header1}
-                            </ReactMarkdown>
-                          </h5>
-                        </Col>
-                      </Row>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                  <Dropdown className="col-10 col-lg-4 col-xl-4">
-                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
-                      {editingdata.quotes}
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                      <Row className="p-4">
-                        <Col>
-                          <h5 className="text-green medium mb-0 thin">
-                            <ReactMarkdown>
-                              {editingdata.communaldropdown_quote1para}
-                            </ReactMarkdown>
-                          </h5>
-                          <ReactMarkdown>
-                            {editingdata.communaldropdown_quote1name}
-                          </ReactMarkdown>
-                          <ReactMarkdown className="text-small mb-4">
-                            {editingdata.communaldropdown_quote1title}
-                          </ReactMarkdown>
-                          <h5 className="text-green medium mb-0 thin">
-                            <ReactMarkdown>
-                              {editingdata.communaldropdown_quote2para}
-                            </ReactMarkdown>
-                          </h5>
-                          <ReactMarkdown>
-                            {editingdata.communaldropdown_quote2name}
-                          </ReactMarkdown>
-                          <ReactMarkdown className="text-small">
-                            {editingdata.communaldropdown_quote2title}
-                          </ReactMarkdown>
-                        </Col>
-                      </Row>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                  <Dropdown className="col-10 col-lg-4 col-xl-4">
-                    <Dropdown.Toggle variant="dropdown-links" className="text-orange dropdown-links tight-drop-light">
-                      {editingdata.communaldropdown_menuheader3}
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                      <Row className="p-4">
-                        <Col>
-                          <h5 className="text-green medium mb-0 thin">
-                            <ReactMarkdown>
-                              {editingdata.communaldropdown_pointsheader}
-                            </ReactMarkdown>
-                          </h5>
-                          <ul className="text-grey dropdown-text checkMark px-1 mx-1">
-                            <li><ReactMarkdown>{editingdata.communaldropdown_pointspara1}</ReactMarkdown></li>
-                            <li><ReactMarkdown>{editingdata.communaldropdown_pointspara2}</ReactMarkdown></li>
-                            <li><ReactMarkdown>{editingdata.communaldropdown_pointspara3}</ReactMarkdown></li>
-                            <li><ReactMarkdown>{editingdata.communaldropdown_pointspara4}</ReactMarkdown></li>
-                          </ul>
-                        </Col>
-                      </Row>
-                    </Dropdown.Menu>
-                  </Dropdown>
                 </Row>
               </Col>
             </Row>
