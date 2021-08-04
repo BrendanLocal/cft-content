@@ -11,6 +11,8 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { useRouter } from 'next/router';
 import Header from "../components/header";
+import Modal from "react-bootstrap/Modal";
+import ReactPlayer from 'react-player';
 
 const Lang = () => {
   var language ="en";
@@ -31,27 +33,66 @@ const Lang = () => {
   }
 
   const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const [editingdata, form] = useGithubJsonForm(file, formOptions)
   usePlugin(form)
   useGithubToolbarPlugins()
 
+  
+  const socialIcons = [
+    {
+      icon: "/fbookIcon.svg",
+      label: "Facebook",
+      path: "https://www.facebook.com/canadasforest"
+    },
+    {
+      icon: "/twtIcon.svg",
+      label: "Twitter",
+      path: "https://twitter.com/CanadasForest"
+    },
+    {
+      icon: "/instaIcon.svg",
+      label: "Instagram",
+      path: "https://www.instagram.com/canadasforest/?hl=en"
+    },
+    {
+      icon: "/linkedinIcon.svg",
+      label: "LinkedIn",
+      path: "https://linkedin.com/company/canadas-forest-trust"
+    }
+  ]
 
   function ContactForm() {
     const [state, handleSubmit] = useForm("xpzkpajl");
     if (state.succeeded) {
-      return <p>{editingdata.contactSuccess}</p>;
+      return (
+        <Row className="justify-content-center align-items-center">
+          <Col className="p-5">
+          <h3 className="text-white text-center">Thank you for contacting us!</h3>
+          <p className="text-white large text-center mb-4 px-3">A member of our team will reach out to you shortly. In the mean time, please watch this <span className="text-orange" onClick={handleShow}>video from our founder</span> and follow us on social media:</p>
+          <div className="socialIcons text-center">
+              {socialIcons.map(item =>
+                
+                  <a key={item.label} href={item.path} target="_blank" className="text-center mx-3"><img src={item.icon}></img></a>
+                
+              )}
+            </div>
+          </Col>
+        </Row>
+      );
     }
 
     return (
       <form onSubmit={handleSubmit}>
         <Header/>
         <Row className="">
-          <Col>
+          <Col className="col-12 col-md-6">
             <label htmlFor="name" className="labelCaps">{editingdata.name}</label>
             <input id="name" type="text" name="name" className="w-full" required />
           </Col>
-          <Col>
+          <Col className="col-12 col-md-6">
             <label htmlFor="email" className="labelCaps">{editingdata.email}</label>
             <input id="email" type="email" name="email" className="w-full" required />
             <ValidationError prefix="Email" field="email" errors={state.errors} />
@@ -61,13 +102,13 @@ const Lang = () => {
           <Col>
             <label htmlFor="interests" className="labelCaps">{editingdata.intHeader}</label>
             <Row>
-              <Col className="col-12 col-lg-6">
+              <Col className="col-12 col-md-6">
                 <input type="checkbox" id="corporate" name="corporate" value="corporate" />
                 <label htmlFor="corporate">{editingdata.intCorp}</label><br/>
                 <input type="checkbox" id="legacy" name="legacy" value="legacy" />
                 <label htmlFor="legacy">{editingdata.intLeg}</label>
               </Col>
-              <Col className="col-12 col-lg-6">
+              <Col className="col-12 col-md-6">
                 <input type="checkbox" id="school" name="school" value="school" />
                 <label htmlFor="school">{editingdata.intSchool}</label><br/>
                 <input type="checkbox" id="communal" name="communal" value="communal" />
@@ -79,7 +120,7 @@ const Lang = () => {
         <Row className="">
           <Col>
             <label htmlFor="message"  className="labelCaps">{editingdata.messageHeader}</label><br/>
-            <textarea id="message" name="message" rows={6} className="w-full" placeholder={editingdata.messagePlaceholder}/>
+            <textarea id="message" name="message" rows={4} className="w-full" placeholder={editingdata.messagePlaceholder}/>
             <ValidationError prefix="Message" field="message" errors={state.errors}/>
             <button className="btn btn-green btn-full mt-2" type="submit" disabled={state.submitting}>{editingdata.submit}</button>
           </Col>
@@ -99,7 +140,7 @@ const Lang = () => {
       </Head>
 
       <main className="bg-green py-5">
-        <Container className="v-full pt-5 mb-5">
+        <Container className="v-full pt-5">
           <Row className="text-center py-3">
             <Col>
             <h1 className="bold emphasis text-orange">{editingdata.header}</h1>
@@ -107,13 +148,35 @@ const Lang = () => {
           </Row>
           <Row className="justify-content-center">
             
-            <Col className="col-12 col-sm-7 col-xl-5 p2">
+            <Col className="col-11 col-lg-8 col-xl-6">
               <div className="roundedBox innerShadow text-white p-4">
                 <ContactForm />
               </div>
             </Col>
           </Row>
         </Container>
+
+        <Modal show={show} className="d-flex align-items-center" onHide={handleClose}>
+        <Modal.Header className="d-none" closeButton>
+          <Modal.Title className="d-none"></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Row className="justify-content-center align-items-center mb-0">
+            <Col>
+              <h3 className="text-green smallCaps text-center">A MESSAGE FROM OUR FOUNDER</h3>
+            </Col>
+          </Row>
+          <Row className="justify-content-center align-items-center">
+            <Col className="col-12 d-flex">
+              <ReactPlayer playing playsinline controls url='./ceo-message.mp4' className="video-size"/>
+            </Col>
+          </Row>
+        </Modal.Body>
+        <Modal.Footer className="p-0">
+          <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleClose}>CLOSE</Button>
+        </Modal.Footer>
+      </Modal>
+    
       </main>
     </div>
   )

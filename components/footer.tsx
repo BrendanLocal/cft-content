@@ -9,12 +9,50 @@ import Button from 'react-bootstrap/Button';
 import { useForm, ValidationError } from '@formspree/react';
 import Rellax from "rellax";
 
-function NewsletterForm() {
-  const [state, handleSubmit] = useForm("mwkanyjv");
-  if (state.succeeded) {
-      return <p className="newsletter-ty">Thank you for your interest in Canada’s Forest Trust. We will release our first newsletter soon. In the meantime, please follow us on social media </p>;
 
-  }
+  const socialIcons = [
+    {
+      icon: "/fbookIcon.svg",
+      label: "Facebook",
+      path: "https://www.facebook.com/canadasforest"
+    },
+    {
+      icon: "/twtIcon.svg",
+      label: "Twitter",
+      path: "https://twitter.com/CanadasForest"
+    },
+    {
+      icon: "/instaIcon.svg",
+      label: "Instagram",
+      path: "https://www.instagram.com/canadasforest/?hl=en"
+    },
+    {
+      icon: "/linkedinIcon.svg",
+      label: "LinkedIn",
+      path: "https://linkedin.com/company/canadas-forest-trust"
+    }
+  ]
+
+  function NewsletterForm() {
+    const [state, handleSubmit] = useForm("mwkanyjv");
+    if (state.succeeded) {
+        return (
+          <Row className="justify-content-center align-items-center">
+            <Col>
+            <p className="text-white bold mb-3 pe-3">Thank you for your interest in Canada’s Forest Trust. We will release our first newsletter soon. In the meantime, please follow us on social media:</p>
+            <div className="socialIcons">
+              {socialIcons.map(item =>
+                
+                  <a key={item.label} href={item.path} target="_blank" className="mx-2"><img src={item.icon}></img></a>
+                
+              )}
+            </div>
+            </Col>
+          </Row>
+        );
+  
+    }
+
   return (
       <form onSubmit={handleSubmit}>
 
@@ -61,6 +99,8 @@ function NewsletterForm() {
     </form>
   );
 }
+
+
 
 
 const Footer = ()=> {
@@ -128,12 +168,12 @@ return(
       </Col>
       <Col className="col-12 col-md-6 col-lg-3 p-3 pe-4">
         <h3 className="h4">Join Our Newsletter</h3>
-      <p className="mb-3">Provide your email to receive regular updates and the latest Canada’s Forest Trust news.</p>
+      <p className="mb-3 pe-3">Provide your email to receive regular updates and the latest Canada’s Forest Trust news.</p>
       <NewsletterForm/>
       
       </Col>
     </Row> 
-    <Row className="pt-3 pb-5">
+    <Row className="pt-3 pb-5 ps-1">
       <Col>
       <span>©{(new Date().getFullYear())} Canada's Forest Trust Corporation</span>
       <p className="text-white text-small bold pe-5 mt-1 mb-0">This site is WCAG compliant</p>
