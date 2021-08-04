@@ -9,7 +9,7 @@ import { GetStaticProps } from "next";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 import { useGithubJsonForm, useGithubToolbarPlugins } from "react-tinacms-github";
 import { usePlugin } from "tinacms";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../components/header";
 
 const Lang = () => {
@@ -23,15 +23,6 @@ const Lang = () => {
 }
 
 
-const NodeCache = require( "node-cache" );
-const myCache = new NodeCache();
-
-const personalTotal = myCache.get( "personalTotal" );
-if ( personalTotal == undefined ){
-  console.log("oops!")
-} else {
-  console.log(personalTotal)
-}
 
 export default function App({ file, href, children}) {
   
@@ -100,11 +91,28 @@ export default function App({ file, href, children}) {
   const [regionArray, setRegionArray] = React.useState({
     carbon: {BC:500,	Prairies:252,	Ontario:347,	Quebec:347,	Atlantic:134 }
   });
+
+ 
   const [region, setRegion] = React.useState("");
   const [footprint, setFootprint] = React.useState(0);
   const [duration, setDuration] = React.useState(0);
+  const [negative, setNegative] = React.useState(0);
+
+
+  useEffect(() => {
+  const personalfootprint = localStorage.getItem('personalfootprint');
+  setFootprint(Number(personalfootprint));
+  },[])
+
+
+
+
 
   var plantHectares = (duration*footprint)/regionArray.carbon[region];
+  
+  if(negative > 0){
+    plantHectares = plantHectares * negative;
+  }
   var plantTrees = plantHectares*2470;
   const changeRegion = (event) => {
     setRegion(event.target.value);
@@ -115,20 +123,23 @@ export default function App({ file, href, children}) {
   const changeDuration = (event) => {
     setDuration(event.target.value);
   }
+  const changeNegative = (event) => {
+    setNegative(event.target.value);
+  }
 
   return (
-    <div>
+    <div className="bg-legacy">
       <Header/>
-      <Container className="p-5">
+      <Container className="p-4 pt-5">
         <Row className="justify-content-center">
-          <Col className="col-11 col-lg-10 pt-5 align-items-center my-4 pt-5">
-            <h1 className="emphasis text-orange text-center bold">{editingdata.header}</h1>
+          <Col className="col-12 col-lg-10 pt-5 align-items-center my-4 pt-5">
+            <h1 className="emphasis text-orange text-center bold tight-drop-light">Personal Net Negative Calculator</h1>
           </Col>
         </Row>
         <Row className="justify-content-center">
-          <Col className="p-3 col-11 col-lg-6">
+          <Col className="p-3 col-12 col-lg-6">
             <div className="card roundedBox no-border bg-green p-4 innerShadow cardSpacing">
-              <p className="lead text-white m-2 calc-intro pe-lg-2">{editingdata.para1}</p>
+              <p className="lead text-white m-2 calc-intro pe-lg-2">Calculate how many acres you must invest in to reach a net negative emissions target</p>
             </div>
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
@@ -141,10 +152,10 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="footprint">{editingdata.emissionsCarbonHeader}</label>
                   <br />
-                  <input className="mb-4" onChange={changeFootprint} name="type" type="number" min="0" onKeyPress={(event) => {
+                  <input className="mb-4" value={footprint} onChange={changeFootprint} name="type" type="number" min="0" onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                   }  placeholder={editingdata.emissionsPlaceholder}/>
-                  {editingdata.emissionsCarbon}<Link href="carbon-calculator"><a className="underline modal-btn">{editingdata.emissionsLink}</a></Link>
+                  {editingdata.emissionsCarbon}<Link href="personal-calculator"><a className="underline modal-btn">{editingdata.emissionsLink}</a></Link>
                 </Col>
               </Row>
               <hr/>
@@ -187,10 +198,26 @@ export default function App({ file, href, children}) {
                   </select>
                 </Col>
               </Row>
+
+              <hr/>
+              <Row>
+                <Col>
+                  <label htmlFor="additional">Plant it forward by adding</label>
+                  <br />
+                  <select name="additional" value={negative} onChange={changeNegative}>
+                    <option value="" hidden>Select...</option>
+                    <option value='1.05'>5%</option>
+                    <option value='1.1'>10%</option>
+                    <option value='1.15'>15%</option>
+                    <option value='1.2'>20%</option>
+                    <option value='1.25'>25%</option>
+                  </select>
+                </Col>
+              </Row>
             </div>
           </Col>
-          <Col className=" p-3  col-12 col-lg-4 stickyCalc mb-4">
-            <div className="text-white p-5 innerShadow roundedBox">
+          <Col className=" p-3  col-11 col-lg-4 stickyCalc mb-4">
+            <div className="text-white p-5 innerShadow roundedBox bg-green">
               <h4 className="mb-0">{editingdata.dataHeader}</h4>
               <hr/>
               <Row><Col className="pb-3">{editingdata.dataType} {plantHectares > 0 ? plantHectares.toFixed(2) : "--"} {editingdata.dataType1}</Col></Row>
@@ -200,24 +227,24 @@ export default function App({ file, href, children}) {
           </Col>
         </Row>
 
+        
         <Row className="justify-content-center">
-          <Col className="col-10 align-items-center text-center p-3">
-            <div className="bg-brown p-5 innerShadow roundedBox">
-              <p className="smallCaps text-orange">{editingdata.nextHeader}</p>
-              <h3 className="text-white mb-4 px-2 px-lg-5">{editingdata.nextPara}</h3>
-              <Button className="btn-large mt-1" variant="green">{editingdata.nextButton}</Button>
+          <Col className="col-11 col-lg-10 align-items-center text-center p-3">
+            <div className="bg-brown p-4 innerShadow roundedBox">
+              <p className="smallCaps text-orange mb-3">{editingdata.nextHeader}</p>
+              <Link href="contact"><Button className="btn-large mt-1" variant="green">Contact us to become a stakeholder</Button></Link>
             </div>
           </Col>
         </Row>
 
         <Row className="justify-content-center mt-5">
           <Col className="col-11 col-lg-10 pt-5">
-            <h2 className=" text-orange text-center pt-5 bold mb-4">{editingdata.otherHeader}</h2>
+            <h2 className=" text-orange text-center pt-5 bold mb-4 tight-drop-light">{editingdata.otherHeader}</h2>
           </Col>
         </Row>
 
         <Row className="justify-content-center pb-5 mb-5">
-          <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
+          <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
               <h4 className="text-white tight-drop-light">{editingdata.otherbox1Header}</h4>
               <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox1Para}</p>
@@ -226,7 +253,7 @@ export default function App({ file, href, children}) {
               </Link>
             </div>
           </Col>
-          <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
+          <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
               <h4 className="text-white tight-drop-light">{editingdata.otherbox2Header}</h4>
               <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox2Para}</p>
@@ -235,7 +262,7 @@ export default function App({ file, href, children}) {
               </Link>
             </div>
           </Col>
-          <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
+          <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
               <h4 className="text-white tight-drop-light">{editingdata.otherbox3Header}</h4>
               <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox3Para}</p>
@@ -257,7 +284,7 @@ export const getStaticProps: GetStaticProps = async function({preview, previewDa
   if (preview) {
     return getGithubPreviewProps({
       ...previewData,
-      fileRelativePath: 'content/smart-forest-calculator.json',
+      fileRelativePath: 'content/net-negative-personal.json',
       parse: parseJson,
     })
   }
@@ -267,8 +294,8 @@ export const getStaticProps: GetStaticProps = async function({preview, previewDa
       error: null,
       preview: false,
       file: {
-        fileRelativePath: 'content/smart-forest-calculator.json',
-        data: (await import('../content/smart-forest-calculator.json')).default,
+        fileRelativePath: 'content/net-negative-personal.json',
+        data: (await import('../content/net-negative-personal.json')).default,
       },
     },
   }

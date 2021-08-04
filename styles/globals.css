@@ -1463,7 +1463,7 @@ footer {
 }
 
 .intro-links:hover {
-transform: translateY(3px);
+transform: translateY(3px)!important;
 transition: all .5s ease;
 }
 
@@ -1477,7 +1477,6 @@ transition: all .5s ease;
   font-size: 14px;
   letter-spacing: 0.1px!important;
   z-index:999;
-transition: transform .5s ease;
 }
 
 .down-links:after {
@@ -1494,15 +1493,23 @@ transform: translateY(3px)!important;
 transition: transform .5s ease;
 }
 
+
 .dropdown-links {
-  font-size: 15px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 900;
+  margin-left: -16px!important;
+  text-transform: uppercase;
   text-decoration: none!important;
   box-shadow: none!important;
 }
 
-.dropdown-links:focus{
+.dropdown-links:after {
+  content: url("/carat-white.svg");
+  margin-left: 6px;
+  top: 5px;
+  position: absolute;
   color: #fff;
-  z-index:999!important;
 }
 
 .dropdown-menu {
@@ -2049,7 +2056,7 @@ transition: all .5s ease;
 }
 
 .corporate-card a:hover {
-  transform: translateX(3px);
+  transform: translateX(3px)!important;
   transition: all .5s ease;
 }
 
@@ -2079,7 +2086,7 @@ transition: all .5s ease;
 }
 
 .school-card a:hover {
-transform: translateX(3px);
+transform: translateX(3px)!important;
 transition: all .5s ease;
 }
 
@@ -2108,7 +2115,7 @@ transition: all .5s ease;
 }
 
 .legacy-card a:hover {
-transform: translateX(3px);
+transform: translateX(3px)!important;
 transition: all .5s ease;
 }
 
@@ -2146,7 +2153,7 @@ transition: all .5s ease;
 }
 
 .communal-card a:hover {
-transform: translateX(3px);
+transform: translateX(3px)!important;
 transition: all .5s ease;
 }
 
@@ -2174,7 +2181,7 @@ transition: all .5s ease;
 }
 
 .communal-button a:hover {
-transform: translateX(3px);
+transform: translateX(3px)!important;
 transition: all .5s ease;
 }
 
@@ -2244,8 +2251,9 @@ padding: 5px 0;
 }
 
 .card .card .card-header {
-  background: #054217;
+  background: #00823B;
   color: #fff;
+  font-weight: 600;
 }
 
 .card .card .card-header:hover {

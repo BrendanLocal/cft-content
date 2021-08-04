@@ -9,7 +9,12 @@ export default function Search() {
   const [results, setResults] = useState([])
   const searchEndpoint = (query) => `/api/search?q=${query}`
 
-  fetch(`../pages/api/search?q=build`).then(async response => {
+  let prefix = process.env.NEXTAUTH_URL
+  if (prefix && prefix.endsWith('/')) {
+    prefix = prefix.substring(0, prefix.length - 1);
+  }
+
+  fetch(`${prefix ? prefix : ''}/api/search?q=build`).then(async response => {
     try {
      const data = await response.json()
      console.log('response data?', data)
@@ -28,8 +33,6 @@ export default function Search() {
         .then(
           res => res.json())
         .then(res => {
-
-      console.log('test')
           setResults(res.results)
         })
     } else {

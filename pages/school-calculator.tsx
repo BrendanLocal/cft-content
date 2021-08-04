@@ -434,18 +434,21 @@ const Lang = () => {
 
   /* calculate the 'total' here by adding on the other subtotals */
   let total = vehicleSub + subtotalBuild + flightSub + transitSub + studentCommute + otherVehicleSub;
+  if (typeof window !== 'undefined') {
+  localStorage.setItem('schoolfootprint', String(total));
+  }
 
   return (
     <div className="bg-school">
       <Header/>
-      <Container className="p-5">
+      <Container className="p-4 pt-5">
         <Row className="justify-content-center">
-          <Col className="col-11 col-lg-10 pt-5 align-items-center my-4 pt-5">
+          <Col className="col-12 col-lg-10 pt-5 align-items-center my-4 pt-5">
             <h1 className="emphasis text-orange text-center bold tight-drop-light">{editingdata.header}</h1>
           </Col>
         </Row>
         <Row className="justify-content-center">
-          <Col className="p-3 col-11 col-lg-6">
+          <Col className="p-3 col-12 col-lg-6">
             <div className="card roundedBox no-border bg-green p-4 innerShadow cardSpacing">
               <p className="lead text-white m-2 calc-intro">{editingdata.para1}</p>
             </div>
@@ -1053,7 +1056,7 @@ const Lang = () => {
             </div>
           </Col>
 
-          <Col className=" p-3  col-12 col-lg-4 stickyCalc mb-4">
+          <Col className=" p-3  col-11 col-lg-4 stickyCalc mb-4">
             <div className="text-white p-5 innerShadow roundedBox bg-green">
               <h4 className="mb-0">{editingdata.dataHeader}</h4>
               <hr/>
@@ -1079,11 +1082,10 @@ const Lang = () => {
         </Row>
 
         <Row className="justify-content-center">
-          <Col className="col-10 align-items-center text-center p-3">
-            <div className="bg-brown p-5 innerShadow roundedBox">
-              <p className="smallCaps text-orange">{editingdata.box1Header}</p>
-            <h3 className="text-white mb-4 px-2 px-lg-5">{editingdata.box1Para}</h3>
-            <Button className="btn-large mt-1" variant="green">{editingdata.box1Button}</Button>
+          <Col className="col-11 col-lg-10 align-items-center text-center p-3">
+            <div className="bg-brown p-4 innerShadow roundedBox">
+              <p className="smallCaps text-orange mb-3">{editingdata.box1Header}</p>
+            <Link href="smart-forest-school"><Button className="btn-large mt-1" variant="green">{editingdata.box1Button}</Button></Link>
             </div>
           </Col>
         </Row>
@@ -1095,7 +1097,7 @@ const Lang = () => {
         </Row>
 
         <Row className="justify-content-center pb-5 mb-5">
-            <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
+            <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
                 <h4 className="text-white tight-drop-light">{editingdata.otherbox1Header}</h4>
                 <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox1Para}</p>
@@ -1103,7 +1105,7 @@ const Lang = () => {
               </div>
             </Col>
 
-            <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
+            <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
                 <h4 className="text-white tight-drop-light">{editingdata.otherbox2Header}</h4>
                 <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox2Para}</p>\

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head'
 import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import { GetStaticProps } from 'next'
@@ -9,10 +9,6 @@ import { useGithubJsonForm, useGithubToolbarPlugins } from 'react-tinacms-github
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-import Rellax from"rellax";
-import ReactPlayer from 'react-player';
-import Parallax from 'parallax-js'
 import ReactMarkdown from 'react-markdown'
 import Header from "../components/header";
 
@@ -78,8 +74,7 @@ export default function Power({ file }) {
   const [editingdata, form] = useGithubJsonForm(file, formOptions)
   usePlugin(form)
   useGithubToolbarPlugins()
-  useEffect(() =>{
-
+  useEffect(() => {
     const observer = new IntersectionObserver(entries =>{
       entries.forEach(entry =>{
         const id = entry.target.getAttribute('id');
@@ -95,9 +90,17 @@ export default function Power({ file }) {
       });
     });
     // Track all div containers that have an `id` applied
-    document.querySelectorAll('div[id]').forEach((id) =>{
+    document.querySelectorAll('div.page-section').forEach((id) =>{
       observer.observe(id);
     });
+
+    const hash = window.location.hash;
+    if (hash) {
+      const container = document.getElementById(hash.substring(1));
+      if (container) {
+        container.scrollIntoView();
+      }
+    }
   }, []);
 
   return (  
@@ -132,7 +135,7 @@ export default function Power({ file }) {
       </Row>
 
       <main className="bg-green py-5">
-        <Container id="intro" className="bg-green py-5 px-5">
+        <Container id="intro" className="bg-green py-5 px-5 page-section">
           <Row className="justify-content-center d-flex pb-5 mb-5 py-5 px-5">
             <Col className="order-2 order-lg-1 col-12 col-lg-5 text-white p-4 pb-0 intro-order">
               <h1 className="text-orange mb-5 bold">{editingdata.part1_header1}</h1>
@@ -149,7 +152,7 @@ export default function Power({ file }) {
           </Row>
         </Container>
 
-        <Container id="commitment" fluid className="v-full z-999 bg-green py-5">
+        <Container id="commitment" fluid className="v-full z-999 bg-green py-5 page-section">
           <Fade bottom>
             <Row className="pt-5 align-items-center justify-content-center">
               <Col className="col-10 col-lg-7 pt-3">
@@ -186,7 +189,7 @@ export default function Power({ file }) {
           </Fade>
         </Container>
 
-        <Container id="forever" fluid className="v-full z-999 bg-green py-5">
+        <Container id="forever" fluid className="v-full z-999 bg-green py-5 page-section">
           <Fade bottom>
             <Row className="pt-5 align-items-center justify-content-center">
               <Col className="col-10 col-lg-8 pt-3">
@@ -206,7 +209,7 @@ export default function Power({ file }) {
           </Fade>
         </Container>
 
-        <Container id="smart-forests" fluid className="v-full z-999 bg-green py-5">
+        <Container id="smart-forests" fluid className="v-full z-999 bg-green py-5 page-section">
           <Fade bottom>
             <Row className="pt-5 align-items-center justify-content-center">
               <Col className="col-10 col-lg-8 pe-lg-0 p-3">
@@ -254,7 +257,7 @@ export default function Power({ file }) {
           </Fade>
         </Container>
 
-        <Container id="earth" fluid className="d-none v-full z-999 bg-green">
+        <Container id="earth" fluid className="d-none v-full z-999 bg-green page-section">
           <Fade bottom>
             <Row className="pt-5 align-items-center justify-content-center">
               <Col className="col-10 p-5 col-md-4">
