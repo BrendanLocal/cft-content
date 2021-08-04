@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {useCallback, useState, useEffect } from "react";
 import Head from "next/head";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 import { GetStaticProps } from "next";
@@ -82,6 +82,15 @@ export default function Power({ file }) {
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
   }
+
+  const changePage = useCallback(
+    (offset) => setPageNumber((prevPageNumber) => (prevPageNumber || 1) + offset),
+    [],
+  );
+
+  const previousPage = useCallback(() => changePage(-1), [changePage]);
+
+  const nextPage = useCallback(() => changePage(1), [changePage]);
 
   const [editingdata, form] = useGithubJsonForm(file, formOptions);
   usePlugin(form);
@@ -442,12 +451,27 @@ export default function Power({ file }) {
 
               <Row className="align-items-center justify-content-center">
                 <Col>
-                
-                </Col>
-                <Col>
-                  <p className="text-white text-center mt-3">Page {pageNumber} of {numPages}</p>
-                </Col>
-                <Col> 
+
+                  <div className="text-white text-center mt-3">
+                    <br/>
+                    <button
+                      disabled={pageNumber <= 1}
+                      onClick={previousPage}
+                      type="button">
+                      Previous 
+                    </button>
+                    &nbsp;
+                    <span>
+                      Page {pageNumber} of {numPages} 
+                    </span>
+                    &nbsp;
+                   <button
+                      disabled={pageNumber >= numPages}
+                      onClick={nextPage}
+                      type="button">
+                      Next Page
+                    </button> 
+                  </div>
                 
                 </Col>
               </Row>
