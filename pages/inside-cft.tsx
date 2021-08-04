@@ -443,7 +443,7 @@ export default function Power({ file }) {
           </Fade>
           <Fade bottom>
             <Row className="align-items-center justify-content-center mb-5">
-              <Col className="col-11 col-md-8 col-lg-6">      
+              <Col className="col-11 col-md-10 col-lg-7 col-xl-6">      
               
               <Document file="./CFT-QA2.pdf" className="pdf-style card-drop-heavy" onLoadSuccess={onDocumentLoadSuccess}>
                 <Page pageNumber={pageNumber} />
@@ -454,23 +454,25 @@ export default function Power({ file }) {
 
                   <div className="text-white text-center mt-3">
                     <br/>
-                    <button
+                    <Button
+                      className="btn btn-green btn-small no-border mx-2"
                       disabled={pageNumber <= 1}
                       onClick={previousPage}
                       type="button">
                       Previous 
-                    </button>
+                    </Button>
                     &nbsp;
                     <span>
                       Page {pageNumber} of {numPages} 
                     </span>
                     &nbsp;
-                   <button
+                   <Button
+                      className="btn btn-green btn-small no-border mx-2"
                       disabled={pageNumber >= numPages}
                       onClick={nextPage}
                       type="button">
                       Next Page
-                    </button> 
+                    </Button> 
                   </div>
                 
                 </Col>

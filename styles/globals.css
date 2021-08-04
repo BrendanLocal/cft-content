@@ -485,6 +485,11 @@ hr {
   padding: 12px 20px;
 }
 
+.btn-small {
+  font-size: .8rem;
+  padding: 6px 10px;
+}
+
 .btn-xl {
   font-size: 1.6rem;
   line-height: 1.8rem;
