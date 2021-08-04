@@ -152,9 +152,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="footprint">{editingdata.emissionsCarbonHeader}</label>
                   <br />
-                  <input className="mb-4" value={footprint>0? footprint : ""}  onChange={changeFootprint} name="type" type="number" min="0" onKeyPress={(event) => {
-                    if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                  }  placeholder={editingdata.emissionsPlaceholder}/>
+                  <input className="mb-4" value={footprint>0? footprint : ""}  onChange={changeFootprint} name="type" type="number" min="0" placeholder={editingdata.emissionsPlaceholder}/>
                   {editingdata.emissionsCarbon}<Link href="business-calculator"><a className="underline modal-btn">{editingdata.emissionsLink}</a></Link>
                 </Col>
               </Row>
