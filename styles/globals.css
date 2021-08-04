@@ -1507,8 +1507,7 @@ transition: transform .5s ease;
 .dropdown-links:after {
   content: url("/carat-white.svg");
   margin-left: 6px;
-  top: 5px;
-  position: absolute;
+  display: inline-block;
   color: #fff;
 }
 

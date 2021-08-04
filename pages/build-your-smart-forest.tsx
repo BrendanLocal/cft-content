@@ -869,6 +869,12 @@ export default function Build({ file }) {
             <Col className="col-12 col-lg-5 stickyTop mb-5 p-3 pe-2 d-none d-lg-block">
               <object type="image/svg+xml" data="/build2-svg.svg" />
             </Col>
+            <Col className="col-12 d-md-none d-lg-none">
+              <object type="image/svg+xml" data="/build2-svg.svg" />
+            </Col>
+            <Col className="col-8 mb-3 d-none d-md-block d-lg-none d-xl-none">
+              <object type="image/svg+xml" data="/build2-svg.svg" />
+            </Col>
             <Col className="col-12 col-lg-5 text-white pe-xl-5 p-3 pb-0 intro-order">
               <h1 className="text-orange mb-5 bold">{editingdata.part1_header1}</h1>
               <p className="large my-5 op-9 pe-lg-3 pe-xl-5">{editingdata.part1_para1}</p>
@@ -1018,18 +1024,18 @@ export default function Build({ file }) {
             <Row className="text-center justify-content-center mb-4">
               <Col className="col-11 col-md-8 mb-4">
                 <Row className="horizTab justify-content-center">
-                  <Col className="col-10 col-lg-3 col-xl-4 my-2">
-                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowCorporateModal1} data-dest="corp-about">
+                  <Col className="col-10 col-lg-4 my-2">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowCorporateModal1}>
                       ABOUT
                     </a>                 
                   </Col>
-                  <Col className="col-10 col-lg-3 col-xl-4 my-2">
-                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowCorporateModal2} data-dest="corp-quotes">
+                  <Col className="col-10 col-lg-4 my-2">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowCorporateModal2}>
                       QUOTES
                     </a>                 
                   </Col>
-                  <Col className="col-10 col-lg-3 col-xl-4 my-2">
-                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowCorporateModal3} data-dest="corp-bottom">
+                  <Col className="col-10 col-lg-4 my-2">
+                    <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowCorporateModal3}>
                       BOTTOM LINE
                     </a>                 
                   </Col>
@@ -1106,9 +1112,9 @@ export default function Build({ file }) {
           </Fade>
 
           <Fade bottom>
-            <Row className="pt-4 align-items-center justify-content-center mb-3">
+            <Row className="pt-4 align-items-center justify-content-center mb-1">
               <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
-                <h2 className="text-center text-orange bold tight-drop-light">See Your Forest</h2>
+                <h2 className="text-center text-orange bold tight-drop-light ">See Your Forest</h2>
               </Col>
             </Row>
             <DigitalSign/>
@@ -1154,17 +1160,17 @@ export default function Build({ file }) {
             <Row className="text-center justify-content-center mb-4">
               <Col className="col-11 col-md-8 mb-4">
                 <Row className="horizTab justify-content-center">
-                  <Col className="col-10 col-lg-3 col-xl-4 my-2">
+                  <Col className="col-10 col-lg-4 my-2">
                     <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowSchoolModal1} data-dest="school-about">
                       ABOUT
                     </a>                 
                   </Col>
-                  <Col className="col-10 col-lg-3 col-xl-4 my-2">
+                  <Col className="col-10 col-lg-4 my-2">
                     <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowSchoolModal2} data-dest="school-quotes">
                       QUOTES
                     </a>                 
                   </Col>
-                  <Col className="col-10 col-lg-3 col-xl-4 my-2">
+                  <Col className="col-10 col-lg-4 my-2">
                     <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowSchoolModal3} data-dest="school-involved">
                       GET INVOLVED
                     </a>                 
@@ -1242,7 +1248,7 @@ export default function Build({ file }) {
           </Fade>
 
           <Fade bottom>
-            <Row className="pt-4 align-items-center justify-content-center mb-3">
+            <Row className="pt-4 align-items-center justify-content-center mb-1">
               <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
                 <h2 className="text-center text-orange bold tight-drop-light">See Your Forest</h2>
               </Col>
@@ -1290,17 +1296,17 @@ export default function Build({ file }) {
             <Row className="text-center justify-content-center mb-4">
               <Col className="col-11 col-md-8 mb-4">
                 <Row className="horizTab justify-content-center">
-                  <Col className="col-10 col-lg-3 col-xl-4 my-2">
+                  <Col className="col-10 col-lg-4 my-2">
                     <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowLegacyModal1} data-dest="legacy-about">
                       ABOUT
                     </a>                 
                   </Col>
-                  <Col className="col-10 col-lg-3 col-xl-4 my-2">
+                  <Col className="col-10 col-lg-4 my-2">
                     <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowLegacyModal2} data-dest="legacy-quotes">
                       QUOTES
                     </a>                 
                   </Col>
-                  <Col className="col-10 col-lg-3 col-xl-4 my-2">
+                  <Col className="col-10 col-lg-4 my-2">
                     <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowLegacyModal3} data-dest="legacy-investing">
                       IMPACT INVESTING
                     </a>                 
@@ -1378,7 +1384,7 @@ export default function Build({ file }) {
           </Fade>
 
           <Fade bottom>
-            <Row className="pt-4 align-items-center justify-content-center mb-3">
+            <Row className="pt-4 align-items-center justify-content-center mb-1">
               <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
                 <h2 className="text-center text-orange bold tight-drop-light">See Your Forest</h2>
               </Col>
@@ -1426,17 +1432,17 @@ export default function Build({ file }) {
             <Row className="text-center justify-content-center mb-4">
               <Col className="col-11 col-md-8 mb-4">
                 <Row className="horizTab justify-content-center">
-                  <Col className="col-10 col-lg-3 col-xl-4 my-2">
+                  <Col className="col-10 col-lg-4 my-2">
                     <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowCommunalModal1} data-dest="communal-about">
                       ABOUT
                     </a>                 
                   </Col>
-                  <Col className="col-10 col-lg-3 col-xl-4 my-2">
+                  <Col className="col-10 col-lg-4 my-2">
                     <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowCommunalModal2} data-dest="communal-quotes">
                       QUOTES
                     </a>                 
                   </Col>
-                  <Col className="col-10 col-lg-3 col-xl-4 my-2">
+                  <Col className="col-10 col-lg-4 my-2">
                     <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowCommunalModal3} data-dest="communal-impact">
                       IMPACT
                     </a>                 
@@ -1515,7 +1521,7 @@ export default function Build({ file }) {
           </Fade>
 
           <Fade bottom>
-            <Row className="pt-4 align-items-center justify-content-center mb-3">
+            <Row className="pt-4 align-items-center justify-content-center mb-1">
               <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
                 <h2 className="text-center text-orange bold tight-drop-light">See Your Forest</h2>
               </Col>
