@@ -101,15 +101,17 @@ export default function App({ file, href, children}) {
 
   useEffect(() => {
   const businessfootprint = localStorage.getItem('businessfootprint');
-  setFootprint(Number(businessfootprint));
+  var tempNum = Number(businessfootprint).toFixed(2)
+  setFootprint(Number(tempNum));
   },[])
 
 
 
 
 
-  var plantHectares = (duration*footprint)/regionArray.carbon[region];
-  
+  var plantHectares = duration*footprint/regionArray.carbon[region];
+  var plantAcres = plantHectares*2.47;
+
   if(negative > 0){
     plantHectares = plantHectares * negative;
   }
@@ -220,7 +222,7 @@ export default function App({ file, href, children}) {
             <div className="text-white p-5 innerShadow roundedBox bg-green">
               <h4 className="mb-0">{editingdata.dataHeader}</h4>
               <hr/>
-              <Row><Col className="pb-3">{editingdata.dataType} {plantHectares > 0 ? plantHectares.toFixed(2) : "--"} {editingdata.dataType1}</Col></Row>
+              <Row><Col className="pb-3">{editingdata.dataType} {plantAcres > 0 ? plantAcres.toFixed(2) : "--"} {editingdata.dataType1}</Col></Row>
               <hr/>
               <Row><Col className="pb-3">{editingdata.dataType} {plantTrees > 0 ? Math.ceil(plantTrees).toLocaleString("en-US") : "--"} {editingdata.dataType2}</Col></Row>
             </div>

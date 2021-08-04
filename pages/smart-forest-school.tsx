@@ -104,7 +104,8 @@ export default function App({ file, href, children}) {
   const [footprint, setFootprint] = React.useState(0);
   const [duration, setDuration] = React.useState(0);
 
-  var plantHectares = (duration*footprint)/regionArray.carbon[region];
+  var plantHectares = duration*footprint/regionArray.carbon[region];
+  var plantAcres = plantHectares*2.47;
   var plantTrees = plantHectares*2470;
   const changeRegion = (event) => {
     setRegion(event.target.value);
@@ -122,7 +123,8 @@ export default function App({ file, href, children}) {
   useEffect(() => {
 
   const schoolfootprint = localStorage.getItem('schoolfootprint');
-  setFootprint(Number(schoolfootprint));
+  var tempNum = Number(schoolfootprint).toFixed(2)
+  setFootprint(Number(tempNum));
   },[])
 
   return (
@@ -202,7 +204,7 @@ export default function App({ file, href, children}) {
             <div className="text-white p-5 innerShadow roundedBox bg-green">
               <h4 className="mb-0">{editingdata.dataHeader}</h4>
               <hr/>
-              <Row><Col className="pb-3">{editingdata.dataType} {plantHectares > 0 ? plantHectares.toFixed(2) : "--"} {editingdata.dataType1}</Col></Row>
+              <Row><Col className="pb-3">{editingdata.dataType} {plantAcres > 0 ? plantAcres.toFixed(2) : "--"} {editingdata.dataType1}</Col></Row>
               <hr/>
               <Row><Col className="pb-3">{editingdata.dataType} {plantTrees > 0 ? Math.ceil(plantTrees).toLocaleString("en-US") : "--"} {editingdata.dataType2}</Col></Row>
             </div>
