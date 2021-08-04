@@ -479,6 +479,7 @@ const Lang = () => {
         i += Number((freightArray[x].count * freightArray[x].mult * freightArray[x].miles))/1000
         subtotalFreight += i
       }
+      
       setFreight(Number(subtotalFreight))
     }
 
@@ -1342,7 +1343,7 @@ const Lang = () => {
                 }   placeholder={editingdata.freightPlaceholder1} />
               </Col>
               <Col className="col-12 col-xl-4 col-sm-6">
-                <input onChange={calculateFreightMiles} name="freightSemiNonFrig" type="number" placeholder={editingdata.freightPlaceholder2}/>
+                <input onChange={calculateFreightMiles} name="freightSemiFrig" type="number" placeholder={editingdata.freightPlaceholder2}/>
               </Col>
             </Row>
             <hr/>
@@ -1354,7 +1355,7 @@ const Lang = () => {
                 }   placeholder={editingdata.freightPlaceholder1} />
               </Col>
               <Col className="col-12 col-xl-4 col-sm-6">
-              <input onChange={calculateFreightMiles} name="freightSemiNonFrig" type="number" placeholder={editingdata.freightPlaceholder2}/>
+              <input onChange={calculateFreightMiles} name="freightCargo" type="number" placeholder={editingdata.freightPlaceholder2}/>
               </Col>
             </Row>
             <hr/>
@@ -1366,7 +1367,7 @@ const Lang = () => {
                 }   placeholder={editingdata.freightPlaceholder1} />
               </Col>
               <Col className="col-12 col-xl-4 col-sm-6">
-              <input onChange={calculateFreightMiles} name="freightSemiNonFrig" type="number" placeholder={editingdata.freightPlaceholder2}/>
+              <input onChange={calculateFreightMiles} name="freightAirLess" type="number" placeholder={editingdata.freightPlaceholder2}/>
               </Col>
             </Row>
             <hr/>
