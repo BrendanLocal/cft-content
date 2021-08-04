@@ -111,11 +111,15 @@ export default function App({ file, href, children}) {
 
 
   var plantHectares = duration*footprint/regionArray.carbon[region];
+  var plantAcres = (duration*footprint/regionArray.carbon[region])*2.47;
+  
+if(negative > 0){
+    plantHectares = plantHectares * negative;
+    plantAcres = plantAcres * negative;
+  } 
+
   var plantAcres = plantHectares*2.47;
 
-  if(negative > 0){
-    plantHectares = plantHectares * negative;
-  }
   var plantTrees = plantHectares*2470;
   const changeRegion = (event) => {
     setRegion(event.target.value);
