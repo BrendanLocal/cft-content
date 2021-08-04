@@ -101,7 +101,7 @@ const DigitalSign = ()=> {
         </Col>
 
         <Col className="col-11 col-md-9 col-lg-7 col-xl-6 mt-2 mt-lg-3 mt-xl-2 signImagebuilder pe-lg-0">
-          <div className="signImageContainer card-drop-heavy">
+          <div id="signImage" className="signImageContainer card-drop-heavy">
             <img src={selectBG}/>
             <div className="signImageText signTextForest">
               {forestName? "The " : ""}
@@ -119,7 +119,6 @@ const DigitalSign = ()=> {
             </div>
           </div>
           <br />
-          {/* I Can't quite get it to grab the SignImageContainer correctly */}
           <Button className="btn btn-green no-border w-100 text-center" onClick={CreateImage}>
             Export As PNG
           </Button>
