@@ -269,7 +269,21 @@ return (
         <Row>
           <Col>
           <label htmlFor="number">Month(s) spent living at this residence?</label><br />
-          <input onChange={changeYear} type="number" placeholder="Month(s) in residence" />
+          <select name="months" onChange={changeYear}>
+            <option value="" hidden>Month(s) in residence</option>
+            <option value='1'> 1 </option>
+            <option value='2'> 2 </option>
+            <option value='3'> 3 </option>
+            <option value='4'> 4 </option>
+            <option value='5'> 5 </option>
+            <option value='6'> 6 </option>
+            <option value='7'> 7 </option>
+            <option value='8'> 8 </option>
+            <option value='9'> 9 </option>
+            <option value='10'> 10 </option>
+            <option value='10'> 11 </option>
+            <option value='10'> 12 </option>
+          </select>
           </Col>
         </Row>
 
@@ -338,8 +352,22 @@ return (
 
         <Row>
           <Col>
-          <label htmlFor="number">Month(s) spent living at this residence?</label><br />
-          <input onChange={changeYearTwo} type="number" placeholder="Month(s) in residence" />
+          <label htmlFor="number">Month(s) spent living at this residence?</label><br /> 
+          <select name="months" onChange={changeYearTwo}>
+            <option value="" hidden>Month(s) in residence</option>
+            <option value='1'> 1 </option>
+            <option value='2'> 2 </option>
+            <option value='3'> 3 </option>
+            <option value='4'> 4 </option>
+            <option value='5'> 5 </option>
+            <option value='6'> 6 </option>
+            <option value='7'> 7 </option>
+            <option value='8'> 8 </option>
+            <option value='9'> 9 </option>
+            <option value='10'> 10 </option>
+            <option value='10'> 11 </option>
+            <option value='10'> 12 </option>
+          </select>
           </Col>
         </Row>
 
