@@ -71,11 +71,11 @@ const Lang = () => {
         <Row className="justify-content-center align-items-center">
           <Col className="p-5">
           <h3 className="text-white text-center">Thank you for contacting us!</h3>
-          <p className="text-white large text-center mb-4 px-3">A member of our team will reach out to you shortly. In the mean time, please watch this <span className="text-orange" onClick={handleShow}>video from our founder</span> and follow us on social media:</p>
+          <p className="text-white large text-center mb-4 px-md-3">A member of our team will reach out to you shortly. In the mean time, please watch this <span className="text-orange" onClick={handleShow}>video from our founder</span> and follow us on social media:</p>
           <div className="socialIcons text-center">
               {socialIcons.map(item =>
                 
-                  <a key={item.label} href={item.path} target="_blank" className="text-center mx-3"><img src={item.icon}></img></a>
+                  <a key={item.label} href={item.path} target="_blank" className="text-center mx-2 mx-md-3"><img src={item.icon}></img></a>
                 
               )}
             </div>
