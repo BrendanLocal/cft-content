@@ -1063,7 +1063,11 @@ export default function Build({ file }) {
                           <img src="../../cft-icon-white.svg"/>
                         </Col>
                         <Col className="col-lg-8 col-xl-9 d-flex">
-                          <h3 className="text-left lead mt-3 text-white bold">
+                          <h3 className="text-left x-large mt-3 text-white bold d-none d-xl-block">
+                          ESG BENEFITS FOR CORPORATIONS
+                          </h3>
+
+                          <h3 className="text-left lead mt-3 text-white bold d-xl-none">
                           ESG BENEFITS FOR CORPORATIONS
                           </h3>
                         </Col>
@@ -1090,7 +1094,7 @@ export default function Build({ file }) {
                     </div>
                   </Col>
                   <Col className="col-lg-4 col-xl-3 bg-mildgreen text-white text-left p-4 roundedBoxRight">
-                    <h6 className="bold mt-lg-5 mt-xl-3">WHAT IS A FOREST TRUST UNIT (FTU)?</h6>
+                    <h6 className="bold mt-lg-5 mt-xl-4">WHAT IS A FOREST TRUST UNIT (FTU)?</h6>
                     <p>1 FTU</p>
                     <p>= 5 acres</p>
                     <p className="mb-2">= 5000+ seedlings</p>
@@ -1318,7 +1322,10 @@ export default function Build({ file }) {
                           <img src="../../cft-icon-white.svg"/>
                         </Col>
                         <Col className="col-lg-8 col-xl-9 d-flex">
-                          <h3 className="text-left lead mt-3 text-white bold">
+                        <h3 className="text-left x-large mt-3 text-white bold d-none d-xl-block">
+                          ECOSYSTEM & ESG BENEFITS FOR SCHOOLS
+                          </h3>
+                          <h3 className="text-left lead mt-3 text-white bold d-xl-none">
                           ECOSYSTEM & ESG BENEFITS FOR SCHOOLS
                           </h3>
                         </Col>
@@ -1344,7 +1351,7 @@ export default function Build({ file }) {
                     </div>
                   </Col>
                   <Col className="col-lg-4 col-xl-3 bg-mildgreen text-white text-left p-4 roundedBoxRight">
-                    <h6 className="bold mt-lg-5 mt-xl-3">WHAT IS A FOREST TRUST UNIT (FTU)?</h6>
+                    <h6 className="bold mt-lg-5 mt-xl-4">WHAT IS A FOREST TRUST UNIT (FTU)?</h6>
                     <p>1 FTU</p>
                     <p>= 5 acres</p>
                     <p className="mb-2">= 5000+ seedlings</p>
@@ -1571,7 +1578,11 @@ export default function Build({ file }) {
                           <img src="../../cft-icon-white.svg"/>
                         </Col>
                         <Col className="col-lg-8 col-xl-9 d-flex">
-                          <h3 className="text-left lead mt-3 text-white bold">
+                        <h3 className="text-left x-large mt-3 text-white bold d-none d-xl-block">
+                          IMPACT BENEFITS FOR LEGACY BUILDERS
+                          </h3>
+                          
+                          <h3 className="text-left lead mt-3 text-white bold d-xl-none">
                           IMPACT BENEFITS FOR LEGACY BUILDERS
                           </h3>
                         </Col>
@@ -1596,7 +1607,7 @@ export default function Build({ file }) {
                     </div>
                   </Col>
                   <Col className="col-lg-4 col-xl-3 bg-mildgreen text-white text-left p-4 roundedBoxRight">
-                    <h6 className="bold mt-lg-5 mt-xl-3">WHAT IS A FOREST TRUST UNIT (FTU)?</h6>
+                    <h6 className="bold mt-lg-5 mt-xl-4">WHAT IS A FOREST TRUST UNIT (FTU)?</h6>
                     <p>1 FTU</p>
                     <p>= 5 acres</p>
                     <p className="mb-2">= 5000+ seedlings</p>
@@ -1824,7 +1835,10 @@ export default function Build({ file }) {
                           <img src="../../cft-icon-white.svg"/>
                         </Col>
                         <Col className="col-lg-8 col-xl-9 d-flex">
-                          <h3 className="text-left lead mt-3 text-white bold">
+                        <h3 className="text-left x-large mt-3 text-white bold d-none d-xl-block">
+                          IMPACT BENEFITS FOR COMMUNITY BUILDERS
+                          </h3>
+                          <h3 className="text-left lead mt-3 text-white bold d-xl-none">
                           IMPACT BENEFITS FOR COMMUNITY BUILDERS
                           </h3>
                         </Col>
@@ -1849,7 +1863,7 @@ export default function Build({ file }) {
                     </div>
                   </Col>
                   <Col className="col-lg-4 col-xl-3 bg-mildgreen text-white text-left p-4 roundedBoxRight">
-                    <h6 className="bold mt-lg-5 mt-xl-3">WHAT IS A FOREST TRUST UNIT (FTU)?</h6>
+                    <h6 className="bold mt-lg-5 mt-xl-4">WHAT IS A FOREST TRUST UNIT (FTU)?</h6>
                     <p>1 FTU</p>
                     <p>= 5 acres</p>
                     <p className="mb-2">= 5000+ seedlings</p>

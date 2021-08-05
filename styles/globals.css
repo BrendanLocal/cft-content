@@ -2478,16 +2478,16 @@ width: 100%;
 
 ul.ftu-list li {
   position: relative;
-  left: 14px;
+  left: 10px;
   font-size: 12.5px;
-  padding: 5px 0 0 10px;
+  padding: 5px 0 0 15px;
   text-align: left;
   }
   
   ul.ftu-list li:before {
     content: url("/bullet.svg");
     position: absolute;
-    left: -6px;
+    left: 0px;
   }
 
 ul.checkMark li{
