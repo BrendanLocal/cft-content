@@ -618,7 +618,7 @@ const Lang = () => {
 
               {/* Building Type 2 */}
               <Card>
-                            <Accordion.Toggle as={Card.Header} eventKey="0">
+                            <Accordion.Toggle as={Card.Header} eventKey="0" className="card-header caret">
                               Building Type 2
                             </Accordion.Toggle>
                             <Accordion.Collapse eventKey="0">
@@ -1443,7 +1443,7 @@ const Lang = () => {
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
               <h4 className="text-white tight-drop-light">{editingdata.otherbox1Header}</h4>
               <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox1Para}</p>
-              <Link href="school-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">other{editingdata.box1button}</a></Link>
+              <Link href="school-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox1button}</a></Link>
             </div>
           </Col>
 
