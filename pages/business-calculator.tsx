@@ -609,6 +609,7 @@ const Lang = () => {
                     }
                   }
                 } placeholder="Number of buildings of this type"/>
+                <p className="x-small mb-3 ">Number of buildings of this type</p>
               </Col>
             </Row>
           <hr/>
@@ -673,6 +674,7 @@ const Lang = () => {
                     }
                   }
                 } placeholder="Number of buildings of this type"/>
+                <p className="x-small mb-3 ">Number of buildings of this type</p>
               </Col>
             </Row>
           
@@ -739,6 +741,7 @@ const Lang = () => {
                     }
                   }
                 } placeholder="Number of buildings of this type"/>
+                <p className="x-small mb-3 ">Number of buildings of this type</p>
               </Col>
             </Row>
           
@@ -804,6 +807,7 @@ const Lang = () => {
                     }
                   }
                 } placeholder="Number of buildings of this type"/>
+                <p className="x-small mb-3 ">Number of buildings of this type</p>
               </Col>
             </Row>
           
@@ -869,6 +873,7 @@ const Lang = () => {
                     }
                   }
                 } placeholder="Number of buildings of this type"/>
+                <p className="x-small mb-3 ">Number of buildings of this type</p>
               </Col>
             </Row>
           
@@ -886,268 +891,337 @@ const Lang = () => {
                 <h3 className="text-green">{editingdata.vehicleHeader}</h3>
                 <p className="text-grey">{editingdata.vehiclepara}</p>
                 <hr/>
-              </Col>
             
-              <Col>
-                <h5 className="smallCaps text-small text-green">Cars</h5>
-                <Row>
-                  <Col className="col-12 col-xl-4">
-                    {editingdata.vehiclecarGas}
-                  </Col>
-                  <Col className="col-12 col-xl-4 col-sm-6">
-                    <input onChange={calculateCount} name="carGas" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }  placeholder={editingdata.vehiclePlaceholder1} />
-                  </Col>
-                  <Col className="col-12 col-xl-4 col-sm-6">
-                    <input onChange={calculateMiles} name="carGas" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    } placeholder={editingdata.vehiclePlaceholder2} />
-                  </Col>
-                </Row>
-                <Row>
-                  <Col  className="col-12 col-xl-4">
-                    {editingdata.vehiclecarDiesel}
-                  </Col>
-                  <Col className="col-12 col-xl-4 col-sm-6">
-                    <input onChange={calculateCount} name="carDiesel" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }  placeholder={editingdata.vehiclePlaceholder1} />
-                  </Col>
-                  <Col className="col-12 col-xl-4 col-sm-6">
-                    <input onChange={calculateMiles} name="carDiesel" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }   placeholder={editingdata.vehiclePlaceholder2} />
-                  </Col>
-                </Row>
-                <Row>
-                  <Col className="col-12 col-xl-4">
-                    {editingdata.vehiclecarHybrid}
-                  </Col>
-                  <Col className="col-12 col-xl-4 col-sm-6">
-                    <input onChange={calculateCount} name="carHybrid" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }  placeholder={editingdata.vehiclePlaceholder1} />
-                  </Col>
-                  <Col className="col-12 col-xl-4 col-sm-6">
-                    <input onChange={calculateMiles} name="carHybrid" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }  placeholder={editingdata.vehiclePlaceholder2} />
-                  </Col>
-                </Row>
-                <Row>
-                  <Col className="col-12 col-xl-4">
-                    Plug-In Hybrid
-                  </Col>
-                  <Col className="col-12 col-xl-4 col-sm-6">
-                    <input onChange={calculateCount} name="carPlug" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }  placeholder={editingdata.vehiclePlaceholder1} />
-                  </Col>
-                  <Col className="col-12 col-xl-4 col-sm-6">
-                    <input onChange={calculateMiles} name="carPlug" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }  placeholder={editingdata.vehiclePlaceholder2} />
-                  </Col>
-                </Row>
-                <Row>
-                  <Col className="col-12 col-xl-4">
-                    Plug-In Electric
-                  </Col>
-                  <Col className="col-12 col-xl-4 col-sm-6">
-                    <input onChange={calculateCount} name="carElectric" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }  placeholder={editingdata.vehiclePlaceholder1} />
-                  </Col>
-                  <Col className="col-12 col-xl-4 col-sm-6">
-                    <input onChange={calculateMiles} name="carElectric" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }  placeholder={editingdata.vehiclePlaceholder2} />
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-            <hr/>
-            <Row>
-              <Col>
-                <h5 className="smallCaps text-small text-green">{editingdata.vehiclepickupHeader}</h5>
-                <Row>
-                  <Col className="col-12 col-xl-4">{editingdata.vehiclepickupGas}</Col>
-                  <Col className="col-12 col-xl-4 col-sm-6 ">
-                    <input onChange={calculateCount} name="truckGas" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }  placeholder={editingdata.vehiclePlaceholder1} />
-                  </Col>
-                  <Col className="col-12 col-xl-4 col-sm-6">
-                    <input onChange={calculateMiles} name="truckGas" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }   placeholder={editingdata.vehiclePlaceholder2} />
-                  </Col>
-                </Row>
-                <Row>
-                  <Col  className="col-12 col-xl-4">{editingdata.vehiclepickupDiesel}</Col>
-                  <Col className="col-12 col-xl-4 col-sm-6">
-                    <input onChange={calculateCount} name="truckDiesel" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }  placeholder={editingdata.vehiclePlaceholder1} />
-                  </Col>
-                  <Col className="col-12 col-xl-4 col-sm-6">
-                    <input onChange={calculateMiles} name="truckDiesel" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }  placeholder={editingdata.vehiclePlaceholder2} />
-                  </Col>
-                </Row>
-                <Row>
-                  <Col className="col-12 col-xl-4">{editingdata.vehiclepickupHybrid}</Col>
-                  <Col className="col-12 col-xl-4 col-sm-6">
-                    <input onChange={calculateCount} name="truckHybrid" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }   placeholder={editingdata.vehiclePlaceholder1} />
-                  </Col>
-                  <Col className="col-12 col-xl-4 col-sm-6">
-                    <input onChange={calculateMiles} name="truckHybrid" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }   placeholder={editingdata.vehiclePlaceholder2} />
-                  </Col>
-                </Row>
-                <Row>
-                  <Col className="col-12 col-xl-4">Plug-In Hybrid</Col>
-                  <Col className="col-12 col-xl-4 col-sm-6">
-                    <input onChange={calculateCount} name="truckPlug" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }   placeholder={editingdata.vehiclePlaceholder1} />
-                  </Col>
-                  <Col className="col-12 col-xl-4 col-sm-6">
-                    <input onChange={calculateMiles} name="truckPlug" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }   placeholder={editingdata.vehiclePlaceholder2} />
-                  </Col>
-                </Row>
-                <Row>
-                  <Col className="col-12 col-xl-4">Plug-In Electric</Col>
-                  <Col className="col-12 col-xl-4 col-sm-6">
-                    <input onChange={calculateCount} name="truckElectric" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }   placeholder={editingdata.vehiclePlaceholder1} />
-                  </Col>
-                  <Col className="col-12 col-xl-4 col-sm-6">
-                    <input onChange={calculateMiles} name="truckElectric" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }   placeholder={editingdata.vehiclePlaceholder2} />
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-            <hr/>
-            <Row>
-              <Col>
-                <h5 className="smallCaps text-small text-green">{editingdata.vehicletruckHeader}</h5>
-                <Row>
-                  <Col className="col-12 col-xl-4">{editingdata.vehicletruckGas}</Col>
-                  <Col className="col-12 col-xl-4 col-sm-6">
-                    <input onChange={calculateCount} name="deliveryGas" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }   placeholder={editingdata.vehiclePlaceholder1} />
-                  </Col>
-                  <Col className="col-12 col-xl-4 col-sm-6">
-                    <input onChange={calculateMiles} name="deliveryGas" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }   placeholder={editingdata.vehiclePlaceholder2} />
-                  </Col>
-                </Row>
-                <Row>
-                  <Col className="col-12 col-xl-4">{editingdata.vehicletruckDiesel}</Col>
-                  <Col className="col-12 col-xl-4 col-sm-6">
-                    <input onChange={calculateCount} name="deliveryDiesel" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }   placeholder={editingdata.vehiclePlaceholder1} />
-                  </Col>
-                  <Col className="col-12 col-xl-4 col-sm-6">
-                    <input onChange={calculateMiles} name="deliveryDiesel" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }   placeholder={editingdata.vehiclePlaceholder2} />
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-            <hr/>
-            <Row>
-              <Col>
-                <h5 className="smallCaps text-small text-green">{editingdata.vehicleSemiHeader}</h5>
-                <Row>
-                  <Col className="col-12 col-xl-4">{editingdata.vehiclesemiFridge}</Col>
-                  <Col className="col-12 col-xl-4 col-sm-6">
-                    <input onChange={calculateCount} name="semiFrig" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }   placeholder={editingdata.vehiclePlaceholder1} />
-                  </Col>
-                  <Col className="col-12 col-xl-4 col-sm-6">
-                  <input onChange={calculateMiles} name="semiFrig" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }   placeholder={editingdata.vehiclePlaceholder2} />
-                  </Col>
-                </Row>
-                <Row>
-                  <Col className="col-12 col-xl-4">{editingdata.vehiclesemiNonFridge}</Col>
-                  <Col className="col-12 col-xl-4 col-sm-6">
-                    <input onChange={calculateCount} name="semiNonFrig" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }   placeholder={editingdata.vehiclePlaceholder1} />
-                  </Col>
-                  <Col className="col-12 col-xl-4 col-sm-6">
-                    <input onChange={calculateMiles} name="semiNonFrig" type="number" min="0" onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }   placeholder={editingdata.vehiclePlaceholder2} />
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-            <hr/>
-            <Row>
-              <Col className="col-12 col-xl-4">
-                <h5 className="smallCaps text-small text-green">{editingdata.vehiclejet}</h5>
-              </Col>
-              <Col className="col-12 col-xl-4 col-sm-6">
-                <input onChange={calculateCount} name="jetNum" type="number" min="0" onKeyPress={
-                  (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                }   placeholder={editingdata.vehiclePlaceholder1} />
-              </Col>
-              <Col className="col-12 col-xl-4 col-sm-6">
-                <input onChange={calculateMiles} name="jetNum" type="number" min="0" onKeyPress={
-                  (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                }   placeholder={editingdata.vehiclePlaceholder2} />
-              </Col>
-            </Row>
+                <Accordion>
+                  <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="0">
+                      <h5 className="smallCaps text-small text-green">{editingdata.vehiclecarGas}</h5>
+                      <p className="text-small op-6">Honda Civic, Toyota Prius</p>
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="0">
+                      <div>
+                        <Row>
+                          <Col className="col-12 col-xl-4">
+                            {editingdata.vehiclecarGas}
+                          </Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateCount} name="carGas" type="number" min="0" onKeyPress={ (event) => {
+                              if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder1} />
+                            <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder1}</p>
+                          </Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateMiles} name="carGas" type="number" min="0" onKeyPress={ (event) => {
+                              if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            } placeholder={editingdata.vehiclePlaceholder2} />
+                <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder2}</p>
+                          </Col>
+                        </Row> 
 
-            <Row>
-              <Col className="col-12 col-xl-4">
-                <h5 className="smallCaps text-small text-green">Private Plane</h5>
-              </Col>
-              <Col className="col-12 col-xl-4 col-sm-6">
-                <input onChange={calculateCount} name="planeGas" type="number" min="0" onKeyPress={
-                  (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                }   placeholder={editingdata.vehiclePlaceholder1} />
-              </Col>
-              <Col className="col-12 col-xl-4 col-sm-6">
-                <input onChange={calculateMiles} name="planeGas" type="number" min="0" onKeyPress={
-                  (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                }   placeholder={editingdata.vehiclePlaceholder2} />
-              </Col>
-            </Row>
+                        <Row>
+                          <Col  className="col-12 col-xl-4">
+                            {editingdata.vehiclecarDiesel}
+                          </Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateCount} name="carDiesel" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder1} />
+                            <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder1}</p>
+                          </Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateMiles} name="carDiesel" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder2} />
+                <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder2}</p>
+                          </Col>
+                        </Row>
 
-            <Row>
-              <Col className="col-12 col-xl-4">
-                <h5 className="smallCaps text-small text-green">Private Helicopter</h5>
-              </Col>
-              <Col className="col-12 col-xl-4 col-sm-6">
-                <input onChange={calculateCount} name="heliGas" type="number" min="0" onKeyPress={
-                  (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                }   placeholder={editingdata.vehiclePlaceholder1} />
-              </Col>
-              <Col className="col-12 col-xl-4 col-sm-6">
-                <input onChange={calculateMiles} name="heliGas" type="number" min="0" onKeyPress={
-                  (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                }   placeholder={editingdata.vehiclePlaceholder2} />
+                        <Row>
+                          <Col className="col-12 col-xl-4">
+                            {editingdata.vehiclecarHybrid}
+                          </Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateCount} name="carHybrid" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder1} />
+                            <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder1}</p>
+                          </Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateMiles} name="carHybrid" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder2} />
+                <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder2}</p>
+                          </Col>
+                        </Row>
+
+                        <Row>
+                          <Col className="col-12 col-xl-4">
+                            Plug-In Hybrid
+                          </Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateCount} name="carPlug" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder1} />
+                            <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder1}</p>
+                          </Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateMiles} name="carPlug" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder2} />
+                <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder2}</p>
+                          </Col>
+                        </Row>
+                        
+                        <Row>
+                          <Col className="col-12 col-xl-4">
+                            Plug-In Electric
+                          </Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateCount} name="carElectric" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder1} />
+                            <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder1}</p>
+                          </Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateMiles} name="carElectric" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder2} />
+                <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder2}</p>
+                          </Col>
+                        </Row>
+                      </div>
+                    </Accordion.Collapse>
+                  </Card>
+                  <Card>
+                    
+                    <Accordion.Toggle as={Card.Header} eventKey="1">
+                      <h5 className="smallCaps text-small text-green">{editingdata.vehiclepickupHeader}</h5>
+                      <p className="text-small op-6">4-Door Sedans, SUV's</p>
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="1">
+                      <div>
+                        <Row>
+                          <Col className="col-12 col-xl-4">{editingdata.vehiclepickupGas}</Col>
+                          <Col className="col-12 col-xl-4 col-sm-6 ">
+                            <input onChange={calculateCount} name="truckGas" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder1} />
+                            <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder1}</p>
+                          </Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateMiles} name="truckGas" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder2} />
+                <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder2}</p>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col  className="col-12 col-xl-4">{editingdata.vehiclepickupDiesel}</Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateCount} name="truckDiesel" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder1} />
+                            <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder1}</p>
+                          </Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateMiles} name="truckDiesel" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder2} />
+                <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder2}</p>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col className="col-12 col-xl-4">{editingdata.vehiclepickupHybrid}</Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateCount} name="truckHybrid" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder1} />
+                            <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder1}</p>
+                          </Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateMiles} name="truckHybrid" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder2} />
+                <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder2}</p>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col className="col-12 col-xl-4">Plug-In Hybrid</Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateCount} name="truckPlug" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder1} />
+                            <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder1}</p>
+                          </Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateMiles} name="truckPlug" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder2} />
+                <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder2}</p>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col className="col-12 col-xl-4">Plug-In Electric</Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateCount} name="truckElectric" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder1} />
+                            <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder1}</p>
+                          </Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateMiles} name="truckElectric" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder2} />
+                <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder2}</p>
+                          </Col>
+                        </Row>
+                      </div>
+                    </Accordion.Collapse>
+                  </Card>
+                  <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="3">
+                      <h5 className="smallCaps text-small text-green">DELIVERY TRUCKS/VANS</h5>
+                      <p className="text-small op-6">(UP TO 3.5 TONNES)</p>
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="3">
+                      <div>
+                        <Row>
+                          <Col className="col-12 col-xl-4">{editingdata.vehicletruckGas}</Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateCount} name="deliveryGas" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder1} />
+                            <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder1}</p>
+                          </Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateMiles} name="deliveryGas" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder2} />
+                <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder2}</p>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col className="col-12 col-xl-4">{editingdata.vehicletruckDiesel}</Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateCount} name="deliveryDiesel" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder1} />
+                            <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder1}</p>
+                          </Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateMiles} name="deliveryDiesel" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder2} />
+                <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder2}</p>
+                          </Col>
+                        </Row>
+                      </div>
+                    </Accordion.Collapse>
+                  </Card>
+                  <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="4">
+                      <h5 className="smallCaps text-small text-green">{editingdata.vehicleSemiHeader}</h5>
+                      <p className="text-small op-6">FIXME: do we have text for this?</p>
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="4">
+                      <div>
+                        <Row>
+                          <Col className="col-12 col-xl-4">{editingdata.vehiclesemiFridge}</Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateCount} name="semiFrig" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder1} />
+                            <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder1}</p>
+                          </Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                          <input onChange={calculateMiles} name="semiFrig" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder2} />
+                <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder2}</p>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col className="col-12 col-xl-4">{editingdata.vehiclesemiNonFridge}</Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateCount} name="semiNonFrig" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder1} />
+                            <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder1}</p>
+                          </Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateMiles} name="semiNonFrig" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder2} />
+                <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder2}</p>
+                          </Col>
+                        </Row>
+                      </div>
+                    </Accordion.Collapse>
+                  </Card>
+                  <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="5">
+                      <h5 className="smallCaps text-small text-green">Air Travel</h5>
+                      <p className="text-small op-6">FIXME: do we have text for this?</p>
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="5">
+                      <div>
+                        <Row>
+                          <Col className="col-12 col-xl-4">
+                            <h5 className="smallCaps text-small text-green">{editingdata.vehiclejet}</h5>
+                          </Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateCount} name="jetNum" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder1} />
+                            <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder1}</p>
+                          </Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateMiles} name="jetNum" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder2} />
+                <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder2}</p>
+                          </Col>
+                        </Row>
+
+                        <Row>
+                          <Col className="col-12 col-xl-4">
+                            <h5 className="smallCaps text-small text-green">Private Plane</h5>
+                          </Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateCount} name="planeGas" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder1} />
+                            <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder1}</p>
+                          </Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateMiles} name="planeGas" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder2} />
+                <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder2}</p>
+                          </Col>
+                        </Row>
+
+                        <Row>
+                          <Col className="col-12 col-xl-4">
+                            <h5 className="smallCaps text-small text-green">Private Helicopter</h5>
+                          </Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateCount} name="heliGas" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder1} />
+                            <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder1}</p>
+                          </Col>
+                          <Col className="col-12 col-xl-4 col-sm-6">
+                            <input onChange={calculateMiles} name="heliGas" type="number" min="0" onKeyPress={
+                              (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
+                            }  placeholder={editingdata.vehiclePlaceholder2} />
+                <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder2}</p>
+                          </Col>
+                        </Row>
+                      </div>
+                    </Accordion.Collapse>
+                  </Card>              
+                </Accordion>
               </Col>
             </Row>
 
@@ -1165,12 +1239,14 @@ const Lang = () => {
               <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateTransitCount} name="transitCar" type="number" min="0" onKeyPress={
                   (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                }   placeholder={editingdata.vehiclePlaceholder1} />
+                }  placeholder={editingdata.vehiclePlaceholder1} />
+                <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder1}</p>
               </Col>
               <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateTransitMiles} name="transitCar" type="number" min="0" onKeyPress={
                   (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                }   placeholder={editingdata.vehiclePlaceholder2} />
+                }  placeholder={editingdata.vehiclePlaceholder2} />
+                <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder2}</p>
               </Col>
             </Row>
             <Row>
@@ -1178,12 +1254,14 @@ const Lang = () => {
               <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateTransitCount} name="transitBus" type="number" min="0" onKeyPress={
                   (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                }   placeholder={editingdata.vehiclePlaceholder1} />
+                }  placeholder={editingdata.vehiclePlaceholder1} />
+                            <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder1}</p>
               </Col>
               <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateTransitMiles} name="transitBus" type="number" min="0" onKeyPress={
                   (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                }   placeholder={editingdata.vehiclePlaceholder2} />
+                }  placeholder={editingdata.vehiclePlaceholder2} />
+                <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder2}</p>
               </Col>
             </Row>
             <Row>
@@ -1191,12 +1269,14 @@ const Lang = () => {
               <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateTransitCount} name="transitTrain" type="number" min="0" onKeyPress={
                   (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                }   placeholder={editingdata.vehiclePlaceholder1} />
+                }  placeholder={editingdata.vehiclePlaceholder1} />
+                            <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder1}</p>
               </Col>
               <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateTransitMiles} name="transitTrain" type="number" min="0" onKeyPress={
                   (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                }   placeholder={editingdata.vehiclePlaceholder2} />
+                }  placeholder={editingdata.vehiclePlaceholder2} />
+                <p className="x-small mb-3 ">{editingdata.vehiclePlaceholder2}</p>
               </Col>
             </Row>
           </div>
@@ -1215,6 +1295,7 @@ const Lang = () => {
                 <input onChange={calculateEmp} name="flyEmployees" type="number" min="0" onKeyPress={
                   (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                 }   placeholder={editingdata.travelPlaceholder1} />
+                <p className="x-small mb-3 ">{editingdata.travelPlaceholder1}</p>
               </Col>
             </Row>
             <hr/>
@@ -1227,6 +1308,7 @@ const Lang = () => {
                     <input onChange={calculateFlightCount} name="flyShort" type="number" min="0" onKeyPress={
                       (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                     }   placeholder={editingdata.travelPlaceholder2} />
+                    <p className="x-small mb-3 ">{editingdata.travelPlaceholder2}</p>
                   </Col>
                 </Row>
               </Col>
@@ -1241,6 +1323,7 @@ const Lang = () => {
                         <input onChange={calculateFlightCount} name="flyMediumEco" type="number" min="0" onKeyPress={
                           (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                         }   placeholder={editingdata.travelPlaceholder2} />
+                        <p className="x-small mb-3 ">{editingdata.travelPlaceholder2}</p>
                       </Col>
                     </Row>
                     <Row>
@@ -1249,6 +1332,7 @@ const Lang = () => {
                         <input onChange={calculateFlightCount} name="flyMediumBus" type="number" min="0" onKeyPress={
                           (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                         }   placeholder={editingdata.travelPlaceholder2} />
+                        <p className="x-small mb-3 ">{editingdata.travelPlaceholder2}</p>
                   </Col>
                 </Row>
                 </Col>
@@ -1263,6 +1347,7 @@ const Lang = () => {
                       <input onChange={calculateFlightCount} name="flyLongEco" type="number" min="0" onKeyPress={
                         (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                       }   placeholder={editingdata.travelPlaceholder2} />
+                      <p className="x-small mb-3 ">{editingdata.travelPlaceholder2}</p>
                   </Col>
                 </Row>
                 <Row>
@@ -1271,6 +1356,7 @@ const Lang = () => {
                     <input onChange={calculateFlightCount} name="flyLongEcoPlus" type="number" min="0" onKeyPress={
                       (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                     }   placeholder={editingdata.travelPlaceholder2} />
+                    <p className="x-small mb-3 ">{editingdata.travelPlaceholder2}</p>
                   </Col>
                 </Row>
                 <Row>
@@ -1279,6 +1365,7 @@ const Lang = () => {
                     <input onChange={calculateFlightCount} name="flyLongBus" type="number" min="0" onKeyPress={
                       (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                     }   placeholder={editingdata.travelPlaceholder2} />
+                    <p className="x-small mb-3 ">{editingdata.travelPlaceholder2}</p>
                   </Col>
                 </Row>
                 <Row>
@@ -1287,6 +1374,7 @@ const Lang = () => {
                     <input onChange={calculateFlightCount} name="flyLongFirst" type="number" min="0" onKeyPress={
                       (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                     }   placeholder={editingdata.travelPlaceholder2} />
+                    <p className="x-small mb-3 ">{editingdata.travelPlaceholder2}</p>
                   </Col>
                 </Row>
               </Col>
@@ -1298,6 +1386,7 @@ const Lang = () => {
                 <input onChange={calculateFlightCount} name="flyHotels" type="number" min="0" onKeyPress={
                   (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                 }   placeholder={editingdata.travelPlaceholder3} />
+                <p className="x-small mb-3 ">{editingdata.travelPlaceholder3}</p>
               </Col>
             </Row>
           </div>
@@ -1316,10 +1405,12 @@ const Lang = () => {
                 <input onChange={calculateFreightNum} name="freightVan" type="number" min="0" onKeyPress={
                   (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                 }   placeholder={editingdata.freightPlaceholder1} />
+                <p className="x-small mb-3 ">{editingdata.travelPlaceholder1}</p>
               </Col>
               <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateFreightMiles} name="freightVan" type="number"
                   placeholder={editingdata.freightPlaceholder2} />
+                  <p className="x-small mb-3 ">{editingdata.travelPlaceholder2}</p>
               </Col>
             </Row>
             <hr/>
@@ -1329,9 +1420,11 @@ const Lang = () => {
                 <input onChange={calculateFreightNum} name="freightSemiNonFrig" type="number" min="0" onKeyPress={
                   (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                 }   placeholder={editingdata.freightPlaceholder1} />
+                <p className="x-small mb-3 ">{editingdata.travelPlaceholder1}</p>
               </Col>
               <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateFreightMiles} name="freightSemiNonFrig" type="number" placeholder={editingdata.freightPlaceholder2}/>
+                    <p className="x-small mb-3 ">{editingdata.travelPlaceholder2}</p>
               </Col>
             </Row>
             <hr/>
@@ -1341,9 +1434,11 @@ const Lang = () => {
                 <input onChange={calculateFreightNum} name="freightSemiFrig" type="number" min="0" onKeyPress={
                   (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                 }   placeholder={editingdata.freightPlaceholder1} />
+                <p className="x-small mb-3 ">{editingdata.travelPlaceholder1}</p>
               </Col>
               <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateFreightMiles} name="freightSemiFrig" type="number" placeholder={editingdata.freightPlaceholder2}/>
+                    <p className="x-small mb-3 ">{editingdata.travelPlaceholder2}</p>
               </Col>
             </Row>
             <hr/>
@@ -1353,9 +1448,11 @@ const Lang = () => {
                 <input onChange={calculateFreightNum} name="freightCargo" type="number" min="0" onKeyPress={
                   (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                 }   placeholder={editingdata.freightPlaceholder1} />
+                <p className="x-small mb-3 ">{editingdata.travelPlaceholder1}</p>
               </Col>
               <Col className="col-12 col-xl-4 col-sm-6">
               <input onChange={calculateFreightMiles} name="freightCargo" type="number" placeholder={editingdata.freightPlaceholder2}/>
+                    <p className="x-small mb-3 ">{editingdata.travelPlaceholder2}</p>
               </Col>
             </Row>
             <hr/>
@@ -1365,9 +1462,11 @@ const Lang = () => {
                 <input onChange={calculateFreightNum} name="freightAirLess" type="number" min="0" onKeyPress={
                   (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                 }   placeholder={editingdata.freightPlaceholder1} />
+                <p className="x-small mb-3 ">{editingdata.travelPlaceholder1}</p>
               </Col>
               <Col className="col-12 col-xl-4 col-sm-6">
               <input onChange={calculateFreightMiles} name="freightAirLess" type="number" placeholder={editingdata.freightPlaceholder2}/>
+                    <p className="x-small mb-3 ">{editingdata.travelPlaceholder2}</p>
               </Col>
             </Row>
             <hr/>
@@ -1377,11 +1476,13 @@ const Lang = () => {
                 <input onChange={calculateFreightNum} name="freightAirMore" type="number" min="0" onKeyPress={
                   (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                 }   placeholder={editingdata.freightPlaceholder1} />
+                <p className="x-small mb-3 ">{editingdata.travelPlaceholder1}</p>
               </Col>
               <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateFreightMiles} name="freightAirMore" type="number" min="0" onKeyPress={
                   (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                 }   placeholder={editingdata.freightPlaceholder2} />
+                <p className="x-small mb-3 ">{editingdata.travelPlaceholder2}</p>
               </Col> 
             </Row>
           </div>
