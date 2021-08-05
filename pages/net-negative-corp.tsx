@@ -158,6 +158,7 @@ if(negative > 0){
                   <label htmlFor="footprint">{editingdata.emissionsCarbonHeader}</label>
                   <br />
                   <input className="mb-4" value={footprint>0? footprint : ""} onChange={changeFootprint} name="type" type="number" min="0"  placeholder={editingdata.emissionsPlaceholder}/>
+                  <p className="x-small mb-3">={editingdata.emissionsPlaceholder}</p>
                   {editingdata.emissionsCarbon}<Link href="business-calculator"><a className="underline modal-btn">{editingdata.emissionsLink}</a></Link>
                 </Col>
               </Row>
