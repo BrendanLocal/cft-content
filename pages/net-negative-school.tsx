@@ -111,11 +111,15 @@ export default function App({ file, href, children}) {
 
 
   var plantHectares = duration*footprint/regionArray.carbon[region];
+  var plantAcres = (duration*footprint/regionArray.carbon[region])*2.47;
+  
+if(negative > 0){
+    plantHectares = plantHectares * negative;
+    plantAcres = plantAcres * negative;
+  } 
+
   var plantAcres = plantHectares*2.47;
   
-  if(negative > 0){
-    plantHectares = plantHectares * negative;
-  }
   var plantTrees = plantHectares*2470;
   const changeRegion = (event) => {
     setRegion(event.target.value);
@@ -221,7 +225,7 @@ export default function App({ file, href, children}) {
             <div className="text-white p-5 innerShadow roundedBox bg-green">
               <h4 className="mb-0">{editingdata.dataHeader}</h4>
               <hr/>
-              <Row><Col className="pb-3">{editingdata.dataType} {plantAcres > 0 ? plantAcres.toFixed(2) : "--"} {editingdata.dataType1}</Col></Row>
+              <Row><Col className="pb-3">{editingdata.dataType} {plantAcres > 0 ? plantAcres.toLocaleString('en-US', {maximumFractionDigits: 2}) : "--"} {editingdata.dataType1}</Col></Row>
               <hr/>
               <Row><Col className="pb-3">{editingdata.dataType} {plantTrees > 0 ? Math.ceil(plantTrees).toLocaleString("en-US") : "--"} {editingdata.dataType2}</Col></Row>
             </div>
