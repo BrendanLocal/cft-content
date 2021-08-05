@@ -39,7 +39,6 @@ const Lang = () => {
   const [editingdata, form] = useGithubJsonForm(file, formOptions)
   usePlugin(form)
   useGithubToolbarPlugins()
-
   
   const socialIcons = [
     {
@@ -69,9 +68,14 @@ const Lang = () => {
     if (state.succeeded) {
       return (
         <Row className="justify-content-center align-items-center">
-          <Col className="p-5">
+          <Col className="p-4">
           <h3 className="text-white text-center">Thank you for contacting us!</h3>
-          <p className="text-white large text-center mb-4 px-md-3">A member of our team will reach out to you shortly. In the mean time, please watch this <span className="text-orange" onClick={handleShow}>video from our founder</span> and follow us on social media:</p>
+          <p className="text-white large text-center mb-4 px-2 px-md-4">A member of our team will reach out to you shortly. In the mean time, please watch this video from our founder:</p>
+          
+              <ReactPlayer playsinline controls url='./ceo-message.mp4' className="video-size mb-4"/>
+
+          <p className="text-white large text-center mb-3">Follow us on social media:</p>
+
           <div className="socialIcons text-center">
               {socialIcons.map(item =>
                 
@@ -166,11 +170,7 @@ const Lang = () => {
               <h3 className="text-green smallCaps text-center">A MESSAGE FROM OUR FOUNDER</h3>
             </Col>
           </Row>
-          <Row className="justify-content-center align-items-center">
-            <Col className="col-12 d-flex">
-              <ReactPlayer playing playsinline controls url='./ceo-message.mp4' className="video-size"/>
-            </Col>
-          </Row>
+          
         </Modal.Body>
         <Modal.Footer className="p-0">
           <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleClose}>CLOSE</Button>
