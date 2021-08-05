@@ -249,6 +249,11 @@ font-weight: 600;
   line-height: 10px;
 }
 
+.ftu-par {
+  font-size: 12.5px;
+  line-height: 18px;
+}
+
  .dropdown-text {
    font-size: 14px;
  }
@@ -336,6 +341,10 @@ li a, a.underline {
 .large {
   font-size: 20px!important;
   line-height: 26px;
+}
+
+.x-large {
+  font-size: 36px!important;
 }
 
 .large, .large * {
@@ -1074,6 +1083,29 @@ div>p {
 .roundedBoxLeft {
 
   border-radius: 20px 0 0 20px;
+}
+
+.roundedBoxTopLeft {
+  border-radius: 10px 0 0 0;
+}
+
+.roundedBoxTop {
+  border-radius: 10px 10px 0 0;
+}
+
+.roundedBoxBottom {
+  border-radius: 0 0 10px 10px;
+}
+
+
+
+.roundedBoxBottomLeft {
+  border-radius: 0 0 0 10px;
+}
+
+.roundedBoxRight {
+
+  border-radius: 0px 10px 10px 0px;
 }
 
 .roundedBoxMedium {
@@ -2443,7 +2475,19 @@ width: 100%;
 
 /* Power of the Forest */
 
-
+ul.ftu-list li {
+  position: relative;
+  left: 14px;
+  font-size: 12.5px;
+  padding: 5px 0 0 10px;
+  text-align: left;
+  }
+  
+  ul.ftu-list li:before {
+    content: url("/bullet.svg");
+    position: absolute;
+    left: -10px;
+  }
 
 ul.checkMark li{
 position: relative;

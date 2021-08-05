@@ -1046,9 +1046,128 @@ export default function Build({ file }) {
 
           <Fade bottom>
             <Row className="text-center justify-content-center py-3 mt-5">
-              <Col className="col-10 col-md-9 col-lg-7">
-                <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.corp_header2}</h2>
-                <img className="card-drop-heavy" src="../../ECOSYSTEMBENEFITS-Corp.jpg"/>
+              <Col className="col-11 col-md-10 col-lg-9 col-xl-8">
+                <h2 className="text-orange tight-drop-light mb-4 bold px-2">{editingdata.corp_header2}</h2>
+                
+              {/* FTU units */}
+
+              {/* Desktop */}
+
+              <Container className="d-none d-lg-block">
+                <Row className="roundedBox card-drop-heavy">
+                  <Col className="col-12 col-lg-8 col-xl-9 px-0">
+                    <div className="p-5 pb-4 bg-brown roundedBoxTopLeft">
+                      
+                      <Row className="justify-content-center align-items-center mb-3">
+                        <Col className="col-lg-4 col-xl-3 d-flex">
+                          <img src="../../cft-icon-white.svg"/>
+                        </Col>
+                        <Col className="col-lg-8 col-xl-9 d-flex">
+                          <h3 className="text-left lead mt-3 text-white bold">
+                          ESG BENEFITS FOR CORPORATIONS
+                          </h3>
+                        </Col>
+                      </Row>
+                      <p className="text-white text-left">
+                      The number of FTUs purchased determines the packages available.
+                      </p>
+                    </div>
+                    <div className="p-5 py-4 bg-offwhite roundedBoxBottomLeft">
+                    <h5 className="text-left text-green medium">
+                    WITH OVER 50 CHOICES, YOUR CUSTOMIZED PACKAGE MAY INCLUDE:
+                      </h5>
+                      <ul className="text-grey dropdown-text checkMark px-1 mx-3">
+                        <li className="py-1">Supporting carbon sequestration & biodiversity</li>
+                        <li className="py-1">Proprietary Net-Zero Calculator and Forestcaster™</li>
+                        <li className="py-1">National recognition as an investor in a nature-based solution to climate change</li>
+                        <li className="py-1">Turnkey solutions to engage employees and shareholders</li>
+                        <li className="py-1">PR packages including signage, advertising & branded content</li>
+                        <li className="py-1">Community and school sponsorship opportunities</li>
+                        <li className="py-1">A personalized Smart Forest Intelligence Dashboard</li>
+                        <li className="py-1">A dynamic private portal with curated programming and resources</li>
+                        <li className="py-1">Website and social media placements</li>
+                      </ul>
+                    </div>
+                  </Col>
+                  <Col className="col-lg-4 col-xl-3 bg-mildgreen text-white text-left p-4 roundedBoxRight">
+                    <h6 className="bold pt-xl-4 pt-lg-5">WHAT IS A FOREST TRUST UNIT (FTU)?</h6>
+                    <p>1 FTU</p>
+                    <p>= 5 acres</p>
+                    <p className="mb-2">= 5000+ seedlings</p>
+                    <p className="ftu-par mb-2">
+                      A FTU is a 5 acre Smart Forest that contains 5000+ planted seedlings. This is an ecologically biodiverse area that is under joint stewardship between CFT and the designated environmental steward.
+                   </p>
+                   <p className="ftu-par">Every FTU is:</p>
+                   <ul className="ftu-list">
+                     <li>supported by a 5-phase strategic action plan</li>
+                     <li>validated by modern science</li>
+                     <li>protected under the forever no clear-cut guarantee</li>
+                   </ul>
+                   <p className="ftu-par">We will engage Indigenous land knowledge holders in our decisions.</p>
+                  </Col>
+                </Row>
+              </Container>
+
+              {/* Mobile */}
+
+              <Container className="d-lg-none">
+                <Row className="roundedBox card-drop-heavy">
+                  <Col className="col-12 px-0">
+                    <div className="p-4 p-md-5 pb-4 bg-brown roundedBoxTop">
+                      
+                      <Row className="justify-content-center align-items-center mb-2 mb-md-3">
+                        <Col className="col-12 col-md-3 d-flex">
+                          <img src="../../cft-icon-white.svg"/>
+                        </Col>
+                        <Col className="col-12 col-md-9 col-xl-9 d-flex">
+                          <p className="text-left lead text-white bold d-none d-md-block">
+                          ESG BENEFITS FOR CORPORATIONS
+                          </p>
+                          <h3 className="text-left text-white mt-3 bold d-md-none">
+                          ESG BENEFITS FOR CORPORATIONS
+                          </h3>
+                        </Col>
+                      </Row>
+                      <p className="text-white text-left">
+                      The number of FTUs purchased determines the packages available.
+                      </p>
+                    </div>
+                    <div className="px-4 px-md-5 pt-4 pb-3 bg-offwhite">
+                    <h5 className="text-left text-green medium">
+                    WITH OVER 50 CHOICES, YOUR CUSTOMIZED PACKAGE MAY INCLUDE:
+                      </h5>
+                      <ul className="text-grey dropdown-text checkMark px-1 mx-3">
+                        <li className="py-1">Supporting carbon sequestration & biodiversity</li>
+                        <li className="py-1">Proprietary Net-Zero Calculator and Forestcaster™</li>
+                        <li className="py-1">National recognition as an investor in a nature-based solution to climate change</li>
+                        <li className="py-1">Turnkey solutions to engage employees and shareholders</li>
+                        <li className="py-1">PR packages including signage, advertising & branded content</li>
+                        <li className="py-1">Community and school sponsorship opportunities</li>
+                        <li className="py-1">A personalized Smart Forest Intelligence Dashboard</li>
+                        <li className="py-1">A dynamic private portal with curated programming and resources</li>
+                        <li className="py-1">Website and social media placements</li>
+                      </ul>
+                    </div>
+                  </Col>
+                  <Col className="col-12 bg-mildgreen text-white text-left p-4 p-md-5 roundedBoxBottom">
+                    <h6 className="bold ">WHAT IS A FOREST TRUST UNIT (FTU)?</h6>
+                    <p>1 FTU</p>
+                    <p>= 5 acres</p>
+                    <p className="mb-2">= 5000+ seedlings</p>
+                    <p className="ftu-par mb-2">
+                      A FTU is a 5 acre Smart Forest that contains 5000+ planted seedlings. This is an ecologically biodiverse area that is under joint stewardship between CFT and the designated environmental steward.
+                   </p>
+                   <p className="ftu-par">Every FTU is:</p>
+                   <ul className="ftu-list">
+                     <li>supported by a 5-phase strategic action plan</li>
+                     <li>validated by modern science</li>
+                     <li>protected under the forever no clear-cut guarantee</li>
+                   </ul>
+                   <p className="ftu-par">We will engage Indigenous land knowledge holders in our decisions.</p>
+                  </Col>
+                </Row>
+              </Container>
+
               </Col>
             </Row>
           </Fade>
@@ -1090,7 +1209,7 @@ export default function Build({ file }) {
                   </Link>
                 </div>
               </Col>
-            </Row>
+            </Row> 
           </Fade>
 
           <Fade bottom>
