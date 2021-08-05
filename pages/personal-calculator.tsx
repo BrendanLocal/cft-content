@@ -717,12 +717,21 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="number">{editingdata.heat1Months}</label>
                   <br />
-
-                  <input type="number" onChange={changeYear}  min={0} max={12} 
-                   placeholder="Month(s) per year in residence"  onKeyPress={(event) => {
-                    if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                  }} />
-                  
+                  <select name="months" onChange={changeYear}>
+                    <option value="" hidden>Month(s) per year in residence</option>
+                    <option value='1'> 1 </option>
+                    <option value='2'> 2 </option>
+                    <option value='3'> 3 </option>
+                    <option value='4'> 4 </option>
+                    <option value='5'> 5 </option>
+                    <option value='6'> 6 </option>
+                    <option value='7'> 7 </option>
+                    <option value='8'> 8 </option>
+                    <option value='9'> 9 </option>
+                    <option value='10'> 10 </option>
+                    <option value='11'> 11 </option>
+                    <option value='12'> 12 </option>
+                  </select>
                 </Col>
               </Row>
 
@@ -808,9 +817,21 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="number">{editingdata.heat2Months}</label>
                   <br />
-                  <input onChange={changeYearTwo} type="number" min="0" onKeyPress={(event) => {
-                    if (!/[0-9]/.test(event.key)) {event.preventDefault();} 
-                  }} placeholder="Month(s) per year in residence"  value={selectYearTwo}/>
+                  <select name="months" onChange={changeYearTwo}>
+                    <option value="" hidden>Month(s) per year in residence</option>
+                    <option value='1'> 1 </option>
+                    <option value='2'> 2 </option>
+                    <option value='3'> 3 </option>
+                    <option value='4'> 4 </option>
+                    <option value='5'> 5 </option>
+                    <option value='6'> 6 </option>
+                    <option value='7'> 7 </option>
+                    <option value='8'> 8 </option>
+                    <option value='9'> 9 </option>
+                    <option value='10'> 10 </option>
+                    <option value='11'> 11 </option>
+                    <option value='12'> 12 </option>
+                  </select>
                 </Col>
               </Row>
 
@@ -898,9 +919,21 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="number">{editingdata.heat3Months}</label>
                   <br />
-                  <input onChange={changeYearThree} type="number" min={0} onKeyPress={(event) => {
-                    if (!/[0-9]/.test(event.key)) {event.preventDefault();} 
-                  }} placeholder="Month(s) per year in residence"/>
+                  <select name="months" onChange={changeYearThree}>
+                    <option value="" hidden>Month(s) per year in residence</option>
+                    <option value='1'> 1 </option>
+                    <option value='2'> 2 </option>
+                    <option value='3'> 3 </option>
+                    <option value='4'> 4 </option>
+                    <option value='5'> 5 </option>
+                    <option value='6'> 6 </option>
+                    <option value='7'> 7 </option>
+                    <option value='8'> 8 </option>
+                    <option value='9'> 9 </option>
+                    <option value='10'> 10 </option>
+                    <option value='11'> 11 </option>
+                    <option value='12'> 12 </option>
+                  </select>
                 </Col>
               </Row>
 
@@ -987,9 +1020,21 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="number">{editingdata.heat3Months}</label>
                   <br />
-                  <input onChange={changeYearFour} type="number" min={0} onKeyPress={(event) => {
-                    if (!/[0-9]/.test(event.key)) {event.preventDefault();} 
-                  }} placeholder="Month(s) per year in residence"/>
+                  <select name="months" onChange={changeYearFour}>
+                    <option value="" hidden>Month(s) per year in residence</option>
+                    <option value='1'> 1 </option>
+                    <option value='2'> 2 </option>
+                    <option value='3'> 3 </option>
+                    <option value='4'> 4 </option>
+                    <option value='5'> 5 </option>
+                    <option value='6'> 6 </option>
+                    <option value='7'> 7 </option>
+                    <option value='8'> 8 </option>
+                    <option value='9'> 9 </option>
+                    <option value='10'> 10 </option>
+                    <option value='11'> 11 </option>
+                    <option value='12'> 12 </option>
+                  </select>
                 </Col>
               </Row>
 
@@ -1076,9 +1121,21 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="number">{editingdata.heat3Months}</label>
                   <br />
-                  <input onChange={changeYearFive} type="number" min={0} onKeyPress={(event) => {
-                    if (!/[0-9]/.test(event.key)) {event.preventDefault();} 
-                  }} placeholder="Month(s) per year in residence"/>
+                  <select name="months" onChange={changeYearFive}>
+                    <option value="" hidden>Month(s) per year in residence</option>
+                    <option value='1'> 1 </option>
+                    <option value='2'> 2 </option>
+                    <option value='3'> 3 </option>
+                    <option value='4'> 4 </option>
+                    <option value='5'> 5 </option>
+                    <option value='6'> 6 </option>
+                    <option value='7'> 7 </option>
+                    <option value='8'> 8 </option>
+                    <option value='9'> 9 </option>
+                    <option value='10'> 10 </option>
+                    <option value='11'> 11 </option>
+                    <option value='12'> 12 </option>
+                  </select>
                 </Col>
               </Row>
 
