@@ -1179,12 +1179,13 @@ div>p {
 }
 
 
-.splash button:not(#rcc-confirm-button) {
+.splash button:not(#rcc-confirm-button):not(#rcc-decline-button) {
  opacity: 0;
   transform: translateY(-100%);
 
   transition: none;
 }
+
 
 .splash .header {
   opacity: 0;
