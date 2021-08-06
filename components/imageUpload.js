@@ -67,31 +67,9 @@ function ImageUpload({
           />
         </div>
       ) : null}
-      <div className='create-book-photo-picker _FCdzt' style={{
-              position: 'absolute',
-              width: '100%',
-              height: '100%',
-              zIndex: 99999999
-            }}>
+      
         {imageSrc ? (
-          <div
-            className='create-book-image-preview-container _GQrmn'
-            style={{
-              position: 'absolute',
-              width: '100%',
-              height: '100%',
-              zIndex: 99999999
-            }}
-          >
-            <div
-              className='create-book-image-preview-image-box _2zJnR'
-              style={{
-                width: '100%',
-                height: '100%',
-                overflow: 'hidden',
-                position: 'relative'
-              }}
-            >
+          
               <img
                 src={imageSrc}
                 alt='pick image'
@@ -102,26 +80,15 @@ function ImageUpload({
                   height: '100%'
                 }}
               />
-            </div>
-          </div>
         ) : (
-          'Upload an Image'
+          ''
         )}
-        <div
-          className='create-book-image-input-container _1n017'
-          style={{
-            overflow: 'hidden',
-            width: '100%',
-            height: '100%'
-          }}
-        >
           <input
             type='file'
             name='photo'
             className='create-book-photo-input _2SsMH'
             placeholder='select the book photo'
             style={{
-              opacity: 0,
               width: '100%',
               height: '100%'
             }}
@@ -131,9 +98,7 @@ function ImageUpload({
               event.target.value = null
             }}
           />
-        </div>
       </div>
-    </div>
   )
 }
 

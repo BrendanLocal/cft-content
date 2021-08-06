@@ -2644,14 +2644,6 @@ color: #054217;
   cursor: pointer;
 }
 
-.create-book-photo-input:after {
-  content: 'Upload a Logo';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-}
-
 .create-book-photo-picker {
   display: inline-block;
   padding-top: 3px!important;
