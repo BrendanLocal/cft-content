@@ -197,7 +197,7 @@ export default function Power({ file }) {
               <Col className="col-10 col-lg-3 col-xl-3 d-flex">
                 
               <p className="text-white d-none d-lg-block d-xl-none">
-                CFT was established by <span className="bold">Gary Zed</span>, an entrepreneur with a reputation for taking on tough challenges and getting things done. A leader with a national vision, Gary heads up a team that is committed to making CFT the most talked about climate success story in the decades ahead.
+                CFT was established <br/>by <span className="bold">Gary Zed</span>, an entrepreneur with a reputation for taking on tough challenges and getting things done. A leader with a national vision, Gary heads up a team that is committed to making CFT the most talked about climate success story in the decades ahead.
                 </p>
                 <p className="text-white d-none d-xl-block d-xxl-none medium">
                 CFT was established by <span className="bold">Gary Zed</span>, an entrepreneur with a reputation for taking on tough challenges and getting things done. A leader with a national vision, Gary heads up a team that is committed to making CFT the most talked about climate success story in the decades ahead.
@@ -216,7 +216,7 @@ export default function Power({ file }) {
         <Container id="the-plan" className="v-full z-999 bg-green p-5 mb-5 page-section">
           <Fade bottom>
             <Row className="justify-content-center align-items-center my-4">
-              <Col className="col-12 col-md-11 col-lg-8 col-xl-9 text-center text-white">
+              <Col className="col-12 col-md-11 col-lg-10 col-xl-9 text-center text-white">
                 <h2 className="text-orange bold mb-2 px-md-3 px-lg-0">CFT’s Smart Forest Action Plan</h2>
                 <p className="medium mt-0 mb-0 px-lg-4 mb-2">When you invest in a Smart Forest, we keep you informed on its progress - from site selection to planting to ongoing maintenance and carbon and biodiversity footprint impact as well as building meaningful relationships with our Indigenous peoples. CFT manages the forest landscape from the moment you buy your forest.</p>
               </Col>
@@ -288,7 +288,7 @@ export default function Power({ file }) {
         <Container id="what" fluid className="v-full z-999 bg-green py-5 page-section">
           <Fade bottom>
             <Row className="pt-5 align-items-center justify-content-center">
-              <Col className="col-10 col-lg-7 pt-3">
+              <Col className="col-10 col-lg-8 col-xl-7 pt-3 px-lg-4 px-xl-0">
                 <h2 className="text-center text-orange bold mb-2">What is a Smart Forest?</h2>
                 <p className="text-center text-white mb-3">A Smart Forest combines the resilience of a natural ecosystem, developed over millennia, with the predictive capabilities of today’s technologies and Canada’s First Peoples. Inside a Smart Forest, biodiversity thrives; outside of it, scientists, students, investors, and conservationists use digital instruments to understand and activate the forest’s role in cleaning our water, purifying our air, and restoring our country’s vast and vital ecosystems.</p>
               </Col>
@@ -424,7 +424,7 @@ export default function Power({ file }) {
         <Container id="qna" fluid className="v-full z-999 bg-green py-5 page-section">
           <Fade bottom>
             <Row className="align-items-center justify-content-center pt-5 mb-4 ">
-              <Col className="col-10 col-lg-7 pt-3">
+              <Col className="col-10 col-lg-8 col-xl-7 pt-3">
                 <h2 className="text-center text-orange bold mb-2">Questions & Answers</h2>
                 <p className="text-center text-white">
               Canada’s Forest Trust will plant millions of acres of Smart Forests across Canada by 2040. We will build on deforested land located in ecologically diverse regions across the country, and will protect some of our nation’s most imperilled plants and animals.

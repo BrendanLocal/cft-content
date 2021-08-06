@@ -890,8 +890,8 @@ export default function Build({ file }) {
         <Container id="the-plan" className="v-full z-999 bg-green p-5 page-section">
           <Fade bottom>
             <Row className="justify-content-center align-items-center my-4">
-              <Col className="col-12 col-md-11 col-lg-10 col-xl-8 text-center text-white">
-                <h2 className="text-orange bold mb-2 px-md-3 px-lg-0">{editingdata.part2_header3}</h2>
+              <Col className="col-12 col-md-11 col-lg-10 col-xl-9 text-center text-white">
+                <h2 className="text-orange bold mb-2 px-md-5 px-lg-0">{editingdata.part2_header3}</h2>
                 <p className="medium mt-0 mb-0 px-lg-4 mb-2">{editingdata.part2_para2}</p>
               </Col>
             </Row>
