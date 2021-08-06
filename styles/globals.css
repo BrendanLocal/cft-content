@@ -2543,9 +2543,10 @@ text-align: left;
 ul.plus li:before {
   content: url("../public/plus-green.svg");
   position: absolute;
-  margin-right: 10px;
+  margin-right: 8px;
   width: 1.5em;
   left: -2em;
+  top: 6px;
 }
 
 /* Digital Sign */
