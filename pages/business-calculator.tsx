@@ -895,9 +895,9 @@ const Lang = () => {
                 <Accordion>
                   <Card>
                     <Accordion.Toggle as={Card.Header} eventKey="0">
-                      <h5 className="smallCaps text-small text-green">{editingdata.vehiclecarGas}</h5>
-                      <p className="text-small op-6">Honda Civic, Toyota Prius</p>
+                      {editingdata.vehiclecarGas}
                     </Accordion.Toggle>
+                      <p className="text-small op-6 m-3">ie. Honda Civic, Toyota Prius</p>
                     <Accordion.Collapse eventKey="0">
                       <div>
                         <Row>
@@ -995,9 +995,9 @@ const Lang = () => {
                   <Card>
                     
                     <Accordion.Toggle as={Card.Header} eventKey="1">
-                      <h5 className="smallCaps text-small text-green">{editingdata.vehiclepickupHeader}</h5>
-                      <p className="text-small op-6">4-Door Sedans, SUV's</p>
+                      {editingdata.vehiclepickupHeader}
                     </Accordion.Toggle>
+                  <p className="text-small op-6 m-3">ie. 4-Door Sedans, SUV's</p>
                     <Accordion.Collapse eventKey="1">
                       <div>
                         <Row>
@@ -1080,9 +1080,9 @@ const Lang = () => {
                   </Card>
                   <Card>
                     <Accordion.Toggle as={Card.Header} eventKey="3">
-                      <h5 className="smallCaps text-small text-green">DELIVERY TRUCKS/VANS</h5>
-                      <p className="text-small op-6">(UP TO 3.5 TONNES)</p>
+                      {editingdata.vehicletruckHeader}
                     </Accordion.Toggle>
+                      <p className="text-small op-6 m-3">(up to 3.5 tonnes)</p>
                     <Accordion.Collapse eventKey="3">
                       <div>
                         <Row>
@@ -1120,8 +1120,7 @@ const Lang = () => {
                   </Card>
                   <Card>
                     <Accordion.Toggle as={Card.Header} eventKey="4">
-                      <h5 className="smallCaps text-small text-green">{editingdata.vehicleSemiHeader}</h5>
-                      <p className="text-small op-6">FIXME: do we have text for this?</p>
+                      {editingdata.vehicleSemiHeader}
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="4">
                       <div>
@@ -1160,9 +1159,9 @@ const Lang = () => {
                   </Card>
                   <Card>
                     <Accordion.Toggle as={Card.Header} eventKey="5">
-                      <h5 className="smallCaps text-small text-green">Air Travel</h5>
-                      <p className="text-small op-6">FIXME: do we have text for this?</p>
+                      Air Travel
                     </Accordion.Toggle>
+                      <p className="text-small op-6 m-3">ie. aircrafts, prop planes, helicopters, jets, etc.</p>
                     <Accordion.Collapse eventKey="5">
                       <div>
                         <Row>

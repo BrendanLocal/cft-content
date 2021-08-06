@@ -1148,9 +1148,9 @@ export default function App({ file, href, children}) {
               <Accordion>
                 <Card>
                   <Accordion.Toggle as={Card.Header} eventKey="0">
-                    <h5 className="smallCaps text-small text-green">{editingdata.vehicleSmall}</h5>
-                    <p className="text-small op-6">{editingdata.vehicleSmallDesc}</p>
-                  </Accordion.Toggle>
+                    {editingdata.vehicleSmall}
+                    </Accordion.Toggle>
+                      <p className="text-small op-6 m-3">ie. {editingdata.vehicleSmallDesc}</p>
                   <Accordion.Collapse eventKey="0">
                     <div>
                       <Row>
@@ -1207,9 +1207,9 @@ export default function App({ file, href, children}) {
 
                 <Card>
                   <Accordion.Toggle as={Card.Header} eventKey="1">
-                    <h5 className="smallCaps text-small text-green">{editingdata.vehicleMed}</h5>
-                    <p className="text-small op-6">{editingdata.vehicleMedDesc}</p>
+                    {editingdata.vehicleMed}
                   </Accordion.Toggle>
+                  <p className="text-small op-6 m-3">ie. {editingdata.vehicleMedDesc}</p>
                   <Accordion.Collapse eventKey="1">
                     <div>
                       <Row>
@@ -1262,10 +1262,9 @@ export default function App({ file, href, children}) {
                 </Card>
                 <Card>
                   <Accordion.Toggle as={Card.Header} eventKey="2">
-                    <h5 className="smallCaps text-small text-green">{editingdata.vehicleLarge}</h5>
-                    <p className="text-small op-6">{editingdata.vehicleLargeDesc}</p>
+                    {editingdata.vehicleLarge}
                   </Accordion.Toggle>
-                  <p className="text-small op-6 m-3">ie. {editingdata.vehicleLargeDesc}</p>
+                    <p className="text-small op-6 m-3">ie. {editingdata.vehicleLargeDesc}</p>
                   <Accordion.Collapse eventKey="2">
                     <div>
                       <Row>
@@ -1334,8 +1333,7 @@ export default function App({ file, href, children}) {
                 </Card>
                 <Card>
                   <Accordion.Toggle as={Card.Header} eventKey="3">
-                    <h5 className="smallCaps text-small text-green">Private Aircraft</h5>
-                    <p className="text-small op-6">Personally owned aircraft, prop planes, helicopters, jets, etc.</p>
+                    Private Aircraft
                   </Accordion.Toggle>
 
                   <p className="text-small op-6 m-3">ie. Personally owned aircraft, prop planes, helicopters, jets, etc.</p>
@@ -1376,8 +1374,7 @@ export default function App({ file, href, children}) {
 
                 <Card>
                   <Accordion.Toggle as={Card.Header} eventKey="4">
-                    <h5 className="smallCaps text-small text-green">Recreational Vehicles</h5>
-                    <p className="text-small op-6">Personally owned recreational vehicles, such as yachts, ATVs, and more.</p>
+                    Recreational Vehicles
                   </Accordion.Toggle>
                   <p className="text-small op-6 m-3">ie. Personally owned recreational vehicles, such as yachts, ATVs, and more.</p>
                   <Accordion.Collapse eventKey="4">
