@@ -140,7 +140,9 @@ export default class Site extends App {
           `}
         </style>
         <Footer/>
-        <CookieConsent debug={true}>This website uses cookies to enhance the user experience.</CookieConsent>
+        <CookieConsent enableDeclineButton flipButtons debug={true} buttonText="I ACCEPT THE COOKIES" declineButtonText="I DO NOT ACCEPT">
+          This website uses cookies to enhance the user experience.
+        </CookieConsent>
         <NewsTicker />
         <EditLink cms={this.cms} />
         </TinacmsGithubProvider>
