@@ -443,7 +443,7 @@ export default function Power({ file }) {
                   A Smart Forest is more than a collection of trees. It has a significant impact on climate change.
                   </p>
 
-                  <ul className="checkMark text-white ms-5">
+                  <ul className="checkMark text-white ms-5 ms-xl-3 pe-3">
                      <li className="py-2">Supports wildlife, improves air quality, and regulates water flow</li>
                      <li className="py-2">Offers a tangible way to offset a large carbon footprints</li>
                      <li className="py-2">Maximizes its impact through expert forest management</li>
@@ -468,7 +468,7 @@ export default function Power({ file }) {
                   Anyone can build a Smart Forest:
                   </p>
 
-                  <ul className="checkMark text-white ms-5">
+                  <ul className="checkMark text-white ms-5  ms-xl-3 pe-3">
                      <li className="py-2">Corporations looking to meet ESG goals</li>
                      <li className="py-2">Students who want to make a positive impact on their future</li>
                      <li className="py-2">Individuals and families with a goal of protecting the planet for future generations or building a memorial in someone’s honour</li>
@@ -518,7 +518,7 @@ export default function Power({ file }) {
                   We build Smart Forests with our five-step Action Plan:
                   </p>
 
-                  <ul className="text-white ms-lg-4 ms-xl-0">
+                  <ul className="text-white ms-lg-4 ms-xl-0 pe-3">
                      <li className="py-2">1. <span className="bold">PROCURE</span><br/> Acquire land across Canada </li>
                      <li className="py-2">2. <span className="bold">PREPARE</span><br/> Assess, plan, and complete site preparation for planting</li>
                      <li className="py-2">3. <span className="bold">PLANT</span><br/> Strategically plant seedlings to ensure optimal growth and carbon sequestration</li>
