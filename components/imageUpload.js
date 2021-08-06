@@ -38,51 +38,9 @@ function ImageUpload({
         borderRadius: style.borderRadius
       }}
     >
-      {imageSrc ? (
-        <div
-          className='create-book-image-preview-icon-container _2B-m5'
-          style={{
-            width: '50px',
-            height: '50px',
-            borderRadius: '50%',
-            backgroundColor: 'tomato',
-            position: 'absolute',
-            top: 0,
-            right: '50%',
-            left: '50%',
-            transform: 'translate(-50%,-50%)',
-            zIndex: 99999999,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}
-        >
-          <FaTrash
-            size={30}
-            color='#fff'
-            onClick={() => {
-              setImageSrc('')
-            }}
-            className='create-book-image-preview-icon'
-          />
-        </div>
-      ) : null}
       
-        {imageSrc ? (
-          
-              <img
-                src={imageSrc}
-                alt='pick image'
-                className='image _2hdkJ'
-                style={{
-                  width: '100%',
-                  objectFit: 'fill',
-                  height: '100%'
-                }}
-              />
-        ) : (
-          ''
-        )}
+      
+        
           <input
             type='file'
             name='photo'
