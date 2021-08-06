@@ -195,11 +195,15 @@ export default function Power({ file }) {
                 <ReactPlayer playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4' className="video-size"/> 
               </Col>
               <Col className="col-10 col-lg-3 col-xl-3 d-flex">
+                
               <p className="text-white d-none d-lg-block d-xl-none">
                 CFT was established by <span className="bold">Gary Zed</span>, an entrepreneur with a reputation for taking on tough challenges and getting things done. A leader with a national vision, Gary heads up a team that is committed to making CFT the most talked about climate success story in the decades ahead.
                 </p>
-                <p className="text-white d-none d-xl-block medium">
+                <p className="text-white d-none d-xl-block d-xxl-none medium">
                 CFT was established by <span className="bold">Gary Zed</span>, an entrepreneur with a reputation for taking on tough challenges and getting things done. A leader with a national vision, Gary heads up a team that is committed to making CFT the most talked about climate success story in the decades ahead.
+                </p>
+                <p className="text-white d-none d-xxl-block spec-lg">
+                CFT was established <br/>by <span className="bold">Gary Zed</span>, an entrepreneur with a reputation for taking on tough challenges and getting things done. A leader with a national vision, Gary heads up a team that is committed to making CFT the most talked about climate success story in the decades ahead.
                 </p>
                 <p className="text-white text-center mt-3 large d-lg-none">
                 CFT was established by <span className="bold">Gary Zed</span>, an entrepreneur with a reputation for taking on tough challenges and getting things done. A leader with a national vision, Gary heads up a team that is committed to making CFT the most talked about climate success story in the decades ahead.
@@ -428,8 +432,10 @@ export default function Power({ file }) {
               </Col>
             </Row>
           </Fade>
-          <Fade bottom>
-            <Row className="align-items-center justify-content-center">
+          
+
+          {/* BEGINNING OF Q&A */}
+            <Row className="justify-content-center">
               <Col className="col-10 col-lg-8 roundedBox innerShadow bg-brown p-4 p-md-5"> 
 
               <Row>
@@ -501,7 +507,7 @@ export default function Power({ file }) {
                 </Col>
               </Row>
 
-              <div className="bg-offwhite text-mildgreen roundedBox p-4 mb-5">
+              <div className="bg-offwhite text-GREY roundedBox p-4 mb-5">
                 <p className="large">
                 Did you know that approximately <span className="italic bold">2.6 billion tonnes of CO₂</span> are absorbed by forests each year, which is approximately 1/3 of all CO2 emissions released over the span of an average year?
                 </p>
@@ -579,8 +585,7 @@ export default function Power({ file }) {
                 </Col>
               </Row>
 
-
-              <div className="bg-offwhite text-mildgreen roundedBox p-4 mb-5 mt-4">
+              <div className="bg-offwhite text-GREY roundedBox p-4 mb-5 mt-4">
                 <p className="large">
                 Did you know that the average carbon emissions of a Canadian is equivalent to <span className="bold italic">170 queen mattresses?</span>
                 </p>
@@ -829,12 +834,12 @@ export default function Power({ file }) {
                   CFT offers a variety of benefits that can be customized to meet your needs. Contact us at <a href="mailto:grow@canadasforesttrust.ca" className="text-orange">grow@canadasforesttrust.ca</a> for more information.
                   </p>
                 </Col>
-              </Row>
-              
+              </Row>              
 
               </Col>
             </Row>
-          </Fade>
+
+            {/* END OF Q&A */}
         </Container>
 
       <Modal show={show} className="d-flex align-items-center" onHide={handleClose}>

@@ -343,6 +343,11 @@ li a, a.underline {
   line-height: 26px;
 }
 
+.spec-lg {
+  font-size: 22px!important;
+  line-height: 27px;
+}
+
 .x-large {
   font-size: 36px!important;
 }
