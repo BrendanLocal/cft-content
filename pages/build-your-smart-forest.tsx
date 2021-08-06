@@ -864,8 +864,8 @@ export default function Build({ file }) {
       </Row>
 
       <main className="bg-green pt-5">
-        <Container id="intro" className="bg-green py-5 px-4 page-section">
-          <Row className="justify-content-center d-flex mt-xl-0 mt-lg-5 mb-5 ms-xl-5 ms-lg-4 py-5 px-5">
+        <Container id="intro" className="bg-green py-5 px-3 px-md-4 page-section">
+          <Row className="justify-content-center d-flex mt-xl-0 mt-lg-5 mb-5 ms-xl-5 ms-lg-4 py-5 px-4 px-md-5">
             <Col className="col-12 col-lg-5 stickyTop mb-5 p-3 pe-2 d-none d-lg-block">
               <object type="image/svg+xml" data="/build2-svg.svg" />
             </Col>

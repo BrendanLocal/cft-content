@@ -3154,6 +3154,12 @@ z-index: 999;
     padding-bottom: 0px!important;
   }
 
+  .header, .headerNav, .MenuInterface {
+    position: absolute!important;
+  }
+
+  
+
   .video-size {
     width: 100%!important;
     height: 100%!important;

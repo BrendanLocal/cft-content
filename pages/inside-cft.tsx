@@ -157,7 +157,7 @@ export default function Power({ file }) {
         <Container id="intro" className="bg-green z-999 py-5 px-5 page-section">
           <Row className="justify-content-center d-flex mt-xl-0 mt-lg-4 mb-5 ms-xl-5 ms-lg-2 py-5 px-3">
             <Col className="col-12 col-md-11 col-lg-5 stickyTop roundedBox innerShadow-heavy mt-5 m-3 p-0 about-hero"></Col>
-            <Col className="col-12 col-lg-5 text-white p-4 pb-0 intro-order ">
+            <Col className="col-12 col-lg-5 text-white p-0 p-md-4 pb-0 intro-order ">
               <h1 className="text-orange hero-alt bold mb-5 mt-2">{editingdata.header1}</h1>
               <p className="large mb-3">{editingdata.para1}</p>
               <ul className="intro-list text-white">
@@ -223,7 +223,7 @@ export default function Power({ file }) {
             </Row>
           </Fade>
           <Fade bottom>
-            <Row className="justify-content-center align-items-center px-4">
+            <Row className="justify-content-center align-items-center px-3 px-md-4 px-lg-3">
               
               <Carousel className="col-12 col-lg-10 d-flex bg-brown roundedBox px-0"
                 activeIndex={index} onSelect={handleSelect} 
