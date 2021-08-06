@@ -1265,6 +1265,7 @@ export default function App({ file, href, children}) {
                     <h5 className="smallCaps text-small text-green">{editingdata.vehicleLarge}</h5>
                     <p className="text-small op-6">{editingdata.vehicleLargeDesc}</p>
                   </Accordion.Toggle>
+                  <p className="text-small op-6 m-3">ie. {editingdata.vehicleLargeDesc}</p>
                   <Accordion.Collapse eventKey="2">
                     <div>
                       <Row>
@@ -1336,6 +1337,8 @@ export default function App({ file, href, children}) {
                     <h5 className="smallCaps text-small text-green">Private Aircraft</h5>
                     <p className="text-small op-6">Personally owned aircraft, prop planes, helicopters, jets, etc.</p>
                   </Accordion.Toggle>
+
+                  <p className="text-small op-6 m-3">ie. Personally owned aircraft, prop planes, helicopters, jets, etc.</p>
                   <Accordion.Collapse eventKey="3">
                     <div>
                       <Row>
@@ -1376,6 +1379,7 @@ export default function App({ file, href, children}) {
                     <h5 className="smallCaps text-small text-green">Recreational Vehicles</h5>
                     <p className="text-small op-6">Personally owned recreational vehicles, such as yachts, ATVs, and more.</p>
                   </Accordion.Toggle>
+                  <p className="text-small op-6 m-3">ie. Personally owned recreational vehicles, such as yachts, ATVs, and more.</p>
                   <Accordion.Collapse eventKey="4">
                     <div>
                       <h5 className="smallCaps text-small text-green">{editingdata.VehicleOther}</h5>
