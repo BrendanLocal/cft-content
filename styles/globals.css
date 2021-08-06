@@ -388,8 +388,13 @@ font-weight: 700;
 .letterspace {
   letter-spacing: 2px;
 }
+
 hr {
   background-color: #00823B;
+}
+
+hr.white {
+  background-color: #fff;
 }
 
 /* Buttons */
@@ -513,6 +518,10 @@ hr {
   color: #000;
 }
 
+.btn-outline {
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
 
 .sectionLink {
   color:#FF4D24;
@@ -1321,6 +1330,10 @@ text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.6);
 }
 
 .logo:hover {
+  cursor: pointer;
+}
+
+.crsr-pntr {
   cursor: pointer;
 }
 
@@ -2490,6 +2503,21 @@ ul.ftu-list li {
     left: 0px;
   }
 
+  ul.intro-list li {
+    position: relative;
+    left: 0px;
+    font-size: 16px;
+    padding: 5px 0 0 15px;
+    text-align: left;
+    }
+    
+    ul.intro-list li:before {
+      content: url("/bullet.svg");
+      position: absolute;
+      left: 0px;
+      top: 0px;
+    }
+
 ul.checkMark li{
 position: relative;
 left: .5em;
@@ -2515,9 +2543,10 @@ text-align: left;
 ul.plus li:before {
   content: url("../public/plus-green.svg");
   position: absolute;
-  margin-right: 10px;
+  margin-right: 8px;
   width: 1.5em;
   left: -2em;
+  top: 5px;
 }
 
 /* Digital Sign */
