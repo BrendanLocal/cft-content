@@ -167,7 +167,7 @@ const Header = ()=> {
             <img className="logo" src="/cft-logo-white.svg" />
             </Link>
           </div>
-          <div className="col borderLeft ms-2 text-left ps-3 d-md-none">
+          <div className="col borderLeft ms-2 text-left ps-3 d-sm-none">
             <div className="mt-1">
               <Link href={ user? "/portal-user" : "/portal" } ><a className="smallCaps textButton">{ user? "Your Portal" : "Sign in" }</a></Link>
             </div>
@@ -246,8 +246,8 @@ const Header = ()=> {
           <div className="col-12 col-md-6 d-flex flex-column gx-1 gx-lg-3 fixed">
             <div className="row align-self-top">
               <div className="col d-flex align-items-center justify-content-end menuInterface">
-              <Link href="/portal-demo"><a className="smallCaps text-white no-underline textButton me-4 d-none d-md-block">PORTAL DEMO</a></Link>
-                <Link href={ user? "/portal-user" : "/portal" } ><a className="smallCaps textButton me-2 d-none d-md-block">{ user? "Your Portal" : "Sign in" }</a></Link>
+              <Link href="/portal-demo"><a className="smallCaps text-white no-underline textButton me-4 d-none d-sm-block">PORTAL DEMO</a></Link>
+                <Link href={ user? "/portal-user" : "/portal" } ><a className="smallCaps textButton me-2 d-none d-sm-block">{ user? "Your Portal" : "Sign in" }</a></Link>
                 <div id="menuIcon" className={isActive ? 'open' : null} onClick={toggleClass}>
                   <span></span>
                   <span></span>

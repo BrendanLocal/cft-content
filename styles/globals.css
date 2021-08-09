@@ -3523,6 +3523,12 @@ font-weight: 600;
     height: 550px;
   }
 
+  h1.hero, h1.hero {
+    margin-top: 0px!important;
+    font-size: calc(2.5rem + 1.5vw);
+    line-height: calc(2.6rem + 1.5vw);
+  }
+
 }
 
 @media screen and (max-width: 400px) {
@@ -3605,6 +3611,12 @@ font-weight: 600;
   
   .phase5 {
     height: 430px;
+  }
+
+  h1.hero, h1.hero {
+    margin-top: 0px!important;
+    font-size: calc(2.3rem + 1.5vw);
+    line-height: calc(2.6rem + 1.5vw);
   }
 
 }
