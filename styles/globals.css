@@ -246,7 +246,7 @@ font-weight: 600;
 
 .x-small {
   font-size: 11px;
-  line-height: 10px;
+  line-height: 12px;
 }
 
 .ftu-par {
@@ -600,6 +600,10 @@ text-decoration: underline;
 
 .text-left {
   text-align: left;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .calc-intro:after {
@@ -2368,6 +2372,10 @@ padding: 5px 0;
   font-weight: 600;
 }
 
+.borderLeft {
+  border-left: solid 1px #fff;
+  }
+
 .mapboxgl-map {
   border-radius: 20px;
 }
@@ -3137,6 +3145,8 @@ z-index: 999;
     font-size: calc(2.8rem + 1.5vw);
     line-height: calc(2.9rem + 1.5vw);
   }
+
+
   
 
   h2.hero, h2.hero {
@@ -3146,10 +3156,14 @@ z-index: 999;
     padding-bottom: 0px!important;
   }
 
-  .header, .headerNav, .MenuInterface {
+  .header {
     position: absolute!important;
   }
 
+  .logoHeader {
+    width: 90%!important;
+    text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.6);
+  }
   
 
   .video-size {

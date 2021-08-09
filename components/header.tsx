@@ -158,7 +158,7 @@ const Header = ()=> {
             </Col>
           </Row>
         </Container>
-      </div>
+      </div> 
 
       <div className="container-fluid header logoHeader">
         <div className="row ">
@@ -166,6 +166,14 @@ const Header = ()=> {
             <Link href="/home">
             <img className="logo" src="/cft-logo-white.svg" />
             </Link>
+          </div>
+          <div className="col borderLeft ms-2 text-left ps-3 d-md-none">
+            <div className="mt-1">
+              <Link href={ user? "/portal-user" : "/portal" } ><a className="smallCaps textButton">{ user? "Your Portal" : "Sign in" }</a></Link>
+            </div>
+            <div className="mt-2">
+              <Link href="/portal-demo"><a className="smallCaps text-white no-underline textButton">DEMO</a></Link>
+            </div>
           </div>
         </div>
       </div>
@@ -227,7 +235,7 @@ const Header = ()=> {
             </div>
           </div>
         </div>
-      </div>
+      </div> 
 
       <div className="container-fluid header headerNav">
         <div className="row justify-content-end">
