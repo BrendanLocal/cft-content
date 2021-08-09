@@ -971,7 +971,7 @@ export default function Build({ file }) {
             <Row className="justify-content-center pb-5 align-items-stretch my-4 px-md-5 mx-lg-5 px-lg-5 mx-xl-0 px-xl-0">
               <Col className="col-10 col-md-5 col-xl-2 pe-lg-0 m-3">
                 <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
-                  <h4 className="text-white tight-drop-light">{editingdata.part3_box1header1}</h4>
+                  <h3 className=" h4 text-white tight-drop-light">{editingdata.part3_box1header1}</h3>
                   <p className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part3_box1para1}</p>
                   <a href="#corporate" className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">
                     {editingdata.learnMore}
@@ -980,21 +980,21 @@ export default function Build({ file }) {
               </Col>
               <Col className="col-10 col-md-5 col-xl-2 pe-lg-0 m-3">
                 <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
-                  <h4 className="text-white tight-drop-light">{editingdata.part3_box2header1}</h4>
+                <h3 className=" h4 text-white tight-drop-light">{editingdata.part3_box2header1}</h3>
                   <p className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part3_box2para1}</p>
                   <a href="#school" className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">{editingdata.learnMore}</a>
                 </div>
               </Col>
               <Col className="col-10 col-md-5 col-xl-2 pe-lg-0 m-3">
                 <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
-                  <h4 className="text-white tight-drop-light">{editingdata.part3_box3header1}</h4>
+                <h3 className=" h4 text-white tight-drop-light">{editingdata.part3_box3header1}</h3>
                   <p className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part3_box3para1}</p>
                   <a href="#legacy" className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">{editingdata.learnMore}</a>
                 </div>
               </Col>
               <Col className="col-10 col-md-5 col-xl-2 pe-lg-0 m-3">
                 <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop communal-card">
-                  <h4 className="text-white tight-drop-light">{editingdata.part3_box4header1}</h4>
+                <h3 className=" h4 text-white tight-drop-light">{editingdata.part3_box4header1}</h3>
                   <p className="flex-fill pb-3 text-white tight-drop mb-3">{editingdata.part3_box4para1}</p>
                   <a href="#communal" className="btn btn-text text-left text-orange bold no-underline tight-drop down-links">{editingdata.learnMore}</a>
                 </div>
@@ -1060,7 +1060,7 @@ export default function Build({ file }) {
                       
                       <Row className="justify-content-center align-items-center mb-3">
                         <Col className="col-lg-4 col-xl-3 d-flex">
-                          <img src="../../cft-icon-white.svg"/>
+                          <img src="../../cft-icon-white.svg" alt="CFT logo in white"/>
                         </Col>
                         <Col className="col-lg-8 col-xl-9 d-flex">
                           <h3 className="text-left x-large mt-3 text-white bold d-none d-xl-block">
@@ -1077,9 +1077,7 @@ export default function Build({ file }) {
                       </p>
                     </div>
                     <div className="p-5 py-4 bg-offwhite roundedBoxBottomLeft">
-                    <h5 className="text-left text-green medium">
-                    WITH OVER 50 CHOICES, YOUR CUSTOMIZED PACKAGE MAY INCLUDE:
-                      </h5>
+                    <h4 className="h5 text-left text-green medium">WITH OVER 50 CHOICES, YOUR CUSTOMIZED PACKAGE MAY INCLUDE:</h4>
                       <ul className="text-grey dropdown-text checkMark px-1 mx-3">
                         <li className="py-1">Supporting carbon sequestration & biodiversity</li>
                         <li className="py-1">Proprietary Net-Zero Calculator and Forestcaster™</li>
@@ -1094,7 +1092,7 @@ export default function Build({ file }) {
                     </div>
                   </Col>
                   <Col className="col-lg-4 col-xl-3 bg-mildgreen text-white text-left p-4 roundedBoxRight">
-                    <h6 className="bold mt-lg-5 mt-xl-4">WHAT IS A FOREST TRUST UNIT (FTU)?</h6>
+                    <h5 className="6 bold mt-lg-5 mt-xl-4">WHAT IS A FOREST TRUST UNIT (FTU)?</h5>
                     <p>1 FTU</p>
                     <p>= 5 acres</p>
                     <p className="mb-2">= 5000+ seedlings</p>
@@ -1121,7 +1119,7 @@ export default function Build({ file }) {
                       
                       <Row className="justify-content-center align-items-center mb-2 mb-md-3">
                         <Col className="col-12 col-md-3 d-flex">
-                          <img src="../../cft-icon-white.svg"/>
+                          <img src="../../cft-icon-white.svg" alt="CFT logo in white"/>
                         </Col>
                         <Col className="col-12 col-md-9 col-xl-9 d-flex">
                           <p className="text-left lead text-white bold d-none d-md-block">
@@ -1137,9 +1135,9 @@ export default function Build({ file }) {
                       </p>
                     </div>
                     <div className="px-4 px-md-5 pt-4 pb-3 bg-offwhite">
-                    <h5 className="text-left text-green medium">
+                    <h4 className="h5 text-left text-green medium">
                     WITH OVER 50 CHOICES, YOUR CUSTOMIZED PACKAGE MAY INCLUDE:
-                      </h5>
+                      </h4>
                       <ul className="text-grey dropdown-text checkMark px-1 mx-3">
                         <li className="py-1">Supporting carbon sequestration & biodiversity</li>
                         <li className="py-1">Proprietary Net-Zero Calculator and Forestcaster™</li>
@@ -1154,7 +1152,7 @@ export default function Build({ file }) {
                     </div>
                   </Col>
                   <Col className="col-12 bg-mildgreen text-white text-left p-4 p-md-5 roundedBoxBottom">
-                    <h6 className="bold ">WHAT IS A FOREST TRUST UNIT (FTU)?</h6>
+                    <h5 className="h6 bold ">WHAT IS A FOREST TRUST UNIT (FTU)?</h5>
                     <p>1 FTU</p>
                     <p>= 5 acres</p>
                     <p className="mb-2">= 5000+ seedlings</p>
@@ -1319,7 +1317,7 @@ export default function Build({ file }) {
                       
                       <Row className="justify-content-center align-items-center mb-3">
                         <Col className="col-lg-4 col-xl-3 d-flex">
-                          <img src="../../cft-icon-white.svg"/>
+                          <img src="../../cft-icon-white.svg" alt="CFT logo in white"/>
                         </Col>
                         <Col className="col-lg-8 col-xl-9 d-flex">
                         <h3 className="text-left x-large mt-3 text-white bold d-none d-xl-block">
@@ -1335,9 +1333,9 @@ export default function Build({ file }) {
                       </p>
                     </div>
                     <div className="p-5 py-4 bg-offwhite roundedBoxBottomLeft">
-                    <h5 className="text-left text-green medium">
+                    <h4 className="h5 text-left text-green medium">
                     WITH OVER 30 CHOICES, YOUR CUSTOMIZED PACKAGE MAY INCLUDE:
-                      </h5>
+                      </h4>
                       <ul className="text-grey dropdown-text checkMark px-1 mx-3">
                         <li className="py-1">Nationwide Student Forest Ambassador Program</li>
                         <li className="py-1">Scholarship, employment & fundraising opportunities</li>
@@ -1351,7 +1349,7 @@ export default function Build({ file }) {
                     </div>
                   </Col>
                   <Col className="col-lg-4 col-xl-3 bg-mildgreen text-white text-left p-4 roundedBoxRight">
-                    <h6 className="bold mt-lg-5 mt-xl-4">WHAT IS A FOREST TRUST UNIT (FTU)?</h6>
+                  <h5 className="h6 bold mt-lg-5 mt-xl-4">WHAT IS A FOREST TRUST UNIT (FTU)?</h5>
                     <p>1 FTU</p>
                     <p>= 5 acres</p>
                     <p className="mb-2">= 5000+ seedlings</p>
@@ -1378,7 +1376,7 @@ export default function Build({ file }) {
                       
                       <Row className="justify-content-center align-items-center mb-2 mb-md-3">
                         <Col className="col-12 col-md-3 d-flex">
-                          <img src="../../cft-icon-white.svg"/>
+                          <img src="../../cft-icon-white.svg" alt="CFT logo in white"/>
                         </Col>
                         <Col className="col-12 col-md-9 col-xl-9 d-flex">
                           <p className="text-left lead text-white bold d-none d-md-block">
@@ -1394,9 +1392,9 @@ export default function Build({ file }) {
                       </p>
                     </div>
                     <div className="px-4 px-md-5 pt-4 pb-3 bg-offwhite">
-                    <h5 className="text-left text-green medium">
+                    <h4 className="h5 text-left text-green medium">
                     WITH OVER 30 CHOICES, YOUR CUSTOMIZED PACKAGE MAY INCLUDE:
-                      </h5>
+                      </h4>
                       <ul className="text-grey dropdown-text checkMark px-1 mx-3">
                       <li className="py-1">Nationwide Student Forest Ambassador Program</li>
                         <li className="py-1">Scholarship, employment & fundraising opportunities</li>
@@ -1410,7 +1408,7 @@ export default function Build({ file }) {
                     </div>
                   </Col>
                   <Col className="col-12 bg-mildgreen text-white text-left p-4 p-md-5 roundedBoxBottom">
-                    <h6 className="bold ">WHAT IS A FOREST TRUST UNIT (FTU)?</h6>
+                  <h5 className="h6 bold ">WHAT IS A FOREST TRUST UNIT (FTU)?</h5>
                     <p>1 FTU</p>
                     <p>= 5 acres</p>
                     <p className="mb-2">= 5000+ seedlings</p>
@@ -1575,7 +1573,7 @@ export default function Build({ file }) {
                       
                       <Row className="justify-content-center align-items-center mb-3">
                         <Col className="col-lg-4 col-xl-3 d-flex">
-                          <img src="../../cft-icon-white.svg"/>
+                          <img src="../../cft-icon-white.svg" alt="CFT logo in white"/>
                         </Col>
                         <Col className="col-lg-8 col-xl-9 d-flex">
                         <h3 className="text-left x-large mt-3 text-white bold d-none d-xl-block">
@@ -1592,9 +1590,9 @@ export default function Build({ file }) {
                       </p>
                     </div>
                     <div className="p-5 py-4 bg-offwhite roundedBoxBottomLeft">
-                    <h5 className="text-left text-green medium">
+                    <h4 className="h5 text-left text-green medium">
                     WITH OVER 40 CHOICES, YOUR CUSTOMIZED PACKAGE MAY INCLUDE:
-                      </h5>
+                      </h4>
                       <ul className="text-grey dropdown-text checkMark px-1 mx-3">
                         <li className="py-1">Supporting carbon sequestration & biodiversity</li>
                         <li className="py-1">Official recognition as Canada’s Forest Stewards</li>
@@ -1607,7 +1605,7 @@ export default function Build({ file }) {
                     </div>
                   </Col>
                   <Col className="col-lg-4 col-xl-3 bg-mildgreen text-white text-left p-4 roundedBoxRight">
-                    <h6 className="bold mt-lg-5 mt-xl-4">WHAT IS A FOREST TRUST UNIT (FTU)?</h6>
+                  <h5 className="h6 bold mt-lg-5 mt-xl-4">WHAT IS A FOREST TRUST UNIT (FTU)?</h5>
                     <p>1 FTU</p>
                     <p>= 5 acres</p>
                     <p className="mb-2">= 5000+ seedlings</p>
@@ -1634,7 +1632,7 @@ export default function Build({ file }) {
                       
                       <Row className="justify-content-center align-items-center mb-2 mb-md-3">
                         <Col className="col-12 col-md-3 d-flex">
-                          <img src="../../cft-icon-white.svg"/>
+                          <img src="../../cft-icon-white.svg" alt="CFT logo in white"/>
                         </Col>
                         <Col className="col-12 col-md-9 col-xl-9 d-flex">
                           <p className="text-left lead text-white bold d-none d-md-block">
@@ -1650,9 +1648,9 @@ export default function Build({ file }) {
                       </p>
                     </div>
                     <div className="px-4 px-md-5 pt-4 pb-3 bg-offwhite">
-                    <h5 className="text-left text-green medium">
+                    <h4 className="h5 text-left text-green medium">
                     WITH OVER 40 CHOICES, YOUR CUSTOMIZED PACKAGE MAY INCLUDE:
-                      </h5>
+                      </h4>
                       <ul className="text-grey dropdown-text checkMark px-1 mx-3">
                       <li className="py-1">Supporting carbon sequestration & biodiversity</li>
                         <li className="py-1">Official recognition as Canada’s Forest Stewards</li>
@@ -1665,7 +1663,7 @@ export default function Build({ file }) {
                     </div>
                   </Col>
                   <Col className="col-12 bg-mildgreen text-white text-left p-4 p-md-5 roundedBoxBottom">
-                    <h6 className="bold ">WHAT IS A FOREST TRUST UNIT (FTU)?</h6>
+                  <h5 className="h6 bold ">WHAT IS A FOREST TRUST UNIT (FTU)?</h5>
                     <p>1 FTU</p>
                     <p>= 5 acres</p>
                     <p className="mb-2">= 5000+ seedlings</p>
@@ -1832,7 +1830,7 @@ export default function Build({ file }) {
                       
                       <Row className="justify-content-center align-items-center mb-3">
                         <Col className="col-lg-4 col-xl-3 d-flex">
-                          <img src="../../cft-icon-white.svg"/>
+                          <img src="../../cft-icon-white.svg" alt="CFT logo in white"/>
                         </Col>
                         <Col className="col-lg-8 col-xl-9 d-flex">
                         <h3 className="text-left x-large mt-3 text-white bold d-none d-xl-block">
@@ -1848,9 +1846,9 @@ export default function Build({ file }) {
                       </p>
                     </div>
                     <div className="p-5 py-4 bg-offwhite roundedBoxBottomLeft">
-                    <h5 className="text-left text-green medium">
+                    <h4 className="h5 text-left text-green medium">
                     WITH OVER 40 CHOICES, YOUR CUSTOMIZED PACKAGE MAY INCLUDE:
-                      </h5>
+                      </h4>
                       <ul className="text-grey dropdown-text checkMark px-1 mx-3">
                         <li className="py-1">Supporting carbon sequestration & biodiversity</li>
                         <li className="py-1">Proprietary Net-Zero Calculator and Forestcaster™</li>
@@ -1863,7 +1861,7 @@ export default function Build({ file }) {
                     </div>
                   </Col>
                   <Col className="col-lg-4 col-xl-3 bg-mildgreen text-white text-left p-4 roundedBoxRight">
-                    <h6 className="bold mt-lg-5 mt-xl-4">WHAT IS A FOREST TRUST UNIT (FTU)?</h6>
+                  <h5 className="h6 bold mt-lg-5 mt-xl-4">WHAT IS A FOREST TRUST UNIT (FTU)?</h5>
                     <p>1 FTU</p>
                     <p>= 5 acres</p>
                     <p className="mb-2">= 5000+ seedlings</p>
@@ -1890,7 +1888,7 @@ export default function Build({ file }) {
                       
                       <Row className="justify-content-center align-items-center mb-2 mb-md-3">
                         <Col className="col-12 col-md-3 d-flex">
-                          <img src="../../cft-icon-white.svg"/>
+                          <img src="../../cft-icon-white.svg" alt="CFT logo in white"/>
                         </Col>
                         <Col className="col-12 col-md-9 col-xl-9 d-flex">
                           <p className="text-left lead text-white bold d-none d-md-block">
@@ -1906,9 +1904,9 @@ export default function Build({ file }) {
                       </p>
                     </div>
                     <div className="px-4 px-md-5 pt-4 pb-3 bg-offwhite">
-                    <h5 className="text-left text-green medium">
+                    <h4 className="h5 text-left text-green medium">
                     WITH OVER 40 CHOICES, YOUR CUSTOMIZED PACKAGE MAY INCLUDE:
-                      </h5>
+                      </h4>
                       <ul className="text-grey dropdown-text checkMark px-1 mx-3">
                         <li className="py-1">Supporting carbon sequestration & biodiversity</li>
                         <li className="py-1">Proprietary Net-Zero Calculator and Forestcaster™</li>
@@ -1921,7 +1919,7 @@ export default function Build({ file }) {
                     </div>
                   </Col>
                   <Col className="col-12 bg-mildgreen text-white text-left p-4 p-md-5 roundedBoxBottom">
-                    <h6 className="bold">WHAT IS A FOREST TRUST UNIT (FTU)?</h6>
+                  <h5 className="h6 bold">WHAT IS A FOREST TRUST UNIT (FTU)?</h5>
                     <p>1 FTU</p>
                     <p>= 5 acres</p>
                     <p className="mb-2">= 5000+ seedlings</p>

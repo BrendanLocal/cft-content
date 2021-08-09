@@ -114,22 +114,26 @@ const Header = ()=> {
     {
       icon: "/fbookIcon.svg",
       label: "Facebook",
-      path: "https://www.facebook.com/canadasforest"
+      path: "https://www.facebook.com/canadasforest",
+      alt: "facebook icon"
     },
     {
       icon: "/twtIcon.svg",
       label: "Twitter",
-      path: "https://twitter.com/CanadasForest"
+      path: "https://twitter.com/CanadasForest",
+      alt: "Twitter Icon"
     },
     {
       icon: "/instaIcon.svg",
       label: "Instagram",
-      path: "https://www.instagram.com/canadasforest/?hl=en"
+      path: "https://www.instagram.com/canadasforest/?hl=en",
+      alt: "Instagram Icon"
     },
     {
       icon: "/linkedinIcon.svg",
       label: "LinkedIn",
-      path: "https://linkedin.com/company/canadas-forest-trust"
+      path: "https://linkedin.com/company/canadas-forest-trust",
+      alt: "LinkedIn Icon"
     }
   ]
 
@@ -154,7 +158,7 @@ const Header = ()=> {
           <Row className="pt-5">
             <Col className="align-content-start d-flex flex-column">
               <h3 className="text-white">Search</h3>
-              <div className="searchBox"><img src="/searchIcon.svg"/><Search /><img className="closeSearch" onClick={toggleSearch} src="/close.svg"/></div>
+              <div className="searchBox"><img src="/searchIcon.svg" alt="Search"/><Search /><img className="closeSearch" onClick={toggleSearch}  alt="Search" src="/close.svg"/></div>
             </Col>
           </Row>
         </Container>
@@ -164,7 +168,7 @@ const Header = ()=> {
         <div className="row ">
           <div className="col">
             <Link href="/home">
-            <img className="logo" src="/cft-logo-white.svg" />
+            <img className="logo" src="/cft-logo-white.svg" alt="Canada's Forest Trust logo"/>
             </Link>
           </div>
         </div>
@@ -249,7 +253,7 @@ const Header = ()=> {
               
                 <ul className="controlIcons">
                   <li>
-                    <img onClick={toggleSearch} src="/searchIcon.svg"></img>
+                    <img onClick={toggleSearch} src="/searchIcon.svg" alt="Search"></img>
                   </li>
                   <li className="d-none">
                     <div className={isPlaying ? 'mute' : null} ><img className="soundPlaying" onClick={() => toggleSound()} src="/soundIcon.svg"></img><img className="soundMute" src="/muteIcon.svg"></img></div>

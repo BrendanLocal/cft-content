@@ -44,22 +44,26 @@ const Lang = () => {
     {
       icon: "/fbookIcon.svg",
       label: "Facebook",
-      path: "https://www.facebook.com/canadasforest"
+      path: "https://www.facebook.com/canadasforest",
+      alt: "facebook icon"
     },
     {
       icon: "/twtIcon.svg",
       label: "Twitter",
-      path: "https://twitter.com/CanadasForest"
+      path: "https://twitter.com/CanadasForest",
+      alt: "Twitter Icon"
     },
     {
       icon: "/instaIcon.svg",
       label: "Instagram",
-      path: "https://www.instagram.com/canadasforest/?hl=en"
+      path: "https://www.instagram.com/canadasforest/?hl=en",
+      alt: "Instagram Icon"
     },
     {
       icon: "/linkedinIcon.svg",
       label: "LinkedIn",
-      path: "https://linkedin.com/company/canadas-forest-trust"
+      path: "https://linkedin.com/company/canadas-forest-trust",
+      alt: "LinkedIn Icon"
     }
   ]
 
