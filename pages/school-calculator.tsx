@@ -435,7 +435,7 @@ const Lang = () => {
   /* calculate the 'total' here by adding on the other subtotals */
   let total = vehicleSub + subtotalBuild + flightSub + transitSub + studentCommute + otherVehicleSub;
   if (typeof window !== 'undefined') {
-  localStorage.setItem('schoolfootprint', String(total));
+  localStorage.setItem('schoolfootprint', String((total/1000).toFixed(2)));
   }
 
   return (
