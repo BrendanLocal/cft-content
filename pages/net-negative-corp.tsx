@@ -101,10 +101,13 @@ export default function App({ file, href, children}) {
 
   useEffect(() => {
   const businessfootprint = localStorage.getItem('businessfootprint');
+  const businessregion = localStorage.getItem('businessRegion');
+  const businessduration = localStorage.getItem('businessDuration');
   var tempNum = Number(businessfootprint).toFixed(2)
   setFootprint(Number(tempNum));
+  setRegion(businessregion);
+  setDuration(Number(businessduration));
   },[])
-
 
 
 
@@ -121,13 +124,23 @@ if(negative > 0){
 
   const changeRegion = (event) => {
     setRegion(event.target.value);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('businessRegion', String(event.target.value));
+    }
   }
   const changeFootprint = (event) => {
     setFootprint(event.target.value);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('businessfootprint', String(event.target.value));
+    }
   }
   const changeDuration = (event) => {
     setDuration(event.target.value);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('businessDuration', String(event.target.value));
+    }
   }
+
   const changeNegative = (event) => {
     setNegative(event.target.value);
   }
@@ -158,7 +171,7 @@ if(negative > 0){
                   <label htmlFor="footprint">{editingdata.emissionsCarbonHeader}</label>
                   <br />
                   <input className="mb-4" value={footprint>0? footprint : ""} onChange={changeFootprint} name="type" type="number" min="0"  placeholder={editingdata.emissionsPlaceholder}/>
-                  <p className="x-small mb-3 op-7">={editingdata.emissionsPlaceholder}</p>
+                  <p className="x-small mb-3 op-7">{editingdata.emissionsPlaceholder}</p>
                   {editingdata.emissionsCarbon}<Link href="business-calculator"><a className="underline modal-btn">{editingdata.emissionsLink}</a></Link>
                 </Col>
               </Row>
@@ -203,18 +216,26 @@ if(negative > 0){
                 </Col>
               </Row>
 
-              <hr/>
+              </div>
+            <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
                 <Col>
-                  <label htmlFor="additional">Plant it forward by adding</label>
+                  <h4 className="text-green">{editingdata.plantforwardheader}</h4>
+                  <hr/>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <label htmlFor="additional">This is the percent increase you can add to your forest to grow your carbon footprint to net-negative.</label>
                   <br />
                   <select name="additional" value={negative} onChange={changeNegative}>
                     <option value="" hidden>Select...</option>
-                    <option value='1.05'>5%</option>
-                    <option value='1.1'>10%</option>
-                    <option value='1.15'>15%</option>
-                    <option value='1.2'>20%</option>
-                    <option value='1.25'>25%</option>
+                    <option value='1'>None</option>
+                    <option value='1.05'>Add 5%</option>
+                    <option value='1.1'>Add 10%</option>
+                    <option value='1.15'>Add 15%</option>
+                    <option value='1.2'>Add 20%</option>
+                    <option value='1.25'>Add 25%</option>
                   </select>
                 </Col>
               </Row>
@@ -236,7 +257,8 @@ if(negative > 0){
           <Col className="col-11 col-lg-10 align-items-center text-center p-3">
             <div className="bg-brown p-4 innerShadow roundedBox">
               <p className="smallCaps text-orange mb-3">{editingdata.nextHeader}</p>
-              <Link href="contact"><Button className="btn-large mt-1" variant="green">Contact us to become a stakeholder</Button></Link>
+              <h3 className="text-white">Build Your Smart Forest</h3>
+              <Link href="contact"><Button className="btn-large mt-1" variant="green">Contact Us</Button></Link>
             </div>
           </Col>
         </Row>
