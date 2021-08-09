@@ -232,7 +232,7 @@ return (
             
             <Col className="col-12 col-lg-9 p-5 pt-4">    
             <TabPanel>
-              <h3 className="text-center x-large text-green bold my-3 px-3">Smart Forest Intelligence Dashboard</h3>
+              <h3 className="text-center x-large text-green bold my-3">Smart Forest Intelligence Dashboard</h3>
               <Tabs>
                 <TabList className="tabRow mb-0 px-0">
                   <Tab className="link bold text-orange my-2 mx-5 mx-md-3">
