@@ -3147,14 +3147,13 @@ z-index: 999;
   }
 
 
-  
-
   h2.hero, h2.hero {
     font-size: calc(3.6rem + 1.5vw);
     line-height: calc(3.7rem + 1.5vw);
     margin-bottom: 0px!important;
     padding-bottom: 0px!important;
   }
+
 
   .header {
     position: absolute!important;

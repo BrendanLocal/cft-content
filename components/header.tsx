@@ -181,8 +181,12 @@ const Header = ()=> {
       <div id="sidebar" className={isActive ? 'open' : null}>
         <div className="container-fluid v-full sidebar bg-green text-orange">
           <div className="row">
-            <div className="col-10 col-md-9">
-              <ul className="py-5 py-sm-0">
+            <div className="col-9 col-md-8">
+              <ul className="mt-3 mt-md-0">
+                <li className="d-md-none" onClick={toggleClass}>
+                  <Link href="/home">Home</Link>
+                </li>
+
                 <li className="slimlineBottom slimlineTop" onClick={toggleClass}>
                   <Link href="/inside-cft">Inside CFT</Link>
                 </li>
