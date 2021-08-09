@@ -2324,7 +2324,7 @@ padding: 5px 0;
   font-weight: 600;
 }
 
-.card .card .card-header:after {
+.card .card .card-header p:after {
   content: url("/angle-white.svg");
   margin-left: 5px;
   display: inline-block;
