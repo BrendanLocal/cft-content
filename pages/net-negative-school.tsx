@@ -159,7 +159,7 @@ if(negative > 0){
         <Row className="justify-content-center">
           <Col className="p-3 col-12 col-lg-6">
             <div className="card roundedBox no-border bg-green p-4 innerShadow cardSpacing">
-              <p className="lead text-white m-2 calc-intro pe-lg-2">Calculate how many acres your school must invest in to reach a net negative emissions target</p>
+              <p className="lead text-white m-2 calc-intro pe-lg-2">Thank you for doing your part, this is your opportunity to pay it forward. Calculate how you can increase your goal to become net-negative </p>
             </div>
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
