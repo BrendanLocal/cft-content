@@ -864,8 +864,8 @@ export default function Build({ file }) {
       </Row>
 
       <main className="bg-green pt-5">
-        <Container id="intro" className="bg-green py-5 px-4 page-section">
-          <Row className="justify-content-center d-flex mt-xl-0 mt-lg-5 mb-5 ms-xl-5 ms-lg-4 py-5 px-5">
+        <Container id="intro" className="bg-green py-5 px-3 px-md-4 page-section">
+          <Row className="justify-content-center d-flex mt-xl-0 mt-lg-5 mb-5 ms-xl-5 ms-lg-4 py-5 px-4 px-md-5">
             <Col className="col-12 col-lg-5 stickyTop mb-5 p-3 pe-2 d-none d-lg-block">
               <object type="image/svg+xml" data="/build2-svg.svg" />
             </Col>
@@ -890,8 +890,8 @@ export default function Build({ file }) {
         <Container id="the-plan" className="v-full z-999 bg-green p-5 page-section">
           <Fade bottom>
             <Row className="justify-content-center align-items-center my-4">
-              <Col className="col-12 col-md-11 col-lg-10 col-xl-8 text-center text-white">
-                <h2 className="text-orange bold mb-2 px-md-3 px-lg-0">{editingdata.part2_header3}</h2>
+              <Col className="col-12 col-md-11 col-lg-10 col-xl-9 text-center text-white">
+                <h2 className="text-orange bold mb-2 px-md-5 px-lg-0">{editingdata.part2_header3}</h2>
                 <p className="medium mt-0 mb-0 px-lg-4 mb-2">{editingdata.part2_para2}</p>
               </Col>
             </Row>

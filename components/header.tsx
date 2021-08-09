@@ -1,4 +1,4 @@
-import React, { useState, useEffect, MouseEvent} from 'react';
+import React, { useState, useEffect, MouseEvent, Component} from 'react';
 import { render } from 'react-dom';
 import { signIn, signOut, useSession } from 'next-auth/client'
 import Container from 'react-bootstrap/Container';
@@ -8,7 +8,6 @@ import useSound from 'use-sound';
 import Search from '../components/search';
 import { useCurrentUser } from '../hooks/index';
 import Link from 'next/link'
-
 
 
 const Header = ()=> {
@@ -147,6 +146,7 @@ const Header = ()=> {
     setSearch(!showSearch);
   }
 
+
   return(
     <React.Fragment>
       <div id="searchComponent" className={ showSearch ? "searchOpen" : "searchClosed"}>
@@ -218,7 +218,7 @@ const Header = ()=> {
                   <Link href="/smart-forest-personal">Personal</Link>
                 </li>
                 <li className="slimlineBottom slimlineTop" onClick={toggleClass}>
-                  <Link href="/portal">Your Smart Forest Portal</Link>
+                  <Link href="/portal">Smart Forest Portal</Link>
                 </li>
                 <li className="" onClick={toggleClass}>
                   <Link href="/contact">Contact Us</Link>
@@ -231,10 +231,11 @@ const Header = ()=> {
 
       <div className="container-fluid header headerNav">
         <div className="row justify-content-end">
-          <div className="col-6 col-md-2 d-flex flex-column gx-1 gx-lg-3 fixed">
+          <div className="col-12 col-md-6 d-flex flex-column gx-1 gx-lg-3 fixed">
             <div className="row align-self-top">
               <div className="col d-flex align-items-center justify-content-end menuInterface">
-                <Link href={ user? "/portal-user" : "/portal" } ><a className="smallCaps textButton">{ user? "Your Portal" : "Sign in" }</a></Link>
+              <Link href="/portal-demo"><a className="smallCaps text-white no-underline textButton me-4 d-none d-md-block">PORTAL DEMO</a></Link>
+                <Link href={ user? "/portal-user" : "/portal" } ><a className="smallCaps textButton me-2 d-none d-md-block">{ user? "Your Portal" : "Sign in" }</a></Link>
                 <div id="menuIcon" className={isActive ? 'open' : null} onClick={toggleClass}>
                   <span></span>
                   <span></span>
@@ -245,6 +246,7 @@ const Header = ()=> {
             </div>
             <div className="row align-self-bottom">
               <div className="col col d-flex align-items-end justify-content-end menuInterface">
+              
                 <ul className="controlIcons">
                   <li>
                     <img onClick={toggleSearch} src="/searchIcon.svg"></img>
