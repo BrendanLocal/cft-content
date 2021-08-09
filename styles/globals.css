@@ -1992,7 +1992,7 @@ span.authorTitle {
 .calc-btn {
   position: absolute;
   bottom: 4%;
-  width: 87%;
+  width: 86%;
 }
 
 .calculate-card:hover {
@@ -2830,13 +2830,13 @@ z-index: 999;
 @media screen and (max-width: 1300px) and (min-width: 1067px){
 
   .calc-btn {
-    width: 85%;
+    width: 83%;
     padding-left: 5px;
     padding-right: 5px;
   }
 }
 
-@media screen and (max-width: 1066px) and (min-width: 1025px){
+@media screen and (max-width: 1078px) and (min-width: 1025px){
   .calculate-card {
     box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
     border: none;
