@@ -98,9 +98,19 @@ export default function App({ file, href, children}) {
   const [duration, setDuration] = React.useState(0);
 
   useEffect(() => {
-  const personalfootprint = localStorage.getItem('personalfootprint');
-  var tempNum = Number(personalfootprint).toFixed(2)
+
+    const personalfootprint = localStorage.getItem('personalfootprint');
+
+  const personalregion = localStorage.getItem('personalRegion');
+  const personalduration = localStorage.getItem('personalDuration');
+    var tempNum = Number(personalfootprint).toFixed(2)
+    setFootprint(Number(tempNum));
+
   setFootprint(Number(tempNum));
+  setRegion(personalregion);
+  setDuration(Number(personalduration));
+
+
   },[])
 
 
@@ -110,15 +120,27 @@ export default function App({ file, href, children}) {
   var plantHectares = duration*footprint/regionArray.carbon[region];
   var plantAcres = (duration*footprint/regionArray.carbon[region])*2.47;
   var plantTrees = plantHectares*2470;
+
+  
   const changeRegion = (event) => {
     setRegion(event.target.value);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('personalRegion', String(event.target.value));
+    }
   }
   const changeFootprint = (event) => {
     setFootprint(event.target.value);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('personalfootprint', String(event.target.value));
+    }
   }
   const changeDuration = (event) => {
     setDuration(event.target.value);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('personalDuration', String(event.target.value));
+    }
   }
+
 
   return (
     <div className="bg-legacy">
@@ -146,7 +168,7 @@ export default function App({ file, href, children}) {
                   <label htmlFor="footprint">{editingdata.emissionsCarbonHeader}</label>
                   <br />
                   <input className="mb-4" value={footprint>0? footprint : ""} onChange={changeFootprint} name="type" type="number" min="0" placeholder={editingdata.emissionsPlaceholder}/>
-                  <p className="x-small mb-3 op-7">={editingdata.emissionsPlaceholder}</p>
+                  <p className="x-small mb-3 op-7">{editingdata.emissionsPlaceholder}</p>
                   {editingdata.emissionsCarbon}<Link href="personal-calculator"><a className="underline modal-btn">{editingdata.emissionsLink}</a></Link>
                 </Col>
               </Row>

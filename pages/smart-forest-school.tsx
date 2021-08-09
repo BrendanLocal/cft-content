@@ -107,25 +107,42 @@ export default function App({ file, href, children}) {
   var plantHectares = duration*footprint/regionArray.carbon[region];
   var plantAcres = (duration*footprint/regionArray.carbon[region])*2.47;
   var plantTrees = plantHectares*2470;
+
+
   const changeRegion = (event) => {
     setRegion(event.target.value);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('schoolRegion', String(event.target.value));
+    }
   }
   const changeFootprint = (event) => {
     setFootprint(event.target.value);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('schoolfootprint', String(event.target.value));
+    }
   }
   const changeDuration = (event) => {
     setDuration(event.target.value);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('schoolDuration', String(event.target.value));
+    }
   }
 
 
   
   
   useEffect(() => {
+    const schoolfootprint = localStorage.getItem('schoolfootprint');
 
-  const schoolfootprint = localStorage.getItem('schoolfootprint');
-  var tempNum = Number(schoolfootprint).toFixed(2)
+  const schoolregion = localStorage.getItem('schoolRegion');
+  const schoolduration = localStorage.getItem('schoolDuration');
+    var tempNum = Number(schoolfootprint).toFixed(2)
+    setFootprint(Number(tempNum));
+
   setFootprint(Number(tempNum));
-  },[])
+  setRegion(schoolregion);
+  setDuration(Number(schoolduration));
+    },[])
 
   return (
     <div className="bg-school">
@@ -153,7 +170,7 @@ export default function App({ file, href, children}) {
                   <label htmlFor="footprint">{editingdata.emissionsCarbonHeader}</label>
                   <br />
                   <input className="mb-4" value={footprint>0? footprint : ""}  onChange={changeFootprint} name="type" type="number" min="0"  placeholder={editingdata.emissionsPlaceholder}/>
-                  <p className="x-small mb-3 op-7">={editingdata.emissionsPlaceholder}</p>
+                  <p className="x-small mb-3 op-7">{editingdata.emissionsPlaceholder}</p>
                   {editingdata.emissionsCarbon}<Link href="school-calculator"><a className="underline modal-btn">{editingdata.emissionsLink}</a></Link>
                 </Col>
               </Row>
