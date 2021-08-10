@@ -1,10 +1,10 @@
 {
-  "pageName":"Net Negative - Personal Calculator",
+  "pageName":"Personal Net Negative Calculator",
   "pageURL":"net-negative-personal",
-  "title": "Net Negative - Personal Calculator",
+  "title": "Personal Net Negative Calculator",
 
   "header": "Net-Negative Calculator",
-  "para1": "Calculate how many acres you, your family, your corporation, or your school must invest in to reach a net-negative emissions target",
+  "para1": "Thank you for doing your part, this is your opportunity to pay it forward. Calculate how you can increase your goal to become net-negative",
   "select": "Select...",
   "emissionsHeader": "Your emissions",
   "emissionsCarbonHeader": "What is your carbon footprint? (Tonnes per year)",
