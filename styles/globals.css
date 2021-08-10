@@ -2316,6 +2316,12 @@ transition: all .5s ease;
 
 /* Calculator */
 
+
+.whiteBorder {
+  border: solid 1px #fff;
+
+}
+
 .card .row {
 padding: 5px 0;
 }

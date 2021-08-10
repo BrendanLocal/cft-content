@@ -59,7 +59,7 @@ export default function CarbonCalc({ file, href, children}) {
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
               <h4 className="text-white tight-drop-light">{editingdata.box1Header}</h4>
               <p className="flex-fill pb-3 text-white tight-drop">{editingdata.box1Para}</p>
-              <Link href="business-calculator">
+              <Link href="/business-calculator">
                 <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.select}</a>
               </Link>
             </div>
@@ -69,7 +69,7 @@ export default function CarbonCalc({ file, href, children}) {
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
               <h4 className="text-white tight-drop-light">{editingdata.box2Header}</h4>
               <p className="flex-fill pb-3 text-white tight-drop">{editingdata.box2Para}</p>
-              <Link href="school-calculator">
+              <Link href="/school-calculator">
                 <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.select}</a>
               </Link>
             </div>
@@ -79,7 +79,7 @@ export default function CarbonCalc({ file, href, children}) {
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
               <h4 className="text-white tight-drop-light">{editingdata.box3Header}</h4>
               <p className="flex-fill pb-3 text-white tight-drop">{editingdata.box2Para}</p>
-              <Link href="personal-calculator">
+              <Link href="/personal-calculator">
                 <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.select}</a>
               </Link>
             </div>
