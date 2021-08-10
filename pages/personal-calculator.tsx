@@ -168,195 +168,21 @@ export default function App({ file, href, children}) {
   usePlugin(form);
   useGithubToolbarPlugins();
 
+  const [getFam, setFam] = React.useState("myself");
   const [selectSize, setSize] = React.useState("");
   const [selectNum, setNum] = React.useState("");
   const [selectYear, setYear] = React.useState(0);
   const [selectHeat, setHeat] = React.useState("");
   const [selectEnergy, setEnergy] = React.useState("");
 
-  const [selectNumTwo, setNumTwo] = React.useState("");
-  const [selectYearTwo, setYearTwo] = React.useState(0);
-  const [selectSizeTwo, setSizeTwo] = React.useState("");
-  const [selectHeatTwo, setHeatTwo] = React.useState("");
-  const [selectEnergyTwo, setEnergyTwo] = React.useState("");
+  let buildNum = Number(selectNum);
+  const buildYear = selectYear;
+  const buildSize = Number(selectSize);
+  const heatType = selectHeat;
+  const energyType = selectEnergy;
 
-  const [selectNumThree, setNumThree] = React.useState("");
-  const [selectYearThree, setYearThree] = React.useState(0);
-  const [selectSizeThree, setSizeThree] = React.useState("");
-  const [selectHeatThree, setHeatThree] = React.useState("");
-  const [selectEnergyThree, setEnergyThree] = React.useState("");
-
-  const [selectNumFour, setNumFour] = React.useState("");
-  const [selectYearFour, setYearFour] = React.useState(0);
-  const [selectSizeFour, setSizeFour] = React.useState("");
-  const [selectHeatFour, setHeatFour] = React.useState("");
-  const [selectEnergyFour, setEnergyFour] = React.useState("");
-
-  const [selectNumFive, setNumFive] = React.useState("");
-  const [selectYearFive, setYearFive] = React.useState(0);
-  const [selectSizeFive, setSizeFive] = React.useState("");
-  const [selectHeatFive, setHeatFive] = React.useState("");
-  const [selectEnergyFive, setEnergyFive] = React.useState("");
-
-  const [buildSub, setBuildSub] = React.useState(0);
-  const [getFam, setFam] = React.useState("myself");
-  const [getFamTwo, setFamTwo] = React.useState("myself");
-  const [getFamThree, setFamThree] = React.useState("myself");
-  const [getFamFour, setFamFour] = React.useState("myself");
-  const [getFamFive, setFamFive] = React.useState("myself");
-
-  let buildSize = null;
-  let buildNum = 1;
-  let subtotalBuild = 0;
-  let heatType = null;
-  let buildYear = 1;
-  let energyType = null;
-  let buildNumTwo = 1;
-  let buildYearTwo = 1;
-  let buildSizeTwo = null;
-  let heatTypeTwo = null;
-  let energyTypeTwo = null;
-  let buildNumThree = 1;
-  let buildYearThree = 1;
-  let buildSizeThree = null;
-  let heatTypeThree = null;
-  let energyTypeThree = null;
-
-  let buildNumFour = 1;
-  let buildYearFour = 1;
-  let buildSizeFour = null;
-  let heatTypeFour = null;
-  let energyTypeFour = null;
-
-  let buildNumFive = 1;
-  let buildYearFive = 1;
-  let buildSizeFive = null;
-  let heatTypeFive = null;
-  let energyTypeFive = null;
-
-  let subtotalVehicle = 0;
-  let subtotalFlight = 0;
-  let subtotalPublicTransport = 0;
-  let subtotalBuildTwo = 0;
-
-  let subtotalBuildThree = 0;
-
-  let subtotalBuildFour = 0;
-
-  let subtotalBuildFive = 0;
-  let totalBuild = 0;
-
-  buildSize = Number(selectSize);
-  buildNum = Number(selectNum);
-  buildYear = selectYear;
-  heatType = selectHeat;
-  energyType = selectEnergy;
-  buildNumTwo = Number(selectNumTwo);
-  buildYearTwo = selectYearTwo;
-  buildSizeTwo = Number(selectSizeTwo);
-  heatTypeTwo = selectHeatTwo;
-  energyTypeTwo = selectEnergyTwo;
-
-  buildNumThree = Number(selectNumThree);
-  buildYearThree = selectYearThree;
-  buildSizeThree = Number(selectSizeThree);
-  heatTypeThree = selectHeatThree;
-  energyTypeThree = selectEnergyThree;
-
-  buildNumFour = Number(selectNumFour);
-  buildYearFour = selectYearFour;
-  buildSizeFour = Number(selectSizeFour);
-  heatTypeFour = selectHeatFour;
-  energyTypeFour = selectEnergyFour;
-
-  buildNumFive = Number(selectNumFive);
-  buildYearFive = selectYearFive;
-  buildSizeFive = Number(selectSizeFive);
-  heatTypeFive = selectHeatFive;
-  energyTypeFive = selectEnergyFive;
-
-  //vehicle multiplier
-  const [vehicleSub, setVehicle] = React.useState(0);
-  const [vehicleArray, setVehicleArray] = React.useState({
-    smallGas	:{mult:	0.14836	,miles: null},
-    smallDiesel	:{mult:	0.13721	,miles: null},
-    smallHybrid	:{mult:	0.10275	,miles: null},
-    smallPlug	:{mult:	0.02935	,miles: null},
-    smallElectric	:{mult:	0	,miles: null},
-    mediumGas	:{mult:	0.18659	,miles: null},
-
-    rentalGas	:{mult:	0.18659	,miles: null},
-    mediumDiesel	:{mult:	0.16637	,miles: null},
-    mediumHybrid	:{mult:	0.10698	,miles: null},
-    mediumPlug	:{mult:	0.07083	,miles: null},
-    mediumElectric	:{mult:	0	,miles: null},
-    largeGas	:{mult:	0.27087	,miles: null},
-    largeDiesel	:{mult:	0.20419	,miles: null},
-    largeHybrid	:{mult:	0.1448	,miles: null},
-    largePlug	:{mult:	0.07731	,miles: null},
-    largeElectric	:{mult:	0	,miles: null},
-    motorbikeGas	:{mult:	0.11337	,miles: null},
-    planeGas	:{mult:	2.54306	,miles: null},
-
-    heliGas	:{mult:	2.54306	,miles: null},
-    jetGas	:{mult:	2.54306	,miles: null},
-    yachtGas	:{mult:	2.54	,miles: null},
-    yachtDiesel	:{mult:	2.35	,miles: null},
-    atvGas	:{mult:	2.3	,miles: null},
-    sbsGas	:{mult:	2.3	,miles: null},
-    snowGas	:{mult:	2.3	,miles: null},
-    scootGas	:{mult:	2.3	,miles: null},
-    seaGas	:{mult:	2.3	,miles: null},
-    lawnGas	:{mult:	2.3	,miles: null},
-    tractorGas	:{mult:	2.3	,miles: null}
-  });
-
-  //flight multiplier
-  const [flightArray, setFlightArray] = React.useState({
-    flyShort: {mult:122.15,count: null},
-    flyMediumEco: {mult:305.96,count: null},
-    flyMediumBus: {mult:458.94,count: null},
-    flyLongEco: {mult:696.225,count: null},
-    flyLongEcoPlus: {mult:1113.9,count: null},
-    flyLongBus: {mult:2018.95,count: null},
-    flyLongFirst: {mult:2784.75,count: null},
-    flyHotels: {mult:17.4, count: null}
-  });
-
-  const [flightSub, setFlight] = React.useState(0);
-
-  //public transportation
-  const [publicTransportArray, setPublicTransportArray] = React.useState({
-    publicCar: {mult:0.06214, count:null},
-    publicTaxi: {mult:0.1743, count:null},
-    publicSubway: {mult:0.06214, count:null}
-  });
-
-  const [publicTransportSub, setPublicTransport] = React.useState(0);
-
-  //onchange methods
   const changeFam = (event) => {
     setFam(event.target.value);
-  }
-
-  const changeFamTwo = (event) => {
-    setFamTwo(event.target.value);
-  }
-
-  const changeFamThree = (event) => {
-    setFamThree(event.target.value);
-  }
-
-  const changeFamFour = (event) => {
-    setFamFour(event.target.value);
-  }
-
-  const changeFamFive = (event) => {
-    setFamFive(event.target.value);
-  }
-
-  const changeSize = (event) => {
-    setSize(event.target.value);
   }
 
   const changeNum = (event) => {
@@ -367,6 +193,10 @@ export default function App({ file, href, children}) {
     setYear(event.target.value);
   }
 
+  const changeSize = (event) => {
+    setSize(event.target.value);
+  }
+
   const changeHeat = (event) => {
     setHeat(event.target.value);
   }
@@ -375,16 +205,33 @@ export default function App({ file, href, children}) {
     setEnergy(event.target.value);
   }
 
+  const [getFamTwo, setFamTwo] = React.useState("myself");
+  const [selectNumTwo, setNumTwo] = React.useState("");
+  const [selectYearTwo, setYearTwo] = React.useState(0);
+  const [selectSizeTwo, setSizeTwo] = React.useState("");
+  const [selectHeatTwo, setHeatTwo] = React.useState("");
+  const [selectEnergyTwo, setEnergyTwo] = React.useState("");
+
+  let buildNumTwo = Number(selectNumTwo);
+  const buildYearTwo = selectYearTwo;
+  const buildSizeTwo = Number(selectSizeTwo);
+  const heatTypeTwo = selectHeatTwo;
+  const energyTypeTwo = selectEnergyTwo;
+
+  const changeFamTwo = (event) => {
+    setFamTwo(event.target.value);
+  }
+
   const changeNumTwo = (event) => {
     setNumTwo(event.target.value);
   }
 
-  const changeSizeTwo = (event) => {
-    setSizeTwo(event.target.value);
-  }
-
   const changeYearTwo = (event) => {
     setYearTwo(event.target.value);
+  }
+
+  const changeSizeTwo = (event) => {
+    setSizeTwo(event.target.value);
   }
 
   const changeHeatTwo = (event) => {
@@ -395,16 +242,33 @@ export default function App({ file, href, children}) {
     setEnergyTwo(event.target.value);
   }
 
+  const [getFamThree, setFamThree] = React.useState("myself");
+  const [selectNumThree, setNumThree] = React.useState("");
+  const [selectYearThree, setYearThree] = React.useState(0);
+  const [selectSizeThree, setSizeThree] = React.useState("");
+  const [selectHeatThree, setHeatThree] = React.useState("");
+  const [selectEnergyThree, setEnergyThree] = React.useState("");
+
+  let buildNumThree = Number(selectNumThree);
+  const buildYearThree = selectYearThree;
+  const buildSizeThree = Number(selectSizeThree);
+  const heatTypeThree = selectHeatThree;
+  const energyTypeThree = selectEnergyThree;
+
+  const changeFamThree = (event) => {
+    setFamThree(event.target.value);
+  }
+
   const changeNumThree = (event) => {
     setNumThree(event.target.value);
   }
 
-  const changeSizeThree = (event) => {
-    setSizeThree(event.target.value);
-  }
-
   const changeYearThree = (event) => {
     setYearThree(event.target.value);
+  }
+
+  const changeSizeThree = (event) => {
+    setSizeThree(event.target.value);
   }
 
   const changeHeatThree = (event) => {
@@ -415,16 +279,33 @@ export default function App({ file, href, children}) {
     setEnergyThree(event.target.value);
   }
 
+  const [getFamFour, setFamFour] = React.useState("myself");
+  const [selectNumFour, setNumFour] = React.useState("");
+  const [selectYearFour, setYearFour] = React.useState(0);
+  const [selectSizeFour, setSizeFour] = React.useState("");
+  const [selectHeatFour, setHeatFour] = React.useState("");
+  const [selectEnergyFour, setEnergyFour] = React.useState("");
+
+  let buildNumFour = Number(selectNumFour);
+  const buildYearFour = selectYearFour;
+  const buildSizeFour = Number(selectSizeFour);
+  const heatTypeFour = selectHeatFour;
+  const energyTypeFour = selectEnergyFour;
+
+  const changeFamFour = (event) => {
+    setFamFour(event.target.value);
+  }
+
   const changeNumFour = (event) => {
     setNumFour(event.target.value);
   }
 
-  const changeSizeFour= (event) => {
-    setSizeFour(event.target.value);
-  }
-
   const changeYearFour = (event) => {
     setYearFour(event.target.value);
+  }
+
+  const changeSizeFour= (event) => {
+    setSizeFour(event.target.value);
   }
 
   const changeHeatFour = (event) => {
@@ -435,16 +316,33 @@ export default function App({ file, href, children}) {
     setEnergyFour(event.target.value);
   }
 
+  const [getFamFive, setFamFive] = React.useState("myself");
+  const [selectNumFive, setNumFive] = React.useState("");
+  const [selectYearFive, setYearFive] = React.useState(0);
+  const [selectSizeFive, setSizeFive] = React.useState("");
+  const [selectHeatFive, setHeatFive] = React.useState("");
+  const [selectEnergyFive, setEnergyFive] = React.useState("");
+
+  let buildNumFive = Number(selectNumFive);
+  const buildYearFive = selectYearFive;
+  const buildSizeFive = Number(selectSizeFive);
+  const heatTypeFive = selectHeatFive;
+  const energyTypeFive = selectEnergyFive;
+
+  const changeFamFive = (event) => {
+    setFamFive(event.target.value);
+  }
+
   const changeNumFive = (event) => {
     setNumFive(event.target.value);
   }
 
-  const changeSizeFive= (event) => {
-    setSizeFive(event.target.value);
-  }
-
   const changeYearFive = (event) => {
     setYearFive(event.target.value);
+  }
+
+  const changeSizeFive= (event) => {
+    setSizeFive(event.target.value);
   }
 
   const changeHeatFive = (event) => {
@@ -455,104 +353,123 @@ export default function App({ file, href, children}) {
     setEnergyFive(event.target.value);
   }
 
+  let subtotalBuild = 0;
+  let subtotalVehicle = 0;
+  let subtotalFlight = 0;
+  let subtotalPublicTransport = 0;
+
+  //vehicle multiplier
+  const [vehicleSub, setVehicle] = React.useState(0);
+  const [vehicleArray, setVehicleArray] = React.useState({
+    smallGas: { mult:	0.14836, miles: null },
+    smallDiesel: { mult: 0.13721, miles: null },
+    smallHybrid: { mult: 0.10275, miles: null },
+    smallPlug: { mult: 0.02935, miles: null },
+    smallElectric: { mult: 0, miles: null },
+    mediumGas: { mult: 0.18659, miles: null },
+    rentalGas: { mult: 0.18659, miles: null },
+    mediumDiesel: { mult:	0.16637, miles: null },
+    mediumHybrid: { mult:	0.10698, miles: null },
+    mediumPlug: { mult:	0.07083, miles: null },
+    mediumElectric: { mult:	0, miles: null },
+    largeGas: { mult:	0.27087, miles: null },
+    largeDiesel: { mult: 0.20419, miles: null },
+    largeHybrid: { mult: 0.1448, miles: null },
+    largePlug: { mult: 0.07731, miles: null },
+    largeElectric: { mult: 0, miles: null },
+    motorbikeGas: { mult:	0.11337, miles: null },
+    planeGas: { mult:	2.54306, miles: null },
+    heliGas: { mult: 2.54306, miles: null },
+    jetGas: { mult:	2.54306, miles: null },
+    yachtGas: { mult:	2.54, miles: null },
+    yachtDiesel: { mult: 2.35, miles: null },
+    atvGas: { mult:	2.3, miles: null },
+    sbsGas: { mult:	2.3, miles: null },
+    snowGas: { mult: 2.3, miles: null },
+    scootGas: { mult:	2.3, miles: null },
+    seaGas: { mult:	2.3, miles: null },
+    lawnGas: { mult: 2.3, miles: null },
+    tractorGas: { mult:	2.3, miles: null }
+  });
+
+  //flight multiplier
+  const [flightSub, setFlight] = React.useState(0);
+  const [flightArray, setFlightArray] = React.useState({
+    flyShort: { mult: 122.15, count: null },
+    flyMediumEco: { mult: 305.96, count: null },
+    flyMediumBus: { mult: 458.94, count: null },
+    flyLongEco: { mult: 696.225, count: null },
+    flyLongEcoPlus: { mult: 1113.9, count: null },
+    flyLongBus: { mult: 2018.95, count: null },
+    flyLongFirst: { mult: 2784.75, count: null },
+    flyHotels: { mult: 17.4, count: null }
+  });
+
+  //public transportation
+  const [publicTransportSub, setPublicTransport] = React.useState(0);
+  const [publicTransportArray, setPublicTransportArray] = React.useState({
+    publicCar: { mult: 0.06214, count: null },
+    publicTaxi: { mult: 0.1743, count: null },
+    publicSubway: { mult: 0.06214, count: null }
+  });
+
   /* array using data from the spreadsheet, including multipliers */
   const buildArray = {
-    "1000":{	
-      gas:	1072	,
-      oil:	1562	,
-      electric:	758	,
-      wood:	91	
-    },
-    "1500":{	
-      gas:	3473	,
-      oil:	5059	,
-      electric:	2456	,
-      wood:	295	
-    },
-    "2000":{	
-      gas:	4188	,
-      oil:	6100	,
-      electric:	2961	,
-      wood:	356	
-    },
-    "2500":{	
-      gas:	5464	,
-      oil:	7960	,
-      electric:	3864	,
-      wood:	465	
-    },
-    "5000":{	
-      gas:	8197	,
-      oil:	11940	,
-      electric:	5796	,
-      wood:	697	
-    },
-    "7500":{	
-      gas:	12295	,
-      oil:	17910	,
-      electric:	8694	,
-      wood:	1045	
-    },
-    "10000":{	
-      gas:	18442	,
-      oil:	26865	,
-      electric:	13041	,
-      wood:	1568	
-    },
-    "10001":{	
-      gas:	27663	,
-      oil:	40298	,
-      electric:	19561	,
-      wood:	2352	
-    }
-  }
+    "1000": { gas: 1072, oil: 1562, electric:	758, wood: 91	},
+    "1500": {	gas: 3473, oil:	5059, electric:	2456, wood:	295	},
+    "2000": {	gas: 4188, oil:	6100, electric:	2961, wood:	356	},
+    "2500": {	gas: 5464, oil:	7960, electric:	3864, wood:	465	},
+    "5000": {	gas: 8197, oil:	11940, electric: 5796, wood: 697 },
+    "7500": {	gas: 12295, oil: 17910, electric:	8694, wood:	1045 },
+    "10000": { gas:	18442, oil:	26865, electric: 13041, wood:	1568 },
+    "10001": { gas:	27663, oil:	40298, electric: 19561, wood:	2352 }
+  };
 
   const energySavingsMult = {
     none: 1,
     light: 0.85,
     moderate: 0.6,
     extensive: 0.4
-  }
+  };
       
   if (buildSize && heatType && energyType && buildNum) {
     if (getFam == "family") {
       buildNum = 1
     }
     
-    subtotalBuild = Number((((buildArray[buildSize][heatType] * energySavingsMult[energyType])/buildNum)+((buildYear/12)* 1444)/buildNum)/1000);
-    totalBuild = Number(subtotalBuild);
+    subtotalBuild += Number((((buildArray[buildSize][heatType] * energySavingsMult[energyType])/buildNum)+((buildYear/12)* 1444)/buildNum)/1000);
   }
 
-  if (buildSize && heatType && energyType && buildNum && buildSizeTwo && heatTypeTwo && energyTypeTwo && buildNumTwo) {
+  if (buildSizeTwo && heatTypeTwo && energyTypeTwo && buildNumTwo) {
     if (getFamTwo == "family") {
       buildNumTwo = 1
     }
-    subtotalBuildTwo = Number((((buildArray[buildSizeTwo][heatTypeTwo] * energySavingsMult[energyTypeTwo])/buildNumTwo)+((buildYearTwo/12)* 1444)/buildNumTwo)/1000);
-    totalBuild = Number(subtotalBuild) + Number(subtotalBuildTwo);
+
+    subtotalBuild += Number((((buildArray[buildSizeTwo][heatTypeTwo] * energySavingsMult[energyTypeTwo])/buildNumTwo)+((buildYearTwo/12)* 1444)/buildNumTwo)/1000);
   }
 
-  if (buildSize && heatType && energyType && buildNum && buildSizeTwo && heatTypeTwo && energyTypeTwo && buildNumTwo && buildSizeThree && heatTypeThree && energyTypeThree && buildNumThree) {
+  if (buildSizeThree && heatTypeThree && energyTypeThree && buildNumThree) {
     if (getFamThree == "family") {
       buildNumThree = 1
     }
-    subtotalBuildThree = Number((((buildArray[buildSizeThree][heatTypeThree] * energySavingsMult[energyTypeThree])/buildNumThree)+((buildYearThree/12)* 1444)/buildNumThree)/1000);
-    totalBuild =  Number(subtotalBuild) + Number(subtotalBuildTwo) + Number(subtotalBuildThree);
+
+    subtotalBuild += Number((((buildArray[buildSizeThree][heatTypeThree] * energySavingsMult[energyTypeThree])/buildNumThree)+((buildYearThree/12)* 1444)/buildNumThree)/1000);
   }
 
-  if (buildSize && heatType && energyType && buildNum && buildSizeTwo && heatTypeTwo && energyTypeTwo && buildNumTwo && buildSizeThree && heatTypeThree && energyTypeThree && buildNumThree && buildSizeFour && heatTypeFour && energyTypeFour && buildNumFour) {
+  if (buildSizeFour && heatTypeFour && energyTypeFour && buildNumFour) {
     if (getFamFour == "family") {
       buildNumFour = 1
     }
-    subtotalBuildFour = Number((((buildArray[buildSizeFour][heatTypeFour] * energySavingsMult[energyTypeFour])/buildNumFour)+((buildYearFour/12)* 1444)/buildNumFour)/1000);
-    totalBuild =  Number(subtotalBuild) + Number(subtotalBuildTwo) + Number(subtotalBuildThree)+ Number(subtotalBuildFour);
+
+    subtotalBuild += Number((((buildArray[buildSizeFour][heatTypeFour] * energySavingsMult[energyTypeFour])/buildNumFour)+((buildYearFour/12)* 1444)/buildNumFour)/1000);
   }
 
-  if (buildSize && heatType && energyType && buildNum && buildSizeTwo && heatTypeTwo && energyTypeTwo && buildNumTwo && buildSizeThree && heatTypeThree && energyTypeThree && buildNumThree && buildSizeFour && heatTypeFour && energyTypeFour && buildNumFour && buildSizeFive && heatTypeFive && energyTypeFive && buildNumFive) {
+  if (buildSizeFive && heatTypeFive && energyTypeFive && buildNumFive) {
     if (getFamFive == "family") {
       buildNumFive = 1
     }
-    subtotalBuildFive = Number((((buildArray[buildSizeFive][heatTypeFive] * energySavingsMult[energyTypeFive])/buildNumFive)+((buildYearFive/12)* 1444)/buildNumFive)/1000);
-    totalBuild =  Number(subtotalBuild) + Number(subtotalBuildTwo) + Number(subtotalBuildThree) + Number(subtotalBuildFour) + Number(subtotalBuildFive);
+
+    subtotalBuild += Number((((buildArray[buildSizeFive][heatTypeFive] * energySavingsMult[energyTypeFive])/buildNumFive)+((buildYearFive/12)* 1444)/buildNumFive)/1000);
   }
 
   /* function to calculate the 'vehicle' section */
@@ -561,17 +478,10 @@ export default function App({ file, href, children}) {
     for (let x of Object.keys(vehicleArray))
     {
       let i = 0;
-      
       i += Number((vehicleArray[x].mult * vehicleArray[x].miles))
       subtotalVehicle += i
     }
     setVehicle(Number(subtotalVehicle)/1000)
-  }
-
-  /* function to calculate the number of vehicles */
-  const calculateCount=(e)=>{
-    vehicleArray[e.target.name].count = Number(e.target.value)
-    calculateVehicle()
   }
 
   /* function to calculate the vehicle mileage */
@@ -616,7 +526,7 @@ export default function App({ file, href, children}) {
   }
 
   /* calculate the 'total' here by adding on the other subtotals */
-  let total = vehicleSub + totalBuild + (flightSub/1000) + (publicTransportSub/1000);
+  const total = vehicleSub + subtotalBuild + (flightSub/1000) + (publicTransportSub/1000);
   if (typeof window !== 'undefined') {
     localStorage.setItem('personalfootprint', String(total));
   }
@@ -647,18 +557,6 @@ export default function App({ file, href, children}) {
           if (response.status === 200) {
             const sessionData = await response.json();
             const sessionCalcData = sessionData.calcData && sessionData.calcData.data ? sessionData.calcData.data : {};
-
-            if (sessionCalcData.vehicleArray !== undefined) {
-              setVehicleArray(sessionCalcData.vehicleArray);
-            }
-
-            if (sessionCalcData.publicTransportArray !== undefined) {
-              setPublicTransportArray(sessionCalcData.publicTransportArray);
-            }
-
-            if (sessionCalcData.flightArray !== undefined) {
-              setFlightArray(sessionCalcData.flightArray);
-            }
 
             if (sessionCalcData.selectSize !== undefined) {
               setSize(sessionCalcData.selectSize);
@@ -760,10 +658,6 @@ export default function App({ file, href, children}) {
               setEnergyFive(sessionCalcData.selectEnergyFive);
             }
 
-            if (sessionCalcData.buildSub !== undefined) {
-              setBuildSub(sessionCalcData.buildSub);
-            }
-
             if (sessionCalcData.getFam !== undefined) {
               setFam(sessionCalcData.getFam);
             }
@@ -784,12 +678,28 @@ export default function App({ file, href, children}) {
               setFamFive(sessionCalcData.getFamFive);
             }
 
-            if (sessionCalcData.flightSub !== undefined) {
-              setFlight(sessionCalcData.flightSub);
+            if (sessionCalcData.vehicleArray !== undefined) {
+              setVehicleArray(sessionCalcData.vehicleArray);
+            }
+
+            if (sessionCalcData.publicTransportArray !== undefined) {
+              setPublicTransportArray(sessionCalcData.publicTransportArray);
+            }
+
+            if (sessionCalcData.flightArray !== undefined) {
+              setFlightArray(sessionCalcData.flightArray);
             }
 
             if (sessionCalcData.vehicleSub !== undefined) {
               setVehicle(sessionCalcData.vehicleSub);
+            }
+
+            if (sessionCalcData.publicTransportSub !== undefined) {
+              setPublicTransport(sessionCalcData.publicTransportSub);
+            }
+
+            if (sessionCalcData.flightSub !== undefined) {
+              setFlight(sessionCalcData.flightSub);
             }
           }
           else {
@@ -810,42 +720,42 @@ export default function App({ file, href, children}) {
       sessionID: sessionID,
       type: 'personal-calculator',
       data: {
+        getFam,
         selectSize,
         selectNum,
         selectYear,
         selectHeat,
         selectEnergy,
+        getFamTwo,
         selectNumTwo,
         selectYearTwo,
         selectSizeTwo,
         selectHeatTwo,
         selectEnergyTwo,
+        getFamThree,
         selectNumThree,
         selectYearThree,
         selectSizeThree,
         selectHeatThree,
         selectEnergyThree,
+        getFamFour,
         selectNumFour,
         selectYearFour,
         selectSizeFour,
         selectHeatFour,
         selectEnergyFour,
+        getFamFive,
         selectNumFive,
         selectYearFive,
         selectSizeFive,
         selectHeatFive,
         selectEnergyFive,
-        buildSub,
-        getFam,
-        getFamTwo,
-        getFamThree,
-        getFamFour,
-        getFamFive,
         vehicleArray,
         publicTransportArray,
-        flightSub,
+        flightArray,
         vehicleSub,
-        flightArray
+        publicTransportSub,
+        flightSub
       }
     };
 
@@ -1914,7 +1824,7 @@ export default function App({ file, href, children}) {
               <h4 className="mb-0">{editingdata.dataHeader}</h4>
               <hr/>
               <Row>
-                <Col>{editingdata.dataType1}</Col><Col className="text-right bold">{totalBuild > 0 ? totalBuild.toFixed(2) : "--"}</Col>
+                <Col>{editingdata.dataType1}</Col><Col className="text-right bold">{subtotalBuild > 0 ? subtotalBuild.toFixed(2) : "--"}</Col>
               </Row>
               <hr/>
               <Row>

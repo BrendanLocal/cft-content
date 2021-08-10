@@ -88,9 +88,9 @@ export default function App({ file, href, children}) {
   usePlugin(form)
   useGithubToolbarPlugins()
 
-  const [regionArray, setRegionArray] = React.useState({
+  const regionArray = {
     carbon: {BC:500,	Prairies:252,	Ontario:347,	Quebec:347,	Atlantic:134 }
-  });
+  };
  
   const [region, setRegion] = React.useState("");
   const [footprint, setFootprint] = React.useState(0);
@@ -157,10 +157,6 @@ export default function App({ file, href, children}) {
             const sessionData = await response.json();
             const sessionCalcData = sessionData.calcData && sessionData.calcData.data ? sessionData.calcData.data : {};
 
-            if (sessionCalcData.regionArray !== undefined) {
-              setRegionArray(sessionCalcData.regionArray);
-            }
-
             if (sessionCalcData.region !== undefined) {
               setRegion(sessionCalcData.region);
             }
@@ -198,8 +194,7 @@ export default function App({ file, href, children}) {
         region,
         footprint,
         duration,
-        negative,
-        regionArray
+        negative
       }
     };
 
