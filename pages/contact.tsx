@@ -70,7 +70,7 @@ const Lang = () => {
         <Row className="justify-content-center align-items-center">
           <Col className="p-4">
           <h3 className="text-white text-center">Thank you for contacting us!</h3>
-          <p className="text-white large text-center mb-4 px-2 px-md-4">A member of our team will reach out to you shortly. In the mean time, please watch this video from our founder:</p>
+          <p className="text-white large text-center mb-4 px-2 px-md-4">A member of our team will reach out to you shortly. In the meantime, please watch this video from our founder:</p>
           
               <ReactPlayer playsinline controls url='./ceo-message.mp4' className="video-size mb-4"/>
 
