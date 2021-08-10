@@ -718,13 +718,21 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="number">{editingdata.heat1Months}</label>
                   <br />
-
-                  <input type="number" onChange={changeYear}  min={0} max={12} 
-                   placeholder="Month(s) per year in residence"  onKeyPress={(event) => {
-                    if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                  }} />
-                  <p className="x-small mb-3 op-7">Month(s) per year in residence</p>
-                  
+                  <select name="months" onChange={changeYear}>
+                    <option value="" hidden>Month(s) per year in residence</option>
+                    <option value='1'> 1 </option>
+                    <option value='2'> 2 </option>
+                    <option value='3'> 3 </option>
+                    <option value='4'> 4 </option>
+                    <option value='5'> 5 </option>
+                    <option value='6'> 6 </option>
+                    <option value='7'> 7 </option>
+                    <option value='8'> 8 </option>
+                    <option value='9'> 9 </option>
+                    <option value='10'> 10 </option>
+                    <option value='11'> 11 </option>
+                    <option value='12'> 12 </option>
+                  </select>
                 </Col>
               </Row>
 
@@ -776,94 +784,89 @@ export default function App({ file, href, children}) {
 
               {/* residence 2 */}
               <Accordion>
-                <Card>
-                  <Accordion.Toggle as={Card.Header} eventKey="0">
-                  <p>2nd Residence</p>
-                  </Accordion.Toggle>
-                  <Accordion.Collapse eventKey="0">
-                    <div>
-                      <Row className="mb-3">
-                        <Col>
-                          <label htmlFor="number">{editingdata.heat2CalcHeader}</label>
-                          <br />
-                          <input className="me-2" onChange={changeFamTwo} type="radio" id="myself" name="calculateWhoTwo" value="myself"/>
-                            <label>{editingdata.heat2Calc1}</label><br></br>
-                          <input className="me-2" onChange={changeFamTwo} type="radio" id="family" name="calculateWhoTwo" value="family"/>
-                          <label>{editingdata.heat2Calc2}</label>
-                          <br></br>
-                        </Col>
-                      </Row>
+              <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="0">
+                            
+                  <h5 className="smallCaps text-small text-green">2nd Residence</h5>
 
-                      <Row>
-                        <Col>
-                          <label htmlFor="number">{editingdata.Heat2People}</label>
-                          <br />
-                          <input onChange={changeNumTwo} type="number" min={0} max={12} onKeyPress={(event) => {
-                            if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                          }} placeholder="Number of people in your household"/>
-                          <p className="x-small mb-3 op-7">Number of people in your household</p>
-                        </Col>
-                      </Row>
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="0">
+                              <div>
+              
+              <Row className="mb-3">
+                <Col>
+                <label htmlFor="number">{editingdata.heat2CalcHeader}</label>
+                <br />
+                <input className="me-2" onChange={changeFamTwo} type="radio" id="myself" name="calculateWhoTwo" value="myself"/>
+                  <label>{editingdata.heat2Calc1}</label><br></br>
+                <input className="me-2" onChange={changeFamTwo} type="radio" id="family" name="calculateWhoTwo" value="family"/>
+                <label>{editingdata.heat2Calc2}</label>
+                <br></br>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <label htmlFor="number">{editingdata.Heat2People}</label>
+                  <br />
+                  <input onChange={changeNumTwo} type="number" min={0} max={12} onKeyPress={(event) => {
+                    if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                  }} placeholder="Number of people in your household"/>
+                </Col>
+              </Row>
 
-                      <Row>
-                        <Col>
-                          <label htmlFor="number">{editingdata.heat2Months}</label>
-                          <br />
-                          <input onChange={changeYearTwo} type="number" min="0" onKeyPress={(event) => {
-                            if (!/[0-9]/.test(event.key)) {event.preventDefault();} 
-                          }} placeholder="Month(s) per year in residence"  value={selectYearTwo}/>
-                          <p className="x-small mb-3 op-7">Month(s) per year in residence</p>
-                        </Col>
-                      </Row>
+              <Row>
+                <Col>
+                  <label htmlFor="number">{editingdata.heat2Months}</label>
+                  <br />
+                  <select name="months" onChange={changeYearTwo}>
+                    <option value="" hidden>Month(s) per year in residence</option>
+                    <option value='1'> 1 </option>
+                    <option value='2'> 2 </option>
+                    <option value='3'> 3 </option>
+                    <option value='4'> 4 </option>
+                    <option value='5'> 5 </option>
+                    <option value='6'> 6 </option>
+                    <option value='7'> 7 </option>
+                    <option value='8'> 8 </option>
+                    <option value='9'> 9 </option>
+                    <option value='10'> 10 </option>
+                    <option value='11'> 11 </option>
+                    <option value='12'> 12 </option>
+                  </select>
+                </Col>
+              </Row>
 
-                      <Row>
-                        <Col>
-                          <label htmlFor="size">{editingdata.heat2Size}</label>
-                          <br />
-                          <select name="size" value={selectSizeTwo} onChange={changeSizeTwo}>
-                            <option value="" hidden>{editingdata.select}</option>
-                            <option value='1000'>{editingdata.heatSize1}</option>
-                            <option value='1500'>{editingdata.heatSize2}</option>
-                            <option value='2000'>{editingdata.heatSize3}</option>
-                            <option value='2500'>{editingdata.heatSize4}</option>
-                            <option value='5000'>{editingdata.heatSize5}</option>
-                            <option value='7500'>{editingdata.heatSize6}</option>
-                            <option value='10000'>{editingdata.heatSize7}</option>
-                            <option value='10001'>{editingdata.heatSize8}</option>
-                          </select>
-                        </Col>
-                      </Row>
+              <Row>
+                <Col>
+                  <label htmlFor="size">{editingdata.heat2Size}</label>
+                  <br />
+                  <select name="size" value={selectSizeTwo} onChange={changeSizeTwo}>
+                    <option value="" hidden>{editingdata.select}</option>
+                    <option value='1000'>{editingdata.heatSize1}</option>
+                    <option value='1500'>{editingdata.heatSize2}</option>
+                    <option value='2000'>{editingdata.heatSize3}</option>
+                    <option value='2500'>{editingdata.heatSize4}</option>
+                    <option value='5000'>{editingdata.heatSize5}</option>
+                    <option value='7500'>{editingdata.heatSize6}</option>
+                    <option value='10000'>{editingdata.heatSize7}</option>
+                    <option value='10001'>{editingdata.heatSize8}</option>
+                  </select>
+                </Col>
+              </Row>
 
-                      <Row>
-                        <Col>
-                          <label htmlFor="heat">{editingdata.heat2Source}</label>
-                          <br />
-                          <select name="heat" value={selectHeatTwo} onChange={changeHeatTwo}>
-                            <option value="" hidden>{editingdata.select}</option>
-                            <option value='gas'>{editingdata.heatSource1}</option>
-                            <option value='oil'>{editingdata.heatSource2}</option>
-                            <option value='electric'>{editingdata.heatSource3}</option>
-                            <option value='wood'>{editingdata.heatSource4}</option>
-                          </select>
-                        </Col>
-                      </Row>
-
-                      <Row>
-                        <Col>
-                          <label htmlFor="energy">{editingdata.heat2Savings}</label>
-                          <br />
-                          <select name="energy" value={selectEnergyTwo} onChange={changeEnergyTwo}>
-                            <option value="" hidden>{editingdata.select}</option>
-                            <option value='none'>{editingdata.heatSavings1}</option>
-                            <option value='light'>{editingdata.heatSavings2}</option>
-                            <option value='moderate'>{editingdata.heatSavings3}</option>
-                            <option value='extensive'>{editingdata.heatSavings4}</option>
-                          </select>
-                        </Col>
-                      </Row> 
-                    </div>
-                  </Accordion.Collapse>
-                </Card>
+              <Row>
+                <Col>
+                  <label htmlFor="heat">{editingdata.heat2Source}</label>
+                  <br />
+                  <select name="heat" value={selectHeatTwo} onChange={changeHeatTwo}>
+                    <option value="" hidden>{editingdata.select}</option>
+                    <option value='gas'>{editingdata.heatSource1}</option>
+                    <option value='oil'>{editingdata.heatSource2}</option>
+                    <option value='electric'>{editingdata.heatSource3}</option>
+                    <option value='wood'>{editingdata.heatSource4}</option>
+                  </select>
+                </Col>
+              </Row>
 
                 {/* residence 3 */}
                 <Card>
@@ -896,15 +899,26 @@ export default function App({ file, href, children}) {
                       </Row>
 
                       <Row>
-                        <Col>
-                          <label htmlFor="number">{editingdata.heat3Months}</label>
-                          <br />
-                          <input onChange={changeYearThree} type="number" min={0} onKeyPress={(event) => {
-                            if (!/[0-9]/.test(event.key)) {event.preventDefault();} 
-                          }} placeholder="Month(s) per year in residence"/>
-                          <p className="x-small mb-3 op-7">Month(s) per year in residence</p>
-                        </Col>
-                      </Row>
+                <Col>
+                  <label htmlFor="number">{editingdata.heat3Months}</label>
+                  <br />
+                  <select name="months" onChange={changeYearThree}>
+                    <option value="" hidden>Month(s) per year in residence</option>
+                    <option value='1'> 1 </option>
+                    <option value='2'> 2 </option>
+                    <option value='3'> 3 </option>
+                    <option value='4'> 4 </option>
+                    <option value='5'> 5 </option>
+                    <option value='6'> 6 </option>
+                    <option value='7'> 7 </option>
+                    <option value='8'> 8 </option>
+                    <option value='9'> 9 </option>
+                    <option value='10'> 10 </option>
+                    <option value='11'> 11 </option>
+                    <option value='12'> 12 </option>
+                  </select>
+                </Col>
+              </Row>
 
                       <Row>
                         <Col>
@@ -986,15 +1000,26 @@ export default function App({ file, href, children}) {
                     </Row>
 
                     <Row>
-                      <Col>
-                        <label htmlFor="number">{editingdata.heat3Months}</label>
-                        <br />
-                        <input onChange={changeYearFour} type="number" min={0} onKeyPress={(event) => {
-                          if (!/[0-9]/.test(event.key)) {event.preventDefault();} 
-                        }} placeholder="Month(s) per year in residence"/>
-                        <p className="x-small mb-3 op-7">Month(s) per year in residence</p>
-                      </Col>
-                    </Row>
+                <Col>
+                  <label htmlFor="number">{editingdata.heat3Months}</label>
+                  <br />
+                  <select name="months" onChange={changeYearFour}>
+                    <option value="" hidden>Month(s) per year in residence</option>
+                    <option value='1'> 1 </option>
+                    <option value='2'> 2 </option>
+                    <option value='3'> 3 </option>
+                    <option value='4'> 4 </option>
+                    <option value='5'> 5 </option>
+                    <option value='6'> 6 </option>
+                    <option value='7'> 7 </option>
+                    <option value='8'> 8 </option>
+                    <option value='9'> 9 </option>
+                    <option value='10'> 10 </option>
+                    <option value='11'> 11 </option>
+                    <option value='12'> 12 </option>
+                  </select>
+                </Col>
+              </Row>
 
                     <Row>
                       <Col>
@@ -1047,10 +1072,130 @@ export default function App({ file, href, children}) {
 
             {/* residence 5 */}
             <Card>
-              <Accordion.Toggle as={Card.Header} eventKey="3">
-                <p>5th Residence</p>
-              </Accordion.Toggle>
-              <Accordion.Collapse eventKey="3">
+                            <Accordion.Toggle as={Card.Header} eventKey="3">
+                            
+                  <h5 className="smallCaps text-small text-green">5th Residence</h5>
+
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="3">
+                              <div>
+              
+              <Row className="mb-3">
+                <Col>
+                <label htmlFor="number">{editingdata.heat3CalcHeader}</label>
+                <br />
+                <input className="me-2" onChange={changeFamFive} type="radio" id="myself" name="calculateWhoFive" value="myself"/>
+                  <label>{editingdata.heat3Calc1}</label><br></br>
+                <input className="me-2" onChange={changeFamFive} type="radio" id="family" name="calculateWhoFive" value="family"/>
+                <label>{editingdata.heat3Calc2}</label>
+                <br></br>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <label htmlFor="number">{editingdata.Heat3People}</label>
+                  <br />
+                  <input onChange={changeNumFive} type="number" min={0} max={12} onKeyPress={(event) => {
+                    if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                  }} placeholder="Number of people in your household" />
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="number">{editingdata.heat3Months}</label>
+                  <br />
+                  <select name="months" onChange={changeYearFive}>
+                    <option value="" hidden>Month(s) per year in residence</option>
+                    <option value='1'> 1 </option>
+                    <option value='2'> 2 </option>
+                    <option value='3'> 3 </option>
+                    <option value='4'> 4 </option>
+                    <option value='5'> 5 </option>
+                    <option value='6'> 6 </option>
+                    <option value='7'> 7 </option>
+                    <option value='8'> 8 </option>
+                    <option value='9'> 9 </option>
+                    <option value='10'> 10 </option>
+                    <option value='11'> 11 </option>
+                    <option value='12'> 12 </option>
+                  </select>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="size">{editingdata.heat3Size}</label>
+                  <br />
+                  <select name="size" value={selectSizeFive} onChange={changeSizeFive}>
+                    <option value="" hidden>{editingdata.select}</option>
+                    <option value='1000'>{editingdata.heatSize1}</option>
+                    <option value='1500'>{editingdata.heatSize2}</option>
+                    <option value='2000'>{editingdata.heatSize3}</option>
+                    <option value='2500'>{editingdata.heatSize4}</option>
+                    <option value='5000'>{editingdata.heatSize5}</option>
+                    <option value='7500'>{editingdata.heatSize6}</option>
+                    <option value='10000'>{editingdata.heatSize7}</option>
+                    <option value='10001'>{editingdata.heatSize8}</option>
+                  </select>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="heat">{editingdata.heat3Source}</label>
+                  <br />
+                  <select name="heat" value={selectHeatFive} onChange={changeHeatFive}>
+                    <option value="" hidden>{editingdata.select}</option>
+                    <option value='gas'>{editingdata.heatSource1}</option>
+                    <option value='oil'>{editingdata.heatSource2}</option>
+                    <option value='electric'>{editingdata.heatSource3}</option>
+                    <option value='wood'>{editingdata.heatSource4}</option>
+                  </select>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="energy">{editingdata.heat3Savings}</label>
+                  <br />
+                  <select name="energy" value={selectEnergyFive} onChange={changeEnergyFive}>
+                    <option value="" hidden>{editingdata.select}</option>
+                    <option value='none'>{editingdata.heatSavings1}</option>
+                    <option value='light'>{editingdata.heatSavings2}</option>
+                    <option value='moderate'>{editingdata.heatSavings3}</option>
+                    <option value='extensive'>{editingdata.heatSavings4}</option>
+                  </select>
+                </Col>
+              </Row> 
+           </div>
+         </Accordion.Collapse>
+         </Card>
+     
+        
+         </Accordion>
+
+            </div>
+
+
+            <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
+              <Row>
+              <Col className="col-12">
+                  <h3 className="text-green">{editingdata.vehicleHeader}</h3>
+
+                  <p className="text-grey">{editingdata.vehiclePara1}</p>
+                </Col>
+                <Col>
+              <Accordion>
+              <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="0">
+                            
+                  <h5 className="smallCaps text-small text-green">{editingdata.vehicleSmall}</h5>
+
+                  <p className="text-small op-6">{editingdata.vehicleSmallDesc}</p>
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="0">
+                
                 <div>
                   
                   <Row className="mb-3">
