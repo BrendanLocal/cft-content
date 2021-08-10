@@ -17,7 +17,7 @@ handler.get(async (req, res) => {
 
   const calcData = await findBySessionIDAndType(req.db, sessionID, type);
   res.status(200).json({
-    data: calcData
+    calcData: calcData
   });
 });
 

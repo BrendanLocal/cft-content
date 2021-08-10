@@ -863,9 +863,9 @@ export default function Build({ file }) {
         </Col>
       </Row>
 
-      <main className="bg-green py-5">
-        <Container id="intro" className="bg-green py-5 px-4 page-section">
-          <Row className="justify-content-center d-flex mt-xl-0 mt-lg-5 mb-5 ms-xl-5 ms-lg-4 py-5 px-5">
+      <main className="bg-green pt-5">
+        <Container id="intro" className="bg-green py-5 px-3 px-md-4 page-section">
+          <Row className="justify-content-center d-flex mt-xl-0 mt-lg-5 mb-5 ms-xl-5 ms-lg-4 py-5 px-4 px-md-5">
             <Col className="col-12 col-lg-5 stickyTop mb-5 p-3 pe-2 d-none d-lg-block">
               <object type="image/svg+xml" data="/build2-svg.svg" />
             </Col>
@@ -890,8 +890,8 @@ export default function Build({ file }) {
         <Container id="the-plan" className="v-full z-999 bg-green p-5 page-section">
           <Fade bottom>
             <Row className="justify-content-center align-items-center my-4">
-              <Col className="col-12 col-md-11 col-lg-10 col-xl-8 text-center text-white">
-                <h2 className="text-orange bold mb-2 px-md-3 px-lg-0">{editingdata.part2_header3}</h2>
+              <Col className="col-12 col-md-11 col-lg-10 col-xl-9 text-center text-white">
+                <h2 className="text-orange bold mb-2 px-md-5 px-lg-0">{editingdata.part2_header3}</h2>
                 <p className="medium mt-0 mb-0 px-lg-4 mb-2">{editingdata.part2_para2}</p>
               </Col>
             </Row>
@@ -1046,9 +1046,132 @@ export default function Build({ file }) {
 
           <Fade bottom>
             <Row className="text-center justify-content-center py-3 mt-5">
-              <Col className="col-10 col-md-9 col-lg-7">
-                <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.corp_header2}</h2>
-                <img className="card-drop-heavy" src="../../ECOSYSTEMBENEFITS-Corp.jpg"/>
+              <Col className="col-11 col-md-10 col-lg-9">
+                <h2 className="text-orange tight-drop-light mb-4 bold px-2">{editingdata.corp_header2}</h2>
+                
+              {/* FTU units */}
+
+              {/* Desktop */}
+
+              <Container className="d-none d-lg-block">
+                <Row className="roundedBox card-drop-heavy">
+                  <Col className="col-12 col-lg-8 col-xl-9 px-0 bg-offwhite roundedBoxLeft">
+                    <div className="p-5 pb-4 bg-brown roundedBoxTopLeft">
+                      
+                      <Row className="justify-content-center align-items-center mb-3">
+                        <Col className="col-lg-4 col-xl-3 d-flex">
+                          <img src="../../cft-icon-white.svg"/>
+                        </Col>
+                        <Col className="col-lg-8 col-xl-9 d-flex">
+                          <h3 className="text-left x-large mt-3 text-white bold d-none d-xl-block">
+                          ESG BENEFITS FOR CORPORATIONS
+                          </h3>
+
+                          <h3 className="text-left lead mt-3 text-white bold d-xl-none">
+                          ESG BENEFITS FOR CORPORATIONS
+                          </h3>
+                        </Col>
+                      </Row>
+                      <p className="text-white text-left">
+                      The number of FTUs purchased determines the packages available.
+                      </p>
+                    </div>
+                    <div className="p-5 py-4 bg-offwhite roundedBoxBottomLeft">
+                    <h5 className="text-left text-green medium">
+                    WITH OVER 50 CHOICES, YOUR CUSTOMIZED PACKAGE MAY INCLUDE:
+                      </h5>
+                      <ul className="text-grey dropdown-text checkMark px-1 mx-3">
+                        <li className="py-1">Supporting carbon sequestration & biodiversity</li>
+                        <li className="py-1">Proprietary Net-Zero Calculator and Forestcaster™</li>
+                        <li className="py-1">National recognition as an investor in a nature-based solution to climate change</li>
+                        <li className="py-1">Turnkey solutions to engage employees and shareholders</li>
+                        <li className="py-1">PR packages including signage, advertising & branded content</li>
+                        <li className="py-1">Community and school sponsorship opportunities</li>
+                        <li className="py-1">A personalized Smart Forest Intelligence Dashboard</li>
+                        <li className="py-1">A dynamic private portal with curated programming and resources</li>
+                        <li className="py-1">Website and social media placements</li>
+                      </ul>
+                    </div>
+                  </Col>
+                  <Col className="col-lg-4 col-xl-3 bg-mildgreen text-white text-left p-4 roundedBoxRight">
+                    <h6 className="bold mt-lg-5 mt-xl-4">WHAT IS A FOREST TRUST UNIT (FTU)?</h6>
+                    <p>1 FTU</p>
+                    <p>= 5 acres</p>
+                    <p className="mb-2">= 5000+ seedlings</p>
+                    <p className="ftu-par mb-2">
+                      A FTU is a 5 acre Smart Forest that contains 5000+ planted seedlings. This is an ecologically biodiverse area that is under joint stewardship between CFT and the designated environmental steward.
+                   </p>
+                   <p className="ftu-par">Every FTU is:</p>
+                   <ul className="ftu-list">
+                     <li>supported by a 5-phase strategic action plan</li>
+                     <li>validated by modern science</li>
+                     <li>protected under the forever no clear-cut guarantee</li>
+                   </ul>
+                   <p className="ftu-par">We will engage Indigenous land knowledge holders in our decisions.</p>
+                  </Col>
+                </Row>
+              </Container>
+
+              {/* Mobile */}
+
+              <Container className="d-lg-none">
+                <Row className="roundedBox card-drop-heavy">
+                  <Col className="col-12 px-0">
+                    <div className="p-4 p-md-5 pb-4 bg-brown roundedBoxTop">
+                      
+                      <Row className="justify-content-center align-items-center mb-2 mb-md-3">
+                        <Col className="col-12 col-md-3 d-flex">
+                          <img src="../../cft-icon-white.svg"/>
+                        </Col>
+                        <Col className="col-12 col-md-9 col-xl-9 d-flex">
+                          <p className="text-left lead text-white bold d-none d-md-block">
+                          ESG BENEFITS FOR CORPORATIONS
+                          </p>
+                          <h3 className="text-left text-white mt-3 bold d-md-none">
+                          ESG BENEFITS FOR CORPORATIONS
+                          </h3>
+                        </Col>
+                      </Row>
+                      <p className="text-white text-left">
+                      The number of FTUs purchased determines the packages available.
+                      </p>
+                    </div>
+                    <div className="px-4 px-md-5 pt-4 pb-3 bg-offwhite">
+                    <h5 className="text-left text-green medium">
+                    WITH OVER 50 CHOICES, YOUR CUSTOMIZED PACKAGE MAY INCLUDE:
+                      </h5>
+                      <ul className="text-grey dropdown-text checkMark px-1 mx-3">
+                        <li className="py-1">Supporting carbon sequestration & biodiversity</li>
+                        <li className="py-1">Proprietary Net-Zero Calculator and Forestcaster™</li>
+                        <li className="py-1">National recognition as an investor in a nature-based solution to climate change</li>
+                        <li className="py-1">Turnkey solutions to engage employees and shareholders</li>
+                        <li className="py-1">PR packages including signage, advertising & branded content</li>
+                        <li className="py-1">Community and school sponsorship opportunities</li>
+                        <li className="py-1">A personalized Smart Forest Intelligence Dashboard</li>
+                        <li className="py-1">A dynamic private portal with curated programming and resources</li>
+                        <li className="py-1">Website and social media placements</li>
+                      </ul>
+                    </div>
+                  </Col>
+                  <Col className="col-12 bg-mildgreen text-white text-left p-4 p-md-5 roundedBoxBottom">
+                    <h6 className="bold ">WHAT IS A FOREST TRUST UNIT (FTU)?</h6>
+                    <p>1 FTU</p>
+                    <p>= 5 acres</p>
+                    <p className="mb-2">= 5000+ seedlings</p>
+                    <p className="ftu-par mb-2">
+                      A FTU is a 5 acre Smart Forest that contains 5000+ planted seedlings. This is an ecologically biodiverse area that is under joint stewardship between CFT and the designated environmental steward.
+                   </p>
+                   <p className="ftu-par">Every FTU is:</p>
+                   <ul className="ftu-list">
+                     <li>supported by a 5-phase strategic action plan</li>
+                     <li>validated by modern science</li>
+                     <li>protected under the forever no clear-cut guarantee</li>
+                   </ul>
+                   <p className="ftu-par">We will engage Indigenous land knowledge holders in our decisions.</p>
+                  </Col>
+                </Row>
+              </Container>
+
               </Col>
             </Row>
           </Fade>
@@ -1059,9 +1182,9 @@ export default function Build({ file }) {
                 <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
               </Col>
             </Row>
-            <Row className="justify-content-center px-lg-5 mx-lg-5 px-xl-5 mx-xl-5 mb-5 pb-5">
-              <Col className="col-10 col-md-9 col-lg-4 px-xl-3 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+            <Row className="justify-content-center px-lg-5 mx-lg-5 px-xl-0 mx-xl-0 mb-5 pb-5">
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 mb-4">
+                <div className="card bg-offwhite p-4 mx-1 h-100 calculate-card">
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.corpcalc_box1para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.corpcalc_box1para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-3">{editingdata.corpcalc_box1para3}</ReactMarkdown>
@@ -1070,8 +1193,8 @@ export default function Build({ file }) {
                   </Link>
                 </div>
               </Col>
-              <Col className="col-10 col-md-9 col-lg-4 px-xl-3 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 mb-4">
+                <div className="card bg-offwhite p-4 mx-1 h-100 calculate-card">
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.corpcalc_box2para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.corpcalc_box2para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-3">{editingdata.corpcalc_box2para3}</ReactMarkdown>
@@ -1080,8 +1203,8 @@ export default function Build({ file }) {
                   </Link>
                 </div>
               </Col>
-              <Col className="col-10 col-md-9 col-lg-4 px-xl-3 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 mb-4">
+                <div className="card bg-offwhite p-4 mx-1 h-100 calculate-card">
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.corpcalc_box3para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.corpcalc_box3para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-3">{editingdata.corpcalc_box3para3}</ReactMarkdown>
@@ -1090,7 +1213,7 @@ export default function Build({ file }) {
                   </Link>
                 </div>
               </Col>
-            </Row>
+            </Row> 
           </Fade>
 
           <Fade bottom>
@@ -1182,11 +1305,131 @@ export default function Build({ file }) {
           
           <Fade bottom>
             <Row className="text-center justify-content-center py-3 mt-5">
-              <Col className="col-10 col-md-9 col-lg-7">
-                <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.school_para1}</h2>
-                <img className="card-drop-heavy" src="../../ECOSYSTEMBENEFITS-School.jpg"/>
+              <Col className="col-11 col-md-10 col-lg-9">
+                <h2 className="text-orange tight-drop-light mb-4 bold px-2 px-lg-4">{editingdata.school_para1}</h2>
+                
+              {/* FTU units */}
+
+              {/* Desktop */}
+
+              <Container className="d-none d-lg-block">
+                <Row className="roundedBox card-drop-heavy">
+                  <Col className="col-12 col-lg-8 col-xl-9 px-0 bg-offwhite roundedBoxLeft">
+                    <div className="p-5 pb-4 bg-brown roundedBoxTopLeft">
+                      
+                      <Row className="justify-content-center align-items-center mb-3">
+                        <Col className="col-lg-4 col-xl-3 d-flex">
+                          <img src="../../cft-icon-white.svg"/>
+                        </Col>
+                        <Col className="col-lg-8 col-xl-9 d-flex">
+                        <h3 className="text-left x-large mt-3 text-white bold d-none d-xl-block">
+                          ECOSYSTEM & ESG BENEFITS FOR SCHOOLS
+                          </h3>
+                          <h3 className="text-left lead mt-3 text-white bold d-xl-none">
+                          ECOSYSTEM & ESG BENEFITS FOR SCHOOLS
+                          </h3>
+                        </Col>
+                      </Row>
+                      <p className="text-white text-left">
+                      The number of FTUs purchased determines the packages available.
+                      </p>
+                    </div>
+                    <div className="p-5 py-4 bg-offwhite roundedBoxBottomLeft">
+                    <h5 className="text-left text-green medium">
+                    WITH OVER 30 CHOICES, YOUR CUSTOMIZED PACKAGE MAY INCLUDE:
+                      </h5>
+                      <ul className="text-grey dropdown-text checkMark px-1 mx-3">
+                        <li className="py-1">Nationwide Student Forest Ambassador Program</li>
+                        <li className="py-1">Scholarship, employment & fundraising opportunities</li>
+                        <li className="py-1">Recognized as an investor in a nature-based solution to climate change</li>
+                        <li className="py-1">Student education and engagement modules</li>
+                        <li className="py-1">Student networking opportunities across Canada</li>
+                        <li className="py-1">Online and in-person events with high profile environmentalists</li>
+                        <li className="py-1">A dynamic private portal with curated programming and resources</li>
+                        <li className="py-1">Proprietary Net-Zero Calculator and Forestcaster™</li>
+                      </ul>
+                    </div>
+                  </Col>
+                  <Col className="col-lg-4 col-xl-3 bg-mildgreen text-white text-left p-4 roundedBoxRight">
+                    <h6 className="bold mt-lg-5 mt-xl-4">WHAT IS A FOREST TRUST UNIT (FTU)?</h6>
+                    <p>1 FTU</p>
+                    <p>= 5 acres</p>
+                    <p className="mb-2">= 5000+ seedlings</p>
+                    <p className="ftu-par mb-2">
+                      A FTU is a 5 acre Smart Forest that contains 5000+ planted seedlings. This is an ecologically biodiverse area that is under joint stewardship between CFT and the designated environmental steward.
+                   </p>
+                   <p className="ftu-par">Every FTU is:</p>
+                   <ul className="ftu-list">
+                     <li>supported by a 5-phase strategic action plan</li>
+                     <li>validated by modern science</li>
+                     <li>protected under the forever no clear-cut guarantee</li>
+                   </ul>
+                   <p className="ftu-par">We will engage Indigenous land knowledge holders in our decisions.</p>
+                  </Col>
+                </Row>
+              </Container>
+
+              {/* Mobile */}
+
+              <Container className="d-lg-none">
+                <Row className="roundedBox card-drop-heavy">
+                  <Col className="col-12 px-0">
+                    <div className="p-4 p-md-5 pb-4 bg-brown roundedBoxTop">
+                      
+                      <Row className="justify-content-center align-items-center mb-2 mb-md-3">
+                        <Col className="col-12 col-md-3 d-flex">
+                          <img src="../../cft-icon-white.svg"/>
+                        </Col>
+                        <Col className="col-12 col-md-9 col-xl-9 d-flex">
+                          <p className="text-left lead text-white bold d-none d-md-block">
+                          ECOSYSTEM & ESG BENEFITS FOR SCHOOLS
+                          </p>
+                          <h3 className="text-left text-white mt-3 bold d-md-none">
+                          ECOSYSTEM & ESG BENEFITS FOR SCHOOLS
+                          </h3>
+                        </Col>
+                      </Row>
+                      <p className="text-white text-left">
+                      The number of FTUs purchased determines the packages available.
+                      </p>
+                    </div>
+                    <div className="px-4 px-md-5 pt-4 pb-3 bg-offwhite">
+                    <h5 className="text-left text-green medium">
+                    WITH OVER 30 CHOICES, YOUR CUSTOMIZED PACKAGE MAY INCLUDE:
+                      </h5>
+                      <ul className="text-grey dropdown-text checkMark px-1 mx-3">
+                      <li className="py-1">Nationwide Student Forest Ambassador Program</li>
+                        <li className="py-1">Scholarship, employment & fundraising opportunities</li>
+                        <li className="py-1">Recognized as an investor in a nature-based solution to climate change</li>
+                        <li className="py-1">Student education and engagement modules</li>
+                        <li className="py-1">Student networking opportunities across Canada</li>
+                        <li className="py-1">Online and in-person events with high profile environmentalists</li>
+                        <li className="py-1">A dynamic private portal with curated programming and resources</li>
+                        <li className="py-1">Proprietary Net-Zero Calculator and Forestcaster™</li>
+                      </ul>
+                    </div>
+                  </Col>
+                  <Col className="col-12 bg-mildgreen text-white text-left p-4 p-md-5 roundedBoxBottom">
+                    <h6 className="bold ">WHAT IS A FOREST TRUST UNIT (FTU)?</h6>
+                    <p>1 FTU</p>
+                    <p>= 5 acres</p>
+                    <p className="mb-2">= 5000+ seedlings</p>
+                    <p className="ftu-par mb-2">
+                      A FTU is a 5 acre Smart Forest that contains 5000+ planted seedlings. This is an ecologically biodiverse area that is under joint stewardship between CFT and the designated environmental steward.
+                   </p>
+                   <p className="ftu-par">Every FTU is:</p>
+                   <ul className="ftu-list">
+                     <li>supported by a 5-phase strategic action plan</li>
+                     <li>validated by modern science</li>
+                     <li>protected under the forever no clear-cut guarantee</li>
+                   </ul>
+                   <p className="ftu-par">We will engage Indigenous land knowledge holders in our decisions.</p>
+                  </Col>
+                </Row>
+              </Container>
+
               </Col>
-            </Row>    
+            </Row>
           </Fade>
           
           <Fade bottom>
@@ -1195,9 +1438,9 @@ export default function Build({ file }) {
                 <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
               </Col>
             </Row>
-            <Row className="justify-content-center px-lg-5 mx-lg-5 px-xl-5 mx-xl-5 mb-5 pb-5">
-              <Col className="col-10 col-md-9 col-lg-4 px-xl-3 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+            <Row className="justify-content-center px-lg-5 mx-lg-5 px-xl-0 mx-xl-0 mb-5 pb-5">
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 mb-4">
+                <div className="card bg-offwhite p-4 mx-1 h-100 calculate-card">
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.schoolcalc_box1para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.schoolcalc_box1para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-3">{editingdata.schoolcalc_box1para3}</ReactMarkdown>
@@ -1206,8 +1449,8 @@ export default function Build({ file }) {
                   </Link>
                 </div>
               </Col>
-              <Col className="col-10 col-md-9 col-lg-4 px-xl-3 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 mb-4">
+                <div className="card bg-offwhite p-4 mx-1 h-100 calculate-card">
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.schoolcalc_box2para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.schoolcalc_box2para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-3">{editingdata.schoolcalc_box2para3}</ReactMarkdown>
@@ -1216,8 +1459,8 @@ export default function Build({ file }) {
                   </Link>
                 </div>
               </Col>
-              <Col className="col-10 col-md-9 col-lg-4 px-xl-3 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 mb-4">
+                <div className="card bg-offwhite p-4 mx-1 h-100 calculate-card">
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.schoolcalc_box3para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.schoolcalc_box3para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-3">{editingdata.schoolcalc_box3para3}</ReactMarkdown>
@@ -1318,12 +1561,132 @@ export default function Build({ file }) {
 
           <Fade bottom>
             <Row className="text-center justify-content-center py-3 mt-5">
-              <Col className="col-10 col-md-9 col-lg-7">
-                <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.legacy_para1}</h2>
-                <img className="card-drop-heavy" src="../../ECOSYSTEMBENEFITS-Legacy.jpg"/>
+              <Col className="col-11 col-md-10 col-lg-9">
+                <h2 className="text-orange tight-drop-light mb-4 bold px-2 px-xl-5">{editingdata.legacy_para1}</h2>
+                
+              {/* FTU units */}
+
+              {/* Desktop */}
+
+              <Container className="d-none d-lg-block">
+                <Row className="roundedBox card-drop-heavy">
+                  <Col className="col-12 col-lg-8 col-xl-9 px-0 bg-offwhite roundedBoxLeft">
+                    <div className="p-5 pb-4 bg-brown roundedBoxTopLeft">
+                      
+                      <Row className="justify-content-center align-items-center mb-3">
+                        <Col className="col-lg-4 col-xl-3 d-flex">
+                          <img src="../../cft-icon-white.svg"/>
+                        </Col>
+                        <Col className="col-lg-8 col-xl-9 d-flex">
+                        <h3 className="text-left x-large mt-3 text-white bold d-none d-xl-block">
+                          IMPACT BENEFITS FOR LEGACY BUILDERS
+                          </h3>
+                          
+                          <h3 className="text-left lead mt-3 text-white bold d-xl-none">
+                          IMPACT BENEFITS FOR LEGACY BUILDERS
+                          </h3>
+                        </Col>
+                      </Row>
+                      <p className="text-white text-left">
+                      The number of FTUs purchased determines the packages available.
+                      </p>
+                    </div>
+                    <div className="p-5 py-4 bg-offwhite roundedBoxBottomLeft">
+                    <h5 className="text-left text-green medium">
+                    WITH OVER 40 CHOICES, YOUR CUSTOMIZED PACKAGE MAY INCLUDE:
+                      </h5>
+                      <ul className="text-grey dropdown-text checkMark px-1 mx-3">
+                        <li className="py-1">Supporting carbon sequestration & biodiversity</li>
+                        <li className="py-1">Official recognition as Canada’s Forest Stewards</li>
+                        <li className="py-1">Proprietary Net-Zero Calculator and Forestcaster™</li>
+                        <li className="py-1">National recognition as an investor in a nature-based solution to climate change</li>
+                        <li className="py-1">Community and School sponsorship opportunities</li>
+                        <li className="py-1">A dynamic private portal with curated programming and resources</li>
+                        <li className="py-1">A personalized Smart Forest Intelligence Dashboard</li>
+                      </ul>
+                    </div>
+                  </Col>
+                  <Col className="col-lg-4 col-xl-3 bg-mildgreen text-white text-left p-4 roundedBoxRight">
+                    <h6 className="bold mt-lg-5 mt-xl-4">WHAT IS A FOREST TRUST UNIT (FTU)?</h6>
+                    <p>1 FTU</p>
+                    <p>= 5 acres</p>
+                    <p className="mb-2">= 5000+ seedlings</p>
+                    <p className="ftu-par mb-2">
+                      A FTU is a 5 acre Smart Forest that contains 5000+ planted seedlings. This is an ecologically biodiverse area that is under joint stewardship between CFT and the designated environmental steward.
+                   </p>
+                   <p className="ftu-par">Every FTU is:</p>
+                   <ul className="ftu-list">
+                     <li>supported by a 5-phase strategic action plan</li>
+                     <li>validated by modern science</li>
+                     <li>protected under the forever no clear-cut guarantee</li>
+                   </ul>
+                   <p className="ftu-par">We will engage Indigenous land knowledge holders in our decisions.</p>
+                  </Col>
+                </Row>
+              </Container>
+
+              {/* Mobile */}
+
+              <Container className="d-lg-none">
+                <Row className="roundedBox card-drop-heavy">
+                  <Col className="col-12 px-0">
+                    <div className="p-4 p-md-5 pb-4 bg-brown roundedBoxTop">
+                      
+                      <Row className="justify-content-center align-items-center mb-2 mb-md-3">
+                        <Col className="col-12 col-md-3 d-flex">
+                          <img src="../../cft-icon-white.svg"/>
+                        </Col>
+                        <Col className="col-12 col-md-9 col-xl-9 d-flex">
+                          <p className="text-left lead text-white bold d-none d-md-block">
+                          IMPACT BENEFITS FOR LEGACY BUILDERS
+                          </p>
+                          <h3 className="text-left text-white mt-3 bold d-md-none">
+                          IMPACT BENEFITS FOR LEGACY BUILDERS
+                          </h3>
+                        </Col>
+                      </Row>
+                      <p className="text-white text-left">
+                      The number of FTUs purchased determines the packages available.
+                      </p>
+                    </div>
+                    <div className="px-4 px-md-5 pt-4 pb-3 bg-offwhite">
+                    <h5 className="text-left text-green medium">
+                    WITH OVER 40 CHOICES, YOUR CUSTOMIZED PACKAGE MAY INCLUDE:
+                      </h5>
+                      <ul className="text-grey dropdown-text checkMark px-1 mx-3">
+                      <li className="py-1">Supporting carbon sequestration & biodiversity</li>
+                        <li className="py-1">Official recognition as Canada’s Forest Stewards</li>
+                        <li className="py-1">Proprietary Net-Zero Calculator and Forestcaster™</li>
+                        <li className="py-1">National recognition as an investor in a nature-based solution to climate change</li>
+                        <li className="py-1">Community and School sponsorship opportunities</li>
+                        <li className="py-1">A dynamic private portal with curated programming and resources</li>
+                        <li className="py-1">A personalized Smart Forest Intelligence Dashboard</li>
+                      </ul>
+                    </div>
+                  </Col>
+                  <Col className="col-12 bg-mildgreen text-white text-left p-4 p-md-5 roundedBoxBottom">
+                    <h6 className="bold ">WHAT IS A FOREST TRUST UNIT (FTU)?</h6>
+                    <p>1 FTU</p>
+                    <p>= 5 acres</p>
+                    <p className="mb-2">= 5000+ seedlings</p>
+                    <p className="ftu-par mb-2">
+                      A FTU is a 5 acre Smart Forest that contains 5000+ planted seedlings. This is an ecologically biodiverse area that is under joint stewardship between CFT and the designated environmental steward.
+                   </p>
+                   <p className="ftu-par">Every FTU is:</p>
+                   <ul className="ftu-list">
+                     <li>supported by a 5-phase strategic action plan</li>
+                     <li>validated by modern science</li>
+                     <li>protected under the forever no clear-cut guarantee</li>
+                   </ul>
+                   <p className="ftu-par">We will engage Indigenous land knowledge holders in our decisions.</p>
+                  </Col>
+                </Row>
+              </Container>
+
               </Col>
             </Row>
           </Fade>
+          
 
           <Fade bottom>
             <Row id="legacy-calc-steps" className="pt-5 align-items-center justify-content-center mt-5 mb-3">
@@ -1331,9 +1694,9 @@ export default function Build({ file }) {
                 <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
               </Col>
             </Row>
-            <Row className="justify-content-center px-lg-5 mx-lg-5 px-xl-5 mx-xl-5 mb-5 pb-5">
-              <Col className="col-10 col-md-9 col-lg-4 px-xl-3 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+            <Row className="justify-content-center px-lg-5 mx-lg-5 px-xl-0 mx-xl-0 mb-5 pb-5">
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 mb-4">
+                <div className="card bg-offwhite p-4 mx-1 h-100 calculate-card">
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.legacycalc_box1para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.legacycalc_box1para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-3">{editingdata.legacycalc_box1para3}</ReactMarkdown>
@@ -1342,8 +1705,8 @@ export default function Build({ file }) {
                   </Link>
                 </div>
               </Col>
-              <Col className="col-10 col-md-9 col-lg-4 px-xl-3 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 mb-4">
+                <div className="card bg-offwhite p-4 mx-1 h-100 calculate-card">
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.legacycalc_box2para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.legacycalc_box2para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-3">{editingdata.legacycalc_box2para3}</ReactMarkdown>
@@ -1352,8 +1715,8 @@ export default function Build({ file }) {
                   </Link>
                 </div>
               </Col>
-              <Col className="col-10 col-md-9 col-lg-4 px-xl-3 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 mb-4">
+                <div className="card bg-offwhite p-4 mx-1 h-100 calculate-card">
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.legacycalc_box3para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.legacycalc_box3para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-3">{editingdata.legacycalc_box3para3}</ReactMarkdown>
@@ -1452,12 +1815,130 @@ export default function Build({ file }) {
             </Row>
           </Fade>
 
+
           <Fade bottom>
             <Row className="text-center justify-content-center py-3 mt-5">
-              <Col className="col-10 col-md-9 col-lg-7">
-                <h2 className="text-orange tight-drop-light mb-4 bold">{editingdata.communal_para1}</h2>
-                <ReactMarkdown className="text-white large tight-drop-light mb-4">{editingdata.communal_para2}</ReactMarkdown>
-                <img className="card-drop-heavy" src="../../ECOSYSTEMBENEFITS-Community.jpg"/>
+              <Col className="col-11 col-md-10 col-lg-9">
+                <h2 className="text-orange tight-drop-light mb-4 bold px-2">{editingdata.communal_para1}</h2>
+                
+              {/* FTU units */}
+
+              {/* Desktop */}
+
+              <Container className="d-none d-lg-block">
+                <Row className="roundedBox card-drop-heavy">
+                  <Col className="col-12 col-lg-8 col-xl-9 px-0 bg-offwhite roundedBoxLeft">
+                    <div className="p-5 pb-4 bg-brown roundedBoxTopLeft">
+                      
+                      <Row className="justify-content-center align-items-center mb-3">
+                        <Col className="col-lg-4 col-xl-3 d-flex">
+                          <img src="../../cft-icon-white.svg"/>
+                        </Col>
+                        <Col className="col-lg-8 col-xl-9 d-flex">
+                        <h3 className="text-left x-large mt-3 text-white bold d-none d-xl-block">
+                          IMPACT BENEFITS FOR COMMUNITY BUILDERS
+                          </h3>
+                          <h3 className="text-left lead mt-3 text-white bold d-xl-none">
+                          IMPACT BENEFITS FOR COMMUNITY BUILDERS
+                          </h3>
+                        </Col>
+                      </Row>
+                      <p className="text-white text-left">
+                      The number of FTUs purchased determines the packages available.
+                      </p>
+                    </div>
+                    <div className="p-5 py-4 bg-offwhite roundedBoxBottomLeft">
+                    <h5 className="text-left text-green medium">
+                    WITH OVER 40 CHOICES, YOUR CUSTOMIZED PACKAGE MAY INCLUDE:
+                      </h5>
+                      <ul className="text-grey dropdown-text checkMark px-1 mx-3">
+                        <li className="py-1">Supporting carbon sequestration & biodiversity</li>
+                        <li className="py-1">Proprietary Net-Zero Calculator and Forestcaster™</li>
+                        <li className="py-1">Access to a nation-wide connected community</li>
+                        <li className="py-1">National recognition as an investor in a nature-based solution to climate change</li>
+                        <li className="py-1">A dynamic private portal and digital assets</li>
+                        <li className="py-1">A personalized Smart Forest Intelligence Dashboard</li>
+                        <li className="py-1">Participate in the only Communal Smart Forest in Canada</li>
+                      </ul>
+                    </div>
+                  </Col>
+                  <Col className="col-lg-4 col-xl-3 bg-mildgreen text-white text-left p-4 roundedBoxRight">
+                    <h6 className="bold mt-lg-5 mt-xl-4">WHAT IS A FOREST TRUST UNIT (FTU)?</h6>
+                    <p>1 FTU</p>
+                    <p>= 5 acres</p>
+                    <p className="mb-2">= 5000+ seedlings</p>
+                    <p className="ftu-par mb-2">
+                      A FTU is a 5 acre Smart Forest that contains 5000+ planted seedlings. This is an ecologically biodiverse area that is under joint stewardship between CFT and the designated environmental steward.
+                   </p>
+                   <p className="ftu-par">Every FTU is:</p>
+                   <ul className="ftu-list">
+                     <li>supported by a 5-phase strategic action plan</li>
+                     <li>validated by modern science</li>
+                     <li>protected under the forever no clear-cut guarantee</li>
+                   </ul>
+                   <p className="ftu-par">We will engage Indigenous land knowledge holders in our decisions.</p>
+                  </Col>
+                </Row>
+              </Container>
+
+              {/* Mobile */}
+
+              <Container className="d-lg-none">
+                <Row className="roundedBox card-drop-heavy">
+                  <Col className="col-12 px-0">
+                    <div className="p-4 p-md-5 pb-4 bg-brown roundedBoxTop">
+                      
+                      <Row className="justify-content-center align-items-center mb-2 mb-md-3">
+                        <Col className="col-12 col-md-3 d-flex">
+                          <img src="../../cft-icon-white.svg"/>
+                        </Col>
+                        <Col className="col-12 col-md-9 col-xl-9 d-flex">
+                          <p className="text-left lead text-white bold d-none d-md-block">
+                          IMPACT BENEFITS FOR COMMUNITY BUILDERS
+                          </p>
+                          <h3 className="text-left text-white mt-3 bold d-md-none">
+                          IMPACT BENEFITS FOR COMMUNITY BUILDERS
+                          </h3>
+                        </Col>
+                      </Row>
+                      <p className="text-white text-left">
+                      The number of FTUs purchased determines the packages available.
+                      </p>
+                    </div>
+                    <div className="px-4 px-md-5 pt-4 pb-3 bg-offwhite">
+                    <h5 className="text-left text-green medium">
+                    WITH OVER 40 CHOICES, YOUR CUSTOMIZED PACKAGE MAY INCLUDE:
+                      </h5>
+                      <ul className="text-grey dropdown-text checkMark px-1 mx-3">
+                        <li className="py-1">Supporting carbon sequestration & biodiversity</li>
+                        <li className="py-1">Proprietary Net-Zero Calculator and Forestcaster™</li>
+                        <li className="py-1">Access to a nation-wide connected community</li>
+                        <li className="py-1">National recognition as an investor in a nature-based solution to climate change</li>
+                        <li className="py-1">A dynamic private portal and digital assets</li>
+                        <li className="py-1">A personalized Smart Forest Intelligence Dashboard</li>
+                        <li className="py-1">Participate in the only Communal Smart Forest in Canada</li>
+                      </ul>
+                    </div>
+                  </Col>
+                  <Col className="col-12 bg-mildgreen text-white text-left p-4 p-md-5 roundedBoxBottom">
+                    <h6 className="bold">WHAT IS A FOREST TRUST UNIT (FTU)?</h6>
+                    <p>1 FTU</p>
+                    <p>= 5 acres</p>
+                    <p className="mb-2">= 5000+ seedlings</p>
+                    <p className="ftu-par mb-2">
+                      A FTU is a 5 acre Smart Forest that contains 5000+ planted seedlings. This is an ecologically biodiverse area that is under joint stewardship between CFT and the designated environmental steward.
+                   </p>
+                   <p className="ftu-par">Every FTU is:</p>
+                   <ul className="ftu-list">
+                     <li>supported by a 5-phase strategic action plan</li>
+                     <li>validated by modern science</li>
+                     <li>protected under the forever no clear-cut guarantee</li>
+                   </ul>
+                   <p className="ftu-par">We will engage Indigenous land knowledge holders in our decisions.</p>
+                  </Col>
+                </Row>
+              </Container>
+
               </Col>
             </Row>
           </Fade>
@@ -1468,9 +1949,9 @@ export default function Build({ file }) {
                 <h2 className="text-center text-orange bold tight-drop-light">How to get your forest started</h2>
               </Col>
             </Row>
-            <Row className="justify-content-center px-lg-5 mx-lg-5 px-xl-5 mx-xl-5 mb-5 pb-5">
-              <Col className="col-10 col-md-9 col-lg-4 px-xl-3 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+            <Row className="justify-content-center px-lg-5 mx-lg-5 px-xl-0 mx-xl-0 mb-5 pb-5">
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 mb-4">
+                <div className="card bg-offwhite p-4 mx-1 h-100 calculate-card">
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.communalcalc_box1para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.communalcalc_box1para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-3">{editingdata.communalcalc_box1para3}</ReactMarkdown>
@@ -1479,8 +1960,8 @@ export default function Build({ file }) {
                   </Link>
                 </div>
               </Col>
-              <Col className="col-10 col-md-9 col-lg-4 px-xl-3 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 mb-4">
+                <div className="card bg-offwhite p-4 mx-1 h-100 calculate-card">
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.communalcalc_box2para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.communalcalc_box2para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-3">{editingdata.communalcalc_box2para3}</ReactMarkdown>
@@ -1489,8 +1970,8 @@ export default function Build({ file }) {
                   </Link>
                 </div>
               </Col>
-              <Col className="col-10 col-md-9 col-lg-4 px-xl-3 mb-4">
-                <div className="card bg-offwhite p-4 mx-2 h-100 calculate-card">
+              <Col className="col-10 col-md-9 col-lg-4 col-xl-3 mb-4">
+                <div className="card bg-offwhite p-4 mx-1 h-100 calculate-card">
                   <ReactMarkdown className="h6 text-mildgreen bold">{editingdata.communalcalc_box3para1}</ReactMarkdown>
                   <ReactMarkdown className="large text-green mb-3">{editingdata.communalcalc_box3para2}</ReactMarkdown>
                   <ReactMarkdown className="text-grey mb-3">{editingdata.communalcalc_box3para3}</ReactMarkdown>

@@ -100,35 +100,55 @@ export default function App({ file, href, children}) {
 
 
   useEffect(() => {
-  const personalfootprint = localStorage.getItem('personalfootprint');
-
-  var tempNum = Number(personalfootprint).toFixed(2)
-  setFootprint(Number(tempNum));
-  },[])
+    const personalfootprint = localStorage.getItem('personalfootprint');
+    const personalregion = localStorage.getItem('personalRegion');
+    const personalduration = localStorage.getItem('personalDuration');
+    var tempNum = Number(personalfootprint).toFixed(2)
+    setFootprint(Number(tempNum));
+    setRegion(personalregion);
+    setDuration(Number(personalduration));
+    },[])
 
 
 
 
 
   var plantHectares = duration*footprint/regionArray.carbon[region];
+  var plantAcres = (duration*footprint/regionArray.carbon[region])*2.47;
+  
+if(negative > 0){
+    plantHectares = plantHectares * negative;
+    plantAcres = plantAcres * negative;
+  } 
+
   var plantAcres = plantHectares*2.47;
 
-  if(negative > 0){
-    plantHectares = plantHectares * negative;
-  }
   var plantTrees = plantHectares*2470;
-  const changeRegion = (event) => {
+
+
+   const changeRegion = (event) => {
     setRegion(event.target.value);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('personalRegion', String(event.target.value));
+    }
   }
   const changeFootprint = (event) => {
     setFootprint(event.target.value);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('personalfootprint', String(event.target.value));
+    }
   }
   const changeDuration = (event) => {
     setDuration(event.target.value);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('personalDuration', String(event.target.value));
+    }
   }
+
   const changeNegative = (event) => {
     setNegative(event.target.value);
   }
+
 
   return (
     <div className="bg-legacy">
@@ -142,7 +162,7 @@ export default function App({ file, href, children}) {
         <Row className="justify-content-center">
           <Col className="p-3 col-12 col-lg-6">
             <div className="card roundedBox no-border bg-green p-4 innerShadow cardSpacing">
-              <p className="lead text-white m-2 calc-intro pe-lg-2">Calculate how many acres you must invest in to reach a net negative emissions target</p>
+              <p className="lead text-white m-2 calc-intro pe-lg-2">Thank you for doing your part, this is your opportunity to pay it forward. Calculate how you can increase your goal to become net-negative</p>
             </div>
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
@@ -156,6 +176,7 @@ export default function App({ file, href, children}) {
                   <label htmlFor="footprint">{editingdata.emissionsCarbonHeader}</label>
                   <br />
                   <input className="mb-4" value={footprint>0? footprint : ""} onChange={changeFootprint} name="type" type="number" min="0"  placeholder={editingdata.emissionsPlaceholder}/>
+                  <p className="x-small mb-3 op-7">{editingdata.emissionsPlaceholder}</p>
                   {editingdata.emissionsCarbon}<Link href="/personal-calculator"><a className="underline modal-btn">{editingdata.emissionsLink}</a></Link>
                 </Col>
               </Row>
@@ -199,19 +220,26 @@ export default function App({ file, href, children}) {
                   </select>
                 </Col>
               </Row>
-
-              <hr/>
+              </div>
+            <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
                 <Col>
-                  <label htmlFor="additional">Plant it forward by adding</label>
+                  <h4 className="text-green">{editingdata.plantforwardheader}</h4>
+                  <hr/>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <label htmlFor="additional">This is the percent increase you can add to your forest to grow your carbon footprint to net-negative.</label>
                   <br />
                   <select name="additional" value={negative} onChange={changeNegative}>
                     <option value="" hidden>Select...</option>
-                    <option value='1.05'>5%</option>
-                    <option value='1.1'>10%</option>
-                    <option value='1.15'>15%</option>
-                    <option value='1.2'>20%</option>
-                    <option value='1.25'>25%</option>
+                    <option value='1'>None</option>
+                    <option value='1.05'>Add 5%</option>
+                    <option value='1.1'>Add 10%</option>
+                    <option value='1.15'>Add 15%</option>
+                    <option value='1.2'>Add 20%</option>
+                    <option value='1.25'>Add 25%</option>
                   </select>
                 </Col>
               </Row>
@@ -221,7 +249,7 @@ export default function App({ file, href, children}) {
             <div className="text-white p-5 innerShadow roundedBox bg-green">
               <h4 className="mb-0">{editingdata.dataHeader}</h4>
               <hr/>
-              <Row><Col className="pb-3">{editingdata.dataType} {plantAcres > 0 ? plantAcres.toFixed(2) : "--"} {editingdata.dataType1}</Col></Row>
+              <Row><Col className="pb-3">{editingdata.dataType} {plantAcres > 0 ? plantAcres.toLocaleString('en-US', {maximumFractionDigits: 2}) : "--"} {editingdata.dataType1}</Col></Row>
               <hr/>
               <Row><Col className="pb-3">{editingdata.dataType} {plantTrees > 0 ? Math.ceil(plantTrees).toLocaleString("en-US") : "--"} {editingdata.dataType2}</Col></Row>
             </div>
@@ -233,7 +261,8 @@ export default function App({ file, href, children}) {
           <Col className="col-11 col-lg-10 align-items-center text-center p-3">
             <div className="bg-brown p-4 innerShadow roundedBox">
               <p className="smallCaps text-orange mb-3">{editingdata.nextHeader}</p>
-              <Link href="contact"><Button className="btn-large mt-1" variant="green">Contact us to become a stakeholder</Button></Link>
+              <h3 className="text-white">Build Your Smart Forest</h3>
+              <Link href="contact"><Button className="btn-large mt-1" variant="green">Contact Us</Button></Link>
             </div>
           </Col>
         </Row>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, MouseEvent} from 'react';
+import React, { useState, useEffect, MouseEvent, Component} from 'react';
 import { render } from 'react-dom';
 import { signIn, signOut, useSession } from 'next-auth/client'
 import Container from 'react-bootstrap/Container';
@@ -8,7 +8,6 @@ import useSound from 'use-sound';
 import Search from '../components/search';
 import { useCurrentUser } from '../hooks/index';
 import Link from 'next/link'
-
 
 
 const Header = ()=> {
@@ -147,6 +146,7 @@ const Header = ()=> {
     setSearch(!showSearch);
   }
 
+
   return(
     <React.Fragment>
       <div id="searchComponent" className={ showSearch ? "searchOpen" : "searchClosed"}>
@@ -158,7 +158,7 @@ const Header = ()=> {
             </Col>
           </Row>
         </Container>
-      </div>
+      </div> 
 
       <div className="container-fluid header logoHeader">
         <div className="row ">
@@ -167,14 +167,26 @@ const Header = ()=> {
             <img className="logo" src="/cft-logo-white.svg" />
             </Link>
           </div>
+          <div className="col borderLeft ms-2 text-left ps-3 d-sm-none">
+            <div className="mt-1">
+              <Link href={ user? "/portal-user" : "/portal" } ><a className="smallCaps textButton">{ user? "Your Portal" : "Sign in" }</a></Link>
+            </div>
+            <div className="mt-2">
+              <Link href="/portal-demo"><a className="smallCaps text-white no-underline textButton">DEMO</a></Link>
+            </div>
+          </div>
         </div>
       </div>
 
       <div id="sidebar" className={isActive ? 'open' : null}>
         <div className="container-fluid v-full sidebar bg-green text-orange">
           <div className="row">
-            <div className="col-10 col-md-9">
-              <ul className="py-5 py-sm-0">
+            <div className="col-9 col-md-8">
+              <ul className="mt-3 mt-md-0">
+                <li className="d-md-none" onClick={toggleClass}>
+                  <Link href="/home">Home</Link>
+                </li>
+
                 <li className="slimlineBottom slimlineTop" onClick={toggleClass}>
                   <Link href="/inside-cft">Inside CFT</Link>
                 </li>
@@ -218,7 +230,7 @@ const Header = ()=> {
                   <Link href="/smart-forest-personal">Personal</Link>
                 </li>
                 <li className="slimlineBottom slimlineTop" onClick={toggleClass}>
-                  <Link href="/portal">Your Smart Forest Portal</Link>
+                  <Link href="/portal">Smart Forest Portal</Link>
                 </li>
                 <li className="" onClick={toggleClass}>
                   <Link href="/contact">Contact Us</Link>
@@ -227,14 +239,15 @@ const Header = ()=> {
             </div>
           </div>
         </div>
-      </div>
+      </div> 
 
       <div className="container-fluid header headerNav">
         <div className="row justify-content-end">
-          <div className="col-6 col-md-2 d-flex flex-column gx-1 gx-lg-3 fixed">
+          <div className="col-12 col-md-6 d-flex flex-column gx-1 gx-lg-3 fixed">
             <div className="row align-self-top">
               <div className="col d-flex align-items-center justify-content-end menuInterface">
-                <Link href={ user? "/portal-user" : "/portal" } ><a className="smallCaps textButton">{ user? "Your Portal" : "Sign in" }</a></Link>
+              <Link href="/portal-demo"><a className="smallCaps text-white no-underline textButton me-4 d-none d-sm-block">PORTAL DEMO</a></Link>
+                <Link href={ user? "/portal-user" : "/portal" } ><a className="smallCaps textButton me-2 d-none d-sm-block">{ user? "Your Portal" : "Sign in" }</a></Link>
                 <div id="menuIcon" className={isActive ? 'open' : null} onClick={toggleClass}>
                   <span></span>
                   <span></span>
@@ -245,6 +258,7 @@ const Header = ()=> {
             </div>
             <div className="row align-self-bottom">
               <div className="col col d-flex align-items-end justify-content-end menuInterface">
+              
                 <ul className="controlIcons">
                   <li>
                     <img onClick={toggleSearch} src="/searchIcon.svg"></img>

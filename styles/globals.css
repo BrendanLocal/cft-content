@@ -240,13 +240,18 @@ font-weight: 600;
 }
 
  .text-small {
-  font-size: 12px;
-  line-height: 14px;
+  font-size: 13px;
+  line-height: 17px;
 }
 
 .x-small {
   font-size: 11px;
-  line-height: 10px;
+  line-height: 12px;
+}
+
+.ftu-par {
+  font-size: 12.5px;
+  line-height: 18px;
 }
 
  .dropdown-text {
@@ -338,6 +343,15 @@ li a, a.underline {
   line-height: 26px;
 }
 
+.spec-lg {
+  font-size: 22px!important;
+  line-height: 27px;
+}
+
+.x-large {
+  font-size: 36px!important;
+}
+
 .large, .large * {
   font-size: 20px !important;
 }
@@ -379,8 +393,13 @@ font-weight: 700;
 .letterspace {
   letter-spacing: 2px;
 }
+
 hr {
   background-color: #00823B;
+}
+
+hr.white {
+  background-color: #fff;
 }
 
 /* Buttons */
@@ -504,6 +523,10 @@ hr {
   color: #000;
 }
 
+.btn-outline {
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
 
 .sectionLink {
   color:#FF4D24;
@@ -577,6 +600,10 @@ text-decoration: underline;
 
 .text-left {
   text-align: left;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .calc-intro:after {
@@ -1071,9 +1098,33 @@ div>p {
   border-radius: 10px;
 }
 
+
 .roundedBoxLeft {
 
-  border-radius: 20px 0 0 20px;
+  border-radius: 11px 0 0 11px;
+}
+
+.roundedBoxTopLeft {
+  border-radius: 10px 0 0 0;
+}
+
+.roundedBoxTop {
+  border-radius: 10px 10px 0 0;
+}
+
+.roundedBoxBottom {
+  border-radius: 0 0 10px 10px;
+}
+
+
+
+.roundedBoxBottomLeft {
+  border-radius: 0 0 0 10px;
+}
+
+.roundedBoxRight {
+
+  border-radius: 0px 10px 10px 0px;
 }
 
 .roundedBoxMedium {
@@ -1137,12 +1188,13 @@ div>p {
 }
 
 
-.splash button:not(#rcc-confirm-button) {
+.splash button:not(#rcc-confirm-button):not(#rcc-decline-button) {
  opacity: 0;
   transform: translateY(-100%);
 
   transition: none;
 }
+
 
 .splash .header {
   opacity: 0;
@@ -1197,13 +1249,26 @@ div>p {
 }
 
 #rcc-confirm-button {
+  border: 1.5px solid #00823B!important;
   background-color: #00823B!important;
   color: #fff!important;
   border-radius: 6px!important;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0px 1px 6px 2px rgba(0, 0, 0, 0.1)!important;
 }
 
+#rcc-decline-button {
+  border: 1px solid #FFF!important;
+  background-color: #212529!important;
+  color: #fff!important;
+  border-radius: 6px!important;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  box-shadow: 0px 0px 1px rgba(0,0,0,.3);
+}
 
 .splash footer {
   opacity: 0;
@@ -1288,6 +1353,10 @@ text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.6);
 }
 
 .logo:hover {
+  cursor: pointer;
+}
+
+.crsr-pntr {
   cursor: pointer;
 }
 
@@ -1923,7 +1992,7 @@ span.authorTitle {
 .calc-btn {
   position: absolute;
   bottom: 4%;
-  width: 87%;
+  width: 86%;
 }
 
 .calculate-card:hover {
@@ -2261,9 +2330,17 @@ padding: 5px 0;
   font-weight: 600;
 }
 
+.card .card .card-header p:after {
+  content: url("/angle-white.svg");
+  margin-left: 5px;
+  display: inline-block;
+  color: #fff;
+}
+
 .card .card .card-header:hover {
   cursor: pointer;
 }
+
 
 .card .card {
   margin: 10px 0;
@@ -2300,6 +2377,10 @@ padding: 5px 0;
   font-size: 1.4em;
   font-weight: 600;
 }
+
+.borderLeft {
+  border-left: solid 1px #fff;
+  }
 
 .mapboxgl-map {
   border-radius: 20px;
@@ -2441,7 +2522,34 @@ width: 100%;
 
 /* Power of the Forest */
 
+ul.ftu-list li {
+  position: relative;
+  left: 10px;
+  font-size: 12.5px;
+  padding: 5px 0 0 15px;
+  text-align: left;
+  }
+  
+  ul.ftu-list li:before {
+    content: url("/bullet.svg");
+    position: absolute;
+    left: 0px;
+  }
 
+  ul.intro-list li {
+    position: relative;
+    left: 0px;
+    font-size: 16px;
+    padding: 5px 0 0 15px;
+    text-align: left;
+    }
+    
+    ul.intro-list li:before {
+      content: url("/bullet.svg");
+      position: absolute;
+      left: 0px;
+      top: 0px;
+    }
 
 ul.checkMark li{
 position: relative;
@@ -2468,9 +2576,10 @@ text-align: left;
 ul.plus li:before {
   content: url("../public/plus-green.svg");
   position: absolute;
-  margin-right: 10px;
+  margin-right: 8px;
   width: 1.5em;
   left: -2em;
+  top: 5px;
 }
 
 /* Digital Sign */
@@ -2547,14 +2656,6 @@ color: #054217;
 
 .create-book-image-input-container:hover, .create-book-photo-picker:hover, .upload-button svg:hover, .upload-button:hover, .upload-button > div:hover, .create-book-photo-input:hover {
   cursor: pointer;
-}
-
-.create-book-photo-input:after {
-  content: 'Upload a Logo';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
 }
 
 .create-book-photo-picker {
@@ -2735,13 +2836,13 @@ z-index: 999;
 @media screen and (max-width: 1300px) and (min-width: 1067px){
 
   .calc-btn {
-    width: 85%;
+    width: 83%;
     padding-left: 5px;
     padding-right: 5px;
   }
 }
 
-@media screen and (max-width: 1066px) and (min-width: 1025px){
+@media screen and (max-width: 1078px) and (min-width: 1025px){
   .calculate-card {
     box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.1);
     border: none;
@@ -2829,8 +2930,10 @@ z-index: 999;
 }
 
   .sidebar {
-    padding: 30px 100px 0px 20px;
+    padding: 30px 100px 60px 20px;
     z-index:10;
+    overflow-y: scroll;
+    max-height: 100vh;
   }
 
   .sidebar li a {
@@ -2943,6 +3046,12 @@ z-index: 999;
 
 @media screen and (max-width: 768px) and (min-width: 577px){
 
+  .bg-communal {
+    background-size: 120%!important;
+    background-position: 50% 250%!important;
+  
+  }
+
   .dropdown-menu {
     min-width: 20rem;
     transform: translate3d(0,50px,0) !important;
@@ -3044,7 +3153,7 @@ z-index: 999;
     font-size: calc(2.8rem + 1.5vw);
     line-height: calc(2.9rem + 1.5vw);
   }
-  
+
 
   h2.hero, h2.hero {
     font-size: calc(3.6rem + 1.5vw);
@@ -3052,6 +3161,17 @@ z-index: 999;
     margin-bottom: 0px!important;
     padding-bottom: 0px!important;
   }
+
+
+  .header {
+    position: absolute!important;
+  }
+
+  .logoHeader {
+    width: 90%!important;
+    text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.6);
+  }
+  
 
   .video-size {
     width: 100%!important;
@@ -3105,16 +3225,18 @@ font-size: .9em;
 }
 
 
+.bg-communal {
+  background-size: 120%!important;
+  background-position: 50% 40%!important;
+
+}
+
+
 .protorow {
   background-image: url('/landing-proto.png');
   background-size: 140%;
   background-position: -60% 300%;
   background-repeat: no-repeat;
-}
-
-.logo {
-  height: 100%;
-  text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.6);
 }
 
 
@@ -3409,6 +3531,12 @@ font-weight: 600;
     height: 550px;
   }
 
+  h1.hero, h1.hero {
+    margin-top: 0px!important;
+    font-size: calc(2.5rem + 1.5vw);
+    line-height: calc(2.6rem + 1.5vw);
+  }
+
 }
 
 @media screen and (max-width: 400px) {
@@ -3491,6 +3619,12 @@ font-weight: 600;
   
   .phase5 {
     height: 430px;
+  }
+
+  h1.hero, h1.hero {
+    margin-top: 0px!important;
+    font-size: calc(2.3rem + 1.5vw);
+    line-height: calc(2.6rem + 1.5vw);
   }
 
 }

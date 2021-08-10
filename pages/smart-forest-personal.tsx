@@ -98,9 +98,19 @@ export default function App({ file, href, children}) {
   const [duration, setDuration] = React.useState(0);
 
   useEffect(() => {
-  const personalfootprint = localStorage.getItem('personalfootprint');
-  var tempNum = Number(personalfootprint).toFixed(2)
+
+    const personalfootprint = localStorage.getItem('personalfootprint');
+
+  const personalregion = localStorage.getItem('personalRegion');
+  const personalduration = localStorage.getItem('personalDuration');
+    var tempNum = Number(personalfootprint).toFixed(2)
+    setFootprint(Number(tempNum));
+
   setFootprint(Number(tempNum));
+  setRegion(personalregion);
+  setDuration(Number(personalduration));
+
+
   },[])
 
 
@@ -108,17 +118,29 @@ export default function App({ file, href, children}) {
 
 
   var plantHectares = duration*footprint/regionArray.carbon[region];
-  var plantAcres = plantHectares*2.47;
+  var plantAcres = (duration*footprint/regionArray.carbon[region])*2.47;
   var plantTrees = plantHectares*2470;
+
+  
   const changeRegion = (event) => {
     setRegion(event.target.value);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('personalRegion', String(event.target.value));
+    }
   }
   const changeFootprint = (event) => {
     setFootprint(event.target.value);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('personalfootprint', String(event.target.value));
+    }
   }
   const changeDuration = (event) => {
     setDuration(event.target.value);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('personalDuration', String(event.target.value));
+    }
   }
+
 
   return (
     <div className="bg-legacy">
@@ -146,6 +168,7 @@ export default function App({ file, href, children}) {
                   <label htmlFor="footprint">{editingdata.emissionsCarbonHeader}</label>
                   <br />
                   <input className="mb-4" value={footprint>0? footprint : ""} onChange={changeFootprint} name="type" type="number" min="0" placeholder={editingdata.emissionsPlaceholder}/>
+                  <p className="x-small mb-3 op-7">{editingdata.emissionsPlaceholder}</p>
                   {editingdata.emissionsCarbon}<Link href="/personal-calculator"><a className="underline modal-btn">{editingdata.emissionsLink}</a></Link>
                 </Col>
               </Row>
@@ -195,7 +218,7 @@ export default function App({ file, href, children}) {
             <div className="text-white p-5 innerShadow roundedBox bg-green">
               <h4 className="mb-0">{editingdata.dataHeader}</h4>
               <hr/>
-              <Row><Col className="pb-3">{editingdata.dataType} {plantAcres > 0 ? plantAcres.toFixed(2) : "--"} {editingdata.dataType1}</Col></Row>
+              <Row><Col className="pb-3">{editingdata.dataType} {plantAcres > 0 ? plantAcres.toLocaleString('en-US', {maximumFractionDigits: 2}) : "--"} {editingdata.dataType1}</Col></Row>
               <hr/>
               <Row><Col className="pb-3">{editingdata.dataType} {plantTrees > 0 ? Math.ceil(plantTrees).toLocaleString("en-US") : "--"} {editingdata.dataType2}</Col></Row>
             </div>
