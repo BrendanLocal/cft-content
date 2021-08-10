@@ -13,7 +13,6 @@ import { usePlugin } from "tinacms";
 import Header from "../components/header";
 import Accordion from "react-bootstrap/Accordion";
 import randomstring from "randomstring";
-import { redirect } from "next/dist/next-server/server/api-utils";
 import Head from "next/head";
 
 let sessionID = randomstring.generate(12);
@@ -165,9 +164,9 @@ export default function App({ file, href, children}) {
     ]
   }
 
-  const [editingdata, form] = useGithubJsonForm(file, formOptions)
-  usePlugin(form)
-  useGithubToolbarPlugins()
+  const [editingdata, form] = useGithubJsonForm(file, formOptions);
+  usePlugin(form);
+  useGithubToolbarPlugins();
 
   const [selectSize, setSize] = React.useState("");
   const [selectNum, setNum] = React.useState("");
@@ -622,45 +621,6 @@ export default function App({ file, href, children}) {
     localStorage.setItem('personalfootprint', String(total));
   }
 
-  let personalArray = {
-    selectSize,
-    selectNum,
-    selectYear,
-    selectHeat,
-    selectEnergy,
-    selectNumTwo,
-    selectYearTwo,
-    selectSizeTwo,
-    selectHeatTwo,
-    selectEnergyTwo,
-    selectNumThree,
-    selectYearThree,
-    selectSizeThree,
-    selectHeatThree,
-    selectEnergyThree,
-    selectNumFour,
-    selectYearFour,
-    selectSizeFour,
-    selectHeatFour,
-    selectEnergyFour,
-    selectNumFive,
-    selectYearFive,
-    selectSizeFive,
-    selectHeatFive,
-    selectEnergyFive,
-    buildSub,
-    getFam,
-    getFamTwo,
-    getFamThree,
-    getFamFour,
-    getFamFive,
-    vehicleArray,
-    publicTransportArray,
-    flightSub,
-    vehicleSub,
-    flightArray
-  };
-
   const fullUrlPrefix = '/personal-calculator?session=';
   const sharingUrlPrefix = '/personal-calculator-share?session=';
   const [fullUrl, setFullUrl] = React.useState('/personal-calculator');
@@ -688,42 +648,149 @@ export default function App({ file, href, children}) {
             const sessionData = await response.json();
             const sessionCalcData = sessionData.calcData && sessionData.calcData.data ? sessionData.calcData.data : {};
 
-            if (sessionCalcData.selectSize !== undefined) setSize(sessionCalcData.selectSize);
-            if (sessionCalcData.selectNum !== undefined) setNum(sessionCalcData.selectNum);
-            if (sessionCalcData.selectYear !== undefined) setYear(sessionCalcData.selectYear);
-            if (sessionCalcData.selectHeat !== undefined) setHeat(sessionCalcData.selectHeat);
-            if (sessionCalcData.selectEnergy !== undefined) setEnergy(sessionCalcData.selectEnergy);
-            if (sessionCalcData.selectNumTwo !== undefined) setNumTwo(sessionCalcData.selectNumTwo);
-            if (sessionCalcData.selectYearTwo !== undefined) setYearTwo(sessionCalcData.selectYearTwo);
-            if (sessionCalcData.selectSizeTwo !== undefined) setSizeTwo(sessionCalcData.selectSizeTwo);
-            if (sessionCalcData.selectHeatTwo !== undefined) setHeatTwo(sessionCalcData.selectHeatTwo);
-            if (sessionCalcData.selectEnergyTwo !== undefined) setEnergyTwo(sessionCalcData.selectEnergyTwo);
-            if (sessionCalcData.selectNumThree !== undefined) setNumThree(sessionCalcData.selectNumThree);
-            if (sessionCalcData.selectYearThree !== undefined) setYearThree(sessionCalcData.selectYearThree);
-            if (sessionCalcData.selectSizeThree !== undefined) setSizeThree(sessionCalcData.selectSizeThree);
-            if (sessionCalcData.selectHeatThree !== undefined) setHeatThree(sessionCalcData.selectHeatThree);
-            if (sessionCalcData.selectEnergyThree !== undefined) setEnergyThree(sessionCalcData.selectEnergyThree);
-            if (sessionCalcData.selectNumFour !== undefined) setNumFour(sessionCalcData.selectNumFour);
-            if (sessionCalcData.selectYearFour !== undefined) setYearFour(sessionCalcData.selectYearFour);
-            if (sessionCalcData.selectSizeFour !== undefined) setSizeFour(sessionCalcData.selectSizeFour);
-            if (sessionCalcData.selectHeatFour !== undefined) setHeatFour(sessionCalcData.selectHeatFour);
-            if (sessionCalcData.selectEnergyFour !== undefined) setEnergyFour(sessionCalcData.selectEnergyFour);
-            if (sessionCalcData.selectNumFive !== undefined) setNumFive(sessionCalcData.selectNumFive);
-            if (sessionCalcData.selectYearFive !== undefined) setYearFive(sessionCalcData.selectYearFive);
-            if (sessionCalcData.selectSizeFive !== undefined) setSizeFive(sessionCalcData.selectSizeFive);
-            if (sessionCalcData.selectHeatFive !== undefined) setHeatFive(sessionCalcData.selectHeatFive);
-            if (sessionCalcData.selectEnergyFive !== undefined) setEnergyFive(sessionCalcData.selectEnergyFive);
-            if (sessionCalcData.buildSub !== undefined) setBuildSub(sessionCalcData.buildSub);
-            if (sessionCalcData.getFam !== undefined) setFam(sessionCalcData.getFam);
-            if (sessionCalcData.getFamTwo !== undefined) setFamTwo(sessionCalcData.getFamTwo);
-            if (sessionCalcData.getFamThree !== undefined) setFamThree(sessionCalcData.getFamThree);
-            if (sessionCalcData.getFamFour !== undefined) setFamFour(sessionCalcData.getFamFour);
-            if (sessionCalcData.getFamFive !== undefined) setFamFive(sessionCalcData.getFamFive);
-            if (sessionCalcData.vehicleArray !== undefined) setVehicleArray(sessionCalcData.vehicleArray);
-            if (sessionCalcData.publicTransportArray !== undefined) setPublicTransportArray(sessionCalcData.publicTransportArray);
-            if (sessionCalcData.flightSub !== undefined) setFlight(sessionCalcData.flightSub);
-            if (sessionCalcData.vehicleSub !== undefined) setVehicle(sessionCalcData.vehicleSub);
-            if (sessionCalcData.flightArray !== undefined) setFlightArray(sessionCalcData.flightArray);
+            if (sessionCalcData.vehicleArray !== undefined) {
+              setVehicleArray(sessionCalcData.vehicleArray);
+            }
+
+            if (sessionCalcData.publicTransportArray !== undefined) {
+              setPublicTransportArray(sessionCalcData.publicTransportArray);
+            }
+
+            if (sessionCalcData.flightArray !== undefined) {
+              setFlightArray(sessionCalcData.flightArray);
+            }
+
+            if (sessionCalcData.selectSize !== undefined) {
+              setSize(sessionCalcData.selectSize);
+            }
+
+            if (sessionCalcData.selectNum !== undefined) {
+              setNum(sessionCalcData.selectNum);
+            }
+
+            if (sessionCalcData.selectYear !== undefined) {
+              setYear(sessionCalcData.selectYear);
+            }
+
+            if (sessionCalcData.selectHeat !== undefined) {
+              setHeat(sessionCalcData.selectHeat);
+            }
+
+            if (sessionCalcData.selectEnergy !== undefined) {
+              setEnergy(sessionCalcData.selectEnergy);
+            }
+
+            if (sessionCalcData.selectNumTwo !== undefined) {
+              setNumTwo(sessionCalcData.selectNumTwo);
+            }
+
+            if (sessionCalcData.selectYearTwo !== undefined) {
+              setYearTwo(sessionCalcData.selectYearTwo);
+            }
+
+            if (sessionCalcData.selectSizeTwo !== undefined) {
+              setSizeTwo(sessionCalcData.selectSizeTwo);
+            }
+
+            if (sessionCalcData.selectHeatTwo !== undefined) {
+              setHeatTwo(sessionCalcData.selectHeatTwo);
+            }
+
+            if (sessionCalcData.selectEnergyTwo !== undefined) {
+              setEnergyTwo(sessionCalcData.selectEnergyTwo);
+            }
+
+            if (sessionCalcData.selectNumThree !== undefined) {
+              setNumThree(sessionCalcData.selectNumThree);
+            }
+
+            if (sessionCalcData.selectYearThree !== undefined) {
+              setYearThree(sessionCalcData.selectYearThree);
+            }
+
+            if (sessionCalcData.selectSizeThree !== undefined) {
+              setSizeThree(sessionCalcData.selectSizeThree);
+            }
+
+            if (sessionCalcData.selectHeatThree !== undefined) {
+              setHeatThree(sessionCalcData.selectHeatThree);
+            }
+
+            if (sessionCalcData.selectEnergyThree !== undefined) {
+              setEnergyThree(sessionCalcData.selectEnergyThree);
+            }
+
+            if (sessionCalcData.selectNumFour !== undefined) {
+              setNumFour(sessionCalcData.selectNumFour);
+            }
+
+            if (sessionCalcData.selectYearFour !== undefined) {
+              setYearFour(sessionCalcData.selectYearFour);
+            }
+
+            if (sessionCalcData.selectSizeFour !== undefined) {
+              setSizeFour(sessionCalcData.selectSizeFour);
+            }
+
+            if (sessionCalcData.selectHeatFour !== undefined) {
+              setHeatFour(sessionCalcData.selectHeatFour);
+            }
+
+            if (sessionCalcData.selectEnergyFour !== undefined) {
+              setEnergyFour(sessionCalcData.selectEnergyFour);
+            }
+
+            if (sessionCalcData.selectNumFive !== undefined) {
+              setNumFive(sessionCalcData.selectNumFive);
+            }
+
+            if (sessionCalcData.selectYearFive !== undefined) {
+              setYearFive(sessionCalcData.selectYearFive);
+            }
+
+            if (sessionCalcData.selectSizeFive !== undefined) {
+              setSizeFive(sessionCalcData.selectSizeFive);
+            }
+
+            if (sessionCalcData.selectHeatFive !== undefined) {
+              setHeatFive(sessionCalcData.selectHeatFive);
+            }
+
+            if (sessionCalcData.selectEnergyFive !== undefined) {
+              setEnergyFive(sessionCalcData.selectEnergyFive);
+            }
+
+            if (sessionCalcData.buildSub !== undefined) {
+              setBuildSub(sessionCalcData.buildSub);
+            }
+
+            if (sessionCalcData.getFam !== undefined) {
+              setFam(sessionCalcData.getFam);
+            }
+
+            if (sessionCalcData.getFamTwo !== undefined) {
+              setFamTwo(sessionCalcData.getFamTwo);
+            }
+
+            if (sessionCalcData.getFamThree !== undefined) {
+              setFamThree(sessionCalcData.getFamThree);
+            }
+
+            if (sessionCalcData.getFamFour !== undefined) {
+              setFamFour(sessionCalcData.getFamFour);
+            }
+
+            if (sessionCalcData.getFamFive !== undefined) {
+              setFamFive(sessionCalcData.getFamFive);
+            }
+
+            if (sessionCalcData.flightSub !== undefined) {
+              setFlight(sessionCalcData.flightSub);
+            }
+
+            if (sessionCalcData.vehicleSub !== undefined) {
+              setVehicle(sessionCalcData.vehicleSub);
+            }
           }
           else {
             setSessionDataError(await response.text());
@@ -742,7 +809,44 @@ export default function App({ file, href, children}) {
     const body = {
       sessionID: sessionID,
       type: 'personal-calculator',
-      data: personalArray
+      data: {
+        selectSize,
+        selectNum,
+        selectYear,
+        selectHeat,
+        selectEnergy,
+        selectNumTwo,
+        selectYearTwo,
+        selectSizeTwo,
+        selectHeatTwo,
+        selectEnergyTwo,
+        selectNumThree,
+        selectYearThree,
+        selectSizeThree,
+        selectHeatThree,
+        selectEnergyThree,
+        selectNumFour,
+        selectYearFour,
+        selectSizeFour,
+        selectHeatFour,
+        selectEnergyFour,
+        selectNumFive,
+        selectYearFive,
+        selectSizeFive,
+        selectHeatFive,
+        selectEnergyFive,
+        buildSub,
+        getFam,
+        getFamTwo,
+        getFamThree,
+        getFamFour,
+        getFamFive,
+        vehicleArray,
+        publicTransportArray,
+        flightSub,
+        vehicleSub,
+        flightArray
+      }
     };
 
     try {
@@ -808,6 +912,7 @@ export default function App({ file, href, children}) {
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
                 <Col>
+                  {sessionDataError ? <p style={{ color: 'red' }}>{sessionDataError}</p> : null}
                   <h4 className="text-green">{editingdata.heat1Title}</h4>
                   <hr/>
                 </Col>
@@ -817,9 +922,9 @@ export default function App({ file, href, children}) {
                 <Col>
                 <label htmlFor="number">{editingdata.heat1CalcHeader}</label>
                 <br />
-                <input className="me-2" onChange={changeFam} type="radio" id="myself" name="calculateWho" value="myself" autoComplete="off" />
+                <input className="me-2" onChange={changeFam} type="radio" id="myself" name="calculateWho" value="myself" checked={getFam === 'myself'} />
                   <label>{editingdata.heat1Calc1}</label><br></br>
-                <input className="me-2" onChange={changeFam} type="radio" id="family" name="calculateWho" value="family" autoComplete="off"
+                <input className="me-2" onChange={changeFam} type="radio" id="family" name="calculateWho" value="family" checked={getFam === 'family'}
                  />
                 <label>{editingdata.heat1Calc2}</label>
                
@@ -830,7 +935,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="number">{editingdata.Heat1People}</label>
                   <br />
-                  <input onChange={changeNum} type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                  <input onChange={changeNum} type="number" min="0" value={selectNum} onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                   }} placeholder="Number of people in your household"/>
                   <p className="x-small mb-3 op-7">Number of people in your household</p>
@@ -841,7 +946,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="number">{editingdata.heat1Months}</label>
                   <br />
-                  <select name="months" onChange={changeYear} autoComplete="off">
+                  <select name="months" value={selectYear} onChange={changeYear}>
                     <option value="" hidden>Month(s) per year in residence</option>
                     <option value='1'> 1 </option>
                     <option value='2'> 2 </option>
@@ -863,7 +968,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="size">{editingdata.heat1Size}</label>
                   <br />
-                  <select name="size" value={selectSize} onChange={changeSize} autoComplete="off">
+                  <select name="size" value={selectSize} onChange={changeSize}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='1000'>{editingdata.heatSize1}</option>
                     <option value='1500'>{editingdata.heatSize2}</option>
@@ -881,7 +986,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="heat">{editingdata.heat1Source}</label>
                   <br />
-                  <select name="heat" value={selectHeat} onChange={changeHeat} autoComplete="off">
+                  <select name="heat" value={selectHeat} onChange={changeHeat}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='gas'>{editingdata.heatSource1}</option>
                     <option value='oil'>{editingdata.heatSource2}</option>
@@ -895,7 +1000,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="energy">{editingdata.heat1Savings}</label>
                   <br />
-                  <select name="energy" value={selectEnergy} onChange={changeEnergy} autoComplete="off">
+                  <select name="energy" value={selectEnergy} onChange={changeEnergy}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='none'>{editingdata.heatSavings1}</option>
                     <option value='light'>{editingdata.heatSavings2}</option>
@@ -921,9 +1026,9 @@ export default function App({ file, href, children}) {
                 <Col>
                 <label htmlFor="number">{editingdata.heat2CalcHeader}</label>
                 <br />
-                <input className="me-2" onChange={changeFamTwo} type="radio" id="myself" name="calculateWhoTwo" value="myself" autoComplete="off"/>
+                <input className="me-2" onChange={changeFamTwo} type="radio" id="myself" name="calculateWhoTwo" value="myself" checked={getFamTwo === 'myself'}/>
                   <label>{editingdata.heat2Calc1}</label><br></br>
-                <input className="me-2" onChange={changeFamTwo} type="radio" id="family" name="calculateWhoTwo" value="family" autoComplete="off"/>
+                <input className="me-2" onChange={changeFamTwo} type="radio" id="family" name="calculateWhoTwo" value="family" checked={getFamTwo === 'family'}/>
                 <label>{editingdata.heat2Calc2}</label>
                 <br></br>
                 </Col>
@@ -932,7 +1037,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="number">{editingdata.Heat2People}</label>
                   <br />
-                  <input onChange={changeNumTwo} type="number" min={0} max={12} autoComplete="off" onKeyPress={(event) => {
+                  <input onChange={changeNumTwo} type="number" min={0} max={12} value={selectNumTwo} onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                   }} placeholder="Number of people in your household"/>
                   <p className="x-small mb-3 op-7">Number of people in your household</p>
@@ -943,7 +1048,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="number">{editingdata.heat2Months}</label>
                   <br />
-                  <select name="months" onChange={changeYearTwo} autoComplete="off">
+                  <select name="months" value={selectYearTwo} onChange={changeYearTwo}>
                     <option value="" hidden>Month(s) per year in residence</option>
                     <option value='1'> 1 </option>
                     <option value='2'> 2 </option>
@@ -965,7 +1070,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="size">{editingdata.heat2Size}</label>
                   <br />
-                  <select name="size" value={selectSizeTwo} onChange={changeSizeTwo} autoComplete="off">
+                  <select name="size" value={selectSizeTwo} onChange={changeSizeTwo}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='1000'>{editingdata.heatSize1}</option>
                     <option value='1500'>{editingdata.heatSize2}</option>
@@ -983,7 +1088,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="heat">{editingdata.heat2Source}</label>
                   <br />
-                  <select name="heat" value={selectHeatTwo} onChange={changeHeatTwo} autoComplete="off">
+                  <select name="heat" value={selectHeatTwo} onChange={changeHeatTwo}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='gas'>{editingdata.heatSource1}</option>
                     <option value='oil'>{editingdata.heatSource2}</option>
@@ -997,7 +1102,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="energy">{editingdata.heat2Savings}</label>
                   <br />
-                  <select name="energy" value={selectEnergyTwo} onChange={changeEnergyTwo} autoComplete="off">
+                  <select name="energy" value={selectEnergyTwo} onChange={changeEnergyTwo}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='none'>{editingdata.heatSavings1}</option>
                     <option value='light'>{editingdata.heatSavings2}</option>
@@ -1021,9 +1126,9 @@ export default function App({ file, href, children}) {
                         <Col>
                         <label htmlFor="number">{editingdata.heat3CalcHeader}</label>
                         <br />
-                        <input className="me-2" onChange={changeFamThree} type="radio" id="myself" name="calculateWhoThree" value="myself" autoComplete="off"/>
+                        <input className="me-2" onChange={changeFamThree} type="radio" id="myself" name="calculateWhoThree" value="myself" checked={getFamThree === 'myself'}/>
                           <label>{editingdata.heat3Calc1}</label><br></br>
-                        <input className="me-2" onChange={changeFamThree} type="radio" id="family" name="calculateWhoThree" value="family" autoComplete="off"/>
+                        <input className="me-2" onChange={changeFamThree} type="radio" id="family" name="calculateWhoThree" value="family" checked={getFamThree === 'family'}/>
                         <label>{editingdata.heat3Calc2}</label>
                         <br></br>
                         </Col>
@@ -1033,7 +1138,7 @@ export default function App({ file, href, children}) {
                         <Col>
                           <label htmlFor="number">{editingdata.Heat3People}</label>
                           <br />
-                          <input onChange={changeNumThree} type="number" min={0} max={12} autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={changeNumThree} type="number" min={0} max={12} value={selectNumThree} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Number of people in your household" />
                           <p className="x-small mb-3 op-7">Number of people in your household</p>
@@ -1044,7 +1149,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="number">{editingdata.heat3Months}</label>
                   <br />
-                  <select name="months" onChange={changeYearThree} autoComplete="off">
+                  <select name="months" value={selectYearThree} onChange={changeYearThree}>
                     <option value="" hidden>Month(s) per year in residence</option>
                     <option value='1'> 1 </option>
                     <option value='2'> 2 </option>
@@ -1066,7 +1171,7 @@ export default function App({ file, href, children}) {
                         <Col>
                           <label htmlFor="size">{editingdata.heat3Size}</label>
                           <br />
-                          <select name="size" value={selectSizeThree} onChange={changeSizeThree} autoComplete="off">
+                          <select name="size" value={selectSizeThree} onChange={changeSizeThree}>
                             <option value="" hidden>{editingdata.select}</option>
                             <option value='1000'>{editingdata.heatSize1}</option>
                             <option value='1500'>{editingdata.heatSize2}</option>
@@ -1084,7 +1189,7 @@ export default function App({ file, href, children}) {
                         <Col>
                           <label htmlFor="heat">{editingdata.heat3Source}</label>
                           <br />
-                          <select name="heat" value={selectHeatThree} onChange={changeHeatThree} autoComplete="off">
+                          <select name="heat" value={selectHeatThree} onChange={changeHeatThree}>
                             <option value="" hidden>{editingdata.select}</option>
                             <option value='gas'>{editingdata.heatSource1}</option>
                             <option value='oil'>{editingdata.heatSource2}</option>
@@ -1098,7 +1203,7 @@ export default function App({ file, href, children}) {
                         <Col>
                           <label htmlFor="energy">{editingdata.heat3Savings}</label>
                           <br />
-                          <select name="energy" value={selectEnergyThree} onChange={changeEnergyThree} autoComplete="off">
+                          <select name="energy" value={selectEnergyThree} onChange={changeEnergyThree}>
                             <option value="" hidden>{editingdata.select}</option>
                             <option value='none'>{editingdata.heatSavings1}</option>
                             <option value='light'>{editingdata.heatSavings2}</option>
@@ -1122,9 +1227,9 @@ export default function App({ file, href, children}) {
                       <Col>
                       <label htmlFor="number">{editingdata.heat3CalcHeader}</label>
                       <br />
-                      <input className="me-2" onChange={changeFamFour} type="radio" id="myself" name="calculateWhoFour" value="myself" autoComplete="off"/>
+                      <input className="me-2" onChange={changeFamFour} type="radio" id="myself" name="calculateWhoFour" value="myself" checked={getFamFour === 'myself'}/>
                         <label>{editingdata.heat3Calc1}</label><br></br>
-                      <input className="me-2" onChange={changeFamFour} type="radio" id="family" name="calculateWhoFour" value="family" autoComplete="off"/>
+                      <input className="me-2" onChange={changeFamFour} type="radio" id="family" name="calculateWhoFour" value="family" checked={getFamFour === 'family'}/>
                       <label>{editingdata.heat3Calc2}</label>
                       <br></br>
                       </Col>
@@ -1134,7 +1239,7 @@ export default function App({ file, href, children}) {
                       <Col>
                         <label htmlFor="number">{editingdata.Heat3People}</label>
                         <br />
-                        <input onChange={changeNumFour} type="number" min={0} max={12} autoComplete="off" onKeyPress={(event) => {
+                        <input onChange={changeNumFour} type="number" min={0} max={12} value={selectNumFour} onKeyPress={(event) => {
                           if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                         }} placeholder="Number of people in your household" />
                         <p className="x-small mb-3 op-7">Number of people in your household</p>
@@ -1145,7 +1250,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="number">{editingdata.heat3Months}</label>
                   <br />
-                  <select name="months" onChange={changeYearFour} autoComplete="off">
+                  <select name="months" value={selectYearFour} onChange={changeYearFour}>
                     <option value="" hidden>Month(s) per year in residence</option>
                     <option value='1'> 1 </option>
                     <option value='2'> 2 </option>
@@ -1167,7 +1272,7 @@ export default function App({ file, href, children}) {
                       <Col>
                         <label htmlFor="size">{editingdata.heat3Size}</label>
                         <br />
-                        <select name="size" value={selectSizeFour} onChange={changeSizeFour} autoComplete="off">
+                        <select name="size" value={selectSizeFour} onChange={changeSizeFour}>
                           <option value="" hidden>{editingdata.select}</option>
                           <option value='1000'>{editingdata.heatSize1}</option>
                           <option value='1500'>{editingdata.heatSize2}</option>
@@ -1185,7 +1290,7 @@ export default function App({ file, href, children}) {
                       <Col>
                         <label htmlFor="heat">{editingdata.heat3Source}</label>
                         <br />
-                        <select name="heat" value={selectHeatFour} onChange={changeHeatFour} autoComplete="off">
+                        <select name="heat" value={selectHeatFour} onChange={changeHeatFour}>
                           <option value="" hidden>{editingdata.select}</option>
                           <option value='gas'>{editingdata.heatSource1}</option>
                           <option value='oil'>{editingdata.heatSource2}</option>
@@ -1199,7 +1304,7 @@ export default function App({ file, href, children}) {
                       <Col>
                         <label htmlFor="energy">{editingdata.heat3Savings}</label>
                         <br />
-                        <select name="energy" value={selectEnergyFour} onChange={changeEnergyFour} autoComplete="off">
+                        <select name="energy" value={selectEnergyFour} onChange={changeEnergyFour}>
                           <option value="" hidden>{editingdata.select}</option>
                           <option value='none'>{editingdata.heatSavings1}</option>
                           <option value='light'>{editingdata.heatSavings2}</option>
@@ -1227,9 +1332,9 @@ export default function App({ file, href, children}) {
                 <Col>
                 <label htmlFor="number">{editingdata.heat3CalcHeader}</label>
                 <br />
-                <input className="me-2" onChange={changeFamFive} type="radio" id="myself" name="calculateWhoFive" value="myself" autoComplete="off"/>
+                <input className="me-2" onChange={changeFamFive} type="radio" id="myself" name="calculateWhoFive" value="myself" checked={getFamFive === 'myself'}/>
                   <label>{editingdata.heat3Calc1}</label><br></br>
-                <input className="me-2" onChange={changeFamFive} type="radio" id="family" name="calculateWhoFive" value="family" autoComplete="off"/>
+                <input className="me-2" onChange={changeFamFive} type="radio" id="family" name="calculateWhoFive" value="family" checked={getFamFive === 'family'}/>
                 <label>{editingdata.heat3Calc2}</label>
                 <br></br>
                 </Col>
@@ -1238,7 +1343,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="number">{editingdata.Heat3People}</label>
                   <br />
-                  <input onChange={changeNumFive} type="number" min={0} max={12} autoComplete="off" onKeyPress={(event) => {
+                  <input onChange={changeNumFive} type="number" min={0} max={12} value={selectNumFive} onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                   }} placeholder="Number of people in your household" />
                   <p className="x-small mb-3 op-7">Number of people in your household</p>
@@ -1249,7 +1354,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="number">{editingdata.heat3Months}</label>
                   <br />
-                  <select name="months" onChange={changeYearFive} autoComplete="off">
+                  <select name="months" value={selectYearFive} onChange={changeYearFive}>
                     <option value="" hidden>Month(s) per year in residence</option>
                     <option value='1'> 1 </option>
                     <option value='2'> 2 </option>
@@ -1271,7 +1376,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="size">{editingdata.heat3Size}</label>
                   <br />
-                  <select name="size" value={selectSizeFive} onChange={changeSizeFive} autoComplete="off">
+                  <select name="size" value={selectSizeFive} onChange={changeSizeFive}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='1000'>{editingdata.heatSize1}</option>
                     <option value='1500'>{editingdata.heatSize2}</option>
@@ -1289,7 +1394,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="heat">{editingdata.heat3Source}</label>
                   <br />
-                  <select name="heat" value={selectHeatFive} onChange={changeHeatFive} autoComplete="off">
+                  <select name="heat" value={selectHeatFive} onChange={changeHeatFive}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='gas'>{editingdata.heatSource1}</option>
                     <option value='oil'>{editingdata.heatSource2}</option>
@@ -1303,7 +1408,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="energy">{editingdata.heat3Savings}</label>
                   <br />
-                  <select name="energy" value={selectEnergyFive} onChange={changeEnergyFive} autoComplete="off">
+                  <select name="energy" value={selectEnergyFive} onChange={changeEnergyFive}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='none'>{editingdata.heatSavings1}</option>
                     <option value='light'>{editingdata.heatSavings2}</option>
@@ -1342,7 +1447,7 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col">
                           {editingdata.vehicleGas}
-                          <input onChange={calculateMiles} name="smallGas" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="smallGas" type="number" min="0" value={vehicleArray.smallGas.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Annual KM (gas)"/>
                 <p className="x-small mb-3 op-7">Annual KM (gas)</p>
@@ -1352,7 +1457,7 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col">
                           {editingdata.vehicleDiesel}
-                          <input onChange={calculateMiles} name="smallDiesel" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="smallDiesel" type="number" min="0" value={vehicleArray.smallDiesel.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Annual KM (diesel)"/>
                 <p className="x-small mb-3 op-7">Annual KM (diesel)</p>
@@ -1362,7 +1467,7 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col">
                           {editingdata.vehicleHybrid}
-                          <input onChange={calculateMiles} name="smallHybrid" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="smallHybrid" type="number" min="0" value={vehicleArray.smallHybrid.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Annual KM (hybrid)"/>
                 <p className="x-small mb-3 op-7">Annual KM (hybrid)</p>
@@ -1371,7 +1476,7 @@ export default function App({ file, href, children}) {
 
                       <Row>
                         <Col className="col">
-                          <input onChange={calculateMiles} name="smallPlug" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="smallPlug" type="number" min="0" value={vehicleArray.smallPlug.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Annual KM (plug-in hybrid)"/>
                 <p className="x-small mb-3 op-7">plug-in hybrid</p>
@@ -1381,7 +1486,7 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col">
                           {editingdata.vehicleElectric}
-                          <input onChange={calculateMiles} name="smallElectric" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="smallElectric" type="number" min="0" value={vehicleArray.smallElectric.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Annual KM (battery electric)"/>
                 <p className="x-small mb-3 op-7">plug-in hybrid</p>
@@ -1404,7 +1509,7 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col">
                           {editingdata.vehicleGas}
-                          <input onChange={calculateMiles} name="mediumGas" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="mediumGas" type="number" min="0" value={vehicleArray.mediumGas.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Annual KM (gas)"/>
                 <p className="x-small mb-3 op-7">Annual KM (gas)</p>
@@ -1413,7 +1518,7 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col">
                         {editingdata.vehicleDiesel}
-                          <input onChange={calculateMiles} name="mediumDiesel" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="mediumDiesel" type="number" min="0" value={vehicleArray.mediumDiesel.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Annual KM (diesel)"/>
                 <p className="x-small mb-3 op-7">Annual KM (diesel)</p>
@@ -1422,7 +1527,7 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col">
                         {editingdata.vehicleHybrid}
-                          <input onChange={calculateMiles} name="mediumHybrid" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="mediumHybrid" type="number" min="0" value={vehicleArray.mediumHybrid.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Annual KM (hybrid)"/>
                 <p className="x-small mb-3 op-7">Annual KM (hybrid)</p>
@@ -1430,7 +1535,7 @@ export default function App({ file, href, children}) {
                       </Row>
                       <Row>
                         <Col className="col">
-                          <input onChange={calculateMiles} name="mediumPlug" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="mediumPlug" type="number" min="0" value={vehicleArray.mediumPlug.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Annual KM (plug-in hybrid)"/>
                 <p className="x-small mb-3 op-7">plug-in hybrid</p>
@@ -1440,7 +1545,7 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col">
                           {editingdata.vehicleElectric}
-                          <input onChange={calculateMiles} name="mediumElectric" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="mediumElectric" type="number" min="0" value={vehicleArray.mediumElectric.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Annual KM (battery electric)"/>
                 <p className="x-small mb-3 op-7">plug-in hybrid</p>
@@ -1462,7 +1567,7 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col">
                           {editingdata.vehicleGas}
-                          <input onChange={calculateMiles} name="largeGas" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="largeGas" type="number" min="0" value={vehicleArray.largeGas.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Annual KM (gas)"/>
                 <p className="x-small mb-3 op-7">Annual KM (gas)</p>
@@ -1472,7 +1577,7 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col">
                           {editingdata.vehicleDiesel}
-                          <input onChange={calculateMiles} name="largeDiesel" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="largeDiesel" type="number" min="0" value={vehicleArray.largeDiesel.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Annual KM (diesel)"/>
                 <p className="x-small mb-3 op-7">Annual KM (diesel)</p>
@@ -1482,7 +1587,7 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col">
                           {editingdata.vehicleHybrid}
-                          <input onChange={calculateMiles} name="largeHybrid" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="largeHybrid" type="number" min="0" value={vehicleArray.largeHybrid.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Annual KM (hybrid)"/>
                 <p className="x-small mb-3 op-7">Annual KM (hybrid)</p>
@@ -1491,7 +1596,7 @@ export default function App({ file, href, children}) {
 
                       <Row>
                         <Col className="col">
-                          <input onChange={calculateMiles} name="largePlug" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="largePlug" type="number" min="0" value={vehicleArray.largePlug.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Annual KM (plug-in hybrid)"/>
                 <p className="x-small mb-3 op-7">plug-in hybrid</p>
@@ -1501,7 +1606,7 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col">
                           {editingdata.vehicleElectric}
-                          <input onChange={calculateMiles} name="largeElectric" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="largeElectric" type="number" min="0" value={vehicleArray.largeElectric.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Annual KM (battery electric)"/>
                 <p className="x-small mb-3 op-7">plug-in hybrid</p>
@@ -1514,7 +1619,7 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col">
                           {editingdata.vehicleGas}
-                          <input onChange={calculateMiles} name="motorbikeGas" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="motorbikeGas" type="number" min="0" value={vehicleArray.motorbikeGas.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Annual KM (gas)"/>
                 <p className="x-small mb-3 op-7">Annual KM (gas)</p>
@@ -1537,7 +1642,7 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col">
                           <h5 className="smallCaps text-small text-green">{editingdata.vehiclePlane}</h5>
-                          <input onChange={calculateMiles} name="jetGas" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="jetGas" type="number" min="0" value={vehicleArray.jetGas.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Annual litres of fuel"/>
                           <p className="x-small mb-3 op-7">Annual litres of fuel</p>
@@ -1547,7 +1652,7 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col">
                           <h5 className="smallCaps text-small text-green">{editingdata.vehicleJet}</h5>
-                          <input onChange={calculateMiles} name="planeGas" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="planeGas" type="number" min="0" value={vehicleArray.planeGas.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Annual litres of fuel"/>
                           <p className="x-small mb-3 op-7">Annual litres of fuel</p>
@@ -1557,7 +1662,7 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col">
                           <h5 className="smallCaps text-small text-green">{editingdata.vehicleHeli}</h5>
-                          <input onChange={calculateMiles} name="heliGas" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="heliGas" type="number" min="0" value={vehicleArray.heliGas.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Annual litres of fuel"/>
                           <p className="x-small mb-3 op-7">Annual litres of fuel</p>
@@ -1581,12 +1686,12 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col">
                           {editingdata.vechileYacht}
-                          <input onChange={calculateMiles} name="yachtGas" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="yachtGas" type="number" min="0" value={vehicleArray.yachtGas.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Marine Diesel Litres per year"/>
                           <p className="x-small mb-3 op-7">Marine Diesel Litres per year</p>
 
-                          <input onChange={calculateMiles} name="yachtDiesel" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="yachtDiesel" type="number" min="0" value={vehicleArray.yachtDiesel.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Marine Unleaded Litres per year"/>
                           <p className="x-small mb-3 op-7">Marine Diesel Litres per year</p>
@@ -1596,7 +1701,7 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col">
                           {editingdata.vehicleATV}
-                          <input onChange={calculateMiles} name="atvGas" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="atvGas" type="number" min="0" value={vehicleArray.atvGas.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Litres per year"/>
                           <p className="x-small mb-3 op-7">Litres per year</p>
@@ -1606,7 +1711,7 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col">
                           {editingdata.vehicleSide}
-                          <input onChange={calculateMiles} name="sbsGas" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="sbsGas" type="number" min="0" value={vehicleArray.sbsGas.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Litres per year"/>
                           <p className="x-small mb-3 op-7">Litres per year</p>
@@ -1616,7 +1721,7 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col">
                           {editingdata.vehicleSnow}
-                          <input onChange={calculateMiles} name="snowGas" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="snowGas" type="number" min="0" value={vehicleArray.snowGas.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Litres per year"/>
                           <p className="x-small mb-3 op-7">Litres per year</p>
@@ -1626,7 +1731,7 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col">
                           Seadoo
-                          <input onChange={calculateMiles} name="seaGas" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="seaGas" type="number" min="0" value={vehicleArray.seaGas.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Litres per year"/>
                           <p className="x-small mb-3 op-7">Litres per year</p>
@@ -1636,7 +1741,7 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col">
                           Scooter
-                          <input onChange={calculateMiles} name="scootGas" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="scootGas" type="number" min="0" value={vehicleArray.scootGas.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Litres per year"/>
                           <p className="x-small mb-3 op-7">Litres per year</p>
@@ -1646,7 +1751,7 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col">
                           Lawn Mower/Tractor
-                          <input onChange={calculateMiles} name="lawnGas" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="lawnGas" type="number" min="0" value={vehicleArray.lawnGas.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Litres per year"/>
                           <p className="x-small mb-3 op-7">Litres per year</p>
@@ -1656,7 +1761,7 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col">
                           Tractor/Farm Equipment
-                          <input onChange={calculateMiles} name="tractorGas" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                          <input onChange={calculateMiles} name="tractorGas" type="number" min="0" value={vehicleArray.tractorGas.miles} onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Litres per year"/>
                           <p className="x-small mb-3 op-7">Litres per year</p>
@@ -1685,7 +1790,7 @@ export default function App({ file, href, children}) {
                   <Row>
                     <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightShort1}</Col>
                     <Col className="col-12 col-xl-8 col-sm-6">
-                      <input onChange={calculateFlightCount} name="flyShort" type="number" placeholder="Number of flights" autoComplete="off"/>
+                      <input onChange={calculateFlightCount} name="flyShort" type="number" placeholder="Number of flights" value={flightArray.flyShort.count}/>
                           <p className="x-small mb-3 op-7">Number of flights</p>
                     </Col>
                   </Row>
@@ -1699,14 +1804,14 @@ export default function App({ file, href, children}) {
                   <Row>
                     <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightMed1}</Col>
                     <Col className="col-12 col-xl-8 col-sm-6">
-                      <input onChange={calculateFlightCount} name="flyMediumEco" type="number"placeholder="Number of flights" autoComplete="off"/>
+                      <input onChange={calculateFlightCount} name="flyMediumEco" type="number"placeholder="Number of flights" value={flightArray.flyMediumEco.count}/>
                           <p className="x-small mb-3 op-7">Number of flights</p>
                     </Col>
                   </Row>
                   <Row>
                     <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightMed2}</Col>
                     <Col className="col-12 col-xl-8 col-sm-6">
-                      <input onChange={calculateFlightCount} name="flyMediumBus" type="number"placeholder="Number of flights" autoComplete="off"/>
+                      <input onChange={calculateFlightCount} name="flyMediumBus" type="number"placeholder="Number of flights" value={flightArray.flyMediumBus.count}/>
                           <p className="x-small mb-3 op-7">Number of flights</p>
                     </Col>
                   </Row>
@@ -1720,28 +1825,28 @@ export default function App({ file, href, children}) {
                   <Row>
                     <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightLong1}</Col>
                     <Col className="col-12 col-xl-8 col-sm-6">
-                      <input onChange={calculateFlightCount} name="flyLongEco" type="number" placeholder="Number of flights" autoComplete="off"/>
+                      <input onChange={calculateFlightCount} name="flyLongEco" type="number" placeholder="Number of flights" value={flightArray.flyLongEco.count}/>
                           <p className="x-small mb-3 op-7">Number of flights</p>
                     </Col>
                   </Row>
                   <Row>
                     <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightLong2}</Col>
                     <Col className="col-12 col-xl-8 col-sm-6">
-                      <input onChange={calculateFlightCount} name="flyLongEcoPlus" type="number" placeholder="Number of flights" autoComplete="off"/>
+                      <input onChange={calculateFlightCount} name="flyLongEcoPlus" type="number" placeholder="Number of flights" value={flightArray.flyLongEcoPlus.count}/>
                           <p className="x-small mb-3 op-7">Number of flights</p>
                     </Col>
                   </Row>
                   <Row>
                     <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightLong3}</Col>
                     <Col className="col-12 col-xl-8 col-sm-6">
-                      <input onChange={calculateFlightCount} name="flyLongBus" type="number" placeholder="Number of flights" autoComplete="off"/>
+                      <input onChange={calculateFlightCount} name="flyLongBus" type="number" placeholder="Number of flights" value={flightArray.flyLongBus.count}/>
                           <p className="x-small mb-3 op-7">Number of flights</p>
                     </Col>
                   </Row>
                   <Row>
                     <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightLong4}</Col>
                     <Col className="col-12 col-xl-8 col-sm-6">
-                      <input onChange={calculateFlightCount} name="flyLongFirst" type="number" placeholder="Number of flights" autoComplete="off"/>
+                      <input onChange={calculateFlightCount} name="flyLongFirst" type="number" placeholder="Number of flights" value={flightArray.flyLongFirst.count}/>
                           <p className="x-small mb-3 op-7">Number of flights</p>
                     </Col>
                   </Row>
@@ -1752,14 +1857,14 @@ export default function App({ file, href, children}) {
               <Row>
                 <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightNights}</Col>
                 <Col className="col-12 col-xl-8 col-sm-6">
-                  <input onChange={calculateFlightCount} name="flyHotels" type="number" placeholder="Number of nights" autoComplete="off"/>
+                  <input onChange={calculateFlightCount} name="flyHotels" type="number" placeholder="Number of nights" value={flightArray.flyHotels.count}/>
                           <p className="x-small mb-3 op-7">Number of nights</p>
                 </Col>
               </Row>
               <Row>
                 <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightCars}</Col>
                 <Col className="col-12 col-xl-8 col-sm-6">
-                  <input onChange={calculateMiles} name="rentalGas" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                  <input onChange={calculateMiles} name="rentalGas" type="number" min="0" value={vehicleArray.rentalGas.miles} onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                   }} placeholder="Annual KM (gas)"/>
                 <p className="x-small mb-3 op-7">Annual KM (gas)</p>
@@ -1779,7 +1884,7 @@ export default function App({ file, href, children}) {
               <Row>
                 <Col className="col-12 col-xl-4 col-sm-6">{editingdata.publicTaxi}</Col>
                 <Col className="col-12 col-xl-8 col-sm-6">
-                  <input onChange={calculateTransitMiles} name="publicTaxi" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                  <input onChange={calculateTransitMiles} name="publicTaxi" type="number" min="0" value={publicTransportArray.publicTaxi.count} onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                   }} placeholder="Average Km per day"/>
                   <p className="x-small mb-3 op-7">Average Km per day</p>
@@ -1788,7 +1893,7 @@ export default function App({ file, href, children}) {
               <Row>
                 <Col className="col-12 col-xl-4 col-sm-6">{editingdata.publicMetro}</Col>
                 <Col className="col-12 col-xl-8 col-sm-6">
-                  <input onChange={calculateTransitMiles} name="publicSubway" type="number" min="0" autoComplete="off" onKeyPress={(event) => {
+                  <input onChange={calculateTransitMiles} name="publicSubway" type="number" min="0" value={publicTransportArray.publicSubway.count} onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                   }} placeholder="Average Km per day"/>
                   <p className="x-small mb-3 op-7">Average Km per day</p>
@@ -1797,7 +1902,7 @@ export default function App({ file, href, children}) {
               <Row>
                 <Col className="col-12 col-xl-4 col-sm-6">{editingdata.publicBus}</Col>
                 <Col className="col-12 col-xl-8 col-sm-6">
-                  <input onChange={calculateTransitMiles} name="publicCar" type="number" placeholder="Average Km per day" autoComplete="off"/>
+                  <input onChange={calculateTransitMiles} name="publicCar" type="number" placeholder="Average Km per day" value={publicTransportArray.publicCar.count}/>
                   <p className="x-small mb-3 op-7">Average Km per day</p>
                 </Col>
               </Row>
