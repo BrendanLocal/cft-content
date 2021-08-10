@@ -1426,12 +1426,12 @@ const Lang = () => {
                 <input onChange={calculateFreightNum} name="freightVan" type="number" min="0" onKeyPress={
                   (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                 }   placeholder={editingdata.freightPlaceholder1} />
-                <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder1}</p>
+                <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder1}</p>
               </Col>
               <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateFreightMiles} name="freightVan" type="number"
                   placeholder={editingdata.freightPlaceholder2} />
-                  <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder2}</p>
+                  <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder2}</p>
               </Col>
             </Row>
             <hr/>
@@ -1441,11 +1441,11 @@ const Lang = () => {
                 <input onChange={calculateFreightNum} name="freightSemiNonFrig" type="number" min="0" onKeyPress={
                   (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                 }   placeholder={editingdata.freightPlaceholder1} />
-                <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder1}</p>
+                <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder1}</p>
               </Col>
               <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateFreightMiles} name="freightSemiNonFrig" type="number" placeholder={editingdata.freightPlaceholder2}/>
-                    <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder2}</p>
+                    <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder2}</p>
               </Col>
             </Row>
             <hr/>
@@ -1455,11 +1455,11 @@ const Lang = () => {
                 <input onChange={calculateFreightNum} name="freightSemiFrig" type="number" min="0" onKeyPress={
                   (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                 }   placeholder={editingdata.freightPlaceholder1} />
-                <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder1}</p>
+                <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder1}</p>
               </Col>
               <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateFreightMiles} name="freightSemiFrig" type="number" placeholder={editingdata.freightPlaceholder2}/>
-                    <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder2}</p>
+                    <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder2}</p>
               </Col>
             </Row>
             <hr/>
@@ -1469,11 +1469,11 @@ const Lang = () => {
                 <input onChange={calculateFreightNum} name="freightCargo" type="number" min="0" onKeyPress={
                   (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                 }   placeholder={editingdata.freightPlaceholder1} />
-                <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder1}</p>
+                <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder1}</p>
               </Col>
               <Col className="col-12 col-xl-4 col-sm-6">
               <input onChange={calculateFreightMiles} name="freightCargo" type="number" placeholder={editingdata.freightPlaceholder2}/>
-                    <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder2}</p>
+                    <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder2}</p>
               </Col>
             </Row>
             <hr/>
@@ -1483,11 +1483,11 @@ const Lang = () => {
                 <input onChange={calculateFreightNum} name="freightAirLess" type="number" min="0" onKeyPress={
                   (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                 }   placeholder={editingdata.freightPlaceholder1} />
-                <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder1}</p>
+                <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder1}</p>
               </Col>
               <Col className="col-12 col-xl-4 col-sm-6">
               <input onChange={calculateFreightMiles} name="freightAirLess" type="number" placeholder={editingdata.freightPlaceholder2}/>
-                    <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder2}</p>
+                    <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder2}</p>
               </Col>
             </Row>
             <hr/>
@@ -1497,13 +1497,13 @@ const Lang = () => {
                 <input onChange={calculateFreightNum} name="freightAirMore" type="number" min="0" onKeyPress={
                   (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                 }   placeholder={editingdata.freightPlaceholder1} />
-                <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder1}</p>
+                <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder1}</p>
               </Col>
               <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateFreightMiles} name="freightAirMore" type="number" min="0" onKeyPress={
                   (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                 }   placeholder={editingdata.freightPlaceholder2} />
-                <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder2}</p>
+                <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder2}</p>
               </Col> 
             </Row>
           </div>

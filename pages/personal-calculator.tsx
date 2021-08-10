@@ -1343,7 +1343,7 @@ export default function App({ file, href, children}) {
                           <input onChange={calculateMiles} name="smallPlug" type="number" min="0" onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Annual KM (plug-in hybrid)"/>
-                <p className="x-small mb-3 op-7">plug-in hybrid</p>
+                <p className="x-small mb-3 op-7">Annual KM (plug-in hybrid)</p>
                         </Col>
                       </Row>
 
@@ -1353,7 +1353,7 @@ export default function App({ file, href, children}) {
                           <input onChange={calculateMiles} name="smallElectric" type="number" min="0" onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Annual KM (battery electric)"/>
-                <p className="x-small mb-3 op-7">plug-in hybrid</p>
+                <p className="x-small mb-3 op-7">Annual KM (battery electric)</p>
                         </Col>
                       </Row>
                     </div>
@@ -1402,7 +1402,7 @@ export default function App({ file, href, children}) {
                           <input onChange={calculateMiles} name="mediumPlug" type="number" min="0" onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Annual KM (plug-in hybrid)"/>
-                <p className="x-small mb-3 op-7">plug-in hybrid</p>
+                <p className="x-small mb-3 op-7">Annual KM (plug-in hybrid)</p>
                         </Col>
                       </Row>
 
@@ -1412,7 +1412,7 @@ export default function App({ file, href, children}) {
                           <input onChange={calculateMiles} name="mediumElectric" type="number" min="0" onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Annual KM (battery electric)"/>
-                <p className="x-small mb-3 op-7">plug-in hybrid</p>
+                <p className="x-small mb-3 op-7">Annual KM (battery electric)</p>
                         </Col>
                       </Row>
                     </div>
@@ -1463,7 +1463,7 @@ export default function App({ file, href, children}) {
                           <input onChange={calculateMiles} name="largePlug" type="number" min="0" onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Annual KM (plug-in hybrid)"/>
-                <p className="x-small mb-3 op-7">plug-in hybrid</p>
+                <p className="x-small mb-3 op-7">Annual KM (plug-in hybrid)</p>
                         </Col>
                       </Row>
 
@@ -1473,7 +1473,7 @@ export default function App({ file, href, children}) {
                           <input onChange={calculateMiles} name="largeElectric" type="number" min="0" onKeyPress={(event) => {
                             if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                           }} placeholder="Annual KM (battery electric)"/>
-                <p className="x-small mb-3 op-7">plug-in hybrid</p>
+                <p className="x-small mb-3 op-7">Annual KM (battery electric)</p>
                         </Col>
                       </Row>
                       <hr/>
