@@ -468,14 +468,14 @@ const router = useRouter();
   return (
     <div className="bg-school">
       <Header/>
-      <Container className="p-5">
+      <Container className="p-4 pt-5">
         <Row className="justify-content-center">
-          <Col className="col-11 col-lg-10 pt-5 align-items-center my-4 pt-5">
+          <Col className="col-12 col-lg-10 pt-5 align-items-center my-4 pt-5">
             <h1 className="emphasis text-orange text-center bold tight-drop-light">{editingdata.header}</h1>
           </Col>
         </Row>
         <Row className="justify-content-center">
-          <Col className="p-3 col-11 col-lg-6">
+          <Col className="p-3 col-12 col-lg-6">
             <div className="card roundedBox no-border bg-green p-4 innerShadow cardSpacing">
               <p className="lead text-white m-2 calc-intro">{editingdata.para1}</p>
             </div>
@@ -742,12 +742,12 @@ const router = useRouter();
               </Row>
               <Row>
                 <Col className="col-12 col-xl-4">{editingdata.empCommuteCar}</Col>
-                <Col className="col-xl-4">
+                <Col className="col-12 col-xl-4 col-sm-6">
                   <input onChange={calculateTransitCount} name="transitCar" type="number" min="0" onKeyPress={
                     (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                   }  placeholder={editingdata.placeholder3} />
                 </Col>
-                <Col className="col-xl-4">
+                <Col className="col-12 col-xl-4 col-sm-6">
                   <input onChange={calculateTransitMiles} name="transitCar" type="number" min="0" onKeyPress={
                     (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                   }  placeholder={editingdata.placeholder4} />
@@ -755,27 +755,27 @@ const router = useRouter();
               </Row>
               <Row>
                 <Col className="col-12 col-xl-4">{editingdata.empCommuteBus}</Col>
-                <Col className="col-xl-4">
+                <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateTransitCount} name="transitBus" type="number" min="0" onKeyPress={
                     (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                   }  placeholder={editingdata.placeholder5} />
                 </Col>
-                <Col className="col-xl-4">
+                <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateTransitMiles} name="transitBus" type="number" min="0" onKeyPress={
                     (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                   }  placeholder={editingdata.placeholder4} />
                 </Col>
               </Row>
               <Row>
-                <Col className="col-10 col-xl-4">
+                <Col className="col-12 col-xl-4">
                 Train
                 </Col>
-                <Col className="col-6 col-xl-4">
+                <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateTransitCount} name="transitTrain" type="number" min="0" onKeyPress={
                     (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                   }  placeholder={editingdata.placeholder5} />
                 </Col>
-                <Col className="col-6 col-xl-4">
+                <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateTransitMiles} name="transitTrain" type="number" min="0" onKeyPress={
                     (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                   }  placeholder={editingdata.placeholder4} />
@@ -792,12 +792,12 @@ const router = useRouter();
               </Row>
               <Row>
                 <Col className="col-12 col-xl-4">{editingdata.stuCommuteGas}</Col>
-                <Col className="col-xl-4">
+                <Col className="col-12 col-xl-4 col-sm-6">
                   <input onChange={calculateStudentCommuteCount} name="gasoline" type="number" min="0" onKeyPress={
                     (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                   }  placeholder={editingdata.placeholder6} />
                 </Col>
-                <Col className="col-xl-4">
+                <Col className="col-12 col-xl-4 col-sm-6">
                   <input onChange={calculateStudentCommuteMiles} name="gasoline" type="number" min="0" onKeyPress={
                     (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                   }  placeholder={editingdata.placeholder4} />
@@ -805,25 +805,25 @@ const router = useRouter();
               </Row>
               <Row>
                 <Col className="col-12 col-xl-4">{editingdata.stuCommuteDiesel}</Col>
-                <Col className="col-xl-4">
+                <Col className="col-12 col-xl-4 col-sm-6">
                   <input onChange={calculateStudentCommuteCount} name="diesel" type="number" min="0" onKeyPress={
                     (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                   }  placeholder={editingdata.placeholder6} />
                 </Col>
-                <Col className="col-xl-4">
+                <Col className="col-12 col-xl-4 col-sm-6">
                   <input onChange={calculateStudentCommuteMiles} name="diesel" type="number" min="0" onKeyPress={
                     (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                   }  placeholder={editingdata.placeholder4} />
                 </Col>
               </Row>
               <Row>
-                <Col className="col-10 col-xl-4">{editingdata.stuCommutePropane}</Col>
-                <Col className="col-6 col-xl-4">
+                <Col className="col-12 col-xl-4">{editingdata.stuCommutePropane}</Col>
+                <Col className="col-12 col-xl-4 col-sm-6">
                   <input onChange={calculateStudentCommuteCount} name="propane" type="number" min="0" onKeyPress={
                     (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                   }  placeholder={editingdata.placeholder6} />
                 </Col>
-                <Col className="col-6 col-xl-4">
+                <Col className="col-12 col-xl-4 col-sm-6">
                   <input onChange={calculateStudentCommuteMiles} name="propane" type="number" min="0" onKeyPress={
                     (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                   }  placeholder={editingdata.placeholder4} />
@@ -835,12 +835,12 @@ const router = useRouter();
                   <label htmlFor="type">{editingdata.stuCommuteBus}</label>
                   <br />
                 </Col>
-                <Col className ="col-6">
+                <Col className ="col-12 col-xl-6 col-sm-6">
                   <input onChange={calculateStudentCommuteCount} name="cityBus" type="number" min="0" onKeyPress={
                     (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                   }  placeholder={editingdata.placeholder7} />
                 </Col>
-                <Col className ="col-6">
+                <Col className ="col-12 col-xl-6 col-sm-6">
                   <input onChange={calculateStudentCommuteMiles} name="cityBus" type="number" min="0" onKeyPress={
                     (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                   }  placeholder={editingdata.placeholder4} />
@@ -851,12 +851,12 @@ const router = useRouter();
                   <label htmlFor="type">{editingdata.stuCommuteDrop}</label>
                   <br />
                 </Col>
-                <Col className ="col-6">
+                <Col className ="col-12 col-xl-6 col-sm-6">
                   <input onChange={calculateStudentCommuteCount} name="car" type="number" min="0" onKeyPress={
                     (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                   }  placeholder={editingdata.placeholder7} />
                 </Col>
-                <Col className ="col-6">
+                <Col className ="col-12 col-xl-6 col-sm-6">
                   <input onChange={calculateStudentCommuteMiles} name="car" type="number" min="0" onKeyPress={
                     (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                   }  placeholder={editingdata.placeholder4} />
@@ -867,12 +867,12 @@ const router = useRouter();
                   <label htmlFor="type">{editingdata.stuCommuteTrain}</label>
                   <br />
                 </Col>
-                <Col className ="col-6">
+                <Col className ="col-12 col-xl-6 col-sm-6">
                   <input onChange={calculateStudentCommuteCount} name="train" type="number" min="0" onKeyPress={
                     (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                   }  placeholder={editingdata.placeholder7} />
                 </Col>
-                <Col className ="col-6">
+                <Col className ="col-12 col-xl-6 col-sm-6">
                   <input onChange={calculateStudentCommuteMiles} name="train" type="number" min="0" onKeyPress={
                     (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                   }  placeholder={editingdata.placeholder4} />
@@ -892,7 +892,7 @@ const router = useRouter();
                   <h5 className="smallCaps text-small text-green">{editingdata.otherTransportHeader2}</h5>
                   <Row>
                     <Col className="col-12 col-xl-4">{editingdata.otherTransportGas}</Col>
-                    <Col className="col-xl-4">
+                    <Col className="col-12 col-xl-8 col-sm-6">
                       <input onChange={calculateMiles} name="carGas" type="number" min="0" onKeyPress={
                         (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                       }  placeholder={editingdata.placeholder8} />
@@ -900,7 +900,7 @@ const router = useRouter();
                   </Row>
                   <Row>
                     <Col  className="col-10 col-xl-4">{editingdata.otherTransportDiesel}</Col>
-                    <Col className="col-6 col-xl-4">
+                    <Col className="col-12 col-xl-8 col-sm-6">
                       <input onChange={calculateMiles} name="carDiesel" type="number" min="0" onKeyPress={
                         (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                       }  placeholder={editingdata.placeholder8} />
@@ -908,7 +908,7 @@ const router = useRouter();
                   </Row>
                   <Row>
                     <Col className="col-10 col-xl-4">{editingdata.otherTransportPropane}</Col>
-                    <Col className="col-6 col-xl-4">
+                    <Col className="col-12 col-xl-8 col-sm-6">
                       <input onChange={calculateMiles} name="carPropane" type="number" min="0" onKeyPress={
                         (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                       }  placeholder={editingdata.placeholder8} />
@@ -919,7 +919,7 @@ const router = useRouter();
                   <h5 className="smallCaps text-small text-green">Field trips by train (WITHIN SCHOOL HOURS)</h5>
                   <Row>
                     <Col className="col-10 col-xl-4">Train</Col>
-                    <Col className="col-6 col-xl-4">
+                    <Col className="col-12 col-xl-8 col-sm-6">
                       <input onChange={calculateMiles} name="trainMiles" type="number" min="0" onKeyPress={
                         (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                       }  placeholder={editingdata.placeholder8} />
@@ -935,24 +935,24 @@ const router = useRouter();
                   <h3 className="text-green">{editingdata.otherVehicleHeader}</h3>
                   <hr/>
                   <Row>
-                    <Col className="col-12 col-xl-4">{editingdata.otherVehicleVan}</Col>
-                    <Col className="col-xl-4">
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.otherVehicleVan}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
                       <input onChange={calculateOtherTransitMiles} name="van" type="number" min="0" onKeyPress={
                         (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                       }  placeholder={editingdata.placeholder8} />
                     </Col>
                   </Row>
                   <Row>
-                    <Col  className="col-10 col-xl-4">{editingdata.otherVehicleCar}</Col>
-                    <Col className="col-6 col-xl-4">
+                    <Col  className="col-12 col-xl-4 col-sm-6">{editingdata.otherVehicleCar}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
                       <input onChange={calculateOtherTransitMiles} name="car" type="number" min="0" onKeyPress={
                         (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                       }  placeholder={editingdata.placeholder8} />
                     </Col>
                   </Row>
                   <Row>
-                    <Col  className="col-10 col-xl-4">Bus (gas)</Col>
-                    <Col className="col-6 col-xl-4">
+                    <Col  className="col-12 col-xl-4 col-sm-6">Bus (gas)</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
                       <input onChange={calculateOtherTransitMiles} name="bus" type="number" min="0" onKeyPress={
                         (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                       }  placeholder={editingdata.placeholder8} />
@@ -971,24 +971,24 @@ const router = useRouter();
                 </Col>
                 <Col>
                   <Row>
-                    <Col className="col-12 col-xl-4">{editingdata.activitiesGas}</Col>
-                    <Col className="col-xl-4">
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.activitiesGas}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
                       <input onChange={calculateMiles} name="carGas" type="number" min="0" onKeyPress={
                         (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                       }  placeholder={editingdata.placeholder8} />
                     </Col>
                   </Row>
                   <Row>
-                    <Col  className="col-10 col-xl-4">{editingdata.activitiesDiesel}</Col>
-                    <Col className="col-6 col-xl-4">
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.activitiesDiesel}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
                       <input onChange={calculateMiles} name="carDiesel" type="number" min="0" onKeyPress={
                         (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                       }  placeholder={editingdata.placeholder8} />
                     </Col>
                   </Row>
                   <Row>
-                    <Col className="col-10 col-xl-4">{editingdata.activitiesPropane}</Col>
-                    <Col className="col-6 col-xl-4">
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.activitiesPropane}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
                       <input onChange={calculateMiles} name="carPropane" type="number" min="0" onKeyPress={
                         (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                       }  placeholder={editingdata.placeholder8} />
@@ -1011,8 +1011,8 @@ const router = useRouter();
                 <Col className="col-12 col-xl-4">{editingdata.travelShort}</Col>
                   <Col>
                     <Row>
-                      <Col className="col-6 col-md-6">{editingdata.travelShort1}</Col>
-                      <Col className="col-6 col-xl-6">
+                      <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelShort1}</Col>
+                      <Col className="col-12 col-xl-8 col-sm-6">
                         <input onChange={calculateFlightCount} name="flyShort" type="number" min="0" onKeyPress={
                           (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                         }  placeholder={editingdata.placeholder9} />
@@ -1022,19 +1022,19 @@ const router = useRouter();
                 </Row>
                 <hr/>
               <Row>
-                  <Col className="col-10 col-xl-4">{editingdata.travelMed}</Col>
+                  <Col className="col-12 col-xl-4">{editingdata.travelMed}</Col>
                   <Col>
                     <Row>
-                      <Col className="col-6">{editingdata.travelMed1}</Col>
-                      <Col className="col-6">
+                      <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelMed1}</Col>
+                      <Col className="col-12 col-xl-8 col-sm-6">
                         <input onChange={calculateFlightCount} name="flyMediumEco" type="number" min="0" onKeyPress={
                           (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                         }  placeholder={editingdata.placeholder9} />
                       </Col>
                     </Row>
                     <Row>
-                      <Col className="col-6">{editingdata.travelMed2}</Col>
-                      <Col className="col-6">
+                      <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelMed2}</Col>
+                      <Col className="col-12 col-xl-8 col-sm-6">
                         <input onChange={calculateFlightCount} name="flyMediumBus" type="number" min="0" onKeyPress={
                           (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                         }  placeholder={editingdata.placeholder9} />
@@ -1047,32 +1047,32 @@ const router = useRouter();
                   <Col className="col-10 col-xl-4">{editingdata.travelLong}</Col>
                   <Col className="col-12 col-xl-8">
                     <Row>
-                      <Col>{editingdata.travelLong1}</Col>
-                      <Col>
+                      <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelLong1}</Col>
+                      <Col className="col-12 col-xl-8 col-sm-6">
                         <input onChange={calculateFlightCount} name="flyLongEco" type="number" min="0" onKeyPress={
                           (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                         }  placeholder={editingdata.placeholder9} />
                       </Col>
                     </Row>
                     <Row>
-                      <Col>{editingdata.travelLong2}</Col>
-                      <Col>
+                      <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelLong2}</Col>
+                      <Col className="col-12 col-xl-8 col-sm-6">
                         <input onChange={calculateFlightCount} name="flyLongEcoPlus" type="number" min="0" onKeyPress={
                           (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                         }  placeholder={editingdata.placeholder9} />
                       </Col>
                     </Row>
                     <Row>
-                      <Col>{editingdata.travelLong3}</Col>
-                      <Col>
+                      <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelLong3}</Col>
+                      <Col className="col-12 col-xl-8 col-sm-6">
                         <input onChange={calculateFlightCount} name="flyLongBus" type="number" min="0" onKeyPress={
                           (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                         }  placeholder={editingdata.placeholder9} />
                       </Col>
                     </Row>
                     <Row>
-                      <Col>{editingdata.travelLong4}</Col>
-                      <Col>
+                      <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelLong4}</Col>
+                      <Col className="col-12 col-xl-8 col-sm-6">
                         <input onChange={calculateFlightCount} name="flyLongFirst" type="number" min="0" onKeyPress={
                           (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                         }  placeholder={editingdata.placeholder9} />
@@ -1083,7 +1083,7 @@ const router = useRouter();
             </div>
           </Col>
 
-          <Col className=" p-3  col-12 col-lg-4 stickyCalc mb-4">
+          <Col className=" p-3  col-11 col-lg-4 stickyCalc mb-4">
             <div className="text-white p-5 innerShadow roundedBox bg-green">
               <h4 className="mb-0">{editingdata.dataHeader}</h4>
               <hr/>
@@ -1102,17 +1102,16 @@ const router = useRouter();
               <span className="smallCaps text-small">{editingdata.dataTotal}</span><br/>
               <span className="h2 bold">{total > 0 ? (total/1000).toFixed(2) : "--"}</span>
               <p>{total > 0 ? "(Metric Tonnes of CO2 per Year)" : ""}</p>
-              <p>{editingdata.dataDisclaimer}</p>
+              <p className="text-small">{editingdata.dataDisclaimer}</p>
             </div>
 
           </Col>
         </Row>
 
         <Row className="justify-content-center">
-          <Col className="col-10 align-items-center text-center p-3">
-            <div className="bg-brown p-5 innerShadow roundedBox">
-              <p className="smallCaps text-orange">{editingdata.box1Header}</p>
-            <h3 className="text-white mb-4 px-2 px-lg-5">{editingdata.box1Para}</h3>
+          <Col className="col-11 col-lg-10 align-items-center text-center p-3">
+            <div className="bg-brown p-4 innerShadow roundedBox">
+              <p className="smallCaps text-orange mb-3">{editingdata.box1Header}</p>
             <Link href="smart-forest-school"><Button className="btn-large mt-1" variant="green">{editingdata.box1Button}</Button></Link>
             </div>
           </Col>
@@ -1125,19 +1124,19 @@ const router = useRouter();
         </Row>
 
         <Row className="justify-content-center pb-5 mb-5">
-            <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
+            <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
                 <h4 className="text-white tight-drop-light">{editingdata.otherbox1Header}</h4>
                 <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox1Para}</p>
-                <Link href="business-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox1button}</a></Link>
+                <Link href="/business-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox1button}</a></Link>
               </div>
             </Col>
 
-            <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
+            <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
               <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
                 <h4 className="text-white tight-drop-light">{editingdata.otherbox2Header}</h4>
                 <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox2Para}</p>\
-                <Link href="personal-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox2button}</a></Link>
+                <Link href="/personal-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox2button}</a></Link>
               </div>
             </Col>
           </Row>

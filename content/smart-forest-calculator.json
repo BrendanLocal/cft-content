@@ -36,14 +36,14 @@
   "emissionsTime14": "80",
   "emissionsTime15": "100",
 
-  "dataHeader":"Carbon offset",
+  "dataHeader":"Carbon Sequestration",
   "dataType":"You must plant",
   "dataType1":"acres",
-  "dataType2":"trees",
-  "dataDisclaimer":"This is only an estimate etc",
+  "dataType2":"seedlings",
+  "dataDisclaimer":"This is an estimate of your average carbon footprint per year.",
 
   "nextHeader":"NEXT STEP",
-  "nextPara":"",
+  "nextPara":"Calculate how many acres of Smart Forest you need to invest in to reach a Net-Zero emissions target.",
   "nextButton":"CALCULATE YOUR NET NEGATIVE TARGET",
 
   "otherHeader":"Carbon Calculators",

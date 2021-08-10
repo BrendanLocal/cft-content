@@ -13,7 +13,9 @@ import ImageGallery from 'react-image-gallery';
 import Slider from 'react-input-slider';
 import Button from 'react-bootstrap/Button';
 import Header from "../components/header";
+import Link from 'next/link';
 
+import { useCurrentUser } from '../hooks/index';
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
@@ -25,6 +27,12 @@ fields: [{ name: 'title', component: 'text' }],
 }
 
 
+const [user] = useCurrentUser();
+
+const [isActive, setActive] = useState(false);
+const toggleClass = () => {
+  setActive(!isActive);
+};
 const [state, setState] = useState({ x: 0 });
 
 const [editingdata, form] = useGithubJsonForm(file, formOptions)
@@ -119,52 +127,52 @@ const [sliderData,setSliderData] = React.useState({
       {
         original: '/portal-gallery-3.jpg',
         thumbnail: '/portal-gallery-tb-3.jpg',
-        description: 'Image Description'
+        description: ''
       },
       {
         original: '/portal-gallery-4.jpg',
         thumbnail: '/portal-gallery-tb-4.jpg',
-        description: 'Image Description'
+        description: ''
       },
       {
         original: '/portal-gallery-9.jpg',
         thumbnail: '/portal-gallery-tb-9.jpg',
-        description: 'Image Description'
+        description: ''
       },
       {
         original: '/portal-gallery-10.jpg',
         thumbnail: '/portal-gallery-tb-10.jpg',
-        description: 'Image Description'
+        description: ''
       },
       {
         original: '/portal-gallery-1.jpg',
         thumbnail: '/portal-gallery-tb-1.jpg',
-        description: 'Image Description'
+        description: ''
       },
       {
         original: '/portal-gallery-2.jpg',
         thumbnail: '/portal-gallery-tb-2.jpg',
-        description: 'Image Description'
+        description: ''
       },
       {
         original: '/portal-gallery-5.jpg',
         thumbnail: '/portal-gallery-tb-5.jpg',
-        description: 'Image Description'
+        description: ''
       },
       {
         original: '/portal-gallery-7.jpg',
         thumbnail: '/portal-gallery-tb-7.jpg',
-        description: 'Image Description'
+        description: ''
       },      
       {
         original: '/portal-gallery-8.jpg',
         thumbnail: '/portal-gallery-tb-8.jpg',
-        description: 'Image Description'
+        description: ''
       },
       {
         original: '/portal-gallery-6.jpg',
         thumbnail: '/portal-gallery-tb-6.jpg',
-        description: 'Image Description'
+        description: ''
       }
 
     ]
@@ -173,7 +181,6 @@ const [sliderData,setSliderData] = React.useState({
 return (
 
 <div>
-  <Header/>
   <Head>
     <title>Canada's Forest Trust</title>
     <link rel="icon" href="/favicon.ico" />
@@ -181,18 +188,32 @@ return (
     </meta>
   </Head>
 
-  <main className="bg-green ">
-    <Container className="bg-green pt-5 mt-5 px-0">
-      <Row className="justify-content-center d-flex mb-3 pt-lg-5">
+  <main className="bg-green">
+    <Container fluid className="portalLogo">
+        <Row>
+          <Col className="p-4">
+            <Link href="/home">
+            <img className="logo" src="/cft-logo-white.svg" />
+            </Link>
+          </Col>
+          <Col className="text-right p-4">
+              
+                <Link href={ user? "/portal-user" : "/portal" } ><a className="smallCaps textButton">{ user? "Your Portal" : "Sign Out" }</a></Link>
+                
+          </Col>
+          </Row>
+     </Container>
+    <Container fluid className="bg-green px-0">
+      <Row className="justify-content-center d-flex d-none mb-3 pt-lg-5 mx-0">
         <Col className="col-10 mt-5 mt-lg-0 mt-xl-0">
         <h1 className="h2 bold text-orange text-center">
-          {editingdata.greeting} {userData.displayname}
+          Smart Forest Intelligence Dashboard
         </h1>
         </Col>
       </Row>
 
-      <Row className="flex justify-content-center p-0 m-0">
-       <Col className="col-12 bg-white card-drop p-0 m-0">
+      <Row className="flex bg-white  justify-content-center p-0 m-0">
+       <Col className="col-12 card-drop p-0 m-0">
         <Tabs className="p-0 m-0">
           <Row className="p-0 m-0">
             <Col className="col-12 col-lg-3 p-5 bg-offwhite d-none d-lg-block">
@@ -228,13 +249,13 @@ return (
        {/* Dashboard */}
             <TabPanel >
               <Row className="flex justify-content-center mt-3">
-                <Col className="col-12 col-md-4 col-lg-4 py-3 px-2">
+                <Col className="col-12 col-md-6 col-lg-6 col-xl-4 py-3 px-3">
                 <img src="/dashboard1.svg"/> 
                 </Col>
-                <Col className="col-12 col-md-4 col-lg-4 py-3 px-2">
+                <Col className="col-12 col-md-6 col-lg-6 col-xl-4 py-3 px-3">
                 <img src="/dashboard2.svg"/> 
                 </Col>
-                <Col className="col-12 col-md-4 col-lg-4 py-3 px-2">
+                <Col className="col-12 col-md-6 col-lg-6 col-xl-4 py-3 px-3">
                 <img src="/dashboard3.svg"/> 
                 </Col>
               </Row>
@@ -255,7 +276,7 @@ return (
                   <Col className="col-12 col-md-8 col-xl-8 p-0">
                     <img src="/portal-gallery-forestcast-grid.svg"/> 
                   </Col>
-                  <Col className="col-12 col-md-4 col-xl-4 p-0 px-">
+                  <Col className="col-12 col-md-4 col-xl-4 p-0 px-2">
                     <img src="/portal-gallery-forestcast-data.svg"/> 
                   </Col>
                 </Row>

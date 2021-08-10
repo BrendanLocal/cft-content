@@ -1,8 +1,7 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Link from 'next/link'
@@ -10,37 +9,27 @@ import { useRouter } from "next/router";
 import { GetStaticProps } from "next";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 import { useGithubJsonForm, useGithubToolbarPlugins } from "react-tinacms-github";
-import { usePlugin, useWatchFormValues } from "tinacms";
-import { useState, useEffect } from "react";
+import { usePlugin } from "tinacms";
 import Header from "../components/header";
 import Accordion from "react-bootstrap/Accordion";
 import randomstring from "randomstring";
-import { MongoClient } from 'mongodb';
-import createGlobalState from 'global-react-state';
+import { redirect } from "next/dist/next-server/server/api-utils";
 
-var tempSessionID = randomstring.generate(12);
-
-const [useSessionID, setSessionID, getSessionID] = createGlobalState(tempSessionID);
-const [usePersonalArray, setPersonalArray, getPersonalArray] = createGlobalState({});
+let sessionID = randomstring.generate(12);
 
 const Lang = () => {
-var language ="en";
+  var language ="en";
 
-const router = useRouter();
-  if(router.query.lang){ 
-  const lan = JSON.stringify(router.query.lang);
-  language = JSON.parse(lan)
+  const router = useRouter();
+  if (router.query.lang) { 
+    const lan = JSON.stringify(router.query.lang);
+    language = JSON.parse(lan)
   }
+
   return (language)
 }
-
   
 export default function App({ file, href, children}) {
-
-  const [sessionID, setSessionID] = useSessionID();
-  const [personalArray, setPersonalArray] = usePersonalArray();
-
-  
   const formOptions = {
     label: 'Carbon Calculator',
     fields: [
@@ -175,8 +164,6 @@ export default function App({ file, href, children}) {
     ]
   }
 
-  const [show, setShow] = useState(false);
-
   const [editingdata, form] = useGithubJsonForm(file, formOptions)
   usePlugin(form)
   useGithubToolbarPlugins()
@@ -187,20 +174,17 @@ export default function App({ file, href, children}) {
   const [selectHeat, setHeat] = React.useState("");
   const [selectEnergy, setEnergy] = React.useState("");
 
-
   const [selectNumTwo, setNumTwo] = React.useState("");
   const [selectYearTwo, setYearTwo] = React.useState(0);
   const [selectSizeTwo, setSizeTwo] = React.useState("");
   const [selectHeatTwo, setHeatTwo] = React.useState("");
   const [selectEnergyTwo, setEnergyTwo] = React.useState("");
 
-
   const [selectNumThree, setNumThree] = React.useState("");
   const [selectYearThree, setYearThree] = React.useState(0);
   const [selectSizeThree, setSizeThree] = React.useState("");
   const [selectHeatThree, setHeatThree] = React.useState("");
   const [selectEnergyThree, setEnergyThree] = React.useState("");
-
 
   const [selectNumFour, setNumFour] = React.useState("");
   const [selectYearFour, setYearFour] = React.useState(0);
@@ -221,10 +205,6 @@ export default function App({ file, href, children}) {
   const [getFamFour, setFamFour] = React.useState("myself");
   const [getFamFive, setFamFive] = React.useState("myself");
 
-
-
-
-  let buildType = null;
   let buildSize = null;
   let buildNum = 1;
   let subtotalBuild = 0;
@@ -242,13 +222,11 @@ export default function App({ file, href, children}) {
   let heatTypeThree = null;
   let energyTypeThree = null;
 
-
   let buildNumFour = 1;
   let buildYearFour = 1;
   let buildSizeFour = null;
   let heatTypeFour = null;
   let energyTypeFour = null;
-
 
   let buildNumFive = 1;
   let buildYearFive = 1;
@@ -284,7 +262,6 @@ export default function App({ file, href, children}) {
   buildSizeThree = Number(selectSizeThree);
   heatTypeThree = selectHeatThree;
   energyTypeThree = selectEnergyThree;
-
 
   buildNumFour = Number(selectNumFour);
   buildYearFour = selectYearFour;
@@ -358,10 +335,9 @@ export default function App({ file, href, children}) {
   const [publicTransportSub, setPublicTransport] = React.useState(0);
 
   //onchange methods
-
   const changeFam = (event) => {
     setFam(event.target.value);
-}
+  }
 
   const changeFamTwo = (event) => {
     setFamTwo(event.target.value);
@@ -371,17 +347,13 @@ export default function App({ file, href, children}) {
     setFamThree(event.target.value);
   }
 
-
   const changeFamFour = (event) => {
     setFamFour(event.target.value);
   }
 
-
-
   const changeFamFive = (event) => {
     setFamFive(event.target.value);
   }
-
 
   const changeSize = (event) => {
     setSize(event.target.value);
@@ -423,8 +395,6 @@ export default function App({ file, href, children}) {
     setEnergyTwo(event.target.value);
   }
 
-
-
   const changeNumThree = (event) => {
     setNumThree(event.target.value);
   }
@@ -444,8 +414,6 @@ export default function App({ file, href, children}) {
   const changeEnergyThree = (event) => {
     setEnergyThree(event.target.value);
   }
-
-
 
   const changeNumFour = (event) => {
     setNumFour(event.target.value);
@@ -467,9 +435,6 @@ export default function App({ file, href, children}) {
     setEnergyFour(event.target.value);
   }
 
-  
-
-
   const changeNumFive = (event) => {
     setNumFive(event.target.value);
   }
@@ -489,7 +454,6 @@ export default function App({ file, href, children}) {
   const changeEnergyFive = (event) => {
     setEnergyFive(event.target.value);
   }
-
 
   /* array using data from the spreadsheet, including multipliers */
   const buildArray = {
@@ -552,63 +516,52 @@ export default function App({ file, href, children}) {
       
   if (buildSize && heatType && energyType)
   {
-    if(getFam == "family"){
+    if (getFam == "family") {
       buildNum = 1
     }
     
-    subtotalBuild = Number(
-      (((buildArray[buildSize][heatType] * energySavingsMult[energyType])/buildNum)+((buildYear/12)* 1444)/buildNum)/1000);
-
-
-  totalBuild = Number(subtotalBuild)
+    subtotalBuild = Number((((buildArray[buildSize][heatType] * energySavingsMult[energyType])/buildNum)+((buildYear/12)* 1444)/buildNum)/1000);
+    totalBuild = Number(subtotalBuild)
   }
 
   if (buildSize && heatType && energyType && buildSizeTwo && heatTypeTwo && energyTypeTwo) 
   {
-    if(getFamTwo == "family"){
+    if (getFamTwo == "family") {
       buildNumTwo = 1
     }
-    subtotalBuildTwo = Number(
-      (((buildArray[buildSizeTwo][heatTypeTwo] * energySavingsMult[energyTypeTwo])/buildNumTwo)+((buildYearTwo/12)* 1444)/buildNumTwo)/1000);
 
-  totalBuild = Number(subtotalBuild) + Number(subtotalBuildTwo)
+    subtotalBuildTwo = Number((((buildArray[buildSizeTwo][heatTypeTwo] * energySavingsMult[energyTypeTwo])/buildNumTwo)+((buildYearTwo/12)* 1444)/buildNumTwo)/1000);
+    totalBuild = Number(subtotalBuild) + Number(subtotalBuildTwo)
   }
-
 
   if (buildSize && heatType && energyType && buildSizeTwo && heatTypeTwo && energyTypeTwo && buildSizeThree && heatTypeThree && energyTypeThree) 
   {
-    if(getFamThree == "family"){
+    if (getFamThree == "family") {
       buildNumThree = 1
     }
-    subtotalBuildThree = Number(
-      (((buildArray[buildSizeThree][heatTypeThree] * energySavingsMult[energyTypeThree])/buildNumThree)+((buildYearThree/12)* 1444)/buildNumThree)/1000);
 
-  totalBuild =  Number(subtotalBuild) + Number(subtotalBuildTwo) + Number(subtotalBuildThree)
+    subtotalBuildThree = Number((((buildArray[buildSizeThree][heatTypeThree] * energySavingsMult[energyTypeThree])/buildNumThree)+((buildYearThree/12)* 1444)/buildNumThree)/1000);
+    totalBuild =  Number(subtotalBuild) + Number(subtotalBuildTwo) + Number(subtotalBuildThree)
   }
-
-
 
   if (buildSize && heatType && energyType && buildSizeTwo && heatTypeTwo && energyTypeTwo && buildSizeThree && heatTypeThree && energyTypeThree  && buildSizeFour && heatTypeFour && energyTypeFour) 
   {
-    if(getFamFour == "family"){
+    if (getFamFour == "family") {
       buildNumFour = 1
     }
-    subtotalBuildFour = Number(
-      (((buildArray[buildSizeFour][heatTypeFour] * energySavingsMult[energyTypeFour])/buildNumFour)+((buildYearFour/12)* 1444)/buildNumFour)/1000);
 
-  totalBuild =  Number(subtotalBuild) + Number(subtotalBuildTwo) + Number(subtotalBuildThree)+ Number(subtotalBuildFour)
+    subtotalBuildFour = Number((((buildArray[buildSizeFour][heatTypeFour] * energySavingsMult[energyTypeFour])/buildNumFour)+((buildYearFour/12)* 1444)/buildNumFour)/1000);
+    totalBuild =  Number(subtotalBuild) + Number(subtotalBuildTwo) + Number(subtotalBuildThree)+ Number(subtotalBuildFour)
   }
-
 
   if (buildSize && heatType && energyType && buildSizeTwo && heatTypeTwo && energyTypeTwo && buildSizeThree && heatTypeThree && energyTypeThree  && buildSizeFour && heatTypeFour && energyTypeFour   && buildSizeFive && heatTypeFive && energyTypeFive) 
   {
-    if(getFamFive == "family"){
+    if (getFamFive == "family") {
       buildNumFive = 1
     }
-    subtotalBuildFive = Number(
-      (((buildArray[buildSizeFive][heatTypeFive] * energySavingsMult[energyTypeFive])/buildNumFive)+((buildYearFive/12)* 1444)/buildNumFive)/1000);
 
-  totalBuild =  Number(subtotalBuild) + Number(subtotalBuildTwo) + Number(subtotalBuildThree) + Number(subtotalBuildFour) + Number(subtotalBuildFive)
+    subtotalBuildFive = Number((((buildArray[buildSizeFive][heatTypeFive] * energySavingsMult[energyTypeFive])/buildNumFive)+((buildYearFive/12)* 1444)/buildNumFive)/1000);
+    totalBuild =  Number(subtotalBuild) + Number(subtotalBuildTwo) + Number(subtotalBuildThree) + Number(subtotalBuildFour) + Number(subtotalBuildFive)
   }
 
   /* function to calculate the 'vehicle' section */
@@ -618,7 +571,7 @@ export default function App({ file, href, children}) {
     {
       let i = 0;
       
-        i += Number((vehicleArray[x].mult * vehicleArray[x].miles))
+      i += Number((vehicleArray[x].mult * vehicleArray[x].miles))
       subtotalVehicle += i
     }
     setVehicle(Number(subtotalVehicle)/1000)
@@ -671,76 +624,192 @@ export default function App({ file, href, children}) {
     calculatePublicTransport()
   }
 
-
-
-
-
   /* calculate the 'total' here by adding on the other subtotals */
   let total = vehicleSub + totalBuild + (flightSub/1000) + (publicTransportSub/1000);
   if (typeof window !== 'undefined') {
-  localStorage.setItem('personalfootprint', String(total));
+    localStorage.setItem('personalfootprint', String(total));
   }
 
-  setPersonalArray({sessionID, selectSize, selectNum, selectYear, selectHeat, selectEnergy, selectNumTwo, selectYearTwo, selectSizeTwo, selectHeatTwo, selectEnergyTwo, selectNumThree, selectYearThree, selectSizeThree, selectHeatThree, selectEnergyThree, selectNumFour, selectYearFour, selectSizeFour, selectHeatFour, selectEnergyFour, selectNumFive, selectYearFive, selectSizeFive, selectHeatFive, selectEnergyFive, buildSub, getFam, getFamTwo, getFamThree, getFamFour, getFamFive, vehicleArray, publicTransportArray, flightSub, vehicleSub, flightArray});
+  let personalArray = {
+    selectSize,
+    selectNum,
+    selectYear,
+    selectHeat,
+    selectEnergy,
+    selectNumTwo,
+    selectYearTwo,
+    selectSizeTwo,
+    selectHeatTwo,
+    selectEnergyTwo,
+    selectNumThree,
+    selectYearThree,
+    selectSizeThree,
+    selectHeatThree,
+    selectEnergyThree,
+    selectNumFour,
+    selectYearFour,
+    selectSizeFour,
+    selectHeatFour,
+    selectEnergyFour,
+    selectNumFive,
+    selectYearFive,
+    selectSizeFive,
+    selectHeatFive,
+    selectEnergyFive,
+    buildSub,
+    getFam,
+    getFamTwo,
+    getFamThree,
+    getFamFour,
+    getFamFive,
+    vehicleArray,
+    publicTransportArray,
+    flightSub,
+    vehicleSub,
+    flightArray
+  };
 
+  const fullUrlPrefix = '/personal-calculator?session=';
+  const sharingUrlPrefix = '/personal-calculator-share?session=';
+  const [fullUrl, setFullUrl] = React.useState('/personal-calculator');
+  const [sharingUrl, setSharingUrl] = React.useState('/personal-calculator-share');
 
-/* check to see if they have a current session */
-var fullUrl = "https://canadasforesttrust.ca/personal-calculator/?session=" + sessionID
-
-var sharingUrl = "https://canadasforesttrust.ca/personal-calculator-share/?session=" + sessionID
-
-if (typeof window !== 'undefined') {
-
-const router = useRouter();
-  if(router.query.session){ 
-    setSessionID(router.query.session);
-    var tempSessionID = JSON.stringify(sessionID)
-    fullUrl = "https://canadasforesttrust.ca/personal-calculator/?session=" +  sessionID
-
-    sharingUrl = "https://canadasforesttrust.ca/personal-calculator-share/?session=" + sessionID
-
-    localStorage.setItem('sessionID', tempSessionID);
-    } else if (localStorage.sessionID){
-    setSessionID(localStorage.sessionID);
-    fullUrl = "https://canadasforesttrust.ca/personal-calculator/?session=" +  sessionID
-    sharingUrl = "https://canadasforesttrust.ca/personal-calculator-share/?session=" + sessionID
-    }
-  if(!localStorage.sessionID){
-
-    var tempSessionID = JSON.stringify(sessionID)
-    localStorage.setItem('sessionID', tempSessionID);
-  }
-
-
-
-
-
-}
-
-
-
+  const router = useRouter();
+  const [sessionDataError, setSessionDataError] = React.useState("");
+  useEffect(() => {
+    if (router.isReady) {
+      if (router.query.session) {
+        sessionID = router.query.session;
+      }
+      else if (localStorage.getItem('personalSessionID')) {
+        sessionID = localStorage.getItem('personalSessionID');
+      }
+      
+      setFullUrl(fullUrlPrefix + sessionID);
+      setSharingUrl(sharingUrlPrefix + sessionID);
   
+      localStorage.setItem('personalSessionID', sessionID);
+  
+      try {
+        fetch(`/api/calc?sessionID=${sessionID}&type=personal-calculator`).then(async (response) => {
+          if (response.status === 200) {
+            const sessionData = await response.json();
 
+            if (sessionData.selectSize !== undefined) setSize(sessionData.selectSize);
+            if (sessionData.selectNum !== undefined) setNum(sessionData.selectNum);
+            if (sessionData.selectYear !== undefined) setYear(sessionData.selectYear);
+            if (sessionData.selectHeat !== undefined) setHeat(sessionData.selectHeat);
+            if (sessionData.selectEnergy !== undefined) setEnergy(sessionData.selectEnergy);
+            if (sessionData.selectNumTwo !== undefined) setNumTwo(sessionData.selectNumTwo);
+            if (sessionData.selectYearTwo !== undefined) setYearTwo(sessionData.selectYearTwo);
+            if (sessionData.selectSizeTwo !== undefined) setSizeTwo(sessionData.selectSizeTwo);
+            if (sessionData.selectHeatTwo !== undefined) setHeatTwo(sessionData.selectHeatTwo);
+            if (sessionData.selectEnergyTwo !== undefined) setEnergyTwo(sessionData.selectEnergyTwo);
+            if (sessionData.selectNumThree !== undefined) setNumThree(sessionData.selectNumThree);
+            if (sessionData.selectYearThree !== undefined) setYearThree(sessionData.selectYearThree);
+            if (sessionData.selectSizeThree !== undefined) setSizeThree(sessionData.selectSizeThree);
+            if (sessionData.selectHeatThree !== undefined) setHeatThree(sessionData.selectHeatThree);
+            if (sessionData.selectEnergyThree !== undefined) setEnergyThree(sessionData.selectEnergyThree);
+            if (sessionData.selectNumFour !== undefined) setNumFour(sessionData.selectNumFour);
+            if (sessionData.selectYearFour !== undefined) setYearFour(sessionData.selectYearFour);
+            if (sessionData.selectSizeFour !== undefined) setSizeFour(sessionData.selectSizeFour);
+            if (sessionData.selectHeatFour !== undefined) setHeatFour(sessionData.selectHeatFour);
+            if (sessionData.selectEnergyFour !== undefined) setEnergyFour(sessionData.selectEnergyFour);
+            if (sessionData.selectNumFive !== undefined) setNumFive(sessionData.selectNumFive);
+            if (sessionData.selectYearFive !== undefined) setYearFive(sessionData.selectYearFive);
+            if (sessionData.selectSizeFive !== undefined) setSizeFive(sessionData.selectSizeFive);
+            if (sessionData.selectHeatFive !== undefined) setHeatFive(sessionData.selectHeatFive);
+            if (sessionData.selectEnergyFive !== undefined) setEnergyFive(sessionData.selectEnergyFive);
+            if (sessionData.buildSub !== undefined) setBuildSub(sessionData.buildSub);
+            if (sessionData.getFam !== undefined) setFam(sessionData.getFam);
+            if (sessionData.getFamTwo !== undefined) setFamTwo(sessionData.getFamTwo);
+            if (sessionData.getFamThree !== undefined) setFamThree(sessionData.getFamThree);
+            if (sessionData.getFamFour !== undefined) setFamFour(sessionData.getFamFour);
+            if (sessionData.getFamFive !== undefined) setFamFive(sessionData.getFamFive);
+            if (sessionData.vehicleArray !== undefined) setVehicleArray(sessionData.vehicleArray);
+            if (sessionData.publicTransportArray !== undefined) setPublicTransportArray(sessionData.publicTransportArray);
+            if (sessionData.flightSub !== undefined) setFlight(sessionData.flightSub);
+            if (sessionData.vehicleSub !== undefined) setVehicle(sessionData.vehicleSub);
+            if (sessionData.flightArray !== undefined) setFlightArray(sessionData.flightArray);
+          }
+          else {
+            setSessionDataError(await response.text());
+          }
+        });
+      }
+      catch (error) {
+        setSessionDataError('An unknown error has occurred while loading calculator session.');
+      }
+    }
+  }, [router.query]);
 
+  const saveSession = async (e, successCallback: () => void, failureCallback: (error) => void) => {
+    e.preventDefault();
 
+    const body = {
+      sessionID: sessionID,
+      type: 'personal-calculator',
+      data: personalArray
+    };
 
+    try {
+      const res = await fetch('/api/calc', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+
+      if (res.status === 200) {
+        successCallback();
+      }
+      else {
+        const error_message = await res.text();
+        failureCallback(error_message);
+      }
+    }
+    catch (error) {
+      failureCallback('An unknown error has occurred while saving calculator session.');
+    }
+  };
+
+  const [fullUrlError, setFullUrlError] = React.useState("");
+  const fullUrlClick = (e) => {
+    saveSession(e, () => {
+      setFullUrlError("");
+      router.push(e.target.getAttribute('href'));
+    }, (error) => {
+      setFullUrlError(error);
+    });
+  }
+
+  const [nextStepError, setNextStepError] = React.useState("");
+  const nextStepClick = (e) => {
+    saveSession(e, () => {
+      setNextStepError("");
+      router.push("/smart-forest-personal");
+    }, (error) => {
+      setNextStepError(error);
+    });
+  }
+  
   return (
     <div className="bg-legacy">
       <Header/>
-      <Container className="p-5">
+      <Container className="p-4 pt-5">
         <Row className="justify-content-center">
-          <Col className="col-11 col-lg-10 pt-5 align-items-center my-4 pt-5">
+          <Col className="col-12 col-lg-10 pt-5 align-items-center my-4 pt-5">
             <h1 className="emphasis text-orange text-center bold tight-drop-light">{editingdata.title}</h1>
           </Col>
         </Row>
         <Row className="justify-content-center">
-          <Col className="p-3 col-11 col-lg-6">
+          <Col className="p-3 col-12 col-lg-6">
             <div className="card roundedBox no-border bg-green p-4 innerShadow cardSpacing">
               <p className="lead text-white m-2 calc-intro">{editingdata.para1}</p>
             </div>
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
                 <Col>
+                  {sessionDataError ? <p style={{ color: 'red' }}>{sessionDataError}</p> : null}
                   <h4 className="text-green">{editingdata.heat1Title}</h4>
                   <hr/>
                 </Col>
@@ -748,15 +817,14 @@ const router = useRouter();
               </Row>
               <Row className="mb-3">
                 <Col>
-                <label htmlFor="number">{editingdata.heat1CalcHeader}</label>
-                <br />
-                <input className="me-2" onChange={changeFam} type="radio" id="myself" name="calculateWho" value="myself"  />
+                  <label htmlFor="number">{editingdata.heat1CalcHeader}</label>
+                  <br />
+                  <input className="me-2" onChange={changeFam} type="radio" id="myself" name="calculateWho" value="myself" />
                   <label>{editingdata.heat1Calc1}</label><br></br>
-                <input className="me-2" onChange={changeFam} type="radio" id="family" name="calculateWho" value="family"
-                 />
-                <label>{editingdata.heat1Calc2}</label>
-               
-                <br></br>
+                  <input className="me-2" onChange={changeFam} type="radio" id="family" name="calculateWho" value="family" />
+                  <label>{editingdata.heat1Calc2}</label>
+                
+                  <br></br>
                 </Col>
               </Row>
               <Row>
@@ -830,765 +898,750 @@ const router = useRouter();
 
               {/* residence 2 */}
               <Accordion>
-              <Card>
-                            <Accordion.Toggle as={Card.Header} eventKey="0">
-                            
-                  <h5 className="smallCaps text-small text-green">2nd Residence</h5>
+                <Card>
+                  <Accordion.Toggle as={Card.Header} eventKey="0">   
+                    <h5 className="smallCaps text-small text-green">2nd Residence</h5>
+                  </Accordion.Toggle>
+                  <Accordion.Collapse eventKey="0">
+                    <div>
+                      <Row className="mb-3">
+                        <Col>
+                          <label htmlFor="number">{editingdata.heat2CalcHeader}</label>
+                          <br />
+                          <input className="me-2" onChange={changeFamTwo} type="radio" id="myself" name="calculateWhoTwo" value="myself" />
+                          <label>{editingdata.heat2Calc1}</label><br></br>
+                          <input className="me-2" onChange={changeFamTwo} type="radio" id="family" name="calculateWhoTwo" value="family" />
+                          <label>{editingdata.heat2Calc2}</label>
+                          <br></br>
+                        </Col>
+                      </Row>
 
-                            </Accordion.Toggle>
-                            <Accordion.Collapse eventKey="0">
-                              <div>
-              
-              <Row className="mb-3">
-                <Col>
-                <label htmlFor="number">{editingdata.heat2CalcHeader}</label>
-                <br />
-                <input className="me-2" onChange={changeFamTwo} type="radio" id="myself" name="calculateWhoTwo" value="myself"/>
-                  <label>{editingdata.heat2Calc1}</label><br></br>
-                <input className="me-2" onChange={changeFamTwo} type="radio" id="family" name="calculateWhoTwo" value="family"/>
-                <label>{editingdata.heat2Calc2}</label>
-                <br></br>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <label htmlFor="number">{editingdata.Heat2People}</label>
-                  <br />
-                  <input onChange={changeNumTwo} type="number" min={0} max={12} onKeyPress={(event) => {
-                    if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                  }} placeholder="Number of people in your household"/>
-                </Col>
-              </Row>
+                      <Row>
+                        <Col>
+                          <label htmlFor="number">{editingdata.Heat2People}</label>
+                          <br />
+                          <input onChange={changeNumTwo} type="number" min={0} max={12} onKeyPress={(event) => {
+                            if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                          }} placeholder="Number of people in your household"/>
+                        </Col>
+                      </Row>
 
-              <Row>
-                <Col>
-                  <label htmlFor="number">{editingdata.heat2Months}</label>
-                  <br />
-                  <input onChange={changeYearTwo} type="number" min="0" onKeyPress={(event) => {
-                    if (!/[0-9]/.test(event.key)) {event.preventDefault();} 
-                  }} placeholder="Month(s) per year in residence"  value={selectYearTwo}/>
-                </Col>
-              </Row>
+                      <Row>
+                        <Col>
+                          <label htmlFor="number">{editingdata.heat2Months}</label>
+                          <br />
+                          <input onChange={changeYearTwo} type="number" min="0" onKeyPress={(event) => {
+                            if (!/[0-9]/.test(event.key)) {event.preventDefault();} 
+                          }} placeholder="Month(s) per year in residence"  value={selectYearTwo}/>
+                        </Col>
+                      </Row>
 
-              <Row>
-                <Col>
-                  <label htmlFor="size">{editingdata.heat2Size}</label>
-                  <br />
-                  <select name="size" value={selectSizeTwo} onChange={changeSizeTwo}>
-                    <option value="" hidden>{editingdata.select}</option>
-                    <option value='1000'>{editingdata.heatSize1}</option>
-                    <option value='1500'>{editingdata.heatSize2}</option>
-                    <option value='2000'>{editingdata.heatSize3}</option>
-                    <option value='2500'>{editingdata.heatSize4}</option>
-                    <option value='5000'>{editingdata.heatSize5}</option>
-                    <option value='7500'>{editingdata.heatSize6}</option>
-                    <option value='10000'>{editingdata.heatSize7}</option>
-                    <option value='10001'>{editingdata.heatSize8}</option>
-                  </select>
-                </Col>
-              </Row>
+                      <Row>
+                        <Col>
+                          <label htmlFor="size">{editingdata.heat2Size}</label>
+                          <br />
+                          <select name="size" value={selectSizeTwo} onChange={changeSizeTwo}>
+                            <option value="" hidden>{editingdata.select}</option>
+                            <option value='1000'>{editingdata.heatSize1}</option>
+                            <option value='1500'>{editingdata.heatSize2}</option>
+                            <option value='2000'>{editingdata.heatSize3}</option>
+                            <option value='2500'>{editingdata.heatSize4}</option>
+                            <option value='5000'>{editingdata.heatSize5}</option>
+                            <option value='7500'>{editingdata.heatSize6}</option>
+                            <option value='10000'>{editingdata.heatSize7}</option>
+                            <option value='10001'>{editingdata.heatSize8}</option>
+                          </select>
+                        </Col>
+                      </Row>
 
-              <Row>
-                <Col>
-                  <label htmlFor="heat">{editingdata.heat2Source}</label>
-                  <br />
-                  <select name="heat" value={selectHeatTwo} onChange={changeHeatTwo}>
-                    <option value="" hidden>{editingdata.select}</option>
-                    <option value='gas'>{editingdata.heatSource1}</option>
-                    <option value='oil'>{editingdata.heatSource2}</option>
-                    <option value='electric'>{editingdata.heatSource3}</option>
-                    <option value='wood'>{editingdata.heatSource4}</option>
-                  </select>
-                </Col>
-              </Row>
+                      <Row>
+                        <Col>
+                          <label htmlFor="heat">{editingdata.heat2Source}</label>
+                          <br />
+                          <select name="heat" value={selectHeatTwo} onChange={changeHeatTwo}>
+                            <option value="" hidden>{editingdata.select}</option>
+                            <option value='gas'>{editingdata.heatSource1}</option>
+                            <option value='oil'>{editingdata.heatSource2}</option>
+                            <option value='electric'>{editingdata.heatSource3}</option>
+                            <option value='wood'>{editingdata.heatSource4}</option>
+                          </select>
+                        </Col>
+                      </Row>
 
-              <Row>
-                <Col>
-                  <label htmlFor="energy">{editingdata.heat2Savings}</label>
-                  <br />
-                  <select name="energy" value={selectEnergyTwo} onChange={changeEnergyTwo}>
-                    <option value="" hidden>{editingdata.select}</option>
-                    <option value='none'>{editingdata.heatSavings1}</option>
-                    <option value='light'>{editingdata.heatSavings2}</option>
-                    <option value='moderate'>{editingdata.heatSavings3}</option>
-                    <option value='extensive'>{editingdata.heatSavings4}</option>
-                  </select>
-                </Col>
-              </Row> 
-           </div>
-         </Accordion.Collapse>
-         </Card>
+                      <Row>
+                        <Col>
+                          <label htmlFor="energy">{editingdata.heat2Savings}</label>
+                          <br />
+                          <select name="energy" value={selectEnergyTwo} onChange={changeEnergyTwo}>
+                            <option value="" hidden>{editingdata.select}</option>
+                            <option value='none'>{editingdata.heatSavings1}</option>
+                            <option value='light'>{editingdata.heatSavings2}</option>
+                            <option value='moderate'>{editingdata.heatSavings3}</option>
+                            <option value='extensive'>{editingdata.heatSavings4}</option>
+                          </select>
+                        </Col>
+                      </Row> 
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
 
-              {/* residence 3 */}
-              <Card>
-                            <Accordion.Toggle as={Card.Header} eventKey="1">
-                            
-                  <h5 className="smallCaps text-small text-green">3rd Residence</h5>
+                {/* residence 3 */}
+                <Card>
+                  <Accordion.Toggle as={Card.Header} eventKey="1">      
+                    <h5 className="smallCaps text-small text-green">3rd Residence</h5>
+                  </Accordion.Toggle>
+                  <Accordion.Collapse eventKey="1">
+                    <div>
+                      <Row className="mb-3">
+                        <Col>
+                          <label htmlFor="number">{editingdata.heat3CalcHeader}</label>
+                          <br />
+                          <input className="me-2" onChange={changeFamThree} type="radio" id="myself" name="calculateWhoThree" value="myself" />
+                          <label>{editingdata.heat3Calc1}</label><br></br>
+                          <input className="me-2" onChange={changeFamThree} type="radio" id="family" name="calculateWhoThree" value="family" />
+                          <label>{editingdata.heat3Calc2}</label>
+                          <br></br>
+                        </Col>
+                      </Row>
 
-                            </Accordion.Toggle>
-                            <Accordion.Collapse eventKey="1">
-                              <div>
-              
-              <Row className="mb-3">
-                <Col>
-                <label htmlFor="number">{editingdata.heat3CalcHeader}</label>
-                <br />
-                <input className="me-2" onChange={changeFamThree} type="radio" id="myself" name="calculateWhoThree" value="myself"/>
-                  <label>{editingdata.heat3Calc1}</label><br></br>
-                <input className="me-2" onChange={changeFamThree} type="radio" id="family" name="calculateWhoThree" value="family"/>
-                <label>{editingdata.heat3Calc2}</label>
-                <br></br>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <label htmlFor="number">{editingdata.Heat3People}</label>
-                  <br />
-                  <input onChange={changeNumThree} type="number" min={0} max={12} onKeyPress={(event) => {
-                    if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                  }} placeholder="Number of people in your household" />
-                </Col>
-              </Row>
+                      <Row>
+                        <Col>
+                          <label htmlFor="number">{editingdata.Heat3People}</label>
+                          <br />
+                          <input onChange={changeNumThree} type="number" min={0} max={12} onKeyPress={(event) => {
+                            if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                          }} placeholder="Number of people in your household" />
+                        </Col>
+                      </Row>
 
-              <Row>
-                <Col>
-                  <label htmlFor="number">{editingdata.heat3Months}</label>
-                  <br />
-                  <input onChange={changeYearThree} type="number" min={0} onKeyPress={(event) => {
-                    if (!/[0-9]/.test(event.key)) {event.preventDefault();} 
-                  }} placeholder="Month(s) per year in residence"/>
-                </Col>
-              </Row>
+                      <Row>
+                        <Col>
+                          <label htmlFor="number">{editingdata.heat3Months}</label>
+                          <br />
+                          <input onChange={changeYearThree} type="number" min={0} onKeyPress={(event) => {
+                            if (!/[0-9]/.test(event.key)) {event.preventDefault();} 
+                          }} placeholder="Month(s) per year in residence"/>
+                        </Col>
+                      </Row>
 
-              <Row>
-                <Col>
-                  <label htmlFor="size">{editingdata.heat3Size}</label>
-                  <br />
-                  <select name="size" value={selectSizeThree} onChange={changeSizeThree}>
-                    <option value="" hidden>{editingdata.select}</option>
-                    <option value='1000'>{editingdata.heatSize1}</option>
-                    <option value='1500'>{editingdata.heatSize2}</option>
-                    <option value='2000'>{editingdata.heatSize3}</option>
-                    <option value='2500'>{editingdata.heatSize4}</option>
-                    <option value='5000'>{editingdata.heatSize5}</option>
-                    <option value='7500'>{editingdata.heatSize6}</option>
-                    <option value='10000'>{editingdata.heatSize7}</option>
-                    <option value='10001'>{editingdata.heatSize8}</option>
-                  </select>
-                </Col>
-              </Row>
+                      <Row>
+                        <Col>
+                          <label htmlFor="size">{editingdata.heat3Size}</label>
+                          <br />
+                          <select name="size" value={selectSizeThree} onChange={changeSizeThree}>
+                            <option value="" hidden>{editingdata.select}</option>
+                            <option value='1000'>{editingdata.heatSize1}</option>
+                            <option value='1500'>{editingdata.heatSize2}</option>
+                            <option value='2000'>{editingdata.heatSize3}</option>
+                            <option value='2500'>{editingdata.heatSize4}</option>
+                            <option value='5000'>{editingdata.heatSize5}</option>
+                            <option value='7500'>{editingdata.heatSize6}</option>
+                            <option value='10000'>{editingdata.heatSize7}</option>
+                            <option value='10001'>{editingdata.heatSize8}</option>
+                          </select>
+                        </Col>
+                      </Row>
 
-              <Row>
-                <Col>
-                  <label htmlFor="heat">{editingdata.heat3Source}</label>
-                  <br />
-                  <select name="heat" value={selectHeatThree} onChange={changeHeatThree}>
-                    <option value="" hidden>{editingdata.select}</option>
-                    <option value='gas'>{editingdata.heatSource1}</option>
-                    <option value='oil'>{editingdata.heatSource2}</option>
-                    <option value='electric'>{editingdata.heatSource3}</option>
-                    <option value='wood'>{editingdata.heatSource4}</option>
-                  </select>
-                </Col>
-              </Row>
+                      <Row>
+                        <Col>
+                          <label htmlFor="heat">{editingdata.heat3Source}</label>
+                          <br />
+                          <select name="heat" value={selectHeatThree} onChange={changeHeatThree}>
+                            <option value="" hidden>{editingdata.select}</option>
+                            <option value='gas'>{editingdata.heatSource1}</option>
+                            <option value='oil'>{editingdata.heatSource2}</option>
+                            <option value='electric'>{editingdata.heatSource3}</option>
+                            <option value='wood'>{editingdata.heatSource4}</option>
+                          </select>
+                        </Col>
+                      </Row>
 
-              <Row>
-                <Col>
-                  <label htmlFor="energy">{editingdata.heat3Savings}</label>
-                  <br />
-                  <select name="energy" value={selectEnergyThree} onChange={changeEnergyThree}>
-                    <option value="" hidden>{editingdata.select}</option>
-                    <option value='none'>{editingdata.heatSavings1}</option>
-                    <option value='light'>{editingdata.heatSavings2}</option>
-                    <option value='moderate'>{editingdata.heatSavings3}</option>
-                    <option value='extensive'>{editingdata.heatSavings4}</option>
-                  </select>
-                </Col>
-              </Row> 
-           </div>
-         </Accordion.Collapse>
-         </Card>
-            {/* residence 4 */}
-            <Card>
-                            <Accordion.Toggle as={Card.Header} eventKey="2">
-                            
-                  <h5 className="smallCaps text-small text-green">4th Residence</h5>
+                      <Row>
+                        <Col>
+                          <label htmlFor="energy">{editingdata.heat3Savings}</label>
+                          <br />
+                          <select name="energy" value={selectEnergyThree} onChange={changeEnergyThree}>
+                            <option value="" hidden>{editingdata.select}</option>
+                            <option value='none'>{editingdata.heatSavings1}</option>
+                            <option value='light'>{editingdata.heatSavings2}</option>
+                            <option value='moderate'>{editingdata.heatSavings3}</option>
+                            <option value='extensive'>{editingdata.heatSavings4}</option>
+                          </select>
+                        </Col>
+                      </Row> 
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+                {/* residence 4 */}
+                <Card>
+                  <Accordion.Toggle as={Card.Header} eventKey="2">      
+                    <h5 className="smallCaps text-small text-green">4th Residence</h5>
+                  </Accordion.Toggle>
+                  <Accordion.Collapse eventKey="2">
+                    <div>
+                      <Row className="mb-3">
+                        <Col>
+                          <label htmlFor="number">{editingdata.heat4CalcHeader}</label>
+                          <br />
+                          <input className="me-2" onChange={changeFamFour} type="radio" id="myself" name="calculateWhoFour" value="myself"/>
+                          <label>{editingdata.heat3Calc1}</label><br></br>
+                          <input className="me-2" onChange={changeFamFour} type="radio" id="family" name="calculateWhoFour" value="family"/>
+                          <label>{editingdata.heat3Calc2}</label>
+                          <br></br>
+                        </Col>
+                      </Row>
 
-                            </Accordion.Toggle>
-                            <Accordion.Collapse eventKey="2">
-                              <div>
-              
-              <Row className="mb-3">
-                <Col>
-                <label htmlFor="number">{editingdata.heat4CalcHeader}</label>
-                <br />
-                <input className="me-2" onChange={changeFamFour} type="radio" id="myself" name="calculateWhoFour" value="myself"/>
-                  <label>{editingdata.heat3Calc1}</label><br></br>
-                <input className="me-2" onChange={changeFamFour} type="radio" id="family" name="calculateWhoFour" value="family"/>
-                <label>{editingdata.heat3Calc2}</label>
-                <br></br>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <label htmlFor="number">{editingdata.Heat3People}</label>
-                  <br />
-                  <input onChange={changeNumFour} type="number" min={0} max={12} onKeyPress={(event) => {
-                    if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                  }} placeholder="Number of people in your household" />
-                </Col>
-              </Row>
+                      <Row>
+                        <Col>
+                          <label htmlFor="number">{editingdata.Heat3People}</label>
+                          <br />
+                          <input onChange={changeNumFour} type="number" min={0} max={12} onKeyPress={(event) => {
+                            if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                          }} placeholder="Number of people in your household" />
+                        </Col>
+                      </Row>
 
-              <Row>
-                <Col>
-                  <label htmlFor="number">{editingdata.heat3Months}</label>
-                  <br />
-                  <input onChange={changeYearFour} type="number" min={0} onKeyPress={(event) => {
-                    if (!/[0-9]/.test(event.key)) {event.preventDefault();} 
-                  }} placeholder="Month(s) per year in residence"/>
-                </Col>
-              </Row>
+                      <Row>
+                        <Col>
+                          <label htmlFor="number">{editingdata.heat3Months}</label>
+                          <br />
+                          <input onChange={changeYearFour} type="number" min={0} onKeyPress={(event) => {
+                            if (!/[0-9]/.test(event.key)) {event.preventDefault();} 
+                          }} placeholder="Month(s) per year in residence"/>
+                        </Col>
+                      </Row>
 
-              <Row>
-                <Col>
-                  <label htmlFor="size">{editingdata.heat3Size}</label>
-                  <br />
-                  <select name="size" value={selectSizeFour} onChange={changeSizeFour}>
-                    <option value="" hidden>{editingdata.select}</option>
-                    <option value='1000'>{editingdata.heatSize1}</option>
-                    <option value='1500'>{editingdata.heatSize2}</option>
-                    <option value='2000'>{editingdata.heatSize3}</option>
-                    <option value='2500'>{editingdata.heatSize4}</option>
-                    <option value='5000'>{editingdata.heatSize5}</option>
-                    <option value='7500'>{editingdata.heatSize6}</option>
-                    <option value='10000'>{editingdata.heatSize7}</option>
-                    <option value='10001'>{editingdata.heatSize8}</option>
-                  </select>
-                </Col>
-              </Row>
+                      <Row>
+                        <Col>
+                          <label htmlFor="size">{editingdata.heat3Size}</label>
+                          <br />
+                          <select name="size" value={selectSizeFour} onChange={changeSizeFour}>
+                            <option value="" hidden>{editingdata.select}</option>
+                            <option value='1000'>{editingdata.heatSize1}</option>
+                            <option value='1500'>{editingdata.heatSize2}</option>
+                            <option value='2000'>{editingdata.heatSize3}</option>
+                            <option value='2500'>{editingdata.heatSize4}</option>
+                            <option value='5000'>{editingdata.heatSize5}</option>
+                            <option value='7500'>{editingdata.heatSize6}</option>
+                            <option value='10000'>{editingdata.heatSize7}</option>
+                            <option value='10001'>{editingdata.heatSize8}</option>
+                          </select>
+                        </Col>
+                      </Row>
 
-              <Row>
-                <Col>
-                  <label htmlFor="heat">{editingdata.heat3Source}</label>
-                  <br />
-                  <select name="heat" value={selectHeatFour} onChange={changeHeatFour}>
-                    <option value="" hidden>{editingdata.select}</option>
-                    <option value='gas'>{editingdata.heatSource1}</option>
-                    <option value='oil'>{editingdata.heatSource2}</option>
-                    <option value='electric'>{editingdata.heatSource3}</option>
-                    <option value='wood'>{editingdata.heatSource4}</option>
-                  </select>
-                </Col>
-              </Row>
+                      <Row>
+                        <Col>
+                          <label htmlFor="heat">{editingdata.heat3Source}</label>
+                          <br />
+                          <select name="heat" value={selectHeatFour} onChange={changeHeatFour}>
+                            <option value="" hidden>{editingdata.select}</option>
+                            <option value='gas'>{editingdata.heatSource1}</option>
+                            <option value='oil'>{editingdata.heatSource2}</option>
+                            <option value='electric'>{editingdata.heatSource3}</option>
+                            <option value='wood'>{editingdata.heatSource4}</option>
+                          </select>
+                        </Col>
+                      </Row>
 
-              <Row>
-                <Col>
-                  <label htmlFor="energy">{editingdata.heat3Savings}</label>
-                  <br />
-                  <select name="energy" value={selectEnergyFour} onChange={changeEnergyFour}>
-                    <option value="" hidden>{editingdata.select}</option>
-                    <option value='none'>{editingdata.heatSavings1}</option>
-                    <option value='light'>{editingdata.heatSavings2}</option>
-                    <option value='moderate'>{editingdata.heatSavings3}</option>
-                    <option value='extensive'>{editingdata.heatSavings4}</option>
-                  </select>
-                </Col>
-              </Row> 
-           </div>
-         </Accordion.Collapse>
-         </Card>
-            {/* residence 5 */}
-            <Card>
-                            <Accordion.Toggle as={Card.Header} eventKey="3">
-                            
-                  <h5 className="smallCaps text-small text-green">5th Residence</h5>
+                      <Row>
+                        <Col>
+                          <label htmlFor="energy">{editingdata.heat3Savings}</label>
+                          <br />
+                          <select name="energy" value={selectEnergyFour} onChange={changeEnergyFour}>
+                            <option value="" hidden>{editingdata.select}</option>
+                            <option value='none'>{editingdata.heatSavings1}</option>
+                            <option value='light'>{editingdata.heatSavings2}</option>
+                            <option value='moderate'>{editingdata.heatSavings3}</option>
+                            <option value='extensive'>{editingdata.heatSavings4}</option>
+                          </select>
+                        </Col>
+                      </Row> 
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
 
-                            </Accordion.Toggle>
-                            <Accordion.Collapse eventKey="3">
-                              <div>
-              
-              <Row className="mb-3">
-                <Col>
-                <label htmlFor="number">{editingdata.heat3CalcHeader}</label>
-                <br />
-                <input className="me-2" onChange={changeFamFive} type="radio" id="myself" name="calculateWhoFive" value="myself"/>
-                  <label>{editingdata.heat3Calc1}</label><br></br>
-                <input className="me-2" onChange={changeFamFive} type="radio" id="family" name="calculateWhoFive" value="family"/>
-                <label>{editingdata.heat3Calc2}</label>
-                <br></br>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <label htmlFor="number">{editingdata.Heat3People}</label>
-                  <br />
-                  <input onChange={changeNumFive} type="number" min={0} max={12} onKeyPress={(event) => {
-                    if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                  }} placeholder="Number of people in your household" />
-                </Col>
-              </Row>
+                {/* residence 5 */}
+                <Card>
+                  <Accordion.Toggle as={Card.Header} eventKey="3">
+                    <h5 className="smallCaps text-small text-green">5th Residence</h5>
+                  </Accordion.Toggle>
+                  <Accordion.Collapse eventKey="3">
+                    <div>
+                      <Row className="mb-3">
+                        <Col>
+                          <label htmlFor="number">{editingdata.heat3CalcHeader}</label>
+                          <br />
+                          <input className="me-2" onChange={changeFamFive} type="radio" id="myself" name="calculateWhoFive" value="myself"/>
+                          <label>{editingdata.heat3Calc1}</label><br></br>
+                          <input className="me-2" onChange={changeFamFive} type="radio" id="family" name="calculateWhoFive" value="family"/>
+                          <label>{editingdata.heat3Calc2}</label>
+                          <br></br>
+                        </Col>
+                      </Row>
 
-              <Row>
-                <Col>
-                  <label htmlFor="number">{editingdata.heat3Months}</label>
-                  <br />
-                  <input onChange={changeYearFive} type="number" min={0} onKeyPress={(event) => {
-                    if (!/[0-9]/.test(event.key)) {event.preventDefault();} 
-                  }} placeholder="Month(s) per year in residence"/>
-                </Col>
-              </Row>
+                      <Row>
+                        <Col>
+                          <label htmlFor="number">{editingdata.Heat3People}</label>
+                          <br />
+                          <input onChange={changeNumFive} type="number" min={0} max={12} onKeyPress={(event) => {
+                            if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                          }} placeholder="Number of people in your household" />
+                        </Col>
+                      </Row>
 
-              <Row>
-                <Col>
-                  <label htmlFor="size">{editingdata.heat3Size}</label>
-                  <br />
-                  <select name="size" value={selectSizeFive} onChange={changeSizeFive}>
-                    <option value="" hidden>{editingdata.select}</option>
-                    <option value='1000'>{editingdata.heatSize1}</option>
-                    <option value='1500'>{editingdata.heatSize2}</option>
-                    <option value='2000'>{editingdata.heatSize3}</option>
-                    <option value='2500'>{editingdata.heatSize4}</option>
-                    <option value='5000'>{editingdata.heatSize5}</option>
-                    <option value='7500'>{editingdata.heatSize6}</option>
-                    <option value='10000'>{editingdata.heatSize7}</option>
-                    <option value='10001'>{editingdata.heatSize8}</option>
-                  </select>
-                </Col>
-              </Row>
+                      <Row>
+                        <Col>
+                          <label htmlFor="number">{editingdata.heat3Months}</label>
+                          <br />
+                          <input onChange={changeYearFive} type="number" min={0} onKeyPress={(event) => {
+                            if (!/[0-9]/.test(event.key)) {event.preventDefault();} 
+                          }} placeholder="Month(s) per year in residence"/>
+                        </Col>
+                      </Row>
 
-              <Row>
-                <Col>
-                  <label htmlFor="heat">{editingdata.heat3Source}</label>
-                  <br />
-                  <select name="heat" value={selectHeatFive} onChange={changeHeatFive}>
-                    <option value="" hidden>{editingdata.select}</option>
-                    <option value='gas'>{editingdata.heatSource1}</option>
-                    <option value='oil'>{editingdata.heatSource2}</option>
-                    <option value='electric'>{editingdata.heatSource3}</option>
-                    <option value='wood'>{editingdata.heatSource4}</option>
-                  </select>
-                </Col>
-              </Row>
+                      <Row>
+                        <Col>
+                          <label htmlFor="size">{editingdata.heat3Size}</label>
+                          <br />
+                          <select name="size" value={selectSizeFive} onChange={changeSizeFive}>
+                            <option value="" hidden>{editingdata.select}</option>
+                            <option value='1000'>{editingdata.heatSize1}</option>
+                            <option value='1500'>{editingdata.heatSize2}</option>
+                            <option value='2000'>{editingdata.heatSize3}</option>
+                            <option value='2500'>{editingdata.heatSize4}</option>
+                            <option value='5000'>{editingdata.heatSize5}</option>
+                            <option value='7500'>{editingdata.heatSize6}</option>
+                            <option value='10000'>{editingdata.heatSize7}</option>
+                            <option value='10001'>{editingdata.heatSize8}</option>
+                          </select>
+                        </Col>
+                      </Row>
 
-              <Row>
-                <Col>
-                  <label htmlFor="energy">{editingdata.heat3Savings}</label>
-                  <br />
-                  <select name="energy" value={selectEnergyFive} onChange={changeEnergyFive}>
-                    <option value="" hidden>{editingdata.select}</option>
-                    <option value='none'>{editingdata.heatSavings1}</option>
-                    <option value='light'>{editingdata.heatSavings2}</option>
-                    <option value='moderate'>{editingdata.heatSavings3}</option>
-                    <option value='extensive'>{editingdata.heatSavings4}</option>
-                  </select>
-                </Col>
-              </Row> 
-           </div>
-         </Accordion.Collapse>
-         </Card>
-     
-        
-         </Accordion>
+                      <Row>
+                        <Col>
+                          <label htmlFor="heat">{editingdata.heat3Source}</label>
+                          <br />
+                          <select name="heat" value={selectHeatFive} onChange={changeHeatFive}>
+                            <option value="" hidden>{editingdata.select}</option>
+                            <option value='gas'>{editingdata.heatSource1}</option>
+                            <option value='oil'>{editingdata.heatSource2}</option>
+                            <option value='electric'>{editingdata.heatSource3}</option>
+                            <option value='wood'>{editingdata.heatSource4}</option>
+                          </select>
+                        </Col>
+                      </Row>
 
+                      <Row>
+                        <Col>
+                          <label htmlFor="energy">{editingdata.heat3Savings}</label>
+                          <br />
+                          <select name="energy" value={selectEnergyFive} onChange={changeEnergyFive}>
+                            <option value="" hidden>{editingdata.select}</option>
+                            <option value='none'>{editingdata.heatSavings1}</option>
+                            <option value='light'>{editingdata.heatSavings2}</option>
+                            <option value='moderate'>{editingdata.heatSavings3}</option>
+                            <option value='extensive'>{editingdata.heatSavings4}</option>
+                          </select>
+                        </Col>
+                      </Row> 
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+              </Accordion>
             </div>
-
 
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
-              <Col className="col-12">
+                <Col className="col-12">
                   <h3 className="text-green">{editingdata.vehicleHeader}</h3>
 
                   <p className="text-grey">{editingdata.vehiclePara1}</p>
                 </Col>
                 <Col>
-              <Accordion>
-              <Card>
-                            <Accordion.Toggle as={Card.Header} eventKey="0">
-                            
-                  <h5 className="smallCaps text-small text-green">{editingdata.vehicleSmall}</h5>
+                  <Accordion>
+                    <Card>
+                      <Accordion.Toggle as={Card.Header} eventKey="0">    
+                        <h5 className="smallCaps text-small text-green">{editingdata.vehicleSmall}</h5>
+                        <p className="text-small op-6">{editingdata.vehicleSmallDesc}</p>
+                      </Accordion.Toggle>
+                      <Accordion.Collapse eventKey="0">
+                        <div>
+                          <Row>
+                            <Col className="col">
 
-                  <p className="text-small op-6">{editingdata.vehicleSmallDesc}</p>
-                            </Accordion.Toggle>
-                            <Accordion.Collapse eventKey="0">
-                
-                <div>
-                
-                  <Row>
-                    <Col className="col">
+                              {editingdata.vehicleGas}
+                              <input onChange={calculateMiles} name="smallGas" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Annual KM (gas)"/>
+                            </Col>
+                          </Row>
 
-                      {editingdata.vehicleGas}
-                      <input onChange={calculateMiles} name="smallGas" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Annual KM (gas)"/>
-                    </Col>
-                  </Row> 
-                  <Row>
-                    <Col className="col">
-                      {editingdata.vehicleDiesel}
-                      <input onChange={calculateMiles} name="smallDiesel" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Annual KM (diesel)"/>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col className="col">
-                      {editingdata.vehicleHybrid}
-                      <input onChange={calculateMiles} name="smallHybrid" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Annual KM (hybrid)"/>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col className="col">
-                      <input onChange={calculateMiles} name="smallPlug" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Annual KM (plug-in hybrid)"/>
-                    </Col>
-                  </Row>
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleDiesel}
+                              <input onChange={calculateMiles} name="smallDiesel" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Annual KM (diesel)"/>
+                            </Col>
+                          </Row>
 
-                  <Row>
-                    <Col className="col">
-                      {editingdata.vehicleElectric}
-                      <input onChange={calculateMiles} name="smallElectric" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Annual KM (battery electric)"/>
-                    </Col>
-                  </Row>
-                  </div>
-                </Accordion.Collapse>
-                </Card>
-                <Card>
-                <Accordion.Toggle as={Card.Header} eventKey="1">
-                  <h5 className="smallCaps text-small text-green">{editingdata.vehicleMed}</h5>
-                  <p className="text-small op-6">{editingdata.vehicleMedDesc}</p>
-                  </Accordion.Toggle>
-                            <Accordion.Collapse eventKey="1">
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleHybrid}
+                              <input onChange={calculateMiles} name="smallHybrid" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Annual KM (hybrid)"/>
+                            </Col>
+                          </Row>
 
-                              <div>
-                  <Row>
-                    <Col className="col">
-                      {editingdata.vehicleGas}
-                      <input onChange={calculateMiles} name="mediumGas" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Annual KM (gas)"/>
-                    </Col>
-                  </Row> 
-                  <Row>
-                    <Col className="col">
-                    {editingdata.vehicleDiesel}
-                      <input onChange={calculateMiles} name="mediumDiesel" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Annual KM (diesel)"/>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col className="col">
-                    {editingdata.vehicleHybrid}
-                      <input onChange={calculateMiles} name="mediumHybrid" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Annual KM (hybrid)"/>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col className="col">
-                      <input onChange={calculateMiles} name="mediumPlug" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Annual KM (plug-in hybrid)"/>
-                    </Col>
-                  </Row>
+                          <Row>
+                            <Col className="col">
+                              <input onChange={calculateMiles} name="smallPlug" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Annual KM (plug-in hybrid)"/>
+                            </Col>
+                          </Row>
 
-                  <Row>
-                    <Col className="col">
-                      {editingdata.vehicleElectric}
-                      <input onChange={calculateMiles} name="mediumElectric" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Annual KM (battery electric)"/>
-                    </Col>
-                  </Row>
-                  </div>
-                </Accordion.Collapse>
-                </Card>
-                <Card>
-                <Accordion.Toggle as={Card.Header} eventKey="2">
-                  <h5 className="smallCaps text-small text-green">{editingdata.vehicleLarge}</h5>
-                  <p className="text-small op-6">{editingdata.vehicleLargeDesc}</p>
-                  </Accordion.Toggle>
-                  <Accordion.Collapse eventKey="2">
-                              <div>
-                  <Row>
-                    <Col className="col">
-                      {editingdata.vehicleGas}
-                      <input onChange={calculateMiles} name="largeGas" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Annual KM (gas)"/>
-                    </Col>
-                  </Row> 
-                  <Row>
-                    <Col className="col">
-                      {editingdata.vehicleDiesel}
-                      <input onChange={calculateMiles} name="largeDiesel" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Annual KM (diesel)"/>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col className="col">
-                      {editingdata.vehicleHybrid}
-                      <input onChange={calculateMiles} name="largeHybrid" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Annual KM (hybrid)"/>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col className="col">
-                      <input onChange={calculateMiles} name="largePlug" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Annual KM (plug-in hybrid)"/>
-                    </Col>
-                  </Row>
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleElectric}
+                              <input onChange={calculateMiles} name="smallElectric" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Annual KM (battery electric)"/>
+                            </Col>
+                          </Row>
+                        </div>
+                      </Accordion.Collapse>
+                    </Card>
 
-                  <Row>
-                    <Col className="col">
-                      {editingdata.vehicleElectric}
-                      <input onChange={calculateMiles} name="largeElectric" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Annual KM (battery electric)"/>
-                    </Col>
-                  </Row>
-                  <hr/>
+                    <Card>
+                      <Accordion.Toggle as={Card.Header} eventKey="1">
+                        <h5 className="smallCaps text-small text-green">{editingdata.vehicleMed}</h5>
+                        <p className="text-small op-6">{editingdata.vehicleMedDesc}</p>
+                      </Accordion.Toggle>
+                      <Accordion.Collapse eventKey="1">
+                        <div>
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleGas}
+                              <input onChange={calculateMiles} name="mediumGas" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Annual KM (gas)"/>
+                            </Col>
+                          </Row>
 
-                  <h5 className="smallCaps text-small text-green">{editingdata.vehicleMoto}</h5>
-                  <p className="text-small op-6">{editingdata.vehicleMotoDesc}</p>
-                  <Row>
-                    <Col className="col">
-                      {editingdata.vehicleGas}
-                      <input onChange={calculateMiles} name="motorbikeGas" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Annual KM (gas)"/>
-                    </Col>
-                  </Row> 
-                  </div>
-                </Accordion.Collapse>
-                </Card>
-              <Card>
-            <Accordion.Toggle as={Card.Header} eventKey="3">
-                  <h5 className="smallCaps text-small text-green">Private Aircraft</h5>
-                  <p className="text-small op-6">Personally owned aircraft, prop planes, helicopters, jets, etc.</p>
-                  </Accordion.Toggle>
-                  <Accordion.Collapse eventKey="3">
-                              <div>
-                  <Row>
-                    <Col className="col">
+                          <Row>
+                            <Col className="col">
+                            {editingdata.vehicleDiesel}
+                              <input onChange={calculateMiles} name="mediumDiesel" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Annual KM (diesel)"/>
+                            </Col>
+                          </Row>
 
-                  <h5 className="smallCaps text-small text-green">{editingdata.vehiclePlane}</h5>
-                      <input onChange={calculateMiles} name="jetGas" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Annual litres of fuel"/>
-                    </Col>
-                  </Row> 
+                          <Row>
+                            <Col className="col">
+                            {editingdata.vehicleHybrid}
+                              <input onChange={calculateMiles} name="mediumHybrid" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Annual KM (hybrid)"/>
+                            </Col>
+                          </Row>
+
+                          <Row>
+                            <Col className="col">
+                              <input onChange={calculateMiles} name="mediumPlug" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Annual KM (plug-in hybrid)"/>
+                            </Col>
+                          </Row>
+
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleElectric}
+                              <input onChange={calculateMiles} name="mediumElectric" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Annual KM (battery electric)"/>
+                            </Col>
+                          </Row>
+                        </div>
+                      </Accordion.Collapse>
+                    </Card>
+                    <Card>
+                      <Accordion.Toggle as={Card.Header} eventKey="2">
+                        <h5 className="smallCaps text-small text-green">{editingdata.vehicleLarge}</h5>
+                        <p className="text-small op-6">{editingdata.vehicleLargeDesc}</p>
+                      </Accordion.Toggle>
+                      <Accordion.Collapse eventKey="2">
+                        <div>
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleGas}
+                              <input onChange={calculateMiles} name="largeGas" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Annual KM (gas)"/>
+                            </Col>
+                          </Row>
+
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleDiesel}
+                              <input onChange={calculateMiles} name="largeDiesel" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Annual KM (diesel)"/>
+                            </Col>
+                          </Row>
+
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleHybrid}
+                              <input onChange={calculateMiles} name="largeHybrid" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Annual KM (hybrid)"/>
+                            </Col>
+                          </Row>
+
+                          <Row>
+                            <Col className="col">
+                              <input onChange={calculateMiles} name="largePlug" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Annual KM (plug-in hybrid)"/>
+                            </Col>
+                          </Row>
+
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleElectric}
+                              <input onChange={calculateMiles} name="largeElectric" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Annual KM (battery electric)"/>
+                            </Col>
+                          </Row>
+
+                          <hr/>
+                          <h5 className="smallCaps text-small text-green">{editingdata.vehicleMoto}</h5>
+                          <p className="text-small op-6">{editingdata.vehicleMotoDesc}</p>
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleGas}
+                              <input onChange={calculateMiles} name="motorbikeGas" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Annual KM (gas)"/>
+                            </Col>
+                          </Row> 
+                        </div>
+                      </Accordion.Collapse>
+                    </Card>
+                    <Card>
+                      <Accordion.Toggle as={Card.Header} eventKey="3">
+                        <h5 className="smallCaps text-small text-green">Private Aircraft</h5>
+                        <p className="text-small op-6">Personally owned aircraft, prop planes, helicopters, jets, etc.</p>
+                      </Accordion.Toggle>
+                      <Accordion.Collapse eventKey="3">
+                        <div>
+                          <Row>
+                            <Col className="col">
+                              <h5 className="smallCaps text-small text-green">{editingdata.vehiclePlane}</h5>
+                              <input onChange={calculateMiles} name="jetGas" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Annual litres of fuel"/>
+                            </Col>
+                          </Row> 
                   
-                  <Row>
-                    <Col className="col">
+                          <Row>
+                            <Col className="col">
+                              <h5 className="smallCaps text-small text-green">{editingdata.vehicleJet}</h5>
+                              <input onChange={calculateMiles} name="planeGas" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Annual litres of fuel"/>
+                            </Col>
+                          </Row>
 
-                  <h5 className="smallCaps text-small text-green">{editingdata.vehicleJet}</h5>
-                      <input onChange={calculateMiles} name="planeGas" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Annual litres of fuel"/>
-                    </Col>
-                  </Row> 
-                  <Row>
-                    <Col className="col">
+                          <Row>
+                            <Col className="col">
+                              <h5 className="smallCaps text-small text-green">{editingdata.vehicleHeli}</h5>
+                              <input onChange={calculateMiles} name="heliGas" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Annual litres of fuel"/>
+                            </Col>
+                          </Row>
+                        </div>
+                      </Accordion.Collapse>
+                    </Card>
 
-                  <h5 className="smallCaps text-small text-green">{editingdata.vehicleHeli}</h5>
-                      <input onChange={calculateMiles} name="heliGas" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Annual litres of fuel"/>
-                    </Col>
-                  </Row>
-                  
-                  </div>
-                </Accordion.Collapse>
+                    <Card>
+                      <Accordion.Toggle as={Card.Header} eventKey="4">
+                        <h5 className="smallCaps text-small text-green">Recreational Vehicles</h5>
+                        <p className="text-small op-6">Personally owned recreational vehicles, such as yachts, ATVs, and more.</p>
+                      </Accordion.Toggle>
+                      <Accordion.Collapse eventKey="4">
+                        <div>
+                          <h5 className="smallCaps text-small text-green">{editingdata.VehicleOther}</h5>
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vechileYacht}
+                              <input onChange={calculateMiles} name="yachtGas" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Marine Diesel Litres per year"/>
 
-                </Card>
-              <Card>
-                <Accordion.Toggle as={Card.Header} eventKey="4">
-                  <h5 className="smallCaps text-small text-green">Recreational Vehicles</h5>
-                  <p className="text-small op-6">Personally owned recreational vehicles, such as yachts, ATVs, and more.</p>
-                  </Accordion.Toggle>
-                  <Accordion.Collapse eventKey="4">
+                              <input onChange={calculateMiles} name="yachtDiesel" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Marine Unleaded Litres per year"/>
+                            </Col>
+                          </Row> 
 
-                              <div>
-                  <h5 className="smallCaps text-small text-green">{editingdata.VehicleOther}</h5>
-                  <Row>
-                    <Col className="col">
-                      {editingdata.vechileYacht}
-                      <input onChange={calculateMiles} name="yachtGas" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Marine Diesel Litres per year"/>
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleATV}
+                              <input onChange={calculateMiles} name="atvGas" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Litres per year"/>
+                            </Col>
+                          </Row> 
 
-                      <input onChange={calculateMiles} name="yachtDiesel" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Marine Unleaded Litres per year"/>
-                    </Col>
-                  </Row> 
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleSide}
+                              <input onChange={calculateMiles} name="sbsGas" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Litres per year"/>
+                            </Col>
+                          </Row> 
 
-                  <Row>
-                    <Col className="col">
-                      {editingdata.vehicleATV}
-                      <input onChange={calculateMiles} name="atvGas" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Litres per year"/>
-                    </Col>
-                  </Row> 
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleSnow}
+                              <input onChange={calculateMiles} name="snowGas" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Litres per year"/>
+                            </Col>
+                          </Row> 
 
-                  <Row>
-                    <Col className="col">
-                      {editingdata.vehicleSide}
-                      <input onChange={calculateMiles} name="sbsGas" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Litres per year"/>
-                    </Col>
-                  </Row> 
+                          <Row>
+                            <Col className="col">
+                              Seadoo
+                              <input onChange={calculateMiles} name="seaGas" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Litres per year"/>
+                            </Col>
+                          </Row> 
 
-                  <Row>
-                    <Col className="col">
-                      {editingdata.vehicleSnow}
-                      <input onChange={calculateMiles} name="snowGas" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Litres per year"/>
-                    </Col>
-                  </Row> 
+                          <Row>
+                            <Col className="col">
+                              Scooter
+                              <input onChange={calculateMiles} name="scootGas" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Litres per year"/>
+                            </Col>
+                          </Row> 
 
+                          <Row>
+                            <Col className="col">
+                              Lawn Mower/Tractor
+                              <input onChange={calculateMiles} name="lawnGas" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Litres per year"/>
+                            </Col>
+                          </Row> 
 
-
-                  <Row>
-                    <Col className="col">
-                      Seadoo
-                      <input onChange={calculateMiles} name="seaGas" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Litres per year"/>
-                    </Col>
-                  </Row> 
-
-                  <Row>
-                    <Col className="col">
-                      Scooter
-                      <input onChange={calculateMiles} name="scootGas" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Litres per year"/>
-                    </Col>
-                  </Row> 
-
-                  <Row>
-                    <Col className="col">
-                      Lawn Mower/Tractor
-                      <input onChange={calculateMiles} name="lawnGas" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Litres per year"/>
-                    </Col>
-                  </Row> 
-
-                  <Row>
-                    <Col className="col">
-                      Tractor/Farm Equipment
-                      <input onChange={calculateMiles} name="tractorGas" type="number" min="0" onKeyPress={(event) => {
-                        if (!/[0-9]/.test(event.key)) {event.preventDefault();}
-                      }} placeholder="Litres per year"/>
-                    </Col>
-                  </Row> 
-</div>
-                  </Accordion.Collapse>
-
-                </Card>
-                </Accordion>
-
+                          <Row>
+                            <Col className="col">
+                              Tractor/Farm Equipment
+                              <input onChange={calculateMiles} name="tractorGas" type="number" min="0" onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {event.preventDefault();}
+                              }} placeholder="Litres per year"/>
+                            </Col>
+                          </Row> 
+                        </div>
+                      </Accordion.Collapse>
+                    </Card>
+                  </Accordion>
                 </Col>
               </Row>
             </div>
           
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
-            
               <Row>
                 <Col>
                   <h3 className="text-green">{editingdata.flightHeader}</h3>
                   <p className="text-grey">{editingdata.flightPara}</p>
                 </Col>
               </Row>
+
               <hr/>
               <Row>
                 <Col className="col-12 col-xl-4">{editingdata.flightShort}</Col>
                 <Col>
                   <Row>
-                    <Col className="col-6 col-md-6">{editingdata.flightShort1}</Col>
-                    <Col className="col-6 col-xl-6">
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightShort1}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
                       <input onChange={calculateFlightCount} name="flyShort" type="number" placeholder="Number of flights"/>
                     </Col>
                   </Row>
                 </Col>
               </Row>
-              <hr/>
 
+              <hr/>
               <Row>
                 <Col className="col-10 col-xl-4">{editingdata.flightMed}</Col>
                 <Col>
                   <Row>
-                    <Col className="col-6">{editingdata.flightMed1}</Col>
-                    <Col className="col-6">
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightMed1}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
                       <input onChange={calculateFlightCount} name="flyMediumEco" type="number"placeholder="Number of flights"/>
                     </Col>
                   </Row>
                   <Row>
-                    <Col className="col-6">{editingdata.flightMed2}</Col>
-                    <Col className="col-6">
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightMed2}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
                       <input onChange={calculateFlightCount} name="flyMediumBus" type="number"placeholder="Number of flights"/>
                     </Col>
                   </Row>
                 </Col>
               </Row>
-              <hr/>
 
+              <hr/>
               <Row>
                 <Col className="col-10 col-xl-4">{editingdata.flightLong}</Col>
                 <Col className="col-12 col-xl-8">
                   <Row>
-                    <Col>{editingdata.flightLong1}</Col>
-                    <Col>
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightLong1}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
                       <input onChange={calculateFlightCount} name="flyLongEco" type="number" placeholder="Number of flights"/>
                     </Col>
                   </Row>
                   <Row>
-                    <Col>{editingdata.flightLong2}</Col>
-                    <Col>
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightLong2}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
                       <input onChange={calculateFlightCount} name="flyLongEcoPlus" type="number" placeholder="Number of flights"/>
                     </Col>
                   </Row>
                   <Row>
-                    <Col>{editingdata.flightLong3}</Col>
-                    <Col>
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightLong3}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
                       <input onChange={calculateFlightCount} name="flyLongBus" type="number" placeholder="Number of flights"/>
                     </Col>
                   </Row>
                   <Row>
-                    <Col>{editingdata.flightLong4}</Col>
-                    <Col>
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightLong4}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
                       <input onChange={calculateFlightCount} name="flyLongFirst" type="number" placeholder="Number of flights"/>
                     </Col>
                   </Row>
                 </Col>
               </Row>
-              <hr/>
 
+              <hr/>
               <Row>
-                <Col className="col-10 col-sm-5 col-xl-4">{editingdata.flightNights}</Col>
-                <Col  className="col-2 col-sm-1 col-xl-4"></Col>
-                <Col className="col-sm-6 col-xl-4">
+                <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightNights}</Col>
+                <Col className="col-12 col-xl-8 col-sm-6">
                   <input onChange={calculateFlightCount} name="flyHotels" type="number" placeholder="Number of nights"/>
                 </Col>
               </Row>
+
               <Row>
-                <Col className="col-10 col-sm-5 col-xl-4">{editingdata.flightCars}</Col>
-                <Col  className="col-2 col-sm-1 col-xl-4"></Col>
-                <Col className="col-sm-6 col-xl-4">
+                <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightCars}</Col>
+                <Col className="col-12 col-xl-8 col-sm-6">
                   <input onChange={calculateMiles} name="rentalGas" type="number" min="0" onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                   }} placeholder="Annual KM (gas)"/>
@@ -1606,31 +1659,33 @@ const router = useRouter();
               </Row>
               
               <Row>
-                <Col className="col-12 col-xl-4">{editingdata.publicTaxi}</Col>
-                <Col className="col-xl-4">
+                <Col className="col-12 col-xl-4 col-sm-6">{editingdata.publicTaxi}</Col>
+                <Col className="col-12 col-xl-8 col-sm-6">
                   <input onChange={calculateTransitMiles} name="publicTaxi" type="number" min="0" onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                   }} placeholder="Average Km per day"/>
                 </Col>
               </Row>
+
               <Row>
-                <Col className="col-10 col-xl-4">{editingdata.publicMetro}</Col>
-                <Col className="col-6 col-xl-4">
+                <Col className="col-12 col-xl-4 col-sm-6">{editingdata.publicMetro}</Col>
+                <Col className="col-12 col-xl-8 col-sm-6">
                   <input onChange={calculateTransitMiles} name="publicSubway" type="number" min="0" onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {event.preventDefault();}
                   }} placeholder="Average Km per day"/>
                 </Col>
               </Row>
+
               <Row>
-                <Col className="col-12 col-xl-4">{editingdata.publicBus}</Col>
-                <Col className="col-xl-4">
+                <Col className="col-12 col-xl-4 col-sm-6">{editingdata.publicBus}</Col>
+                <Col className="col-12 col-xl-8 col-sm-6">
                   <input onChange={calculateTransitMiles} name="publicCar" type="number" placeholder="Average Km per day"/>
                 </Col>
               </Row>
             </div>
           </Col>
           
-          <Col className=" p-3  col-12 col-lg-4 stickyCalc mb-4">
+          <Col className=" p-3  col-11 col-lg-4 stickyCalc mb-4">
             <div className="text-white p-5 innerShadow roundedBox bg-green">
               <h4 className="mb-0">{editingdata.dataHeader}</h4>
               <hr/>
@@ -1653,25 +1708,30 @@ const router = useRouter();
               <span className="smallCaps text-small">{editingdata.dataTotal}</span><br/>
               <span className="h2 bold">{total > 0 ? total.toFixed(2) : "--"}</span>
               <p>{total > 0 ? "(Metric Tonnes of CO2 per Year)" : ""}</p>
-              <p>{editingdata.dataDisclaimer}</p>
+              <p className="text-small">{editingdata.dataDisclaimer}</p>
 
               <Row>
-                <Col className="whiteBorder rounded mt-3 p-3"><p className="text-small">To continue editing your results in the future, save or bookmark this link:</p>
-                <p  className="pt-2 text-small"><a href={fullUrl}>{fullUrl}</a></p>
-                {/*<hr/>
-                <p className="text-small">Share your results on social media with this link:</p>
-                <p  className="pt-2 text-small"><a href={sharingUrl}>{sharingUrl}</a></p>*/}</Col>
+                <Col className="whiteBorder rounded mt-3 p-3">
+                  <p className="text-small">To continue editing your results in the future, save or bookmark this link:</p>
+                  <p className="pt-2 text-small">
+                    {fullUrlError ? <p style={{ color: 'red' }}>{fullUrlError}</p> : null}
+                    <a href={fullUrl} onClick={fullUrlClick}>{fullUrl}</a>
+                  </p>
+                  <hr/>
+                  <p className="text-small">Share your results on social media with this link:</p>
+                  <p className="pt-2 text-small"><a href={sharingUrl}>{sharingUrl}</a></p>
+                </Col>
               </Row>
             </div>
           </Col>
         </Row>  
       
         <Row className="justify-content-center ">
-          <Col className="col-10 align-items-center text-center p-3">
-            <div className="bg-brown p-5 innerShadow roundedBox">
-              <p className="smallCaps text-orange">{editingdata.box1Header}</p>
-              <h3 className="text-white mb-4 px-2 px-lg-5">{editingdata.box1Para}</h3>
-              <Link href="smart-forest-personal"><Button className="btn-large mt-1" variant="green">{editingdata.box1Button}</Button></Link>
+          <Col className="col-11 col-lg-10 align-items-center text-center p-3">
+            <div className="bg-brown p-4 innerShadow roundedBox">
+              <p className="smallCaps text-orange mb-3">{editingdata.box1Header}</p>
+              {nextStepError ? <p style={{color: 'red' }}>{nextStepError}</p> : null}
+              <Button className="btn-large mt-1" variant="green" onClick={nextStepClick}>{editingdata.box1Button}</Button>
             </div>
           </Col>
         </Row>
@@ -1683,19 +1743,19 @@ const router = useRouter();
         </Row>
 
         <Row className="justify-content-center pb-5 mb-5">
-          <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
+          <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
             <h4 className="text-white tight-drop-light">{editingdata.otherbox1Header}</h4>
             <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox1Para}</p>
-            <Link href="business-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox1button}</a></Link>
+            <Link href="/business-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox1button}</a></Link>
             </div>
           </Col>
 
-          <Col className="col-12 col-md-6 col-lg-4 col-xl-3 pe-lg-0 m-3">
+          <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
             <h4 className="text-white tight-drop-light">{editingdata.otherbox2Header}</h4>
             <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox2Para}</p>
-            <Link href="school-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox2button}</a></Link>
+            <Link href="/school-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox2button}</a></Link>
             </div>
           </Col>  
         </Row>
@@ -1707,42 +1767,7 @@ const router = useRouter();
 /**
 * Fetch data with getStaticProps based on 'preview' mode
 */
-
-
-
-
 export const getStaticProps: GetStaticProps = async function({preview, previewData}) {
-
-  const [sessionID, setSessionID] = useSessionID();
-  const [personalArray, setPersonalArray] = usePersonalArray();
-
-      const databaseName = 'cftdata';
-
-      MongoClient.connect(
-        process.env.MONGODB_URI,
-        { useNewUrlParser: true },
-        (error, client) => {
-          if (error) {
-            return console.log('unable to connect to database');
-          }
-      
-          const db = client.db(databaseName);
-      
-          db.collection('calcData').insertOne({
-            sessionID: sessionID,
-            personalArray: personalArray
-          });
-        }
-      );
-
-
-    
-
-  
-    
-  
-  
-
   if (preview) {
     return getGithubPreviewProps({
       ...previewData,
@@ -1758,7 +1783,7 @@ export const getStaticProps: GetStaticProps = async function({preview, previewDa
       file: {
         fileRelativePath: 'content/personal-calculator.json',
         data: (await import('../content/personal-calculator.json')).default,
-      },
+      }
     },
   }
 }

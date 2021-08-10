@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 import { GetStaticProps } from "next";
@@ -10,17 +10,15 @@ import Fade from "react-reveal/Fade";
 import Button from "react-bootstrap/Button";
 import Carousel from "react-bootstrap/Carousel";
 import Modal from "react-bootstrap/Modal";
-import Rellax from "rellax";
-import Parallax from "parallax-js";
-import { Slide } from "react-slideshow-image";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import {
   useGithubJsonForm,
   useGithubToolbarPlugins,
 } from "react-tinacms-github";
 import Header from "../components/header";
-
-import ReactPlayer from 'react-player'
+import PDFViewer from '../components/PDFViewer';
+import PDFJSBackend from '../middlewares/pdfjs';
+import ReactPlayer from 'react-player';
 
 export default function Power({ file }) {
   const [show, setShow] = useState(false);
@@ -76,43 +74,48 @@ export default function Power({ file }) {
       {name: 'person13_para2', component: 'markdown' }],
   };
 
+  const [editingdata, form] = useGithubJsonForm(file, formOptions);
+  usePlugin(form);
+  useGithubToolbarPlugins();
+
+  const slideProperties = {
+    indicators: (i) => <span className="sliderDot" />,
+  };
+
   const [index, setIndex] = useState(0);
 
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
 
-  const slideProperties = {
-    indicators: (i) => <span className="sliderDot" />,
-  };
-
-  const [editingdata, form] = useGithubJsonForm(file, formOptions);
-  usePlugin(form);
-  useGithubToolbarPlugins();
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         const id = entry.target.getAttribute("id");
         if (entry.intersectionRatio > 0.0) {
           if (document.querySelector(`.left-sidenav li[data-dest="#${id}"]`)) {
-            document
-              .querySelector(`.left-sidenav li[data-dest="#${id}"]`)
-              .classList.add("active");
+            document.querySelector(`.left-sidenav li[data-dest="#${id}"]`).classList.add("active");
           }
         } else {
           if (document.querySelector(`.left-sidenav li[data-dest="#${id}"]`)) {
-            document
-              .querySelector(`.left-sidenav li[data-dest="#${id}"]`)
-              .classList.remove("active");
+            document.querySelector(`.left-sidenav li[data-dest="#${id}"]`).classList.remove("active");
           }
         }
       });
     });
 
     // Track all div containers that have an `id` applied
-    document.querySelectorAll("div[id]").forEach((id) => {
+    document.querySelectorAll("div.page-section").forEach((id) => {
       observer.observe(id);
     });
+
+    const hash = window.location.hash;
+    if (hash) {
+      const container = document.getElementById(hash.substring(1));
+      if (container) {
+        container.scrollIntoView();
+      }
+    }
   }, []);
 
   return (
@@ -126,374 +129,281 @@ export default function Power({ file }) {
 
       <Row className="justify-content-left p-0 m-0 d-none d-lg-block d-xl-block">
         <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
-          <p className="text-white m-2 bold op-6 mt-4">{editingdata.home}</p>
-          <ul>
+          <p className="text-white m-2 bold op-6 mt-4 d-none">{editingdata.home}</p>
+          <ul className="mt-4">
             <li className="p-0" data-dest="#intro">
-              <a href="#intro" className="text-white bold no-underline">{editingdata.menu1}</a>
+              <a href="#intro" className="text-white bold no-underline">INTRO</a>
             </li>
-            <li className="p-0" data-dest="#growing">
-              <a href="#growing" className="text-white bold no-underline">{editingdata.menu2}</a>
+            <li className="p-0" data-dest="#video">
+              <a href="#video" className="text-white bold no-underline">VIDEO</a>
+            </li>
+            <li className="p-0" data-dest="#the-plan">
+              <a href="#the-plan" className="text-white bold no-underline">5 PHASES</a>
+            </li>
+            <li className="p-0" data-dest="#what">
+              <a href="#what" className="text-white bold no-underline">SMART FOREST?</a>
             </li>
             <li className="p-0" data-dest="#team">
-              <a href="#team" className="text-white bold no-underline ">{editingdata.menu3}</a>
+              <a href="#team" className="text-white bold no-underline">OUR TEAM</a>
+            </li>
+            <li className="p-0" data-dest="#qna">
+              <a href="#qna" className="text-white bold no-underline">Q & A</a>
             </li>
           </ul>
         </Col>
       </Row>
 
-      <main className="">
-        <Container id="intro" className="bg-green z-999 py-5 px-5">
-          <Row className="justify-content-center d-flex mb-5 py-5 px-5">
-            <Col className="col-12 col-lg-5 stickyTop roundedBox innerShadow-heavy m-3 p-0 about-hero"></Col>
+      <main>
+        <Container id="intro" className="bg-green z-999 py-5 px-5 page-section">
+          <Row className="justify-content-center d-flex mt-xl-0 mt-lg-4 mb-5 ms-xl-5 ms-lg-2 py-5 px-3">
+            <Col className="col-12 col-md-11 col-lg-5 stickyTop roundedBox innerShadow-heavy mt-5 m-3 p-0 about-hero"></Col>
             <Col className="col-12 col-lg-5 text-white p-4 pb-0 intro-order ">
-              <h1 className="text-orange mb-3 bold">{editingdata.header1}</h1>
-              <p className="lead bold mb-5">{editingdata.para1}</p>
-              <p className="large op-9 pt-3">{editingdata.para2}</p>
-              <p className="large op-9">{editingdata.para3}</p>
+              <h1 className="text-orange hero-alt bold mb-5 mt-2">{editingdata.header1}</h1>
+              <p className="large mb-3">{editingdata.para1}</p>
+              <p className="large mb-3">{editingdata.para2}</p>
+              <p className="large mb-3">{editingdata.para3}</p>
+              <p className="large mb-3">{editingdata.para4}</p>
+              <p className="large mb-3">{editingdata.para5}</p>
+              <p className="large mb-3">{editingdata.para6}</p>
               <p className="text-white text-left smallcaps intro-links-header op-5 mt-5 mb-3">{editingdata.header2}</p>
-              <a href="#growing" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.link1}</a>
-              <a href="#team" className="btn btn-text text-left intro-links text-orange bold no-underline">{editingdata.link2}</a>
+              <a href="#video" className="btn btn-text text-left intro-links text-orange bold no-underline me-4">Watch our video</a>
+              <br/>
+              <a href="#the-plan" className="btn btn-text text-left intro-links text-orange bold no-underline me-4">5 Phase Approach</a>
+              <br/>
+              <a href="#what" className="btn btn-text text-left intro-links text-orange bold no-underline me-4">What is a Smart Forest?</a>
+              <br/>
+              <a href="#team" className="btn btn-text text-left intro-links text-orange bold no-underline me-4">Meet our team</a>
+              <br/>
+              <a href="#qna" className="btn btn-text text-left intro-links text-orange bold no-underline me-5">Q & A</a>
             </Col>
           </Row>
         </Container>
 
-        <Container fluid id="growing" className="bg-green py-5 z-0 px-0">
-          <Row className="justify-content-center align-items-center pt-5 mb-3">
-            <Col className="col-10 col-lg-6 text-center text-white">
-              <h2 className=" text-orange bold mb-3">{editingdata.part1_header1}</h2>
-              <p className="large mb-3 mt-0">{editingdata.part1_header2}</p>
-            </Col>
-          </Row>
+        <Container id="video" className="v-full z-999 bg-green py-5 page-section">
+          <Fade bottom>
+              <Row className="justify-content-center align-items-center my-4">
+                <Col className="col-12 col-md-11 col-lg-10 col-xl-8 text-center text-white">
+                  <h2 className="text-orange bold px-md-3 px-lg-0">Watch our video</h2>
+                </Col>
+              </Row>
+          </Fade>
+          <Fade bottom> 
+          <Row className="justify-content-center align-items-center pb-5 mb-5">
+              <Col className="col-10 col-lg-7 col-xl-6 d-flex">      
+                <ReactPlayer playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4' className="video-size"/> 
+              </Col>
+              <Col className="col-10 col-lg-3 col-xl-3 d-flex">
+                <p className="text-white d-none medium d-lg-block">
+                CFT was established by <span className="bold">Gary Zed</span>, an entrepreneur with a reputation for taking on tough challenges and getting things done. A leader with a national vision, Gary heads up a team that is committed to making CFT the most talked about climate success story in the decades ahead.
+                </p>
+                <p className="text-white text-center mt-3 large d-lg-none">
+                CFT was established by <span className="bold">Gary Zed</span>, an entrepreneur with a reputation for taking on tough challenges and getting things done. A leader with a national vision, Gary heads up a team that is committed to making CFT the most talked about climate success story in the decades ahead.
+                </p>
+              </Col>
+            </Row>
+          </Fade> 
+        </Container>
 
-            <Row className="justify-content-center align-items-center ">
-              <Carousel
-                className="col-11 col-lg-7 bg-brown roundedBox  innerShadow p-5 mx-4 px-0 mb-4"
-                activeIndex={index}
-                onSelect={handleSelect}
-                nextIcon={ <span aria-hidden="false" className="carousel-control-next-icon"/> }
+        <Container id="the-plan" className="v-full z-999 bg-green p-5 mb-5 page-section">
+          <Fade bottom>
+            <Row className="justify-content-center align-items-center my-4">
+              <Col className="col-12 col-md-11 col-lg-8 col-xl-9 text-center text-white">
+                <h2 className="text-orange bold mb-2 px-md-3 px-lg-0">CFT’s Smart Forest Action Plan</h2>
+                <p className="medium mt-0 mb-0 px-lg-4 mb-2">When you invest in a Smart Forest, we keep you informed on its progress - from site selection to planting to ongoing maintenance and carbon and biodiversity footprint impact as well as building meaningful relationships with our Indigenous peoples. CFT manages the forest landscape from the moment you buy your forest.</p>
+              </Col>
+            </Row>
+          </Fade>
+          <Fade bottom>
+            <Row className="justify-content-center align-items-center px-4">
+              
+              <Carousel className="col-12 col-lg-10 d-flex bg-brown roundedBox px-0"
+                activeIndex={index} onSelect={handleSelect} 
+                nextIcon={ <span aria-hidden="false" className="carousel-control-next-icon"/>}
                 nextLabel=""
-                prevIcon={ <span aria-hidden="true" className="carousel-control-prev-icon"/> }
-                prevLabel=""
-              >
-                <Carousel.Item interval={100000} className="justify-content-center">
-                  <div className="d-block w-100 about-bg mb-4 align-items-center d-flex">
-                    <div className="px-lg-5 pt-lg-4 mx-5">
-                      <p className="lead text-center center text-white bold">{editingdata.part1_para1}</p>
-                    </div>
-                  </div>
+                prevIcon={ <span aria-hidden="true" className="carousel-control-prev-icon"/>}
+                prevLabel="">
+                <Carousel.Item interval={500000}>
+                  <div className="d-block w-100 phases"></div>
+                  <Carousel.Caption><p></p></Carousel.Caption>
                 </Carousel.Item>
 
                 <Carousel.Item interval={100000}>
-                  <div className="d-block w-100 about-bg mb-4 align-items-center d-flex">
-                    <div className="px-lg-5 pt-lg-4 mx-5">
-                      <p className="lead text-center center text-white bold">{editingdata.part1_para2}</p>
-                    </div>
-                  </div>
+                  <div className="d-block w-100 phase1"></div>
+                  <Carousel.Caption className="col-9 col-md-6 col-xl-4">
+                    <h3 className="smallCaps text-left tight-drop bold mb-1">PROCURE</h3>
+                    <p className="h3 text-left tight-drop mb-4">Acquire land across Canada.</p>
+
+                    
+                  </Carousel.Caption>
                 </Carousel.Item>
 
                 <Carousel.Item interval={100000}>
-                  <div className="d-block w-100 about-bg mb-4 align-items-center d-flex">
-                    <div className="px-lg-5 pt-lg-4 mx-5">
-                      <p className="lead text-center center text-white bold">{editingdata.part1_para3}</p>
-                    </div>
-                  </div>
-                </Carousel.Item>
+                  <div className="d-block w-100 phase2"></div>
+                  <Carousel.Caption className="col-9 col-md-6 col-xl-4">
+                    <h3 className="smallCaps text-left tight-drop bold mb-1">PREPARE</h3>
+                    <p className="h3 text-left tight-drop mb-4">Assess, plan, and complete site preparation for planting.</p>
 
-                <Carousel.Item interval={100000}>
-                  <div className="d-block w-100 about-bg mb-4 align-items-center d-flex">
-                    <div className="px-lg-5 pt-lg-4 mx-5">
-                      <p className="lead text-center center text-white bold">{editingdata.part1_para4}</p>
-                    </div>
-                  </div>
+                    
+                  </Carousel.Caption>
                 </Carousel.Item>
-
                 <Carousel.Item interval={100000}>
-                  <div className="d-block w-100 about-bg mb-4 align-items-center d-flex">
-                    <div className="px-lg-5 pt-lg-4 mx-5">
-                      <p className="lead text-center center text-white bold">{editingdata.part1_para5}</p>
-                    </div>
-                  </div>
+                  <div className="d-block w-100 phase3"></div>
+                  <Carousel.Caption className="col-9 col-md-6 col-xl-4">
+                    <h3 className="smallCaps text-left tight-drop bold mb-1">PLANT</h3>
+                    <p className="h3 text-left tight-drop mb-4">Strategically plant seedlings to ensure optimal growth and carbon sequestration.</p>
+
+                  
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item interval={100000}>
+                  <div className="d-block w-100 phase4"></div>
+                  <Carousel.Caption className="col-9 col-md-6 col-xl-4">
+                    <h3 className="smallCaps text-left tight-drop bold mb-1">PRESERVE</h3>
+                    <p className="h3 text-left tight-drop mb-4">Perform innovative forest management activities to maintain the forest and maximize its impact</p>
+                    
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item interval={100000}>
+                  <div className="d-block w-100 phase5"></div>
+                  <Carousel.Caption className="col-9 col-md-6 col-xl-4">
+                    <h3 className="smallCaps text-left tight-drop bold mb-1">PROTECT</h3>
+                    <p className="h3 text-left tight-drop mb-4">Audit, and set a no clear-cut guarantee on every forest.</p>
+                    
+                  </Carousel.Caption>
                 </Carousel.Item>
               </Carousel>
             </Row>
-          
-
-            <Row className="align-items-center justify-content-center my-2">
-              <Col className="col-10 col-lg-7 pe-lg-0">
-                <h3 className="text-center text-orange bold">{editingdata.part1_para6}</h3>
-              </Col>
-            </Row>
-            <Row className="text-center justify-content-center mb-5 ">
-              <Col className="col-10 text-center pb-5 pe-lg-0">
-                <Button variant="green">{editingdata.part1_button}</Button>
-              </Col>
-            </Row>
+          </Fade>
         </Container>
 
-        <Container fluid id="video" className="bg-green">
-        <Row className="justify-content-center align-items-center ps-lg-4 ms-lg-4">
-            <Col className="col-12 col-lg-5 d-flex ms-lg-4 mb-2 nudge">
-            
-            <ReactPlayer playing playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4'/>
-           
-            </Col>
-            <Col className="col-12 col-lg-3 d-flex ms-lg-4 mb-2 nudge">
-              <p className="text-white">
-              CFT was established by Gary Zed, an entrepreneur with a reputation for taking on tough challenges and getting things done. A leader with a national vision, Gary heads up a team that is committed to making CFT the most talked about climate success story in the decades ahead.
-              </p>
-            </Col>
-          </Row>
+        <Container id="what" fluid className="v-full z-999 bg-green py-5 page-section">
+          <Fade bottom>
+            <Row className="pt-5 align-items-center justify-content-center">
+              <Col className="col-10 col-lg-7 pt-3">
+                <h2 className="text-center text-orange bold mb-2">What is a Smart Forest?</h2>
+                <p className="text-center text-white mb-3">A Smart Forest combines the resilience of a natural ecosystem, developed over millennia, with the predictive capabilities of today’s technologies and Canada’s First Peoples. Inside a Smart Forest, biodiversity thrives; outside of it, scientists, students, investors, and conservationists use digital instruments to understand and activate the forest’s role in cleaning our water, purifying our air, and restoring our country’s vast and vital ecosystems.</p>
+              </Col>
+            </Row>
+          </Fade>
+          <Fade bottom>
+            <Row className="justify-content-center d-flex pb-5 mx-4 px-lg-5">
+              <Col className="col-12 col-md-5 bg-brown roundedBox innerShadow px-5 pt-5 pb-4 m-4">          
+                <h3 className="h2 text-orange">A forest</h3>
+                <ul className="text-white checkMark">
+                  <li className="mb-3">Mitigates climate change by sequestering carbon</li>
+                  <li className="mb-3">Purifies the air and improves soil quality Regulates, filters, and moderates water flow</li>
+                  <li className="mb-3">Supports wildlife and plant species that would otherwise disappear</li>
+                  <li className="mb-3">Helps mitigate and prevent natural disasters</li>
+                </ul>
+              </Col>
+              <Col className="col-12 col-md-5 roundedBox card card-drop px-5 pt-5 pb-4 m-4">
+                <h3 className="h2 text-orange">A <span className="italic">Smart</span> Forest</h3>
+                <ul className="text-grey plus">
+                  <li className="mb-3">Is a forest and an investment in the health of our planet</li>
+                  <li className="mb-3">Offers a tangible way to offset a large carbon footprints</li>
+                  <li className="mb-3">Maximizes its impact through expert forest management and indigenous oversight</li>
+                  <li className="mb-3">Proves its effectiveness via proprietary digital tools</li>
+                  <li className="mb-3">Boosts the green economy</li>
+                  <li className="mb-3">Empower the Indigenous economy</li>
+                  <li className="mb-3">Is protected forever with a no clear-cut guarantee</li>
+                </ul>
+              </Col>
+            </Row>
+          </Fade>
         </Container>
 
-        <Container fluid id="team" className="bg-brown innerShadow-heavy py-6">
-          <Row className="justify-content-center pt-5 mb-4">
-            <Col className="col-10 col-lg-7 text-center pt-3 ">
+        <Container fluid id="team" className="bg-brown innerShadow-heavy py-6 page-section">
+          <Row className="justify-content-center pt-5 mb-2">
+            <Col className="col-11 col-lg-8 text-center pt-3 ">
               <h2 className="text-orange bold">{editingdata.part2_header1}</h2>
-              <p className="text-white px-3 px-lg-5 mb-3">{editingdata.part2_para1}</p>
             </Col>
           </Row>
           <Row className="justify-content-center align-items-center pb-5">
             <Col className="col-11 col-lg-7">
               <Tabs>
                 <TabList className="horizTab px-3">
-                  <Tab className="text-orange btn-text smallCaps small letterspace no-underline">
-                    {editingdata.Option1}
+                  <Tab className="text-orange btn-text smallCaps small letterspace no-underline mx-3 my-2">
+                    LEADERSHIP
                   </Tab>
-                  <Tab className="text-orange btn-text smallCaps small letterspace no-underline">
-                    {editingdata.Option2}
+                  <Tab className="text-orange btn-text smallCaps small letterspace no-underline mx-3 my-2">
+                    TEAM
                   </Tab>
-                  <Tab className="text-orange btn-text smallCaps small letterspace no-underline">
-                    {editingdata.Option3}
+                  <Tab className="text-orange btn-text smallCaps small letterspace no-underline mx-3 my-2">
+                    ADVISORS
+                  </Tab>
+                  <Tab className="text-orange btn-text smallCaps small letterspace no-underline mx-3 my-2">
+                    GROWING WITH US
                   </Tab>
                 </TabList>
                 <TabPanel>
                   {/* First panel starts here */}
                   <Row className="justify-content-center align-items-center">
-                    <Col className="col-10 col-md-4 p-3">
-                      <div className="roundedBox overflow-hide about-card">
-                        <Row>
-                          <Col>
-                            <img src="/placeholder-forest.jpg"></img>
-                          </Col>
-                        </Row>
-                        <Row className="bg-white p-3 text-center">
-                          <Col>
-                            <span>
-                              <Button className="modal-btn" variant="btn-text" onClick={handleShow}>
-                                {editingdata.person1}
-                              </Button>
-                            </span>
-                          </Col>
-                        </Row>
-                      </div>
-                    </Col>
-                    <Col className="col-10 col-md-4 p-3">
-                      <div className="roundedBox overflow-hide about-card">
-                        <Row>
-                          <Col>
-                            <img src="/placeholder-forest.jpg"></img>
-                          </Col>
-                        </Row>
-                        <Row className="bg-white p-3 text-center">
-                          <Col>
-                            <span>
-                              <Button className="modal-btn" variant="btn-text" onClick={handleShow}>
-                                {editingdata.person2}
-                              </Button>
-                            </span>
-                          </Col>
-                        </Row>
-                      </div>
-                    </Col>
-                    <Col className="col-10 col-md-4 p-3">
-                      <div className="roundedBox overflow-hide about-card">
-                        <Row>
-                          <Col>
-                            <img src="/placeholder-forest.jpg"></img>
-                          </Col>
-                        </Row>
-                        <Row className="bg-white p-3 text-center">
-                          <Col>
-                            <span>
-                              <Button className="modal-btn" variant="btn-text" onClick={handleShow}>
-                                {editingdata.person3}
-                              </Button>
-                            </span>
-                          </Col>
-                        </Row>
-                      </div>
-                    </Col>
-                    <Col className="col-10 col-md-4 p-3">
-                      <div className="roundedBox overflow-hide about-card">
-                        <Row>
-                          <Col>
-                            <img src="/placeholder-forest.jpg"></img>
-                          </Col>
-                        </Row>
-                        <Row className="bg-white p-3 text-center">
-                          <Col>
-                            <span>
-                              <Button className="modal-btn" variant="btn-text" onClick={handleShow}>
-                                {editingdata.person4}
-                              </Button>
-                            </span>
-                          </Col>
-                        </Row>
-                      </div>
-                    </Col>
-                    <Col className="col-10 col-md-4 p-3">
-                      <div className="roundedBox overflow-hide about-card">
-                        <Row>
-                          <Col>
-                            <img src="/placeholder-forest.jpg"></img>
-                          </Col>
-                        </Row>
-                        <Row className="bg-white p-3 text-center">
-                          <Col>
-                            <span>
-                              <Button className="modal-btn" variant="btn-text" onClick={handleShow}>
-                                {editingdata.person5}
-                              </Button>
-                            </span>
-                          </Col>
-                        </Row>
-                      </div>
-                    </Col>
-                    <Col className="col-10 col-md-4 p-3">
-                      <div className="roundedBox overflow-hide about-card">
-                        <Row>
-                          <Col>
-                            <img src="/placeholder-forest.jpg"></img>
-                          </Col>
-                        </Row>
-                        <Row className="bg-white p-3 text-center">
-                          <Col>
-                            <span>
-                              <Button className="modal-btn" variant="btn-text" onClick={handleShow}>
-                                {editingdata.person6}
-                              </Button>
-                            </span>
-                          </Col>
-                        </Row>
-                      </div>
+                    <Col className="col-12 pt-5">
+                      <h2 className="text-center bold text-white mb-1">Gary Zed</h2>
+                      <p className="text-center text-white mb-4">Founder & CEO</p>
+
                     </Col>
                   </Row>
+                  <Row className="justify-content-center align-items-center">
+                  <Col className="col-12 col-md-9">
+                    <img className="card-drop-heavy" src="../../Gary-Zed_Headshot.jpg"/>
+                    </Col>
+                  </Row>
+                  <Row className="justify-content-center align-items-stretch">
+                  <Col className="mt-4">
+                    <div className="text-orange large text-center text-orange bold intro-cta">
+                      <a onClick={handleShow}>A message from our founder</a>
+                    </div>
+                    </Col>
+                  </Row>
+
                 </TabPanel>
                 <TabPanel>
                   <Row>
                     {/* Second panel starts here */}
-                    <Col className="col-10 col-md-4 p-3">
-                      <div className="roundedBox overflow-hide about-card">
-                        <Row>
-                          <Col>
-                            <img src="/placeholder-forest.jpg"></img>
-                          </Col>
-                        </Row>
-                        <Row className="bg-white p-3 text-center">
-                          <Col>
-                            <span>
-                              <Button className="modal-btn" variant="btn-text" onClick={handleShow}>
-                                {editingdata.person7}
-                              </Button>
-                            </span>
-                          </Col>
-                        </Row>
-                      </div>
-                    </Col>
-                    <Col className="col-10 col-md-4 p-3">
-                      <div className="roundedBox overflow-hide about-card">
-                        <Row>
-                          <Col>
-                            <img src="/placeholder-forest.jpg"></img>
-                          </Col>
-                        </Row>
-                        <Row className="bg-white p-3 text-center">
-                          <Col>
-                            <span>
-                              <Button className="modal-btn" variant="btn-text" onClick={handleShow}>
-                                {editingdata.person8}
-                              </Button>
-                            </span>
-                          </Col>
-                        </Row>
-                      </div>
-                    </Col>
-                    <Col className="col-10 col-md-4 p-3">
-                      <div className="roundedBox overflow-hide about-card">
-                        <Row>
-                          <Col>
-                            <img src="/placeholder-forest.jpg"></img>
-                          </Col>
-                        </Row>
-                        <Row className="bg-white p-3 text-center">
-                          <Col>
-                            <span>
-                              <Button className="modal-btn" variant="btn-text" onClick={handleShow}>
-                                {editingdata.person9}
-                              </Button>
-                            </span>
-                          </Col>
-                        </Row>
-                      </div>
+                    <Col className="col-12 p-5">
+                    <h2 className="text-center bold text-white mb-1">Don Finless</h2>
+                    <p className="text-center text-white mb-4">Land Acquisition & Planning</p>
+                    <h2 className="text-center bold text-white mb-1 mt-5">Zoebelle Flores</h2>
+                    <p className="text-center text-white mb-4">Research & Analytics</p>
+                    <h2 className="text-center bold text-white mb-1 mt-5">Neeraj Joshi</h2>
+                    <p className="text-center text-white mb-4">Information Technology</p>
+                    <h2 className="text-center bold text-white mb-1 mt-5">John Jussup</h2>
+                    <p className="text-center text-white mb-4">General Counsel</p>
+                    <h2 className="text-center bold text-white mb-1 mt-5">Farah Mohamed</h2>
+                    <p className="text-center text-white mb-4">Operations & Strategy</p>
+                    <h2 className="text-center bold text-white mb-1 mt-5">Taylor Piotrowski</h2>
+                    <p className="text-center text-white mb-4">Communications & Creative</p>
+                    <h2 className="text-center bold text-white mb-1 mt-5">Nicholas Tanton</h2>
+                    <p className="text-center text-white mb-4">Forester</p>
+                    <h2 className="text-center bold text-white mb-1 mt-5">Laura Wukitsch</h2>
+                    <p className="text-center text-white mb-4">Forester</p>
                     </Col>
                   </Row>
                 </TabPanel>
                 <TabPanel>
                   {/* Third panel starts here */}
                   <Row>
-                    <Col className="col-10 col-md-4 p-3">
-                      <div className="roundedBox overflow-hide about-card">
-                        <Row>
-                          <Col>
-                            <img src="/placeholder-forest.jpg"></img>
-                          </Col>
-                        </Row>
-                        <Row className="bg-white p-3 text-center">
-                          <Col>
-                            <span>
-                              <Button className="modal-btn" variant="btn-text" onClick={handleShow}>
-                                {editingdata.person10}
-                              </Button>
-                            </span>
-                          </Col>
-                        </Row>
-                      </div>
+                    <Col className="col-12 p-5">
+                    <h2 className="text-center bold text-white mb-1">JP Gladu</h2>
+                    <p className="text-center text-white mb-4">Indigenous People & Communities</p>
+                    <h2 className="text-center bold text-white mb-1 mt-5">Tam Matthews</h2>
+                    <p className="text-center text-white mb-4">School Leadership & Engagement</p>
+                    <h2 className="text-center bold text-white mb-1 mt-5">Laura Zizzo</h2>
+                    <p className="text-center text-white mb-4">Climate Strategy</p>
+                    <h2 className="text-center bold text-white mb-1 mt-5">Jasen Golding</h2>
+                    <p className="text-center text-white mb-4">Forestry and Environmental Management</p>
                     </Col>
-                    <Col className="col-10 col-md-4 p-3">
-                      <div className="roundedBox overflow-hide about-card">
-                        <Row>
-                          <Col>
-                            <img src="/placeholder-forest.jpg"></img>
-                          </Col>
-                        </Row>
-                        <Row className="bg-white p-3 text-center">
-                          <Col>
-                            <span>
-                              <Button className="modal-btn" variant="btn-text" onClick={handleShow}>
-                                {editingdata.person11}
-                              </Button>
-                            </span>
-                          </Col>
-                        </Row>
-                      </div>
-                    </Col>
-                    <Col className="col-10 col-md-4 p-3">
-                      <div className="roundedBox overflow-hide about-card">
-                        <Row>
-                          <Col>
-                            <img src="/placeholder-forest.jpg"></img>
-                          </Col>
-                        </Row>
-                        <Row className="bg-white p-3 text-center">
-                          <Col>
-                            <span>
-                              <Button className="modal-btn" variant="btn-text" onClick={handleShow}>
-                                {editingdata.person12}
-                              </Button>
-                            </span>
-                          </Col>
-                        </Row>
-                      </div>
+                  </Row>
+                </TabPanel>
+                <TabPanel>
+                  {/* Fourth panel starts here */}
+                  <Row>
+                    <Col className="col-12 p-5">
+                    <h2 className="text-center bold text-white mb-1">KPMG</h2>
+                    <h2 className="text-center bold text-white mb-1 mt-5">PRT</h2>
+                    <h2 className="text-center bold text-white mb-1 mt-5">MT Ventures</h2>
+                    <h2 className="text-center bold text-white mb-1 mt-5">Ferguson Tree Nursery</h2>
                     </Col>
                   </Row>
                 </TabPanel>
@@ -502,34 +412,44 @@ export default function Power({ file }) {
           </Row>
         </Container>
 
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header className="d-none" closeButton>
-            <Modal.Title className="d-none"></Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Row className="justify-content-center align-items-center ">
-              <Col className="col-10 col-md-3 col-lg-4 p-0 mb-lg-5 p-3">
-                <img src="/placeholder-forest.jpg"></img>
-              </Col>
-              <Col className="col-10 col-md-7 col-lg-6 p-4">
-                <p className="h3 text-grey mt-4 mb-0">{editingdata.person13}</p>
-                <p className="h3 smallCaps text-grey thin italic mb-4">{editingdata.person13_title}</p>
-                <p className="large text-greyx">{editingdata.person13_para1}</p>
-                <p className="text-grey">{editingdata.person13_para2}</p>
+        <Container id="qna" fluid className="v-full z-999 bg-green py-5 page-section">
+          <Fade bottom>
+            <Row className="align-items-center justify-content-center py-5 ">
+              <Col className="col-10 col-lg-7 pt-3">
+                <h2 className="text-center text-orange bold mb-2">Q & A</h2>
               </Col>
             </Row>
-          </Modal.Body>
+          </Fade>
+          <Fade bottom>
+            <Row className="align-items-center justify-content-center">
+              <Col className="col-8">          
+                <PDFViewer backend={PDFJSBackend} src='../../CFT-QA.pdf' />
+              </Col>
+            </Row>
+          </Fade>
+        </Container>
 
-          <Modal.Footer className="p-0">
-            <Button
-              className="modal-btn mt-2 me-3 p-0"
-              variant="text-btn"
-              onClick={handleClose}
-            >
-              Close
-            </Button>
-          </Modal.Footer>
-        </Modal>
+      <Modal show={show} className="d-flex align-items-center" onHide={handleClose}>
+        <Modal.Header className="d-none" closeButton>
+          <Modal.Title className="d-none"></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Row className="justify-content-center align-items-center mb-0">
+            <Col>
+              <h3 className="text-green smallCaps text-center">A MESSAGE FROM OUR FOUNDER</h3>
+            </Col>
+          </Row>
+          <Row className="justify-content-center align-items-center">
+            <Col className="col-12 d-flex">
+              <ReactPlayer playing playsinline controls url='./ceo-message.mp4' className="video-size"/>
+            </Col>
+          </Row>
+        </Modal.Body>
+        <Modal.Footer className="p-0">
+          <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleClose}>CLOSE</Button>
+        </Modal.Footer>
+      </Modal>
+
       </main>
     </div>
   );

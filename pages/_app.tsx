@@ -25,7 +25,7 @@ import {
   Link
 } from "react-router-dom";
 import { createMemoryHistory } from 'history';
-
+import CookieConsent from "react-cookie-consent";
 
 import Header from "../components/header";
 
@@ -77,7 +77,6 @@ export default class Site extends App {
     const history = createMemoryHistory();
     const { Component, pageProps, router} = this.props
 
-
     return (
       
       <TinaProvider cms={this.cms}>
@@ -92,9 +91,33 @@ export default class Site extends App {
             loadingClassNames="loading-indicator"
             skipInitialTransition={true}
           >
-            <div>
+            <div key={router.route}>
+              <link
+                rel="preload"
+                href="/GT-America-Extended-Light.woff"
+                as="font"
+                type="font/woff"
+              />
+              <link
+                rel="preload"
+                href="/GT-America-Extended-Bold.woff"
+                as="font"
+                type="font/woff"
+              />
+              <link
+                rel="preload"
+                href="/GT-America-Extended-Medium.woff"
+                as="font"
+                type="font/woff"
+              />
+              <link
+                rel="preload"
+                href="/GT-America-Extended-Thin.woff"
+                as="font"
+                type="font/woff"
+              />
 
-              <Component {...pageProps} />
+              <Component {...pageProps}/>
             </div>
           </PageTransition>
         </Provider>
@@ -116,8 +139,9 @@ export default class Site extends App {
             }
           `}
         </style>
-        <NewsTicker />
         <Footer/>
+        <CookieConsent debug={true}>This website uses cookies to enhance the user experience.</CookieConsent>
+        <NewsTicker />
         <EditLink cms={this.cms} />
         </TinacmsGithubProvider>
       </TinaProvider>

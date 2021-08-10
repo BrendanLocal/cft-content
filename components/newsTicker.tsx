@@ -67,28 +67,24 @@ return(
  
 <React.Fragment>
 
-<Modal show={show} onHide={handleClose}>
+<Modal show={show} className=" d-flex align-items-center" onHide={handleClose}>
         <Modal.Header className="d-none" closeButton>
           <Modal.Title className="d-none"></Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Row className="justify-content-center align-items-center mb-0">
             <Col>
-            <h3 className="text-green smallCaps text-center">THE SMART FOREST INITIATIVE</h3>
+              <h3 className="text-green smallCaps text-center">THE SMART FOREST INITIATIVE</h3>
             </Col>
           </Row>
-          <Row className="justify-content-center align-items-center ps-lg-4 ms-lg-4">
-            <Col className="col-12 d-flex ms-lg-4 mb-2 nudge">
-            
-            <ReactPlayer playing playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4'/>
-           
+          <Row className="justify-content-center align-items-center">
+            <Col className="col-12 d-flex">
+              <ReactPlayer playing playsinline controls url='./CFT_Rev8_DDC_ForApproval.mp4' className="video-size"/>
             </Col>
           </Row>
         </Modal.Body>
         <Modal.Footer className="p-0">
-        <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleClose}>
-            Close
-          </Button>
+          <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleClose}>CLOSE</Button>
         </Modal.Footer>
       </Modal>
 
