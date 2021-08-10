@@ -49,20 +49,20 @@ const Lang = () => {
       <main className="bg-green py-5">
         <Container className="v-full pt-5 mb-5">
           <Row className="justify-content-center text-center py-3">
-            <Col className="col-10 col-lg-7">
+            <Col className="col-11 col-lg-8">
             <h1 className="h2 text-orange bold">Website Terms and Conditions of Use</h1>
             <p className="text-white bold">Last updated: July 22nd, 2021</p>
             </Col>
           </Row>
           <Row className="justify-content-center">
             
-            <Col className="col-10 col-lg-7">
-              <div className="bg-brown roundedBox innerShadow text-white p-5">
+            <Col className="col-11 col-lg-8 col-xl-7">
+              <div className="bg-brown roundedBox innerShadow text-white p-4 p-md-5">
               <Row>
                   <Col className="col-1">
                   <h4 className="bold">1.</h4>
                   </Col>
-                  <Col className="col-11">
+                  <Col className="col-10">
                   <h4 className="bold">Acceptance of Terms</h4>
                   </Col>
               </Row>
@@ -74,7 +74,7 @@ const Lang = () => {
                   <Col className="col-1">
                   <h4 className="bold">2.</h4>
                   </Col>
-                  <Col className="col-11">
+                  <Col className="col-10">
                   <h4 className="bold">Modifications to the Terms and to the Website</h4>
                    </Col>
               </Row>
@@ -84,7 +84,7 @@ const Lang = () => {
                   <Col className="col-1">
                   <h4 className="bold">3.</h4>
                   </Col>
-                  <Col className="col-11">
+                  <Col className="col-10">
                   <h4 className="bold">Your Use of the Website and Account Set-Up and Security</h4>
                    </Col>
               </Row>
@@ -95,12 +95,92 @@ const Lang = () => {
                 <p className="mb-3">Your provision of contact information, registration information and any other submissions you make to the Website through any functionality (collectively, “Interactive Functions”) constitutes your consent to all actions we take with respect to such information consistent with our <a href="/home" className="text-orange">Privacy Policy</a>.</p>
                 <p className="mb-3">Any username, password, or any other piece of information chosen by you, or provided to you as part of our security procedures, must be treated as confidential, and you must not disclose it to any other person or entity. You must exercise caution when accessing your account from a public or shared computer so that others are not able to view or record your password or other personal information. You understand and agree that should you be provided an account, your account is personal to you and you agree not to provide any other person with access to this Website or portions of it using your username, password, or other security information. You agree to notify us immediately of any unauthorized access to or use of your username or password or any other breach of security. You also agree to ensure that you logout from your account at the end of each session. You are responsible for any password misuse or any unauthorized access.</p>
                 <p className="mb-3">We reserve the right at any time and from time to time, to disable or terminate your account, any username, password, or other identifier, whether chosen by you or provided by us, in our sole discretion for any or no reason, including any violation of any provision of these Terms.</p>
-                <p className="mb-3">You are prohibited from attempting to circumvent and from violating the security of this Website, including, without limitation: (a) accessing content and data that is not intended for you; (b) attempting to breach or breaching the security and/or authentication measures which are not authorized; (c) restricting, disrupting or disabling service to users, hosts, servers, or networks; (d) illicitly reproducing TCP/IP packet header; (e) disrupting network services and otherwise disrupting Website owner’s ability to monitor the Website; (f) using any robot, spider, or other automatic device, process, or means to access the Website for any purpose, including monitoring or copying any of the material on the Website; (g) introducing any viruses, trojan horses, worms, logic bombs, or other material that is malicious or technologically harmful; (h) attacking the Website via a denial-of-service attack, distributed denial-of-service attack, flooding, mailbombing, or crashing; and (i) otherwise attempting to interfere with the proper working of the Website.</p>
+                <p className="mb-3">You are prohibited from attempting to circumvent and from violating the security of this Website, including, without limitation:</p>
+                <Row className="mb-3">
+                  <Col className="col-3">
+                  <p className="text-right">a)</p>
+                  </Col>
+                  <Col className="col-9">
+                  <p>accessing content and data that is not intended for you;</p>
+                  </Col>
+              </Row>
+              <Row className="mb-3">
+                  <Col className="col-3">
+                  <p className="text-right">b)</p>
+                  </Col>
+                  <Col className="col-9">
+                  <p>attempting to breach or breaching the security and/or authentication measures which are not authorized;</p>
+                  </Col>
+              </Row>
+              <Row className="mb-3">
+                  <Col className="col-3">
+                  <p className="text-right">c)</p>
+                  </Col>
+                  <Col className="col-9">
+                  <p>restricting, disrupting or disabling service to users, hosts, servers, or networks;</p>
+                  </Col>
+              </Row>
+              <Row className="mb-3">
+                  <Col className="col-3">
+                  <p className="text-right">d)</p>
+                  </Col>
+                  <Col className="col-9">
+                  <p>illicitly reproducing TCP/IP packet header;</p>
+                  </Col>
+              </Row>
+              <Row className="mb-3">
+                  <Col className="col-3">
+                  <p className="text-right">e)</p>
+                  </Col>
+                  <Col className="col-9">
+                  <p>disrupting network services and otherwise disrupting Website owner’s ability to monitor the Website;</p>
+                  </Col>
+              </Row>
+              <Row className="mb-3">
+                  <Col className="col-3">
+                  <p className="text-right">f)</p>
+                  </Col>
+                  <Col className="col-9">
+                  <p>
+                  using any robot, spider, or other automatic device, process, or means to access the Website for any purpose, including monitoring or copying any of the material on the Website;
+                  </p>
+                  </Col>
+              </Row>
+              <Row className="mb-3">
+                  <Col className="col-3">
+                  <p className="text-right">g)</p>
+                  </Col>
+                  <Col className="col-9">
+                  <p>
+                  introducing any viruses, trojan horses, worms, logic bombs, or other material that is malicious or technologically harmful;                  </p>
+                  </Col>
+              </Row>
+              <Row className="mb-3">
+                  <Col className="col-3">
+                  <p className="text-right">h)</p>
+                  </Col>
+                  <Col className="col-9">
+                  <p>
+                  attacking the Website via a denial-of-service attack, distributed denial-of-service attack, flooding, mailbombing, or crashing; and
+                  </p>
+                  </Col>
+              </Row>
+              <Row className="mb-3">
+                  <Col className="col-3">
+                  <p className="text-right">i)</p>
+                  </Col>
+                  <Col className="col-9">
+                  <p>
+                  otherwise attempting to interfere with the proper working of the Website.
+                  </p>
+                  </Col>
+              </Row>
+
             <Row className="mt-5">
                   <Col className="col-1">
                   <h4 className="bold">4.</h4>
                   </Col>
-                  <Col className="col-11">
+                  <Col className="col-10">
                   <h4 className="bold">Intellectual Property Rights and Ownership</h4>
                    </Col>
               </Row>
@@ -138,7 +218,7 @@ const Lang = () => {
                   <Col className="col-1">
                   <h4 className="bold">5.</h4>
                   </Col>
-                  <Col className="col-11">
+                  <Col className="col-10">
                   <h4 className="bold">Conditions of Use and Site Content Standards</h4>
                    </Col>
               </Row>
@@ -221,7 +301,7 @@ const Lang = () => {
                   <Col className="col-1">
                   <h4 className="bold">6.</h4>
                   </Col>
-                  <Col className="col-11">
+                  <Col className="col-10">
                   <h4 className="bold">Site Monitoring and Enforcement, Suspension and Termination</h4>
                    </Col>
               </Row>
@@ -261,7 +341,7 @@ const Lang = () => {
                   <Col className="col-1">
                   <h4 className="bold">7.</h4>
                   </Col>
-                  <Col className="col-11">
+                  <Col className="col-10">
                   <h4 className="bold">No reliance</h4>
                    </Col>
               </Row>
@@ -282,7 +362,7 @@ const Lang = () => {
                   <Col className="col-1">
                   <h4 className="bold">8.</h4>
                   </Col>
-                  <Col className="col-11">
+                  <Col className="col-10">
                   <h4 className="bold">Privacy</h4>
                    </Col>
               </Row>
@@ -299,7 +379,7 @@ const Lang = () => {
                   <Col className="col-1">
                   <h4 className="bold">9.</h4>
                   </Col>
-                  <Col className="col-11">
+                  <Col className="col-10">
                   <h4 className="bold">
                   Third-Party Websites
                       </h4>
@@ -318,11 +398,12 @@ const Lang = () => {
               You may link to our homepage, provided you do so in a way that is fair and legal and does not damage our reputation or take advantage of it. You must not establish a link in such a way as to suggest any form of association, approval, or endorsement on our part where none exists. Our Website must not be framed on any other site, nor may you create a link to any part of our Website other than the homepage. We reserve the right to withdraw linking permission without notice. The website in which you are linking must comply in all respects with the provisions regarding Conditions of Use and Site Content Standards in these Terms. You agree to cooperate with us in causing any unauthorized framing or linking to immediately stop.
               </p>
 
+
               <Row className="mt-5">
                   <Col className="col-1">
                   <h4 className="bold">10.</h4>
                   </Col>
-                  <Col className="col-11">
+                  <Col className="col-10">
                   <h4 className="bold">
                   Geographic Restrictions
                       </h4>
@@ -337,7 +418,7 @@ const Lang = () => {
                   <Col className="col-1">
                   <h4 className="bold">11.</h4>
                   </Col>
-                  <Col className="col-11">
+                  <Col className="col-10">
                   <h4 className="bold">
                   Disclaimer of Warranties
                       </h4>
@@ -360,7 +441,7 @@ const Lang = () => {
                   <Col className="col-1">
                   <h4 className="bold">12.</h4>
                   </Col>
-                  <Col className="col-11">
+                  <Col className="col-10">
                   <h4 className="bold">
                   Limitation on Liability
                       </h4>
@@ -375,7 +456,7 @@ const Lang = () => {
                   <Col className="col-1">
                   <h4 className="bold">13.</h4>
                   </Col>
-                  <Col className="col-11">
+                  <Col className="col-10">
                   <h4 className="bold">
                   Indemnification
                       </h4>
@@ -390,7 +471,7 @@ const Lang = () => {
                   <Col className="col-1">
                   <h4 className="bold">14.</h4>
                   </Col>
-                  <Col className="col-11">
+                  <Col className="col-10">
                   <h4 className="bold">
                   Governing Law and Choice of Forum
                       </h4>
@@ -409,7 +490,7 @@ const Lang = () => {
                   <Col className="col-1">
                   <h4 className="bold">15.</h4>
                   </Col>
-                  <Col className="col-11">
+                  <Col className="col-10">
                   <h4 className="bold">
                       Waiver
                       </h4>
@@ -424,7 +505,7 @@ const Lang = () => {
                   <Col className="col-1">
                   <h4 className="bold">16.</h4>
                   </Col>
-                  <Col className="col-11">
+                  <Col className="col-10">
                   <h4 className="bold">
                   Severability
                       </h4>
@@ -439,7 +520,7 @@ const Lang = () => {
                   <Col className="col-1">
                   <h4 className="bold">17.</h4>
                   </Col>
-                  <Col className="col-11">
+                  <Col className="col-10">
                   <h4 className="bold">
                   Entire Agreement
                       </h4>
@@ -454,7 +535,7 @@ const Lang = () => {
                   <Col className="col-1">
                   <h4 className="bold">18.</h4>
                   </Col>
-                  <Col className="col-11">
+                  <Col className="col-10">
                   <h4 className="bold">
                   Reporting and Contact
                       </h4>

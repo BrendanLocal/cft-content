@@ -310,7 +310,7 @@ export default function Power({ file }) {
                 <ul className="text-grey plus ms-3">
                   <li className="mb-3">Is a forest and an investment in the health of our planet</li>
                   <li className="mb-3">Offers a tangible way to offset a large carbon footprints</li>
-                  <li className="mb-3">Maximizes its impact through expert forest management and indigenous oversight</li>
+                  <li className="mb-3">Maximizes its impact through expert forest management and Indigenous oversight</li>
                   <li className="mb-3">Proves its effectiveness via proprietary digital tools</li>
                   <li className="mb-3">Boosts the green economy</li>
                   <li className="mb-3">Empowers the Indigenous economy</li>
