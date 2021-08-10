@@ -11,8 +11,7 @@ export async function insertCalcData(db, sessionID, type, data) {
     .insertOne({
       sessionID: sessionID,
       type: type,
-      data: data,
-      timestamp: performance.now()
+      data: data
     })
     .then(({ ops }) => ops[0]);
 }
@@ -21,7 +20,7 @@ export async function updateCalcData(db, sessionID, type, data) {
   return db
     .collection('calcData').findOneAndUpdate(
       { sessionID: sessionID, type: type },
-      { $set: { data: data, timestamp: performance.now() } },
+      { $set: { data: data } },
       { returnOriginal: false },
     ).then(({ value }) => value);
 }
