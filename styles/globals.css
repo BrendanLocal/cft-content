@@ -2924,8 +2924,10 @@ z-index: 999;
 }
 
   .sidebar {
-    padding: 30px 100px 0px 20px;
+    padding: 30px 100px 60px 20px;
     z-index:10;
+    overflow-y: scroll;
+    max-height: 100vh;
   }
 
   .sidebar li a {
