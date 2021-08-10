@@ -12,6 +12,8 @@ import { usePlugin } from "tinacms";
 import { useState } from "react";
 import Header from "../components/header";
 
+import randomstring from "randomstring";
+
 import Accordion from "react-bootstrap/Accordion";
 import Card from 'react-bootstrap/Card';
 
@@ -437,6 +439,31 @@ const Lang = () => {
   if (typeof window !== 'undefined') {
   localStorage.setItem('schoolfootprint', String((total/1000).toFixed(2)));
   }
+
+
+/* check to see if they have a current session */
+var sessionID = randomstring.generate(12);
+var fullUrl = "https://canadasforesttrust.ca/school-calculator/?session=" + sessionID
+
+if (typeof window !== 'undefined') {
+
+const router = useRouter();
+  if(router.query.session){ 
+    sessionID = JSON.stringify(router.query.session);
+    fullUrl = "https://canadasforesttrust.ca/school-calculator/?session=" +  sessionID
+    }
+    if(localStorage.sessionID){
+    sessionID = localStorage.sessionID;
+    fullUrl = "https://canadasforesttrust.ca/school-calculator/?session=" +  sessionID
+    
+    }
+  if(!localStorage.sessionID){
+    localStorage.setItem('sessionID', sessionID);
+  }
+
+  
+}
+
 
   return (
     <div className="bg-school">
@@ -1150,7 +1177,7 @@ const Lang = () => {
               <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
                 <h4 className="text-white tight-drop-light">{editingdata.otherbox1Header}</h4>
                 <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox1Para}</p>
-                <Link href="business-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox1button}</a></Link>
+                <Link href="/business-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox1button}</a></Link>
               </div>
             </Col>
 
@@ -1158,7 +1185,7 @@ const Lang = () => {
               <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
                 <h4 className="text-white tight-drop-light">{editingdata.otherbox2Header}</h4>
                 <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox2Para}</p>\
-                <Link href="personal-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox2button}</a></Link>
+                <Link href="/personal-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox2button}</a></Link>
               </div>
             </Col>
           </Row>

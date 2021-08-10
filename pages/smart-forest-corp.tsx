@@ -173,7 +173,7 @@ export default function App({ file, href, children}) {
                   <br />
                   <input className="mb-4" value={footprint>0? footprint : ""}  onChange={changeFootprint} name="type" type="number" min="0" placeholder={editingdata.emissionsPlaceholder}/>
                   <p className="x-small mb-3 op-7">{editingdata.emissionsPlaceholder}</p>
-                  {editingdata.emissionsCarbon}<Link href="business-calculator"><a className="underline modal-btn">{editingdata.emissionsLink}</a></Link>
+                  {editingdata.emissionsCarbon}<Link href="/business-calculator"><a className="underline modal-btn">{editingdata.emissionsLink}</a></Link>
                 </Col>
               </Row>
               <hr/>
@@ -251,7 +251,7 @@ export default function App({ file, href, children}) {
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
               <h4 className="text-white tight-drop-light">{editingdata.otherbox1Header}</h4>
               <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox1Para}</p>
-              <Link href="business-calculator">
+              <Link href="/business-calculator">
                 <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox1button}</a>
               </Link>
             </div>
@@ -260,7 +260,7 @@ export default function App({ file, href, children}) {
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
               <h4 className="text-white tight-drop-light">{editingdata.otherbox2Header}</h4>
               <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox2Para}</p>
-              <Link href="school-calculator">
+              <Link href="/school-calculator">
                 <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox2button}</a>
               </Link>
             </div>
@@ -269,7 +269,7 @@ export default function App({ file, href, children}) {
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
               <h4 className="text-white tight-drop-light">{editingdata.otherbox3Header}</h4>
               <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox3Para}</p>
-              <Link href="personal-calculator">
+              <Link href="/personal-calculator">
                 <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox3button}</a>
               </Link>
             </div>
