@@ -787,7 +787,8 @@ export default function App({ file, href, children}) {
               <Card>
                             <Accordion.Toggle as={Card.Header} eventKey="0">
                             
-                  <h5 className="smallCaps text-small text-green">2nd Residence</h5>
+                  
+                            <p>2nd Residence</p>
 
                             </Accordion.Toggle>
                             <Accordion.Collapse eventKey="0">
@@ -867,7 +868,10 @@ export default function App({ file, href, children}) {
                   </select>
                 </Col>
               </Row>
+              </div>
+</Accordion.Collapse>
 
+</Card>
                 {/* residence 3 */}
                 <Card>
                   <Accordion.Toggle as={Card.Header} eventKey="1">
@@ -1074,7 +1078,8 @@ export default function App({ file, href, children}) {
             <Card>
                             <Accordion.Toggle as={Card.Header} eventKey="3">
                             
-                  <h5 className="smallCaps text-small text-green">5th Residence</h5>
+                  
+                            <p>5th Residence</p>
 
                             </Accordion.Toggle>
                             <Accordion.Collapse eventKey="3">
@@ -1281,6 +1286,8 @@ export default function App({ file, href, children}) {
               </Accordion.Collapse>
             </Card>
           </Accordion>
+        </Col>
+        </Row>
         </div>
 
         <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
