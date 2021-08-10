@@ -933,8 +933,8 @@ const router = useRouter();
                 <Accordion>
                   <Card>
                     <Accordion.Toggle as={Card.Header} eventKey="0">
-                      <p>{editingdata.vehiclecarGas}</p>
-                      <h5 className="text-small smallCaps op-6">Honda Civic, Toyota Prius</h5>
+                      <p>Cars</p>
+                      
                     </Accordion.Toggle>
                       
                     <Accordion.Collapse eventKey="0">
@@ -1037,7 +1037,7 @@ const router = useRouter();
                       <p>
                       {editingdata.vehiclepickupHeader}
                         </p>
-                      <h5 className="text-small smallCaps op-6">4-Door Sedans, SUV's</h5>
+                      
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="1">
                       <div>
