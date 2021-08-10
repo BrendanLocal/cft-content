@@ -181,9 +181,9 @@ const Header = ()=> {
       <div id="sidebar" className={isActive ? 'open' : null}>
         <div className="container-fluid v-full sidebar bg-green text-orange">
           <div className="row">
-            <div className="col-9 col-md-8">
-              <ul className="py-5 my-5 mt-md-0 my-md-0">
-                <li className="d-md-none z-999" onClick={toggleClass}>
+            <div className="col-9 col-md-8 ">
+              <ul className="mb-5">
+                <li className="d-md-none " onClick={toggleClass}>
                   <Link href="/home">Home</Link>
                 </li>
 
@@ -191,7 +191,7 @@ const Header = ()=> {
                   <Link href="/inside-cft">Inside CFT</Link>
                 </li>
                 <li onClick={toggleClass}>
-                  <Link href="/build-your-smart-forest">Build a Smart Forest</Link>
+                  <Link href="/build-your-smart-forest mb-0">Build a Smart Forest</Link>
                 </li>
                 <li className="ms-4 ms-md-5 subheader" onClick={toggleClass}>
                   <Link href="/build-your-smart-forest#corporate">Corporate Smart Forest</Link>

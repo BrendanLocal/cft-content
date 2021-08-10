@@ -3244,7 +3244,7 @@ font-size: .9em;
 
 
 .sidebar {
-  padding: 10px 0px 0px 20px;
+  padding: 50px 0px 50px 20px;
   z-index: 10;
   overflow-y: scroll!important;
   max-height: 100vh;
@@ -3256,6 +3256,7 @@ font-size: .9em;
 
 .sidebar li a {
   font-size: 1.2em;
+  padding: 2px 0px 2px 0px;
 }
 
 .sidebar li.subheader {
