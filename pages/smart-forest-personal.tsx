@@ -88,9 +88,9 @@ export default function App({ file, href, children}) {
   usePlugin(form);
   useGithubToolbarPlugins();
 
-  const [regionArray, setRegionArray] = React.useState({
+  const regionArray = {
     carbon: {BC:500,	Prairies:252,	Ontario:347,	Quebec:347,	Atlantic:134 }
-  });
+  };
  
   const [region, setRegion] = React.useState("");
   const [footprint, setFootprint] = React.useState(0);
@@ -105,21 +105,21 @@ export default function App({ file, href, children}) {
     if (typeof window !== 'undefined') {
       localStorage.setItem('personalRegion', String(event.target.value));
     }
-  }
+  };
 
   const changeFootprint = (event) => {
     setFootprint(event.target.value);
     if (typeof window !== 'undefined') {
       localStorage.setItem('personalfootprint', String(event.target.value));
     }
-  }
+  };
 
   const changeDuration = (event) => {
     setDuration(event.target.value);
     if (typeof window !== 'undefined') {
       localStorage.setItem('personalDuration', String(event.target.value));
     }
-  }
+  };
 
   const fullUrlPrefix = '/smart-forest-personal?session=';
   const sharingUrlPrefix = '/smart-forest-personal-share?session=';
@@ -149,10 +149,6 @@ export default function App({ file, href, children}) {
           if (response.status === 200) {
             const sessionData = await response.json();
             const sessionCalcData = sessionData.calcData && sessionData.calcData.data ? sessionData.calcData.data : {};
-
-            if (sessionCalcData.regionArray !== undefined) {
-              setRegionArray(sessionCalcData.regionArray);
-            }
 
             if (sessionCalcData.region !== undefined) {
               setRegion(sessionCalcData.region);
@@ -189,8 +185,7 @@ export default function App({ file, href, children}) {
       data: {
         region,
         footprint,
-        duration,
-        regionArray
+        duration
       }
     };
 
@@ -222,7 +217,7 @@ export default function App({ file, href, children}) {
     }, (error) => {
       setFullUrlError(error);
     });
-  }
+  };
 
   const [nextStepError, setNextStepError] = React.useState("");
   const nextStepClick = (e) => {
@@ -232,7 +227,7 @@ export default function App({ file, href, children}) {
     }, (error) => {
       setNextStepError(error);
     });
-  }
+  };
 
   return (
     <div className="bg-legacy">
