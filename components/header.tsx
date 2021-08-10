@@ -179,11 +179,11 @@ const Header = ()=> {
       </div>
 
       <div id="sidebar" className={isActive ? 'open' : null}>
-        <div className="container-fluid v-full sidebar bg-green text-orange z-999">
+        <div className="container-fluid v-full sidebar bg-green text-orange">
           <div className="row">
             <div className="col-9 col-md-8">
-              <ul className="py-5 mt-md-0">
-                <li className="d-md-none" onClick={toggleClass}>
+              <ul className="py-5 my-5 mt-md-0 my-md-0">
+                <li className="d-md-none z-999" onClick={toggleClass}>
                   <Link href="/home">Home</Link>
                 </li>
 
@@ -256,11 +256,11 @@ const Header = ()=> {
                 </div>
               </div>
             </div>
-            <div className="row align-self-bottom">
+            <div className="row align-self-bottom d-none">
               <div className="col col d-flex align-items-end justify-content-end menuInterface">
               
                 <ul className="controlIcons">
-                  <li>
+                  <li className="d-none">
                     <img onClick={toggleSearch} src="/searchIcon.svg"></img>
                   </li>
                   <li className="d-none">
