@@ -53,7 +53,7 @@
     "stuCommuteTrain":"How many students primarily commute by train/subway?",
 
     "otherTransportHeader1":"Other Transportation?",
-    "otherTransportPara1":"Please input the information to determine the C02 emissions for transportation other than the sudents' daily commute:",
+    "otherTransportPara1":"Please input the information to determine the C02 emissions for transportation other than the students' daily commute:",
     "otherTransportHeader2":"FIELD TRIPS by bus (WITHIN SCHOOL HOURS)",
     "otherTransportGas":"Gasoline",
     "otherTransportDiesel":"Diesel",

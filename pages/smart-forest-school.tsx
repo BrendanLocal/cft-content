@@ -9,8 +9,12 @@ import { GetStaticProps } from "next";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 import { useGithubJsonForm, useGithubToolbarPlugins } from "react-tinacms-github";
 import { usePlugin } from "tinacms";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Header from "../components/header";
+import randomstring from "randomstring";
+import Head from "next/head";
+
+let sessionID = randomstring.generate(12);
 
 const Lang = () => {
   var language ="en";
@@ -22,19 +26,7 @@ const Lang = () => {
   return (language)
 }
 
-
-const NodeCache = require( "node-cache" );
-const myCache = new NodeCache();
-
-const personalTotal = myCache.get( "personalTotal" );
-if ( personalTotal == undefined ){
-  console.log("oops!")
-} else {
-  console.log(personalTotal)
-}
-
 export default function App({ file, href, children}) {
-  
   const formOptions = {
     label: 'Home Page',
     fields: [
@@ -89,38 +81,38 @@ export default function App({ file, href, children}) {
       {name: 'otherbox3Para', component: 'markdown' },
       {name: 'otherbox3button', component: 'markdown' }
      ]
-  }
+  };
 
-  const [show, setShow] = useState(false);
+  const [editingdata, form] = useGithubJsonForm(file, formOptions);
+  usePlugin(form);
+  useGithubToolbarPlugins();
 
-  const [editingdata, form] = useGithubJsonForm(file, formOptions)
-  usePlugin(form)
-  useGithubToolbarPlugins()
-
-  const [regionArray, setRegionArray] = React.useState({
+  const regionArray = {
     carbon: {BC:500,	Prairies:252,	Ontario:347,	Quebec:347,	Atlantic:134 }
-  });
+  };
+ 
   const [region, setRegion] = React.useState("");
   const [footprint, setFootprint] = React.useState(0);
   const [duration, setDuration] = React.useState(0);
 
-  var plantHectares = duration*footprint/regionArray.carbon[region];
-  var plantAcres = (duration*footprint/regionArray.carbon[region])*2.47;
-  var plantTrees = plantHectares*2470;
-
-
+  const plantHectares = duration*footprint/regionArray.carbon[region];
+  const plantAcres = plantHectares*2.47;
+  const plantTrees = plantHectares*2470;
+  
   const changeRegion = (event) => {
     setRegion(event.target.value);
     if (typeof window !== 'undefined') {
       localStorage.setItem('schoolRegion', String(event.target.value));
     }
   }
+
   const changeFootprint = (event) => {
     setFootprint(event.target.value);
     if (typeof window !== 'undefined') {
       localStorage.setItem('schoolfootprint', String(event.target.value));
     }
   }
+
   const changeDuration = (event) => {
     setDuration(event.target.value);
     if (typeof window !== 'undefined') {
@@ -128,25 +120,123 @@ export default function App({ file, href, children}) {
     }
   }
 
+  const fullUrlPrefix = '/smart-forest-school?session=';
+  const sharingUrlPrefix = '/smart-forest-school-share?session=';
+  const [fullUrl, setFullUrl] = React.useState('/smart-forest-school');
+  const [sharingUrl, setSharingUrl] = React.useState('/smart-forest-school-share');
 
-  
-  
+  const router = useRouter();
+  const [sessionDataError, setSessionDataError] = React.useState("");
   useEffect(() => {
-    const schoolfootprint = localStorage.getItem('schoolfootprint');
+    if (router.isReady) {
+      setFootprint(Number(Number(localStorage.getItem('schoolfootprint')).toFixed(2)));
 
-  const schoolregion = localStorage.getItem('schoolRegion');
-  const schoolduration = localStorage.getItem('schoolDuration');
-    var tempNum = Number(schoolfootprint).toFixed(2)
-    setFootprint(Number(tempNum));
+      if (router.query.session) {
+        sessionID = router.query.session;
+      }
+      else if (localStorage.getItem('smart-forest-school_sessionID')) {
+        sessionID = localStorage.getItem('smart-forest-school_sessionID');
+      }
+      
+      setFullUrl(fullUrlPrefix + sessionID);
+      setSharingUrl(sharingUrlPrefix + sessionID);
+  
+      localStorage.setItem('smart-forest-school_sessionID', sessionID);
+  
+      try {
+        fetch(`/api/calc?sessionID=${sessionID}&type=smart-forest-school`).then(async (response) => {
+          if (response.status === 200) {
+            const sessionData = await response.json();
+            const sessionCalcData = sessionData.calcData && sessionData.calcData.data ? sessionData.calcData.data : {};
 
-  setFootprint(Number(tempNum));
-  setRegion(schoolregion);
-  setDuration(Number(schoolduration));
-    },[])
+            if (sessionCalcData.region !== undefined) {
+              setRegion(sessionCalcData.region);
+              localStorage.setItem('schoolRegion', String(sessionCalcData.region));
+            }
+
+            if (sessionCalcData.footprint !== undefined) {
+              setFootprint(sessionCalcData.footprint);
+              localStorage.setItem('schoolfootprint', String(sessionCalcData.footprint));
+            }
+
+            if (sessionCalcData.duration !== undefined) {
+              setDuration(sessionCalcData.duration);
+              localStorage.setItem('schoolDuration', String(sessionCalcData.duration));
+            }
+          }
+          else {
+            setSessionDataError(await response.text());
+          }
+        });
+      }
+      catch (error) {
+        setSessionDataError('An unknown error has occurred while loading calculator session.');
+      }
+    }
+  }, [router.query]);
+
+  const saveSession = async (e, successCallback: () => void, failureCallback: (error) => void) => {
+    e.preventDefault();
+
+    const body = {
+      sessionID: sessionID,
+      type: 'smart-forest-school',
+      data: {
+        region,
+        footprint,
+        duration
+      }
+    };
+
+    try {
+      const res = await fetch('/api/calc', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+
+      if (res.status === 200) {
+        successCallback();
+      }
+      else {
+        const error_message = await res.text();
+        failureCallback(error_message);
+      }
+    }
+    catch (error) {
+      failureCallback('An unknown error has occurred while saving calculator session.');
+    }
+  };
+
+  const [fullUrlError, setFullUrlError] = React.useState("");
+  const fullUrlClick = (e) => {
+    saveSession(e, () => {
+      setFullUrlError("");
+      router.push(e.target.getAttribute('href'));
+    }, (error) => {
+      setFullUrlError(error);
+    });
+  };
+
+  const [nextStepError, setNextStepError] = React.useState("");
+  const nextStepClick = (e) => {
+    saveSession(e, () => {
+      setNextStepError("");
+      router.push("/net-negative-school");
+    }, (error) => {
+      setNextStepError(error);
+    });
+  };
 
   return (
     <div className="bg-school">
       <Header/>
+      <Head>
+        <title>School Net-Zero Calculator</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content="#054218"></meta>
+      </Head>
+
       <Container className="p-4 pt-5">
         <Row className="justify-content-center">
           <Col className="col-12 col-lg-10 pt-5 align-items-center my-4 pt-5">
@@ -161,6 +251,7 @@ export default function App({ file, href, children}) {
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
                 <Col>
+                  {sessionDataError ? <p style={{ color: 'red' }}>{sessionDataError}</p> : null}
                   <h4 className="text-green">{editingdata.emissionsHeader}</h4>
                   <hr/>
                 </Col>
@@ -180,7 +271,7 @@ export default function App({ file, href, children}) {
                   <label htmlFor="type">In which region is you school located?</label>
                   <br />
                   <select name="type" value={region} onChange={changeRegion}>
-                    <option value="" hidden>select</option>
+                    <option value="" hidden>{editingdata.select}</option>
                     <option value='BC'>{editingdata.emissionsRegion1}</option>			
                     <option value='Prairies'>{editingdata.emissionsRegion2}</option>
                     <option value='Ontario'>{editingdata.emissionsRegion3}</option>
@@ -223,6 +314,19 @@ export default function App({ file, href, children}) {
               <Row><Col className="pb-3">{editingdata.dataType} {plantAcres > 0 ? plantAcres.toLocaleString('en-US', {maximumFractionDigits: 2}) : "--"} {editingdata.dataType1}</Col></Row>
               <hr/>
               <Row><Col className="pb-3">{editingdata.dataType} {plantTrees > 0 ? Math.ceil(plantTrees).toLocaleString("en-US") : "--"} {editingdata.dataType2}</Col></Row>
+
+              <Row>
+                <Col className="whiteBorder rounded mt-3 p-3">
+                  <p className="text-small">To continue editing your results in the future, save or bookmark this link:</p>
+                  <p className="pt-2 text-small">
+                    {fullUrlError ? <p style={{ color: 'red' }}>{fullUrlError}</p> : null}
+                    <a href={fullUrl} onClick={fullUrlClick}>{fullUrl}</a>
+                  </p>
+                  <hr/>
+                  <p className="text-small">Share your results on social media with this link:</p>
+                  <p className="pt-2 text-small"><a href={sharingUrl}>{sharingUrl}</a></p>
+                </Col>
+              </Row>
             </div>
           </Col>
         </Row>
@@ -231,9 +335,8 @@ export default function App({ file, href, children}) {
           <Col className="col-11 col-lg-10 align-items-center text-center p-3">
             <div className="bg-brown p-5 innerShadow roundedBox">
               <p className="smallCaps text-orange mb-3">{editingdata.nextHeader}</p>
-              <Link href="/net-negative-school">
-                <Button className="btn-large mt-1" variant="green">{editingdata.nextButton}</Button>
-              </Link>
+              {nextStepError ? <p style={{color: 'red' }}>{nextStepError}</p> : null}
+              <Button className="btn-large mt-1" variant="green" onClick={nextStepClick}>{editingdata.nextButton}</Button>
             </div>
           </Col>
         </Row>

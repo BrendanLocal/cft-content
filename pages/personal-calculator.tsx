@@ -787,7 +787,7 @@ export default function App({ file, href, children}) {
     }, (error) => {
       setFullUrlError(error);
     });
-  }
+  };
 
   const [nextStepError, setNextStepError] = React.useState("");
   const nextStepClick = (e) => {
@@ -797,7 +797,7 @@ export default function App({ file, href, children}) {
     }, (error) => {
       setNextStepError(error);
     });
-  }
+  };
   
   return (
     <div className="bg-legacy">
