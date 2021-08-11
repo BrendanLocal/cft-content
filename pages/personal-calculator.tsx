@@ -1874,9 +1874,6 @@ export default function App({ file, href, children}) {
                     {editUrlError ? <p style={{ color: 'red' }}>{editUrlError}</p> : null}
                     <a href={editUrl} onClick={editUrlClick}>{editUrl}</a>
                   </p>
-                  {/* <hr/>
-                  <p className="text-small">Share your results on social media with this link:</p>
-                  <p className="pt-2 text-small"><a href={sharingUrl}>{sharingUrl}</a></p> */}
                 </Col>
               </Row>
             </div>
