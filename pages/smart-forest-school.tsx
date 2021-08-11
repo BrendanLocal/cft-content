@@ -134,14 +134,9 @@ export default function App({ file, href, children}) {
       if (router.query.session) {
         sessionID = router.query.session;
       }
-      else if (localStorage.getItem('smart-forest-school_sessionID')) {
-        sessionID = localStorage.getItem('smart-forest-school_sessionID');
-      }
       
       setFullUrl(fullUrlPrefix + sessionID);
       setSharingUrl(sharingUrlPrefix + sessionID);
-  
-      localStorage.setItem('smart-forest-school_sessionID', sessionID);
   
       try {
         fetch(`/api/calc?sessionID=${sessionID}&type=smart-forest-school`).then(async (response) => {

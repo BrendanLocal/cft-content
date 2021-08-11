@@ -368,14 +368,9 @@ export default function App({ file, href, children}) {
       if (router.query.session) {
         sessionID = router.query.session;
       }
-      else if (localStorage.getItem('school-calculator_sessionID')) {
-        sessionID = localStorage.getItem('school-calculator_sessionID');
-      }
       
       setFullUrl(fullUrlPrefix + sessionID);
       setSharingUrl(sharingUrlPrefix + sessionID);
-  
-      localStorage.setItem('school-calculator_sessionID', sessionID);
   
       try {
         fetch(`/api/calc?sessionID=${sessionID}&type=school-calculator`).then(async (response) => {
@@ -1267,9 +1262,6 @@ export default function App({ file, href, children}) {
                     {fullUrlError ? <p style={{ color: 'red' }}>{fullUrlError}</p> : null}
                     <a href={fullUrl} onClick={fullUrlClick}>{fullUrl}</a>
                   </p>
-                  {/* <hr/>
-                  <p className="text-small">Share your results on social media with this link:</p>
-                  <p className="pt-2 text-small"><a href={sharingUrl}>{sharingUrl}</a></p> */}
                 </Col>
               </Row>
             </div>

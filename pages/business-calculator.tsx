@@ -460,14 +460,9 @@ export default function BusinessCalc({ file, href, children}) {
       if (router.query.session) {
         sessionID = router.query.session;
       }
-      else if (localStorage.getItem('business-calculator_sessionID')) {
-        sessionID = localStorage.getItem('business-calculator_sessionID');
-      }
       
       setFullUrl(fullUrlPrefix + sessionID);
       setSharingUrl(sharingUrlPrefix + sessionID);
-  
-      localStorage.setItem('business-calculator_sessionID', sessionID);
   
       try {
         fetch(`/api/calc?sessionID=${sessionID}&type=business-calculator`).then(async (response) => {

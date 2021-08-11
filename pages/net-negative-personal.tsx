@@ -142,14 +142,9 @@ export default function App({ file, href, children}) {
       if (router.query.session) {
         sessionID = router.query.session;
       }
-      else if (localStorage.getItem('net-negative-personal_sessionID')) {
-        sessionID = localStorage.getItem('net-negative-personal_sessionID');
-      }
       
       setFullUrl(fullUrlPrefix + sessionID);
       setSharingUrl(sharingUrlPrefix + sessionID);
-  
-      localStorage.setItem('net-negative-personal_sessionID', sessionID);
   
       try {
         fetch(`/api/calc?sessionID=${sessionID}&type=net-negative-personal`).then(async (response) => {

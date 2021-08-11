@@ -14,8 +14,21 @@ import Header from "../components/header";
 import Accordion from "react-bootstrap/Accordion";
 import randomstring from "randomstring";
 import Head from "next/head";
+import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon, LinkedinIcon, LinkedinShareButton, EmailShareButton, EmailIcon } from 'react-share';
 
 let sessionID = randomstring.generate(12);
+let hostname = '';
+if (typeof window !== 'undefined') {
+  hostname = location.hostname;
+  if (hostname.startsWith('localhost')) {
+    // sharing won't allow localhost links to work
+    hostname = hostname.replace('localhost', '127.0.0.1');
+  }
+
+  if (location.port !== '') {
+    hostname += `:${location.port}`;
+  }
+}
 
 const Lang = () => {
   var language ="en";
@@ -531,9 +544,9 @@ export default function App({ file, href, children}) {
     localStorage.setItem('personalfootprint', String(total));
   }
 
-  const fullUrlPrefix = '/personal-calculator?session=';
+  const editUrlPrefix = '/personal-calculator?session=';
   const sharingUrlPrefix = '/personal-calculator-share?session=';
-  const [fullUrl, setFullUrl] = React.useState('/personal-calculator');
+  const [editUrl, setEditUrl] = React.useState('/personal-calculator');
   const [sharingUrl, setSharingUrl] = React.useState('/personal-calculator-share');
 
   const router = useRouter();
@@ -543,14 +556,9 @@ export default function App({ file, href, children}) {
       if (router.query.session) {
         sessionID = router.query.session;
       }
-      else if (localStorage.getItem('personal-calculator_sessionID')) {
-        sessionID = localStorage.getItem('personal-calculator_sessionID');
-      }
       
-      setFullUrl(fullUrlPrefix + sessionID);
+      setEditUrl(editUrlPrefix + sessionID);
       setSharingUrl(sharingUrlPrefix + sessionID);
-  
-      localStorage.setItem('personal-calculator_sessionID', sessionID);
   
       try {
         fetch(`/api/calc?sessionID=${sessionID}&type=personal-calculator`).then(async (response) => {
@@ -713,9 +721,7 @@ export default function App({ file, href, children}) {
     }
   }, [router.query]);
 
-  const saveSession = async (e, successCallback: () => void, failureCallback: (error) => void) => {
-    e.preventDefault();
-
+  const saveSession = async (successCallback: () => void, failureCallback: (error) => void) => {
     const body = {
       sessionID: sessionID,
       type: 'personal-calculator',
@@ -779,19 +785,36 @@ export default function App({ file, href, children}) {
     }
   };
 
-  const [fullUrlError, setFullUrlError] = React.useState("");
-  const fullUrlClick = (e) => {
-    saveSession(e, () => {
-      setFullUrlError("");
+  const [editUrlError, setEditUrlError] = React.useState("");
+  const editUrlClick = (e) => {
+    e.preventDefault();
+
+    saveSession(() => {
+      setEditUrlError("");
       router.push(e.target.getAttribute('href'));
     }, (error) => {
-      setFullUrlError(error);
+      setEditUrlError(error);
     });
+  };
+
+  const [shareError, setShareError] = React.useState("");
+  const shareBeforeClick = () => {
+    return new Promise<void>((resolve, reject) => {
+      saveSession(() => {
+        setShareError("");
+        resolve();
+      }, (error) => {
+        setShareError(error);
+        reject(error);
+      });
+    })
   };
 
   const [nextStepError, setNextStepError] = React.useState("");
   const nextStepClick = (e) => {
-    saveSession(e, () => {
+    e.preventDefault();
+
+    saveSession(() => {
       setNextStepError("");
       router.push("/smart-forest-personal");
     }, (error) => {
@@ -1848,8 +1871,8 @@ export default function App({ file, href, children}) {
                 <Col className="whiteBorder rounded mt-3 p-3">
                   <p className="text-small">To continue editing your results in the future, save or bookmark this link:</p>
                   <p className="pt-2 text-small">
-                    {fullUrlError ? <p style={{ color: 'red' }}>{fullUrlError}</p> : null}
-                    <a href={fullUrl} onClick={fullUrlClick}>{fullUrl}</a>
+                    {editUrlError ? <p style={{ color: 'red' }}>{editUrlError}</p> : null}
+                    <a href={editUrl} onClick={editUrlClick}>{editUrl}</a>
                   </p>
                   {/* <hr/>
                   <p className="text-small">Share your results on social media with this link:</p>
@@ -1859,10 +1882,39 @@ export default function App({ file, href, children}) {
             </div>
           </Col>
         </Row>  
+
+        <Row className="justify-content-center ">
+          <Col className="col-11 col-lg-10 align-items-center text-center p-3">
+            <div className="bg-brown p-4 innerShadow roundedBox">
+              <p className="smallCaps text-orange mb-3">Share</p>
+              {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
+
+              {/* todo - change these to use sharingUrl instead of editUrl when the sharing page is implemented */}
+              
+              <FacebookShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} className="mx-2">
+                <FacebookIcon size={48} round />
+              </FacebookShareButton>
+
+              <TwitterShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} className="mx-2">
+                <TwitterIcon size={48} round />
+              </TwitterShareButton>
+
+              <LinkedinShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} className="mx-2">
+                <LinkedinIcon size={48} round />
+              </LinkedinShareButton>
+
+              <EmailShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} className="mx-2">
+                <EmailIcon size={48} round />
+              </EmailShareButton>
+            </div>
+          </Col>
+        </Row>
       
         <Row className="justify-content-center ">
           <Col className="col-11 col-lg-10 align-items-center text-center p-3">
             <div className="bg-brown p-4 innerShadow roundedBox">
+              
+
               <p className="smallCaps text-orange mb-3">{editingdata.box1Header}</p>
               {nextStepError ? <p style={{color: 'red' }}>{nextStepError}</p> : null}
               <Button className="btn-large mt-1" variant="green" onClick={nextStepClick}>{editingdata.box1Button}</Button>
