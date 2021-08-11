@@ -8,6 +8,7 @@ import useSound from 'use-sound';
 import Search from '../components/search';
 import { useCurrentUser } from '../hooks/index';
 import Link from 'next/link'
+import CookieConsent, { Cookies, getCookieConsentValue } from "react-cookie-consent";
 
 
 const Header = ()=> {
@@ -151,8 +152,15 @@ const Header = ()=> {
   }
 
 
+
+
   return(
+    
+
     <React.Fragment>
+      <CookieConsent enableDeclineButton flipButtons buttonText="I ACCEPT THE COOKIES" declineButtonText="I DO NOT ACCEPT">
+        We use cookies and other technologies to offer you the best experience online. By continuing to use our website, you agree to the use of cookies and other technologies. If you would like to know more about cookies and other technologies and how to manage them, please view our <a className="underline" href="/privacy">Privacy Policy.</a>
+        </CookieConsent>
       <div id="searchComponent" className={ showSearch ? "searchOpen" : "searchClosed"}>
         <Container className="v-80 d-flex justify-content-center align-items-start pt-5">
           <Row className="pt-5">
@@ -162,7 +170,7 @@ const Header = ()=> {
             </Col>
           </Row>
         </Container>
-      </div>
+      </div> 
 
       <div className="container-fluid header logoHeader">
         <div className="row ">
@@ -171,14 +179,26 @@ const Header = ()=> {
             <img className="logo" src="/cft-logo-white.svg" alt="Canada's Forest Trust logo"/>
             </Link>
           </div>
+          <div className="col borderLeft ms-2 text-left ps-3 d-sm-none">
+            <div className="mt-2">
+              <Link href={ user? "/portal-user" : "/portal" } ><a className="smallCaps textButton">{ user? "Your Portal" : "Sign in" }</a></Link>
+            </div>
+            <div className="mt-2">
+              <Link href="/portal-demo"><a className="smallCaps text-white no-underline textButton">DEMO PORTAL</a></Link>
+            </div>
+          </div>
         </div>
       </div>
 
       <div id="sidebar" className={isActive ? 'open' : null}>
         <div className="container-fluid v-full sidebar bg-green text-orange">
           <div className="row">
-            <div className="col-10 col-md-9">
-              <ul className="py-5 py-sm-0">
+            <div className="col-9 col-md-8 ">
+              <ul className="mb-5">
+                <li className="d-md-none " onClick={toggleClass}>
+                  <Link href="/home">Home</Link>
+                </li>
+
                 <li className="slimlineBottom slimlineTop" onClick={toggleClass}>
                   <Link href="/inside-cft">Inside CFT</Link>
                 </li>
@@ -231,15 +251,15 @@ const Header = ()=> {
             </div>
           </div>
         </div>
-      </div>
+      </div> 
 
       <div className="container-fluid header headerNav">
         <div className="row justify-content-end">
           <div className="col-12 col-md-6 d-flex flex-column gx-1 gx-lg-3 fixed">
             <div className="row align-self-top">
               <div className="col d-flex align-items-center justify-content-end menuInterface">
-              <Link href="/portal-demo"><a className="smallCaps text-white no-underline textButton me-4 d-none d-md-block">PORTAL DEMO</a></Link>
-                <Link href={ user? "/portal-user" : "/portal" } ><a className="smallCaps textButton me-2 d-none d-md-block">{ user? "Your Portal" : "Sign in" }</a></Link>
+              <Link href="/portal-demo"><a className="smallCaps text-white no-underline textButton me-4 d-none d-sm-block">DEMO PORTAL</a></Link>
+                <Link href={ user? "/portal-user" : "/portal" } ><a className="smallCaps textButton me-2 d-none d-sm-block">{ user? "Your Portal" : "Sign in" }</a></Link>
                 <div id="menuIcon" className={isActive ? 'open' : null} onClick={toggleClass}>
                   <span></span>
                   <span></span>
@@ -248,12 +268,12 @@ const Header = ()=> {
                 </div>
               </div>
             </div>
-            <div className="row align-self-bottom">
+            <div className="row align-self-bottom d-none">
               <div className="col col d-flex align-items-end justify-content-end menuInterface">
               
                 <ul className="controlIcons">
-                  <li>
-                    <img onClick={toggleSearch} src="/searchIcon.svg" alt="Search"></img>
+                  <li className="d-none">
+                    <img onClick={toggleSearch} src="/searchIcon.svg"></img>
                   </li>
                   <li className="d-none">
                     <div className={isPlaying ? 'mute' : null} ><img className="soundPlaying" onClick={() => toggleSound()} src="/soundIcon.svg"></img><img className="soundMute" src="/muteIcon.svg"></img></div>

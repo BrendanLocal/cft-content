@@ -49,15 +49,15 @@ const Lang = () => {
       <main className="bg-green py-5">
         <Container className="v-full pt-5 mb-5">
           <Row className="justify-content-center text-center py-3">
-            <Col className="col-10 col-lg-7">
+            <Col className="col-11 col-lg-8 col-xl-7">
             <h1 className="h2 text-orange bold">Privacy Policy</h1>
             <p className="text-white bold">Last updated: July 8, 2021</p>
             </Col>
           </Row>
           <Row className="justify-content-center">
             
-            <Col className="col-10 col-lg-7">
-              <div className="bg-brown roundedBox innerShadow text-white p-5">
+            <Col className="col-11 col-lg-8 col-xl-7">
+              <div className="bg-brown roundedBox innerShadow text-white p-4 p-md-5">
       
               <h4 className="bold underline">INTRODUCTION</h4>
 
