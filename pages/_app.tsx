@@ -25,7 +25,6 @@ import {
   Link
 } from "react-router-dom";
 import { createMemoryHistory } from 'history';
-import CookieConsent from "react-cookie-consent";
 
 import Header from "../components/header";
 
@@ -140,9 +139,7 @@ export default class Site extends App {
           `}
         </style>
         <Footer/>
-        <CookieConsent enableDeclineButton flipButtons debug={true} buttonText="I ACCEPT THE COOKIES" declineButtonText="I DO NOT ACCEPT">
-          This website uses cookies to enhance the user experience.
-        </CookieConsent>
+        
         <NewsTicker />
         <EditLink cms={this.cms} />
         </TinacmsGithubProvider>

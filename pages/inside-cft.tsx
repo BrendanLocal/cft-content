@@ -663,7 +663,7 @@ export default function Power({ file }) {
                 </Col>
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  Yes. You can create a <a href="/buil-your-smart-forest#legacy" className="text-orange">Legacy or Memorial Forest</a> or you can contribute to a <a href="/buil-your-smart-forest#communal" className="text-orange">Communal Forest</a> in someone’s name.
+                  Yes. You can create a <a href="/build-your-smart-forest#legacy" className="text-orange">Legacy or Memorial Forest</a> or you can contribute to a <a href="/build-your-smart-forest#communal" className="text-orange">Communal Forest</a> in someone’s name.
                   </p>
 
                 </Col>
