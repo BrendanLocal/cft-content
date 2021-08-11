@@ -355,6 +355,8 @@ export default function App({ file, href, children}) {
 
   /* calculate the 'total' here by adding on the other subtotals */
   const total = vehicleSub + subtotalBuild + flightSub + transitSub + studentCommute + otherVehicleSub;
+
+  const otherTransportTotal = vehicleSub + otherVehicleSub;
   if (typeof window !== 'undefined') {
     localStorage.setItem('schoolfootprint', String((total/1000).toFixed(2)));
   }
@@ -1246,7 +1248,7 @@ export default function App({ file, href, children}) {
               <hr/>
               <Row><Col>{editingdata.dataType3}</Col><Col className="text-right bold">{studentCommute > 0 ? (studentCommute/1000).toFixed(2) : "--"}</Col></Row>
               <hr/>
-              <Row><Col>{editingdata.dataType4}</Col><Col className="text-right bold">{vehicleSub > 0 ? (vehicleSub/1000).toFixed(2) : "--"}</Col></Row>
+              <Row><Col>{editingdata.dataType4}</Col><Col className="text-right bold">{otherTransportTotal > 0 ? (otherTransportTotal/1000).toFixed(2) : "--"}</Col></Row>
               <hr/>
               <Row><Col>{editingdata.dataType5}</Col><Col className="text-right bold">{otherVehicleSub > 0 ? (otherVehicleSub/1000).toFixed(2) : "--"}</Col></Row>
               <hr/>
