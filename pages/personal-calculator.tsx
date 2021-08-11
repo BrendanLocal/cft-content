@@ -361,56 +361,56 @@ export default function App({ file, href, children}) {
   //vehicle multiplier
   const [vehicleSub, setVehicle] = React.useState(0);
   const [vehicleArray, setVehicleArray] = React.useState({
-    smallGas: { mult:	0.14836, miles: null },
-    smallDiesel: { mult: 0.13721, miles: null },
-    smallHybrid: { mult: 0.10275, miles: null },
-    smallPlug: { mult: 0.02935, miles: null },
-    smallElectric: { mult: 0, miles: null },
-    mediumGas: { mult: 0.18659, miles: null },
-    rentalGas: { mult: 0.18659, miles: null },
-    mediumDiesel: { mult:	0.16637, miles: null },
-    mediumHybrid: { mult:	0.10698, miles: null },
-    mediumPlug: { mult:	0.07083, miles: null },
-    mediumElectric: { mult:	0, miles: null },
-    largeGas: { mult:	0.27087, miles: null },
-    largeDiesel: { mult: 0.20419, miles: null },
-    largeHybrid: { mult: 0.1448, miles: null },
-    largePlug: { mult: 0.07731, miles: null },
-    largeElectric: { mult: 0, miles: null },
-    motorbikeGas: { mult:	0.11337, miles: null },
-    planeGas: { mult:	2.54306, miles: null },
-    heliGas: { mult: 2.54306, miles: null },
-    jetGas: { mult:	2.54306, miles: null },
-    yachtGas: { mult:	2.54, miles: null },
-    yachtDiesel: { mult: 2.35, miles: null },
-    atvGas: { mult:	2.3, miles: null },
-    sbsGas: { mult:	2.3, miles: null },
-    snowGas: { mult: 2.3, miles: null },
-    scootGas: { mult:	2.3, miles: null },
-    seaGas: { mult:	2.3, miles: null },
-    lawnGas: { mult: 2.3, miles: null },
-    tractorGas: { mult:	2.3, miles: null }
+    smallGas: { mult:	0.14836, miles: '' },
+    smallDiesel: { mult: 0.13721, miles: '' },
+    smallHybrid: { mult: 0.10275, miles: '' },
+    smallPlug: { mult: 0.02935, miles: '' },
+    smallElectric: { mult: 0, miles: '' },
+    mediumGas: { mult: 0.18659, miles: '' },
+    rentalGas: { mult: 0.18659, miles: '' },
+    mediumDiesel: { mult:	0.16637, miles: '' },
+    mediumHybrid: { mult:	0.10698, miles: '' },
+    mediumPlug: { mult:	0.07083, miles: '' },
+    mediumElectric: { mult:	0, miles: '' },
+    largeGas: { mult:	0.27087, miles: '' },
+    largeDiesel: { mult: 0.20419, miles: '' },
+    largeHybrid: { mult: 0.1448, miles: '' },
+    largePlug: { mult: 0.07731, miles: '' },
+    largeElectric: { mult: 0, miles: '' },
+    motorbikeGas: { mult:	0.11337, miles: '' },
+    planeGas: { mult:	2.54306, miles: '' },
+    heliGas: { mult: 2.54306, miles: '' },
+    jetGas: { mult:	2.54306, miles: '' },
+    yachtGas: { mult:	2.54, miles: '' },
+    yachtDiesel: { mult: 2.35, miles: '' },
+    atvGas: { mult:	2.3, miles: '' },
+    sbsGas: { mult:	2.3, miles: '' },
+    snowGas: { mult: 2.3, miles: '' },
+    scootGas: { mult:	2.3, miles: '' },
+    seaGas: { mult:	2.3, miles: '' },
+    lawnGas: { mult: 2.3, miles: '' },
+    tractorGas: { mult:	2.3, miles: '' }
   });
 
   //flight multiplier
   const [flightSub, setFlight] = React.useState(0);
   const [flightArray, setFlightArray] = React.useState({
-    flyShort: { mult: 122.15, count: null },
-    flyMediumEco: { mult: 305.96, count: null },
-    flyMediumBus: { mult: 458.94, count: null },
-    flyLongEco: { mult: 696.225, count: null },
-    flyLongEcoPlus: { mult: 1113.9, count: null },
-    flyLongBus: { mult: 2018.95, count: null },
-    flyLongFirst: { mult: 2784.75, count: null },
-    flyHotels: { mult: 17.4, count: null }
+    flyShort: { mult: 122.15, count: '' },
+    flyMediumEco: { mult: 305.96, count: '' },
+    flyMediumBus: { mult: 458.94, count: '' },
+    flyLongEco: { mult: 696.225, count: '' },
+    flyLongEcoPlus: { mult: 1113.9, count: '' },
+    flyLongBus: { mult: 2018.95, count: '' },
+    flyLongFirst: { mult: 2784.75, count: '' },
+    flyHotels: { mult: 17.4, count: '' }
   });
 
   //public transportation
   const [publicTransportSub, setPublicTransport] = React.useState(0);
   const [publicTransportArray, setPublicTransportArray] = React.useState({
-    publicCar: { mult: 0.06214, count: null },
-    publicTaxi: { mult: 0.1743, count: null },
-    publicSubway: { mult: 0.06214, count: null }
+    publicCar: { mult: 0.06214, count: '' },
+    publicTaxi: { mult: 0.1743, count: '' },
+    publicSubway: { mult: 0.06214, count: '' }
   });
 
   /* array using data from the spreadsheet, including multipliers */

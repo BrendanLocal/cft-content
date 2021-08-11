@@ -151,49 +151,49 @@ export default function App({ file, href, children}) {
   //employee commute
   const [transitSub, setTransit] = React.useState(0);
   const [transitArray, setTransitArray] = React.useState({
-    transitCar: {mult:0.1743, days:195, count: null, miles: null},
-    transitBus: {mult:0.06214, days:195,count: null, miles: null},
-    transitTrain: {mult:0.06214, days:195, count: null, miles: null}
+    transitCar: {mult:0.1743, days:195, count: '', miles: ''},
+    transitBus: {mult:0.06214, days:195,count: '', miles: ''},
+    transitTrain: {mult:0.06214, days:195, count: '', miles: ''}
   });
 
   //student commute
   const [studentCommute, setStudentCommute] = React.useState(0);
   const [studentCommuteArray, setstudentCommuteArray] = React.useState({
-    gasoline: {mult:1.22885, days:183, count: null, miles: null},
-    diesel: {mult:0.74350344, days:183, count: null, miles: null},
-    propane: {mult:0.897182946, days:183, count: null, miles: null},
-    cityBus: {mult:0.06214, days:183, count: null, miles: null},
-    car: {mult:0.1743, days:183, count: null, miles: null},
-    train: {mult:0.06214, days:183, count: null, miles: null}
+    gasoline: {mult:1.22885, days:183, count: '', miles: ''},
+    diesel: {mult:0.74350344, days:183, count: '', miles: ''},
+    propane: {mult:0.897182946, days:183, count: '', miles: ''},
+    cityBus: {mult:0.06214, days:183, count: '', miles: ''},
+    car: {mult:0.1743, days:183, count: '', miles: ''},
+    train: {mult:0.06214, days:183, count: '', miles: ''}
   });
 
   //vehicle multiplier
   const [vehicleSub, setVehicle] = React.useState(0);
   const [vehicleArray, setVehicleArray] = React.useState({
-    carGas: {mult:1.22885, miles: null},
-    carDiesel: {mult:0.74350344, miles: null},
-    carPropane: {mult:0.897182946, miles: null},
-    trainMiles: {mult:0.06214, miles: null}
+    carGas: {mult:1.22885, miles: ''},
+    carDiesel: {mult:0.74350344, miles: ''},
+    carPropane: {mult:0.897182946, miles: ''},
+    trainMiles: {mult:0.06214, miles: ''}
   });
 
   //other vehicle multiplier
   const [otherVehicleSub, setOtherVehicle] = React.useState(0);
   const [otherVehicleArray, setOtherVehicleArray] = React.useState({
-    van: {mult:0.14853, miles: null},
-    car: {mult:0.1743, miles: null},
-    bus: {mult:1.22885, miles: null}
+    van: {mult:0.14853, miles: ''},
+    car: {mult:0.1743, miles: ''},
+    bus: {mult:1.22885, miles: ''}
   });
 
   //flight multiplier
   const [flightSub, setFlight] = React.useState(0);
   const [flightArray, setFlightArray] = React.useState({
-    flyShort: {mult:122.15,count: null},
-    flyMediumEco: {mult:305.96,count: null},
-    flyMediumBus: {mult:458.94,count: null},
-    flyLongEco: {mult:696.225,count: null},
-    flyLongEcoPlus: {mult:1113.9,count: null},
-    flyLongBus: {mult:2018.95,count: null},
-    flyLongFirst: {mult:2784.75,count: null},
+    flyShort: {mult:122.15,count: ''},
+    flyMediumEco: {mult:305.96,count: ''},
+    flyMediumBus: {mult:458.94,count: ''},
+    flyLongEco: {mult:696.225,count: ''},
+    flyLongEcoPlus: {mult:1113.9,count: ''},
+    flyLongBus: {mult:2018.95,count: ''},
+    flyLongFirst: {mult:2784.75,count: ''},
   });
 
   /* array using data from the spreadsheet, including multipliers */

@@ -277,53 +277,53 @@ export default function BusinessCalc({ file, href, children}) {
 
   const [vehicleSub, setVehicle] = React.useState(0);
   const [vehicleArray, setVehicleArray] = React.useState({
-    carGas: { mult: 0.15179, count: null, miles: null },
-    carDiesel: { mult: 0.16748, count: null, miles: null },
-    carHybrid: { mult: 0.10487, count: null, miles: null },
-    carPlug: { mult: 0.02935, count: null, miles: null },
-    carElectric: { mult: 0.000001, count: null, miles: null },
-    truckGas: { mult: 0.27807, count: null, miles: null },
-    truckDiesel: { mult: 0.20419, count: null, miles: null },
-    truckHybrid: { mult: 0.11518, count: null, miles: null },
-    truckPlug: { mult: 0.07731, count: null, miles: null },
-    truckElectric: { mult: 0.000001, count: null, miles: null },
-    deliveryGas: { mult: 0.21962, count: null, miles: null },
-    deliveryDiesel: { mult:0.2471, count: null, miles: null },
-    semiNonFrig: { mult: 0.8654, count: null, miles: null },
-    semiFrig: { mult:1.0142, count: null, miles: null},
-    jetNum: { mult:2.9237, count: null, miles: null },
-    planeGas: { mult:	2.54306, count: null, miles: null },
-    heliGas: { mult: 2.54306, count: null, miles: null }
+    carGas: { mult: 0.15179, count: '', miles: '' },
+    carDiesel: { mult: 0.16748, count: '', miles: '' },
+    carHybrid: { mult: 0.10487, count: '', miles: '' },
+    carPlug: { mult: 0.02935, count: '', miles: '' },
+    carElectric: { mult: 0.000001, count: '', miles: '' },
+    truckGas: { mult: 0.27807, count: '', miles: '' },
+    truckDiesel: { mult: 0.20419, count: '', miles: '' },
+    truckHybrid: { mult: 0.11518, count: '', miles: '' },
+    truckPlug: { mult: 0.07731, count: '', miles: '' },
+    truckElectric: { mult: 0.000001, count: '', miles: '' },
+    deliveryGas: { mult: 0.21962, count: '', miles: '' },
+    deliveryDiesel: { mult:0.2471, count: '', miles: '' },
+    semiNonFrig: { mult: 0.8654, count: '', miles: '' },
+    semiFrig: { mult:1.0142, count: '', miles: ''},
+    jetNum: { mult:2.9237, count: '', miles: '' },
+    planeGas: { mult:	2.54306, count: '', miles: '' },
+    heliGas: { mult: 2.54306, count: '', miles: '' }
   });
 
   const [transitSub, setTransit] = React.useState(0);
   const [transitArray, setTransitArray] = React.useState({
-    transitCar: { mult: 0.1743, count: null, miles: null },
-    transitBus: { mult: 0.06214, count: null, miles: null },
-    transitTrain: { mult: 0.06214, count: null, miles: null }
+    transitCar: { mult: 0.1743, count: '', miles: '' },
+    transitBus: { mult: 0.06214, count: '', miles: '' },
+    transitTrain: { mult: 0.06214, count: '', miles: '' }
   });
 
   const [flightEmp, setEmp] = React.useState(0);
   const [flightSub, setFlight] = React.useState(0);
   const [flightArray, setFlightArray] = React.useState({
-    flyShort: { mult: 122.15, count: null },
-    flyMediumEco: { mult: 305.96, count: null },
-    flyMediumBus: { mult: 458.94, count: null },
-    flyLongEco: { mult: 696.225, count: null },
-    flyLongEcoPlus: { mult: 1113.9, count: null },
-    flyLongBus: { mult: 2018.95, count: null },
-    flyLongFirst: { mult: 2784.75, count: null },
-    flyHotels: { mult:17.4, count: null }
+    flyShort: { mult: 122.15, count: '' },
+    flyMediumEco: { mult: 305.96, count: '' },
+    flyMediumBus: { mult: 458.94, count: '' },
+    flyLongEco: { mult: 696.225, count: '' },
+    flyLongEcoPlus: { mult: 1113.9, count: '' },
+    flyLongBus: { mult: 2018.95, count: '' },
+    flyLongFirst: { mult: 2784.75, count: '' },
+    flyHotels: { mult:17.4, count: '' }
   });
 
   const [freightSub, setFreight] = React.useState(0);
   const [freightArray, setFreightArray] = React.useState({
-    freightVan: { mult: 0.61628, count: null, miles: null },
-    freightSemiNonFrig: { mult:0.1065, count: null, miles: null },
-    freightSemiFrig: { mult:0.12481, count: null, miles: null },
-    freightCargo: { mult: 0.01323, count: null, miles: null },
-    freightAirLess: { mult: 2.20496, count: null, miles: null },
-    freightAirMore: { mult:1.13382, count: null, miles: null }
+    freightVan: { mult: 0.61628, count: '', miles: '' },
+    freightSemiNonFrig: { mult:0.1065, count: '', miles: '' },
+    freightSemiFrig: { mult:0.12481, count: '', miles: '' },
+    freightCargo: { mult: 0.01323, count: '', miles: '' },
+    freightAirLess: { mult: 2.20496, count: '', miles: '' },
+    freightAirMore: { mult:1.13382, count: '', miles: '' }
   });
 
   const buildArray = {
