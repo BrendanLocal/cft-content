@@ -1250,20 +1250,25 @@ div>p {
   height: 100%;
   z-index: 999999!important;
   background: rgba(0,0,0,.5) !important;
-  padding: 20% 30%;
+  padding: 12% 20%;
   text-align: center;
   display: block !important;
 }
 
 .CookieConsent > div {
   width: 100%;
+  background-color: #212529!important;
+  border-radius: 0 0 10px 10px;
+  padding: 2%;
+  box-shadow: 0px -1px 10px rgb(0 0 0 / 50%);
 }
 
 .CookieConsent > div:first-of-type {
   margin: 0 !important;
   background-color: #212529!important;
-padding: 3%;
+  padding: 6%;
   box-shadow: 0px -1px 10px rgb(0 0 0 / 50%);
+  border-radius: 10px 10px 0 0;
 }
 
 #rcc-confirm-button {
@@ -2883,7 +2888,7 @@ z-index: 999;
 @media screen and (max-width: 1024px) and (min-width: 577px){
   .CookieConsent {
 
-  padding: 20% 10%;
+  padding: 15% 20%;
   }
   .parallaxLayers {
     min-height: 80vh;
@@ -3176,7 +3181,6 @@ z-index: 999;
     }
 
   .CookieConsent {
-
     padding: 20% 10%;
     }
 

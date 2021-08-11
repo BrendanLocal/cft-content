@@ -199,7 +199,7 @@ const Header = ()=> {
                   <Link href="/inside-cft">Inside CFT</Link>
                 </li>
                 <li onClick={toggleClass}>
-                  <Link href="/build-your-smart-forest mb-0">Build a Smart Forest</Link>
+                  <Link href="/build-your-smart-forest">Build a Smart Forest</Link>
                 </li>
                 <li className="ms-4 ms-md-5 subheader" onClick={toggleClass}>
                   <Link href="/build-your-smart-forest#corporate">Corporate Smart Forest</Link>
