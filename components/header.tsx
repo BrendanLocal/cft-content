@@ -8,7 +8,8 @@ import useSound from 'use-sound';
 import Search from '../components/search';
 import { useCurrentUser } from '../hooks/index';
 import Link from 'next/link'
-import CookieConsent from "react-cookie-consent";
+import CookieConsent, { Cookies, getCookieConsentValue } from "react-cookie-consent";
+
 
 const Header = ()=> {
 
@@ -147,11 +148,13 @@ const Header = ()=> {
   }
 
 
+
+
   return(
     
 
     <React.Fragment>
-      <CookieConsent enableDeclineButton flipButtons debug={true} buttonText="I ACCEPT THE COOKIES" declineButtonText="I DO NOT ACCEPT">
+      <CookieConsent enableDeclineButton flipButtons buttonText="I ACCEPT THE COOKIES" declineButtonText="I DO NOT ACCEPT">
         We use cookies and other technologies to offer you the best experience online. By continuing to use our website, you agree to the use of cookies and other technologies. If you would like to know more about cookies and other technologies and how to manage them, please view our <a className="underline" href="/privacy">Privacy Policy.</a>
         </CookieConsent>
       <div id="searchComponent" className={ showSearch ? "searchOpen" : "searchClosed"}>

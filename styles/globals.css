@@ -3169,7 +3169,7 @@ z-index: 999;
 @media screen and (max-width: 576px){
 
 
-  .menuInterface {
+  .header .menuInterface {
     position: absolute !important;
     right: 0;
     width: 100px;
