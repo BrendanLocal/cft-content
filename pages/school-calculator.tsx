@@ -1025,11 +1025,13 @@ export default function App({ file, href, children}) {
                 </Col>
               </Row>
             <hr className="mb-4"/>
+
               <Row>
                 <Col className="col-12 mb-3">
                   <h5 className="smallCaps text-small text-green">{editingdata.otherTransportHeader1}</h5>
                   <p className="text-grey">{editingdata.otherTransportPara1}</p>
                 </Col>
+                
                 
                 <Col>
 
@@ -1066,7 +1068,7 @@ export default function App({ file, href, children}) {
                     </Col>
                   </Row>    
                  
-                  
+                  <hr/>
                   <Row>
                     <Col className="col-10 col-xl-4 col-sm-6 bold ">Train/Subway</Col>
                     <Col className="col-12 col-xl-8 col-sm-6">
@@ -1076,7 +1078,7 @@ export default function App({ file, href, children}) {
                       <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
                     </Col>
                   </Row>
-                  
+                  <hr/>
                   <Row>
                     <Col className="col-12 col-xl-4 col-sm-6 bold">{editingdata.otherVehicleVan}</Col>
                     <Col className="col-12 col-xl-8 col-sm-6">
@@ -1086,7 +1088,7 @@ export default function App({ file, href, children}) {
                       <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
                     </Col>
                   </Row>
-
+                  <hr/>
                   <Row>
                   <Col className="col-12 col-xl-4 mb-2 bold">{editingdata.otherVehicleCar}</Col>
                     <Col>
@@ -1123,7 +1125,7 @@ export default function App({ file, href, children}) {
                         <input onChange={calculateMiles} name="carPlug" type="number" min="0" value={vehicleArray.carPlug.miles} onKeyPress={
                           (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                         }  placeholder={editingdata.placeholder8} />
-                        <p className="x-small mb-3 op-7">PAverage Annual Km</p>
+                        <p className="x-small mb-3 op-7">Average Annual Km</p>
                       </Col>
                     </Row>
                     <Row>
@@ -1149,10 +1151,11 @@ export default function App({ file, href, children}) {
               <Row>
                 <Col>
                   <h3 className="text-green">{editingdata.travelHeader}</h3>
-                  <p className="text-grey">{editingdata.travelPara}</p>
+                  <hr/>
+                  <p className="text-grey mb-3">{editingdata.travelPara}</p>
                 </Col>
               </Row>
-              <hr/>
+              
               <Row>
                 <Col className="col-12 col-xl-4 bold">{editingdata.travelShort}</Col>
                   <Col>
