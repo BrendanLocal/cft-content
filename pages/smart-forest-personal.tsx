@@ -323,9 +323,9 @@ export default function App({ file, href, children}) {
                     {fullUrlError ? <p style={{ color: 'red' }}>{fullUrlError}</p> : null}
                     <a href={fullUrl} onClick={fullUrlClick}>{fullUrl}</a>
                   </p>
-                  <hr/>
+                  {/* <hr/>
                   <p className="text-small">Share your results on social media with this link:</p>
-                  <p className="pt-2 text-small"><a href={sharingUrl}>{sharingUrl}</a></p>
+                  <p className="pt-2 text-small"><a href={sharingUrl}>{sharingUrl}</a></p> */}
                 </Col>
               </Row>
             </div>
