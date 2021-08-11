@@ -104,6 +104,7 @@
     "react-router-relative-links": "^0.1.0",
     "react-scroll-parallax": "^2.4.0",
     "react-scrollable-anchor": "^0.6.1",
+    "react-share": "^4.4.0",
     "react-slideshow-image": "^3.4.6",
     "react-step-builder": "^2.0.10",
     "react-tabs": "^3.2.2",

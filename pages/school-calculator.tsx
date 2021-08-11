@@ -15,8 +15,21 @@ import randomstring from "randomstring";
 import Accordion from "react-bootstrap/Accordion";
 import Card from 'react-bootstrap/Card';
 import Head from "next/head";
+import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon, LinkedinShareButton, LinkedinIcon, EmailShareButton, EmailIcon } from "react-share";
 
 let sessionID = randomstring.generate(12);
+let hostname = '';
+if (typeof window !== 'undefined') {
+  hostname = location.hostname;
+  if (hostname.startsWith('localhost')) {
+    // sharing won't allow localhost links to work
+    hostname = hostname.replace('localhost', '127.0.0.1');
+  }
+
+  if (location.port !== '') {
+    hostname += `:${location.port}`;
+  }
+}
 
 const Lang = () => {
   var language ="en";
@@ -361,9 +374,9 @@ export default function App({ file, href, children}) {
     localStorage.setItem('schoolfootprint', String((total/1000).toFixed(2)));
   }
 
-  const fullUrlPrefix = '/school-calculator?session=';
+  const editUrlPrefix = '/school-calculator?session=';
   const sharingUrlPrefix = '/school-calculator-share?session=';
-  const [fullUrl, setFullUrl] = React.useState('/school-calculator');
+  const [editUrl, setEditUrl] = React.useState('/school-calculator');
   const [sharingUrl, setSharingUrl] = React.useState('/school-calculator-share');
 
   const router = useRouter();
@@ -373,14 +386,9 @@ export default function App({ file, href, children}) {
       if (router.query.session) {
         sessionID = router.query.session;
       }
-      else if (localStorage.getItem('school-calculator_sessionID')) {
-        sessionID = localStorage.getItem('school-calculator_sessionID');
-      }
       
-      setFullUrl(fullUrlPrefix + sessionID);
+      setEditUrl(editUrlPrefix + sessionID);
       setSharingUrl(sharingUrlPrefix + sessionID);
-  
-      localStorage.setItem('school-calculator_sessionID', sessionID);
   
       try {
         fetch(`/api/calc?sessionID=${sessionID}&type=school-calculator`).then(async (response) => {
@@ -495,9 +503,7 @@ export default function App({ file, href, children}) {
     }
   }, [router.query]);
 
-  const saveSession = async (e, successCallback: () => void, failureCallback: (error) => void) => {
-    e.preventDefault();
-
+  const saveSession = async (successCallback: () => void, failureCallback: (error) => void) => {
     const body = {
       sessionID: sessionID,
       type: 'school-calculator',
@@ -549,19 +555,36 @@ export default function App({ file, href, children}) {
     }
   };
 
-  const [fullUrlError, setFullUrlError] = React.useState("");
-  const fullUrlClick = (e) => {
-    saveSession(e, () => {
-      setFullUrlError("");
+  const [editUrlError, setEditUrlError] = React.useState("");
+  const editUrlClick = (e) => {
+    e.preventDefault();
+
+    saveSession(() => {
+      setEditUrlError("");
       router.push(e.target.getAttribute('href'));
     }, (error) => {
-      setFullUrlError(error);
+      setEditUrlError(error);
     });
+  };
+
+  const [shareError, setShareError] = React.useState("");
+  const shareBeforeClick = () => {
+    return new Promise<void>((resolve, reject) => {
+      saveSession(() => {
+        setShareError("");
+        resolve();
+      }, (error) => {
+        setShareError(error);
+        reject(error);
+      });
+    })
   };
 
   const [nextStepError, setNextStepError] = React.useState("");
   const nextStepClick = (e) => {
-    saveSession(e, () => {
+    e.preventDefault();
+
+    saveSession(() => {
       setNextStepError("");
       router.push("/smart-forest-school");
     }, (error) => {
@@ -1027,11 +1050,13 @@ export default function App({ file, href, children}) {
                 </Col>
               </Row>
             <hr className="mb-4"/>
+
               <Row>
                 <Col className="col-12 mb-3">
                   <h5 className="smallCaps text-small text-green">{editingdata.otherTransportHeader1}</h5>
                   <p className="text-grey">{editingdata.otherTransportPara1}</p>
                 </Col>
+                
                 
                 <Col>
 
@@ -1068,7 +1093,7 @@ export default function App({ file, href, children}) {
                     </Col>
                   </Row>    
                  
-                  
+                  <hr/>
                   <Row>
                     <Col className="col-10 col-xl-4 col-sm-6 bold ">Train/Subway</Col>
                     <Col className="col-12 col-xl-8 col-sm-6">
@@ -1078,7 +1103,7 @@ export default function App({ file, href, children}) {
                       <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
                     </Col>
                   </Row>
-                  
+                  <hr/>
                   <Row>
                     <Col className="col-12 col-xl-4 col-sm-6 bold">{editingdata.otherVehicleVan}</Col>
                     <Col className="col-12 col-xl-8 col-sm-6">
@@ -1088,7 +1113,7 @@ export default function App({ file, href, children}) {
                       <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
                     </Col>
                   </Row>
-
+                  <hr/>
                   <Row>
                   <Col className="col-12 col-xl-4 mb-2 bold">{editingdata.otherVehicleCar}</Col>
                     <Col>
@@ -1125,7 +1150,7 @@ export default function App({ file, href, children}) {
                         <input onChange={calculateMiles} name="carPlug" type="number" min="0" value={vehicleArray.carPlug.miles} onKeyPress={
                           (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
                         }  placeholder={editingdata.placeholder8} />
-                        <p className="x-small mb-3 op-7">PAverage Annual Km</p>
+                        <p className="x-small mb-3 op-7">Average Annual Km</p>
                       </Col>
                     </Row>
                     <Row>
@@ -1151,10 +1176,11 @@ export default function App({ file, href, children}) {
               <Row>
                 <Col>
                   <h3 className="text-green">{editingdata.travelHeader}</h3>
-                  <p className="text-grey">{editingdata.travelPara}</p>
+                  <hr/>
+                  <p className="text-grey mb-3">{editingdata.travelPara}</p>
                 </Col>
               </Row>
-              <hr/>
+              
               <Row>
                 <Col className="col-12 col-xl-4 bold">{editingdata.travelShort}</Col>
                   <Col>
@@ -1263,16 +1289,40 @@ export default function App({ file, href, children}) {
                 <Col className="whiteBorder rounded mt-3 p-3">
                   <p className="text-small">To continue editing your results in the future, save or bookmark this link:</p>
                   <p className="pt-2 text-small">
-                    {fullUrlError ? <p style={{ color: 'red' }}>{fullUrlError}</p> : null}
-                    <a href={fullUrl} onClick={fullUrlClick}>{fullUrl}</a>
+                    {editUrlError ? <p style={{ color: 'red' }}>{editUrlError}</p> : null}
+                    <a href={editUrl} onClick={editUrlClick}>{editUrl}</a>
                   </p>
-                  {/* <hr/>
-                  <p className="text-small">Share your results on social media with this link:</p>
-                  <p className="pt-2 text-small"><a href={sharingUrl}>{sharingUrl}</a></p> */}
                 </Col>
               </Row>
             </div>
 
+          </Col>
+        </Row>
+
+        <Row className="justify-content-center ">
+          <Col className="col-11 col-lg-10 align-items-center text-center p-3">
+            <div className="bg-brown p-4 innerShadow roundedBox">
+              <p className="smallCaps text-orange mb-3">Share</p>
+              {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
+
+              {/* todo - change these to use sharingUrl instead of editUrl when the sharing page is implemented */}
+              
+              <FacebookShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} className="mx-2">
+                <FacebookIcon size={48} round />
+              </FacebookShareButton>
+
+              <TwitterShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} className="mx-2">
+                <TwitterIcon size={48} round />
+              </TwitterShareButton>
+
+              <LinkedinShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} className="mx-2">
+                <LinkedinIcon size={48} round />
+              </LinkedinShareButton>
+
+              <EmailShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} className="mx-2">
+                <EmailIcon size={48} round />
+              </EmailShareButton>
+            </div>
           </Col>
         </Row>
 
