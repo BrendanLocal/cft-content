@@ -1246,10 +1246,24 @@ div>p {
 }
 
 .CookieConsent {
-  bottom: 70px;
+  width: auto !important;
+  height: 100%;
   z-index: 999999!important;
+  background: rgba(0,0,0,.5) !important;
+  padding: 20% 30%;
+  text-align: center;
+  display: block !important;
+}
+
+.CookieConsent > div {
+  width: 100%;
+}
+
+.CookieConsent > div:first-of-type {
+  margin: 0 !important;
   background-color: #212529!important;
-  box-shadow: 0px -1px 10px rgba(0,0,0,.5);
+padding: 3%;
+  box-shadow: 0px -1px 10px rgb(0 0 0 / 50%);
 }
 
 #rcc-confirm-button {
@@ -2867,6 +2881,10 @@ z-index: 999;
 /* Tablet */
 
 @media screen and (max-width: 1024px) and (min-width: 577px){
+  .CookieConsent {
+
+  padding: 20% 10%;
+  }
   .parallaxLayers {
     min-height: 80vh;
   }
@@ -3053,6 +3071,7 @@ z-index: 999;
 
 @media screen and (max-width: 768px) and (min-width: 577px){
 
+
   .bg-communal {
     background-size: 120%!important;
     background-position: 50% 250%!important;
@@ -3148,6 +3167,18 @@ z-index: 999;
 /* Mobile */
 
 @media screen and (max-width: 576px){
+
+
+  .header .menuInterface {
+    position: absolute !important;
+    right: 0;
+    width: 100px;
+    }
+
+  .CookieConsent {
+
+    padding: 20% 10%;
+    }
 
   h1.hero, h1.hero {
     margin-top: 0px!important;
