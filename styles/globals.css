@@ -1387,7 +1387,7 @@ text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.6);
   width: 25px;
   height: 18px;
   position: relative;
-  margin: 5px 0px 5px 20px;
+  margin: 5px 5px 5px 20px;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -1398,7 +1398,6 @@ text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.6);
   transition: .5s ease-in-out;
   cursor: pointer;
   z-index:999;
-
   transform: scale(1);
   transition: transform 1s;
 }
@@ -3174,9 +3173,14 @@ z-index: 999;
 @media screen and (max-width: 576px){
 
 
+  #menuIcon{
+    margin: 5px 0px 5px 20px;
+  }
+  
   .header .menuInterface {
     position: absolute !important;
     right: 0;
+    padding-right: 4px;
     width: 100px;
     }
 
