@@ -279,8 +279,15 @@ export default function App({ file, href, children}) {
   };
 
   const calculateMiles=(e)=>{
-    vehicleArray[e.target.name].miles = Number(e.target.value)
-    calculateVehicle()
+    setVehicleArray({
+      ...vehicleArray,
+      [e.target.name]: {
+        ...vehicleArray[e.target.name],
+        miles: Number(e.target.value)
+      }
+    });
+
+    calculateVehicle();
   };
 
   const calculateFlight=()=> {
@@ -295,8 +302,15 @@ export default function App({ file, href, children}) {
   };
     
   const calculateFlightCount=(e)=>{
-    flightArray[e.target.name].count = Number(e.target.value)
-    calculateFlight()
+    setFlightArray({
+      ...flightArray,
+      [e.target.name]: {
+        ...flightArray[e.target.name],
+        count: Number(e.target.value)
+      }
+    });
+
+    calculateFlight();
   };
     
   const calculateOtherVehicle=()=> {
@@ -314,7 +328,14 @@ export default function App({ file, href, children}) {
   };
 
   const calculateOtherTransitMiles=(e)=>{
-    otherVehicleArray[e.target.name].miles = Number(e.target.value)
+    setOtherVehicleArray({
+      ...otherVehicleArray,
+      [e.target.name]: {
+        ...otherVehicleArray[e.target.name],
+        miles: Number(e.target.value)
+      }
+    });
+
     calculateOtherVehicle()
   };
 
@@ -333,13 +354,27 @@ export default function App({ file, href, children}) {
   };
 
   const calculateTransitMiles=(e)=>{
-    transitArray[e.target.name].miles = Number(e.target.value)
-    calculateTransit()
+    setTransitArray({
+      ...transitArray,
+      [e.target.name]: {
+        ...transitArray[e.target.name],
+        miles: Number(e.target.miles)
+      }
+    });
+
+    calculateTransit();
   };
 
   const calculateTransitCount=(e)=>{
-    transitArray[e.target.name].count = Number(e.target.value)
-    calculateTransit()
+    setTransitArray({
+      ...transitArray,
+      [e.target.name]: {
+        ...transitArray[e.target.name],
+        count: Number(e.target.value)
+      }
+    });
+
+    calculateTransit();
   };
 
   const calculateStudentCommuteTransit=()=> {
@@ -357,13 +392,27 @@ export default function App({ file, href, children}) {
   };
 
   const calculateStudentCommuteCount=(e)=>{
-    studentCommuteArray[e.target.name].count = Number(e.target.value)
-    calculateStudentCommuteTransit()
+    setstudentCommuteArray({
+      ...studentCommuteArray,
+      [e.target.name]: {
+        ...studentCommuteArray[e.target.name],
+        count: Number(e.target.value)
+      }
+    });
+
+    calculateStudentCommuteTransit();
   };
 
   const calculateStudentCommuteMiles=(e)=>{
-    studentCommuteArray[e.target.name].miles = Number(e.target.value)
-    calculateStudentCommuteTransit()
+    setstudentCommuteArray({
+      ...studentCommuteArray,
+      [e.target.name]: {
+        ...studentCommuteArray[e.target.name],
+        miles: Number(e.target.value)
+      }
+    });
+
+    calculateStudentCommuteTransit();
   };
 
   /* calculate the 'total' here by adding on the other subtotals */

@@ -385,13 +385,27 @@ export default function BusinessCalc({ file, href, children}) {
   }
 
   const calculateCount=(e)=>{
-    vehicleArray[e.target.name].count = Number(e.target.value)
-    calculateVehicle()
+    setVehicleArray({
+      ...vehicleArray,
+      [e.target.name]: {
+        ...vehicleArray[e.target.name],
+        count: Number(e.target.value)
+      }
+    });
+
+    calculateVehicle();
   }
 
   const calculateMiles=(e)=>{
-    vehicleArray[e.target.name].miles = Number(e.target.value)
-    calculateVehicle()
+    setVehicleArray({
+      ...vehicleArray,
+      [e.target.name]: {
+        ...vehicleArray[e.target.name],
+        miles: Number(e.target.value)
+      }
+    });
+
+    calculateVehicle();
   }
 
   const calculateTransit=()=> {
@@ -407,13 +421,27 @@ export default function BusinessCalc({ file, href, children}) {
   }
 
   const calculateTransitCount=(e)=>{
-    transitArray[e.target.name].count = Number(e.target.value)
-    calculateTransit()
+    setTransitArray({
+      ...transitArray,
+      [e.target.name]: {
+        ...transitArray[e.target.name],
+        count: Number(e.target.value)
+      }
+    });
+
+    calculateTransit();
   }
 
   const calculateTransitMiles=(e)=>{
-    transitArray[e.target.name].miles = Number(e.target.value)
-    calculateTransit()
+    setTransitArray({
+      ...transitArray,
+      [e.target.name]: {
+        ...transitArray[e.target.name],
+        miles: Number(e.target.value)
+      }
+    });
+
+    calculateTransit();
   }
 
   const calculateFlight=()=> {
@@ -427,8 +455,15 @@ export default function BusinessCalc({ file, href, children}) {
   }
 
   const calculateFlightCount=(e)=>{
-    flightArray[e.target.name].count = Number(e.target.value)
-    calculateFlight()
+    setFlightArray({
+      ...flightArray,
+      [e.target.name]: {
+        ...flightArray[e.target.name],
+        count: Number(e.target.value)
+      }
+    });
+
+    calculateFlight();
   }
 
   const calculateEmp=(e)=>{
@@ -447,13 +482,27 @@ export default function BusinessCalc({ file, href, children}) {
   }
 
   const calculateFreightNum=(e)=>{
-    freightArray[e.target.name].count = Number(e.target.value)
-    calculateFreight()
+    setFreightArray({
+      ...freightArray,
+      [e.target.name]: {
+        ...freightArray[e.target.name],
+        count: Number(e.target.value)
+      }
+    });
+
+    calculateFreight();
   }
     
   const calculateFreightMiles=(e)=>{
-    freightArray[e.target.name].miles = Number(e.target.value)
-    calculateFreight()
+    setFreightArray({
+      ...freightArray,
+      [e.target.name]: {
+        ...freightArray[e.target.name],
+        miles: Number(e.target.value)
+      }
+    });
+
+    calculateFreight();
   }
 
   const total = vehicleSub + subtotalBuild + transitSub + flightSub + freightSub;

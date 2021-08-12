@@ -499,8 +499,15 @@ export default function App({ file, href, children}) {
 
   /* function to calculate the vehicle mileage */
   const calculateMiles=(e)=>{
-    vehicleArray[e.target.name].miles = Number(e.target.value)
-    calculateVehicle()
+    setVehicleArray({
+      ...vehicleArray,
+      [e.target.name]: {
+        ...vehicleArray[e.target.name],
+        miles: Number(e.target.value)
+      }
+    });
+
+    calculateVehicle();
   }
 
   const calculateFlight=()=> {
@@ -515,8 +522,15 @@ export default function App({ file, href, children}) {
   }
     
   const calculateFlightCount=(e)=>{
-    flightArray[e.target.name].count = Number(e.target.value)
-    calculateFlight()
+    setFlightArray({
+      ...flightArray,
+      [e.target.name]: {
+        ...flightArray[e.target.name],
+        count: Number(e.target.value)
+      }
+    });
+
+    calculateFlight();
   }
     
   const calculatePublicTransport=()=> {
@@ -534,8 +548,15 @@ export default function App({ file, href, children}) {
   }
 
   const calculateTransitMiles=(e)=>{
-    publicTransportArray[e.target.name].count = Number(e.target.value)
-    calculatePublicTransport()
+    setPublicTransportArray({
+      ...publicTransportArray,
+      [e.target.name]: {
+        ...publicTransportArray[e.target.name],
+        count: Number(e.target.value)
+      }
+    });
+
+    calculatePublicTransport();
   }
 
   /* calculate the 'total' here by adding on the other subtotals */
