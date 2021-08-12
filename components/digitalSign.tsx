@@ -50,6 +50,10 @@ const DigitalSign = ()=> {
     setForestDate(event.target.value);
   };
 
+  const divStyle = {
+    fontSize: '25px  col-md-9 col-lg-7 col-xl-6 mt-2 mt-lg-3 mt-xl-2'
+  };
+
   function CreateImage(){
     htmlToImage.toPng(document.getElementById('signImage'))
   .then(function (dataUrl) {
@@ -100,13 +104,15 @@ const DigitalSign = ()=> {
               setImageSrc={setImageSrc}
             />
           </div>
+
+          <label className="text-small mb-2">*For best results, use .png format with transparent background.</label>
         </Col>
         
         <Col className="col-11 col-md-9 col-lg-7 col-xl-6 mt-2 mt-lg-3 mt-xl-2 signImagebuilder pe-lg-0">
           <div id="signImage" className="signImageContainer card-drop-heavy">
             <img src={selectBG}/>
             <div className="signImageText signTextForest">
-              <span style={forestFullName.length > 35 ? { fontSize: '27px' } : undefined } 
+            <span style={forestFullName.length > 35 ? { fontSize: "80%" } : undefined } 
                 hidden={forestName? false : true} >
                 {forestFullName}
               </span>
