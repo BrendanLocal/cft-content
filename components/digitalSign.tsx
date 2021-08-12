@@ -83,7 +83,7 @@ const DigitalSign = ()=> {
             <option>This Smart Forest is Growing to Net-Zero</option>
             <option>Growing to Net-Zero</option>
             <option>Smart Forest - Breathing Made Easy</option>
-            <option>Smart Forest - For the sake of Wildlife</option>
+            <option>Smart Forest - for the sake of wildlife</option>
             <option>Smart Forest – It is easy being green!</option>
           </select>
 
