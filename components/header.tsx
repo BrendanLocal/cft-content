@@ -187,8 +187,8 @@ const Header = ()=> {
       </div>
 
       <div id="sidebar" className={isActive ? 'open' : null}>
-        <div className="container-fluid v-full sidebar bg-green text-orange">
-          <div className="row pt-0 mt-0">
+        <div className="container-fluid v-full sidebar bg-green text-orange pt-4 pt-md-3">
+          <div className="row">
             <div className="col-9 col-md-8">
               <ul className="mb-5 ">
                 <li className="pt-0" onClick={toggleClass}>
