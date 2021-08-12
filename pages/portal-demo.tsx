@@ -198,7 +198,7 @@ return (
           </Col>
           <Col className="text-right p-4">
               
-                <Link href={ user? "/portal-user" : "/portal" } ><a className="smallCaps textButton">{ user? "Your Portal" : "Sign Out" }</a></Link>
+                <Link href=""><a className="smallCaps textButton d-none">SIGN OUT</a></Link>
                 
           </Col>
           </Row>

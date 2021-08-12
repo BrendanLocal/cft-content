@@ -180,7 +180,7 @@ const Header = ()=> {
               <Link href={ user? "/portal-user" : "/portal" } ><a className="smallCaps textButton">{ user? "Your Portal" : "Sign in" }</a></Link>
             </div>
             <div className="mt-2">
-              <Link href="/portal-demo"><a className="smallCaps text-white no-underline textButton">DEMO PORTAL</a></Link>
+              <a href="/portal-demo" target="_blank" className="smallCaps text-white no-underline textButton">DEMO PORTAL</a>
             </div>
           </div>
         </div>
@@ -188,13 +188,12 @@ const Header = ()=> {
 
       <div id="sidebar" className={isActive ? 'open' : null}>
         <div className="container-fluid v-full sidebar bg-green text-orange">
-          <div className="row">
-            <div className="col-9 col-md-8 ">
-              <ul className="mb-5">
-                <li className="" onClick={toggleClass}>
+          <div className="row pt-0 mt-0">
+            <div className="col-9 col-md-8">
+              <ul className="mb-5 ">
+                <li className="pt-0" onClick={toggleClass}>
                   <Link href="/home">Home</Link>
                 </li>
-
                 <li className="slimlineBottom slimlineTop" onClick={toggleClass}>
                   <Link href="/inside-cft">Inside CFT</Link>
                 </li>
@@ -254,7 +253,7 @@ const Header = ()=> {
           <div className="col-12 col-md-6 d-flex flex-column gx-1 gx-lg-3 fixed">
             <div className="row align-self-top">
               <div className="col d-flex align-items-center justify-content-end menuInterface">
-              <Link href="/portal-demo"><a className="smallCaps text-white no-underline textButton me-4 d-none d-sm-block">DEMO PORTAL</a></Link>
+              <a href="/portal-demo" target="_blank" className="smallCaps text-white no-underline textButton me-4 d-none d-sm-block">DEMO PORTAL</a>
                 <Link href={ user? "/portal-user" : "/portal" } ><a className="smallCaps textButton me-2 d-none d-sm-block">{ user? "Your Portal" : "Sign in" }</a></Link>
                 <div id="menuIcon" className={isActive ? 'open' : null} onClick={toggleClass}>
                   <span></span>
