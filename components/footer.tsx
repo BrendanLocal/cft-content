@@ -39,14 +39,8 @@ import Rellax from "rellax";
         return (
           <Row className="justify-content-center align-items-center">
             <Col>
-            <p className="text-white bold mb-3 pe-3">Thank you for your interest in Canada’s Forest Trust. We will release our first newsletter soon. In the meantime, please follow us on social media:</p>
-            <div className="socialIcons">
-              {socialIcons.map(item =>
-                
-                  <a key={item.label} href={item.path} target="_blank" className="mx-2"><img src={item.icon}></img></a>
-                
-              )}
-            </div>
+            <p className="text-orange newsletter-ty bold mb-3 pe-3">Thank you for your interest in Canada’s Forest Trust. We will release our first newsletter soon. In the meantime, please follow us on social media </p>
+           
             </Col>
           </Row>
         );
