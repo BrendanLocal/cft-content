@@ -79,7 +79,7 @@
     "vehicleJetDesc":"All sizes",
 
     "vehicleHeli":"Helicopter",
-    "VehicleOther":"Input the amount of fuel annualy per vehicle",
+    "VehicleOther":"Input the amount of fuel used annually per vehicle:",
     "vechileYacht":"Yacht",
     "vehicleATV":"ATV (quad bike)",
     "vehicleSide":"Side-by-side",
@@ -103,6 +103,7 @@
     "vehicleGas":"Gas",
     "vehicleDiesel":"Diesel",
     "vehicleHybrid":"Hybrid",
+    "vehiclePlug":"Plug-in Hybrid",
     "vehicleElectric":"Electric",
     "vehicleAviation":"Aviation fuel",
 

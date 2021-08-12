@@ -758,9 +758,9 @@ export default function BusinessCalc({ file, href, children}) {
             <Row>
               <Col>
               {sessionDataError ? <p style={{ color: 'red' }}>{sessionDataError}</p> : null}
-              <h4 className="text-green">
+              <h3 className="text-green">
                 Building Types
-              </h4>
+              </h3>
               <hr/>
               </Col>
             </Row>
@@ -802,8 +802,8 @@ export default function BusinessCalc({ file, href, children}) {
             </Row>
             <Row>
               <Col> 
-              <hr/>
-              <h5>Primary Building</h5>
+              <hr className="mb-4"/>
+              <h5 className="smallCaps text-small text-green">Primary Building</h5>
               <label htmlFor="building">What kind of building do you have?</label><br />
               <select name="building" onChange={changeBuild} value={selectBuild}>
                 <option value="" hidden>{editingdata.select}</option>
@@ -852,8 +852,8 @@ export default function BusinessCalc({ file, href, children}) {
                 <p className="x-small mb-3 op-7">Number of buildings of this type</p>
               </Col>
             </Row>
-          <hr/>
-<h6 className="pt-3">Additional Buildings</h6>
+          <hr className="mb-4"/>
+              <h5 className="smallCaps text-small text-green">Additional Buildings</h5>
 
               <Accordion>
 
@@ -1131,8 +1131,9 @@ export default function BusinessCalc({ file, href, children}) {
             <Row>
               <Col className="col-12">
                 <h3 className="text-green">{editingdata.vehicleHeader}</h3>
-                <p className="text-grey">{editingdata.vehiclepara}</p>
                 <hr/>
+                <p className="text-grey mb-3">{editingdata.vehiclepara}</p>
+                
             
                 <Accordion>
                   <Card>
@@ -1476,7 +1477,7 @@ export default function BusinessCalc({ file, href, children}) {
                       <div>
                         <Row>
                           <Col className="col-12 col-xl-4">
-                            <h5 className="smallCaps text-small text-green">{editingdata.vehiclejet}</h5>
+                            <p>Private Jet</p>
                           </Col>
                           <Col className="col-12 col-xl-4 col-sm-6">
                             <input onChange={calculateCount} name="jetNum" type="number" min="0" value={vehicleArray.jetNum.count} onKeyPress={ (event) => {
@@ -1498,7 +1499,7 @@ export default function BusinessCalc({ file, href, children}) {
 
                         <Row>
                           <Col className="col-12 col-xl-4">
-                            <h5 className="smallCaps text-small text-green">Private Plane</h5>
+                            <p>Private Plane</p>
                           </Col>
                           <Col className="col-12 col-xl-4 col-sm-6">
                             <input onChange={calculateCount} name="planeGas" type="number" min="0" value={vehicleArray.planeGas.count} onKeyPress={ (event) => {
@@ -1520,7 +1521,7 @@ export default function BusinessCalc({ file, href, children}) {
 
                         <Row>
                           <Col className="col-12 col-xl-4">
-                            <h5 className="smallCaps text-small text-green">Private Helicopter</h5>
+                            <p>Private Helicopter</p>
                           </Col>
                           <Col className="col-12 col-xl-4 col-sm-6">
                             <input onChange={calculateCount} name="heliGas" type="number" min="0" value={vehicleArray.heliGas.count} onKeyPress={ (event) => {
@@ -1552,11 +1553,12 @@ export default function BusinessCalc({ file, href, children}) {
             <Row>
               <Col>
               <h3 className="text-green">{editingdata.commuteHeader}</h3>
-              <p className="text-grey">{editingdata.commutePara}</p>
+              <hr/>
+              <p className="text-grey mb-3">{editingdata.commutePara}</p>
               </Col>
             </Row>
             <Row>
-              <Col className="col-12 col-xl-4">{editingdata.commuteCar}</Col>
+              <Col className="col-12 col-xl-4 bold">{editingdata.commuteCar}</Col>
               <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateTransitCount} name="transitCar" type="number" min="0" value={transitArray.transitCar.count} onKeyPress={ (event) => {
                   if (!/[0-9]/.test(event.key)) {
@@ -1575,7 +1577,7 @@ export default function BusinessCalc({ file, href, children}) {
               </Col>
             </Row>
             <Row>
-              <Col className="col-12 col-xl-4">{editingdata.commuteBus}</Col>
+              <Col className="col-12 col-xl-4 bold">{editingdata.commuteBus}</Col>
               <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateTransitCount} name="transitBus" type="number" min="0" value={transitArray.transitBus.count} onKeyPress={ (event) => {
                   if (!/[0-9]/.test(event.key)) {
@@ -1594,7 +1596,7 @@ export default function BusinessCalc({ file, href, children}) {
               </Col>
             </Row>
             <Row>
-              <Col className="col-12 col-xl-4">{editingdata.commuteTrain}</Col>
+              <Col className="col-12 col-xl-4 bold">{editingdata.commuteTrain}</Col>
               <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateTransitCount} name="transitTrain" type="number" min="0" value={transitArray.transitTrain.count} onKeyPress={ (event) => {
                   if (!/[0-9]/.test(event.key)) {
@@ -1618,12 +1620,13 @@ export default function BusinessCalc({ file, href, children}) {
             <Row>
               <Col>
               <h3 className="text-green">{editingdata.travelHeader}</h3>
-              <p className="text-grey">{editingdata.travelPara}</p>
+              <hr/>
+              <p className="text-grey mb-3">{editingdata.travelPara}</p>
               </Col>
             </Row>
-            <hr/>
+            
             <Row>
-              <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelEmp}</Col>
+              <Col className="col-12 col-xl-4 col-sm-6 bold">{editingdata.travelEmp}</Col>
               <Col className="col-12 col-xl-8 col-sm-6">
                 <input onChange={calculateEmp} name="flyEmployees" type="number" min="0" value={flightEmp} onKeyPress={ (event) => {
                   if (!/[0-9]/.test(event.key)) {
@@ -1635,7 +1638,7 @@ export default function BusinessCalc({ file, href, children}) {
             </Row>
             <hr/>
             <Row>
-              <Col className="col-12 col-xl-4">{editingdata.travelShort}</Col>
+              <Col className="col-12 col-xl-4 mb-2 bold">{editingdata.travelShort}</Col>
               <Col>
                 <Row>
                   <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelShort1}</Col>
@@ -1652,7 +1655,7 @@ export default function BusinessCalc({ file, href, children}) {
             </Row>
             <hr/>
             <Row>
-              <Col className="col-10 col-xl-4">{editingdata.travelMed}</Col>
+              <Col className="col-10 col-xl-4 mb-2 bold">{editingdata.travelMed}</Col>
                 <Col>
                   <Row>
                     <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelMed1}</Col>
@@ -1680,7 +1683,7 @@ export default function BusinessCalc({ file, href, children}) {
               </Row>
               <hr/>
               <Row>
-                <Col className="col-10 col-xl-4">{editingdata.travelLong}</Col>
+                <Col className="col-10 col-xl-4 mb-2 bold">{editingdata.travelLong}</Col>
                 <Col className="col-12 col-xl-8">
                   <Row>
                     <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelLong1}</Col>
@@ -1730,7 +1733,7 @@ export default function BusinessCalc({ file, href, children}) {
             </Row>
             <hr/>
             <Row>
-              <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelNights}</Col>
+              <Col className="col-12 col-xl-4 col-sm-6 bold">{editingdata.travelNights}</Col>
               <Col className="col-12 col-xl-8 col-sm-6">
                 <input onChange={calculateFlightCount} name="flyHotels" type="number" min="0" value={flightArray.flyHotels.count} onKeyPress={ (event) => {
                   if (!/[0-9]/.test(event.key)) {
@@ -1746,12 +1749,13 @@ export default function BusinessCalc({ file, href, children}) {
             <Row>
               <Col>
                 <h3 className="text-green">{editingdata.freightHeader}</h3>
-                <p className="text-grey">{editingdata.freightPara}</p>
+                <hr/>
+                <p className="text-grey mb-3">{editingdata.freightPara}</p>
               </Col>
             </Row>
-            <hr/>
+           
             <Row>
-              <Col className="col-12 col-xl-4">{editingdata.freightVan}</Col>
+              <Col className="col-12 col-xl-4 bold">{editingdata.freightVan}</Col>
               <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateFreightNum} name="freightVan" type="number" min="0" value={freightArray.freightVan.count} onKeyPress={ (event) => {
                   if (!/[0-9]/.test(event.key)) {
@@ -1771,7 +1775,7 @@ export default function BusinessCalc({ file, href, children}) {
             </Row>
             <hr/>
             <Row>
-              <Col className="col-12 col-xl-4">{editingdata.freightSemiNon}</Col>
+              <Col className="col-12 col-xl-4 bold">{editingdata.freightSemiNon}</Col>
               <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateFreightNum} name="freightSemiNonFrig" type="number" min="0" value={freightArray.freightSemiNonFrig.count} onKeyPress={ (event) => {
                   if (!/[0-9]/.test(event.key)) {
@@ -1791,7 +1795,7 @@ export default function BusinessCalc({ file, href, children}) {
             </Row>
             <hr/>
             <Row>
-              <Col className="col-12 col-xl-4">{editingdata.freightSemiFridge}</Col>
+              <Col className="col-12 col-xl-4 bold">{editingdata.freightSemiFridge}</Col>
               <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateFreightNum} name="freightSemiFrig" type="number" min="0" value={freightArray.freightSemiFrig.count} onKeyPress={ (event) => {
                   if (!/[0-9]/.test(event.key)) {
@@ -1811,7 +1815,7 @@ export default function BusinessCalc({ file, href, children}) {
             </Row>
             <hr/>
             <Row>
-              <Col className="col-12 col-xl-4">{editingdata.freightShip}</Col>
+              <Col className="col-12 col-xl-4 bold">{editingdata.freightShip}</Col>
               <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateFreightNum} name="freightCargo" type="number" min="0" value={freightArray.freightCargo.count} onKeyPress={ (event) => {
                   if (!/[0-9]/.test(event.key)) {
@@ -1831,7 +1835,7 @@ export default function BusinessCalc({ file, href, children}) {
             </Row>
             <hr/>
             <Row>
-              <Col className="col-12 col-xl-4">{editingdata.freightAirLow}</Col>
+              <Col className="col-12 col-xl-4 bold">{editingdata.freightAirLow}</Col>
               <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateFreightNum} name="freightAirLess" type="number" min="0" value={freightArray.freightAirLess.count} onKeyPress={ (event) => {
                   if (!/[0-9]/.test(event.key)) {
@@ -1851,7 +1855,7 @@ export default function BusinessCalc({ file, href, children}) {
             </Row>
             <hr/>
             <Row>
-              <Col className="col-12 col-xl-4">{editingdata.freightAirHigh}</Col>
+              <Col className="col-12 col-xl-4 bold">{editingdata.freightAirHigh}</Col>
               <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateFreightNum} name="freightAirMore" type="number" min="0" value={freightArray.freightAirMore.count} onKeyPress={ (event) => {
                   if (!/[0-9]/.test(event.key)) {
@@ -1921,8 +1925,8 @@ export default function BusinessCalc({ file, href, children}) {
 
         <Row className="justify-content-center ">
           <Col className="col-11 col-lg-10 align-items-center text-center p-3">
-            <div className="bg-brown p-4 innerShadow roundedBox">
-              <p className="smallCaps text-orange mb-3">Share</p>
+            <div className="bg-green p-4 innerShadow roundedBox">
+              <p className="smallCaps text-white mb-3">Share your results</p>
               {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
 
               {/* todo - change these to use sharingUrl instead of editUrl when the sharing page is implemented */}

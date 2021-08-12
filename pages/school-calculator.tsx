@@ -1231,7 +1231,7 @@ export default function App({ file, href, children}) {
               </Row>
               
               <Row>
-                <Col className="col-12 col-xl-4 bold">{editingdata.travelShort}</Col>
+                <Col className="col-12 col-xl-4 mb-2 bold">{editingdata.travelShort}</Col>
                   <Col>
                     <Row>
                       <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelShort1}</Col>
@@ -1246,7 +1246,7 @@ export default function App({ file, href, children}) {
                 </Row>
                 <hr/>
               <Row>
-                  <Col className="col-12 col-xl-4 bold">{editingdata.travelMed}</Col>
+                  <Col className="col-12 col-xl-4 mb-2 bold">{editingdata.travelMed}</Col>
                   <Col>
                     <Row>
                       <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelMed1}</Col>
@@ -1270,7 +1270,7 @@ export default function App({ file, href, children}) {
                 </Row>
                 <hr/>
                 <Row>
-                  <Col className="col-10 col-xl-4 bold">{editingdata.travelLong}</Col>
+                  <Col className="col-10 col-xl-4 mb-2 bold">{editingdata.travelLong}</Col>
                   <Col className="col-12 col-xl-8">
                     <Row>
                       <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelLong1}</Col>
@@ -1350,8 +1350,8 @@ export default function App({ file, href, children}) {
 
         <Row className="justify-content-center ">
           <Col className="col-11 col-lg-10 align-items-center text-center p-3">
-            <div className="bg-brown p-4 innerShadow roundedBox">
-              <p className="smallCaps text-orange mb-3">Share</p>
+            <div className="bg-green p-4 innerShadow roundedBox">
+              <p className="smallCaps text-white mb-3">SHARE YOUR RESULTS</p>
               {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
 
               {/* todo - change these to use sharingUrl instead of editUrl when the sharing page is implemented */}

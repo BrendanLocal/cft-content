@@ -100,7 +100,7 @@
   "travelPlaceholder3":"Nights per employee",
 
   "freightHeader":"Freight (Incoming and Outgoing Shipments)",
-  "freightPara":"Please input how much cargo your business has shipped over the past 12 months. Do not include shipments made by company fleet vehicles.",
+  "freightPara":"Please input how much cargo your business has shipped over the past 12 months. Do not include shipments made by company fleet vehicles:",
   "freightVan":"Van/Truck (<3.5 Tonnes)",
   "freightSemiNon":"Semi (Non-Refrigerated)",
   "freightSemiFridge":"Semi (Refrigerated)",
