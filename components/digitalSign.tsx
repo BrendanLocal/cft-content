@@ -25,6 +25,7 @@ const DigitalSign = ()=> {
   const [selectCopy, setCopy] = React.useState("");
   const [selectBG, setBG] = React.useState("signbg_forest.jpg");
   const [selectLogo, setLogo] = React.useState("");
+  const forestFullName = "The " + forestName + " Forest";
   const logoUpload = (event) => { 
     setLogo(event.target.value);
   };
@@ -49,6 +50,10 @@ const DigitalSign = ()=> {
     setForestDate(event.target.value);
   };
 
+  const divStyle = {
+    fontSize: '25px  col-md-9 col-lg-7 col-xl-6 mt-2 mt-lg-3 mt-xl-2'
+  };
+
   function CreateImage(){
     htmlToImage.toPng(document.getElementById('signImage'))
   .then(function (dataUrl) {
@@ -62,8 +67,9 @@ const DigitalSign = ()=> {
         <Col className="col-10 col-md-9 col-lg-3 col-xl-3 mb-4">
           <label className="text-small bold" htmlFor="forest-name">Choose a name for your forest:</label>
           <br />
-          <input className="no-border input-height" name="forest-name" onChange={changeName} type="text" maxLength={15} placeholder="Forest name"/>
-          <p className="x-small mb-3 ">* 15 character limit</p>
+          <input className="no-border input-height" name="forest-name" onChange={changeName} type="text" placeholder="Forest name" 
+          maxLength={40}/>
+          <p className="x-small mb-3 ">* 40 character limit</p>
 
           <label className="text-small bold" htmlFor="forest-name">How many acres is your forest:</label>
           <br />
@@ -98,15 +104,18 @@ const DigitalSign = ()=> {
               setImageSrc={setImageSrc}
             />
           </div>
-        </Col>
 
+          <label className="text-small mb-2">*For best results, use .png format with transparent background.</label>
+        </Col>
+        
         <Col className="col-11 col-md-9 col-lg-7 col-xl-6 mt-2 mt-lg-3 mt-xl-2 signImagebuilder pe-lg-0">
           <div id="signImage" className="signImageContainer card-drop-heavy">
             <img src={selectBG}/>
             <div className="signImageText signTextForest">
-              {forestName? "The " : ""}
-              {forestName}
-              {forestName? " Forest" : ""}
+            <span style={forestFullName.length > 35 ? { fontSize: "80%" } : undefined } 
+                hidden={forestName? false : true} >
+                {forestFullName}
+              </span>
             </div>
             
             <img className="signImageLogo" src={imageSrc}></img>

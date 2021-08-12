@@ -2630,6 +2630,7 @@ color: #054217;
 
 .signImageText {
   position: absolute;
+  word-wrap: break-word;
 color: #054217;
 }
 
