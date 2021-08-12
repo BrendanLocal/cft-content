@@ -686,9 +686,9 @@ export default function BusinessCalc({ file, href, children}) {
             <Row>
               <Col>
               {sessionDataError ? <p style={{ color: 'red' }}>{sessionDataError}</p> : null}
-              <h4 className="text-green">
+              <h2 className="h4 text-green">
                 Building Types
-              </h4>
+              </h2>
               <hr/>
               </Col>
             </Row>
@@ -731,7 +731,7 @@ export default function BusinessCalc({ file, href, children}) {
             <Row>
               <Col> 
               <hr/>
-              <h5>Primary Building</h5>
+              <h2 className="h5">Primary Building</h2>
               <label htmlFor="building">What kind of building do you have?</label><br />
               <select name="building" onChange={changeBuild} value={selectBuild}>
                 <option value="" hidden>{editingdata.select}</option>
@@ -781,7 +781,7 @@ export default function BusinessCalc({ file, href, children}) {
               </Col>
             </Row>
           <hr/>
-<h6 className="pt-3">Additional Buildings</h6>
+          <h3 className="h6 pt-3">Additional Buildings</h3>
 
               <Accordion>
 
@@ -1297,7 +1297,7 @@ export default function BusinessCalc({ file, href, children}) {
                       {editingdata.vehicletruckHeader}
                       </p>
                       
-                      <h5 className="text-small smallCaps op-6">(up to 3.5 tonnes)</h5>
+                      <h4 className="h5 text-small smallCaps op-6">(up to 3.5 tonnes)</h4>
                     </Accordion.Toggle>
                      
                     <Accordion.Collapse eventKey="3">
@@ -1868,7 +1868,7 @@ export default function BusinessCalc({ file, href, children}) {
         <Row className="justify-content-center pb-5 mb-5">
           <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
-              <h4 className="text-white tight-drop-light">{editingdata.otherbox1Header}</h4>
+              <h3 className="h4 text-white tight-drop-light">{editingdata.otherbox1Header}</h3>
               <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox1Para}</p>
               <Link href="/school-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox1button}</a></Link>
             </div>
@@ -1876,7 +1876,7 @@ export default function BusinessCalc({ file, href, children}) {
 
           <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
-              <h4 className="text-white tight-drop-light">{editingdata.otherbox2Header}</h4>
+            <h3 className="h4 text-white tight-drop-light">{editingdata.otherbox2Header}</h3>
               <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox2Para}</p>
               <Link href="/personal-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox2button}</a></Link>
             </div>
