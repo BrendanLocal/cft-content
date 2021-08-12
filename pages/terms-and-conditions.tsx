@@ -49,7 +49,7 @@ const Lang = () => {
       <main className="bg-green py-5">
         <Container className="v-full pt-5 mb-5">
           <Row className="justify-content-center text-center py-3">
-            <Col className="col-11 col-lg-8">
+            <Col className="col-11 col-lg-7">
             <h1 className="h2 text-orange bold">Website Terms and Conditions of Use</h1>
             <p className="text-white bold">Last updated: July 22nd, 2021</p>
             </Col>
