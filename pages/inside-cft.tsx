@@ -451,7 +451,7 @@ export default function Power({ file }) {
 
                   <ul className="checkMark text-white ms-5 ms-xl-3 pe-3">
                      <li className="py-2">Supports wildlife, improves air quality, and regulates water flow</li>
-                     <li className="py-2">Offers a tangible way to offset a large carbon footprints</li>
+                     <li className="py-2">Offers a tangible way to offset a large carbon footprint</li>
                      <li className="py-2">Maximizes its impact through expert forest management</li>
                      <li className="py-2">Proves its effectiveness via proprietary digital tools</li>           
                      <li className="py-2">Boosts the green economy</li>
@@ -494,24 +494,20 @@ export default function Power({ file }) {
                 </Col>
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  We saw a gap to do something truly impactful and sustainable in anarea that needs resources, patience and bold action to combat climate change.
+                  We saw a gap to do something truly impactful and sustainable in an area that needs resources, patience and bold action to combat climate change.
                   </p>
 
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  Under the right conditions, a forest will become a force of nature—quite literally. As the threat of climate change closes in, forests areone of our last and best chances to save our planet before it’s too late.
+                  Under the right conditions, a forest will become a force of nature—quite literally. As the threat of climate change closes in, forests are one of our last and best chances to save our planet before it’s too late.
                   </p>
 
-                  <p className="text-white medium mb-5 ms-lg-4 ms-xl-0">
+                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
                   Our Smart Forests will capture millions of tonnes of CO2, rehabilitate ecosystems and create jobs, country-wide. And we will never clear-cut.
                   </p>
                 </Col>
               </Row>
 
-              <div className="bg-offwhite text-GREY roundedBox p-4 mb-5">
-                <p className="large">
-                Did you know that approximately <span className="italic bold">2.6 billion tonnes of CO₂</span> are absorbed by forests each year, which is approximately 1/3 of all CO2 emissions released over the span of an average year?
-                </p>
-              </div>
+              <hr className="white mb-5 mt-4"/>
 
               <Row>
                 <Col className="col-12 col-lg-4">
@@ -521,7 +517,7 @@ export default function Power({ file }) {
                 </Col>
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 bold ms-lg-4 ms-xl-0">
-                  We build Smart Forests with our five-step Action Plan:
+                  We build Smart Forests with our 5 Phase Action Plan:
                   </p>
 
                   <ul className="text-white ms-lg-4 ms-xl-0 pe-3">
@@ -544,7 +540,7 @@ export default function Power({ file }) {
                 </Col>
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  CFT takes a holistic approach to forestry that doesn't stop at planting trees. We ensure thelong term health of our forests with certifiable monitoring and expert management. And we will protect our forests forever. We will tell you exactly where in Canada your seedlings are planted, the health of the land, the impact your seedlings / forest is having on biodiversity, etc.
+                  CFT takes a holistic approach to forestry that doesn't stop at planting trees. We ensure the long term health of our forests with certifiable monitoring and expert management. And we will protect our forests forever. We will tell you exactly where in Canada your seedlings are planted, the health of the land, the impact your seedlings / forest is having on biodiversity, etc.
                   </p>
 
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
@@ -599,7 +595,7 @@ export default function Power({ file }) {
                 </Col>
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  You offset carbon by making the amount of carbon you release in a year equal to the amount of carbon stored in the forest.
+                  You offset your Carbon Footprint by making the amount of carbon you release in a year equal to the amount of carbon stored in your CFT Smart Forest.
                   </p>
 
                 </Col>
@@ -615,7 +611,7 @@ export default function Power({ file }) {
                 </Col>
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  Using our <a href="/carbon-calculator" className="text-orange">carbon calculator</a> first we help you understand your carbon footprint. Then, with our <a href="/smart-forest-calculator" className="text-orange">net-zero calculator</a> we can determine the size of forest you will build and over what period of time. This is measured in Forest Trust Units (FTUs). The cost will be calculated based on the number of FTUs you need.
+                  Using our <a href="/carbon-calculator" className="text-orange">carbon calculator</a>, we help you understand your carbon footprint. Then, using our <a href="/smart-forest-calculator" className="text-orange">net-zero calculator</a>, you can determine the size of forest you will need to build and over what period of time. This is measured in Forest Trust Units (FTUs). An FTU is 5 acres. The cost will be calculated based on the number of FTUs you need. For more information please contact <a href="mailto:grow@canadasforesttrust.ca" className="text-orange">grow@canadasforesttrust.ca</a>
                   </p>
 
                 </Col>
@@ -632,22 +628,6 @@ export default function Power({ file }) {
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
                   Yes. 1 Forest Trust Unit is measured in 5 acres, or at least 5,000 seedlings trees. Our communal forest allows for much lower than 5 acres so you are part of a forest.
-                  </p>
-
-                </Col>
-              </Row>
-
-              <hr className="white mb-5 mt-4"/>
-
-              <Row>
-                <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">
-                  What does it cost to buy a Smart Forest?
-                  </h3>
-                </Col>
-                <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  Using our net <a href="/carbon-calculator" className="text-orange">carbon calculator</a> first we help you understand your carbon footprint, then via our <a href="/smart-forest-calculator" className="text-orange">net-zero calculator</a> we can determine the size of forest you need to build and over what period of time, this is measured in Forest Trust Units (FTUs). An FTU is 5 acres and the cost will be calculated based on the number of FTUs you need. For more information please email <a href="mailto:grow@canadasforesttrust.ca" className="text-orange">grow@canadasforesttrust.ca</a>
                   </p>
 
                 </Col>
@@ -699,7 +679,7 @@ export default function Power({ file }) {
                 </Col>
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  CFT sources lands across the country that are suitable for reforestation and willhave maximum impact on the environmental.
+                  CFT sources lands across the country that are suitable for reforestation and will have maximum impact on the environmental.
                   </p>
 
                 </Col>
@@ -715,7 +695,7 @@ export default function Power({ file }) {
                 </Col>
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  The ideal number for a successful forest is approximately 1,000 seedlings per acre. Depending on the species and land, we can plant up to 1200 seedlings per acre.
+                  The ideal number for a successful forest is approximately 1,000 seedlings per acre. Depending on the species and land, we can plant up to 1200 seedlings per acre. CFT is proud to pledge a no clear cut guarantee on every acre of forest we build.
                   </p>
 
                 </Col>
@@ -735,11 +715,7 @@ export default function Power({ file }) {
                   </p>
 
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  As a common practice, CFT Smart Forests will be built with softwood species (conifers). These species are fast-growing and have needles that are kept year-round. Some examples of softwood species include: douglas fir, lodgepole pine, and whitespruce.
-                  </p>
-
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  We will also implement management practices that will promote hardwood growth.
+                  As a common practice, CFT Smart Forests will be built with softwood species (conifers). These species are fast-growing and have needles that are kept year-round. Some examples of softwood species include: douglas fir, lodgepole pine, and whitespruce. We will also implement management practices that will promote hardwood growth.
                   </p>
 
                 </Col>
@@ -755,7 +731,7 @@ export default function Power({ file }) {
                 </Col>
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  Absolutely. But, given that not everyone can physically visit a forest and in the first few years there is not much to see, you can see and monitor your forest in real time via your personal portal. If you wish to visit your forest, contact <a href="mailto:grow@canadasforesttrust.ca" className="text-orange">grow@canadasforesttrust.ca</a>
+                  Absolutely. Given that not everyone can physically visit a forest and in the first few years there is not much to see, you can see and monitor your forest in real time via your personal portal. If you wish to visit your forest, contact <a href="mailto:grow@canadasforesttrust.ca" className="text-orange">grow@canadasforesttrust.ca</a>
                   </p>
 
                 </Col>
@@ -771,7 +747,7 @@ export default function Power({ file }) {
                 </Col>
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  CFT will NEVER clear-cut a forest or sell the land. We will manage our forests to create healthy ecosystems.
+                  CFT will NEVER clear cut a forest or sell the land. We will manage our forests to create healthy ecosystems.
                   </p>
                 </Col>
               </Row>
@@ -786,7 +762,7 @@ export default function Power({ file }) {
                 </Col>
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  CFT has hired experts to plan and build our forests and, provide extensive monitoring systems.
+                  CFT has hired experts to plan and build our forests and provide extensive monitoring systems.
                   </p>
                 </Col>
               </Row>
@@ -801,7 +777,7 @@ export default function Power({ file }) {
                 </Col>
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  Our business plan is to create thousands of jobs across Canada. Each phase of our five-step Action Plan will require person-power. There will be opportunities for nursery workers, truck drivers, tree planters, crew managers, auditors, monitoring/silviculture workers, brush saw operators, foresters for assessment, planning blocklayout (marking boundaries) workers, site prep operators, and more.
+                  Our business plan is to create thousands of jobs across Canada. Each phase of our 5 Phase Action Plan will require person-power. There will be opportunities for nursery workers, truck drivers, tree planters, crew managers, auditors, monitoring/silviculture workers, brush saw operators, foresters for assessment, planning block layout (marking boundaries) workers, site prep operators, and more.
                   </p>
                 </Col>
               </Row>
@@ -816,7 +792,7 @@ export default function Power({ file }) {
                 </Col>
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  We encourage all Canadians to find a way to combat climate change. CFT is pleased to offer turnkey solutions that engage all individuals, families, schools and corporation Canadians to reach net-zero.
+                  We encourage all Canadians to find a way to combat climate change. There is an important role for private sector companies to play. CFT is pleased to offer turnkey solutions that engage all individuals, families, schools and corporations to reach net-zero.
                   </p>
                 </Col>
               </Row>
