@@ -581,11 +581,7 @@ export default function Power({ file }) {
                 </Col>
               </Row>
 
-              <div className="bg-offwhite text-GREY roundedBox p-4 mb-5 mt-4">
-                <p className="large">
-                Did you know that the average carbon emissions of a Canadian is equivalent to <span className="bold italic">170 queen mattresses?</span>
-                </p>
-              </div>
+              <hr className="white mb-5 mt-4"/>
 
               <Row>
                 <Col className="col-12 col-lg-4">
