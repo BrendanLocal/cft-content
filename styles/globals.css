@@ -2638,7 +2638,7 @@ color: #054217;
   top: 27%;
     width: 35%;
     left: 44%;
-    font-size: 2.1em;
+    font-size: 1.8em;
     font-weight: 700;
     line-height: 1.2em;
 }
@@ -2732,9 +2732,9 @@ color: #054217;
 
 .signImageLogo {
   position: absolute;
-  top: 58%;
-  right: 21%;
-  width: 7%;
+  top: 63%;
+  right: 20.5%;
+  width: 6%;
 }
 
 /* Search */
@@ -2899,6 +2899,8 @@ z-index: 999;
     min-height: 80vh;
   }
 
+
+
   .create-book-photo-picker {
     padding-top: 6px!important;
       font-size: 12px;
@@ -2930,9 +2932,9 @@ z-index: 999;
     top: 27%;
       width: 35%;
       left: 44%;
-      font-size: 1.7em;
+      font-size: 1.4em;
       font-weight: 700;
-      line-height: 1.2em;
+      line-height: 1.1em;
   }
 
   .signTextAcres {
@@ -3080,6 +3082,15 @@ z-index: 999;
 }
 
 @media screen and (max-width: 768px) and (min-width: 577px){
+
+  .signTextForest {
+    top: 27%;
+      width: 37%;
+      left: 44%;
+      font-size: 1.5em;
+      font-weight: 700;
+      line-height: 1.1em;
+  }
 
 
   .bg-communal {
@@ -3378,7 +3389,7 @@ font-weight: 600;
     left: 44%;
     font-size: .95em;
     font-weight: 700;
-    line-height: em;
+    line-height: 1em;
 }
 
 .signImage {
