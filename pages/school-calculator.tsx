@@ -358,7 +358,7 @@ export default function App({ file, href, children}) {
       ...transitArray,
       [e.target.name]: {
         ...transitArray[e.target.name],
-        miles: Number(e.target.miles)
+        miles: Number(e.target.value)
       }
     });
 
