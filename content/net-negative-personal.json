@@ -1,13 +1,13 @@
 {
-  "pageName":"Personal Net Negative Calculator",
+  "pageName":"Personal Net-Negative Calculator",
   "pageURL":"net-negative-personal",
-  "title": "Personal Net Negative Calculator",
+  "title": "Personal Net-Negative Calculator",
 
   "header": "Net-Negative Calculator",
   "para1": "Thank you for doing your part, this is your opportunity to pay it forward. Calculate how you can increase your goal to become net-negative",
   "select": "Select...",
   "emissionsHeader": "Your emissions",
-  "emissionsCarbonHeader": "What is your carbon footprint? (Tonnes per year)",
+  "emissionsCarbonHeader": "What is your carbon footprint?",
   "emissionsCarbon": "Haven't calculated your footprint?",
   "emissionsLink": "Do it here",
   "emissionsPlaceholder": "Carbon footprint in tonnes per year",
@@ -19,7 +19,7 @@
   "emissionsRegion4": "Quebec",
   "emissionsRegion5": "Atlantic",
 
-  "emissionsTimeHeader": "How long do you want to be carbon neutral? (years)",
+  "emissionsTimeHeader": "How long do you want to be carbon neutral? (Years)",
   "emissionsTime1": "1",
   "emissionsTime2": "2",
   "emissionsTime3": "3",

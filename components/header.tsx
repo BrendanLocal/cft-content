@@ -191,7 +191,7 @@ const Header = ()=> {
           <div className="row">
             <div className="col-9 col-md-8 ">
               <ul className="mb-5">
-                <li className="d-md-none " onClick={toggleClass}>
+                <li className="" onClick={toggleClass}>
                   <Link href="/home">Home</Link>
                 </li>
 

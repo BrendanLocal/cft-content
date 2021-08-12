@@ -7,7 +7,7 @@
   "para1": "Calculate how many acres you, your family, your corporation, or your school must invest in to reach a net-zero emissions target",
   "select": "Select...",
   "emissionsHeader": "Your emissions",
-  "emissionsCarbonHeader": "What is your carbon footprint? (Tonnes per year)",
+  "emissionsCarbonHeader": "What is your carbon footprint?",
   "emissionsCarbon": "Haven't calculated your footprint?",
   "emissionsLink": "Do it here",
   "emissionsPlaceholder": "Carbon footprint in tonnes per year",
@@ -19,7 +19,7 @@
   "emissionsRegion4": "Quebec",
   "emissionsRegion5": "Atlantic",
 
-  "emissionsTimeHeader": "How long do you want to be carbon neutral? (years)",
+  "emissionsTimeHeader": "How long do you want to be carbon neutral? (Years)",
   "emissionsTime1": "1",
   "emissionsTime2": "2",
   "emissionsTime3": "3",

@@ -284,7 +284,7 @@ export default function App({ file, href, children}) {
               <Row>
                 <Col>
                   {sessionDataError ? <p style={{ color: 'red' }}>{sessionDataError}</p> : null}
-                  <h4 className="text-green">{editingdata.emissionsHeader}</h4>
+                  <h3 className="text-green">{editingdata.emissionsHeader}</h3>
                   <hr/>
                 </Col>
               </Row>
@@ -292,7 +292,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="footprint">{editingdata.emissionsCarbonHeader}</label>
                   <br />
-                  <input className="mb-4" value={footprint > 0 ? footprint : ""} onChange={changeFootprint} name="type" type="number" min="0" placeholder={editingdata.emissionsPlaceholder}/>
+                  <input value={footprint > 0 ? footprint : ""} onChange={changeFootprint} name="type" type="number" min="0" placeholder={editingdata.emissionsPlaceholder}/>
                   <p className="x-small mb-3 op-7">{editingdata.emissionsPlaceholder}</p>
                   {editingdata.emissionsCarbon}<Link href="/business-calculator"><a className="underline modal-btn">{editingdata.emissionsLink}</a></Link>
                 </Col>
@@ -342,7 +342,7 @@ export default function App({ file, href, children}) {
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
                 <Col>
-                  <h4 className="text-green">{editingdata.plantforwardheader}</h4>
+                  <h3 className="text-green">{editingdata.plantforwardheader}</h3>
                   <hr/>
                 </Col>
               </Row>
@@ -386,8 +386,8 @@ export default function App({ file, href, children}) {
 
         <Row className="justify-content-center ">
           <Col className="col-11 col-lg-10 align-items-center text-center p-3">
-            <div className="bg-brown p-4 innerShadow roundedBox">
-              <p className="smallCaps text-orange mb-3">Share</p>
+            <div className="bg-green p-4 innerShadow roundedBox">
+              <p className="smallCaps text-white mb-3">Share your results</p>
               {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
 
               {/* todo - change these to use sharingUrl instead of editUrl when the sharing page is implemented */}
