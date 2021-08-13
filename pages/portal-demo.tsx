@@ -14,6 +14,7 @@ import Slider from 'react-input-slider';
 import Button from 'react-bootstrap/Button';
 import Header from "../components/header";
 import Link from 'next/link';
+import { useRouter } from "next/router"
 
 import { useCurrentUser } from '../hooks/index';
 
@@ -26,6 +27,7 @@ label: 'User Portal',
 fields: [{ name: 'title', component: 'text' }],
 }
 
+const router = useRouter();
 
 const [user] = useCurrentUser();
 
@@ -58,7 +60,6 @@ const [userData, setUserData] = React.useState({
   location: "",
   country: ""
 });
-
 
 
 airbase('userdata').select({
@@ -198,7 +199,8 @@ return (
           </Col>
           <Col className="text-right p-4">
               
-                <Link href=""><a className="smallCaps textButton">SIGN OUT</a></Link>
+                
+                  <a onClick={(e) => {e.preventDefault(); router.back();}} className="smallCaps textButton">GO BACK</a>
                 
           </Col>
           </Row>
