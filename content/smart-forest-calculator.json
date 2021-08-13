@@ -55,6 +55,10 @@
   "otherbox2button":"SELECT",
   "otherbox3Header":"Personal",
   "otherbox3Para":"Calculate how much carbon you must personally offset to reach net-zero.",
-  "otherbox3button":"SELECT"
+  "otherbox3button":"SELECT",
+
+  "sharePersonal":"I just calculated how many trees I would need to plant to reach net zero. View it here:",
+  "shareBusiness":"I just calculated how many trees my businesses would need to plant to reach net zero. View it here:",
+  "shareSchool"  :"I just calculated how many trees my schools would need to plant to reach net zero. View it here:"
 }
   
