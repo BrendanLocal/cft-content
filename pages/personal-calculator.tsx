@@ -1896,7 +1896,7 @@ export default function App({ file, href, children}) {
               <p className="text-small">{editingdata.dataDisclaimer}</p>
 
               <Row>
-                <Col className="whiteBorder rounded mt-3 p-3">
+                <Col className="whiteBorder rounded mt-3 p-3 mb-5">
                   <p className="text-small">To continue editing your results in the future, save or bookmark this link:</p>
                   <p className="pt-2 text-small">
                     {editUrlError ? <p style={{ color: 'red' }}>{editUrlError}</p> : null}
@@ -1904,36 +1904,37 @@ export default function App({ file, href, children}) {
                   </p>
                 </Col>
               </Row>
+
+              <Row className="justify-content-center text-center">
+              <Col>
+              <div className="">
+                <p className="smallCaps text-white mb-3">Share your results</p>
+                {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
+
+                {/* todo - change these to use sharingUrl instead of editUrl when the sharing page is implemented */}
+                
+                <FacebookShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareBusiness} className="mx-2">
+                  <FacebookIcon size={48} round />
+                </FacebookShareButton>
+
+                <TwitterShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} title={editingdata.shareBusiness} className="mx-2">
+                  <TwitterIcon size={48} round />
+                </TwitterShareButton>
+
+                <LinkedinShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} summary={editingdata.shareBusiness} className="mx-2">
+                  <LinkedinIcon size={48} round />
+                </LinkedinShareButton>
+
+                <EmailShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} body={editingdata.shareBusiness} className="mx-2">
+                  <EmailIcon size={48} round />
+                </EmailShareButton>
+              </div>
+              </Col>
+            </Row>
+
             </div>
           </Col>
         </Row>  
-
-        <Row className="justify-content-center ">
-          <Col className="col-11 col-lg-10 align-items-center text-center p-3">
-            <div className="bg-green p-4 innerShadow roundedBox">
-              <p className="smallCaps text-white mb-3">Share your results</p>
-              {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
-
-              {/* todo - change these to use sharingUrl instead of editUrl when the sharing page is implemented */}
-              
-              <FacebookShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareQuote} className="mx-2">
-                <FacebookIcon size={48} round />
-              </FacebookShareButton>
-
-              <TwitterShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} title={editingdata.shareQuote} className="mx-2">
-                <TwitterIcon size={48} round />
-              </TwitterShareButton>
-
-              <LinkedinShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} summary={editingdata.shareQuote} className="mx-2">
-                <LinkedinIcon size={48} round />
-              </LinkedinShareButton>
-
-              <EmailShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} body={editingdata.shareQuote} className="mx-2">
-                <EmailIcon size={48} round />
-              </EmailShareButton>
-            </div>
-          </Col>
-        </Row>
       
         <Row className="justify-content-center ">
           <Col className="col-11 col-lg-10 align-items-center text-center p-3">
