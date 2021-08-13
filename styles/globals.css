@@ -1246,6 +1246,14 @@ div>p {
 }
 
 
+.privacy .CookieConsent {
+  opacity: 0;
+   transform: translateY(-100%);
+ 
+   transition: none;
+ }
+
+
 #ticker {
   transition: all ease .5s;
 }

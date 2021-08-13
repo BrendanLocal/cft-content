@@ -198,7 +198,7 @@ return (
           </Col>
           <Col className="text-right p-4">
               
-                <Link href=""><a className="smallCaps textButton d-none">SIGN OUT</a></Link>
+                <Link href=""><a className="smallCaps textButton">SIGN OUT</a></Link>
                 
           </Col>
           </Row>

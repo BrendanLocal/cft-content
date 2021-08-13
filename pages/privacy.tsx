@@ -10,6 +10,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { useRouter } from 'next/router';
 import Header from "../components/header";
+import useBodyClass from '../components/headerClass';
 
 const Lang = () => {
   var language ="en";
@@ -35,6 +36,7 @@ const Lang = () => {
   usePlugin(form)
   useGithubToolbarPlugins()
 
+  useBodyClass('privacy');
 
 
   return (

@@ -183,7 +183,7 @@ const Header = ()=> {
               <Link href={ user? "/portal-user" : "/portal" } ><a className="smallCaps textButton">{ user? "Your Portal" : "Sign in" }</a></Link>
             </div>
             <div className="mt-2">
-              <a href="/portal-demo" target="_blank" className="smallCaps text-white no-underline textButton">DEMO PORTAL</a>
+              <a href="/portal-demo" className="smallCaps text-white no-underline textButton">DEMO PORTAL</a>
             </div>
           </div>
         </div>
@@ -256,7 +256,7 @@ const Header = ()=> {
           <div className="col-12 col-md-6 d-flex flex-column gx-1 gx-lg-3 fixed">
             <div className="row align-self-top">
               <div className="col d-flex align-items-center justify-content-end menuInterface">
-              <a href="/portal-demo" target="_blank" className="smallCaps text-white no-underline textButton me-4 d-none d-sm-block">DEMO PORTAL</a>
+              <a href="/portal-demo" className="smallCaps text-white no-underline textButton me-4 d-none d-sm-block">DEMO PORTAL</a>
                 <Link href={ user? "/portal-user" : "/portal" } ><a className="smallCaps textButton me-2 d-none d-sm-block">{ user? "Your Portal" : "Sign in" }</a></Link>
                 <div id="menuIcon" className={isActive ? 'open' : null} onClick={toggleClass}>
                   <span></span>
