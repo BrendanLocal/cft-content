@@ -105,7 +105,7 @@ const DigitalSign = ()=> {
             />
           </div>
 
-          <label className="text-small mb-2">For best results, use .png format with a transparent background.</label>
+          <label className="text-small mb-2">For best results, use .png format with a transparent background. <br/> <span className="x-small">* Optimal dimensions: 300 X 300</span></label>
         </Col>
         
         <Col className="col-11 col-md-9 col-lg-7 col-xl-6 mt-2 mt-lg-3 mt-xl-2 signImagebuilder pe-lg-0">
