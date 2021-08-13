@@ -154,7 +154,7 @@ const Header = ()=> {
     
 
     <React.Fragment>
-      <CookieConsent enableDeclineButton flipButtons buttonText="I ACCEPT THE COOKIES" declineButtonText="I DO NOT ACCEPT">
+      <CookieConsent flipButtons buttonText="OK">
         We use cookies and other technologies to offer you the best experience online. By continuing to use our website, you agree to the use of cookies and other technologies. If you would like to know more about cookies and other technologies and how to manage them, please view our <a className="underline" href="/privacy">Privacy Policy.</a>
         </CookieConsent>
       <div id="searchComponent" className={ showSearch ? "searchOpen" : "searchClosed"}>
