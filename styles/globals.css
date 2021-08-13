@@ -2631,16 +2631,16 @@ color: #054217;
 .signImageText {
   position: absolute;
   word-wrap: break-word;
-color: #054217;
+  color: #054217;
 }
 
 .signTextForest {
-  top: 27%;
+  top: 34%;
     width: 35%;
     left: 44%;
-    font-size: 1.8em;
+    font-size: 1.6em;
     font-weight: 700;
-    line-height: 1.2em;
+    line-height: 1.1em;
 }
 
 .signImage {
@@ -2651,7 +2651,7 @@ color: #054217;
 }
 
 .signTextAcres {
-  bottom: 25%;
+  bottom: 23%;
     width: 40%;
     left: 44%;
     font-size: 1.5em;
@@ -2732,8 +2732,8 @@ color: #054217;
 
 .signImageLogo {
   position: absolute;
-  top: 63%;
-  right: 20.5%;
+  bottom: 32%;
+  left: 27%;
   width: 6%;
 }
 
@@ -2861,6 +2861,15 @@ z-index: 999;
   .phase5 {
     height: 480px;
   }
+
+  .signTextForest {
+    top: 34%;
+      width: 35%;
+      left: 44%;
+      font-size: 1.5em;
+      font-weight: 700;
+      line-height: 1em;
+  }
   
   }
 
@@ -2891,14 +2900,15 @@ z-index: 999;
 /* Tablet */
 
 @media screen and (max-width: 1024px) and (min-width: 577px){
+ 
   .CookieConsent {
 
   padding: 15% 20%;
   }
+
   .parallaxLayers {
     min-height: 80vh;
   }
-
 
 
   .create-book-photo-picker {
@@ -2929,16 +2939,16 @@ z-index: 999;
   }
 
   .signTextForest {
-    top: 27%;
+    top: 33%;
       width: 35%;
       left: 44%;
-      font-size: 1.4em;
+      font-size: 1.3em;
       font-weight: 700;
       line-height: 1.1em;
   }
 
   .signTextAcres {
-    bottom: 25%;
+    bottom: 23%;
       width: 40%;
       left: 44%;
       font-size: 1.2em;
@@ -3081,17 +3091,69 @@ z-index: 999;
 
 }
 
-@media screen and (max-width: 768px) and (min-width: 577px){
+@media screen and (max-width: 991px) and (min-width: 931px){
 
   .signTextForest {
-    top: 27%;
+    top: 34%;
       width: 37%;
       left: 44%;
-      font-size: 1.5em;
+      font-size: 1.8em;
       font-weight: 700;
       line-height: 1.1em;
   }
 
+}
+
+@media screen and (max-width: 930px) and (min-width: 901px){
+
+  .signTextForest {
+    top: 34%;
+      width: 37%;
+      left: 44%;
+      font-size: 1.6em;
+      font-weight: 700;
+      line-height: 1.2em;
+  }
+
+}
+
+@media screen and (max-width: 900px) and (min-width: 851px){
+
+  .signTextForest {
+    top: 34%;
+      width: 37%;
+      left: 44%;
+      font-size: 1.5em;
+      font-weight: 700;
+      line-height: 1.2em;
+  }
+
+}
+
+@media screen and (max-width: 850px) and (min-width: 769px){
+
+  .signTextForest {
+    top: 34%;
+      width: 37%;
+      left: 44%;
+      font-size: 1.4em;
+      font-weight: 700;
+      line-height: 1.1em;
+  }
+
+}
+
+@media screen and (max-width: 768px) and (min-width: 577px){
+
+
+  .signTextForest {
+    top: 33.5%;
+      width: 37%;
+      left: 44%;
+      font-size: 1.4em;
+      font-weight: 700;
+      line-height: 1em;
+  }
 
   .bg-communal {
     background-size: 120%!important;
@@ -3181,6 +3243,69 @@ z-index: 999;
 .phase5 {
   height: 290px;
 }
+
+
+  .signTextForest {
+    top: 34%;
+      width: 37%;
+      left: 44%;
+      font-size: 1.6em;
+      font-weight: 700;
+      line-height: 1.2em;
+  }
+
+
+}
+
+@media screen and (max-width: 700px) and (min-width: 676px){
+
+  .signTextForest {
+    top: 34%;
+      width: 37%;
+      left: 44%;
+      font-size: 1.5em;
+      font-weight: 700;
+      line-height: 1.1em;
+  }
+
+}
+
+@media screen and (max-width: 675px) and (min-width: 626px){
+
+  .signTextForest {
+    top: 34%;
+      width: 37%;
+      left: 44%;
+      font-size: 1.4em;
+      font-weight: 700;
+      line-height: 1.1em;
+  }
+
+}
+
+@media screen and (max-width: 675px) and (min-width: 626px){
+
+  .signTextForest {
+    top: 34%;
+      width: 37%;
+      left: 44%;
+      font-size: 1.4em;
+      font-weight: 700;
+      line-height: 1.1em;
+  }
+
+}
+
+@media screen and (max-width: 625px) and (min-width: 577px){
+
+  .signTextForest {
+    top: 34%;
+      width: 37%;
+      left: 44%;
+      font-size: 1.3em;
+      font-weight: 700;
+      line-height: 1em;
+  }
 
 }
 
@@ -3384,10 +3509,10 @@ font-weight: 600;
 }
 
 .signTextForest {
-  top: 27%;
+  top: 33%;
     width: 37%;
     left: 44%;
-    font-size: .95em;
+    font-size: 1.3em;
     font-weight: 700;
     line-height: 1em;
 }
@@ -3400,10 +3525,10 @@ font-weight: 600;
 }
 
 .signTextAcres {
-  bottom: 25%;
+  bottom: 23%;
     width: 40%;
     left: 44%;
-    font-size: .7em;
+    font-size: 1em;
     color: #362B26;
 }
 
@@ -3489,6 +3614,19 @@ font-weight: 600;
 
 }
 
+@media screen and (max-width: 525px) {
+
+  .signTextForest {
+    top: 34%;
+      width: 37%;
+      left: 44%;
+      font-size: 1.1em;
+      font-weight: 700;
+      line-height: 1em;
+  }
+
+}
+
 @media screen and (max-width: 497px) {
 
 .phases {
@@ -3543,6 +3681,19 @@ font-weight: 600;
   margin-right: 25%;
   margin-left: 25%;
 }
+
+}
+
+@media screen and (max-width: 470px) {
+
+  .signTextForest {
+    top: 34%;
+      width: 37%;
+      left: 44%;
+      font-size: 1em;
+      font-weight: 700;
+      line-height: 1em;
+  }
 
 }
 
@@ -3604,6 +3755,15 @@ font-weight: 600;
     margin-top: 0px!important;
     font-size: calc(2.5rem + 1.5vw);
     line-height: calc(2.6rem + 1.5vw);
+  }
+
+  .signTextForest {
+    top: 34%;
+      width: 37%;
+      left: 44%;
+      font-size: .9em;
+      font-weight: 700;
+      line-height: 1em;
   }
 
 }
@@ -3694,6 +3854,15 @@ font-weight: 600;
     margin-top: 0px!important;
     font-size: calc(2.3rem + 1.5vw);
     line-height: calc(2.6rem + 1.5vw);
+  }
+
+  .signTextForest {
+    top: 34%;
+      width: 37%;
+      left: 44%;
+      font-size: .75em;
+      font-weight: 700;
+      line-height: 1em;
   }
 
 }
