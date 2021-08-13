@@ -58,8 +58,8 @@
   "otherbox3button":"SELECT",
   "plantforwardheader":"Plant it forward to become net-negative",
 
-  "sharePersonal":"I just calculated my Carbon Footprint. View it here:",
-  "shareBusiness":"I just calculated my businesses Carbon Footprint. View it here:",
-  "shareSchool":"I just calculated my schools Carbon Footprint. View it here:"
+  "sharePersonal":" just calculated how many trees I would need to plant to reach net zero + achieve net negative. View it here:",
+  "shareBusiness":"I just calculated how many trees my businesses need to plant to reach net zero + achieve net negative. View it here:",
+  "shareSchool"  :"I just calculated how many trees my schools need to plant to reach net zero + achieve net negative. View it here:"
 }
   
