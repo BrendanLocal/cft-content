@@ -131,5 +131,7 @@
     "otherbox1button":"SELECT",
     "otherbox2Header":"School",
     "otherbox2Para":"Calculate how much carbon your school must offset to reach net-zero.",
-    "otherbox2button":"SELECT"
+    "otherbox2button":"SELECT",
+
+    "shareQuote":"I just calculated my Carbon Footprint. View it here:"
 }

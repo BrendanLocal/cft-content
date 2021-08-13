@@ -56,6 +56,10 @@
   "otherbox3Header":"Personal",
   "otherbox3Para":"Calculate how much carbon you must personally offset to reach net-zero.",
   "otherbox3button":"SELECT",
-  "plantforwardheader":"Plant it forward to become net-negative"
+  "plantforwardheader":"Plant it forward to become net-negative",
+
+  "sharePersonal":" just calculated how many trees I would need to plant to reach net zero + achieve net negative. View it here:",
+  "shareBusiness":"I just calculated how many trees my businesses need to plant to reach net zero + achieve net negative. View it here:",
+  "shareSchool"  :"I just calculated how many trees my schools need to plant to reach net zero + achieve net negative. View it here:"
 }
   
