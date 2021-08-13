@@ -145,9 +145,12 @@ const Lang = () => {
 
       <main className="bg-green py-5">
         <Container className="v-full pt-5">
-          <Row className="text-center py-3">
-            <Col>
+          <Row className="text-center py-3 justify-content-center">
+            <Col className="col-11 col-lg-8 col-xl-6" >
             <h1 className="bold emphasis text-orange">{editingdata.header}</h1>
+            <p className="medium text-white">
+            Interested in buying and building a Smart Forest with Canada's Forest Trust? Please complete the form so that we can plan your path to net-zero carbon emissions.
+              </p>
             </Col>
           </Row>
           <Row className="justify-content-center">
