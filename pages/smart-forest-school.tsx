@@ -220,7 +220,9 @@ export default function App({ file, href, children}) {
 
     saveSession(() => {
       setEditUrlError("");
-      router.push(e.target.getAttribute('href'));
+      if (typeof window !== 'undefined') {
+        navigator.clipboard.writeText(editUrl);
+      }
     }, (error) => {
       setEditUrlError(error);
     });
@@ -344,6 +346,15 @@ export default function App({ file, href, children}) {
                   <p className="pt-2 text-small">
                     {editUrlError ? <p style={{ color: 'red' }}>{editUrlError}</p> : null}
                     <a href={editUrl} onClick={editUrlClick}>{editUrl}</a>
+                  </p>
+                  <p className="pt-2 text-small">
+                  <a href={editUrl} onClick={(e) => {
+                    e.preventDefault();
+
+                    if (typeof window !== 'undefined') {
+                      navigator.clipboard.writeText(`${editUrl}`);
+                    }
+                  }}>Copy to Clipboard</a>
                   </p>
                 </Col>
               </Row>
