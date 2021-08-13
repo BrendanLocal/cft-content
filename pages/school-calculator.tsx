@@ -694,9 +694,7 @@ export default function App({ file, href, children}) {
                   <Col>
                     <label htmlFor="energy">{editingdata.heatingOtherResidencyHeader}</label>
                     <br />
-                    <input onChange={changeNumTwo} name="type" type="number" min="0" value={schoolNumTwo} onKeyPress={
-                      (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                    }  placeholder={editingdata.placeholder2} />
+                    <input onChange={changeNumTwo} name="type" type="number" min="0" value={schoolNumTwo} placeholder={editingdata.placeholder2} />
                     <p className="x-small mb-3 op-7">{editingdata.placeholder2}</p>
                   </Col>
                 </Row> 
@@ -747,9 +745,8 @@ export default function App({ file, href, children}) {
               <Row>
                 <Col>
                   <label htmlFor="type">{editingdata.heatingOtherAmountHeader}</label><br />
-                  <input onChange={changeNumThree} name="type" type="number" min="0" value={schoolNumThree} onKeyPress={
-                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                  }  placeholder={editingdata.placeholder1} />
+                  <input onChange={changeNumThree} name="type" type="number" min="0" value={schoolNumThree} 
+                   placeholder={editingdata.placeholder1} />
                   
                   <p className="x-small mb-3 op-7">{editingdata.placeholder1}</p>
                 </Col>
@@ -804,9 +801,7 @@ export default function App({ file, href, children}) {
               <Row>
                 <Col>
                   <label htmlFor="type">{editingdata.heatingOtherAmountHeader}</label><br />
-                  <input onChange={changeNumFour} name="type" type="number" min="0" value={schoolNumFour} onKeyPress={
-                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                  }  placeholder={editingdata.placeholder1} />
+                  <input onChange={changeNumFour} name="type" type="number" min="0" value={schoolNumFour}   placeholder={editingdata.placeholder1} />
                   <p className="x-small mb-3 op-7">{editingdata.placeholder1}</p>
                 </Col>
               </Row>
@@ -860,9 +855,7 @@ export default function App({ file, href, children}) {
               <Row>
                 <Col>
                   <label htmlFor="type">{editingdata.heatingOtherAmountHeader}</label><br />
-                  <input onChange={changeNumFive} name="type" type="number" min="0" value={schoolNumFive} onKeyPress={
-                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                  }  placeholder={editingdata.placeholder1} />
+                  <input onChange={changeNumFive} name="type" type="number" min="0" value={schoolNumFive}   placeholder={editingdata.placeholder1} />
                   <p className="x-small mb-3 op-7">{editingdata.placeholder1}</p>
                 </Col>
               </Row>
@@ -916,9 +909,7 @@ export default function App({ file, href, children}) {
               <Row>
                 <Col>
                   <label htmlFor="type">{editingdata.heatingOtherAmountHeader}</label><br />
-                  <input onChange={changeNumSix} name="type" type="number" min="0" value={schoolNumSix} onKeyPress={
-                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                  }  placeholder={editingdata.placeholder1} />
+                  <input onChange={changeNumSix} name="type" type="number" min="0" value={schoolNumSix}   placeholder={editingdata.placeholder1} />
                   <p className="x-small mb-3 op-7">{editingdata.placeholder1}</p>
                 </Col>
               </Row>
@@ -946,30 +937,22 @@ export default function App({ file, href, children}) {
               </Col>
                 <Col className="col-12 col-xl-4 bold">{editingdata.empCommuteCar}</Col>
                 <Col className="col-12 col-xl-4 col-sm-6">
-                  <input onChange={calculateTransitCount} name="transitCar" type="number" min="0" value={transitArray.transitCar.count} onKeyPress={
-                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                  }  placeholder={editingdata.placeholder3} />
+                  <input onChange={calculateTransitCount} name="transitCar" type="number" min="0" value={transitArray.transitCar.count}   placeholder={editingdata.placeholder3} />
                   <p className="x-small mb-3 op-7">{editingdata.placeholder3}</p>
                 </Col>
                 <Col className="col-12 col-xl-4 col-sm-6">
-                  <input onChange={calculateTransitMiles} name="transitCar" type="number" min="0" value={transitArray.transitCar.miles} onKeyPress={
-                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                  }  placeholder={editingdata.placeholder4} />
+                  <input onChange={calculateTransitMiles} name="transitCar" type="number" min="0" value={transitArray.transitCar.miles}   placeholder={editingdata.placeholder4} />
                   <p className="x-small mb-3 op-7">{editingdata.placeholder4}</p>
                 </Col>
               </Row>
               <Row>
                 <Col className="col-12 col-xl-4 bold">{editingdata.empCommuteBus}</Col>
                 <Col className="col-12 col-xl-4 col-sm-6">
-                <input onChange={calculateTransitCount} name="transitBus" type="number" min="0" value={transitArray.transitBus.count} onKeyPress={
-                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                  }  placeholder={editingdata.placeholder5} />
+                <input onChange={calculateTransitCount} name="transitBus" type="number" min="0" value={transitArray.transitBus.count}   placeholder={editingdata.placeholder5} />
                   <p className="x-small mb-3 op-7">{editingdata.placeholder5}</p>
                 </Col>
                 <Col className="col-12 col-xl-4 col-sm-6">
-                <input onChange={calculateTransitMiles} name="transitBus" type="number" min="0" value={transitArray.transitBus.miles} onKeyPress={
-                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                  }  placeholder={editingdata.placeholder4} />
+                <input onChange={calculateTransitMiles} name="transitBus" type="number" min="0" value={transitArray.transitBus.miles}   placeholder={editingdata.placeholder4} />
                   <p className="x-small mb-3 op-7">{editingdata.placeholder4}</p>
                 </Col>
               </Row> 
@@ -978,15 +961,11 @@ export default function App({ file, href, children}) {
                 Train
                 </Col>
                 <Col className="col-12 col-xl-4 col-sm-6">
-                <input onChange={calculateTransitCount} name="transitTrain" type="number" min="0" value={transitArray.transitTrain.count} onKeyPress={
-                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                  }  placeholder={editingdata.placeholder5} />
+                <input onChange={calculateTransitCount} name="transitTrain" type="number" min="0" value={transitArray.transitTrain.count}   placeholder={editingdata.placeholder5} />
                   <p className="x-small mb-3 op-7">{editingdata.placeholder5}</p>
                 </Col>
                 <Col className="col-12 col-xl-4 col-sm-6">
-                <input onChange={calculateTransitMiles} name="transitTrain" type="number" min="0" value={transitArray.transitTrain.miles} onKeyPress={
-                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                  }  placeholder={editingdata.placeholder4} />
+                <input onChange={calculateTransitMiles} name="transitTrain" type="number" min="0" value={transitArray.transitTrain.miles}   placeholder={editingdata.placeholder4} />
                   <p className="x-small mb-3 op-7">{editingdata.placeholder4}</p>
                 </Col>
               </Row>
@@ -1001,45 +980,33 @@ export default function App({ file, href, children}) {
               <Row>
                 <Col className="col-12 col-xl-4 bold">{editingdata.stuCommuteGas}</Col>
                 <Col className="col-12 col-xl-4 col-sm-6">
-                  <input onChange={calculateStudentCommuteCount} name="gasoline" type="number" min="0" value={studentCommuteArray.gasoline.count} onKeyPress={
-                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                  }  placeholder={editingdata.placeholder6} />
+                  <input onChange={calculateStudentCommuteCount} name="gasoline" type="number" min="0" value={studentCommuteArray.gasoline.count}   placeholder={editingdata.placeholder6} />
                   <p className="x-small mb-3 op-7">{editingdata.placeholder6}</p>
                 </Col>
                 <Col className="col-12 col-xl-4 col-sm-6">
-                  <input onChange={calculateStudentCommuteMiles} name="gasoline" type="number" min="0" value={studentCommuteArray.gasoline.miles} onKeyPress={
-                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                  }  placeholder={editingdata.placeholder4} />
+                  <input onChange={calculateStudentCommuteMiles} name="gasoline" type="number" min="0" value={studentCommuteArray.gasoline.miles}   placeholder={editingdata.placeholder4} />
                   <p className="x-small mb-3 op-7">{editingdata.placeholder4}</p>
                 </Col>
               </Row>
               <Row>
                 <Col className="col-12 col-xl-4 bold">{editingdata.stuCommuteDiesel}</Col>
                 <Col className="col-12 col-xl-4 col-sm-6">
-                  <input onChange={calculateStudentCommuteCount} name="diesel" type="number" min="0" value={studentCommuteArray.diesel.count} onKeyPress={
-                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                  }  placeholder={editingdata.placeholder6} />
+                  <input onChange={calculateStudentCommuteCount} name="diesel" type="number" min="0" value={studentCommuteArray.diesel.count}   placeholder={editingdata.placeholder6} />
                   <p className="x-small mb-3 op-7">{editingdata.placeholder6}</p>
                 </Col>
                 <Col className="col-12 col-xl-4 col-sm-6">
-                  <input onChange={calculateStudentCommuteMiles} name="diesel" type="number" min="0" value={studentCommuteArray.diesel.miles} onKeyPress={
-                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                  }  placeholder={editingdata.placeholder4} />
+                  <input onChange={calculateStudentCommuteMiles} name="diesel" type="number" min="0" value={studentCommuteArray.diesel.miles}   placeholder={editingdata.placeholder4} />
                   <p className="x-small mb-3 op-7">{editingdata.placeholder4}</p>
                 </Col>
               </Row>
               <Row>
                 <Col className="col-12 col-xl-4 bold">{editingdata.stuCommutePropane}</Col>
                 <Col className="col-12 col-xl-4 col-sm-6">
-                  <input onChange={calculateStudentCommuteCount} name="propane" type="number" min="0" value={studentCommuteArray.propane.count} onKeyPress={
-                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                  }  placeholder={editingdata.placeholder6} />
+                  <input onChange={calculateStudentCommuteCount} name="propane" type="number" min="0" value={studentCommuteArray.propane.count}   placeholder={editingdata.placeholder6} />
                   <p className="x-small mb-3 op-7">{editingdata.placeholder6}</p>
                 </Col>
                 <Col className="col-12 col-xl-4 col-sm-6">
-                  <input onChange={calculateStudentCommuteMiles} name="propane" type="number" min="0" value={studentCommuteArray.propane.miles} onKeyPress={
-                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                  }  placeholder={editingdata.placeholder4} />
+                  <input onChange={calculateStudentCommuteMiles} name="propane" type="number" min="0" value={studentCommuteArray.propane.miles}   placeholder={editingdata.placeholder4} />
                   <p className="x-small mb-3 op-7">{editingdata.placeholder4}</p>
                 </Col>
               </Row>
@@ -1050,15 +1017,11 @@ export default function App({ file, href, children}) {
                   <br />
                 </Col>
                 <Col className ="col-12 col-xl-6 col-sm-6">
-                  <input onChange={calculateStudentCommuteCount} name="cityBus" type="number" min="0" value={studentCommuteArray.cityBus.count} onKeyPress={
-                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                  }  placeholder={editingdata.placeholder7} />
+                  <input onChange={calculateStudentCommuteCount} name="cityBus" type="number" min="0" value={studentCommuteArray.cityBus.count}   placeholder={editingdata.placeholder7} />
                   <p className="x-small mb-3 op-7">{editingdata.placeholder7}</p>
                 </Col>
                 <Col className ="col-12 col-xl-6 col-sm-6">
-                  <input onChange={calculateStudentCommuteMiles} name="cityBus" type="number" min="0" value={studentCommuteArray.cityBus.miles} onKeyPress={
-                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                  }  placeholder={editingdata.placeholder4} />
+                  <input onChange={calculateStudentCommuteMiles} name="cityBus" type="number" min="0" value={studentCommuteArray.cityBus.miles}   placeholder={editingdata.placeholder4} />
                   <p className="x-small mb-3 op-7">{editingdata.placeholder4}</p>
                 </Col>
               </Row>
@@ -1068,15 +1031,11 @@ export default function App({ file, href, children}) {
                   <br />
                 </Col>
                 <Col className ="col-12 col-xl-6 col-sm-6">
-                  <input onChange={calculateStudentCommuteCount} name="car" type="number" min="0" value={studentCommuteArray.car.count} onKeyPress={
-                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                  }  placeholder={editingdata.placeholder7} />
+                  <input onChange={calculateStudentCommuteCount} name="car" type="number" min="0" value={studentCommuteArray.car.count}   placeholder={editingdata.placeholder7} />
                   <p className="x-small mb-3 op-7">{editingdata.placeholder7}</p>
                 </Col>
                 <Col className ="col-12 col-xl-6 col-sm-6">
-                  <input onChange={calculateStudentCommuteMiles} name="car" type="number" min="0" value={studentCommuteArray.car.miles} onKeyPress={
-                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                  }  placeholder={editingdata.placeholder4} />
+                  <input onChange={calculateStudentCommuteMiles} name="car" type="number" min="0" value={studentCommuteArray.car.miles}   placeholder={editingdata.placeholder4} />
                   <p className="x-small mb-3 op-7">{editingdata.placeholder4}</p>
                 </Col>
               </Row>
@@ -1086,15 +1045,11 @@ export default function App({ file, href, children}) {
                   <br />
                 </Col>
                 <Col className ="col-12 col-xl-6 col-sm-6">
-                  <input onChange={calculateStudentCommuteCount} name="train" type="number" min="0" value={studentCommuteArray.train.count} onKeyPress={
-                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                  }  placeholder={editingdata.placeholder7} />
+                  <input onChange={calculateStudentCommuteCount} name="train" type="number" min="0" value={studentCommuteArray.train.count}   placeholder={editingdata.placeholder7} />
                   <p className="x-small mb-3 op-7">{editingdata.placeholder7}</p>
                 </Col>
                 <Col className ="col-12 col-xl-6 col-sm-6">
-                  <input onChange={calculateStudentCommuteMiles} name="train" type="number" min="0" value={studentCommuteArray.train.miles} onKeyPress={
-                    (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                  }  placeholder={editingdata.placeholder4} />
+                  <input onChange={calculateStudentCommuteMiles} name="train" type="number" min="0" value={studentCommuteArray.train.miles}   placeholder={editingdata.placeholder4} />
                   <p className="x-small mb-3 op-7">{editingdata.placeholder4}</p>
                 </Col>
               </Row>
@@ -1356,15 +1311,15 @@ export default function App({ file, href, children}) {
 
               {/* todo - change these to use sharingUrl instead of editUrl when the sharing page is implemented */}
               
-              <FacebookShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} className="mx-2">
+              <FacebookShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} className="mx-2">
                 <FacebookIcon size={48} round />
               </FacebookShareButton>
 
-              <TwitterShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} className="mx-2">
+              <TwitterShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} className="mx-2">
                 <TwitterIcon size={48} round />
               </TwitterShareButton>
 
-              <LinkedinShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} className="mx-2">
+              <LinkedinShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} className="mx-2">
                 <LinkedinIcon size={48} round />
               </LinkedinShareButton>
 
