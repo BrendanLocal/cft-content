@@ -1496,15 +1496,15 @@ export default function App({ file, href, children}) {
               {/* todo - change these to use sharingUrl instead of editUrl when the sharing page is implemented */}
               
               <FacebookShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} className="mx-2">
-                <FacebookIcon size={48} round />
+                <FacebookIcon size={40} round />
               </FacebookShareButton>
 
               <TwitterShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} className="mx-2">
-                <TwitterIcon size={48} round />
+                <TwitterIcon size={40} round />
               </TwitterShareButton>
 
               <LinkedinShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} className="mx-2">
-                <LinkedinIcon size={48} round />
+                <LinkedinIcon size={40} round />
               </LinkedinShareButton>
 
             </div>

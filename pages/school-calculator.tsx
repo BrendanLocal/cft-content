@@ -694,7 +694,7 @@ export default function App({ file, href, children}) {
                   <Col>
                     <label htmlFor="energy">{editingdata.heatingOtherResidencyHeader}</label>
                     <br />
-                    <input onChange={changeNumTwo} name="type" type="number" min="0" value={schoolNumTwo} placeholder={editingdata.placeholder2} />
+                    <input onChange={changeNumTwo} name="type" type="number" min="0" value={selectNumTwo} placeholder={editingdata.placeholder2} />
                     <p className="x-small mb-3 op-7">{editingdata.placeholder2}</p>
                   </Col>
                 </Row> 
@@ -745,7 +745,7 @@ export default function App({ file, href, children}) {
               <Row>
                 <Col>
                   <label htmlFor="type">{editingdata.heatingOtherAmountHeader}</label><br />
-                  <input onChange={changeNumThree} name="type" type="number" min="0" value={schoolNumThree} 
+                  <input onChange={changeNumThree} name="type" type="number" min="0" value={selectNumThree} 
                    placeholder={editingdata.placeholder1} />
                   
                   <p className="x-small mb-3 op-7">{editingdata.placeholder1}</p>
@@ -801,7 +801,7 @@ export default function App({ file, href, children}) {
               <Row>
                 <Col>
                   <label htmlFor="type">{editingdata.heatingOtherAmountHeader}</label><br />
-                  <input onChange={changeNumFour} name="type" type="number" min="0" value={schoolNumFour}   placeholder={editingdata.placeholder1} />
+                  <input onChange={changeNumFour} name="type" type="number" min="0" value={selectNumFour}   placeholder={editingdata.placeholder1} />
                   <p className="x-small mb-3 op-7">{editingdata.placeholder1}</p>
                 </Col>
               </Row>
@@ -855,7 +855,7 @@ export default function App({ file, href, children}) {
               <Row>
                 <Col>
                   <label htmlFor="type">{editingdata.heatingOtherAmountHeader}</label><br />
-                  <input onChange={changeNumFive} name="type" type="number" min="0" value={schoolNumFive}   placeholder={editingdata.placeholder1} />
+                  <input onChange={changeNumFive} name="type" type="number" min="0" value={selectNumFive}   placeholder={editingdata.placeholder1} />
                   <p className="x-small mb-3 op-7">{editingdata.placeholder1}</p>
                 </Col>
               </Row>
@@ -909,7 +909,7 @@ export default function App({ file, href, children}) {
               <Row>
                 <Col>
                   <label htmlFor="type">{editingdata.heatingOtherAmountHeader}</label><br />
-                  <input onChange={changeNumSix} name="type" type="number" min="0" value={schoolNumSix}   placeholder={editingdata.placeholder1} />
+                  <input onChange={changeNumSix} name="type" type="number" min="0" value={selectNumSix} placeholder={editingdata.placeholder1} />
                   <p className="x-small mb-3 op-7">{editingdata.placeholder1}</p>
                 </Col>
               </Row>
@@ -1308,19 +1308,19 @@ export default function App({ file, href, children}) {
                 {/* todo - change these to use sharingUrl instead of editUrl when the sharing page is implemented */}
                 
                 <FacebookShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareBusiness} className="mx-2">
-                  <FacebookIcon size={48} round />
+                  <FacebookIcon size={40} round />
                 </FacebookShareButton>
 
                 <TwitterShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} title={editingdata.shareBusiness} className="mx-2">
-                  <TwitterIcon size={48} round />
+                  <TwitterIcon size={40} round />
                 </TwitterShareButton>
 
                 <LinkedinShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} summary={editingdata.shareBusiness} className="mx-2">
-                  <LinkedinIcon size={48} round />
+                  <LinkedinIcon size={40} round />
                 </LinkedinShareButton>
 
                 <EmailShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} body={editingdata.shareBusiness} className="mx-2">
-                  <EmailIcon size={48} round />
+                  <EmailIcon size={40} round />
                 </EmailShareButton>
               </div>
               </Col>

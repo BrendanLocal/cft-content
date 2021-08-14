@@ -844,7 +844,7 @@ export default function BusinessCalc({ file, href, children}) {
             <Row>
               <Col>
                 <label htmlFor="number">{editingdata.buildingNumberHeader}</label><br />
-                <input onChange={changeNum} type="number" min="0" value={buildNum} placeholder="Number of buildings of this type"/>
+                <input onChange={changeNum} type="number" min="0" value={selectNum} placeholder="Number of buildings of this type"/>
                 <p className="x-small mb-3 op-7">Number of buildings of this type</p>
               </Col>
             </Row>
@@ -905,7 +905,7 @@ export default function BusinessCalc({ file, href, children}) {
             <Row>
               <Col>
                 <label htmlFor="number">{editingdata.buildingNumberHeader}</label><br />
-                <input  onChange={changeNumTwo} type="number" min="0" value={buildNumTwo} placeholder="Number of buildings of this type"/>
+                <input  onChange={changeNumTwo} type="number" min="0" value={selectNumTwo} placeholder="Number of buildings of this type"/>
                 <p className="x-small mb-3 op-7">Number of buildings of this type</p>
               </Col>
             </Row>
@@ -968,7 +968,7 @@ export default function BusinessCalc({ file, href, children}) {
             <Row>
               <Col>
                 <label htmlFor="number">{editingdata.buildingNumberHeader}</label><br />
-                <input  onChange={changeNumThree} type="number" min="0" value={buildNumThree} placeholder="Number of buildings of this type"/>
+                <input  onChange={changeNumThree} type="number" min="0" value={selectNumThree} placeholder="Number of buildings of this type"/>
                 <p className="x-small mb-3 op-7">Number of buildings of this type</p>
               </Col>
             </Row>
@@ -1030,7 +1030,7 @@ export default function BusinessCalc({ file, href, children}) {
             <Row>
               <Col>
                 <label htmlFor="number">{editingdata.buildingNumberHeader}</label><br />
-                <input  onChange={changeNumFour} type="number" min="0" value={buildNumFour} placeholder="Number of buildings of this type"/>
+                <input  onChange={changeNumFour} type="number" min="0" value={selectNumFour} placeholder="Number of buildings of this type"/>
                 <p className="x-small mb-3 op-7">Number of buildings of this type</p>
               </Col>
             </Row>
@@ -1094,7 +1094,7 @@ export default function BusinessCalc({ file, href, children}) {
             <Row>
               <Col>
                 <label htmlFor="number">{editingdata.buildingNumberHeader}</label><br />
-                <input  onChange={changeNumFive} type="number" min="0" value={buildNumFive} placeholder="Number of buildings of this type"/>
+                <input  onChange={changeNumFive} type="number" min="0" value={selectNumFive} placeholder="Number of buildings of this type"/>
                 <p className="x-small mb-3 op-7">Number of buildings of this type</p>
               </Col>
             </Row>
@@ -1448,7 +1448,7 @@ export default function BusinessCalc({ file, href, children}) {
             <Row>
               <Col className="col-12 col-xl-4 col-sm-6 bold">{editingdata.travelEmp}</Col>
               <Col className="col-12 col-xl-8 col-sm-6">
-                <input onChange={calculateEmp} name="flyEmployees" type="number" min="0" value={flightEmp} placeholder={editingdata.travelPlaceholder1} />
+                <input onChange={calculateEmp} name="flyEmployees" type="number" min="0" value={flightEmp.count} placeholder={editingdata.travelPlaceholder1} />
                 <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder1}</p>
               </Col>
             </Row>
@@ -1668,19 +1668,19 @@ export default function BusinessCalc({ file, href, children}) {
                 {/* todo - change these to use sharingUrl instead of editUrl when the sharing page is implemented */}
                 
                 <FacebookShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareQuote} className="mx-2">
-                  <FacebookIcon size={48} round />
+                  <FacebookIcon size={40} round />
                 </FacebookShareButton>
 
                 <TwitterShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} title={editingdata.shareQuote} className="mx-2">
-                  <TwitterIcon size={48} round />
+                  <TwitterIcon size={40} round />
                 </TwitterShareButton>
 
                 <LinkedinShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} summary={editingdata.shareQuote} className="mx-2">
-                  <LinkedinIcon size={48} round />
+                  <LinkedinIcon size={40} round />
                 </LinkedinShareButton>
 
                 <EmailShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} body={editingdata.shareQuote} className="mx-2">
-                  <EmailIcon size={48} round />
+                  <EmailIcon size={40} round />
                 </EmailShareButton>
               </div>
               </Col>
