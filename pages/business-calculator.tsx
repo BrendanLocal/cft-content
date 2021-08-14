@@ -1448,7 +1448,7 @@ export default function BusinessCalc({ file, href, children}) {
             <Row>
               <Col className="col-12 col-xl-4 col-sm-6 bold">{editingdata.travelEmp}</Col>
               <Col className="col-12 col-xl-8 col-sm-6">
-                <input onChange={calculateEmp} name="flyEmployees" type="number" min="0" value={flightEmp.count} placeholder={editingdata.travelPlaceholder1} />
+                <input onChange={calculateEmp} name="flyEmployees" type="number" min="0" value={flightEmp} placeholder={editingdata.travelPlaceholder1} />
                 <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder1}</p>
               </Col>
             </Row>
