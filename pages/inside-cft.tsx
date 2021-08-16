@@ -354,13 +354,13 @@ export default function Power({ file }) {
                     </Col>
                   </Row>
                   <Row className="justify-content-center align-items-center">
-                  <Col className="col-12 col-md-9">
-                    <img className="card-drop-heavy" src="../../Gary-Zed_Headshot.jpg"/>
+                  <Col className="col-11 col-md-6 col-lg-7 col-xl-5">
+                    <img className="card-drop-heavy roundedBox" src="../../Gary-Zed_Headshot.jpg"/>
                     </Col>
                   </Row>
                   <Row className="justify-content-center align-items-stretch">
                   <Col className="mt-4">
-                    <div className="text-orange large text-center text-orange bold intro-cta ">
+                    <div className="text-orange medium text-center text-orange bold intro-cta ">
                       <a className="crsr-pntr" onClick={handleShow}>A message from our founder</a>
                     </div>
                     </Col>
