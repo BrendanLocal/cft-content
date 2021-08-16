@@ -347,7 +347,7 @@ export default function App({ file, href, children}) {
                     {editUrlError ? <p style={{ color: 'red' }}>{editUrlError}</p> : null}
                     <a href={editUrl} onClick={editUrlClick}>{editUrl}</a>
                   </p>
-                  <p className="pt-2 text-small">
+                  <p className="pt-2 text-small d-none">
                   <a href={editUrl} onClick={(e) => {
                     e.preventDefault();
 

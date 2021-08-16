@@ -2302,6 +2302,11 @@ transition: all .5s ease;
   line-height: 24px;
 }
 
+.forest-choice:hover {
+  transform: translateX(7px)!important;
+  transition: all 1s ease;
+}
+
 
 .forest-choice::after {
   content: url(/navArrow.svg);
