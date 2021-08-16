@@ -1684,7 +1684,7 @@ export default function BusinessCalc({ file, href, children}) {
             <Row className="justify-content-center text-center">
               <Col>
               <div className="">
-                <p className="smallCaps text-center text-white mb-3">SHARE MY RESULTS</p>
+                <p className="smallCaps text-center text-white mb-3">Share Your Results</p>
                 {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
                 
                 <FacebookShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareQuote} className="mx-2">
