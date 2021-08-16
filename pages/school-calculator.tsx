@@ -169,6 +169,10 @@ export default function App({ file, href, children}) {
     transitTrain: {mult:0.06214, days:195, count: '', miles: ''}
   });
 
+  useEffect(() => {
+    calculateTransit();
+  }, [transitArray]);
+
   //student commute
   const [studentCommute, setStudentCommute] = React.useState(0);
   const [studentCommuteArray, setstudentCommuteArray] = React.useState({
@@ -179,6 +183,10 @@ export default function App({ file, href, children}) {
     car: {mult:0.1743, days:183, count: '', miles: ''},
     train: {mult:0.06214, days:183, count: '', miles: ''}
   });
+
+  useEffect(() => {
+    calculateStudentCommuteTransit();
+  }, [studentCommuteArray]);
 
   //vehicle multiplier
   const [vehicleSub, setVehicle] = React.useState(0);
@@ -192,6 +200,10 @@ export default function App({ file, href, children}) {
     trainMiles: {mult:0.06214, miles: ''}
   });
 
+  useEffect(() => {
+    calculateVehicle();
+  }, [vehicleArray]);
+
   //other vehicle multiplier
   const [otherVehicleSub, setOtherVehicle] = React.useState(0);
   const [otherVehicleArray, setOtherVehicleArray] = React.useState({
@@ -199,6 +211,10 @@ export default function App({ file, href, children}) {
     car: {mult:0.1743, miles: ''},
     bus: {mult:1.22885, miles: ''}
   });
+
+  useEffect(() => {
+    calculateOtherVehicle();
+  }, [otherVehicleArray]);
 
   //flight multiplier
   const [flightSub, setFlight] = React.useState(0);
@@ -211,6 +227,10 @@ export default function App({ file, href, children}) {
     flyLongBus: {mult:2018.95,count: ''},
     flyLongFirst: {mult:2784.75,count: ''},
   });
+
+  useEffect(() => {
+    calculateFlight();
+  }, [flightArray]);
 
   /* array using data from the spreadsheet, including multipliers */
   const buildArray = {
@@ -240,28 +260,30 @@ export default function App({ file, href, children}) {
   };
 
   if (schoolSize) {
-    subtotalBuild += Number(buildArray[schoolSize]);
+    subtotalBuild += Number(buildArray[schoolSize]) / 1000;
   }
 
   if (schoolNumTwo) {
-    subtotalBuild += schoolNumTwo * 4.45188684;
+    subtotalBuild += schoolNumTwo * 4.45188684 / 1000;
   }
 
   if (schoolSizeThree && schoolTypeThree && schoolNumThree) {
-    subtotalBuild += Number(buildArrayTwo[schoolSizeThree][schoolTypeThree]) * schoolNumThree;
+    subtotalBuild += Number(buildArrayTwo[schoolSizeThree][schoolTypeThree]) * schoolNumThree / 1000;
   }
 
   if (schoolSizeFour && schoolTypeFour && schoolNumFour) {
-    subtotalBuild += Number(buildArrayTwo[schoolSizeFour][schoolTypeFour]) * schoolNumFour;
+    subtotalBuild += Number(buildArrayTwo[schoolSizeFour][schoolTypeFour]) * schoolNumFour / 1000;
   }
 
   if (schoolSizeFive && schoolTypeFive && schoolNumFive) {
-    subtotalBuild += Number(buildArrayTwo[schoolSizeFive][schoolTypeFive]) * schoolNumFive;
+    subtotalBuild += Number(buildArrayTwo[schoolSizeFive][schoolTypeFive]) * schoolNumFive / 1000;
   }
 
   if (schoolSizeSix && schoolTypeSix && schoolNumSix) {
-    subtotalBuild += Number(buildArrayTwo[schoolSizeSix][schoolTypeSix]) * schoolNumSix;
+    subtotalBuild += Number(buildArrayTwo[schoolSizeSix][schoolTypeSix]) * schoolNumSix / 1000;
   }
+
+  subtotalBuild = Number(subtotalBuild.toFixed(2));
 
   /* function to calculate the 'vehicle' section */
   const calculateVehicle=()=> {
@@ -269,13 +291,14 @@ export default function App({ file, href, children}) {
     for (let x of Object.keys(vehicleArray)) 
     {
       let i = 0;
-      if ( vehicleArray[x].miles)
-      {
-        i += Number((vehicleArray[x].mult * vehicleArray[x].miles))
+      const miles = Number(vehicleArray[x].miles);
+
+      if (miles) {
+        i += Number((vehicleArray[x].mult * miles))/1000;
       }
       subtotalVehicle += i
     }
-    setVehicle(Number(subtotalVehicle))
+    setVehicle(Number(subtotalVehicle.toFixed(2)))
   };
 
   const calculateMiles=(e)=>{
@@ -283,11 +306,9 @@ export default function App({ file, href, children}) {
       ...vehicleArray,
       [e.target.name]: {
         ...vehicleArray[e.target.name],
-        miles: Number(e.target.value)
+        miles: e.target.value
       }
     });
-
-    calculateVehicle();
   };
 
   const calculateFlight=()=> {
@@ -295,10 +316,15 @@ export default function App({ file, href, children}) {
     for (let x of Object.keys(flightArray))
     {
       let i = 0;
-      i += Number((flightArray[x].count * flightArray[x].mult))
+      const count = Number(flightArray[x].count);
+
+      if (count) {
+        i += Number((count * flightArray[x].mult))/1000;
+      }
+      
       subtotalFlight += i
     }
-    setFlight(Number(subtotalFlight))
+    setFlight(Number(subtotalFlight.toFixed(2)))
   };
     
   const calculateFlightCount=(e)=>{
@@ -306,11 +332,9 @@ export default function App({ file, href, children}) {
       ...flightArray,
       [e.target.name]: {
         ...flightArray[e.target.name],
-        count: Number(e.target.value)
+        count: e.target.value
       }
     });
-
-    calculateFlight();
   };
     
   const calculateOtherVehicle=()=> {
@@ -318,13 +342,14 @@ export default function App({ file, href, children}) {
     for (let x of Object.keys(otherVehicleArray)) 
     {
       let i = 0;
-      if ( otherVehicleArray[x].miles)
-      {
-        i += Number((otherVehicleArray[x].mult * otherVehicleArray[x].miles))
+      const miles = Number(otherVehicleArray[x].miles);
+
+      if (miles) {
+        i += Number((otherVehicleArray[x].mult * miles))/1000;
       }
       subtotalOtherVehicle += i
     }    
-    setOtherVehicle(Number(subtotalOtherVehicle))
+    setOtherVehicle(Number(subtotalOtherVehicle.toFixed(2)))
   };
 
   const calculateOtherTransitMiles=(e)=>{
@@ -332,11 +357,9 @@ export default function App({ file, href, children}) {
       ...otherVehicleArray,
       [e.target.name]: {
         ...otherVehicleArray[e.target.name],
-        miles: Number(e.target.value)
+        miles: e.target.value
       }
     });
-
-    calculateOtherVehicle()
   };
 
   const calculateTransit=()=> {
@@ -344,13 +367,15 @@ export default function App({ file, href, children}) {
     for (let x of Object.keys(transitArray))
     {
       let i = 0;
-      if (transitArray[x].count && transitArray[x].miles)
-      {
-        i += Number((transitArray[x].count * transitArray[x].mult * transitArray[x].miles * transitArray[x].days))
+      const count = Number(transitArray[x].count);
+      const miles = Number(transitArray[x].miles);
+
+      if (count && miles) {
+        i += Number((count * transitArray[x].mult * miles * transitArray[x].days))/1000
       }
       subtotalTransit += i
     }   
-    setTransit(Number(subtotalTransit))
+    setTransit(Number(subtotalTransit.toFixed(2)))
   };
 
   const calculateTransitMiles=(e)=>{
@@ -358,11 +383,9 @@ export default function App({ file, href, children}) {
       ...transitArray,
       [e.target.name]: {
         ...transitArray[e.target.name],
-        miles: Number(e.target.value)
+        miles: e.target.value
       }
     });
-
-    calculateTransit();
   };
 
   const calculateTransitCount=(e)=>{
@@ -370,11 +393,9 @@ export default function App({ file, href, children}) {
       ...transitArray,
       [e.target.name]: {
         ...transitArray[e.target.name],
-        count: Number(e.target.value)
+        count: e.target.value
       }
     });
-
-    calculateTransit();
   };
 
   const calculateStudentCommuteTransit=()=> {
@@ -382,13 +403,15 @@ export default function App({ file, href, children}) {
     for (let x of Object.keys(studentCommuteArray)) 
     {
       let i = 0;
-      if (studentCommuteArray[x].count && studentCommuteArray[x].miles)
-      {
-        i += Number((studentCommuteArray[x].count * studentCommuteArray[x].mult * studentCommuteArray[x].miles * studentCommuteArray[x].days))
+      const count = Number(studentCommuteArray[x].count);
+      const miles = Number(studentCommuteArray[x].miles);
+
+      if (count && miles) {
+        i += Number((count * studentCommuteArray[x].mult * miles * studentCommuteArray[x].days))/1000
       }
       studentCommuteSubtotal += i
     }    
-    setStudentCommute(Number(studentCommuteSubtotal))
+    setStudentCommute(Number(studentCommuteSubtotal.toFixed(2)))
   };
 
   const calculateStudentCommuteCount=(e)=>{
@@ -396,11 +419,9 @@ export default function App({ file, href, children}) {
       ...studentCommuteArray,
       [e.target.name]: {
         ...studentCommuteArray[e.target.name],
-        count: Number(e.target.value)
+        count: e.target.value
       }
     });
-
-    calculateStudentCommuteTransit();
   };
 
   const calculateStudentCommuteMiles=(e)=>{
@@ -408,19 +429,17 @@ export default function App({ file, href, children}) {
       ...studentCommuteArray,
       [e.target.name]: {
         ...studentCommuteArray[e.target.name],
-        miles: Number(e.target.value)
+        miles: e.target.value
       }
     });
-
-    calculateStudentCommuteTransit();
   };
 
   /* calculate the 'total' here by adding on the other subtotals */
-  const total = vehicleSub + subtotalBuild + flightSub + transitSub + studentCommute + otherVehicleSub;
+  const total = Number((vehicleSub + subtotalBuild + flightSub + transitSub + studentCommute + otherVehicleSub).toFixed(2));
 
-  const otherTransportTotal = vehicleSub + otherVehicleSub;
+  const otherTransportTotal = Number((vehicleSub + otherVehicleSub).toFixed(2));
   if (typeof window !== 'undefined') {
-    localStorage.setItem('schoolfootprint', String((total/1000).toFixed(2)));
+    localStorage.setItem('schoolfootprint', String(total));
   }
 
   const editUrlPrefix = '/school-calculator?session=';
@@ -1070,27 +1089,21 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col-12 col-xl-4 col-sm-6">{editingdata.otherTransportGas}</Col>
                           <Col className="col-12 col-xl-8 col-sm-6">
-                          <input onChange={calculateMiles} name="carGas" type="number" min="0" value={vehicleArray.carGas.miles} onKeyPress={
-                            (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                          }  placeholder={editingdata.placeholder8} />
+                          <input onChange={calculateMiles} name="carGas" type="number" min="0" value={vehicleArray.carGas.miles} placeholder={editingdata.placeholder8} />
                           <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
                           </Col>
                       </Row>
                       <Row>
                       <Col  className="col-10 col-xl-4 col-sm-6">{editingdata.otherTransportDiesel}</Col>
                       <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateMiles} name="carDiesel" type="number" min="0" value={vehicleArray.carDiesel.miles} onKeyPress={
-                          (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                        }  placeholder={editingdata.placeholder8} />
+                        <input onChange={calculateMiles} name="carDiesel" type="number" min="0" value={vehicleArray.carDiesel.miles} placeholder={editingdata.placeholder8} />
                         <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
                       </Col>
                     </Row>
                     <Row>
                       <Col className="col-10 col-xl-4 col-sm-6">{editingdata.otherTransportPropane}</Col>
                       <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateMiles} name="carPropane" type="number" min="0" value={vehicleArray.carPropane.miles} onKeyPress={
-                          (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                        }  placeholder={editingdata.placeholder8} />
+                        <input onChange={calculateMiles} name="carPropane" type="number" min="0" value={vehicleArray.carPropane.miles} placeholder={editingdata.placeholder8} />
                         <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
                       </Col>
                     </Row>
@@ -1101,9 +1114,7 @@ export default function App({ file, href, children}) {
                   <Row>
                     <Col className="col-10 col-xl-4 col-sm-6 bold ">Train/Subway</Col>
                     <Col className="col-12 col-xl-8 col-sm-6">
-                      <input onChange={calculateMiles} name="trainMiles" type="number" min="0" value={vehicleArray.trainMiles.miles} onKeyPress={
-                        (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                      }  placeholder={editingdata.placeholder8} />
+                      <input onChange={calculateMiles} name="trainMiles" type="number" min="0" value={vehicleArray.trainMiles.miles} placeholder={editingdata.placeholder8} />
                       <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
                     </Col>
                   </Row>
@@ -1111,9 +1122,7 @@ export default function App({ file, href, children}) {
                   <Row>
                     <Col className="col-12 col-xl-4 col-sm-6 bold">{editingdata.otherVehicleVan}</Col>
                     <Col className="col-12 col-xl-8 col-sm-6">
-                      <input onChange={calculateOtherTransitMiles} name="van" type="number" min="0" value={otherVehicleArray.van.miles} onKeyPress={
-                        (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                      }  placeholder={editingdata.placeholder8} />
+                      <input onChange={calculateOtherTransitMiles} name="van" type="number" min="0" value={otherVehicleArray.van.miles} placeholder={editingdata.placeholder8} />
                       <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
                     </Col>
                   </Row>
@@ -1124,45 +1133,35 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col-12 col-xl-4 col-sm-6">{editingdata.otherTransportGas}</Col>
                           <Col className="col-12 col-xl-8 col-sm-6">
-                          <input onChange={calculateMiles} name="carGas" type="number" min="0" value={vehicleArray.carGas.miles} onKeyPress={
-                            (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                          }  placeholder={editingdata.placeholder8} />
+                          <input onChange={calculateMiles} name="carGas" type="number" min="0" value={vehicleArray.carGas.miles} placeholder={editingdata.placeholder8} />
                           <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
                           </Col>
                       </Row>
                       <Row>
                       <Col  className="col-12 col-xl-4 col-sm-6">{editingdata.otherTransportDiesel}</Col>
                       <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateMiles} name="carDiesel" type="number" min="0" value={vehicleArray.carDiesel.miles} onKeyPress={
-                          (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                        }  placeholder={editingdata.placeholder8} />
+                        <input onChange={calculateMiles} name="carDiesel" type="number" min="0" value={vehicleArray.carDiesel.miles} placeholder={editingdata.placeholder8} />
                         <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
                       </Col>
                     </Row>
                     <Row>
                       <Col className="col-12 col-xl-4 col-sm-6">Hybrid</Col>
                       <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateMiles} name="carHybrid" type="number" min="0" value={vehicleArray.carHybrid.miles} onKeyPress={
-                          (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                        }  placeholder={editingdata.placeholder8} />
+                        <input onChange={calculateMiles} name="carHybrid" type="number" min="0" value={vehicleArray.carHybrid.miles} placeholder={editingdata.placeholder8} />
                         <p className="x-small mb-3 op-7">Average Annual Km</p>
                       </Col>
                     </Row>
                     <Row>
                       <Col className="col-12 col-xl-4 col-sm-6">Plug-in Hybrid</Col>
                       <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateMiles} name="carPlug" type="number" min="0" value={vehicleArray.carPlug.miles} onKeyPress={
-                          (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                        }  placeholder={editingdata.placeholder8} />
+                        <input onChange={calculateMiles} name="carPlug" type="number" min="0" value={vehicleArray.carPlug.miles} placeholder={editingdata.placeholder8} />
                         <p className="x-small mb-3 op-7">Average Annual Km</p>
                       </Col>
                     </Row>
                     <Row>
                       <Col className="col-12 col-xl-4 col-sm-6">Plug-in Electric</Col>
                       <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateMiles} name="carElectric" type="number" min="0" value={vehicleArray.carElectric.miles} onKeyPress={
-                          (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                        }  placeholder={editingdata.placeholder8} />
+                        <input onChange={calculateMiles} name="carElectric" type="number" min="0" value={vehicleArray.carElectric.miles} placeholder={editingdata.placeholder8} />
                         <p className="x-small mb-3 op-7">Average Annual Km</p>
                       </Col>
                     </Row>
@@ -1191,9 +1190,7 @@ export default function App({ file, href, children}) {
                     <Row>
                       <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelShort1}</Col>
                       <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateFlightCount} name="flyShort" type="number" min="0" value={flightArray.flyShort.count} onKeyPress={
-                          (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                        }  placeholder={editingdata.placeholder9} />
+                        <input onChange={calculateFlightCount} name="flyShort" type="number" min="0" value={flightArray.flyShort.count} placeholder={editingdata.placeholder9} />
                         <p className="x-small mb-3 op-7">{editingdata.placeholder9}</p>
                       </Col>
                     </Row>
@@ -1206,18 +1203,14 @@ export default function App({ file, href, children}) {
                     <Row>
                       <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelMed1}</Col>
                       <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateFlightCount} name="flyMediumEco" type="number" min="0" value={flightArray.flyMediumEco.count} onKeyPress={
-                          (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                        }  placeholder={editingdata.placeholder9} />
+                        <input onChange={calculateFlightCount} name="flyMediumEco" type="number" min="0" value={flightArray.flyMediumEco.count} placeholder={editingdata.placeholder9} />
                         <p className="x-small mb-3 op-7">{editingdata.placeholder9}</p>
                       </Col>
                     </Row>
                     <Row>
                       <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelMed2}</Col>
                       <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateFlightCount} name="flyMediumBus" type="number" min="0" value={flightArray.flyMediumBus.count} onKeyPress={
-                          (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                        }  placeholder={editingdata.placeholder9} />
+                        <input onChange={calculateFlightCount} name="flyMediumBus" type="number" min="0" value={flightArray.flyMediumBus.count} placeholder={editingdata.placeholder9} />
                         <p className="x-small mb-3 op-7">{editingdata.placeholder9}</p>
                       </Col>
                     </Row>
@@ -1230,36 +1223,28 @@ export default function App({ file, href, children}) {
                     <Row>
                       <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelLong1}</Col>
                       <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateFlightCount} name="flyLongEco" type="number" min="0" value={flightArray.flyLongEco.count} onKeyPress={
-                          (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                        }  placeholder={editingdata.placeholder9} />
+                        <input onChange={calculateFlightCount} name="flyLongEco" type="number" min="0" value={flightArray.flyLongEco.count} placeholder={editingdata.placeholder9} />
                         <p className="x-small mb-3 op-7">{editingdata.placeholder9}</p>
                       </Col>
                     </Row>
                     <Row>
                       <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelLong2}</Col>
                       <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateFlightCount} name="flyLongEcoPlus" type="number" min="0" value={flightArray.flyLongEcoPlus.count} onKeyPress={
-                          (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                        }  placeholder={editingdata.placeholder9} />
+                        <input onChange={calculateFlightCount} name="flyLongEcoPlus" type="number" min="0" value={flightArray.flyLongEcoPlus.count} placeholder={editingdata.placeholder9} />
                         <p className="x-small mb-3 op-7">{editingdata.placeholder9}</p>
                       </Col>
                     </Row>
                     <Row>
                       <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelLong3}</Col>
                       <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateFlightCount} name="flyLongBus" type="number" min="0" value={flightArray.flyLongBus.count} onKeyPress={
-                          (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                        }  placeholder={editingdata.placeholder9} />
+                        <input onChange={calculateFlightCount} name="flyLongBus" type="number" min="0" value={flightArray.flyLongBus.count} placeholder={editingdata.placeholder9} />
                         <p className="x-small mb-3 op-7">{editingdata.placeholder9}</p>
                       </Col>
                     </Row>
                     <Row>
                       <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelLong4}</Col>
                       <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateFlightCount} name="flyLongFirst" type="number" min="0" value={flightArray.flyLongFirst.count} onKeyPress={
-                          (event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}
-                        }  placeholder={editingdata.placeholder9} />
+                        <input onChange={calculateFlightCount} name="flyLongFirst" type="number" min="0" value={flightArray.flyLongFirst.count} placeholder={editingdata.placeholder9} />
                         <p className="x-small mb-3 op-7">{editingdata.placeholder9}</p>
                       </Col>
                     </Row>
@@ -1272,20 +1257,20 @@ export default function App({ file, href, children}) {
             <div className="text-white p-5 innerShadow roundedBox bg-green">
               <h4 className="mb-0">{editingdata.dataHeader}</h4>
               <hr/>
-              <Row><Col>{editingdata.dataType1}</Col><Col className="text-right bold">{subtotalBuild > 0 ? (subtotalBuild/1000).toFixed(2) : "--"}</Col></Row>
+              <Row><Col>{editingdata.dataType1}</Col><Col className="text-right bold">{subtotalBuild > 0 ? subtotalBuild : "--"}</Col></Row>
               <hr/>
-              <Row><Col>{editingdata.dataType2}</Col><Col className="text-right bold">{transitSub > 0 ? (transitSub/1000).toFixed(2) : "--"}</Col></Row>
+              <Row><Col>{editingdata.dataType2}</Col><Col className="text-right bold">{transitSub > 0 ? transitSub : "--"}</Col></Row>
               <hr/>
-              <Row><Col>{editingdata.dataType3}</Col><Col className="text-right bold">{studentCommute > 0 ? (studentCommute/1000).toFixed(2) : "--"}</Col></Row>
+              <Row><Col>{editingdata.dataType3}</Col><Col className="text-right bold">{studentCommute > 0 ? studentCommute : "--"}</Col></Row>
               <hr/>
-              <Row><Col>{editingdata.dataType4}</Col><Col className="text-right bold">{otherTransportTotal > 0 ? (otherTransportTotal/1000).toFixed(2) : "--"}</Col></Row>
+              <Row><Col>{editingdata.dataType4}</Col><Col className="text-right bold">{otherTransportTotal > 0 ? otherTransportTotal : "--"}</Col></Row>
               <hr/>
-              <Row><Col>{editingdata.dataType5}</Col><Col className="text-right bold">{otherVehicleSub > 0 ? (otherVehicleSub/1000).toFixed(2) : "--"}</Col></Row>
+              <Row><Col>{editingdata.dataType5}</Col><Col className="text-right bold">{otherVehicleSub > 0 ? otherVehicleSub : "--"}</Col></Row>
               <hr/>
-              <Row><Col>{editingdata.dataType6}</Col><Col className="text-right bold">{flightSub > 0 ? (flightSub/1000).toFixed(2) : "--"}</Col></Row>
+              <Row><Col>{editingdata.dataType6}</Col><Col className="text-right bold">{flightSub > 0 ? flightSub : "--"}</Col></Row>
               <hr/>
               <span className="smallCaps text-small">{editingdata.dataTotal}</span><br/>
-              <span className="h2 bold">{total > 0 ? (total/1000).toFixed(2) : "--"}</span>
+              <span className="h2 bold">{total > 0 ? total : "--"}</span>
               <p>{total > 0 ? "(Metric Tonnes of CO2 per Year)" : ""}</p>
               <p className="text-small">{editingdata.dataDisclaimer}</p>
 

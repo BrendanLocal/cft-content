@@ -106,11 +106,11 @@ export default function App({ file, href, children}) {
   };
  
   const [region, setRegion] = React.useState("");
-  const [footprint, setFootprint] = React.useState(0);
+  const [footprint, setFootprint] = React.useState("");
   const [duration, setDuration] = React.useState(0);
   const [negative, setNegative] = React.useState(0);
 
-  const plantHectares = duration*footprint/regionArray.carbon[region]*(negative > 0 ? negative : 1);
+  const plantHectares = duration*Number(footprint)/regionArray.carbon[region]*(negative > 0 ? negative : 1);
   const plantAcres = plantHectares*2.47;
   const plantTrees = plantHectares*2470;
 
@@ -148,7 +148,7 @@ export default function App({ file, href, children}) {
   const [sessionDataError, setSessionDataError] = React.useState("");
   useEffect(() => {
     if (router.isReady) {
-      setFootprint(Number(Number(localStorage.getItem('personalfootprint')).toFixed(2)));
+      setFootprint(localStorage.getItem('personalfootprint'));
       setRegion(localStorage.getItem('personalRegion'));
       setDuration(Number(localStorage.getItem('personalDuration')));
 
@@ -293,7 +293,7 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="footprint">{editingdata.emissionsCarbonHeader}</label>
                   <br />
-                  <input value={footprint > 0 ? footprint : ""} onChange={changeFootprint} name="type" type="number" min="0"  placeholder={editingdata.emissionsPlaceholder}/>
+                  <input value={footprint} onChange={changeFootprint} name="type" type="number" min="0" placeholder={editingdata.emissionsPlaceholder}/>
                   <p className="x-small mb-3 op-7">{editingdata.emissionsPlaceholder}</p>
                   {editingdata.emissionsCarbon}<Link href="/personal-calculator"><a className="underline modal-btn">{editingdata.emissionsLink}</a></Link>
                 </Col>

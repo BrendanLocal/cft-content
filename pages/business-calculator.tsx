@@ -309,6 +309,10 @@ export default function BusinessCalc({ file, href, children}) {
     heliGas: { mult: 2.54306, count: '', miles: '' }
   });
 
+  useEffect(() => {
+    calculateVehicle();
+  }, [vehicleArray]);
+
   const [transitSub, setTransit] = React.useState(0);
   const [transitArray, setTransitArray] = React.useState({
     transitCar: { mult: 0.1743, count: '', miles: '' },
@@ -316,7 +320,15 @@ export default function BusinessCalc({ file, href, children}) {
     transitTrain: { mult: 0.06214, count: '', miles: '' }
   });
 
-  const [flightEmp, setEmp] = React.useState(0);
+  useEffect(() => {
+    calculateTransit();
+  }, [transitArray]);
+
+  const [flightEmp, setEmp] = React.useState("");
+  useEffect(() => {
+    calculateFlight();
+  }, [flightEmp]);
+
   const [flightSub, setFlight] = React.useState(0);
   const [flightArray, setFlightArray] = React.useState({
     flyShort: { mult: 122.15, count: '' },
@@ -329,6 +341,10 @@ export default function BusinessCalc({ file, href, children}) {
     flyHotels: { mult:17.4, count: '' }
   });
 
+  useEffect(() => {
+    calculateFlight();
+  }, [flightArray]);
+
   const [freightSub, setFreight] = React.useState(0);
   const [freightArray, setFreightArray] = React.useState({
     freightVan: { mult: 0.61628, count: '', miles: '' },
@@ -338,6 +354,10 @@ export default function BusinessCalc({ file, href, children}) {
     freightAirLess: { mult: 2.20496, count: '', miles: '' },
     freightAirMore: { mult:1.13382, count: '', miles: '' }
   });
+
+  useEffect(() => {
+    calculateFreight();
+  }, [freightArray]);
 
   const buildArray = {
     "5000": {	Office: 17364.7272966102, Medical:11745.2006980804, School:4757.66316027602, Care:12771.2658005338, Warehouse:9099.64324928882, Hotel:9690.54436545558, Hospital:37996.8383017167, Food:31883.4665465874, Restaurant:31883.4665465874, Retail:14238.4420898752, Other:21150.1136386494 },
@@ -372,16 +392,21 @@ export default function BusinessCalc({ file, href, children}) {
     subtotalBuild += Number((buildArray[buildSizeFive][buildTypeFive] * buildNumFive /1000))
   }
 
+  subtotalBuild = Number(subtotalBuild.toFixed(2));
+
   const calculateVehicle=()=> {
     subtotalVehicle = 0
     for (let x of Object.keys(vehicleArray)) {
       let i = 0;
-      if (vehicleArray[x].count && vehicleArray[x].miles){
-        i += Number((vehicleArray[x].count * vehicleArray[x].mult * vehicleArray[x].miles))/1000
+      const count = Number(vehicleArray[x].count);
+      const miles = Number(vehicleArray[x].miles);
+
+      if (count && miles){
+        i += Number((count * vehicleArray[x].mult * miles))/1000
       }
       subtotalVehicle += i
     }
-    setVehicle(Number(subtotalVehicle))
+    setVehicle(Number(subtotalVehicle.toFixed(2)))
   }
 
   const calculateCount=(e)=>{
@@ -389,11 +414,9 @@ export default function BusinessCalc({ file, href, children}) {
       ...vehicleArray,
       [e.target.name]: {
         ...vehicleArray[e.target.name],
-        count: Number(e.target.value)
+        count: e.target.value
       }
     });
-
-    calculateVehicle();
   }
 
   const calculateMiles=(e)=>{
@@ -401,23 +424,24 @@ export default function BusinessCalc({ file, href, children}) {
       ...vehicleArray,
       [e.target.name]: {
         ...vehicleArray[e.target.name],
-        miles: Number(e.target.value)
+        miles: e.target.value
       }
     });
-
-    calculateVehicle();
   }
 
   const calculateTransit=()=> {
     subtotalTransit = 0
     for (let x of Object.keys(transitArray)) {
       let i = 0;
-      if (transitArray[x].count && transitArray[x].miles){
-        i += Number((transitArray[x].count * transitArray[x].mult * transitArray[x].miles * 231))/1000
+      const count = transitArray[x].count;
+      const miles = transitArray[x].miles;
+
+      if (count && miles){
+        i += Number((count * transitArray[x].mult * miles * 231))/1000
       }
       subtotalTransit += i
     }
-    setTransit(Number(subtotalTransit))
+    setTransit(Number(subtotalTransit.toFixed(2)))
   }
 
   const calculateTransitCount=(e)=>{
@@ -425,11 +449,9 @@ export default function BusinessCalc({ file, href, children}) {
       ...transitArray,
       [e.target.name]: {
         ...transitArray[e.target.name],
-        count: Number(e.target.value)
+        count: e.target.value
       }
     });
-
-    calculateTransit();
   }
 
   const calculateTransitMiles=(e)=>{
@@ -437,21 +459,25 @@ export default function BusinessCalc({ file, href, children}) {
       ...transitArray,
       [e.target.name]: {
         ...transitArray[e.target.name],
-        miles: Number(e.target.value)
+        miles: e.target.value
       }
     });
-
-    calculateTransit();
   }
 
   const calculateFlight=()=> {
     subtotalFlight = 0
     for (let x of Object.keys(flightArray)) {
       let i = 0;
-      i += Number((flightArray[x].count * flightArray[x].mult * flightEmp))/1000
+      const count = Number(flightArray[x].count);
+      const emp = Number(flightEmp);
+
+      if (count) {
+        i += Number((count * flightArray[x].mult * emp))/1000;
+      }
+      
       subtotalFlight += i
     }
-    setFlight(Number(subtotalFlight))
+    setFlight(Number(subtotalFlight.toFixed(2)));
   }
 
   const calculateFlightCount=(e)=>{
@@ -459,11 +485,9 @@ export default function BusinessCalc({ file, href, children}) {
       ...flightArray,
       [e.target.name]: {
         ...flightArray[e.target.name],
-        count: Number(e.target.value)
+        count: e.target.value
       }
     });
-
-    calculateFlight();
   }
 
   const calculateEmp=(e)=>{
@@ -474,11 +498,17 @@ export default function BusinessCalc({ file, href, children}) {
     subtotalFreight = 0
     for (let x of Object.keys(freightArray)) {
       let i = 0;
-      i += Number((freightArray[x].count * freightArray[x].mult * freightArray[x].miles))/1000
+      const count = Number(freightArray[x].count);
+      const miles = Number(freightArray[x].miles);
+
+      if (count && miles) {
+        i += Number((count * freightArray[x].mult * miles))/1000
+      }
+      
       subtotalFreight += i
     }
     
-    setFreight(Number(subtotalFreight))
+    setFreight(Number(subtotalFreight.toFixed(2)))
   }
 
   const calculateFreightNum=(e)=>{
@@ -486,11 +516,9 @@ export default function BusinessCalc({ file, href, children}) {
       ...freightArray,
       [e.target.name]: {
         ...freightArray[e.target.name],
-        count: Number(e.target.value)
+        count: e.target.value
       }
     });
-
-    calculateFreight();
   }
     
   const calculateFreightMiles=(e)=>{
@@ -498,14 +526,12 @@ export default function BusinessCalc({ file, href, children}) {
       ...freightArray,
       [e.target.name]: {
         ...freightArray[e.target.name],
-        miles: Number(e.target.value)
+        miles: e.target.value
       }
     });
-
-    calculateFreight();
   }
 
-  const total = vehicleSub + subtotalBuild + transitSub + flightSub + freightSub;
+  const total = Number((vehicleSub + subtotalBuild + transitSub + flightSub + freightSub).toFixed(2));
   if (typeof window !== 'undefined') {
     localStorage.setItem('businessfootprint', String(total));
   }
@@ -1492,11 +1518,7 @@ export default function BusinessCalc({ file, href, children}) {
                   <Row>
                     <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelLong1}</Col>
                     <Col className="col-12 col-xl-8 col-sm-6">
-                      <input onChange={calculateFlightCount} name="flyLongEco" type="number" min="0" value={flightArray.flyLongEco.count} onKeyPress={ (event) => {
-                        if (!/[0-9]/.test(event.key)) {
-                          event.preventDefault();
-                        }
-                      }} placeholder={editingdata.travelPlaceholder2} />
+                      <input onChange={calculateFlightCount} name="flyLongEco" type="number" min="0" value={flightArray.flyLongEco.count} placeholder={editingdata.travelPlaceholder2} />
                       <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder2}</p>
                   </Col>
                 </Row>
@@ -1621,31 +1643,31 @@ export default function BusinessCalc({ file, href, children}) {
             <hr/>
             <Row>
               <Col>{editingdata.dataType1}</Col>
-              <Col className="text-right bold">{subtotalBuild > 0 ? subtotalBuild.toFixed(2) : "--"}</Col>
+              <Col className="text-right bold">{subtotalBuild > 0 ? subtotalBuild : "--"}</Col>
             </Row>
             <hr/>
             <Row>
               <Col>{editingdata.dataType2}</Col>
-              <Col className="text-right bold">{vehicleSub > 0 ? vehicleSub.toFixed(2) : "--"}</Col>
+              <Col className="text-right bold">{vehicleSub > 0 ? vehicleSub : "--"}</Col>
             </Row>
             <hr/>
             <Row>
               <Col>{editingdata.dataType3}</Col>
-              <Col className="text-right bold">{transitSub > 0 ? transitSub.toFixed(2) : "--"}</Col>
+              <Col className="text-right bold">{transitSub > 0 ? transitSub : "--"}</Col>
             </Row>
             <hr/>
             <Row>
               <Col>{editingdata.dataType4}</Col>
-              <Col className="text-right bold">{flightSub > 0 ? flightSub.toFixed(2) : "--"}</Col>
+              <Col className="text-right bold">{flightSub > 0 ? flightSub : "--"}</Col>
             </Row>
             <hr/>
             <Row>
               <Col>{editingdata.dataType5}</Col>
-              <Col className="text-right bold">{freightSub > 0 ? freightSub.toFixed(2) : "--"}</Col>
+              <Col className="text-right bold">{freightSub > 0 ? freightSub : "--"}</Col>
             </Row>
             <hr/>
             <span className="smallCaps text-small">{editingdata.dataTotal}</span><br/>
-            <span className="h2 bold">{total > 0 ? total.toFixed(2) : "--"}</span>
+            <span className="h2 bold">{total > 0 ? total : "--"}</span>
             <p>{total > 0 ? "(Metric Tonnes of CO2 per Year)" : ""}</p>
             <p className="text-small">{editingdata.dataDisclaimer}</p>
 
