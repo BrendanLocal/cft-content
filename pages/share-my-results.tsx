@@ -861,7 +861,7 @@ export default function App({ file, href, children}) {
         <Row className="justify-content-center">
           <Col className="p-3 col-12 col-lg-7 col-xl-6">
             <div className="card roundedBox no-border bg-green p-4 innerShadow cardSpacing">
-              <p className="lead text-white m-2 calc-intro">{editingdata.para1}</p>
+              <p className="lead text-white m-2 calc-intro">Shared results</p>
             </div>
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
@@ -1482,36 +1482,41 @@ export default function App({ file, href, children}) {
               <p>{total > 0 ? "(Metric Tonnes of CO2 per Year)" : ""}</p>
               <p className="text-small">{editingdata.dataDisclaimer}</p>
 
-              
+              <hr className="my-4"/>
+
+              <Row className="justify-content-center text-center">
+              <Col>
+              <div className="mt-3">
+                <p className="smallCaps text-white mb-3">Share these results</p>
+                {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
+
+                {/* todo - change these to use sharingUrl instead of editUrl when the sharing page is implemented */}
+                
+                <FacebookShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareBusiness} className="mx-2">
+                  <FacebookIcon size={40} round />
+                </FacebookShareButton>
+
+                <TwitterShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} title={editingdata.shareBusiness} className="mx-2">
+                  <TwitterIcon size={40} round />
+                </TwitterShareButton>
+
+                <LinkedinShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} summary={editingdata.shareBusiness} className="mx-2">
+                  <LinkedinIcon size={40} round />
+                </LinkedinShareButton>
+
+                <EmailShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} body={editingdata.shareBusiness} className="mx-2">
+                  <EmailIcon size={40} round />
+                </EmailShareButton>
+              </div>
+              </Col>
+            </Row>
+
             </div>
           </Col>
         </Row>  
 
-        <Row className="justify-content-center ">
-          <Col className="col-11 col-lg-10 align-items-center text-center p-3">
-            <div className="bg-green p-4 innerShadow roundedBox">
-              <p className="smallCaps text-white mb-3">Share your results</p>
-              {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
-
-              {/* todo - change these to use sharingUrl instead of editUrl when the sharing page is implemented */}
-              
-              <FacebookShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} className="mx-2">
-                <FacebookIcon size={40} round />
-              </FacebookShareButton>
-
-              <TwitterShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} className="mx-2">
-                <TwitterIcon size={40} round />
-              </TwitterShareButton>
-
-              <LinkedinShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} className="mx-2">
-                <LinkedinIcon size={40} round />
-              </LinkedinShareButton>
-
-            </div>
-          </Col>
-        </Row>
       
-        <Row className="justify-content-center ">
+        <Row className="justify-content-center d-none">
           <Col className="col-11 col-lg-10 align-items-center text-center p-3">
             <div className="bg-brown p-4 innerShadow roundedBox">
               
@@ -1525,26 +1530,38 @@ export default function App({ file, href, children}) {
         
         <Row className="justify-content-center mt-5">
           <Col className="col-11 col-lg-10 pt-5">
-            <h2 className="text-orange text-center pt-5 bold mb-4 tight-drop-light">{editingdata.otherHeader}</h2>
+            <h2 className="text-orange text-center pt-5 bold mb-4 tight-drop-light">Get Started With Our Carbon Calculators</h2>
           </Col>
         </Row>
 
         <Row className="justify-content-center pb-5">
           <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
-            <h4 className="text-white tight-drop-light">{editingdata.otherbox1Header}</h4>
-            <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox1Para}</p>
-            <Link href="/business-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox1button}</a></Link>
+              <h4 className="text-white tight-drop-light">{editingdata.otherbox1Header}</h4>
+              <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox1Para}</p>
+              <Link href="/business-calculator">
+                <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox1button}</a>
+              </Link>
             </div>
           </Col>
-
           <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
-            <h4 className="text-white tight-drop-light">{editingdata.otherbox2Header}</h4>
-            <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox2Para}</p>
-            <Link href="/school-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox2button}</a></Link>
+              <h4 className="text-white tight-drop-light">{editingdata.otherbox2Header}</h4>
+              <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox2Para}</p>
+              <Link href="/school-calculator">
+                <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox2button}</a>
+              </Link>
             </div>
-          </Col>  
+          </Col>
+          <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
+            <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
+              <h4 className="text-white tight-drop-light">Personal</h4>
+              <p className="flex-fill pb-3 text-white tight-drop">Calculate how much carbon your school must offset to reach net-zero.</p>
+              <Link href="/personal-calculator">
+                <a className="btn btn-text text-left text-orange bold no-underline tight-drop">SELECT</a>
+              </Link>
+            </div>
+          </Col>
         </Row>
       </Container>
     </div>
