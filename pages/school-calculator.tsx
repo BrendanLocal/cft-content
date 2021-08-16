@@ -157,7 +157,6 @@ export default function App({ file, href, children}) {
   let subtotalBuild = 0; 
   let subtotalTransit = 0;
   let studentCommuteSubtotal = 0;
-  let subtotalOtherVehicle = 0;
   let subtotalVehicle = 0;
   let subtotalFlight = 0;
 
@@ -191,30 +190,22 @@ export default function App({ file, href, children}) {
   //vehicle multiplier
   const [vehicleSub, setVehicle] = React.useState(0);
   const [vehicleArray, setVehicleArray] = React.useState({
+    busGas: {mult:1.22885, miles: ''},
+    busDiesel: {mult:0.74350344, miles: ''},
+    busPropane: {mult:0.897182946, miles: ''},
     carGas: {mult:1.22885, miles: ''},
     carDiesel: {mult:0.74350344, miles: ''},
     carPropane: {mult:0.897182946, miles: ''},
     carHybrid: { mult: 0.10487, count: '', miles: '' },
     carPlug: { mult: 0.02935, count: '', miles: '' },
     carElectric: { mult: 0.000001, count: '', miles: '' },
-    trainMiles: {mult:0.06214, miles: ''}
+    train: {mult:0.06214, miles: ''},
+    van: {mult:0.14853, miles: ''}
   });
 
   useEffect(() => {
     calculateVehicle();
   }, [vehicleArray]);
-
-  //other vehicle multiplier
-  const [otherVehicleSub, setOtherVehicle] = React.useState(0);
-  const [otherVehicleArray, setOtherVehicleArray] = React.useState({
-    van: {mult:0.14853, miles: ''},
-    car: {mult:0.1743, miles: ''},
-    bus: {mult:1.22885, miles: ''}
-  });
-
-  useEffect(() => {
-    calculateOtherVehicle();
-  }, [otherVehicleArray]);
 
   //flight multiplier
   const [flightSub, setFlight] = React.useState(0);
@@ -336,31 +327,6 @@ export default function App({ file, href, children}) {
       }
     });
   };
-    
-  const calculateOtherVehicle=()=> {
-    subtotalOtherVehicle = 0
-    for (let x of Object.keys(otherVehicleArray)) 
-    {
-      let i = 0;
-      const miles = Number(otherVehicleArray[x].miles);
-
-      if (miles) {
-        i += Number((otherVehicleArray[x].mult * miles))/1000;
-      }
-      subtotalOtherVehicle += i
-    }    
-    setOtherVehicle(Number(subtotalOtherVehicle.toFixed(2)))
-  };
-
-  const calculateOtherTransitMiles=(e)=>{
-    setOtherVehicleArray({
-      ...otherVehicleArray,
-      [e.target.name]: {
-        ...otherVehicleArray[e.target.name],
-        miles: e.target.value
-      }
-    });
-  };
 
   const calculateTransit=()=> {
     subtotalTransit = 0
@@ -435,9 +401,7 @@ export default function App({ file, href, children}) {
   };
 
   /* calculate the 'total' here by adding on the other subtotals */
-  const total = Number((vehicleSub + subtotalBuild + flightSub + transitSub + studentCommute + otherVehicleSub).toFixed(2));
-
-  const otherTransportTotal = Number((vehicleSub + otherVehicleSub).toFixed(2));
+  const total = Number((vehicleSub + subtotalBuild + flightSub + transitSub + studentCommute).toFixed(2));
   if (typeof window !== 'undefined') {
     localStorage.setItem('schoolfootprint', String(total));
   }
@@ -532,10 +496,6 @@ export default function App({ file, href, children}) {
               setVehicleArray(sessionCalcData.vehicleArray);
             }
 
-            if (sessionCalcData.otherVehicleArray !== undefined) {
-              setOtherVehicleArray(sessionCalcData.otherVehicleArray);
-            }
-
             if (sessionCalcData.flightArray !== undefined) {
               setFlightArray(sessionCalcData.flightArray);
             }
@@ -550,10 +510,6 @@ export default function App({ file, href, children}) {
             
             if (sessionCalcData.vehicleSub !== undefined) {
               setVehicle(sessionCalcData.vehicleSub);
-            }
-
-            if (sessionCalcData.otherVehicleSub !== undefined) {
-              setOtherVehicle(sessionCalcData.otherVehicleSub);
             }
 
             if (sessionCalcData.flightSub !== undefined) {
@@ -593,12 +549,10 @@ export default function App({ file, href, children}) {
         transitArray,
         studentCommuteArray,
         vehicleArray,
-        otherVehicleArray,
         flightArray,
         transitSub,
         studentCommute,
         vehicleSub,
-        otherVehicleSub,
         flightSub
       }
     };
@@ -1089,21 +1043,21 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col-12 col-xl-4 col-sm-6">{editingdata.otherTransportGas}</Col>
                           <Col className="col-12 col-xl-8 col-sm-6">
-                          <input onChange={calculateMiles} name="carGas" type="number" min="0" value={vehicleArray.carGas.miles} placeholder={editingdata.placeholder8} />
+                          <input onChange={calculateMiles} name="busGas" type="number" min="0" value={vehicleArray.busGas.miles} placeholder={editingdata.placeholder8} />
                           <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
                           </Col>
                       </Row>
                       <Row>
                       <Col  className="col-10 col-xl-4 col-sm-6">{editingdata.otherTransportDiesel}</Col>
                       <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateMiles} name="carDiesel" type="number" min="0" value={vehicleArray.carDiesel.miles} placeholder={editingdata.placeholder8} />
+                        <input onChange={calculateMiles} name="busDiesel" type="number" min="0" value={vehicleArray.busDiesel.miles} placeholder={editingdata.placeholder8} />
                         <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
                       </Col>
                     </Row>
                     <Row>
                       <Col className="col-10 col-xl-4 col-sm-6">{editingdata.otherTransportPropane}</Col>
                       <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateMiles} name="carPropane" type="number" min="0" value={vehicleArray.carPropane.miles} placeholder={editingdata.placeholder8} />
+                        <input onChange={calculateMiles} name="busPropane" type="number" min="0" value={vehicleArray.busPropane.miles} placeholder={editingdata.placeholder8} />
                         <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
                       </Col>
                     </Row>
@@ -1114,7 +1068,7 @@ export default function App({ file, href, children}) {
                   <Row>
                     <Col className="col-10 col-xl-4 col-sm-6 bold ">Train/Subway</Col>
                     <Col className="col-12 col-xl-8 col-sm-6">
-                      <input onChange={calculateMiles} name="trainMiles" type="number" min="0" value={vehicleArray.trainMiles.miles} placeholder={editingdata.placeholder8} />
+                      <input onChange={calculateMiles} name="train" type="number" min="0" value={vehicleArray.train.miles} placeholder={editingdata.placeholder8} />
                       <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
                     </Col>
                   </Row>
@@ -1122,7 +1076,7 @@ export default function App({ file, href, children}) {
                   <Row>
                     <Col className="col-12 col-xl-4 col-sm-6 bold">{editingdata.otherVehicleVan}</Col>
                     <Col className="col-12 col-xl-8 col-sm-6">
-                      <input onChange={calculateOtherTransitMiles} name="van" type="number" min="0" value={otherVehicleArray.van.miles} placeholder={editingdata.placeholder8} />
+                      <input onChange={calculateMiles} name="van" type="number" min="0" value={vehicleArray.van.miles} placeholder={editingdata.placeholder8} />
                       <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
                     </Col>
                   </Row>
@@ -1263,9 +1217,7 @@ export default function App({ file, href, children}) {
               <hr/>
               <Row><Col>{editingdata.dataType3}</Col><Col className="text-right bold">{studentCommute > 0 ? studentCommute : "--"}</Col></Row>
               <hr/>
-              <Row><Col>{editingdata.dataType4}</Col><Col className="text-right bold">{otherTransportTotal > 0 ? otherTransportTotal : "--"}</Col></Row>
-              <hr/>
-              <Row><Col>{editingdata.dataType5}</Col><Col className="text-right bold">{otherVehicleSub > 0 ? otherVehicleSub : "--"}</Col></Row>
+              <Row><Col>{editingdata.dataType4}</Col><Col className="text-right bold">{vehicleSub > 0 ? vehicleSub : "--"}</Col></Row>
               <hr/>
               <Row><Col>{editingdata.dataType6}</Col><Col className="text-right bold">{flightSub > 0 ? flightSub : "--"}</Col></Row>
               <hr/>
