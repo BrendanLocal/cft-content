@@ -267,7 +267,7 @@ export default function App({ file, href, children}) {
           </Col>
         </Row>
         <Row className="justify-content-center">
-          <Col className="p-3 col-12 col-lg-6">
+          <Col className="p-3 col-12 col-lg-7 col-xl-6">
             <div className="card roundedBox no-border bg-green p-4 innerShadow cardSpacing">
               <p className="lead text-white m-2 calc-intro pe-lg-2">Calculate how many acres your corporation must invest in to reach a net-zero emissions target</p>
             </div>
@@ -330,7 +330,7 @@ export default function App({ file, href, children}) {
               </Row>
             </div>
           </Col>
-          <Col className=" p-3  col-11 col-lg-4 stickyCalc mb-4">
+          <Col className=" p-3  col-11 col-lg-5 col-xl-4 stickyCalc mb-4">
             <div className="text-white p-5 innerShadow roundedBox bg-green">
               <h4 className="mb-0">{editingdata.dataHeader}</h4>
               <hr/>
@@ -396,7 +396,7 @@ export default function App({ file, href, children}) {
           </Col>
         </Row>
 
-        <Row className="justify-content-center pb-5 mb-5">
+        <Row className="justify-content-center pb-5">
           <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
               <h4 className="text-white tight-drop-light">{editingdata.otherbox1Header}</h4>

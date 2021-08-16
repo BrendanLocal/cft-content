@@ -768,14 +768,14 @@ export default function BusinessCalc({ file, href, children}) {
         <meta name="theme-color" content="#054218"></meta>
       </Head>
 
-      <Container className="p-4 pt-5">
+      <Container className=" pt-5">
         <Row className="justify-content-center">
           <Col className="col-12 col-lg-10 pt-5 align-items-center my-4 pt-5">
             <h1 className="emphasis text-orange text-center bold tight-drop-light">{editingdata.header}</h1>
           </Col>
         </Row>
         <Row className="justify-content-center">
-          <Col className="p-3 col-12 col-lg-6">
+          <Col className="p-3 col-12 col-lg-7 col-xl-6">
           <div className="card roundedBox no-border bg-green p-4 innerShadow cardSpacing">
             <p className="lead text-white m-2 calc-intro">{editingdata.para1}</p>
           </div>
@@ -1493,7 +1493,7 @@ export default function BusinessCalc({ file, href, children}) {
             </Row>
             <hr/>
             <Row>
-              <Col className="col-10 col-xl-4 mb-2 bold">{editingdata.travelMed}</Col>
+              <Col className="col-12 col-xl-4 mb-2 bold">{editingdata.travelMed}</Col>
                 <Col>
                   <Row>
                     <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelMed1}</Col>
@@ -1637,7 +1637,7 @@ export default function BusinessCalc({ file, href, children}) {
             </Row>
           </div>
         </Col>
-        <Col className=" p-3  col-11 col-lg-4 stickyCalc mb-4">
+        <Col className=" p-3  col-11 col-lg-5 col-xl-4 stickyCalc mb-4">
           <div className="text-white p-5 innerShadow roundedBox bg-green">
             <h4 className="mb-0">{editingdata.dataHeader}</h4>
             <hr/>
@@ -1717,7 +1717,7 @@ export default function BusinessCalc({ file, href, children}) {
 
 
         <Row className="justify-content-center ">
-          <Col className="col-11 col-lg-10 align-items-center text-center p-3">
+          <Col className="col-11 col-lg-12 col-xl-10 align-items-center text-center p-3">
           <div className="bg-brown p-4 innerShadow roundedBox">
             <p className="smallCaps text-orange mb-3">{editingdata.box1Header}</p>
             {nextStepError ? <p style={{color: 'red' }}>{nextStepError}</p> : null}
@@ -1732,7 +1732,7 @@ export default function BusinessCalc({ file, href, children}) {
           </Col>
         </Row>
 
-        <Row className="justify-content-center pb-5 mb-5">
+        <Row className="justify-content-center pb-5">
           <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
               <h4 className="text-white tight-drop-light">{editingdata.otherbox1Header}</h4>
