@@ -1467,7 +1467,7 @@ export default function BusinessCalc({ file, href, children}) {
             </Row>
             <hr/>
             <Row>
-              <Col className="col-10 col-xl-4 mb-2 bold">{editingdata.travelMed}</Col>
+              <Col className="col-12 col-xl-4 mb-2 bold">{editingdata.travelMed}</Col>
                 <Col>
                   <Row>
                     <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelMed1}</Col>
@@ -1710,7 +1710,7 @@ export default function BusinessCalc({ file, href, children}) {
           </Col>
         </Row>
 
-        <Row className="justify-content-center pb-5 mb-5">
+        <Row className="justify-content-center pb-5">
           <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop school-card">
               <h4 className="text-white tight-drop-light">{editingdata.otherbox1Header}</h4>
