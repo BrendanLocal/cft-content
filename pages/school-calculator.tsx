@@ -1239,7 +1239,7 @@ export default function App({ file, href, children}) {
               <Row className="justify-content-center text-center">
               <Col>
               <div className="">
-                <p className="smallCaps text-white mb-3">Share your results</p>
+                <p className="smallCaps text-white mb-3">SHARE MY RESULTS</p>
                 {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
                 
                 <FacebookShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareBusiness} className="mx-2">

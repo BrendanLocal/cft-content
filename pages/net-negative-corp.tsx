@@ -384,7 +384,7 @@ export default function App({ file, href, children}) {
               <Row className="justify-content-center text-center">
               <Col>
               <div className="">
-                <p className="smallCaps text-white mb-3">Share your results</p>
+                <p className="smallCaps text-white mb-3">SHARE MY RESULTS</p>
                 {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
 
                 {/* todo - change these to use sharingUrl instead of editUrl when the sharing page is implemented */}
