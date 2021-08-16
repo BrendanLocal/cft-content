@@ -315,7 +315,7 @@ export default function App({ file, href, children}) {
               <hr/>
               <Row><Col className="pb-3">{editingdata.dataType} {plantTrees > 0 ? Math.ceil(plantTrees).toLocaleString("en-US") : "--"} {editingdata.dataType2}</Col></Row>
 
-              
+              <hr className="my-4"/>
 
               <Row className="justify-content-center text-center">
               <Col>
