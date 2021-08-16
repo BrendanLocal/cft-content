@@ -114,34 +114,7 @@ export default function App({ file, href, children}) {
   const plantAcres = plantHectares*2.47;
   const plantTrees = plantHectares*2470;
 
-  const changeRegion = (event) => {
-    setRegion(event.target.value);
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('personalRegion', String(event.target.value));
-    }
-  }
-
-  const changeFootprint = (event) => {
-    setFootprint(event.target.value);
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('personalfootprint', String(event.target.value));
-    }
-  }
-
-  const changeDuration = (event) => {
-    setDuration(event.target.value);
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('personalDuration', String(event.target.value));
-    }
-  }
-
-  const changeNegative = (event) => {
-    setNegative(event.target.value);
-  }
-
-  const editUrlPrefix = '/net-negative-personal?session=';
   const sharingUrlPrefix = '/net-negative-personal-share?session=';
-  const [editUrl, setEditUrl] = React.useState('/net-negative-personal');
   const [sharingUrl, setSharingUrl] = React.useState('/net-negative-personal-share');
 
   const router = useRouter();
@@ -156,7 +129,6 @@ export default function App({ file, href, children}) {
         sessionID = router.query.session;
       }
       
-      setEditUrl(editUrlPrefix + sessionID);
       setSharingUrl(sharingUrlPrefix + sessionID);
   
       try {
@@ -191,75 +163,6 @@ export default function App({ file, href, children}) {
       }
     }
   }, [router.query]);
-
-  const saveSession = async (successCallback: () => void, failureCallback: (error) => void) => {
-    const body = {
-      sessionID: sessionID,
-      type: 'net-negative-personal',
-      data: {
-        region,
-        footprint,
-        duration,
-        negative
-      }
-    };
-
-    try {
-      const res = await fetch('/api/calc', {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
-      });
-
-      if (res.status === 200) {
-        successCallback();
-      }
-      else {
-        const error_message = await res.text();
-        failureCallback(error_message);
-      }
-    }
-    catch (error) {
-      failureCallback('An unknown error has occurred while saving calculator session.');
-    }
-  };
-
-  const [editUrlError, setEditUrlError] = React.useState("");
-  const editUrlClick = (e) => {
-    e.preventDefault();
-
-    saveSession(() => {
-      setEditUrlError("");
-      router.push(e.target.getAttribute('href'));
-    }, (error) => {
-      setEditUrlError(error);
-    });
-  };
-
-  const [shareError, setShareError] = React.useState("");
-  const shareBeforeClick = () => {
-    return new Promise<void>((resolve, reject) => {
-      saveSession(() => {
-        setShareError("");
-        resolve();
-      }, (error) => {
-        setShareError(error);
-        reject(error);
-      });
-    })
-  };
-
-  const [nextStepError, setNextStepError] = React.useState("");
-  const nextStepClick = (e) => {
-    e.preventDefault();
-
-    saveSession(() => {
-      setNextStepError("");
-      router.push("/contact");
-    }, (error) => {
-      setNextStepError(error);
-    });
-  };
 
   return (
     <div className="bg-legacy">
@@ -345,23 +248,20 @@ export default function App({ file, href, children}) {
 <Col>
 <div className="mt-3">
                 <p className="smallCaps text-white mb-3">Share these results</p>
-                {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
-
-                {/* todo - change these to use sharingUrl instead of editUrl when the sharing page is implemented */}
                 
-                <FacebookShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareBusiness} className="mx-2">
+                <FacebookShareButton url={hostname + sharingUrl} quote={editingdata.shareBusiness} className="mx-2">
                   <FacebookIcon size={40} round />
                 </FacebookShareButton>
 
-                <TwitterShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} title={editingdata.shareBusiness} className="mx-2">
+                <TwitterShareButton url={hostname + sharingUrl} title={editingdata.shareBusiness} className="mx-2">
                   <TwitterIcon size={40} round />
                 </TwitterShareButton>
 
-                <LinkedinShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} summary={editingdata.shareBusiness} className="mx-2">
+                <LinkedinShareButton url={hostname + sharingUrl} summary={editingdata.shareBusiness} className="mx-2">
                   <LinkedinIcon size={40} round />
                 </LinkedinShareButton>
 
-                <EmailShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} body={editingdata.shareBusiness} className="mx-2">
+                <EmailShareButton url={hostname + sharingUrl} body={editingdata.shareBusiness} className="mx-2">
                   <EmailIcon size={40} round />
                 </EmailShareButton>
               </div>
