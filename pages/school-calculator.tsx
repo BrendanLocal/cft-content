@@ -1241,8 +1241,6 @@ export default function App({ file, href, children}) {
               <div className="">
                 <p className="smallCaps text-white mb-3">Share your results</p>
                 {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
-
-                {/* todo - change these to use sharingUrl instead of editUrl when the sharing page is implemented */}
                 
                 <FacebookShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareBusiness} className="mx-2">
                   <FacebookIcon size={40} round />

@@ -588,9 +588,9 @@ export default function App({ file, href, children}) {
   }
 
   const editUrlPrefix = '/personal-calculator?session=';
-  const sharingUrlPrefix = '/personal-calculator-share?session=';
+  const sharingUrlPrefix = '/share-my-results?session=';
   const [editUrl, setEditUrl] = React.useState('/personal-calculator');
-  const [sharingUrl, setSharingUrl] = React.useState('/personal-calculator-share');
+  const [sharingUrl, setSharingUrl] = React.useState('/share-my-results');
 
   const router = useRouter();
   const [sessionDataError, setSessionDataError] = React.useState("");
@@ -1860,22 +1860,20 @@ export default function App({ file, href, children}) {
               <div className="">
                 <p className="smallCaps text-white mb-3">Share your results</p>
                 {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
-
-                {/* todo - change these to use sharingUrl instead of editUrl when the sharing page is implemented */}
                 
-                <FacebookShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareBusiness} className="mx-2">
+                <FacebookShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareBusiness} className="mx-2">
                   <FacebookIcon size={40} round />
                 </FacebookShareButton>
 
-                <TwitterShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} title={editingdata.shareBusiness} className="mx-2">
+                <TwitterShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} title={editingdata.shareBusiness} className="mx-2">
                   <TwitterIcon size={40} round />
                 </TwitterShareButton>
 
-                <LinkedinShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} summary={editingdata.shareBusiness} className="mx-2">
+                <LinkedinShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} summary={editingdata.shareBusiness} className="mx-2">
                   <LinkedinIcon size={40} round />
                 </LinkedinShareButton>
 
-                <EmailShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} body={editingdata.shareBusiness} className="mx-2">
+                <EmailShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} body={editingdata.shareBusiness} className="mx-2">
                   <EmailIcon size={40} round />
                 </EmailShareButton>
               </div>

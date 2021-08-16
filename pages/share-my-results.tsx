@@ -194,30 +194,6 @@ export default function App({ file, href, children}) {
   const heatType = selectHeat;
   const energyType = selectEnergy;
 
-  const changeFam = (event) => {
-    setFam(event.target.value);
-  }
-
-  const changeNum = (event) => {
-    setNum(event.target.value);
-  }
-
-  const changeYear = (event) => {
-    setYear(event.target.value);
-  }
-
-  const changeSize = (event) => {
-    setSize(event.target.value);
-  }
-
-  const changeHeat = (event) => {
-    setHeat(event.target.value);
-  }
-
-  const changeEnergy = (event) => {
-    setEnergy(event.target.value);
-  }
-
   const [getFamTwo, setFamTwo] = React.useState("myself");
   const [selectNumTwo, setNumTwo] = React.useState("");
   const [selectYearTwo, setYearTwo] = React.useState(0);
@@ -230,30 +206,6 @@ export default function App({ file, href, children}) {
   const buildSizeTwo = Number(selectSizeTwo);
   const heatTypeTwo = selectHeatTwo;
   const energyTypeTwo = selectEnergyTwo;
-
-  const changeFamTwo = (event) => {
-    setFamTwo(event.target.value);
-  }
-
-  const changeNumTwo = (event) => {
-    setNumTwo(event.target.value);
-  }
-
-  const changeYearTwo = (event) => {
-    setYearTwo(event.target.value);
-  }
-
-  const changeSizeTwo = (event) => {
-    setSizeTwo(event.target.value);
-  }
-
-  const changeHeatTwo = (event) => {
-    setHeatTwo(event.target.value);
-  }
-
-  const changeEnergyTwo = (event) => {
-    setEnergyTwo(event.target.value);
-  }
 
   const [getFamThree, setFamThree] = React.useState("myself");
   const [selectNumThree, setNumThree] = React.useState("");
@@ -268,30 +220,6 @@ export default function App({ file, href, children}) {
   const heatTypeThree = selectHeatThree;
   const energyTypeThree = selectEnergyThree;
 
-  const changeFamThree = (event) => {
-    setFamThree(event.target.value);
-  }
-
-  const changeNumThree = (event) => {
-    setNumThree(event.target.value);
-  }
-
-  const changeYearThree = (event) => {
-    setYearThree(event.target.value);
-  }
-
-  const changeSizeThree = (event) => {
-    setSizeThree(event.target.value);
-  }
-
-  const changeHeatThree = (event) => {
-    setHeatThree(event.target.value);
-  }
-
-  const changeEnergyThree = (event) => {
-    setEnergyThree(event.target.value);
-  }
-
   const [getFamFour, setFamFour] = React.useState("myself");
   const [selectNumFour, setNumFour] = React.useState("");
   const [selectYearFour, setYearFour] = React.useState(0);
@@ -304,30 +232,6 @@ export default function App({ file, href, children}) {
   const buildSizeFour = Number(selectSizeFour);
   const heatTypeFour = selectHeatFour;
   const energyTypeFour = selectEnergyFour;
-
-  const changeFamFour = (event) => {
-    setFamFour(event.target.value);
-  }
-
-  const changeNumFour = (event) => {
-    setNumFour(event.target.value);
-  }
-
-  const changeYearFour = (event) => {
-    setYearFour(event.target.value);
-  }
-
-  const changeSizeFour= (event) => {
-    setSizeFour(event.target.value);
-  }
-
-  const changeHeatFour = (event) => {
-    setHeatFour(event.target.value);
-  }
-
-  const changeEnergyFour = (event) => {
-    setEnergyFour(event.target.value);
-  }
 
   const [getFamFive, setFamFive] = React.useState("myself");
   const [selectNumFive, setNumFive] = React.useState("");
@@ -342,34 +246,7 @@ export default function App({ file, href, children}) {
   const heatTypeFive = selectHeatFive;
   const energyTypeFive = selectEnergyFive;
 
-  const changeFamFive = (event) => {
-    setFamFive(event.target.value);
-  }
-
-  const changeNumFive = (event) => {
-    setNumFive(event.target.value);
-  }
-
-  const changeYearFive = (event) => {
-    setYearFive(event.target.value);
-  }
-
-  const changeSizeFive= (event) => {
-    setSizeFive(event.target.value);
-  }
-
-  const changeHeatFive = (event) => {
-    setHeatFive(event.target.value);
-  }
-
-  const changeEnergyFive = (event) => {
-    setEnergyFive(event.target.value);
-  }
-
   let subtotalBuild = 0;
-  let subtotalVehicle = 0;
-  let subtotalFlight = 0;
-  let subtotalPublicTransport = 0;
 
   //vehicle multiplier
   const [vehicleSub, setVehicle] = React.useState(0);
@@ -485,89 +362,15 @@ export default function App({ file, href, children}) {
     subtotalBuild += Number((((buildArray[buildSizeFive][heatTypeFive] * energySavingsMult[energyTypeFive])/buildNumFive)+((buildYearFive/12)* 1444)/buildNumFive)/1000);
   }
 
-  /* function to calculate the 'vehicle' section */
-  const calculateVehicle=()=> {
-    subtotalVehicle = 0
-    for (let x of Object.keys(vehicleArray))
-    {
-      let i = 0;
-      i += Number((vehicleArray[x].mult * vehicleArray[x].miles))
-      subtotalVehicle += i
-    }
-    setVehicle(Number(subtotalVehicle)/1000)
-  }
-
-  /* function to calculate the vehicle mileage */
-  const calculateMiles=(e)=>{
-    setVehicleArray({
-      ...vehicleArray,
-      [e.target.name]: {
-        ...vehicleArray[e.target.name],
-        miles: Number(e.target.value)
-      }
-    });
-
-    calculateVehicle();
-  }
-
-  const calculateFlight=()=> {
-    subtotalFlight = 0
-    for (let x of Object.keys(flightArray)) 
-    {
-      let i = 0;
-      i += Number((flightArray[x].count * flightArray[x].mult))
-      subtotalFlight += i
-    }
-    setFlight(Number(subtotalFlight))
-  }
-    
-  const calculateFlightCount=(e)=>{
-    setFlightArray({
-      ...flightArray,
-      [e.target.name]: {
-        ...flightArray[e.target.name],
-        count: Number(e.target.value)
-      }
-    });
-
-    calculateFlight();
-  }
-    
-  const calculatePublicTransport=()=> {
-    subtotalPublicTransport = 0
-    for (let x of Object.keys(publicTransportArray))
-    {
-      let i = 0;
-      if (publicTransportArray[x].count)
-      {
-        i += Number((publicTransportArray[x].count * publicTransportArray[x].mult))
-      }
-      subtotalPublicTransport += i
-    }    
-    setPublicTransport(Number(subtotalPublicTransport))
-  }
-
-  const calculateTransitMiles=(e)=>{
-    setPublicTransportArray({
-      ...publicTransportArray,
-      [e.target.name]: {
-        ...publicTransportArray[e.target.name],
-        count: Number(e.target.value)
-      }
-    });
-
-    calculatePublicTransport();
-  }
+  subtotalBuild = Number(subtotalBuild.toFixed(2));
 
   /* calculate the 'total' here by adding on the other subtotals */
-  const total = vehicleSub + subtotalBuild + (flightSub/1000) + (publicTransportSub/1000);
+  const total = Number((vehicleSub + subtotalBuild + flightSub + publicTransportSub).toFixed(2));
   if (typeof window !== 'undefined') {
     localStorage.setItem('personalfootprint', String(total));
   }
 
-  const editUrlPrefix = '/personal-calculator?session=';
   const sharingUrlPrefix = '/personal-calculator-share?session=';
-  const [editUrl, setEditUrl] = React.useState('/personal-calculator');
   const [sharingUrl, setSharingUrl] = React.useState('/share-my-results');
 
   const router = useRouter();
@@ -578,7 +381,6 @@ export default function App({ file, href, children}) {
         sessionID = router.query.session;
       }
       
-      setEditUrl(editUrlPrefix + sessionID);
       setSharingUrl(sharingUrlPrefix + sessionID);
   
       try {
@@ -741,107 +543,6 @@ export default function App({ file, href, children}) {
       }
     }
   }, [router.query]);
-
-  const saveSession = async (successCallback: () => void, failureCallback: (error) => void) => {
-    const body = {
-      sessionID: sessionID,
-      type: 'personal-calculator',
-      data: {
-        getFam,
-        selectSize,
-        selectNum,
-        selectYear,
-        selectHeat,
-        selectEnergy,
-        getFamTwo,
-        selectNumTwo,
-        selectYearTwo,
-        selectSizeTwo,
-        selectHeatTwo,
-        selectEnergyTwo,
-        getFamThree,
-        selectNumThree,
-        selectYearThree,
-        selectSizeThree,
-        selectHeatThree,
-        selectEnergyThree,
-        getFamFour,
-        selectNumFour,
-        selectYearFour,
-        selectSizeFour,
-        selectHeatFour,
-        selectEnergyFour,
-        getFamFive,
-        selectNumFive,
-        selectYearFive,
-        selectSizeFive,
-        selectHeatFive,
-        selectEnergyFive,
-        vehicleArray,
-        publicTransportArray,
-        flightArray,
-        vehicleSub,
-        publicTransportSub,
-        flightSub
-      }
-    };
-
-    try {
-      const res = await fetch('/api/calc', {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
-      });
-
-      if (res.status === 200) {
-        successCallback();
-      }
-      else {
-        const error_message = await res.text();
-        failureCallback(error_message);
-      }
-    }
-    catch (error) {
-      failureCallback('An unknown error has occurred while saving calculator session.');
-    }
-  };
-
-  const [editUrlError, setEditUrlError] = React.useState("");
-  const editUrlClick = (e) => {
-    e.preventDefault();
-
-    saveSession(() => {
-      setEditUrlError("");
-      router.push(e.target.getAttribute('href'));
-    }, (error) => {
-      setEditUrlError(error);
-    });
-  };
-
-  const [shareError, setShareError] = React.useState("");
-  const shareBeforeClick = () => {
-    return new Promise<void>((resolve, reject) => {
-      saveSession(() => {
-        setShareError("");
-        resolve();
-      }, (error) => {
-        setShareError(error);
-        reject(error);
-      });
-    })
-  };
-
-  const [nextStepError, setNextStepError] = React.useState("");
-  const nextStepClick = (e) => {
-    e.preventDefault();
-
-    saveSession(() => {
-      setNextStepError("");
-      router.push("/smart-forest-personal");
-    }, (error) => {
-      setNextStepError(error);
-    });
-  };
   
   return (
     <div className="bg-legacy">
@@ -1462,23 +1163,23 @@ export default function App({ file, href, children}) {
               <h4 className="mb-0">{editingdata.dataHeader}</h4>
               <hr/>
               <Row>
-                <Col>{editingdata.dataType1}</Col><Col className="text-right bold">{subtotalBuild > 0 ? subtotalBuild.toFixed(2) : "--"}</Col>
+                <Col>{editingdata.dataType1}</Col><Col className="text-right bold">{subtotalBuild > 0 ? subtotalBuild : "--"}</Col>
               </Row>
               <hr/>
               <Row>
-                <Col>{editingdata.dataType2}</Col><Col className="text-right bold">{vehicleSub > 0 ? vehicleSub.toFixed(2) : "--"}</Col>
+                <Col>{editingdata.dataType2}</Col><Col className="text-right bold">{vehicleSub > 0 ? vehicleSub : "--"}</Col>
               </Row>
               <hr/>
               <Row>
-                <Col>{editingdata.dataType3}</Col><Col className="text-right bold">{flightSub > 0 ? (flightSub/1000).toFixed(2) : "--"}</Col>
+                <Col>{editingdata.dataType3}</Col><Col className="text-right bold">{flightSub > 0 ? flightSub : "--"}</Col>
               </Row>
               <hr/>
               <Row>
-                <Col>{editingdata.dataType4}</Col><Col className="text-right bold">{publicTransportSub > 0 ? (publicTransportSub/1000).toFixed(2) : "--"}</Col>
+                <Col>{editingdata.dataType4}</Col><Col className="text-right bold">{publicTransportSub > 0 ? publicTransportSub : "--"}</Col>
               </Row>
               <hr/>
               <span className="smallCaps text-small">{editingdata.dataTotal}</span><br/>
-              <span className="h2 bold">{total > 0 ? total.toFixed(2) : "--"}</span>
+              <span className="h2 bold">{total > 0 ? total : "--"}</span>
               <p>{total > 0 ? "(Metric Tonnes of CO2 per Year)" : ""}</p>
               <p className="text-small">{editingdata.dataDisclaimer}</p>
 
@@ -1488,23 +1189,20 @@ export default function App({ file, href, children}) {
               <Col>
               <div className="mt-3">
                 <p className="smallCaps text-white mb-3">Share these results</p>
-                {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
-
-                {/* todo - change these to use sharingUrl instead of editUrl when the sharing page is implemented */}
                 
-                <FacebookShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareBusiness} className="mx-2">
+                <FacebookShareButton url={hostname + sharingUrl} quote={editingdata.shareBusiness} className="mx-2">
                   <FacebookIcon size={40} round />
                 </FacebookShareButton>
 
-                <TwitterShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} title={editingdata.shareBusiness} className="mx-2">
+                <TwitterShareButton url={hostname + sharingUrl} title={editingdata.shareBusiness} className="mx-2">
                   <TwitterIcon size={40} round />
                 </TwitterShareButton>
 
-                <LinkedinShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} summary={editingdata.shareBusiness} className="mx-2">
+                <LinkedinShareButton url={hostname + sharingUrl} summary={editingdata.shareBusiness} className="mx-2">
                   <LinkedinIcon size={40} round />
                 </LinkedinShareButton>
 
-                <EmailShareButton url={hostname + editUrl} beforeOnClick={shareBeforeClick} body={editingdata.shareBusiness} className="mx-2">
+                <EmailShareButton url={hostname + sharingUrl} body={editingdata.shareBusiness} className="mx-2">
                   <EmailIcon size={40} round />
                 </EmailShareButton>
               </div>
@@ -1514,19 +1212,6 @@ export default function App({ file, href, children}) {
             </div>
           </Col>
         </Row>  
-
-      
-        <Row className="justify-content-center d-none">
-          <Col className="col-11 col-lg-10 align-items-center text-center p-3">
-            <div className="bg-brown p-4 innerShadow roundedBox">
-              
-
-              <p className="smallCaps text-orange mb-3">{editingdata.box1Header}</p>
-              {nextStepError ? <p style={{color: 'red' }}>{nextStepError}</p> : null}
-              <Button className="btn-large mt-1" variant="green" onClick={nextStepClick}>{editingdata.box1Button}</Button>
-            </div>
-          </Col>
-        </Row>
         
         <Row className="justify-content-center mt-5">
           <Col className="col-11 col-lg-10 pt-5">

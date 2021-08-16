@@ -2,7 +2,6 @@ import * as React from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
 import Link from 'next/link'
 import { useRouter } from "next/router";
 import { GetStaticProps } from "next";
@@ -178,10 +177,6 @@ export default function BusinessCalc({ file, href, children}) {
 
   const [business, setBusiness] = React.useState("");
 
-  const changeBusiness = (event) => {
-    setBusiness(event.target.value);
-  };
-
   const [selectBuild, setBuild] = React.useState("");
   const [selectSize, setSize] = React.useState("");
   const [selectNum, setNum] = React.useState("");
@@ -189,18 +184,6 @@ export default function BusinessCalc({ file, href, children}) {
   const buildType = selectBuild;
   const buildSize = Number(selectSize);
   const buildNum = Number(selectNum);
-
-  const changeBuild = (event) => {
-    setBuild(event.target.value);
-  };
-
-  const changeSize = (event) => {
-    setSize(event.target.value);
-  };
-
-  const changeNum = (event) => {
-    setNum(event.target.value);
-  };
 
   const [selectBuildTwo, setBuildTwo] = React.useState("");
   const [selectSizeTwo, setSizeTwo] = React.useState("");
@@ -210,18 +193,6 @@ export default function BusinessCalc({ file, href, children}) {
   const buildSizeTwo = Number(selectSizeTwo);
   const buildNumTwo = Number(selectNumTwo);
 
-  const changeBuildTwo = (event) => {
-    setBuildTwo(event.target.value);
-  };
-
-  const changeSizeTwo = (event) => {
-    setSizeTwo(event.target.value);
-  };
-
-  const changeNumTwo = (event) => {
-    setNumTwo(event.target.value);
-  };
-
   const [selectBuildThree, setBuildThree] = React.useState("");
   const [selectSizeThree, setSizeThree] = React.useState("");
   const [selectNumThree, setNumThree] = React.useState("");
@@ -229,18 +200,6 @@ export default function BusinessCalc({ file, href, children}) {
   const buildTypeThree = selectBuildThree;
   const buildSizeThree = Number(selectSizeThree);
   const buildNumThree = Number(selectNumThree);
-
-  const changeBuildThree = (event) => {
-    setBuildThree(event.target.value);
-  };
-
-  const changeSizeThree = (event) => {
-    setSizeThree(event.target.value);
-  };
-
-  const changeNumThree = (event) => {
-    setNumThree(event.target.value);
-  };
 
   const [selectBuildFour, setBuildFour] = React.useState("");
   const [selectSizeFour, setSizeFour] = React.useState("");
@@ -250,18 +209,6 @@ export default function BusinessCalc({ file, href, children}) {
   const buildSizeFour = Number(selectSizeFour);
   const buildNumFour = Number(selectNumFour);
 
-  const changeBuildFour = (event) => {
-    setBuildFour(event.target.value);
-  };
-
-  const changeSizeFour = (event) => {
-    setSizeFour(event.target.value);
-  };
-
-  const changeNumFour = (event) => {
-    setNumFour(event.target.value);
-  };
-
   const [selectBuildFive, setBuildFive] = React.useState("");
   const [selectSizeFive, setSizeFive] = React.useState("");
   const [selectNumFive, setNumFive] = React.useState("");
@@ -269,18 +216,6 @@ export default function BusinessCalc({ file, href, children}) {
   const buildTypeFive = selectBuildFive;
   const buildSizeFive = Number(selectSizeFive);
   const buildNumFive = Number(selectNumFive);
-
-  const changeBuildFive = (event) => {
-    setBuildFive(event.target.value);
-  };
-
-  const changeSizeFive = (event) => {
-    setSizeFive(event.target.value);
-  };
-
-  const changeNumFive = (event) => {
-    setNumFive(event.target.value);
-  };
 
   let subtotalBuild = 0;
   let subtotalVehicle = 0;
@@ -409,26 +344,6 @@ export default function BusinessCalc({ file, href, children}) {
     setVehicle(Number(subtotalVehicle.toFixed(2)))
   }
 
-  const calculateCount=(e)=>{
-    setVehicleArray({
-      ...vehicleArray,
-      [e.target.name]: {
-        ...vehicleArray[e.target.name],
-        count: e.target.value
-      }
-    });
-  }
-
-  const calculateMiles=(e)=>{
-    setVehicleArray({
-      ...vehicleArray,
-      [e.target.name]: {
-        ...vehicleArray[e.target.name],
-        miles: e.target.value
-      }
-    });
-  }
-
   const calculateTransit=()=> {
     subtotalTransit = 0
     for (let x of Object.keys(transitArray)) {
@@ -442,26 +357,6 @@ export default function BusinessCalc({ file, href, children}) {
       subtotalTransit += i
     }
     setTransit(Number(subtotalTransit.toFixed(2)))
-  }
-
-  const calculateTransitCount=(e)=>{
-    setTransitArray({
-      ...transitArray,
-      [e.target.name]: {
-        ...transitArray[e.target.name],
-        count: e.target.value
-      }
-    });
-  }
-
-  const calculateTransitMiles=(e)=>{
-    setTransitArray({
-      ...transitArray,
-      [e.target.name]: {
-        ...transitArray[e.target.name],
-        miles: e.target.value
-      }
-    });
   }
 
   const calculateFlight=()=> {
@@ -478,20 +373,6 @@ export default function BusinessCalc({ file, href, children}) {
       subtotalFlight += i
     }
     setFlight(Number(subtotalFlight.toFixed(2)));
-  }
-
-  const calculateFlightCount=(e)=>{
-    setFlightArray({
-      ...flightArray,
-      [e.target.name]: {
-        ...flightArray[e.target.name],
-        count: e.target.value
-      }
-    });
-  }
-
-  const calculateEmp=(e)=>{
-    setEmp(e.target.value);
   }
 
   const calculateFreight=()=> {
@@ -511,34 +392,12 @@ export default function BusinessCalc({ file, href, children}) {
     setFreight(Number(subtotalFreight.toFixed(2)))
   }
 
-  const calculateFreightNum=(e)=>{
-    setFreightArray({
-      ...freightArray,
-      [e.target.name]: {
-        ...freightArray[e.target.name],
-        count: e.target.value
-      }
-    });
-  }
-    
-  const calculateFreightMiles=(e)=>{
-    setFreightArray({
-      ...freightArray,
-      [e.target.name]: {
-        ...freightArray[e.target.name],
-        miles: e.target.value
-      }
-    });
-  }
-
   const total = Number((vehicleSub + subtotalBuild + transitSub + flightSub + freightSub).toFixed(2));
   if (typeof window !== 'undefined') {
     localStorage.setItem('businessfootprint', String(total));
   }
 
-  const editUrlPrefix = '/business-calculator?session=';
   const sharingUrlPrefix = '/business-calculator-share?session=';
-  const [editUrl, setEditUrl] = React.useState('/business-calculator');
   const [sharingUrl, setSharingUrl] = React.useState('/share-corp-results');
 
   const router = useRouter();
@@ -548,8 +407,7 @@ export default function BusinessCalc({ file, href, children}) {
       if (router.query.session) {
         sessionID = router.query.session;
       }
-      
-      setEditUrl(editUrlPrefix + sessionID);
+
       setSharingUrl(sharingUrlPrefix + sessionID);
   
       try {
@@ -668,96 +526,6 @@ export default function BusinessCalc({ file, href, children}) {
       }
     }
   }, [router.query]);
-
-  const saveSession = async (successCallback: () => void, failureCallback: (error) => void) => {
-    const body = {
-      sessionID: sessionID,
-      type: 'business-calculator',
-      data: {
-        business,
-        selectBuild,
-        selectSize,
-        selectNum,
-        selectBuildTwo,
-        selectSizeTwo,
-        selectNumTwo,
-        selectBuildThree,
-        selectSizeThree,
-        selectNumThree,
-        selectBuildFour,
-        selectSizeFour,
-        selectNumFour,
-        selectBuildFive,
-        selectSizeFive,
-        selectNumFive,
-        vehicleArray,
-        transitArray,
-        flightArray,
-        freightArray,
-        vehicleSub,
-        transitSub,
-        flightEmp,
-        flightSub,
-        freightSub
-      }
-    };
-
-    try {
-      const res = await fetch('/api/calc', {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
-      });
-
-      if (res.status === 200) {
-        successCallback();
-      }
-      else {
-        const error_message = await res.text();
-        failureCallback(error_message);
-      }
-    }
-    catch (error) {
-      failureCallback('An unknown error has occurred while saving calculator session.');
-    }
-  };
-
-  const [editUrlError, setEditUrlError] = React.useState("");
-  const editUrlClick = (e) => {
-    e.preventDefault();
-
-    saveSession(() => {
-      setEditUrlError("");
-      router.push(e.target.getAttribute('href'));
-    }, (error) => {
-      setEditUrlError(error);
-    });
-  };
-
-  const [shareError, setShareError] = React.useState("");
-  const shareBeforeClick = () => {
-    return new Promise<void>((resolve, reject) => {
-      saveSession(() => {
-        setShareError("");
-        resolve();
-      }, (error) => {
-        setShareError(error);
-        reject(error);
-      });
-    })
-  };
-
-  const [nextStepError, setNextStepError] = React.useState("");
-  const nextStepClick = (e) => {
-    e.preventDefault();
-
-    saveSession(() => {
-      setNextStepError("");
-      router.push("/smart-forest-corp");
-    }, (error) => {
-      setNextStepError(error);
-    });
-  };
 
   return (
     <div className="bg-corp">
@@ -1493,23 +1261,20 @@ export default function BusinessCalc({ file, href, children}) {
 <Col>
 <div className="mt-3">
                 <p className="smallCaps text-center text-white mb-3">Share These Results</p>
-                {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
-
-                {/* todo - change these to use sharingUrl instead of editUrl when the sharing page is implemented */}
                 
-                <FacebookShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareQuote} className="mx-2">
+                <FacebookShareButton url={hostname + sharingUrl} quote={editingdata.shareQuote} className="mx-2">
                   <FacebookIcon size={40} round />
                 </FacebookShareButton>
 
-                <TwitterShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} title={editingdata.shareQuote} className="mx-2">
+                <TwitterShareButton url={hostname + sharingUrl} title={editingdata.shareQuote} className="mx-2">
                   <TwitterIcon size={40} round />
                 </TwitterShareButton>
 
-                <LinkedinShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} summary={editingdata.shareQuote} className="mx-2">
+                <LinkedinShareButton url={hostname + sharingUrl} summary={editingdata.shareQuote} className="mx-2">
                   <LinkedinIcon size={40} round />
                 </LinkedinShareButton>
 
-                <EmailShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} body={editingdata.shareQuote} className="mx-2">
+                <EmailShareButton url={hostname + sharingUrl} body={editingdata.shareQuote} className="mx-2">
                   <EmailIcon size={40} round />
                 </EmailShareButton>
               </div>
@@ -1521,9 +1286,6 @@ export default function BusinessCalc({ file, href, children}) {
 
           </Col>
         </Row>
-
-
-
         
         <Row className="justify-content-center mt-5">
           <Col className="col-11 col-lg-10 pt-5">

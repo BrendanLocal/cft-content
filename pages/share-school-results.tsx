@@ -2,7 +2,6 @@ import * as React from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
 import Link from 'next/link'
 import { useRouter } from "next/router";
 import { GetStaticProps } from "next";
@@ -62,17 +61,9 @@ export default function App({ file, href, children}) {
 
   const schoolSize = Number(selectSize);
 
-  const changeSize = (event) => {
-    setSize(event.target.value);
-  };
-
   const [selectNumTwo, setNumTwo] = React.useState("");
 
   const schoolNumTwo = Number(selectNumTwo);
-
-  const changeNumTwo = (event) => {
-    setNumTwo(event.target.value);
-  };
 
   const [selectTypeThree, setTypeThree] = React.useState("");
   const [selectSizeThree, setSizeThree] = React.useState("");
@@ -82,18 +73,6 @@ export default function App({ file, href, children}) {
   const schoolTypeThree = selectTypeThree;
   const schoolNumThree = Number(selectNumThree);
 
-  const changeTypeThree = (event) => {
-    setTypeThree(event.target.value);
-  };
-
-  const changeSizeThree = (event) => {
-    setSizeThree(event.target.value);
-  };
-
-  const changeNumThree = (event) => {
-    setNumThree(event.target.value);
-  };
-
   const [selectTypeFour, setTypeFour] = React.useState("");
   const [selectSizeFour, setSizeFour] = React.useState("");
   const [selectNumFour, setNumFour] = React.useState("");
@@ -101,18 +80,6 @@ export default function App({ file, href, children}) {
   const schoolSizeFour = Number(selectSizeFour);
   const schoolTypeFour = selectTypeFour;
   const schoolNumFour = Number(selectNumFour);
-
-  const changeTypeFour = (event) => {
-    setTypeFour(event.target.value);
-  };
-
-  const changeSizeFour = (event) => {
-    setSizeFour(event.target.value);
-  };
-
-  const changeNumFour = (event) => {
-    setNumFour(event.target.value);
-  };
 
   const [selectTypeFive, setTypeFive] = React.useState("");
   const [selectSizeFive, setSizeFive] = React.useState("");
@@ -122,18 +89,6 @@ export default function App({ file, href, children}) {
   const schoolTypeFive = selectTypeFive;
   const schoolNumFive = Number(selectNumFive);
 
-  const changeTypeFive = (event) => {
-    setTypeFive(event.target.value);
-  };
-
-  const changeSizeFive = (event) => {
-    setSizeFive(event.target.value);
-  };
-
-  const changeNumFive = (event) => {
-    setNumFive(event.target.value);
-  };
-
   const [selectTypeSix, setTypeSix] = React.useState("");
   const [selectSizeSix, setSizeSix] = React.useState("");
   const [selectNumSix, setNumSix] = React.useState("");
@@ -142,22 +97,9 @@ export default function App({ file, href, children}) {
   const schoolTypeSix = selectTypeSix;
   const schoolNumSix = Number(selectNumSix);
 
-  const changeTypeSix = (event) => {
-    setTypeSix(event.target.value);
-  };
-
-  const changeSizeSix = (event) => {
-    setSizeSix(event.target.value);
-  };
-
-  const changeNumSix = (event) => {
-    setNumSix(event.target.value);
-  };
-
   let subtotalBuild = 0; 
   let subtotalTransit = 0;
   let studentCommuteSubtotal = 0;
-  let subtotalOtherVehicle = 0;
   let subtotalVehicle = 0;
   let subtotalFlight = 0;
 
@@ -191,30 +133,22 @@ export default function App({ file, href, children}) {
   //vehicle multiplier
   const [vehicleSub, setVehicle] = React.useState(0);
   const [vehicleArray, setVehicleArray] = React.useState({
+    busGas: {mult:1.22885, miles: ''},
+    busDiesel: {mult:0.74350344, miles: ''},
+    busPropane: {mult:0.897182946, miles: ''},
     carGas: {mult:1.22885, miles: ''},
     carDiesel: {mult:0.74350344, miles: ''},
     carPropane: {mult:0.897182946, miles: ''},
     carHybrid: { mult: 0.10487, count: '', miles: '' },
     carPlug: { mult: 0.02935, count: '', miles: '' },
     carElectric: { mult: 0.000001, count: '', miles: '' },
-    trainMiles: {mult:0.06214, miles: ''}
+    train: {mult:0.06214, miles: ''},
+    van: {mult:0.14853, miles: ''}
   });
 
   useEffect(() => {
     calculateVehicle();
   }, [vehicleArray]);
-
-  //other vehicle multiplier
-  const [otherVehicleSub, setOtherVehicle] = React.useState(0);
-  const [otherVehicleArray, setOtherVehicleArray] = React.useState({
-    van: {mult:0.14853, miles: ''},
-    car: {mult:0.1743, miles: ''},
-    bus: {mult:1.22885, miles: ''}
-  });
-
-  useEffect(() => {
-    calculateOtherVehicle();
-  }, [otherVehicleArray]);
 
   //flight multiplier
   const [flightSub, setFlight] = React.useState(0);
@@ -301,16 +235,6 @@ export default function App({ file, href, children}) {
     setVehicle(Number(subtotalVehicle.toFixed(2)))
   };
 
-  const calculateMiles=(e)=>{
-    setVehicleArray({
-      ...vehicleArray,
-      [e.target.name]: {
-        ...vehicleArray[e.target.name],
-        miles: e.target.value
-      }
-    });
-  };
-
   const calculateFlight=()=> {
     subtotalFlight = 0
     for (let x of Object.keys(flightArray))
@@ -325,41 +249,6 @@ export default function App({ file, href, children}) {
       subtotalFlight += i
     }
     setFlight(Number(subtotalFlight.toFixed(2)))
-  };
-    
-  const calculateFlightCount=(e)=>{
-    setFlightArray({
-      ...flightArray,
-      [e.target.name]: {
-        ...flightArray[e.target.name],
-        count: e.target.value
-      }
-    });
-  };
-    
-  const calculateOtherVehicle=()=> {
-    subtotalOtherVehicle = 0
-    for (let x of Object.keys(otherVehicleArray)) 
-    {
-      let i = 0;
-      const miles = Number(otherVehicleArray[x].miles);
-
-      if (miles) {
-        i += Number((otherVehicleArray[x].mult * miles))/1000;
-      }
-      subtotalOtherVehicle += i
-    }    
-    setOtherVehicle(Number(subtotalOtherVehicle.toFixed(2)))
-  };
-
-  const calculateOtherTransitMiles=(e)=>{
-    setOtherVehicleArray({
-      ...otherVehicleArray,
-      [e.target.name]: {
-        ...otherVehicleArray[e.target.name],
-        miles: e.target.value
-      }
-    });
   };
 
   const calculateTransit=()=> {
@@ -378,26 +267,6 @@ export default function App({ file, href, children}) {
     setTransit(Number(subtotalTransit.toFixed(2)))
   };
 
-  const calculateTransitMiles=(e)=>{
-    setTransitArray({
-      ...transitArray,
-      [e.target.name]: {
-        ...transitArray[e.target.name],
-        miles: e.target.value
-      }
-    });
-  };
-
-  const calculateTransitCount=(e)=>{
-    setTransitArray({
-      ...transitArray,
-      [e.target.name]: {
-        ...transitArray[e.target.name],
-        count: e.target.value
-      }
-    });
-  };
-
   const calculateStudentCommuteTransit=()=> {
     studentCommuteSubtotal = 0
     for (let x of Object.keys(studentCommuteArray)) 
@@ -414,37 +283,13 @@ export default function App({ file, href, children}) {
     setStudentCommute(Number(studentCommuteSubtotal.toFixed(2)))
   };
 
-  const calculateStudentCommuteCount=(e)=>{
-    setstudentCommuteArray({
-      ...studentCommuteArray,
-      [e.target.name]: {
-        ...studentCommuteArray[e.target.name],
-        count: e.target.value
-      }
-    });
-  };
-
-  const calculateStudentCommuteMiles=(e)=>{
-    setstudentCommuteArray({
-      ...studentCommuteArray,
-      [e.target.name]: {
-        ...studentCommuteArray[e.target.name],
-        miles: e.target.value
-      }
-    });
-  };
-
   /* calculate the 'total' here by adding on the other subtotals */
-  const total = Number((vehicleSub + subtotalBuild + flightSub + transitSub + studentCommute + otherVehicleSub).toFixed(2));
-
-  const otherTransportTotal = Number((vehicleSub + otherVehicleSub).toFixed(2));
+  const total = Number((vehicleSub + subtotalBuild + flightSub + transitSub + studentCommute).toFixed(2));
   if (typeof window !== 'undefined') {
     localStorage.setItem('schoolfootprint', String(total));
   }
 
-  const editUrlPrefix = '/school-calculator?session=';
-  const sharingUrlPrefix = '/school-calculator-share?session=';
-  const [editUrl, setEditUrl] = React.useState('/school-calculator');
+  const sharingUrlPrefix = '/share-school-results?session=';
   const [sharingUrl, setSharingUrl] = React.useState('/share-school-results');
 
   const router = useRouter();
@@ -455,7 +300,6 @@ export default function App({ file, href, children}) {
         sessionID = router.query.session;
       }
       
-      setEditUrl(editUrlPrefix + sessionID);
       setSharingUrl(sharingUrlPrefix + sessionID);
   
       try {
@@ -532,10 +376,6 @@ export default function App({ file, href, children}) {
               setVehicleArray(sessionCalcData.vehicleArray);
             }
 
-            if (sessionCalcData.otherVehicleArray !== undefined) {
-              setOtherVehicleArray(sessionCalcData.otherVehicleArray);
-            }
-
             if (sessionCalcData.flightArray !== undefined) {
               setFlightArray(sessionCalcData.flightArray);
             }
@@ -552,10 +392,6 @@ export default function App({ file, href, children}) {
               setVehicle(sessionCalcData.vehicleSub);
             }
 
-            if (sessionCalcData.otherVehicleSub !== undefined) {
-              setOtherVehicle(sessionCalcData.otherVehicleSub);
-            }
-
             if (sessionCalcData.flightSub !== undefined) {
               setFlight(sessionCalcData.flightSub);
             }
@@ -570,95 +406,6 @@ export default function App({ file, href, children}) {
       }
     }
   }, [router.query]);
-
-  const saveSession = async (successCallback: () => void, failureCallback: (error) => void) => {
-    const body = {
-      sessionID: sessionID,
-      type: 'school-calculator',
-      data: {
-        selectSize,
-        selectNumTwo,
-        selectSizeThree,
-        selectTypeThree,
-        selectNumThree,
-        selectSizeFour,
-        selectTypeFour,
-        selectNumFour,
-        selectSizeFive,
-        selectTypeFive,
-        selectNumFive,
-        selectSizeSix,
-        selectTypeSix,
-        selectNumSix,
-        transitArray,
-        studentCommuteArray,
-        vehicleArray,
-        otherVehicleArray,
-        flightArray,
-        transitSub,
-        studentCommute,
-        vehicleSub,
-        otherVehicleSub,
-        flightSub
-      }
-    };
-
-    try {
-      const res = await fetch('/api/calc', {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
-      });
-
-      if (res.status === 200) {
-        successCallback();
-      }
-      else {
-        const error_message = await res.text();
-        failureCallback(error_message);
-      }
-    }
-    catch (error) {
-      failureCallback('An unknown error has occurred while saving calculator session.');
-    }
-  };
-
-  const [editUrlError, setEditUrlError] = React.useState("");
-  const editUrlClick = (e) => {
-    e.preventDefault();
-
-    saveSession(() => {
-      setEditUrlError("");
-      router.push(e.target.getAttribute('href'));
-    }, (error) => {
-      setEditUrlError(error);
-    });
-  };
-
-  const [shareError, setShareError] = React.useState("");
-  const shareBeforeClick = () => {
-    return new Promise<void>((resolve, reject) => {
-      saveSession(() => {
-        setShareError("");
-        resolve();
-      }, (error) => {
-        setShareError(error);
-        reject(error);
-      });
-    })
-  };
-
-  const [nextStepError, setNextStepError] = React.useState("");
-  const nextStepClick = (e) => {
-    e.preventDefault();
-
-    saveSession(() => {
-      setNextStepError("");
-      router.push("/smart-forest-school");
-    }, (error) => {
-      setNextStepError(error);
-    });
-  };
 
   return (
     <div className="bg-school">
@@ -1005,21 +752,21 @@ export default function App({ file, href, children}) {
                       <Row>
                         <Col className="col-12 col-xl-4 col-sm-6">{editingdata.otherTransportGas}</Col>
                           <Col className="col-12 col-xl-8 col-sm-6">
-                          <p>{vehicleArray.carGas.miles}</p>
+                          <p>{vehicleArray.busGas.miles}</p>
                           <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
                           </Col>
                       </Row>
                       <Row>
                       <Col  className="col-10 col-xl-4 col-sm-6">{editingdata.otherTransportDiesel}</Col>
                       <Col className="col-12 col-xl-8 col-sm-6">
-                       <p>{vehicleArray.carDiesel.miles}</p>
+                       <p>{vehicleArray.busDiesel.miles}</p>
                        <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
                       </Col>
                     </Row>
                     <Row>
                       <Col className="col-10 col-xl-4 col-sm-6">{editingdata.otherTransportPropane}</Col>
                       <Col className="col-12 col-xl-8 col-sm-6">
-                        <p>{vehicleArray.carPropane.miles}</p>
+                        <p>{vehicleArray.busPropane.miles}</p>
                         <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
                       </Col>
                     </Row>
@@ -1030,7 +777,7 @@ export default function App({ file, href, children}) {
                   <Row>
                     <Col className="col-10 col-xl-4 col-sm-6 bold ">Train/Subway</Col>
                     <Col className="col-12 col-xl-8 col-sm-6">
-                      <p>{vehicleArray.trainMiles.miles}</p>
+                      <p>{vehicleArray.train.miles}</p>
                       <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
                     </Col>
                   </Row>
@@ -1038,7 +785,7 @@ export default function App({ file, href, children}) {
                   <Row>
                     <Col className="col-12 col-xl-4 col-sm-6 bold">{editingdata.otherVehicleVan}</Col>
                     <Col className="col-12 col-xl-8 col-sm-6">
-                      <p>{otherVehicleArray.van.miles}</p>
+                      <p>{vehicleArray.van.miles}</p>
                       <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
                     </Col>
                   </Row>
@@ -1179,9 +926,7 @@ export default function App({ file, href, children}) {
               <hr/>
               <Row><Col>{editingdata.dataType3}</Col><Col className="text-right bold">{studentCommute > 0 ? studentCommute : "--"}</Col></Row>
               <hr/>
-              <Row><Col>{editingdata.dataType4}</Col><Col className="text-right bold">{otherTransportTotal > 0 ? otherTransportTotal : "--"}</Col></Row>
-              <hr/>
-              <Row><Col>{editingdata.dataType5}</Col><Col className="text-right bold">{otherVehicleSub > 0 ? otherVehicleSub : "--"}</Col></Row>
+              <Row><Col>{editingdata.dataType4}</Col><Col className="text-right bold">{vehicleSub > 0 ? vehicleSub : "--"}</Col></Row>
               <hr/>
               <Row><Col>{editingdata.dataType6}</Col><Col className="text-right bold">{flightSub > 0 ? flightSub : "--"}</Col></Row>
               <hr/>
@@ -1196,23 +941,20 @@ export default function App({ file, href, children}) {
 <Col>
 <div className="mt-3">
                 <p className="smallCaps text-white mb-3">Share these results</p>
-                {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
-
-                {/* todo - change these to use sharingUrl instead of editUrl when the sharing page is implemented */}
                 
-                <FacebookShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareBusiness} className="mx-2">
+                <FacebookShareButton url={hostname + sharingUrl} quote={editingdata.shareBusiness} className="mx-2">
                   <FacebookIcon size={40} round />
                 </FacebookShareButton>
 
-                <TwitterShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} title={editingdata.shareBusiness} className="mx-2">
+                <TwitterShareButton url={hostname + sharingUrl} title={editingdata.shareBusiness} className="mx-2">
                   <TwitterIcon size={40} round />
                 </TwitterShareButton>
 
-                <LinkedinShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} summary={editingdata.shareBusiness} className="mx-2">
+                <LinkedinShareButton url={hostname + sharingUrl} summary={editingdata.shareBusiness} className="mx-2">
                   <LinkedinIcon size={40} round />
                 </LinkedinShareButton>
 
-                <EmailShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} body={editingdata.shareBusiness} className="mx-2">
+                <EmailShareButton url={hostname + sharingUrl} body={editingdata.shareBusiness} className="mx-2">
                   <EmailIcon size={40} round />
                 </EmailShareButton>
               </div>

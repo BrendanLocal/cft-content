@@ -537,7 +537,7 @@ export default function BusinessCalc({ file, href, children}) {
   }
 
   const editUrlPrefix = '/business-calculator?session=';
-  const sharingUrlPrefix = '/business-calculator-share?session=';
+  const sharingUrlPrefix = '/share-corp-results?session=';
   const [editUrl, setEditUrl] = React.useState('/business-calculator');
   const [sharingUrl, setSharingUrl] = React.useState('/share-corp-results');
 
@@ -1686,8 +1686,6 @@ export default function BusinessCalc({ file, href, children}) {
               <div className="">
                 <p className="smallCaps text-center text-white mb-3">Share Your Results</p>
                 {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
-
-                {/* todo - change these to use sharingUrl instead of editUrl when the sharing page is implemented */}
                 
                 <FacebookShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareQuote} className="mx-2">
                   <FacebookIcon size={40} round />
