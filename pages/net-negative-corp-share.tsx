@@ -248,7 +248,7 @@ export default function App({ file, href, children}) {
 <div className="mt-3">
                 <p className="smallCaps text-white mb-3">Share these results</p>
                 
-                <FacebookShareButton url={hostname + sharingUrl} quote={editingdata.shareFacebook} hashtag={shareFacebookTags} className="mx-2">
+                <FacebookShareButton url={hostname + sharingUrl} quote={editingdata.shareFacebook}hashtag={editingdata.shareFacebookTags}className="mx-2">
                   <FacebookIcon size={40} round />
                 </FacebookShareButton>
 

@@ -1867,7 +1867,7 @@ export default function App({ file, href, children}) {
                 <p className="smallCaps text-white mb-3">Share your results</p>
                 {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
                 
-                <FacebookShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareFacebook} hashtag={shareFacebookTags} className="mx-2">
+                <FacebookShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareFacebook}hashtag={editingdata.shareFacebookTags}className="mx-2">
                   <FacebookIcon size={40} round />
                 </FacebookShareButton>
 

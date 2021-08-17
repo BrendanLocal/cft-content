@@ -367,7 +367,7 @@ export default function App({ file, href, children}) {
 
                 {/* todo - change these to use sharingUrl instead of editUrl when the sharing page is implemented */}
                 
-                <FacebookShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareFacebook} hashtag={shareFacebookTags} className="mx-2">
+                <FacebookShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareFacebook}hashtag={editingdata.shareFacebookTags}className="mx-2">
                   <FacebookIcon size={40} round />
                 </FacebookShareButton>
 
