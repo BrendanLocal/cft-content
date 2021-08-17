@@ -393,7 +393,7 @@ export default function App({ file, href, children}) {
         <Row className="justify-content-center">
           <Col className="col-11 col-lg-10 align-items-center text-center p-3">
             <div className="bg-brown p-4 innerShadow roundedBox">
-              <p className="smallCaps text-orange mb-3">{editingdata.nextHeader}</p>
+              <p className="smallCaps text-white mb-3">{editingdata.nextHeader}</p>
               {nextStepError ? <p style={{color: 'red' }}>{nextStepError}</p> : null}
               <Button className="btn-large mt-1" variant="green" onClick={nextStepClick}>{editingdata.nextButton}</Button>
             </div>
