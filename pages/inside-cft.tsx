@@ -559,7 +559,7 @@ export default function Power({ file }) {
                 </Col>
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  No. We believe that the private sector has a responsibility to play in fighting climate change.
+                  Our choice to be a for profit at this point in our journey allows us the flexibility to enter into partnerships and make investments which we may not be able to do as a registered charity. We have structured CFT so that the lands can never be exploited for commercial reasons.
                   </p>
 
                 </Col>

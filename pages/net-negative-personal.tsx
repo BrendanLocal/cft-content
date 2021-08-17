@@ -348,7 +348,7 @@ export default function App({ file, href, children}) {
               </Row>
               <Row>
                 <Col>
-                  <label htmlFor="additional">This is the percent increase you can add to your forest to grow your carbon footprint to net-negative.</label>
+                  <label htmlFor="additional">This will calculate the carbon you want to sequester in addition to your net-zero target for years to come:</label>
                   <br />
                   <select name="additional" value={negative} onChange={changeNegative}>
                     <option value="" hidden>{editingdata.select}</option>

@@ -632,6 +632,7 @@ export default function App({ file, href, children}) {
           <Col className="p-3 col-12 col-lg-7 col-xl-6">
             <div className="card roundedBox no-border bg-green p-4 innerShadow cardSpacing">
               <p className="lead text-white m-2 calc-intro">{editingdata.para1}</p>
+              <p className="text-white small m-2">If you already know your carbon footprint please proceed to <a href="/smart-forest-school" className="text-orange underline bold">step two</a></p>
             </div>
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
