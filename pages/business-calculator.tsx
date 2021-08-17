@@ -1687,19 +1687,19 @@ export default function BusinessCalc({ file, href, children}) {
                 <p className="smallCaps text-center text-white mb-3">Share Your Results</p>
                 {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
                 
-                <FacebookShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareQuote} className="mx-2">
+                <FacebookShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareFacebook} hashtag={shareFacebookTags} className="mx-2">
                   <FacebookIcon size={40} round />
                 </FacebookShareButton>
 
-                <TwitterShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} title={editingdata.shareQuote} className="mx-2">
+                <TwitterShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} title={editingdata.shareTwitter} hashtags={editingdata.shareTwitterTags} className="mx-2">
                   <TwitterIcon size={40} round />
                 </TwitterShareButton>
 
-                <LinkedinShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} summary={editingdata.shareQuote} className="mx-2">
+                <LinkedinShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} summary={editingdata.shareLinkedIn} className="mx-2">
                   <LinkedinIcon size={40} round />
                 </LinkedinShareButton>
 
-                <EmailShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} body={editingdata.shareQuote} className="mx-2">
+                <EmailShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} body={editingdata.shareEmailBody} subject={editingdata.shareEmailSubject} className="mx-2">
                   <EmailIcon size={40} round />
                 </EmailShareButton>
               </div>

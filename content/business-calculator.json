@@ -131,5 +131,11 @@
   "otherbox2Para":"Calculate how much carbon you must personally offset to reach net-zero.",
   "otherbox2button":"SELECT",
 
-  "shareQuote":"I just calculated my businesses Carbon Footprint. View it here:"
+  "shareFacebook":"[Company name] takes our ESG seriously. When it comes to climate, having a balanced and long-term approach is non-negotiable. Using @CanadasForest Trusts proprietary calculator, we are building our Smart Forests to grow to net-zero. Click the link below to help mitigate climate change.",
+  "shareFacebookTags":"#CanadasForestTrust #CFT #SmartForests #ClimateChange",
+  "shareLinkedIn":"The research is clear. An issue as threatening as climate change needs a solution as smart as forests. That’s why we’ve calculate our #carbon footprint using the @CanadasForestTrust proprietary calculator. Join us in taking the first step towards understanding your carbon footprint. #CanadasForestTrust #CFT #ClimateChange",
+  "shareTwitter":"I’ve calculated my #carbon footprint and am growing it to #netZERO with @CanadasForest Trust. I’m doing my part, are you?",
+  "shareTwitterTags":"#CanadasForestTrust #CFT #SmartForests",
+  "shareEmailSubject":"Join us in calculating your carbon footprint",
+  "shareEmailBody":"Did you know that forests are one of the most effective ways to sequester carbon and mitigate climate change? The research is clear and the need to combat our climate deficit is pressing. Canada’s Forest Trust has created a unique opportunity for me to offset my impact. How? By building or being part of a communal Smart Forest. Calculate your carbon footprint and get growing."
 }
