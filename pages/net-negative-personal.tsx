@@ -417,7 +417,7 @@ export default function App({ file, href, children}) {
           <Col className="col-11 col-lg-10 align-items-center text-center p-3">
             <div className="bg-brown p-4 innerShadow roundedBox">
               <p className="smallCaps text-white mb-3">{editingdata.nextHeader}</p>
-              <h3 className="text-white">Build Your Smart Forest</h3>
+              <h3 className="text-orange tight-drop-light mb-4">Build Your Smart Forest</h3>
               {nextStepError ? <p style={{color: 'red' }}>{nextStepError}</p> : null}
               <Button className="btn-large mt-1" variant="green" onClick={nextStepClick}>Contact Us</Button>
             </div>
