@@ -233,7 +233,7 @@ export default function App({ file, href, children}) {
                   <FacebookIcon size={40} round />
                 </FacebookShareButton>
 
-                <TwitterShareButton url={hostname + sharingUrl} title={editingdata.shareCorpTwitter} hashtags={editingdata.shareCorpTwitterTags} className="mx-2">
+                <TwitterShareButton url={hostname + sharingUrl} title={editingdata.shareCorpTwitter} className="mx-2">
                   <TwitterIcon size={40} round />
                 </TwitterShareButton>
 

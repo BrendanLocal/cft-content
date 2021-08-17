@@ -1871,7 +1871,7 @@ export default function App({ file, href, children}) {
                   <FacebookIcon size={40} round />
                 </FacebookShareButton>
 
-                <TwitterShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} title={editingdata.shareTwitter} hashtags={editingdata.shareTwitterTags} className="mx-2">
+                <TwitterShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} title={editingdata.shareTwitter} className="mx-2">
                   <TwitterIcon size={40} round />
                 </TwitterShareButton>
 
