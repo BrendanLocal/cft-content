@@ -285,7 +285,7 @@ export default function App({ file, href, children}) {
                   <br />
                   <input value={footprint} onChange={changeFootprint} name="type" type="number" min="0" placeholder={editingdata.emissionsPlaceholder}/>
                   <p className="x-small mb-3 op-7">{editingdata.emissionsPlaceholder}</p>
-                  {editingdata.emissionsCarbon}<Link href="/business-calculator"><a className="underline modal-btn">{editingdata.emissionsLink}</a></Link>
+                  {editingdata.emissionsCarbon}<Link href="/business-calculator"><a className="modal-btn bold">{editingdata.emissionsLink}</a></Link>
                 </Col>
               </Row>
               <hr/>
