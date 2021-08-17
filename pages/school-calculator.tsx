@@ -195,9 +195,9 @@ export default function App({ file, href, children}) {
     busPropane: {mult:0.897182946, miles: ''},
     carGas: {mult:0.14836, miles: ''},
     carDiesel: {mult:0.13721, miles: ''},
-    carHybrid: { mult: 0.02935, count: '', miles: '' },
-    carPlug: { mult: 0, count: '', miles: '' },
-    carElectric: { mult: 0.000001, count: '', miles: '' },
+    carHybrid: { mult: 0.10275, count: '', miles: '' },
+    carPlug: { mult: 0.02935, count: '', miles: '' },
+    carElectric: { mult: 0, count: '', miles: '' },
     train: {mult:0.06214, miles: ''},
     van: {mult:0.14853, miles: ''}
   });
