@@ -1201,7 +1201,7 @@ export default function Build({ file }) {
           <Fade bottom>
             <Row className="pt-4 align-items-center justify-content-center mb-1">
               <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
-                <h2 className="text-center text-orange bold tight-drop-light ">See Your Forest</h2>
+                <h2 className="text-center text-orange bold tight-drop-light ">Design Your Forest Sign</h2>
               </Col>
             </Row>
             <DigitalSign/>
@@ -1457,7 +1457,7 @@ export default function Build({ file }) {
           <Fade bottom>
             <Row className="pt-4 align-items-center justify-content-center mb-1">
               <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
-                <h2 className="text-center text-orange bold tight-drop-light">See Your Forest</h2>
+                <h2 className="text-center text-orange bold tight-drop-light">Design Your Forest Sign</h2>
               </Col>
             </Row>
             <DigitalSign/>
@@ -1713,7 +1713,7 @@ export default function Build({ file }) {
           <Fade bottom>
             <Row className="pt-4 align-items-center justify-content-center mb-1">
               <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
-                <h2 className="text-center text-orange bold tight-drop-light">See Your Forest</h2>
+                <h2 className="text-center text-orange bold tight-drop-light">Design Your Forest Sign</h2>
               </Col>
             </Row>
             <DigitalSign/>
@@ -1968,7 +1968,7 @@ export default function Build({ file }) {
           <Fade bottom>
             <Row className="pt-4 align-items-center justify-content-center mb-1">
               <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
-                <h2 className="text-center text-orange bold tight-drop-light">See Your Forest</h2>
+                <h2 className="text-center text-orange bold tight-drop-light">Design Your Forest Sign</h2>
               </Col>
             </Row>
             <DigitalSign/>

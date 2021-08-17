@@ -348,7 +348,7 @@ export default function App({ file, href, children}) {
               </Row>
               <Row>
                 <Col>
-                  <label htmlFor="additional">This is the percent increase you can add to your forest to grow your carbon footprint to net-negative.</label>
+                  <label htmlFor="additional">This will calculate the carbon you want to sequester in addition to your net-zero target for years to come:</label>
                   <br />
                   <select name="additional" value={negative} onChange={changeNegative}>
                     <option value="" hidden>Select...</option>
@@ -417,8 +417,8 @@ export default function App({ file, href, children}) {
         <Row className="justify-content-center">
           <Col className="col-11 col-lg-10 align-items-center text-center p-3">
             <div className="bg-brown p-4 innerShadow roundedBox">
-              <p className="smallCaps text-orange mb-3">{editingdata.nextHeader}</p>
-              <h3 className="text-white">Build Your Smart Forest</h3>
+              <p className="smallCaps text-white mb-3">{editingdata.nextHeader}</p>
+              <h3 className="text-orange tight-drop-light mb-4">Build Your Smart Forest</h3>
               {nextStepError ? <p style={{color: 'red' }}>{nextStepError}</p> : null}
               <Button className="btn-large mt-1" variant="green" onClick={nextStepClick}>Contact Us</Button>
             </div>

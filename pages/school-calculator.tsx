@@ -193,12 +193,11 @@ export default function App({ file, href, children}) {
     busGas: {mult:1.22885, miles: ''},
     busDiesel: {mult:0.74350344, miles: ''},
     busPropane: {mult:0.897182946, miles: ''},
-    carGas: {mult:1.22885, miles: ''},
-    carDiesel: {mult:0.74350344, miles: ''},
-    carPropane: {mult:0.897182946, miles: ''},
-    carHybrid: { mult: 0.10487, count: '', miles: '' },
+    carGas: {mult:0.14836, miles: ''},
+    carDiesel: {mult:0.13721, miles: ''},
+    carHybrid: { mult: 0.10275, count: '', miles: '' },
     carPlug: { mult: 0.02935, count: '', miles: '' },
-    carElectric: { mult: 0.000001, count: '', miles: '' },
+    carElectric: { mult: 0, count: '', miles: '' },
     train: {mult:0.06214, miles: ''},
     van: {mult:0.14853, miles: ''}
   });
@@ -633,6 +632,7 @@ export default function App({ file, href, children}) {
           <Col className="p-3 col-12 col-lg-7 col-xl-6">
             <div className="card roundedBox no-border bg-green p-4 innerShadow cardSpacing">
               <p className="lead text-white m-2 calc-intro">{editingdata.para1}</p>
+              <p className="text-white small m-2">If you already know your carbon footprint please proceed to <a href="/smart-forest-school" className="text-orange underline bold">step two</a></p>
             </div>
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
@@ -1270,7 +1270,7 @@ export default function App({ file, href, children}) {
         <Row className="justify-content-center">
           <Col className="col-11 col-lg-10 align-items-center text-center p-3">
             <div className="bg-brown p-4 innerShadow roundedBox">
-              <p className="smallCaps text-orange mb-3">{editingdata.box1Header}</p>
+              <p className="smallCaps text-white mb-3">{editingdata.box1Header}</p>
               {nextStepError ? <p style={{color: 'red' }}>{nextStepError}</p> : null}
               <Button className="btn-large mt-1" variant="green" onClick={nextStepClick}>{editingdata.box1Button}</Button>
             </div>

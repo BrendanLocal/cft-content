@@ -201,19 +201,19 @@ const Header = ()=> {
                   <Link href="/inside-cft">Inside CFT</Link>
                 </li>
                 <li onClick={toggleClass}>
-                  <Link href="/build-your-smart-forest">Build a Smart Forest</Link>
+                  <Link href="/build-your-smart-forest">Build Your Smart Forest</Link>
                 </li>
                 <li className="ms-4 ms-md-5 subheader" onClick={toggleClass}>
-                  <Link href="/build-your-smart-forest#corporate">Corporate Smart Forest</Link>
+                  <Link href="/build-your-smart-forest#corporate">Corporate</Link>
                 </li>
                 <li className="ms-4 ms-md-5 subheader" onClick={toggleClass}>
-                  <Link href="/build-your-smart-forest#school">School Smart Forest</Link>
+                  <Link href="/build-your-smart-forest#school">School</Link>
                 </li>
                 <li className="ms-4 ms-md-5 subheader" onClick={toggleClass}>
-                  <Link href="/build-your-smart-forest#legacy">Legacy Smart Forest</Link>
+                  <Link href="/build-your-smart-forest#legacy">Legacy</Link>
                 </li>
                 <li className="ms-4 ms-md-5 subheader mb-2" onClick={toggleClass}>
-                  <Link href="/build-your-smart-forest#communal">Communal Smart Forest</Link>
+                  <Link href="/build-your-smart-forest#communal">Communal</Link>
                 </li>
                 <li className="slimlineTop" onClick={toggleClass}>
                   <Link href="/carbon-calculator">Carbon Calculators</Link>

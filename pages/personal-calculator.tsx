@@ -889,6 +889,7 @@ export default function App({ file, href, children}) {
           <Col className="p-3 col-12 col-lg-7 col-xl-6">
             <div className="card roundedBox no-border bg-green p-4 innerShadow cardSpacing">
               <p className="lead text-white m-2 calc-intro">{editingdata.para1}</p>
+              <p className="text-white small m-2">If you already know your carbon footprint please proceed to <a href="/smart-forest-personal" className="text-orange bold underline">step two</a></p>
             </div>
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
@@ -1894,7 +1895,7 @@ export default function App({ file, href, children}) {
             <div className="bg-brown p-4 innerShadow roundedBox">
               
 
-              <p className="smallCaps text-orange mb-3">{editingdata.box1Header}</p>
+              <p className="smallCaps text-white mb-3">{editingdata.box1Header}</p>
               {nextStepError ? <p style={{color: 'red' }}>{nextStepError}</p> : null}
               <Button className="btn-large mt-1" variant="green" onClick={nextStepClick}>{editingdata.box1Button}</Button>
             </div>
