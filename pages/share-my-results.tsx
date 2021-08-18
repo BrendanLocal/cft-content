@@ -553,12 +553,12 @@ export default function App({ file, href, children}) {
         <meta name="theme-color" content="#054218"></meta>
         <meta name='twitter:title' content={editingdata.title}></meta>
         <meta name='twitter:description' content={editingdata.dataDisclaimer}></meta>
-        <meta name='twitter:image' content={'https://' + sharingPrefix + '/logo-share-preview.png'}></meta>
+        <meta name='twitter:image' content={sharingPrefix + '/logo-share-preview.png'}></meta>
         <meta name="twitter:card" content="summary"></meta>
         <meta property='og:title' content={editingdata.title}/>
         <meta property='og:description' content={editingdata.dataDisclaimer}/>
-        <meta property='og:image' content={'https://' + sharingPrefix + '/logo-share-preview.png'}/>
-        <meta property='og:url' content={'https://' + sharingPrefix + sharingUrl}/>
+        <meta property='og:image' content={sharingPrefix + '/logo-share-preview.png'}/>
+        <meta property='og:url' content={sharingPrefix + sharingUrl}/>
         <meta property='og:type' content='website'/>
       </Head>
 
