@@ -397,7 +397,7 @@ export default function BusinessCalc({ file, href, children}) {
     localStorage.setItem('businessfootprint', String(total));
   }
 
-  const sharingUrlPrefix = '/business-calculator-share?session=';
+  const sharingUrlPrefix = '/share-corp-results?session=';
   const [sharingUrl, setSharingUrl] = React.useState('/share-corp-results');
 
   const router = useRouter();
