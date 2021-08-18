@@ -10,9 +10,10 @@ import * as htmlToImage from 'html-to-image';
 import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
 import downloadjs from "downloadjs";
 
+import _uniqueId from 'lodash/uniqueId';
 
 const DigitalSign = ()=> {
-
+  const [id] = useState(_uniqueId('prefix-'));
   const [imageSrc, setImageSrc] = useState("")
  
   const handleImageSelect = (e) => {
@@ -54,12 +55,14 @@ const DigitalSign = ()=> {
     fontSize: '25px  col-md-9 col-lg-7 col-xl-6 mt-2 mt-lg-3 mt-xl-2'
   };
 
-  function CreateImage(){
-    htmlToImage.toPng(document.getElementById('signImage'))
+  function CreateImage(this){
+    htmlToImage.toPng(document.getElementById(id))
   .then(function (dataUrl) {
     downloadjs(dataUrl, 'my-forest-sign.png');
   });
   }
+
+  
 
   return (
     <React.Fragment>
@@ -109,7 +112,7 @@ const DigitalSign = ()=> {
         </Col>
         
         <Col className="col-11 col-md-9 col-lg-7 col-xl-6 mt-2 mt-lg-3 mt-xl-2 signImagebuilder pe-lg-0">
-          <div id="signImage" className="signImageContainer card-drop-heavy">
+          <div id={id} className="signImageContainer card-drop-heavy">
             <img src={selectBG}/>
             <div className="signImageText signTextForest">
             <span style={forestFullName.length > 35 ? { fontSize: "80%" } : undefined } 

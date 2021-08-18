@@ -1748,6 +1748,11 @@ transition: transform .5s;
   transition: all 2s;
 }
 
+.sidebar {
+    overflow-y: scroll;
+    max-height: 95vh;
+}
+
 .sidebar li.subheader {
   font-size: .8em!important;
 }
@@ -2993,7 +2998,7 @@ z-index: 999;
     padding: 30px 100px 60px 20px;
     z-index:10;
     overflow-y: scroll;
-    max-height: 150vh;
+    max-height: 100vh;
   }
 
   .sidebar li a {
