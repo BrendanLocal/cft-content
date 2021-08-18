@@ -16,17 +16,17 @@ import Head from "next/head";
 import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon, LinkedinShareButton, LinkedinIcon, EmailShareButton, EmailIcon } from "react-share";
 
 let sessionID = randomstring.generate(12);
-let hostname = '';
+let sharingPrefix = '';
 if (typeof window !== 'undefined') {
-  hostname = location.hostname;
-  if (hostname.startsWith('localhost')) {
+  sharingPrefix = location.hostname;
+  if (sharingPrefix.startsWith('localhost')) {
     // sharing won't allow localhost links to work
-    hostname = hostname.replace('localhost', '127.0.0.1');
+    sharingPrefix = sharingPrefix.replace('localhost', '127.0.0.1');
   }
-
   if (location.port !== '') {
-    hostname += `:${location.port}`;
+    sharingPrefix += `:${location.port}`;
   }
+  sharingPrefix = location.protocol + '//' + sharingPrefix;
 }
 
 const Lang = () => {
@@ -248,19 +248,19 @@ export default function App({ file, href, children}) {
 <div className="mt-3">
                 <p className="smallCaps text-white mb-3">Share these results</p>
                 
-                <FacebookShareButton url={hostname + sharingUrl} quote={editingdata.shareFacebook}hashtag={editingdata.shareFacebookTags}className="mx-2">
+                <FacebookShareButton url={sharingPrefix + sharingUrl} quote={editingdata.shareFacebook}hashtag={editingdata.shareFacebookTags}className="mx-2">
                   <FacebookIcon size={40} round />
                 </FacebookShareButton>
 
-                <TwitterShareButton url={hostname + sharingUrl} title={editingdata.shareTwitter} className="mx-2">
+                <TwitterShareButton url={sharingPrefix + sharingUrl} title={editingdata.shareTwitter} className="mx-2">
                   <TwitterIcon size={40} round />
                 </TwitterShareButton>
 
-                <LinkedinShareButton url={hostname + sharingUrl} summary={editingdata.shareLinkedIn} className="mx-2">
+                <LinkedinShareButton url={sharingPrefix + sharingUrl} summary={editingdata.shareLinkedIn} className="mx-2">
                   <LinkedinIcon size={40} round />
                 </LinkedinShareButton>
 
-                <EmailShareButton url={hostname + sharingUrl} body={editingdata.shareEmailBody} subject={editingdata.shareEmailSubject} className="mx-2">
+                <EmailShareButton url={sharingPrefix + sharingUrl} body={editingdata.shareEmailBody} subject={editingdata.shareEmailSubject} className="mx-2">
                   <EmailIcon size={40} round />
                 </EmailShareButton>
               </div>
