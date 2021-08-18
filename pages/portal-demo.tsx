@@ -198,7 +198,7 @@ return (
             </Link>
           </Col>
           <Col className="text-right p-4">    
-              <a onClick={(e) => {e.preventDefault(); router.back();}} className="smallCaps textButton">GO BACK</a>     
+              <a onClick={(e) => {e.preventDefault(); router.back();}} className="smallCaps textButton crsr-pntr">GO BACK</a>     
           </Col>
           </Row>
      </Container>
