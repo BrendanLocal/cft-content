@@ -877,6 +877,10 @@ export default function App({ file, href, children}) {
         <title>{editingdata.title}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#054218"></meta>
+        <meta property='og:title' content='Title of the article'/>
+        <meta property='og:image' content={'//' + hostname + '/logo-share-preview.png'}/>
+        <meta property='og:description' content='Description that will show in the preview'/>
+        <meta property='og:url' content={'//' + hostname + sharingUrl}/>
       </Head>
 
       <Container className="p-4 pt-5">
@@ -1867,7 +1871,7 @@ export default function App({ file, href, children}) {
                 <p className="smallCaps text-white mb-3">Share your results</p>
                 {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
                 
-                <FacebookShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareFacebook}hashtag={editingdata.shareFacebookTags}className="mx-2">
+                <FacebookShareButton url={hostname + sharingUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareFacebook} hashtag={editingdata.shareFacebookTags} className="mx-2">
                   <FacebookIcon size={40} round />
                 </FacebookShareButton>
 
