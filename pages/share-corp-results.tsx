@@ -1270,9 +1270,9 @@ export default function BusinessCalc({ file, href, children}) {
                   <TwitterIcon size={40} round />
                 </TwitterShareButton>
 
-                <LinkedinShareButton url={sharingPrefix + sharingUrl} summary={editingdata.shareQuote} className="mx-2">
+                {/* <LinkedinShareButton url={sharingPrefix + sharingUrl} summary={editingdata.shareQuote} className="mx-2">
                   <LinkedinIcon size={40} round />
-                </LinkedinShareButton>
+                </LinkedinShareButton> */}
 
                 <EmailShareButton url={sharingPrefix + sharingUrl} body={editingdata.shareQuote} className="mx-2">
                   <EmailIcon size={40} round />
