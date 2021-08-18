@@ -675,7 +675,7 @@ export default function Power({ file }) {
                 </Col>
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  CFT sources lands across the country that are suitable for reforestation and will have maximum impact on the environmental.
+                  CFT sources lands across the country that are suitable for reforestation and will have maximum impact on the environment.
                   </p>
 
                 </Col>
