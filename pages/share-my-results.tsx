@@ -560,7 +560,7 @@ export default function App({ file, href, children}) {
         <meta property='og:description' content={editingdata.dataDisclaimer}/>
         <meta property='og:image' content={sharingPrefix + '/logo-share-preview.png'}/>
         <meta property='og:image:width' content='1200'/>
-        <meta property='og:image:height' content='630'/>
+        <meta property='og:image:height' content='675'/>
         <meta property='og:url' content={sharingPrefix + sharingUrl}/>
         <meta property='og:type' content='website'/>
       </Head>
