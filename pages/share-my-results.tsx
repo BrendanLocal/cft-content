@@ -550,6 +550,7 @@ export default function App({ file, href, children}) {
       <Head>
         <title>{editingdata.title}</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
         <meta name="theme-color" content="#054218"></meta>
         <meta name='twitter:title' content={editingdata.title}></meta>
         <meta name='twitter:description' content={editingdata.dataDisclaimer}></meta>
