@@ -551,6 +551,11 @@ export default function App({ file, href, children}) {
         <title>{editingdata.title}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#054218"></meta>
+        <meta property='og:title' content={editingdata.title}/>
+        <meta property='og:description' content={editingdata.dataDisclaimer}/>
+        <meta property='og:image' content={'//' + hostname + '/logo-share-preview.png'}/>
+        <meta property='og:url' content={'//' + hostname + sharingUrl}/>
+        <meta property='og:type' content='website'/>
       </Head>
 
       <Container className="p-4 pt-5">
