@@ -11,6 +11,11 @@ import Link from 'next/link'
 import CookieConsent, { Cookies, getCookieConsentValue } from "react-cookie-consent";
 
 
+import ReactGA from 'react-ga';
+ReactGA.initialize('G-9ELPSR6C5L');
+ReactGA.pageview(window.location.pathname + window.location.search);
+
+
 const Header = ()=> {
 
   const [user] = useCurrentUser();
