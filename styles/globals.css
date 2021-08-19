@@ -529,12 +529,12 @@ hr.white {
 }
 
 .intro-card {
-  box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.3);
   transition: all .5s;
 }
 
 .intro-card:hover {
-  box-shadow: 0px 1px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 1px 30px rgba(0, 0, 0, 0.6);
   transition: all .5s;
 }
 
