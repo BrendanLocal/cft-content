@@ -9,49 +9,44 @@ import ReactPlayer from 'react-player';
 
 const newsItems = [
   {
-  key: "newsItem1",
-  label: "Nearly half of world’s biggest companies factoring cost of carbon into business plans",
-  path: "https://corporateknights.us9.list-manage.com/track/click?u=892426d3668c65028353738b1&id=02852faa6f&e=822a1e6250",
+    key: "newsItem1",
+    label: "What is a Smart Forest?",
+    type: "button tickerButton"
   },
   {
     key: "newsItem2",
-  label: "Study finds Canadians may not take climate change as personally as their peers",
-  path: "https://corporateknights.us9.list-manage.com/track/click?u=892426d3668c65028353738b1&id=011c20a181&e=822a1e6250"
-  },
-  {
-    key: "newsItem4",
-    label: "What is a Smart Forest?",
-    type: "button tickerButton"
+    label: "Costs of Climate Tipping Points ",
+    path: "https://insideclimatenews.org/news/16082021/climate-tipping-points/"
   },
   {
     key: "newsItem3",
-  label: "If a tree talks in the forest, does it make a sound?",
-  path: "https://ehn.us16.list-manage.com/track/click?u=73be43273a8ebb733ab2696c7&id=2a0a82f09a&e=0a6997d30d"
+  label: "Carbon Calculators",
+  path: "/carbon-calculator"
+  },
+  {
+    key: "newsItem4",
+  label: "A 'preview' of Earth's coming climate crisis",
+  path: "https://www.nbcnews.com/science/environment/heat-wave-2021-climate-scientists-warn-new-normal-rcna1664"
   },
   {
     key: "newsItem5",
-  label: "Nature is critical to slowing climate change, but it can only do so if we help it first",
-  path: "https://ehn.us16.list-manage.com/track/click?u=73be43273a8ebb733ab2696c7&id=2aede13c1a&e=0a6997d30d"
+    label: "Net-Zero Calculators",
+    path: "/smart-forest-calculator"
   },
   {
     key: "newsItem6",
-    label: "What is a Smart Forest?",
-    type: "button tickerButton"
+  label: "Build a Smart Forest",
+  path: "/build-your-smart-forest"
   },
   {
     key: "newsItem7",
-  label: "Environmentalists ‘up in arms’ about Finnish-Swedish defence of forest industry",
-  path: "https://www.euractiv.com/section/politics/short_news/environmentalists-up-in-arms-about-finnish-swedish-defence-of-forest-industry/"
+  label: "Can healthcare save the public from climate change?",
+  path: "https://www.corporateknights.com/channels/climate-and-carbon/after-covid-can-healthcare-save-the-public-from-climate-change-16273026/"
   },
   {
     key: "newsItem8",
-  label: "B.C. announces plans to redistribute forest tenures to small operators, Indigenous communities",
-  path: "https://www.cbc.ca/news/canada/british-columbia/b-c-announces-plans-to-update-and-modernize-forestry-policy-1.6049137"
-  },
-  {
-    key: "newsItem9",
-    label: "What is a Smart Forest?",
-    type: "button tickerButton"
+    label: "No Part of the Planet Will be Spared",
+    path: "https://insideclimatenews.org/news/09082021/global-climate-panels-report-no-part-of-the-planet-will-be-spared-ipcc-science-cop-extremes/"
   }
   ]
 
