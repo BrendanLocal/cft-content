@@ -1796,9 +1796,9 @@ transition: transform .5s;
   position: fixed;
   bottom: 0;
   height: 10vh;
-background: #054217;
-box-shadow: 0px -1px 10px rgba(0,0,0,.5);
-z-index:999;
+  background: #054217;
+  box-shadow: 0px -1px 10px rgba(0,0,0,.5);
+  z-index:999;
 }
 
 .tickerHead {

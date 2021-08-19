@@ -6,7 +6,6 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import ReactPlayer from 'react-player';
 
-
 const newsItems = [
   {
     key: "newsItem1",
@@ -59,13 +58,26 @@ const NewsTicker = ()=> {
   const [showTicker, setShowTicker] = useState(false);
   const [moveTicker, setMoveTicker] = useState(false);
   useEffect(() => {
-    setTimeout(() => {
-      setShowTicker(true);
+    const WebFont = require('webfontloader');
+    WebFont.load({
+      custom: {
+        families: ['GT-America'],
+        urls: [
+          '/GT-America-Extended-Bold.woff',
+          '/GT-America-Extended-Light.woff',
+          '/GT-America-Extended-Medium.woff',
+          '/GT-America-Extended-Thin.woff',
+          '/GT-America-Standard-Medium.woff'
+        ]
+      },
+      active: () => {
+        setShowTicker(true);
 
-      setTimeout(() => {
-        setMoveTicker(true);
-      }, 500);
-    }, 250);
+        setTimeout(() => {
+          setMoveTicker(true);
+        }, 500);
+      }
+    });
   }, []);
 
   return(
