@@ -1,13 +1,13 @@
 {
-  "pageName":"Personal Net Negative Calculator",
+  "pageName":"Personal Net-Negative Calculator",
   "pageURL":"net-negative-personal",
-  "title": "Personal Net Negative Calculator",
+  "title": "Personal Net-Negative Calculator",
 
   "header": "Net-Negative Calculator",
   "para1": "Thank you for doing your part, this is your opportunity to pay it forward. Calculate how you can increase your goal to become net-negative",
   "select": "Select...",
   "emissionsHeader": "Your emissions",
-  "emissionsCarbonHeader": "What is your carbon footprint? (Tonnes per year)",
+  "emissionsCarbonHeader": "What is your carbon footprint?",
   "emissionsCarbon": "Haven't calculated your footprint?",
   "emissionsLink": "Do it here",
   "emissionsPlaceholder": "Carbon footprint in tonnes per year",
@@ -19,7 +19,7 @@
   "emissionsRegion4": "Quebec",
   "emissionsRegion5": "Atlantic",
 
-  "emissionsTimeHeader": "How long do you want to be carbon neutral? (years)",
+  "emissionsTimeHeader": "How long do you want to be carbon neutral? (Years)",
   "emissionsTime1": "1",
   "emissionsTime2": "2",
   "emissionsTime3": "3",
@@ -56,6 +56,27 @@
   "otherbox3Header":"Personal",
   "otherbox3Para":"Calculate how much carbon you must personally offset to reach net-zero.",
   "otherbox3button":"SELECT",
-  "plantforwardheader":"Plant it forward to become net-negative"
+  "plantforwardheader":"Plant it forward to become net-negative",
+
+  "sharePersonalFacebook":"I’m going Net Negative with CanadasForest Trust to mitigate my impact on the climate.\n \nI’m doing my part, are you?",
+  "sharePersonalFacebookTags":"#CanadasForestTrust",
+  "sharePersonalLinkedIn":"Do you know what net-negative means?\n \nWhen it comes to the climate, it means planting it forward.\n \nI’ve calculated what I need to grow to become net-negative.\n \nHave you?\n \nCalculate your carbon footprint and go net-negative with @canadasforesttrust\n \n#CanadasForestTrust #CFT #SmartForests #ClimateChange",
+  "sharePersonalTwitter":"I’m growing to #netNEGATIVE with @CanadasForest Trust to mitigate my impact on the climate.\n \nI’m doing my part, are you?\n \n#CanadasForestTrust #CFT #SmartForests",
+  "sharePersonalEmailSubject":"Opportunity: Get Plant it Forward to Become Net-Negative",
+  "sharePersonalEmailBody":"Did you know that forests are one of the most effective ways to sequester carbon and mitigate climate change?\n \nThe research is clear and the need to combat our climate deficit is pressing.\n \nCanada’s Forest Trust has created a unique opportunity for me to offset my impact and plant it forward.\n \nHow? By building or being part of a communal Smart Forest. Calculate your carbon footprint and get growing to net-negative.",
+
+  "shareSchoolFacebook":"With the help of Canada's Forest Trust, We have calculated our #carbon footprint.\n \nClick the link below to:\n \n1) Calculate your carbon footprint\n \n2) Start building your forest\n \n3) Save the planet\n \n4) Start a school fundraiser\n \n5) Protect our future by growing to net-negative",
+  "shareSchoolFacebookTags":"#CanadasForestTrust",
+  "shareSchoolLinkedIn":"With the help of @CanadasForest Trust, We have calculated our path to net-negative.\n \nClick to link below to:\n \n1) Calculate yours carbon footprint\n \n2) Calculate your net-negative targets\n \n3) Start building your Smart Forest\n \n4) Protect our planet and our future\n \n5) Protect our planet and our future by growing to net-negative\n \n#CanadasForestTrust #CFT #SmartForests #EcoSchools #SmartForests",
+  "shareSchoolTwitter":"We’ve calculated our carbon footprint with @CanadasForest Trust, have you?\n \nClick the link below to calculate your carbon footprint.\n \n#CanadasForestTrust #CFT #SmartForests #EcoSchools #SmartSchools",
+  "shareSchoolEmailSubject":"Plant it forward and become net-negative",
+  "shareSchoolEmailBody":"The research is clear. An issue as threatening as climate change needs a solution as smart as forests.\n \nThat’s why we are growing to net-zero with Canada’s Forest Trust.\n \nClick the link below to calculate your carbon footprint, start building your forest, save the planet and help your school.",
+
+  "shareCorpFacebook":"We take our ESG seriously.\n \nWhen it comes to climate, having a balanced and long-term approach is non-negotiable.\n \nUsing Canada's Forest Trust's proprietary calculator, we are building our Smart Forests to grow to net-zero.\n \nClick the link below to help mitigate climate change.",
+  "shareCorpFacebookTags":"#CanadasForestTrust",
+  "shareCorpLinkedIn":"The research is clear. An issue as threatening as climate change needs a solution as smart as forests.\n \nThat’s why we’ve calculate our #carbon footprint using the @CanadasForestTrust proprietary calculator.\n \nJoin us in taking the first step towards net-ZERO.",
+  "shareCorpTwitter":"When it comes to climate, having a balanced and long-term approach is non-negotiable.\n \nUsing @CanadasForest Trusts proprietary calculator, we are on our way to net-zero.\n \nAre you?\n \n#CanadasForestTrust #CFT #SmartForests #ESG",
+  "shareCorpEmailSubject":"Plant it forward. Become net-negative",
+  "shareCorpEmailBody":"When it comes to climate, having a balanced and long-term approach is non-negotiable.\n \nUsing Canada’s Forest Trusts proprietary Carbon, net-ZERO and net-NEGATIVE Calculators, we are building Smart Forests to achieve our ESG goals and become net-ZERO.\n \nAre you?"
 }
   

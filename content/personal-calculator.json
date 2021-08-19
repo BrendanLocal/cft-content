@@ -79,7 +79,7 @@
     "vehicleJetDesc":"All sizes",
 
     "vehicleHeli":"Helicopter",
-    "VehicleOther":"Input the amount of fuel annualy per vehicle",
+    "VehicleOther":"Input the amount of fuel used annually per vehicle:",
     "vechileYacht":"Yacht",
     "vehicleATV":"ATV (quad bike)",
     "vehicleSide":"Side-by-side",
@@ -103,6 +103,7 @@
     "vehicleGas":"Gas",
     "vehicleDiesel":"Diesel",
     "vehicleHybrid":"Hybrid",
+    "vehiclePlug":"Plug-in Hybrid",
     "vehicleElectric":"Electric",
     "vehicleAviation":"Aviation fuel",
 
@@ -130,5 +131,12 @@
     "otherbox1button":"SELECT",
     "otherbox2Header":"School",
     "otherbox2Para":"Calculate how much carbon your school must offset to reach net-zero.",
-    "otherbox2button":"SELECT"
+    "otherbox2button":"SELECT",
+
+    "shareFacebook":"I’ve calculated my carbon footprint and am growing it to net Zero by building a forest with Canada's Forest Trust.\n \nI’m doing my part, are you?",
+    "shareFacebookTags":"#CanadasForestTrust",
+    "shareLinkedIn":"Research shows that forests are the most effective way to sequester carbon and mitigate climate change.\n \n@CanadasForestTrust has created a unique opportunity for me to offset my impact.\n \nHow?\n \nBy building or being part of a communal Smart Forest.\n \nCalculate your #carbon footprint and get growing.\n \n#CanadasForestTrust #CFT #SmartForests #ClimateChange",
+    "shareTwitter":"I’ve calculated my #carbon footprint and am growing it to #netZERO with @CanadasForest Trust.\n \nI’m doing my part, are you?\n \n#CanadasForestTrust #CFT #SmartForests",
+    "shareEmailSubject":"Opportunity: Get Growing to Net-Zero",
+    "shareEmailBody":"Did you know that forests are one of the most effective ways to sequester carbon and mitigate climate change?\n \nThe research is clear and the need to combat our climate deficit is pressing.\n \nCanada’s Forest Trust has created a unique opportunity for me to offset my impact.\n \nHow?\n \nBy building or being part of a communal Smart Forest.\n \nCalculate your carbon footprint and get growing."
 }

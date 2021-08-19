@@ -368,9 +368,6 @@ export default function Build({ file }) {
 
         <Row id="corp-about" className="p-4 justify-content-center align-items-center">
           <Col>
-          <h6 className="text-orange text-small mb-4">
-          CORPORATE SMART FORESTS / ABOUT
-          </h6>
           <h5 className="text-green mb-0">
           <ReactMarkdown>
           {editingdata.corpdropdown_box1header1}
@@ -412,9 +409,6 @@ export default function Build({ file }) {
           
         <Row id="corp-quotes" className="p-4">
           <Col>
-          <h6 className="text-orange text-small mb-4">
-          CORPORATE SMART FORESTS / QUOTES
-          </h6>
           <h5 className="text-green medium mb-0">
           <ReactMarkdown>
           {editingdata.corpdropdown_quote1para}
@@ -454,9 +448,6 @@ export default function Build({ file }) {
 
         <Row id="corp-bottom" className="p-4">
           <Col>
-          <h6 className="text-orange text-small mb-4">
-          CORPORATE SMART FORESTS / BOTTOM LINE
-          </h6>
           <h5 className="text-green medium mb-0"><ReactMarkdown>{editingdata.corpdropdown_pointsheader}</ReactMarkdown></h5>
           <ul className="text-grey dropdown-text checkMark px-1 mx-3">
             <li><ReactMarkdown>{editingdata.corpdropdown_pointspara1}</ReactMarkdown></li>
@@ -486,9 +477,6 @@ export default function Build({ file }) {
 
         <Row id="school-about" className="p-4">
           <Col>
-          <h6 className="text-orange text-small mb-4">
-          SCHOOL SMART FORESTS / ABOUT
-          </h6>
             <h5 className="text-green mb-0">
               <ReactMarkdown>
               {editingdata.schooldropdown_box1header1}
@@ -531,9 +519,6 @@ export default function Build({ file }) {
 
         <Row id="school-quotes" className="p-4 ">
           <Col>
-          <h6 className="text-orange text-small mb-4">
-          SCHOOL SMART FORESTS / QUOTES
-          </h6>
             <h5 className="text-green medium mb-0">
               <ReactMarkdown>
                 {editingdata.schooldropdown_quote1para}
@@ -574,9 +559,6 @@ export default function Build({ file }) {
 
         <Row id="school-involved" className="p-4">
           <Col>
-          <h6 className="text-orange text-small mb-4">
-          SCHOOL SMART FORESTS / GET INVOLVED
-          </h6>
             <h5 className="text-green medium mb-0">
               <ReactMarkdown>
               {editingdata.schooldropdown_box1para0}
@@ -614,9 +596,6 @@ export default function Build({ file }) {
 
         <Row id="legacy-about" className="p-4">
           <Col>
-          <h6 className="text-orange text-small mb-4">
-          LEGACY SMART FORESTS / ABOUT
-          </h6>
             <h5 className="text-green medium mb-0">
               <ReactMarkdown>
                 {editingdata.legacydropdown_box1header1}
@@ -640,9 +619,6 @@ export default function Build({ file }) {
 
         <Row id="legacy-quotes" className="p-4">
           <Col>
-          <h6 className="text-orange text-small mb-4">
-          LEGACY SMART FORESTS / QUOTES
-          </h6>
             <h5 className="text-green medium mb-0">
               <ReactMarkdown>
                 {editingdata.legacydropdown_quote1para}
@@ -683,9 +659,6 @@ export default function Build({ file }) {
 
         <Row id="legacy-investing" className="p-4">
           <Col>
-          <h6 className="text-orange text-small mb-4">
-          LEGACY SMART FORESTS / IMPACT INVESTING
-          </h6>
             <h5 className="text-green medium mb-0">
               <ReactMarkdown>
                 {editingdata.legacydropdown_pointsheader0}
@@ -724,9 +697,6 @@ export default function Build({ file }) {
 
         <Row id="communal-about" className="p-4">
           <Col>
-          <h6 className="text-orange text-small mb-4">
-          COMMUNAL SMART FORESTS / ABOUT
-          </h6>
             <h5 className="text-green medium mb-0">
               <ReactMarkdown>
                 {editingdata.communaldropdown_box1header1}
@@ -750,9 +720,6 @@ export default function Build({ file }) {
 
         <Row id="communal-quotes" className="p-4">
           <Col>
-          <h6 className="text-orange text-small mb-4">
-          COMMUNAL SMART FORESTS / QUOTES
-          </h6>
             <h5 className="text-green medium mb-0">
               <ReactMarkdown>
                 {editingdata.communaldropdown_quote1para}
@@ -794,9 +761,6 @@ export default function Build({ file }) {
 
         <Row id="communal-impact" className="p-4">
           <Col>
-          <h6 className="text-orange text-small mb-4">
-          COMMUNAL SMART FORESTS / IMPACT
-          </h6>
             <h5 className="text-green medium mb-0">
               <ReactMarkdown>
                 {editingdata.communaldropdown_pointsheader}
@@ -1029,7 +993,7 @@ export default function Build({ file }) {
                       ABOUT
                     </a>                 
                   </Col>
-                  <Col className="col-10 col-lg-4 my-2">
+                  <Col className="col-10 col-lg-4 my-2 d-none">
                     <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowCorporateModal2}>
                       QUOTES
                     </a>                 
@@ -1235,7 +1199,7 @@ export default function Build({ file }) {
           <Fade bottom>
             <Row className="pt-4 align-items-center justify-content-center mb-1">
               <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
-                <h2 className="text-center text-orange bold tight-drop-light ">See Your Forest</h2>
+                <h2 className="text-center text-orange bold tight-drop-light ">Design Your Forest Sign</h2>
               </Col>
             </Row>
             <DigitalSign/>
@@ -1286,7 +1250,7 @@ export default function Build({ file }) {
                       ABOUT
                     </a>                 
                   </Col>
-                  <Col className="col-10 col-lg-4 my-2">
+                  <Col className="col-10 col-lg-4 my-2 d-none">
                     <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowSchoolModal2} data-dest="school-quotes">
                       QUOTES
                     </a>                 
@@ -1491,7 +1455,7 @@ export default function Build({ file }) {
           <Fade bottom>
             <Row className="pt-4 align-items-center justify-content-center mb-1">
               <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
-                <h2 className="text-center text-orange bold tight-drop-light">See Your Forest</h2>
+                <h2 className="text-center text-orange bold tight-drop-light">Design Your Forest Sign</h2>
               </Col>
             </Row>
             <DigitalSign/>
@@ -1542,7 +1506,7 @@ export default function Build({ file }) {
                       ABOUT
                     </a>                 
                   </Col>
-                  <Col className="col-10 col-lg-4 my-2">
+                  <Col className="col-10 col-lg-4 my-2 d-none">
                     <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowLegacyModal2} data-dest="legacy-quotes">
                       QUOTES
                     </a>                 
@@ -1747,7 +1711,7 @@ export default function Build({ file }) {
           <Fade bottom>
             <Row className="pt-4 align-items-center justify-content-center mb-1">
               <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
-                <h2 className="text-center text-orange bold tight-drop-light">See Your Forest</h2>
+                <h2 className="text-center text-orange bold tight-drop-light">Design Your Forest Sign</h2>
               </Col>
             </Row>
             <DigitalSign/>
@@ -1798,7 +1762,7 @@ export default function Build({ file }) {
                       ABOUT
                     </a>                 
                   </Col>
-                  <Col className="col-10 col-lg-4 my-2">
+                  <Col className="col-10 col-lg-4 my-2 d-none">
                     <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowCommunalModal2} data-dest="communal-quotes">
                       QUOTES
                     </a>                 
@@ -2002,7 +1966,7 @@ export default function Build({ file }) {
           <Fade bottom>
             <Row className="pt-4 align-items-center justify-content-center mb-1">
               <Col className="col-10 col-lg-9 col-xl-7 pe-lg-0">
-                <h2 className="text-center text-orange bold tight-drop-light">See Your Forest</h2>
+                <h2 className="text-center text-orange bold tight-drop-light">Design Your Forest Sign</h2>
               </Col>
             </Row>
             <DigitalSign/>

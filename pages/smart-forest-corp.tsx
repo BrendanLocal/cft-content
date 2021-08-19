@@ -13,8 +13,21 @@ import { useEffect } from "react";
 import Header from "../components/header";
 import Head from "next/head";
 import randomstring from "randomstring";
+import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon, LinkedinShareButton, LinkedinIcon, EmailShareButton, EmailIcon } from "react-share";
 
 let sessionID = randomstring.generate(12);
+let sharingPrefix = 'https://www.canadasforesttrust.ca';
+if (typeof window !== 'undefined') {
+  sharingPrefix = location.hostname;
+  if (sharingPrefix.startsWith('localhost')) {
+    // sharing won't allow localhost links to work
+    sharingPrefix = sharingPrefix.replace('localhost', '127.0.0.1');
+  }
+  if (location.port !== '') {
+    sharingPrefix += `:${location.port}`;
+  }
+  sharingPrefix = location.protocol + '//' + sharingPrefix;
+}
 
 const Lang = () => {
   var language ="en";
@@ -92,10 +105,10 @@ export default function App({ file, href, children}) {
   };
  
   const [region, setRegion] = React.useState("");
-  const [footprint, setFootprint] = React.useState(0);
+  const [footprint, setFootprint] = React.useState("");
   const [duration, setDuration] = React.useState(0);
 
-  const plantHectares = duration*footprint/regionArray.carbon[region];
+  const plantHectares = duration*Number(footprint)/regionArray.carbon[region];
   const plantAcres = plantHectares*2.47;
   const plantTrees = plantHectares*2470;
   
@@ -120,28 +133,23 @@ export default function App({ file, href, children}) {
     }
   }
 
-  const fullUrlPrefix = '/smart-forest-corp?session=';
+  const editUrlPrefix = '/smart-forest-corp?session=';
   const sharingUrlPrefix = '/smart-forest-corp-share?session=';
-  const [fullUrl, setFullUrl] = React.useState('/smart-forest-corp');
+  const [editUrl, setEditUrl] = React.useState('/smart-forest-corp');
   const [sharingUrl, setSharingUrl] = React.useState('/smart-forest-corp-share');
 
   const router = useRouter();
   const [sessionDataError, setSessionDataError] = React.useState("");
   useEffect(() => {
     if (router.isReady) {
-      setFootprint(Number(Number(localStorage.getItem('businessfootprint')).toFixed(2)));
+      setFootprint(localStorage.getItem('businessfootprint'));
 
       if (router.query.session) {
         sessionID = router.query.session;
       }
-      else if (localStorage.getItem('smart-forest-corp_sessionID')) {
-        sessionID = localStorage.getItem('smart-forest-corp_sessionID');
-      }
       
-      setFullUrl(fullUrlPrefix + sessionID);
+      setEditUrl(editUrlPrefix + sessionID);
       setSharingUrl(sharingUrlPrefix + sessionID);
-  
-      localStorage.setItem('smart-forest-corp_sessionID', sessionID);
   
       try {
         fetch(`/api/calc?sessionID=${sessionID}&type=smart-forest-corp`).then(async (response) => {
@@ -175,9 +183,7 @@ export default function App({ file, href, children}) {
     }
   }, [router.query]);
 
-  const saveSession = async (e, successCallback: () => void, failureCallback: (error) => void) => {
-    e.preventDefault();
-
+  const saveSession = async (successCallback: () => void, failureCallback: (error) => void) => {
     const body = {
       sessionID: sessionID,
       type: 'smart-forest-corp',
@@ -208,19 +214,36 @@ export default function App({ file, href, children}) {
     }
   };
 
-  const [fullUrlError, setFullUrlError] = React.useState("");
-  const fullUrlClick = (e) => {
-    saveSession(e, () => {
-      setFullUrlError("");
+  const [editUrlError, setEditUrlError] = React.useState("");
+  const editUrlClick = (e) => {
+    e.preventDefault();
+
+    saveSession(() => {
+      setEditUrlError("");
       router.push(e.target.getAttribute('href'));
     }, (error) => {
-      setFullUrlError(error);
+      setEditUrlError(error);
     });
+  };
+
+  const [shareError, setShareError] = React.useState("");
+  const shareBeforeClick = () => {
+    return new Promise<void>((resolve, reject) => {
+      saveSession(() => {
+        setShareError("");
+        resolve();
+      }, (error) => {
+        setShareError(error);
+        reject(error);
+      });
+    })
   };
 
   const [nextStepError, setNextStepError] = React.useState("");
   const nextStepClick = (e) => {
-    saveSession(e, () => {
+    e.preventDefault();
+
+    saveSession(() => {
       setNextStepError("");
       router.push("/net-negative-corp");
     }, (error) => {
@@ -244,7 +267,7 @@ export default function App({ file, href, children}) {
           </Col>
         </Row>
         <Row className="justify-content-center">
-          <Col className="p-3 col-12 col-lg-6">
+          <Col className="p-3 col-12 col-lg-7 col-xl-6">
             <div className="card roundedBox no-border bg-green p-4 innerShadow cardSpacing">
               <p className="lead text-white m-2 calc-intro pe-lg-2">Calculate how many acres your corporation must invest in to reach a net-zero emissions target</p>
             </div>
@@ -252,7 +275,7 @@ export default function App({ file, href, children}) {
               <Row>
                 <Col>
                   {sessionDataError ? <p style={{ color: 'red' }}>{sessionDataError}</p> : null}
-                  <h4 className="text-green">{editingdata.emissionsHeader}</h4>
+                  <h3 className="text-green">{editingdata.emissionsHeader}</h3>
                   <hr/>
                 </Col>
               </Row>
@@ -260,9 +283,9 @@ export default function App({ file, href, children}) {
                 <Col>
                   <label htmlFor="footprint">{editingdata.emissionsCarbonHeader}</label>
                   <br />
-                  <input className="mb-4" value={footprint > 0 ? footprint : ""} onChange={changeFootprint} name="type" type="number" min="0" placeholder={editingdata.emissionsPlaceholder}/>
+                  <input value={footprint} onChange={changeFootprint} name="type" type="number" min="0" placeholder={editingdata.emissionsPlaceholder}/>
                   <p className="x-small mb-3 op-7">{editingdata.emissionsPlaceholder}</p>
-                  {editingdata.emissionsCarbon}<Link href="/business-calculator"><a className="underline modal-btn">{editingdata.emissionsLink}</a></Link>
+                  {editingdata.emissionsCarbon}<Link href="/business-calculator"><a className="modal-btn bold">{editingdata.emissionsLink}</a></Link>
                 </Col>
               </Row>
               <hr/>
@@ -307,7 +330,7 @@ export default function App({ file, href, children}) {
               </Row>
             </div>
           </Col>
-          <Col className=" p-3  col-11 col-lg-4 stickyCalc mb-4">
+          <Col className=" p-3  col-11 col-lg-5 col-xl-4 stickyCalc mb-4">
             <div className="text-white p-5 innerShadow roundedBox bg-green">
               <h4 className="mb-0">{editingdata.dataHeader}</h4>
               <hr/>
@@ -316,25 +339,49 @@ export default function App({ file, href, children}) {
               <Row><Col className="pb-3">{editingdata.dataType} {plantTrees > 0 ? Math.ceil(plantTrees).toLocaleString("en-US") : "--"} {editingdata.dataType2}</Col></Row>
 
               <Row>
-                <Col className="whiteBorder rounded mt-3 p-3">
+                <Col className="whiteBorder rounded mt-3 p-3 mb-5">
                   <p className="text-small">To continue editing your results in the future, save or bookmark this link:</p>
                   <p className="pt-2 text-small">
-                    {fullUrlError ? <p style={{ color: 'red' }}>{fullUrlError}</p> : null}
-                    <a href={fullUrl} onClick={fullUrlClick}>{fullUrl}</a>
+                    {editUrlError ? <p style={{ color: 'red' }}>{editUrlError}</p> : null}
+                    <a href={editUrl} onClick={editUrlClick}>{editUrl}</a>
                   </p>
-                  {/* <hr/>
-                  <p className="text-small">Share your results on social media with this link:</p>
-                  <p className="pt-2 text-small"><a href={sharingUrl}>{sharingUrl}</a></p> */}
                 </Col>
               </Row>
+
+              <Row className="justify-content-center text-center">
+              <Col>
+              <div className="">
+                <p className="smallCaps text-white mb-3">Share your results</p>
+                {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
+                
+                <FacebookShareButton url={sharingPrefix + sharingUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareCorpFacebook} hashtag={editingdata.shareCorpFacebookTags} className="mx-2">
+                  <FacebookIcon size={40} round />
+                </FacebookShareButton>
+
+                <TwitterShareButton url={sharingPrefix + sharingUrl} beforeOnClick={shareBeforeClick} title={editingdata.shareCorpTwitter} className="mx-2">
+                  <TwitterIcon size={40} round />
+                </TwitterShareButton>
+
+                {/* <LinkedinShareButton url={sharingPrefix + sharingUrl} beforeOnClick={shareBeforeClick} summary={editingdata.shareCorpLinkedIn} className="mx-2">
+                  <LinkedinIcon size={40} round />
+                </LinkedinShareButton> */}
+
+                <EmailShareButton url={sharingPrefix + sharingUrl} beforeOnClick={shareBeforeClick} body={editingdata.shareCorpEmailBody} subject={editingdata.shareCorpEmailSubject} className="mx-2">
+                  <EmailIcon size={40} round />
+                </EmailShareButton>
+              </div>
+              </Col>
+            </Row>
+
             </div>
           </Col>
         </Row>
 
+
         <Row className="justify-content-center">
           <Col className="col-11 col-lg-10 align-items-center text-center p-3">
-            <div className="bg-brown p-5 innerShadow roundedBox">
-              <p className="smallCaps text-orange mb-3">{editingdata.nextHeader}</p>
+            <div className="bg-brown p-4 innerShadow roundedBox">
+              <p className="smallCaps text-white mb-3">{editingdata.nextHeader}</p>
               {nextStepError ? <p style={{color: 'red' }}>{nextStepError}</p> : null}
               <Button className="btn-large mt-1" variant="green" onClick={nextStepClick}>{editingdata.nextButton}</Button>
             </div>
@@ -347,7 +394,7 @@ export default function App({ file, href, children}) {
           </Col>
         </Row>
 
-        <Row className="justify-content-center pb-5 mb-5">
+        <Row className="justify-content-center pb-5">
           <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
               <h4 className="text-white tight-drop-light">{editingdata.otherbox1Header}</h4>

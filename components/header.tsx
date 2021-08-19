@@ -11,6 +11,13 @@ import Link from 'next/link'
 import CookieConsent, { Cookies, getCookieConsentValue } from "react-cookie-consent";
 
 
+import ReactGA from 'react-ga';
+ReactGA.initialize('G-9ELPSR6C5L');
+if (typeof window !== 'undefined') {
+ReactGA.pageview(window.location.pathname + window.location.search);
+}
+
+
 const Header = ()=> {
 
   const [user] = useCurrentUser();
@@ -158,7 +165,10 @@ const Header = ()=> {
     
 
     <React.Fragment>
-      <CookieConsent enableDeclineButton flipButtons buttonText="I ACCEPT THE COOKIES" declineButtonText="I DO NOT ACCEPT">
+      <CookieConsent flipButtons buttonText="OK">
+        <h3 className="text-center text-white">
+        Use of Cookies
+        </h3>
         We use cookies and other technologies to offer you the best experience online. By continuing to use our website, you agree to the use of cookies and other technologies. If you would like to know more about cookies and other technologies and how to manage them, please view our <a className="underline" href="/privacy">Privacy Policy.</a>
         </CookieConsent>
       <div id="searchComponent" className={ showSearch ? "searchOpen" : "searchClosed"}>
@@ -184,38 +194,37 @@ const Header = ()=> {
               <Link href={ user? "/portal-user" : "/portal" } ><a className="smallCaps textButton">{ user? "Your Portal" : "Sign in" }</a></Link>
             </div>
             <div className="mt-2">
-              <Link href="/portal-demo"><a className="smallCaps text-white no-underline textButton">DEMO PORTAL</a></Link>
+              <a href="/portal-demo" className="smallCaps text-white no-underline textButton">DEMO PORTAL</a>
             </div>
           </div>
         </div>
       </div>
 
       <div id="sidebar" className={isActive ? 'open' : null}>
-        <div className="container-fluid v-full sidebar bg-green text-orange">
+        <div className="container-fluid v-full sidebar bg-green text-orange pt-4 pt-md-3">
           <div className="row">
-            <div className="col-9 col-md-8 ">
-              <ul className="mb-5">
-                <li className="d-md-none " onClick={toggleClass}>
+            <div className="col-9 col-md-8">
+              <ul className="mb-5 ">
+                <li className="pt-0" onClick={toggleClass}>
                   <Link href="/home">Home</Link>
                 </li>
-
                 <li className="slimlineBottom slimlineTop" onClick={toggleClass}>
                   <Link href="/inside-cft">Inside CFT</Link>
                 </li>
                 <li onClick={toggleClass}>
-                  <Link href="/build-your-smart-forest">Build a Smart Forest</Link>
+                  <Link href="/build-your-smart-forest">Build Your Smart Forest</Link>
                 </li>
                 <li className="ms-4 ms-md-5 subheader" onClick={toggleClass}>
-                  <Link href="/build-your-smart-forest#corporate">Corporate Smart Forest</Link>
+                  <Link href="/build-your-smart-forest#corporate">Corporate</Link>
                 </li>
                 <li className="ms-4 ms-md-5 subheader" onClick={toggleClass}>
-                  <Link href="/build-your-smart-forest#school">School Smart Forest</Link>
+                  <Link href="/build-your-smart-forest#school">School</Link>
                 </li>
                 <li className="ms-4 ms-md-5 subheader" onClick={toggleClass}>
-                  <Link href="/build-your-smart-forest#legacy">Legacy Smart Forest</Link>
+                  <Link href="/build-your-smart-forest#legacy">Legacy</Link>
                 </li>
                 <li className="ms-4 ms-md-5 subheader mb-2" onClick={toggleClass}>
-                  <Link href="/build-your-smart-forest#communal">Communal Smart Forest</Link>
+                  <Link href="/build-your-smart-forest#communal">Communal</Link>
                 </li>
                 <li className="slimlineTop" onClick={toggleClass}>
                   <Link href="/carbon-calculator">Carbon Calculators</Link>
@@ -258,7 +267,7 @@ const Header = ()=> {
           <div className="col-12 col-md-6 d-flex flex-column gx-1 gx-lg-3 fixed">
             <div className="row align-self-top">
               <div className="col d-flex align-items-center justify-content-end menuInterface">
-              <Link href="/portal-demo"><a className="smallCaps text-white no-underline textButton me-4 d-none d-sm-block">DEMO PORTAL</a></Link>
+              <a href="/portal-demo" className="smallCaps text-white no-underline textButton me-4 d-none d-sm-block">DEMO PORTAL</a>
                 <Link href={ user? "/portal-user" : "/portal" } ><a className="smallCaps textButton me-2 d-none d-sm-block">{ user? "Your Portal" : "Sign in" }</a></Link>
                 <div id="menuIcon" className={isActive ? 'open' : null} onClick={toggleClass}>
                   <span></span>
