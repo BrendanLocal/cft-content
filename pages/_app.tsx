@@ -141,7 +141,7 @@ export default class Site extends App {
         <Footer/>
         
         <NewsTicker />
-        <EditLink cms={this.cms} />
+      {/* <EditLink cms={this.cms} /> */}
         </TinacmsGithubProvider>
       </TinaProvider>
     )
