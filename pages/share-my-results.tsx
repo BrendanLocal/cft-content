@@ -557,7 +557,7 @@ export default function App({ file, href, children}) {
 <meta name="twitter:site" content="@CanadasForest" />
 <meta name="twitter:title" content={editingdata.title} />
 <meta name="twitter:description" content={editingdata.dataDisclaimer} />
-<meta name="twitter:image" content='{sharingPrefix + ''/logo-share-preview-twitter.png'} />
+<meta name="twitter:image" content={sharingPrefix + '/logo-share-preview-twitter.png'} />
 <meta name="twitter:card" content="summary_large_image" />
 
 
