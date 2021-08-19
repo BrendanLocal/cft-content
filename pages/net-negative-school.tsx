@@ -337,8 +337,7 @@ export default function App({ file, href, children}) {
                   </select>
                 </Col>
               </Row>
-
-              </div>
+            </div>
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
                 <Col>
@@ -367,9 +366,15 @@ export default function App({ file, href, children}) {
             <div className="text-white p-5 innerShadow roundedBox bg-green">
               <h4 className="mb-0">{editingdata.dataHeader}</h4>
               <hr/>
-              <Row><Col className="pb-3">{editingdata.dataType} {plantAcres > 0 ? plantAcres.toLocaleString('en-US', {maximumFractionDigits: 2}) : "--"} {editingdata.dataType1}</Col></Row>
+              <Row>
+                <Col className="pb-3">{editingdata.dataType} {plantAcres > 0 ? plantAcres.toLocaleString('en-US', {maximumFractionDigits: 2}) : "--"} {editingdata.dataType1}
+                </Col>
+              </Row>
               <hr/>
-              <Row><Col className="pb-3">{editingdata.dataType} {plantTrees > 0 ? Math.ceil(plantTrees).toLocaleString("en-US") : "--"} {editingdata.dataType2}</Col></Row>
+              <Row>
+                <Col className="pb-3">{editingdata.dataType} {plantTrees > 0 ? Math.ceil(plantTrees).toLocaleString("en-US") : "--"} {editingdata.dataType2}
+                </Col>
+              </Row>
 
               <Row>
                 <Col className="whiteBorder rounded mt-3 p-3 mb-5">
@@ -382,34 +387,32 @@ export default function App({ file, href, children}) {
               </Row>
 
               <Row className="justify-content-center text-center">
-              <Col>
-              <div className="">
-                <p className="smallCaps text-white mb-3">Share your results</p>
-                {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
-                
-                <FacebookShareButton url={sharingPrefix + sharingUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareSchoolFacebook} hashtag={editingdata.shareSchoolFacebookTags} className="mx-2">
-                  <FacebookIcon size={40} round />
-                </FacebookShareButton>
+                <Col>
+                  <div className="">
+                    <p className="smallCaps text-white mb-3">Share your results</p>
+                    {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
+                    
+                    <FacebookShareButton url={sharingPrefix + sharingUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareSchoolFacebook} hashtag={editingdata.shareSchoolFacebookTags} className="mx-2">
+                      <FacebookIcon size={40} round />
+                    </FacebookShareButton>
 
-                <TwitterShareButton url={sharingPrefix + sharingUrl} beforeOnClick={shareBeforeClick} title={editingdata.shareSchoolTwitter} className="mx-2">
-                  <TwitterIcon size={40} round />
-                </TwitterShareButton>
+                    <TwitterShareButton url={sharingPrefix + sharingUrl} beforeOnClick={shareBeforeClick} title={editingdata.shareSchoolTwitter} className="mx-2">
+                      <TwitterIcon size={40} round />
+                    </TwitterShareButton>
 
-                {/* <LinkedinShareButton url={sharingPrefix + sharingUrl} beforeOnClick={shareBeforeClick} summary={editingdata.shareSchoolLinkedIn} className="mx-2">
-                  <LinkedinIcon size={40} round />
-                </LinkedinShareButton> */}
+                    {/* <LinkedinShareButton url={sharingPrefix + sharingUrl} beforeOnClick={shareBeforeClick} summary={editingdata.shareSchoolLinkedIn} className="mx-2">
+                      <LinkedinIcon size={40} round />
+                    </LinkedinShareButton> */}
 
-                <EmailShareButton url={sharingPrefix + sharingUrl} beforeOnClick={shareBeforeClick} body={editingdata.shareSchoolEmailBody} subject={editingdata.shareSchoolEmailSubject} className="mx-2">
-                  <EmailIcon size={40} round />
-                </EmailShareButton>
-              </div>
-              </Col>
-            </Row>
-
+                    <EmailShareButton url={sharingPrefix + sharingUrl} beforeOnClick={shareBeforeClick} body={editingdata.shareSchoolEmailBody} subject={editingdata.shareSchoolEmailSubject} className="mx-2">
+                      <EmailIcon size={40} round />
+                    </EmailShareButton>
+                  </div>
+                </Col>
+              </Row>
             </div>
           </Col>
         </Row>
-
 
         <Row className="justify-content-center">
           <Col className="col-11 col-lg-10 align-items-center text-center p-3">

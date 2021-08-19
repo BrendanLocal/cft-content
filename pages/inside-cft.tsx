@@ -183,11 +183,11 @@ export default function Power({ file }) {
 
         <Container id="video" className="v-full z-999 bg-green py-5 page-section">
           <Fade bottom>
-              <Row className="justify-content-center align-items-center my-4">
-                <Col className="col-12 col-md-11 col-lg-10 col-xl-8 text-center text-white">
-                  <h2 className="text-orange bold px-md-3 px-lg-0">Watch our video</h2>
-                </Col>
-              </Row>
+            <Row className="justify-content-center align-items-center my-4">
+              <Col className="col-12 col-md-11 col-lg-10 col-xl-8 text-center text-white">
+                <h2 className="text-orange bold px-md-3 px-lg-0">Watch our video</h2>
+              </Col>
+            </Row>
           </Fade>
           <Fade bottom> 
           <Row className="justify-content-center align-items-center pb-5 mb-5">
@@ -224,13 +224,13 @@ export default function Power({ file }) {
           </Fade>
           <Fade bottom>
             <Row className="justify-content-center align-items-center px-3 px-md-4 px-lg-3">
-              
               <Carousel className="col-12 col-lg-10 d-flex bg-brown roundedBox px-0"
                 activeIndex={index} onSelect={handleSelect} 
                 nextIcon={ <span aria-hidden="false" className="carousel-control-next-icon"/>}
                 nextLabel=""
                 prevIcon={ <span aria-hidden="true" className="carousel-control-prev-icon"/>}
-                prevLabel="">
+                prevLabel=""
+              >
                 <Carousel.Item interval={500000}>
                   <div className="d-block w-100 phases"></div>
                   <Carousel.Caption><p></p></Carousel.Caption>
@@ -241,8 +241,6 @@ export default function Power({ file }) {
                   <Carousel.Caption className="col-9 col-md-6 col-xl-4">
                     <h3 className="smallCaps text-left tight-drop bold mb-1">PROCURE</h3>
                     <p className="h3 text-left tight-drop mb-4">Acquire land across Canada.</p>
-
-                    
                   </Carousel.Caption>
                 </Carousel.Item>
 
@@ -251,33 +249,30 @@ export default function Power({ file }) {
                   <Carousel.Caption className="col-9 col-md-6 col-xl-4">
                     <h3 className="smallCaps text-left tight-drop bold mb-1">PREPARE</h3>
                     <p className="h3 text-left tight-drop mb-4">Assess, plan, and complete site preparation for planting.</p>
-
-                    
                   </Carousel.Caption>
                 </Carousel.Item>
+
                 <Carousel.Item interval={100000}>
                   <div className="d-block w-100 phase3"></div>
                   <Carousel.Caption className="col-9 col-md-6 col-xl-4">
                     <h3 className="smallCaps text-left tight-drop bold mb-1">PLANT</h3>
                     <p className="h3 text-left tight-drop mb-4">Strategically plant seedlings to ensure optimal growth and carbon sequestration.</p>
-
-                  
                   </Carousel.Caption>
                 </Carousel.Item>
+
                 <Carousel.Item interval={100000}>
                   <div className="d-block w-100 phase4"></div>
                   <Carousel.Caption className="col-9 col-md-6 col-xl-4">
                     <h3 className="smallCaps text-left tight-drop bold mb-1">PRESERVE</h3>
                     <p className="h3 text-left tight-drop mb-4">Perform innovative forest management activities to maintain the forest and maximize its impact</p>
-                    
-                  </Carousel.Caption>
+                    </Carousel.Caption>
                 </Carousel.Item>
+
                 <Carousel.Item interval={100000}>
                   <div className="d-block w-100 phase5"></div>
                   <Carousel.Caption className="col-9 col-md-6 col-xl-4">
                     <h3 className="smallCaps text-left tight-drop bold mb-1">PROTECT</h3>
                     <p className="h3 text-left tight-drop mb-4">Audit, and set a no clear-cut guarantee on every forest.</p>
-                    
                   </Carousel.Caption>
                 </Carousel.Item>
               </Carousel>
@@ -365,7 +360,6 @@ export default function Power({ file }) {
                     </div>
                     </Col>
                   </Row>
-
                 </TabPanel>
                 <TabPanel>
                   <Row>
@@ -426,18 +420,14 @@ export default function Power({ file }) {
             <Row className="align-items-center justify-content-center pt-5 mb-4 ">
               <Col className="col-10 col-lg-8 col-xl-7 pt-3">
                 <h2 className="text-center text-orange bold mb-2">Questions & Answers</h2>
-                <p className="text-center text-white">
-              Canada’s Forest Trust will plant millions of acres of Smart Forests across Canada by 2040. We will build on deforested land located in ecologically diverse regions across the country, and will protect some of our nation’s most imperilled plants and animals.
-              </p>
+                <p className="text-center text-white">Canada’s Forest Trust will plant millions of acres of Smart Forests across Canada by 2040. We will build on deforested land located in ecologically diverse regions across the country, and will protect some of our nation’s most imperilled plants and animals.</p>
               </Col>
             </Row>
           </Fade>
           
-
           {/* BEGINNING OF Q&A */}
-            <Row className="justify-content-center">
-              <Col className="col-10 col-lg-8 roundedBox innerShadow bg-brown p-4 p-md-5"> 
-
+          <Row className="justify-content-center">
+            <Col className="col-10 col-lg-8 roundedBox innerShadow bg-brown p-4 p-md-5"> 
               <Row>
                 <Col className="col-12 col-lg-4">
                   <h3 className="text-orange bold">
@@ -450,391 +440,283 @@ export default function Power({ file }) {
                   </p>
 
                   <ul className="checkMark text-white ms-5 ms-xl-3 pe-3">
-                     <li className="py-2">Supports wildlife, improves air quality, and regulates water flow</li>
-                     <li className="py-2">Offers a tangible way to offset a large carbon footprint</li>
-                     <li className="py-2">Maximizes its impact through expert forest management</li>
-                     <li className="py-2">Proves its effectiveness via proprietary digital tools</li>           
-                     <li className="py-2">Boosts the green economy</li>
-                     <li className="py-2">Promotes the health and wellbeing of all Canadians</li>
-                     <li className="py-2">Is protected forever with a no-clear-cut harvest guarantee</li>
-                   </ul>
+                    <li className="py-2">Supports wildlife, improves air quality, and regulates water flow</li>
+                    <li className="py-2">Offers a tangible way to offset a large carbon footprint</li>
+                    <li className="py-2">Maximizes its impact through expert forest management</li>
+                    <li className="py-2">Proves its effectiveness via proprietary digital tools</li>           
+                    <li className="py-2">Boosts the green economy</li>
+                    <li className="py-2">Promotes the health and wellbeing of all Canadians</li>
+                    <li className="py-2">Is protected forever with a no-clear-cut harvest guarantee</li>
+                  </ul>
                 </Col>
               </Row>
-
               <hr className="white mb-5 mt-4"/>
-
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">
-                  Who can build a Smart Forest?
-                  </h3>
+                  <h3 className="text-orange bold">Who can build a Smart Forest?</h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 bold ms-lg-4 ms-xl-0">
-                  Anyone can build a Smart Forest:
-                  </p>
-
+                  <p className="text-white medium mb-3 bold ms-lg-4 ms-xl-0">Anyone can build a Smart Forest:</p>
                   <ul className="checkMark text-white ms-5  ms-xl-3 pe-3">
-                     <li className="py-2">Corporations looking to meet ESG goals</li>
-                     <li className="py-2">Students who want to make a positive impact on their future</li>
-                     <li className="py-2">Individuals and families with a goal of protecting the planet for future generations or building a memorial in someone’s honour</li>
-                     
-                   </ul>
+                    <li className="py-2">Corporations looking to meet ESG goals</li>
+                    <li className="py-2">Students who want to make a positive impact on their future</li>
+                    <li className="py-2">Individuals and families with a goal of protecting the planet for future generations or building a memorial in someone’s honour</li>
+                  </ul>
                 </Col>
               </Row>
-
               <hr className="white mb-5 mt-4"/>
-
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold mb-3">
-                  Why did we establish Canada’s Forest Trust?
-                  </h3>
-                
+                  <h3 className="text-orange bold mb-3">Why did we establish Canada’s Forest Trust?</h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  We saw a gap to do something truly impactful and sustainable in an area that needs resources, patience and bold action to combat climate change.
+                    We saw a gap to do something truly impactful and sustainable in an area that needs resources, patience and bold action to combat climate change.
                   </p>
-
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  Under the right conditions, a forest will become a force of nature—quite literally. As the threat of climate change closes in, forests are one of our last and best chances to save our planet before it’s too late.
+                    Under the right conditions, a forest will become a force of nature—quite literally. As the threat of climate change closes in, forests are one of our last and best chances to save our planet before it’s too late.
                   </p>
-
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  Our Smart Forests will capture millions of tonnes of CO2, rehabilitate ecosystems and create jobs, country-wide. And we will never clear-cut.
+                    Our Smart Forests will capture millions of tonnes of CO2, rehabilitate ecosystems and create jobs, country-wide. And we will never clear-cut.
                   </p>
                 </Col>
               </Row>
-
               <hr className="white mb-5 mt-4"/>
-
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">
-                  How do you build a Smart Forest?
-                  </h3>
+                  <h3 className="text-orange bold">How do you build a Smart Forest?</h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 bold ms-lg-4 ms-xl-0">
-                  We build Smart Forests with our 5 Phase Action Plan:
-                  </p>
-
+                  <p className="text-white medium mb-3 bold ms-lg-4 ms-xl-0">We build Smart Forests with our 5 Phase Action Plan:</p>
                   <ul className="text-white ms-lg-4 ms-xl-0 pe-3">
-                     <li className="py-2">1. <span className="bold">PROCURE</span><br/> Acquire land across Canada </li>
-                     <li className="py-2">2. <span className="bold">PREPARE</span><br/> Assess, plan, and complete site preparation for planting</li>
-                     <li className="py-2">3. <span className="bold">PLANT</span><br/> Strategically plant seedlings to ensure optimal growth and carbon sequestration</li>
-                     <li className="py-2">4. <span className="bold">PRESERVE</span><br/> Perform innovative forest management activities to maintain the forest and maximize its impact</li>
-                     <li className="py-2">5. <span className="bold">PROTECT</span><br/> Audit, and set a no clear-cut guarantee on every forest</li>
-                   </ul>
+                    <li className="py-2">1. <span className="bold">PROCURE</span><br/> Acquire land across Canada </li>
+                    <li className="py-2">2. <span className="bold">PREPARE</span><br/> Assess, plan, and complete site preparation for planting</li>
+                    <li className="py-2">3. <span className="bold">PLANT</span><br/> Strategically plant seedlings to ensure optimal growth and carbon sequestration</li>
+                    <li className="py-2">4. <span className="bold">PRESERVE</span><br/> Perform innovative forest management activities to maintain the forest and maximize its impact</li>
+                    <li className="py-2">5. <span className="bold">PROTECT</span><br/> Audit, and set a no clear-cut guarantee on every forest</li>
+                  </ul>
                 </Col>
               </Row>
-
               <hr className="white mb-5 mt-4"/>
-
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">
-                  How is Canada’s Forest Trust different from other tree planting organizations?
-                  </h3>
+                  <h3 className="text-orange bold">How is Canada’s Forest Trust different from other tree planting organizations?</h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  CFT takes a holistic approach to forestry that doesn't stop at planting trees. We ensure the long term health of our forests with certifiable monitoring and expert management. And we will protect our forests forever. We will tell you exactly where in Canada your seedlings are planted, the health of the land, the impact your seedlings / forest is having on biodiversity, etc.
+                    CFT takes a holistic approach to forestry that doesn't stop at planting trees. We ensure the long term health of our forests with certifiable monitoring and expert management. And we will protect our forests forever. We will tell you exactly where in Canada your seedlings are planted, the health of the land, the impact your seedlings / forest is having on biodiversity, etc.
                   </p>
-
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  We provide all of this information through a private portal with state of the art monitoring and measuring technology.
+                    We provide all of this information through a private portal with state of the art monitoring and measuring technology.
                   </p>
                 </Col>
               </Row>
-
               <hr className="white mb-5 mt-4"/>
-
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">
-                  Is CFT a Charitable Organization?
-                  </h3>
+                  <h3 className="text-orange bold">Is CFT a Charitable Organization?</h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  Our choice to be a for profit at this point in our journey allows us the flexibility to enter into partnerships and make investments which we may not be able to do as a registered charity. We have structured CFT so that the lands can never be exploited for commercial reasons.
+                    Our choice to be a for profit at this point in our journey allows us the flexibility to enter into partnerships and make investments which we may not be able to do as a registered charity. We have structured CFT so that the lands can never be exploited for commercial reasons.
                   </p>
-
                 </Col>
               </Row>
-
               <hr className="white mb-5 mt-4"/>
-
               <Row className="mb-lg-4" >
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">
-                  When does a Smart Forest start to offset carbon?
-                  </h3>
+                  <h3 className="text-orange bold">When does a Smart Forest start to offset carbon?</h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  Within the first year of planting, forests will have already begun sequestering carbon in their roots and stems. The younger the tree, the more carbon it sequesters.
-                  </p>
-
-                </Col>
-              </Row>
-
-              <hr className="white mb-5 mt-4"/>
-
-              <Row>
-                <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">
-                  What is a carbon offset?
-                  </h3>
-                </Col>
-                <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  You offset your Carbon Footprint by making the amount of carbon you release in a year equal to the amount of carbon stored in your CFT Smart Forest.
-                  </p>
-
-                </Col>
-              </Row>
-
-              <hr className="white mb-5 mt-4"/>
-
-              <Row>
-                <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">
-                  What does it cost to buy a Smart Forest?
-                  </h3>
-                </Col>
-                <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  Using our <a href="/carbon-calculator" className="text-orange">carbon calculator</a>, we help you understand your carbon footprint. Then, using our <a href="/smart-forest-calculator" className="text-orange">net-zero calculator</a>, you can determine the size of forest you will need to build and over what period of time. This is measured in Forest Trust Units (FTUs). An FTU is 5 acres. The cost will be calculated based on the number of FTUs you need. For more information please contact <a href="mailto:grow@canadasforesttrust.ca" className="text-orange">grow@canadasforesttrust.ca</a>
-                  </p>
-
-                </Col>
-              </Row>
-
-              <hr className="white mb-5 mt-4"/>
-
-              <Row>
-                <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">
-                  Is there a minimum amount to ‘own’ a Smart Forest?
-                  </h3>
-                </Col>
-                <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  Yes. 1 Forest Trust Unit is measured in 5 acres, or at least 5,000 seedlings trees. Our communal forest allows for much lower than 5 acres so you are part of a forest.
-                  </p>
-
-                </Col>
-              </Row>
-
-              <hr className="white mb-5 mt-4"/>
-
-              <Row>
-                <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">
-                  Can I buy a Smart Forest as a gift?
-                  </h3>
-                </Col>
-                <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  Yes. You can create a <a href="/build-your-smart-forest#legacy" className="text-orange">Legacy or Memorial Forest</a> or you can contribute to a <a href="/build-your-smart-forest#communal" className="text-orange">Communal Forest</a> in someone’s name.
-                  </p>
-
-                </Col>
-              </Row>
-
-              <hr className="white mb-5 mt-4"/>
-
-              <Row>
-                <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">
-                  Where does my money go?
-                  </h3>
-                </Col>
-                <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  CFT uses funds to acquire land, prepare it for planting, purchase seedlings, hire planters, perform forest management, insure the land and pay land tax, provide reporting and annual audits.
-                  </p>
-
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  When you invest in a Smart Forest, you stay informed on its progress - from site selection to planting to ongoing maintenance and carbon footprint impact.
-                  </p>
-
-                </Col>
-              </Row>
-
-              <hr className="white mb-5 mt-4"/>
-
-              <Row>
-                <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">
-                  How do you choose where to build Smart Forests?
-                  </h3>
-                </Col>
-                <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  CFT sources lands across the country that are suitable for reforestation and will have maximum impact on the environment.
-                  </p>
-
-                </Col>
-              </Row>
-
-              <hr className="white mb-5 mt-4"/>
-
-              <Row>
-                <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">
-                  How many trees will Canada’s Forest Trust plant per acre?
-                  </h3>
-                </Col>
-                <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  The ideal number for a successful forest is approximately 1,000 seedlings per acre. Depending on the species and land, we can plant up to 1200 seedlings per acre. CFT is proud to pledge a no clear cut guarantee on every acre of forest we build.
-                  </p>
-
-                </Col>
-              </Row>
-
-              <hr className="white mb-5 mt-4"/>
-
-              <Row>
-                <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">
-                  How do you choose where to build Smart Forests?
-                  </h3>
-                </Col>
-                <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  Our forestry experts will advise on the right mix of species for the soil and climate of each forest location.
-                  </p>
-
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  As a common practice, CFT Smart Forests will be built with softwood species (conifers). These species are fast-growing and have needles that are kept year-round. Some examples of softwood species include: douglas fir, lodgepole pine, and whitespruce. We will also implement management practices that will promote hardwood growth.
-                  </p>
-
-                </Col>
-              </Row>
-
-              <hr className="white mb-5 mt-4"/>
-
-              <Row>
-                <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">
-                  Can I visit my Smart Forest?
-                  </h3>
-                </Col>
-                <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  Absolutely. Given that not everyone can physically visit a forest and in the first few years there is not much to see, you can see and monitor your forest in real time via your personal portal. If you wish to visit your forest, contact <a href="mailto:grow@canadasforesttrust.ca" className="text-orange">grow@canadasforesttrust.ca</a>
-                  </p>
-
-                </Col>
-              </Row>
-
-              <hr className="white mb-5 mt-4"/>
-
-              <Row>
-                <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">
-                  Will you cut down a Smart Forest
-                  </h3>
-                </Col>
-                <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  CFT will NEVER clear cut a forest or sell the land. We will manage our forests to create healthy ecosystems.
+                    Within the first year of planting, forests will have already begun sequestering carbon in their roots and stems. The younger the tree, the more carbon it sequesters.
                   </p>
                 </Col>
               </Row>
-
               <hr className="white mb-5 mt-4"/>
-
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">
-                  How will you protect the forests?
-                  </h3>
+                  <h3 className="text-orange bold">What is a carbon offset?</h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  CFT has hired experts to plan and build our forests and provide extensive monitoring systems.
+                    You offset your Carbon Footprint by making the amount of carbon you release in a year equal to the amount of carbon stored in your CFT Smart Forest.
                   </p>
                 </Col>
               </Row>
-
               <hr className="white mb-5 mt-4"/>
-
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">
-                  How many jobs will Canada’s Forest Trust create?
-                  </h3>
+                  <h3 className="text-orange bold">What does it cost to buy a Smart Forest?</h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  Our business plan is to create thousands of jobs across Canada. Each phase of our 5 Phase Action Plan will require person-power. There will be opportunities for nursery workers, truck drivers, tree planters, crew managers, auditors, monitoring/silviculture workers, brush saw operators, foresters for assessment, planning block layout (marking boundaries) workers, site prep operators, and more.
+                    Using our <a href="/carbon-calculator" className="text-orange">carbon calculator</a>, we help you understand your carbon footprint. Then, using our <a href="/smart-forest-calculator" className="text-orange">net-zero calculator</a>, you can determine the size of forest you will need to build and over what period of time. This is measured in Forest Trust Units (FTUs). An FTU is 5 acres. The cost will be calculated based on the number of FTUs you need. For more information please contact <a href="mailto:grow@canadasforesttrust.ca" className="text-orange">grow@canadasforesttrust.ca</a>
                   </p>
                 </Col>
               </Row>
-
               <hr className="white mb-5 mt-4"/>
-
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">
-                  Why should I invest with CFT and not a charity?
-                  </h3>
+                  <h3 className="text-orange bold">Is there a minimum amount to ‘own’ a Smart Forest?</h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  We encourage all Canadians to find a way to combat climate change. There is an important role for private sector companies to play. CFT is pleased to offer turnkey solutions that engage all individuals, families, schools and corporations to reach net-zero.
+                    Yes. 1 Forest Trust Unit is measured in 5 acres, or at least 5,000 seedlings trees. Our communal forest allows for much lower than 5 acres so you are part of a forest.
                   </p>
                 </Col>
               </Row>
-
               <hr className="white mb-5 mt-4"/>
-
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">
-                  What corporate benefits does CFT offer?
-                  </h3>
+                  <h3 className="text-orange bold">Can I buy a Smart Forest as a gift?</h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                  CFT offers a variety of benefits that can be customized to meet your needs. Contact us at <a href="mailto:grow@canadasforesttrust.ca" className="text-orange">grow@canadasforesttrust.ca</a> for more information.
+                    Yes. You can create a <a href="/build-your-smart-forest#legacy" className="text-orange">Legacy or Memorial Forest</a> or you can contribute to a <a href="/build-your-smart-forest#communal" className="text-orange">Communal Forest</a> in someone’s name.
+                  </p>
+                </Col>
+              </Row>
+              <hr className="white mb-5 mt-4"/>
+              <Row>
+                <Col className="col-12 col-lg-4">
+                  <h3 className="text-orange bold">Where does my money go?</h3>
+                </Col>
+                <Col className="col-12 col-lg-8">
+                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    CFT uses funds to acquire land, prepare it for planting, purchase seedlings, hire planters, perform forest management, insure the land and pay land tax, provide reporting and annual audits.
+                  </p>
+                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    When you invest in a Smart Forest, you stay informed on its progress - from site selection to planting to ongoing maintenance and carbon footprint impact.
+                  </p>
+                </Col>
+              </Row>
+              <hr className="white mb-5 mt-4"/>
+              <Row>
+                <Col className="col-12 col-lg-4">
+                  <h3 className="text-orange bold">How do you choose where to build Smart Forests?</h3>
+                </Col>
+                <Col className="col-12 col-lg-8">
+                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    CFT sources lands across the country that are suitable for reforestation and will have maximum impact on the environment.
+                  </p>
+                </Col>
+              </Row>
+              <hr className="white mb-5 mt-4"/>
+              <Row>
+                <Col className="col-12 col-lg-4">
+                  <h3 className="text-orange bold">How many trees will Canada’s Forest Trust plant per acre?</h3>
+                </Col>
+                <Col className="col-12 col-lg-8">
+                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    The ideal number for a successful forest is approximately 1,000 seedlings per acre. Depending on the species and land, we can plant up to 1200 seedlings per acre. CFT is proud to pledge a no clear cut guarantee on every acre of forest we build.
+                  </p>
+                </Col>
+              </Row>
+              <hr className="white mb-5 mt-4"/>
+              <Row>
+                <Col className="col-12 col-lg-4">
+                  <h3 className="text-orange bold">How do you choose where to build Smart Forests?</h3>
+                </Col>
+                <Col className="col-12 col-lg-8">
+                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    Our forestry experts will advise on the right mix of species for the soil and climate of each forest location.
+                  </p>
+                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    As a common practice, CFT Smart Forests will be built with softwood species (conifers). These species are fast-growing and have needles that are kept year-round. Some examples of softwood species include: douglas fir, lodgepole pine, and whitespruce. We will also implement management practices that will promote hardwood growth.
+                  </p>
+                </Col>
+              </Row>
+              <hr className="white mb-5 mt-4"/>
+              <Row>
+                <Col className="col-12 col-lg-4">
+                  <h3 className="text-orange bold">Can I visit my Smart Forest?</h3>
+                </Col>
+                <Col className="col-12 col-lg-8">
+                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    Absolutely. Given that not everyone can physically visit a forest and in the first few years there is not much to see, you can see and monitor your forest in real time via your personal portal. If you wish to visit your forest, contact <a href="mailto:grow@canadasforesttrust.ca" className="text-orange">grow@canadasforesttrust.ca</a>
+                  </p>
+                </Col>
+              </Row>
+              <hr className="white mb-5 mt-4"/>
+              <Row>
+                <Col className="col-12 col-lg-4">
+                  <h3 className="text-orange bold">Will you cut down a Smart Forest</h3>
+                </Col>
+                <Col className="col-12 col-lg-8">
+                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    CFT will NEVER clear cut a forest or sell the land. We will manage our forests to create healthy ecosystems.
+                  </p>
+                </Col>
+              </Row>
+              <hr className="white mb-5 mt-4"/>
+              <Row>
+                <Col className="col-12 col-lg-4">
+                  <h3 className="text-orange bold">How will you protect the forests?</h3>
+                </Col>
+                <Col className="col-12 col-lg-8">
+                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    CFT has hired experts to plan and build our forests and provide extensive monitoring systems.
+                  </p>
+                </Col>
+              </Row>
+              <hr className="white mb-5 mt-4"/>
+              <Row>
+                <Col className="col-12 col-lg-4">
+                  <h3 className="text-orange bold">How many jobs will Canada’s Forest Trust create?</h3>
+                </Col>
+                <Col className="col-12 col-lg-8">
+                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    Our business plan is to create thousands of jobs across Canada. Each phase of our 5 Phase Action Plan will require person-power. There will be opportunities for nursery workers, truck drivers, tree planters, crew managers, auditors, monitoring/silviculture workers, brush saw operators, foresters for assessment, planning block layout (marking boundaries) workers, site prep operators, and more.
+                  </p>
+                </Col>
+              </Row>
+              <hr className="white mb-5 mt-4"/>
+              <Row>
+                <Col className="col-12 col-lg-4">
+                  <h3 className="text-orange bold">Why should I invest with CFT and not a charity?</h3>
+                </Col>
+                <Col className="col-12 col-lg-8">
+                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    We encourage all Canadians to find a way to combat climate change. There is an important role for private sector companies to play. CFT is pleased to offer turnkey solutions that engage all individuals, families, schools and corporations to reach net-zero.
+                  </p>
+                </Col>
+              </Row>
+              <hr className="white mb-5 mt-4"/>
+              <Row>
+                <Col className="col-12 col-lg-4">
+                  <h3 className="text-orange bold">What corporate benefits does CFT offer?</h3>
+                </Col>
+                <Col className="col-12 col-lg-8">
+                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    CFT offers a variety of benefits that can be customized to meet your needs. Contact us at <a href="mailto:grow@canadasforesttrust.ca" className="text-orange">grow@canadasforesttrust.ca</a> for more information.
                   </p>
                 </Col>
               </Row>              
-
+            </Col>
+          </Row>
+          {/* END OF Q&A */}
+        </Container>
+        <Modal show={show} className="d-flex align-items-center" onHide={handleClose}>
+          <Modal.Header className="d-none" closeButton>
+            <Modal.Title className="d-none"></Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Row className="justify-content-center align-items-center mb-0">
+              <Col>
+                <h3 className="text-green smallCaps text-center">A MESSAGE FROM OUR FOUNDER</h3>
               </Col>
             </Row>
-
-            {/* END OF Q&A */}
-        </Container>
-
-      <Modal show={show} className="d-flex align-items-center" onHide={handleClose}>
-        <Modal.Header className="d-none" closeButton>
-          <Modal.Title className="d-none"></Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Row className="justify-content-center align-items-center mb-0">
-            <Col>
-              <h3 className="text-green smallCaps text-center">A MESSAGE FROM OUR FOUNDER</h3>
-            </Col>
-          </Row>
-          <Row className="justify-content-center align-items-center">
-            <Col className="col-12 d-flex">
-              <ReactPlayer playing playsinline controls url='./ceo-message.mp4' className="video-size"/>
-            </Col>
-          </Row>
-        </Modal.Body>
-        <Modal.Footer className="p-0">
-          <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleClose}>CLOSE</Button>
-        </Modal.Footer>
-      </Modal>
-
+            <Row className="justify-content-center align-items-center">
+              <Col className="col-12 d-flex">
+                <ReactPlayer playing playsinline controls url='./ceo-message.mp4' className="video-size"/>
+              </Col>
+            </Row>
+          </Modal.Body>
+          <Modal.Footer className="p-0">
+            <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleClose}>CLOSE</Button>
+          </Modal.Footer>
+        </Modal>
       </main>
     </div>
   );

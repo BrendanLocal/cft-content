@@ -189,24 +189,24 @@ export default function Home({ file, href, children}) {
                   </Col>
                 </Row>
                 <Row className="justify-content-center pb-5 align-items-stretch mb-5 mb-sm-0 px-lg-3 mx-lg-3 px-xl-5 mx-xl-5">
-                <Col className="col-10 col-md-8 col-lg-5 col-xl-3 mb-4">
-                  <div className="roundedBox card no-border bg-white mx-1 p-4 h-100">
-                  <ReactMarkdown className="text-grey m-2">{editingdata.part1_box1para}</ReactMarkdown>
+                  <Col className="col-10 col-md-8 col-lg-5 col-xl-3 mb-4">
+                    <div className="roundedBox card no-border bg-white mx-1 p-4 h-100">
+                      <ReactMarkdown className="text-grey m-2">{editingdata.part1_box1para}</ReactMarkdown>
                     </div>
                   </Col>
                   <Col className="col-10 col-md-8 col-lg-5 col-xl-3 mb-4">
                     <div className="roundedBox card no-border bg-white mx-1 p-4 h-100">
-                    <ReactMarkdown className="text-grey m-2">{editingdata.part1_box2para}</ReactMarkdown>
+                      <ReactMarkdown className="text-grey m-2">{editingdata.part1_box2para}</ReactMarkdown>
                     </div>
                   </Col>
                   <Col className="col-10 col-md-8 col-lg-5 col-xl-3 mb-4">
                     <div className="roundedBox card no-border bg-white mx-1 p-4 h-100">
-                    <ReactMarkdown className="text-grey m-2">{editingdata.part1_box3para}</ReactMarkdown>
+                      <ReactMarkdown className="text-grey m-2">{editingdata.part1_box3para}</ReactMarkdown>
                     </div>
                   </Col>
                   <Col className="col-10 col-md-8 col-lg-5 col-xl-3 mb-4">
                     <div className="roundedBox card no-border bg-white mx-1 p-4 h-100">
-                    <ReactMarkdown className="text-grey m-2">{editingdata.part1_box4para}</ReactMarkdown>
+                      <ReactMarkdown className="text-grey m-2">{editingdata.part1_box4para}</ReactMarkdown>
                     </div>
                   </Col>
                   <Col className="text-center col-10 col-lg-12 pb-5 mt-4">
@@ -220,72 +220,71 @@ export default function Home({ file, href, children}) {
 
         <Container id="you" fluid className="v-full z-999 bg-green py-6 container-drop-heavy page-section">
           <Fade bottom>
-          <Row  className="align-items-center justify-content-center pt-5 mt-0">
+            <Row  className="align-items-center justify-content-center pt-5 mt-0">
               <Col className="col-10 col-lg-6 pe-lg-0 mb-2 pt-0 mt-0">
                 <h2 className="text-center text-orange bold pt-0 mt-0"><ReactMarkdown>{editingdata.part5_header1}</ReactMarkdown></h2>
               </Col>
             </Row>
-          <Row className="justify-content-center align-items-stretch pb-5">
-            <Col className="col-10 col-md-8 pe-lg-0 m-3">
-              <div className="roundedBox card bg-mildgreen no-border py-3 px-3 d-flex flex-column drop action-card">
-                <Link href="/build-your-smart-forest">
-                  <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button1}</a>
-                </Link>
-              </div>
-            </Col>
-            <Col className="col-10 col-md-8 pe-lg-0 m-3">
-              <div className="roundedBox card bg-mildgreen no-border py-3 px-3 d-flex flex-column drop action-card">
-                <Link href="/build-your-smart-forest#corporate">
-                  <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button2}</a>
-                </Link>
-              </div>
-            </Col>
-            <Col className="col-10 col-md-8 pe-lg-0 m-3">
-              <div className="roundedBox card  bg-mildgreen  no-border py-3 px-5 px-md-3 d-flex flex-column drop action-card">
-                <Link href="/build-your-smart-forest#school">
-                  <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button3}</a>
-                </Link>
-              </div>
-            </Col>
-            <Col className="col-10 col-md-8 pe-lg-0 m-3">
-              <div className="roundedBox card bg-mildgreen no-border py-3 px-3 d-flex flex-column drop action-card">
-                <Link href="/build-your-smart-forest#legacy" >
-                  <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button4}</a>
-                </Link>
-              </div>
-            </Col>
-            <Col className="col-10 col-md-8 pe-lg-0 m-3">
-              <div className="roundedBox card bg-mildgreen no-border py-3 px-3 d-flex flex-column drop action-card">
-                <Link href="/build-your-smart-forest#communal" >
-                  <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop 1">{editingdata.part5_button5}</a>
-                </Link>
-              </div>
-            </Col>
-            <Col className="col-10 col-md-8 pe-lg-0 m-3 d-none">
-              <div className="roundedBox card bg-mildgreen no-border py-3 px-3 d-flex flex-column drop action-card">
-                <Link href="/build-your-smart-forest#school">
-                  <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button6}</a>
-                </Link>
-              </div>
-            </Col>
-            <Col className="col-10 col-md-8 pe-lg-0 m-3">
-              <div className="roundedBox card bg-mildgreen no-border py-3 px-3 d-flex flex-column drop action-card">
-                <Link href="/carbon-calculator">
-                  <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button7}</a>
-                </Link>
-              </div>
-            </Col>
-            <Col className="col-10 col-md-8 pe-lg-0 m-3">
-              <div className="roundedBox card bg-mildgreen no-border py-3 px-3 d-flex flex-column drop action-card">
-                <Link href="/inside-cft">
-                  <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button8}</a>
-                </Link>
-              </div>
-            </Col>
-           </Row>
+            <Row className="justify-content-center align-items-stretch pb-5">
+              <Col className="col-10 col-md-8 pe-lg-0 m-3">
+                <div className="roundedBox card bg-mildgreen no-border py-3 px-3 d-flex flex-column drop action-card">
+                  <Link href="/build-your-smart-forest">
+                    <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button1}</a>
+                  </Link>
+                </div>
+             </Col>
+              <Col className="col-10 col-md-8 pe-lg-0 m-3">
+                <div className="roundedBox card bg-mildgreen no-border py-3 px-3 d-flex flex-column drop action-card">
+                  <Link href="/build-your-smart-forest#corporate">
+                    <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button2}</a>
+                  </Link>
+                </div>
+              </Col>
+              <Col className="col-10 col-md-8 pe-lg-0 m-3">
+                <div className="roundedBox card  bg-mildgreen  no-border py-3 px-5 px-md-3 d-flex flex-column drop action-card">
+                  <Link href="/build-your-smart-forest#school">
+                    <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button3}</a>
+                  </Link>
+                </div>
+              </Col>
+              <Col className="col-10 col-md-8 pe-lg-0 m-3">
+                <div className="roundedBox card bg-mildgreen no-border py-3 px-3 d-flex flex-column drop action-card">
+                  <Link href="/build-your-smart-forest#legacy" >
+                    <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button4}</a>
+                  </Link>
+                </div>
+              </Col>
+              <Col className="col-10 col-md-8 pe-lg-0 m-3">
+                <div className="roundedBox card bg-mildgreen no-border py-3 px-3 d-flex flex-column drop action-card">
+                  <Link href="/build-your-smart-forest#communal" >
+                    <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop 1">{editingdata.part5_button5}</a>
+                  </Link>
+                </div>
+              </Col>
+              <Col className="col-10 col-md-8 pe-lg-0 m-3 d-none">
+                <div className="roundedBox card bg-mildgreen no-border py-3 px-3 d-flex flex-column drop action-card">
+                  <Link href="/build-your-smart-forest#school">
+                    <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button6}</a>
+                  </Link>
+                </div>
+              </Col>
+              <Col className="col-10 col-md-8 pe-lg-0 m-3">
+                <div className="roundedBox card bg-mildgreen no-border py-3 px-3 d-flex flex-column drop action-card">
+                  <Link href="/carbon-calculator">
+                    <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button7}</a>
+                  </Link>
+                </div>
+              </Col>
+              <Col className="col-10 col-md-8 pe-lg-0 m-3">
+                <div className="roundedBox card bg-mildgreen no-border py-3 px-3 d-flex flex-column drop action-card">
+                  <Link href="/inside-cft">
+                    <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button8}</a>
+                  </Link>
+                </div>
+              </Col>
+            </Row>
           </Fade>
         </Container>
-      
       </main>
     </div>
   )

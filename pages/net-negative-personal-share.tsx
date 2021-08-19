@@ -212,7 +212,7 @@ export default function App({ file, href, children}) {
                   <br />
                   <p>{footprint}</p>
                   <p className="x-small mb-3 op-7">{editingdata.emissionsPlaceholder}</p>
-                    </Col>
+                </Col>
               </Row>
               <hr/>
               <Row>
@@ -220,7 +220,7 @@ export default function App({ file, href, children}) {
                   <label htmlFor="type">{editingdata.emissionsRegion}</label>
                   <br />
                   <p>{region}</p>
-                    </Col>
+                </Col>
               </Row>
               <hr/> 
               <Row>
@@ -228,7 +228,7 @@ export default function App({ file, href, children}) {
                   <label htmlFor="size">{editingdata.emissionsTimeHeader}</label>
                   <br />
                   <p>{duration}</p>
-                  </Col>
+                </Col>
               </Row>
               </div>
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
@@ -243,7 +243,7 @@ export default function App({ file, href, children}) {
                   <label htmlFor="additional">This will calculate the carbon you want to sequester in addition to your net-zero target for years to come:</label>
                   <br />
                   <p>{negative}</p>
-                    </Col>
+                </Col>
               </Row>
             </div>
           </Col>
@@ -251,38 +251,41 @@ export default function App({ file, href, children}) {
             <div className="text-white p-5 innerShadow roundedBox bg-green">
               <h4 className="mb-0">{editingdata.dataHeader}</h4>
               <hr/>
-              <Row><Col className="pb-3">{editingdata.dataType} {plantAcres > 0 ? plantAcres.toLocaleString('en-US', {maximumFractionDigits: 2}) : "--"} {editingdata.dataType1}</Col></Row>
+              <Row>
+                <Col className="pb-3">
+                  {editingdata.dataType} {plantAcres > 0 ? plantAcres.toLocaleString('en-US', {maximumFractionDigits: 2}) : "--"} {editingdata.dataType1}
+                </Col>
+              </Row>
               <hr/>
-              <Row><Col className="pb-3">{editingdata.dataType} {plantTrees > 0 ? Math.ceil(plantTrees).toLocaleString("en-US") : "--"} {editingdata.dataType2}</Col></Row>
-
-             
+              <Row>
+                <Col className="pb-3">
+                  {editingdata.dataType} {plantTrees > 0 ? Math.ceil(plantTrees).toLocaleString("en-US") : "--"} {editingdata.dataType2}
+                </Col>
+              </Row>
               <hr className="my-4"/>
+              <Row className="justify-content-center text-center">
+                <Col>
+                  <div className="mt-3">
+                    <p className="smallCaps text-white mb-3">Share these results</p>
+                    
+                    <FacebookShareButton url={sharingPrefix + sharingUrl} quote={editingdata.sharePersonalFacebook} hashtag={editingdata.sharePersonalFacebookTags} className="mx-2">
+                      <FacebookIcon size={40} round />
+                    </FacebookShareButton>
 
-<Row className="justify-content-center text-center">
-<Col>
-<div className="mt-3">
-                <p className="smallCaps text-white mb-3">Share these results</p>
-                
-                <FacebookShareButton url={sharingPrefix + sharingUrl} quote={editingdata.sharePersonalFacebook} hashtag={editingdata.sharePersonalFacebookTags} className="mx-2">
-                  <FacebookIcon size={40} round />
-                </FacebookShareButton>
+                    <TwitterShareButton url={sharingPrefix + sharingUrl} title={editingdata.sharePersonalTwitter} className="mx-2">
+                      <TwitterIcon size={40} round />
+                    </TwitterShareButton>
 
-                <TwitterShareButton url={sharingPrefix + sharingUrl} title={editingdata.sharePersonalTwitter} className="mx-2">
-                  <TwitterIcon size={40} round />
-                </TwitterShareButton>
+                    {/* <LinkedinShareButton url={sharingPrefix + sharingUrl} summary={editingdata.sharePersonalLinkedIn} className="mx-2">
+                      <LinkedinIcon size={40} round />
+                    </LinkedinShareButton> */}
 
-                {/* <LinkedinShareButton url={sharingPrefix + sharingUrl} summary={editingdata.sharePersonalLinkedIn} className="mx-2">
-                  <LinkedinIcon size={40} round />
-                </LinkedinShareButton> */}
-
-                <EmailShareButton url={sharingPrefix + sharingUrl} body={editingdata.sharePersonalEmailBody} subject={editingdata.sharePersonalEmailSubject} className="mx-2">
-                  <EmailIcon size={40} round />
-                </EmailShareButton>
-              </div>
-              </Col>
-            </Row>
-
-
+                    <EmailShareButton url={sharingPrefix + sharingUrl} body={editingdata.sharePersonalEmailBody} subject={editingdata.sharePersonalEmailSubject} className="mx-2">
+                      <EmailIcon size={40} round />
+                    </EmailShareButton>
+                  </div>
+                </Col>
+              </Row>
             </div>
           </Col>
         </Row>

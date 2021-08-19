@@ -179,128 +179,113 @@ const [sliderData,setSliderData] = React.useState({
     ]
 
 
-return (
+  return (
 
-<div>
-  <Head>
-    <title>Canada's Forest Trust</title>
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="theme-color" content="#054218">
-    </meta>
-  </Head>
+    <div>
+      <Head>
+        <title>Canada's Forest Trust</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content="#054218">
+        </meta>
+      </Head>
 
-  <main className="bg-green">
-    <Container fluid className="portalLogo">
-        <Row>
-          <Col className="p-4">
-            <Link href="/home">
-            <img className="logo" src="/cft-logo-white.svg" />
-            </Link>
-          </Col>
-          <Col className="text-right p-4">    
-              <a onClick={(e) => {e.preventDefault(); router.back();}} className="smallCaps textButton crsr-pntr">GO BACK</a>     
-          </Col>
-          </Row>
-     </Container>
-    <Container fluid className="bg-green px-0">
-
-      <Row className="flex bg-white  justify-content-center p-0 m-0">
-       <Col className="col-12 card-drop p-0 m-0">
-        <Tabs className="p-0 m-0">
-          <Row className="p-0 m-0">
-            <Col className="col-12 col-lg-3 p-lg-4 p-xl-5 bg-offwhite d-none d-lg-block">
-              <div className="roundedBox card-drop bg-white p-3 mb-4">
-                <p className=" text-orange bold">
-                  This is an example of what your portal will look like. This information will be available 24/7 and customized according to the size, type, age and location of the forest planted.
-                </p>
-              </div>
-            <TabList>
-              <span className="smallCaps small text-green panelHead mb-1">Profile</span>
-              <Tab className="my-2">Smart Forest Intelligence Dashboard</Tab>       
-              <Tab className="op-5 my-2" disabled>Grow My Impact</Tab>
-              <Tab className="op-5 my-2" disabled>Edit My Information</Tab>
-              <br />
-              <span className="smallCaps small text-green panelHead mb-1">Campaigns</span> 
-              <Tab className="op-5 my-2" disabled>New +</Tab>
-              <Tab className="op-5 my-2" disabled>Active</Tab>
-              <Tab className="op-5 my-2" disabled>Previous</Tab>
-            </TabList>
+      <main className="bg-green">
+        <Container fluid className="portalLogo">
+          <Row>
+            <Col className="p-4">
+              <Link href="/home">
+                <img className="logo" src="/cft-logo-white.svg" />
+              </Link>
             </Col>
-            
-            <Col className="col-12 col-lg-9 p-4 p-lg-5 pt-lg-3 pt-xl-4">    
-            <TabPanel>
-              <h3 className="text-center x-large text-green bold mt-3 mb-2">Smart Forest Intelligence Dashboard</h3>
-              
-                <p className=" text-grey text-center mb-3 px-3 px-md-5 d-lg-none">
-                  This is an example of what your portal will look like. This information will be available 24/7 and customized according to the size, type, age and location of the forest planted.
-                </p>
-              
-              <Tabs>
-                <TabList className="tabRow mb-0 px-0">
-                  <Tab className="link bold text-orange my-2 mx-5 mx-md-3">
-                  YOUR FOREST
-                  </Tab>
-                  <Tab className="link bold text-orange my-2 mx-5 mx-md-3">
-                  GALLERY
-                  </Tab>
-                  <Tab className="link bold text-orange my-2 mx-5 mx-md-3">
-                  FORESTCASTER
-                  </Tab>
-              </TabList>
-
-       {/* Dashboard */}
-            <TabPanel >
-              <Row className="flex justify-content-center mt-3">
-                <Col className="col-11 col-md-6 col-lg-6 col-xl-4 py-3 px-3">
-                <img src="/dashboard1.svg"/> 
-                </Col>
-                <Col className="col-11 col-md-6 col-lg-6 col-xl-4 py-3 px-3">
-                <img src="/dashboard2.svg"/> 
-                </Col>
-                <Col className="col-11 col-md-6 col-lg-6 col-xl-4 py-3 px-3">
-                <img src="/dashboard3.svg"/> 
-                </Col>
-              </Row>
-                          
-              </TabPanel>
-
-        {/* Image Gallery */}      
-
-            <TabPanel className="py-3">
-
-                  <ImageGallery items={images} showPlayButton={false} showIndex={true} /> 
-            
-              </TabPanel>
-              
-        {/* Forestcaster */}      
-              <TabPanel>
-                <Row>
-                  <Col className="col-12 col-md-8 col-xl-8 p-0">
-                    <img src="/portal-gallery-forestcast-grid.svg"/> 
+            <Col className="text-right p-4">    
+              <a onClick={(e) => {e.preventDefault(); router.back();}} className="smallCaps textButton crsr-pntr">GO BACK</a>     
+            </Col>
+          </Row>
+        </Container>
+        <Container fluid className="bg-green px-0">
+          <Row className="flex bg-white  justify-content-center p-0 m-0">
+            <Col className="col-12 card-drop p-0 m-0">
+              <Tabs className="p-0 m-0">
+                <Row className="p-0 m-0">
+                  <Col className="col-12 col-lg-3 p-lg-4 p-xl-5 bg-offwhite d-none d-lg-block">
+                    <div className="roundedBox card-drop bg-white p-3 mb-4">
+                      <p className=" text-orange bold">
+                        This is an example of what your portal will look like. This information will be available 24/7 and customized according to the size, type, age and location of the forest planted.
+                      </p>
+                    </div>
+                    <TabList>
+                      <span className="smallCaps small text-green panelHead mb-1">Profile</span>
+                      <Tab className="my-2">Smart Forest Intelligence Dashboard</Tab>       
+                      <Tab className="op-5 my-2" disabled>Grow My Impact</Tab>
+                      <Tab className="op-5 my-2" disabled>Edit My Information</Tab>
+                      <br />
+                      <span className="smallCaps small text-green panelHead mb-1">Campaigns</span> 
+                      <Tab className="op-5 my-2" disabled>New +</Tab>
+                      <Tab className="op-5 my-2" disabled>Active</Tab>
+                      <Tab className="op-5 my-2" disabled>Previous</Tab>
+                    </TabList>
                   </Col>
-                  <Col className="col-12 col-md-4 col-xl-4 p-0 px-2">
-                    <img src="/portal-gallery-forestcast-data.svg"/> 
+                  <Col className="col-12 col-lg-9 p-4 p-lg-5 pt-lg-3 pt-xl-4">    
+                    <TabPanel>
+                      <h3 className="text-center x-large text-green bold mt-3 mb-2">Smart Forest Intelligence Dashboard</h3>
+                      <p className=" text-grey text-center mb-3 px-3 px-md-5 d-lg-none">
+                        This is an example of what your portal will look like. This information will be available 24/7 and customized according to the size, type, age and location of the forest planted.
+                      </p>
+                      <Tabs>
+                        <TabList className="tabRow mb-0 px-0">
+                          <Tab className="link bold text-orange my-2 mx-5 mx-md-3">
+                            YOUR FOREST
+                          </Tab>
+                          <Tab className="link bold text-orange my-2 mx-5 mx-md-3">
+                            GALLERY
+                          </Tab>
+                          <Tab className="link bold text-orange my-2 mx-5 mx-md-3">
+                            FORESTCASTER
+                          </Tab>
+                        </TabList>
+
+                        {/* Dashboard */}
+                        <TabPanel >
+                          <Row className="flex justify-content-center mt-3">
+                            <Col className="col-11 col-md-6 col-lg-6 col-xl-4 py-3 px-3">
+                            <img src="/dashboard1.svg"/> 
+                            </Col>
+                            <Col className="col-11 col-md-6 col-lg-6 col-xl-4 py-3 px-3">
+                            <img src="/dashboard2.svg"/> 
+                            </Col>
+                            <Col className="col-11 col-md-6 col-lg-6 col-xl-4 py-3 px-3">
+                            <img src="/dashboard3.svg"/> 
+                            </Col>
+                          </Row>
+                        </TabPanel>
+
+                        {/* Image Gallery */}      
+                        <TabPanel className="py-3">
+                          <ImageGallery items={images} showPlayButton={false} showIndex={true} /> 
+                        </TabPanel>
+
+                        {/* Forestcaster */}      
+                        <TabPanel>
+                          <Row>
+                            <Col className="col-12 col-md-8 col-xl-8 p-0">
+                              <img src="/portal-gallery-forestcast-grid.svg"/> 
+                            </Col>
+                            <Col className="col-12 col-md-4 col-xl-4 p-0 px-2">
+                              <img src="/portal-gallery-forestcast-data.svg"/> 
+                            </Col>
+                          </Row>
+                        </TabPanel>
+                      </Tabs>
+                    </TabPanel>
                   </Col>
                 </Row>
-                
-              </TabPanel>
-
               </Tabs>
-            </TabPanel>
-            
             </Col>
-
           </Row>
-
-        </Tabs>
-        </Col>
-      </Row>
-    </Container>
-
-
-  </main>
-</div>
-)
+        </Container>
+      </main>
+    </div>
+  )
 }
 
 /**
