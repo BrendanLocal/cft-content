@@ -13,7 +13,9 @@ import CookieConsent, { Cookies, getCookieConsentValue } from "react-cookie-cons
 
 import ReactGA from 'react-ga';
 ReactGA.initialize('G-9ELPSR6C5L');
+if (typeof window !== 'undefined') {
 ReactGA.pageview(window.location.pathname + window.location.search);
+}
 
 
 const Header = ()=> {
