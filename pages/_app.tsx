@@ -76,6 +76,8 @@ export default class Site extends App {
     const history = createMemoryHistory();
     const { Component, pageProps, router} = this.props
 
+    console.log(router);
+
     return (
       
       <TinaProvider cms={this.cms}>
@@ -147,9 +149,15 @@ export default class Site extends App {
             }
           `}
         </style>
-        <Footer/>
+
+        {
+          router.route !== '/' &&
+          <React.Fragment>
+            <Footer/>
+            <NewsTicker />
+          </React.Fragment>
+        }
         
-        <NewsTicker />
       {/* <EditLink cms={this.cms} /> */}
         </TinacmsGithubProvider>
       </TinaProvider>
