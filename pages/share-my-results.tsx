@@ -552,12 +552,13 @@ export default function App({ file, href, children}) {
         <link rel="icon" href="/favicon.ico" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta name="theme-color" content="#054218"/>
-        
+
         <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@CanadasForest" />
 <meta name="twitter:title" content={editingdata.title} />
 <meta name="twitter:description" content={editingdata.dataDisclaimer} />
 <meta name="twitter:image" content={sharingPrefix + '/logo-share-preview-twitter.png'} />
+<meta name="twitter:card" content="summary_large_image" />
 
 
         <meta property='og:title' content={editingdata.title}/>
