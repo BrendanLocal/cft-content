@@ -1277,19 +1277,19 @@ export default function BusinessCalc({ file, href, children}) {
 <div className="mt-3">
                 <p className="smallCaps text-center text-white mb-3">Share These Results</p>
                 
-                <FacebookShareButton url={sharingPrefix + sharingUrl} quote={editingdata.shareQuote} className="mx-2">
+                <FacebookShareButton url={sharingPrefix + sharingUrl} quote={editingdata.shareFacebook} hashtag={editingdata.shareFacebookTags} className="mx-2">
                   <FacebookIcon size={40} round />
                 </FacebookShareButton>
 
-                <TwitterShareButton url={sharingPrefix + sharingUrl} title={editingdata.shareQuote} className="mx-2">
+                <TwitterShareButton url={sharingPrefix + sharingUrl} title={editingdata.shareTwitter} className="mx-2">
                   <TwitterIcon size={40} round />
                 </TwitterShareButton>
 
-                {/* <LinkedinShareButton url={sharingPrefix + sharingUrl} summary={editingdata.shareQuote} className="mx-2">
+                {/* <LinkedinShareButton url={sharingPrefix + sharingUrl} summary={editingdata.shareLinkedIn} className="mx-2">
                   <LinkedinIcon size={40} round />
                 </LinkedinShareButton> */}
 
-                <EmailShareButton url={sharingPrefix + sharingUrl} body={editingdata.shareQuote} className="mx-2">
+                <EmailShareButton url={sharingPrefix + sharingUrl} body={editingdata.shareEmailBody} subject={editingdata.shareEmailSubject} className="mx-2">
                   <EmailIcon size={40} round />
                 </EmailShareButton>
               </div>

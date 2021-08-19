@@ -262,19 +262,19 @@ export default function App({ file, href, children}) {
 <div className="mt-3">
                 <p className="smallCaps text-white mb-3">Share these results</p>
                 
-                <FacebookShareButton url={sharingPrefix + sharingUrl} quote={editingdata.shareFacebook}hashtag={editingdata.shareFacebookTags}className="mx-2">
+                <FacebookShareButton url={sharingPrefix + sharingUrl} quote={editingdata.shareCorpFacebook} hashtag={editingdata.shareCorpFacebookTags} className="mx-2">
                   <FacebookIcon size={40} round />
                 </FacebookShareButton>
 
-                <TwitterShareButton url={sharingPrefix + sharingUrl} title={editingdata.shareTwitter} className="mx-2">
+                <TwitterShareButton url={sharingPrefix + sharingUrl} title={editingdata.shareCorpTwitter} className="mx-2">
                   <TwitterIcon size={40} round />
                 </TwitterShareButton>
 
-                {/* <LinkedinShareButton url={sharingPrefix + sharingUrl} summary={editingdata.shareLinkedIn} className="mx-2">
+                {/* <LinkedinShareButton url={sharingPrefix + sharingUrl} summary={editingdata.shareCorpLinkedIn} className="mx-2">
                   <LinkedinIcon size={40} round />
                 </LinkedinShareButton> */}
 
-                <EmailShareButton url={sharingPrefix + sharingUrl} body={editingdata.shareEmailBody} subject={editingdata.shareEmailSubject} className="mx-2">
+                <EmailShareButton url={sharingPrefix + sharingUrl} body={editingdata.shareCorpEmailBody} subject={editingdata.shareCorpEmailSubject} className="mx-2">
                   <EmailIcon size={40} round />
                 </EmailShareButton>
               </div>

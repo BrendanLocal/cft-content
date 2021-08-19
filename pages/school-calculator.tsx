@@ -406,7 +406,7 @@ export default function App({ file, href, children}) {
   }
 
   const editUrlPrefix = '/school-calculator?session=';
-  const sharingUrlPrefix = '/school-calculator-share?session=';
+  const sharingUrlPrefix = '/share-school-results?session=';
   const [editUrl, setEditUrl] = React.useState('/school-calculator');
   const [sharingUrl, setSharingUrl] = React.useState('/share-school-results');
 
@@ -1242,7 +1242,7 @@ export default function App({ file, href, children}) {
                 <p className="smallCaps text-white mb-3">Share your results</p>
                 {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
                 
-                <FacebookShareButton url={sharingPrefix + sharingUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareFacebook}hashtag={editingdata.shareFacebookTags}className="mx-2">
+                <FacebookShareButton url={sharingPrefix + sharingUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareFacebook} hashtag={editingdata.shareFacebookTags}className="mx-2">
                   <FacebookIcon size={40} round />
                 </FacebookShareButton>
 
