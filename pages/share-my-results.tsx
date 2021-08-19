@@ -550,12 +550,16 @@ export default function App({ file, href, children}) {
       <Head>
         <title>{editingdata.title}</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
-        <meta name="theme-color" content="#054218"></meta>
-        <meta name='twitter:title' content={editingdata.title}></meta>
-        <meta name='twitter:description' content={editingdata.dataDisclaimer}></meta>
-        <meta name='twitter:image' content={sharingPrefix + '/logo-share-preview-twitter.png'}></meta>
-        <meta name="twitter:card" content="summary"></meta>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="theme-color" content="#054218"/>
+        
+        <meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@CanadasForest" />
+<meta name="twitter:title" content={editingdata.title} />
+<meta name="twitter:description" content={editingdata.dataDisclaimer} />
+<meta name="twitter:image" content={sharingPrefix + '/logo-share-preview-twitter.png'} />
+
+
         <meta property='og:title' content={editingdata.title}/>
         <meta property='og:description' content={editingdata.dataDisclaimer}/>
         <meta property='og:image' content={sharingPrefix + '/logo-share-preview-twitter.png'}/>
