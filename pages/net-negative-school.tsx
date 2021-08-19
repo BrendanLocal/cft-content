@@ -9,14 +9,14 @@ import { GetStaticProps } from "next";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 import { useGithubJsonForm, useGithubToolbarPlugins } from "react-tinacms-github";
 import { usePlugin } from "tinacms";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Header from "../components/header";
 import randomstring from "randomstring";
 import Head from "next/head";
 import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon, LinkedinShareButton, LinkedinIcon, EmailShareButton, EmailIcon } from "react-share";
 
 let sessionID = randomstring.generate(12);
-let sharingPrefix = '';
+let sharingPrefix = 'https://www.canadasforesttrust.ca';
 if (typeof window !== 'undefined') {
   sharingPrefix = location.hostname;
   if (sharingPrefix.startsWith('localhost')) {

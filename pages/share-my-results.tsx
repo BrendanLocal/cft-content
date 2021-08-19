@@ -3,7 +3,6 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import Link from 'next/link'
 import { useRouter } from "next/router";
 import { GetStaticProps } from "next";
@@ -553,13 +552,11 @@ export default function App({ file, href, children}) {
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta name="theme-color" content="#054218"/>
 
-        <meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@CanadasForest" />
-<meta name="twitter:title" content={editingdata.title} />
-<meta name="twitter:description" content={editingdata.dataDisclaimer} />
-<meta name="twitter:image" content={sharingPrefix + '/logo-share-preview-twitter.png'} />
-<meta name="twitter:card" content="summary_large_image" />
-
+        <meta name="twitter:site" content="@CanadasForest" />
+        <meta name="twitter:title" content={editingdata.title} />
+        <meta name="twitter:description" content={editingdata.dataDisclaimer} />
+        <meta name="twitter:image" content={sharingPrefix + '/logo-share-preview-twitter.png'} />
+        <meta name="twitter:card" content="summary_large_image" />
 
         <meta property='og:title' content={editingdata.title}/>
         <meta property='og:description' content={editingdata.dataDisclaimer}/>

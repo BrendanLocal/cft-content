@@ -2,7 +2,6 @@ import * as React from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
 import Link from 'next/link'
 import { useRouter } from "next/router";
 import { GetStaticProps } from "next";
@@ -16,7 +15,7 @@ import randomstring from "randomstring";
 import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon, LinkedinShareButton, LinkedinIcon, EmailShareButton, EmailIcon } from "react-share";
 
 let sessionID = randomstring.generate(12);
-let sharingPrefix = '';
+let sharingPrefix = 'https://www.canadasforesttrust.ca';
 if (typeof window !== 'undefined') {
   sharingPrefix = location.hostname;
   if (sharingPrefix.startsWith('localhost')) {
@@ -165,7 +164,22 @@ export default function App({ file, href, children}) {
       <Head>
         <title>Corporate Net-Zero Calculator</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="theme-color" content="#054218"></meta>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="theme-color" content="#054218"/>
+
+        <meta name="twitter:site" content="@CanadasForest" />
+        <meta name="twitter:title" content="Corporate Net-Zero Calculator" />
+        <meta name="twitter:description" content="Calculate how many acres your corporation must invest in to reach a net-zero emissions target" />
+        <meta name="twitter:image" content={sharingPrefix + '/logo-share-preview-twitter.png'} />
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <meta property='og:title' content="Corporate Net-Zero Calculator"/>
+        <meta property='og:description' content="Calculate how many acres your corporation must invest in to reach a net-zero emissions target"/>
+        <meta property='og:image' content={sharingPrefix + '/logo-share-preview-twitter.png'}/>
+        <meta property='og:image:width' content='800'/>
+        <meta property='og:image:height' content='800'/>
+        <meta property='og:url' content={sharingPrefix + sharingUrl}/>
+        <meta property='og:type' content='website'/>
       </Head>
 
       <Container className="p-4 pt-5">

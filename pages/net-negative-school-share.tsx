@@ -2,21 +2,20 @@ import * as React from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
 import Link from 'next/link'
 import { useRouter } from "next/router";
 import { GetStaticProps } from "next";
 import { getGithubPreviewProps, parseJson } from "next-tinacms-github";
 import { useGithubJsonForm, useGithubToolbarPlugins } from "react-tinacms-github";
 import { usePlugin } from "tinacms";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Header from "../components/header";
 import randomstring from "randomstring";
 import Head from "next/head";
 import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon, LinkedinShareButton, LinkedinIcon, EmailShareButton, EmailIcon } from "react-share";
 
 let sessionID = randomstring.generate(12);
-let sharingPrefix = '';
+let sharingPrefix = 'https://www.canadasforesttrust.ca';
 if (typeof window !== 'undefined') {
   sharingPrefix = location.hostname;
   if (sharingPrefix.startsWith('localhost')) {
@@ -169,7 +168,22 @@ export default function App({ file, href, children}) {
       <Head>
         <title>School Net Negative Calculator</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="theme-color" content="#054218"></meta>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="theme-color" content="#054218"/>
+
+        <meta name="twitter:site" content="@CanadasForest" />
+        <meta name="twitter:title" content="School Net Negative Calculator" />
+        <meta name="twitter:description" content="Thank you for doing your part, this is your opportunity to pay it forward. Calculate how you can increase your goal to become net-negative" />
+        <meta name="twitter:image" content={sharingPrefix + '/logo-share-preview-twitter.png'} />
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <meta property='og:title' content="School Net Negative Calculator"/>
+        <meta property='og:description' content="Thank you for doing your part, this is your opportunity to pay it forward. Calculate how you can increase your goal to become net-negative"/>
+        <meta property='og:image' content={sharingPrefix + '/logo-share-preview-twitter.png'}/>
+        <meta property='og:image:width' content='800'/>
+        <meta property='og:image:height' content='800'/>
+        <meta property='og:url' content={sharingPrefix + sharingUrl}/>
+        <meta property='og:type' content='website'/>
       </Head>
 
       <Container className="p-4 pt-5">
