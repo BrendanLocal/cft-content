@@ -418,6 +418,11 @@ hr.white {
   transition: all .5s;
 }
 
+.intro-cta {
+  box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.3)!important;
+  transition: all .5s;
+}
+
 .intro-cta:before {
   content:"";
   background: url("/play-icon.svg");
@@ -429,6 +434,11 @@ hr.white {
   display: inline-block;
   margin: 0 10px 0 -2px;
   top: 3px;
+}
+
+.intro-cta:hover {
+  box-shadow: 0px 1px 25px rgba(0, 0, 0, 0.5)!important;
+  transition: all .5s;
 }
 
 .signin-btn {
@@ -515,6 +525,16 @@ hr.white {
 .btn:hover {
   color: #fff;
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+  transition: all .5s;
+}
+
+.intro-card {
+  box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.2);
+  transition: all .5s;
+}
+
+.intro-card:hover {
+  box-shadow: 0px 1px 30px rgba(0, 0, 0, 0.5);
   transition: all .5s;
 }
 
