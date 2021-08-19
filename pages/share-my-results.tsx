@@ -557,13 +557,13 @@ export default function App({ file, href, children}) {
 <meta name="twitter:site" content="@CanadasForest" />
 <meta name="twitter:title" content={editingdata.title} />
 <meta name="twitter:description" content={editingdata.dataDisclaimer} />
-<meta name="twitter:image" content={sharingPrefix + '/logo-share-preview-twitter.png'} />
+<meta name="twitter:image" content='https://www.canadasforesttrust.ca/logo-share-preview-twitter.png'/>
 <meta name="twitter:card" content="summary_large_image" />
 
 
         <meta property='og:title' content={editingdata.title}/>
         <meta property='og:description' content={editingdata.dataDisclaimer}/>
-        <meta property='og:image' content={sharingPrefix + '/logo-share-preview-twitter.png'}/>
+        <meta property='og:image' content='https://www.canadasforesttrust.ca/logo-share-preview-twitter.png'/>
         <meta property='og:image:width' content='800'/>
         <meta property='og:image:height' content='800'/>
         <meta property='og:url' content={sharingPrefix + sharingUrl}/>
