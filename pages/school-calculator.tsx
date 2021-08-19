@@ -19,6 +19,7 @@ import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon, Lin
 
 let sessionID = randomstring.generate(12);
 let sharingPrefix = 'https://www.canadasforesttrust.ca';
+
 if (typeof window !== 'undefined') {
   sharingPrefix = location.hostname;
   if (sharingPrefix.startsWith('localhost')) {
@@ -661,239 +662,216 @@ export default function App({ file, href, children}) {
                 </Col>
               </Row>
               <hr className="mb-4"/>
-                <h5 className="smallCaps text-small text-green">{editingdata.heatingOtherHeader}</h5>
-
-                <Row>
-                  <Col>
-                    <label htmlFor="energy">{editingdata.heatingOtherResidencyHeader}</label>
-                    <br />
-                    <input onChange={changeNumTwo} name="type" type="number" min="0" value={selectNumTwo} placeholder={editingdata.placeholder2} />
-                    <p className="x-small mb-3 op-7">{editingdata.placeholder2}</p>
-                  </Col>
-                </Row> 
-
-                <Accordion>
-
-{/* Alt Building Type 1 */}
-<Card>
-              <Accordion.Toggle as={Card.Header} eventKey="0">
-                <p>
-                  Additional Building Type 1
-                  </p>
-              </Accordion.Toggle>
-              <Accordion.Collapse eventKey="0">
-                <div>
+              <h5 className="smallCaps text-small text-green">{editingdata.heatingOtherHeader}</h5>
               <Row>
                 <Col>
-                <label htmlFor="type">{editingdata.heatingOtherTypeHeader}</label><br />
-                <select name="type" value={selectTypeThree} onChange={changeTypeThree}>
-                  <option value="" hidden>{editingdata.select}</option>
-                  <option value='none'>{editingdata.heatingOtherType1}</option>
-                  <option value='office'>{editingdata.heatingOtherType2}</option>
-                  <option value='industrial'>{editingdata.heatingOtherType3}</option>
-                  <option value='others'>{editingdata.heatingOtherType4}</option>
-                </select>
+                  <label htmlFor="energy">{editingdata.heatingOtherResidencyHeader}</label>
+                  <br />
+                  <input onChange={changeNumTwo} name="type" type="number" min="0" value={selectNumTwo} placeholder={editingdata.placeholder2} />
+                  <p className="x-small mb-3 op-7">{editingdata.placeholder2}</p>
                 </Col>
-              </Row>
+              </Row> 
+              <Accordion>
+                {/* Alt Building Type 1 */}
+                <Card>
+                  <Accordion.Toggle as={Card.Header} eventKey="0">
+                    <p>Additional Building Type 1</p>
+                  </Accordion.Toggle>
+                  <Accordion.Collapse eventKey="0">
+                    <div>
+                      <Row>
+                        <Col>
+                        <label htmlFor="type">{editingdata.heatingOtherTypeHeader}</label><br />
+                        <select name="type" value={selectTypeThree} onChange={changeTypeThree}>
+                          <option value="" hidden>{editingdata.select}</option>
+                          <option value='none'>{editingdata.heatingOtherType1}</option>
+                          <option value='office'>{editingdata.heatingOtherType2}</option>
+                          <option value='industrial'>{editingdata.heatingOtherType3}</option>
+                          <option value='others'>{editingdata.heatingOtherType4}</option>
+                        </select>
+                        </Col>
+                      </Row>
 
-              <Row>
-                <Col>
-                <label htmlFor="size">{editingdata.heatingOtherSizeHeader}</label><br />
-                <select name="size" value={selectSizeThree} onChange={changeSizeThree}>
-                  <option value="" hidden>{editingdata.select}</option>
-                  <option value='5000'>less than 5000</option>
-                  <option value='10000'>5000-10,000</option>
-                  <option value='25000'>10,000-25,000</option>
-                  <option value='50000'>25,000-50,000</option>
-                  <option value='75000'>50,000-75,000</option>
-                  <option value='100000'>75,000-100,000</option>
-                  <option value='125000'>100,00-125,000</option>
-                  <option value='150000'>125,000-150,000</option>
-                  <option value='200000'>150,000-200,000</option>
-                  <option value='200000'>200,000+</option>
-                </select>
-                </Col>
-              </Row>
+                      <Row>
+                        <Col>
+                        <label htmlFor="size">{editingdata.heatingOtherSizeHeader}</label><br />
+                        <select name="size" value={selectSizeThree} onChange={changeSizeThree}>
+                          <option value="" hidden>{editingdata.select}</option>
+                          <option value='5000'>less than 5000</option>
+                          <option value='10000'>5000-10,000</option>
+                          <option value='25000'>10,000-25,000</option>
+                          <option value='50000'>25,000-50,000</option>
+                          <option value='75000'>50,000-75,000</option>
+                          <option value='100000'>75,000-100,000</option>
+                          <option value='125000'>100,00-125,000</option>
+                          <option value='150000'>125,000-150,000</option>
+                          <option value='200000'>150,000-200,000</option>
+                          <option value='200000'>200,000+</option>
+                        </select>
+                        </Col>
+                      </Row>
 
-              <Row>
-                <Col>
-                  <label htmlFor="type">{editingdata.heatingOtherAmountHeader}</label><br />
-                  <input onChange={changeNumThree} name="type" type="number" min="0" value={selectNumThree} 
-                   placeholder={editingdata.placeholder1} />
-                  
-                  <p className="x-small mb-3 op-7">{editingdata.placeholder1}</p>
-                </Col>
-              </Row>
+                      <Row>
+                        <Col>
+                          <label htmlFor="type">{editingdata.heatingOtherAmountHeader}</label><br />
+                          <input onChange={changeNumThree} name="type" type="number" min="0" value={selectNumThree} placeholder={editingdata.placeholder1} />
+                          <p className="x-small mb-3 op-7">{editingdata.placeholder1}</p>
+                        </Col>
+                      </Row>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
 
-              </div>
+                {/* Alt Building Type 2 */}
+                <Card>
+                  <Accordion.Toggle as={Card.Header} eventKey="1">
+                    <p>Additional Building Type 2</p>
+                  </Accordion.Toggle>
+                  <Accordion.Collapse eventKey="1">
+                    <div>
+                      <Row>
+                        <Col>
+                        <label htmlFor="type">{editingdata.heatingOtherTypeHeader}</label><br />
+                        <select name="type" value={selectTypeFour} onChange={changeTypeFour}>
+                          <option value="" hidden>{editingdata.select}</option>
+                          <option value='none'>{editingdata.heatingOtherType1}</option>
+                          <option value='office'>{editingdata.heatingOtherType2}</option>
+                          <option value='industrial'>{editingdata.heatingOtherType3}</option>
+                          <option value='others'>{editingdata.heatingOtherType4}</option>
+                        </select>
+                        </Col>
+                      </Row>
 
-              </Accordion.Collapse>
-         </Card>
-         
-         {/* Alt Building Type 2 */}
-<Card>
-              <Accordion.Toggle as={Card.Header} eventKey="1">
-              <p>
-              Additional Building Type 2
-              </p>
-              </Accordion.Toggle>
-              <Accordion.Collapse eventKey="1">
-                <div>
-              <Row>
-                <Col>
-                <label htmlFor="type">{editingdata.heatingOtherTypeHeader}</label><br />
-                <select name="type" value={selectTypeFour} onChange={changeTypeFour}>
-                  <option value="" hidden>{editingdata.select}</option>
-                  <option value='none'>{editingdata.heatingOtherType1}</option>
-                  <option value='office'>{editingdata.heatingOtherType2}</option>
-                  <option value='industrial'>{editingdata.heatingOtherType3}</option>
-                  <option value='others'>{editingdata.heatingOtherType4}</option>
-                </select>
-                </Col>
-              </Row>
+                      <Row>
+                        <Col>
+                        <label htmlFor="size">{editingdata.heatingOtherSizeHeader}</label><br />
+                        <select name="size" value={selectSizeFour} onChange={changeSizeFour}>
+                          <option value="" hidden>{editingdata.select}</option>
+                          <option value='5000'>less than 5000</option>
+                          <option value='10000'>5000-10,000</option>
+                          <option value='25000'>10,000-25,000</option>
+                          <option value='50000'>25,000-50,000</option>
+                          <option value='75000'>50,000-75,000</option>
+                          <option value='100000'>75,000-100,000</option>
+                          <option value='125000'>100,00-125,000</option>
+                          <option value='150000'>125,000-150,000</option>
+                          <option value='200000'>150,000-200,000</option>
+                          <option value='200000'>200,000+</option>
+                        </select>
+                        </Col>
+                      </Row>
 
-              <Row>
-                <Col>
-                <label htmlFor="size">{editingdata.heatingOtherSizeHeader}</label><br />
-                <select name="size" value={selectSizeFour} onChange={changeSizeFour}>
-                  <option value="" hidden>{editingdata.select}</option>
-                  <option value='5000'>less than 5000</option>
-                  <option value='10000'>5000-10,000</option>
-                  <option value='25000'>10,000-25,000</option>
-                  <option value='50000'>25,000-50,000</option>
-                  <option value='75000'>50,000-75,000</option>
-                  <option value='100000'>75,000-100,000</option>
-                  <option value='125000'>100,00-125,000</option>
-                  <option value='150000'>125,000-150,000</option>
-                  <option value='200000'>150,000-200,000</option>
-                  <option value='200000'>200,000+</option>
-                </select>
-                </Col>
-              </Row>
-
-              <Row>
-                <Col>
-                  <label htmlFor="type">{editingdata.heatingOtherAmountHeader}</label><br />
-                  <input onChange={changeNumFour} name="type" type="number" min="0" value={selectNumFour}   placeholder={editingdata.placeholder1} />
-                  <p className="x-small mb-3 op-7">{editingdata.placeholder1}</p>
-                </Col>
-              </Row>
-
-              </div>
-
-              </Accordion.Collapse>
-         </Card>
+                      <Row>
+                        <Col>
+                          <label htmlFor="type">{editingdata.heatingOtherAmountHeader}</label><br />
+                          <input onChange={changeNumFour} name="type" type="number" min="0" value={selectNumFour}   placeholder={editingdata.placeholder1} />
+                          <p className="x-small mb-3 op-7">{editingdata.placeholder1}</p>
+                        </Col>
+                      </Row>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
  
- {/* Alt Building Type 3 */}
-<Card>
-              <Accordion.Toggle as={Card.Header} eventKey="2">
-              <p>
-              Additional Building Type 3
-              </p>
-              </Accordion.Toggle>
-              <Accordion.Collapse eventKey="2">
-                <div>
-              <Row>
-                <Col>
-                <label htmlFor="type">{editingdata.heatingOtherTypeHeader}</label><br />
-                <select name="type" value={selectTypeFive} onChange={changeTypeFive}>
-                  <option value="" hidden>{editingdata.select}</option>
-                  <option value='none'>{editingdata.heatingOtherType1}</option>
-                  <option value='office'>{editingdata.heatingOtherType2}</option>
-                  <option value='industrial'>{editingdata.heatingOtherType3}</option>
-                  <option value='others'>{editingdata.heatingOtherType4}</option>
-                </select>
-                </Col>
-              </Row>
+                {/* Alt Building Type 3 */}
+                <Card>
+                  <Accordion.Toggle as={Card.Header} eventKey="2">
+                    <p>Additional Building Type 3</p>
+                  </Accordion.Toggle>
+                  <Accordion.Collapse eventKey="2">
+                    <div>
+                      <Row>
+                        <Col>
+                        <label htmlFor="type">{editingdata.heatingOtherTypeHeader}</label><br />
+                        <select name="type" value={selectTypeFive} onChange={changeTypeFive}>
+                          <option value="" hidden>{editingdata.select}</option>
+                          <option value='none'>{editingdata.heatingOtherType1}</option>
+                          <option value='office'>{editingdata.heatingOtherType2}</option>
+                          <option value='industrial'>{editingdata.heatingOtherType3}</option>
+                          <option value='others'>{editingdata.heatingOtherType4}</option>
+                        </select>
+                        </Col>
+                      </Row>
 
-              <Row>
-                <Col>
-                <label htmlFor="size">{editingdata.heatingOtherSizeHeader}</label><br />
-                <select name="size" value={selectSizeFive} onChange={changeSizeFive}>
-                  <option value="" hidden>{editingdata.select}</option>
-                  <option value='5000'>less than 5000</option>
-                  <option value='10000'>5000-10,000</option>
-                  <option value='25000'>10,000-25,000</option>
-                  <option value='50000'>25,000-50,000</option>
-                  <option value='75000'>50,000-75,000</option>
-                  <option value='100000'>75,000-100,000</option>
-                  <option value='125000'>100,00-125,000</option>
-                  <option value='150000'>125,000-150,000</option>
-                  <option value='200000'>150,000-200,000</option>
-                  <option value='200000'>200,000+</option>
-                </select>
-                </Col>
-              </Row>
+                      <Row>
+                        <Col>
+                        <label htmlFor="size">{editingdata.heatingOtherSizeHeader}</label><br />
+                        <select name="size" value={selectSizeFive} onChange={changeSizeFive}>
+                          <option value="" hidden>{editingdata.select}</option>
+                          <option value='5000'>less than 5000</option>
+                          <option value='10000'>5000-10,000</option>
+                          <option value='25000'>10,000-25,000</option>
+                          <option value='50000'>25,000-50,000</option>
+                          <option value='75000'>50,000-75,000</option>
+                          <option value='100000'>75,000-100,000</option>
+                          <option value='125000'>100,00-125,000</option>
+                          <option value='150000'>125,000-150,000</option>
+                          <option value='200000'>150,000-200,000</option>
+                          <option value='200000'>200,000+</option>
+                        </select>
+                        </Col>
+                      </Row>
 
-              <Row>
-                <Col>
-                  <label htmlFor="type">{editingdata.heatingOtherAmountHeader}</label><br />
-                  <input onChange={changeNumFive} name="type" type="number" min="0" value={selectNumFive}   placeholder={editingdata.placeholder1} />
-                  <p className="x-small mb-3 op-7">{editingdata.placeholder1}</p>
-                </Col>
-              </Row>
-
-              </div>
-
-              </Accordion.Collapse>
-         </Card>
+                      <Row>
+                        <Col>
+                          <label htmlFor="type">{editingdata.heatingOtherAmountHeader}</label><br />
+                          <input onChange={changeNumFive} name="type" type="number" min="0" value={selectNumFive}   placeholder={editingdata.placeholder1} />
+                          <p className="x-small mb-3 op-7">{editingdata.placeholder1}</p>
+                        </Col>
+                      </Row>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
  
- {/* Alt Building Type 4 */}
- <Card>
-              <Accordion.Toggle as={Card.Header} eventKey="3">
-              <p>
-                Additional Building Type 4
-                </p>
-              </Accordion.Toggle>
-              <Accordion.Collapse eventKey="3">
-                <div>
-              <Row>
-                <Col>
-                <label htmlFor="type">{editingdata.heatingOtherTypeHeader}</label><br />
-                <select name="type" value={selectTypeSix} onChange={changeTypeSix}>
-                  <option value="" hidden>{editingdata.select}</option>
-                  <option value='none'>{editingdata.heatingOtherType1}</option>
-                  <option value='office'>{editingdata.heatingOtherType2}</option>
-                  <option value='industrial'>{editingdata.heatingOtherType3}</option>
-                  <option value='others'>{editingdata.heatingOtherType4}</option>
-                </select>
-                </Col>
-              </Row>
+                {/* Alt Building Type 4 */}
+                <Card>
+                  <Accordion.Toggle as={Card.Header} eventKey="3">
+                    <p>Additional Building Type 4</p>
+                  </Accordion.Toggle>
+                  <Accordion.Collapse eventKey="3">
+                    <div>
+                      <Row>
+                        <Col>
+                        <label htmlFor="type">{editingdata.heatingOtherTypeHeader}</label><br />
+                        <select name="type" value={selectTypeSix} onChange={changeTypeSix}>
+                          <option value="" hidden>{editingdata.select}</option>
+                          <option value='none'>{editingdata.heatingOtherType1}</option>
+                          <option value='office'>{editingdata.heatingOtherType2}</option>
+                          <option value='industrial'>{editingdata.heatingOtherType3}</option>
+                          <option value='others'>{editingdata.heatingOtherType4}</option>
+                        </select>
+                        </Col>
+                      </Row>
 
-              <Row>
-                <Col>
-                <label htmlFor="size">{editingdata.heatingOtherSizeHeader}</label><br />
-                <select name="size" value={selectSizeSix} onChange={changeSizeSix}>
-                  <option value="" hidden>{editingdata.select}</option>
-                  <option value='5000'>less than 5000</option>
-                  <option value='10000'>5000-10,000</option>
-                  <option value='25000'>10,000-25,000</option>
-                  <option value='50000'>25,000-50,000</option>
-                  <option value='75000'>50,000-75,000</option>
-                  <option value='100000'>75,000-100,000</option>
-                  <option value='125000'>100,00-125,000</option>
-                  <option value='150000'>125,000-150,000</option>
-                  <option value='200000'>150,000-200,000</option>
-                  <option value='200000'>200,000+</option>
-                </select>
-                </Col>
-              </Row>
+                      <Row>
+                        <Col>
+                        <label htmlFor="size">{editingdata.heatingOtherSizeHeader}</label><br />
+                        <select name="size" value={selectSizeSix} onChange={changeSizeSix}>
+                          <option value="" hidden>{editingdata.select}</option>
+                          <option value='5000'>less than 5000</option>
+                          <option value='10000'>5000-10,000</option>
+                          <option value='25000'>10,000-25,000</option>
+                          <option value='50000'>25,000-50,000</option>
+                          <option value='75000'>50,000-75,000</option>
+                          <option value='100000'>75,000-100,000</option>
+                          <option value='125000'>100,00-125,000</option>
+                          <option value='150000'>125,000-150,000</option>
+                          <option value='200000'>150,000-200,000</option>
+                          <option value='200000'>200,000+</option>
+                        </select>
+                        </Col>
+                      </Row>
 
-              <Row>
-                <Col>
-                  <label htmlFor="type">{editingdata.heatingOtherAmountHeader}</label><br />
-                  <input onChange={changeNumSix} name="type" type="number" min="0" value={selectNumSix} placeholder={editingdata.placeholder1} />
-                  <p className="x-small mb-3 op-7">{editingdata.placeholder1}</p>
-                </Col>
-              </Row>
-
-              </div>
-
-              </Accordion.Collapse>
-         </Card>
- 
-
-         </Accordion>
+                      <Row>
+                        <Col>
+                          <label htmlFor="type">{editingdata.heatingOtherAmountHeader}</label><br />
+                          <input onChange={changeNumSix} name="type" type="number" min="0" value={selectNumSix} placeholder={editingdata.placeholder1} />
+                          <p className="x-small mb-3 op-7">{editingdata.placeholder1}</p>
+                        </Col>
+                      </Row>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+              </Accordion>
             </div>
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
@@ -903,11 +881,10 @@ export default function App({ file, href, children}) {
                 </Col>
               </Row>
               <Row>
-              
-              <Col className="col-12 mb-4">
-                <h5 className="smallCaps text-small text-green">Employees</h5>
-                <p className="text-grey">{editingdata.empCommutePara}</p>
-              </Col>
+                <Col className="col-12 mb-4">
+                  <h5 className="smallCaps text-small text-green">Employees</h5>
+                  <p className="text-grey">{editingdata.empCommutePara}</p>
+                </Col>
                 <Col className="col-12 col-xl-4 bold">{editingdata.empCommuteCar}</Col>
                 <Col className="col-12 col-xl-4 col-sm-6">
                   <input onChange={calculateTransitCount} name="transitCar" type="number" min="0" value={transitArray.transitCar.count}   placeholder={editingdata.placeholder3} />
@@ -918,21 +895,21 @@ export default function App({ file, href, children}) {
                   <p className="x-small mb-3 op-7">{editingdata.placeholder4}</p>
                 </Col>
               </Row>
+
               <Row>
                 <Col className="col-12 col-xl-4 bold">{editingdata.empCommuteBus}</Col>
                 <Col className="col-12 col-xl-4 col-sm-6">
-                <input onChange={calculateTransitCount} name="transitBus" type="number" min="0" value={transitArray.transitBus.count}   placeholder={editingdata.placeholder5} />
+                  <input onChange={calculateTransitCount} name="transitBus" type="number" min="0" value={transitArray.transitBus.count}   placeholder={editingdata.placeholder5} />
                   <p className="x-small mb-3 op-7">{editingdata.placeholder5}</p>
                 </Col>
                 <Col className="col-12 col-xl-4 col-sm-6">
-                <input onChange={calculateTransitMiles} name="transitBus" type="number" min="0" value={transitArray.transitBus.miles}   placeholder={editingdata.placeholder4} />
+                  <input onChange={calculateTransitMiles} name="transitBus" type="number" min="0" value={transitArray.transitBus.miles}   placeholder={editingdata.placeholder4} />
                   <p className="x-small mb-3 op-7">{editingdata.placeholder4}</p>
                 </Col>
               </Row> 
+
               <Row>
-                <Col className="col-12 col-xl-4 bold">
-                Train
-                </Col>
+                <Col className="col-12 col-xl-4 bold">Train</Col>
                 <Col className="col-12 col-xl-4 col-sm-6">
                 <input onChange={calculateTransitCount} name="transitTrain" type="number" min="0" value={transitArray.transitTrain.count}   placeholder={editingdata.placeholder5} />
                   <p className="x-small mb-3 op-7">{editingdata.placeholder5}</p>
@@ -945,11 +922,12 @@ export default function App({ file, href, children}) {
 
               <Row>
                 <Col className="mb-3">
-                <hr className="mb-4"/>
+                  <hr className="mb-4"/>
                   <h5 className="smallCaps text-small text-green">Students</h5>
                   <p className="text-grey">If you would like to include the carbon footprint of your students, please complete the following:</p>
                 </Col>
               </Row>
+
               <Row>
                 <Col className="col-12 col-xl-4 bold">{editingdata.stuCommuteGas}</Col>
                 <Col className="col-12 col-xl-4 col-sm-6">
@@ -961,6 +939,7 @@ export default function App({ file, href, children}) {
                   <p className="x-small mb-3 op-7">{editingdata.placeholder4}</p>
                 </Col>
               </Row>
+
               <Row>
                 <Col className="col-12 col-xl-4 bold">{editingdata.stuCommuteDiesel}</Col>
                 <Col className="col-12 col-xl-4 col-sm-6">
@@ -972,6 +951,7 @@ export default function App({ file, href, children}) {
                   <p className="x-small mb-3 op-7">{editingdata.placeholder4}</p>
                 </Col>
               </Row>
+
               <Row>
                 <Col className="col-12 col-xl-4 bold">{editingdata.stuCommutePropane}</Col>
                 <Col className="col-12 col-xl-4 col-sm-6">
@@ -984,6 +964,7 @@ export default function App({ file, href, children}) {
                 </Col>
               </Row>
               <hr/>
+              
               <Row>
                 <Col className="col-12">
                   <label htmlFor="type">{editingdata.stuCommuteBus}</label>
@@ -998,6 +979,7 @@ export default function App({ file, href, children}) {
                   <p className="x-small mb-3 op-7">{editingdata.placeholder4}</p>
                 </Col>
               </Row>
+
               <Row>
                 <Col className="col-12">
                   <label htmlFor="type">{editingdata.stuCommuteDrop}</label>
@@ -1012,6 +994,7 @@ export default function App({ file, href, children}) {
                   <p className="x-small mb-3 op-7">{editingdata.placeholder4}</p>
                 </Col>
               </Row>
+
               <Row>
                 <Col className="col-12">
                   <label htmlFor="type">{editingdata.stuCommuteTrain}</label>
@@ -1026,45 +1009,42 @@ export default function App({ file, href, children}) {
                   <p className="x-small mb-3 op-7">{editingdata.placeholder4}</p>
                 </Col>
               </Row>
-            <hr className="mb-4"/>
+              <hr className="mb-4"/>
 
               <Row>
                 <Col className="col-12 mb-3">
                   <h5 className="smallCaps text-small text-green">{editingdata.otherTransportHeader1}</h5>
                   <p className="text-grey">{editingdata.otherTransportPara1}</p>
                 </Col>
-                
-                
                 <Col>
-
-                <Row>
-                  <Col className="col-12 col-xl-4 mb-2 bold">Bus</Col>
+                  <Row>
+                    <Col className="col-12 col-xl-4 mb-2 bold">Bus</Col>
                     <Col>
                       <Row>
                         <Col className="col-12 col-xl-4 col-sm-6">{editingdata.otherTransportGas}</Col>
-                          <Col className="col-12 col-xl-8 col-sm-6">
+                        <Col className="col-12 col-xl-8 col-sm-6">
                           <input onChange={calculateMiles} name="busGas" type="number" min="0" value={vehicleArray.busGas.miles} placeholder={editingdata.placeholder8} />
                           <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
-                          </Col>
+                        </Col>
                       </Row>
                       <Row>
-                      <Col  className="col-10 col-xl-4 col-sm-6">{editingdata.otherTransportDiesel}</Col>
-                      <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateMiles} name="busDiesel" type="number" min="0" value={vehicleArray.busDiesel.miles} placeholder={editingdata.placeholder8} />
-                        <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col className="col-10 col-xl-4 col-sm-6">{editingdata.otherTransportPropane}</Col>
-                      <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateMiles} name="busPropane" type="number" min="0" value={vehicleArray.busPropane.miles} placeholder={editingdata.placeholder8} />
-                        <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
-                      </Col>
-                    </Row>
+                        <Col  className="col-10 col-xl-4 col-sm-6">{editingdata.otherTransportDiesel}</Col>
+                        <Col className="col-12 col-xl-8 col-sm-6">
+                          <input onChange={calculateMiles} name="busDiesel" type="number" min="0" value={vehicleArray.busDiesel.miles} placeholder={editingdata.placeholder8} />
+                          <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col className="col-10 col-xl-4 col-sm-6">{editingdata.otherTransportPropane}</Col>
+                        <Col className="col-12 col-xl-8 col-sm-6">
+                          <input onChange={calculateMiles} name="busPropane" type="number" min="0" value={vehicleArray.busPropane.miles} placeholder={editingdata.placeholder8} />
+                          <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
+                        </Col>
+                      </Row>
                     </Col>
-                  </Row>    
-                 
+                  </Row>
                   <hr/>
+
                   <Row>
                     <Col className="col-10 col-xl-4 col-sm-6 bold ">Train/Subway</Col>
                     <Col className="col-12 col-xl-8 col-sm-6">
@@ -1073,6 +1053,7 @@ export default function App({ file, href, children}) {
                     </Col>
                   </Row>
                   <hr/>
+
                   <Row>
                     <Col className="col-12 col-xl-4 col-sm-6 bold">{editingdata.otherVehicleVan}</Col>
                     <Col className="col-12 col-xl-8 col-sm-6">
@@ -1081,53 +1062,50 @@ export default function App({ file, href, children}) {
                     </Col>
                   </Row>
                   <hr/>
+
                   <Row>
-                  <Col className="col-12 col-xl-4 mb-2 bold">{editingdata.otherVehicleCar}</Col>
+                    <Col className="col-12 col-xl-4 mb-2 bold">{editingdata.otherVehicleCar}</Col>
                     <Col>
                       <Row>
                         <Col className="col-12 col-xl-4 col-sm-6">{editingdata.otherTransportGas}</Col>
-                          <Col className="col-12 col-xl-8 col-sm-6">
-                          <input onChange={calculateMiles} name="carGas" type="number" min="0" value={vehicleArray.carGas.miles} placeholder={editingdata.placeholder8} />
-                          <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
-                          </Col>
+                        <Col className="col-12 col-xl-8 col-sm-6">
+                        <input onChange={calculateMiles} name="carGas" type="number" min="0" value={vehicleArray.carGas.miles} placeholder={editingdata.placeholder8} />
+                        <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
+                        </Col>
                       </Row>
                       <Row>
-                      <Col  className="col-12 col-xl-4 col-sm-6">{editingdata.otherTransportDiesel}</Col>
-                      <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateMiles} name="carDiesel" type="number" min="0" value={vehicleArray.carDiesel.miles} placeholder={editingdata.placeholder8} />
-                        <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col className="col-12 col-xl-4 col-sm-6">Hybrid</Col>
-                      <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateMiles} name="carHybrid" type="number" min="0" value={vehicleArray.carHybrid.miles} placeholder={editingdata.placeholder8} />
-                        <p className="x-small mb-3 op-7">Average Annual Km</p>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col className="col-12 col-xl-4 col-sm-6">Plug-in Hybrid</Col>
-                      <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateMiles} name="carPlug" type="number" min="0" value={vehicleArray.carPlug.miles} placeholder={editingdata.placeholder8} />
-                        <p className="x-small mb-3 op-7">Average Annual Km</p>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col className="col-12 col-xl-4 col-sm-6">Plug-in Electric</Col>
-                      <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateMiles} name="carElectric" type="number" min="0" value={vehicleArray.carElectric.miles} placeholder={editingdata.placeholder8} />
-                        <p className="x-small mb-3 op-7">Average Annual Km</p>
-                      </Col>
-                    </Row>
+                        <Col  className="col-12 col-xl-4 col-sm-6">{editingdata.otherTransportDiesel}</Col>
+                        <Col className="col-12 col-xl-8 col-sm-6">
+                          <input onChange={calculateMiles} name="carDiesel" type="number" min="0" value={vehicleArray.carDiesel.miles} placeholder={editingdata.placeholder8} />
+                          <p className="x-small mb-3 op-7">{editingdata.placeholder8}</p>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col className="col-12 col-xl-4 col-sm-6">Hybrid</Col>
+                        <Col className="col-12 col-xl-8 col-sm-6">
+                          <input onChange={calculateMiles} name="carHybrid" type="number" min="0" value={vehicleArray.carHybrid.miles} placeholder={editingdata.placeholder8} />
+                          <p className="x-small mb-3 op-7">Average Annual Km</p>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col className="col-12 col-xl-4 col-sm-6">Plug-in Hybrid</Col>
+                        <Col className="col-12 col-xl-8 col-sm-6">
+                          <input onChange={calculateMiles} name="carPlug" type="number" min="0" value={vehicleArray.carPlug.miles} placeholder={editingdata.placeholder8} />
+                          <p className="x-small mb-3 op-7">Average Annual Km</p>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col className="col-12 col-xl-4 col-sm-6">Plug-in Electric</Col>
+                        <Col className="col-12 col-xl-8 col-sm-6">
+                          <input onChange={calculateMiles} name="carElectric" type="number" min="0" value={vehicleArray.carElectric.miles} placeholder={editingdata.placeholder8} />
+                          <p className="x-small mb-3 op-7">Average Annual Km</p>
+                        </Col>
+                      </Row>
                     </Col>
-                    
                   </Row>
-
-
                 </Col>
               </Row>
             </div>
-            
 
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
               <Row>
@@ -1140,70 +1118,72 @@ export default function App({ file, href, children}) {
               
               <Row>
                 <Col className="col-12 col-xl-4 mb-2 bold">{editingdata.travelShort}</Col>
-                  <Col>
-                    <Row>
-                      <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelShort1}</Col>
-                      <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateFlightCount} name="flyShort" type="number" min="0" value={flightArray.flyShort.count} placeholder={editingdata.placeholder9} />
-                        <p className="x-small mb-3 op-7">{editingdata.placeholder9}</p>
-                      </Col>
-                    </Row>
-                  </Col>
-                </Row>
-                <hr/>
+                <Col>
+                  <Row>
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelShort1}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
+                      <input onChange={calculateFlightCount} name="flyShort" type="number" min="0" value={flightArray.flyShort.count} placeholder={editingdata.placeholder9} />
+                      <p className="x-small mb-3 op-7">{editingdata.placeholder9}</p>
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
+              <hr/>
+
               <Row>
-                  <Col className="col-12 col-xl-4 mb-2 bold">{editingdata.travelMed}</Col>
-                  <Col>
-                    <Row>
-                      <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelMed1}</Col>
-                      <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateFlightCount} name="flyMediumEco" type="number" min="0" value={flightArray.flyMediumEco.count} placeholder={editingdata.placeholder9} />
-                        <p className="x-small mb-3 op-7">{editingdata.placeholder9}</p>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelMed2}</Col>
-                      <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateFlightCount} name="flyMediumBus" type="number" min="0" value={flightArray.flyMediumBus.count} placeholder={editingdata.placeholder9} />
-                        <p className="x-small mb-3 op-7">{editingdata.placeholder9}</p>
-                      </Col>
-                    </Row>
-                  </Col>
-                </Row>
-                <hr/>
-                <Row>
-                  <Col className="col-10 col-xl-4 mb-2 bold">{editingdata.travelLong}</Col>
-                  <Col className="col-12 col-xl-8">
-                    <Row>
-                      <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelLong1}</Col>
-                      <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateFlightCount} name="flyLongEco" type="number" min="0" value={flightArray.flyLongEco.count} placeholder={editingdata.placeholder9} />
-                        <p className="x-small mb-3 op-7">{editingdata.placeholder9}</p>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelLong2}</Col>
-                      <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateFlightCount} name="flyLongEcoPlus" type="number" min="0" value={flightArray.flyLongEcoPlus.count} placeholder={editingdata.placeholder9} />
-                        <p className="x-small mb-3 op-7">{editingdata.placeholder9}</p>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelLong3}</Col>
-                      <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateFlightCount} name="flyLongBus" type="number" min="0" value={flightArray.flyLongBus.count} placeholder={editingdata.placeholder9} />
-                        <p className="x-small mb-3 op-7">{editingdata.placeholder9}</p>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelLong4}</Col>
-                      <Col className="col-12 col-xl-8 col-sm-6">
-                        <input onChange={calculateFlightCount} name="flyLongFirst" type="number" min="0" value={flightArray.flyLongFirst.count} placeholder={editingdata.placeholder9} />
-                        <p className="x-small mb-3 op-7">{editingdata.placeholder9}</p>
-                      </Col>
-                    </Row>
-                  </Col>
-                </Row>
+                <Col className="col-12 col-xl-4 mb-2 bold">{editingdata.travelMed}</Col>
+                <Col>
+                  <Row>
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelMed1}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
+                      <input onChange={calculateFlightCount} name="flyMediumEco" type="number" min="0" value={flightArray.flyMediumEco.count} placeholder={editingdata.placeholder9} />
+                      <p className="x-small mb-3 op-7">{editingdata.placeholder9}</p>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelMed2}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
+                      <input onChange={calculateFlightCount} name="flyMediumBus" type="number" min="0" value={flightArray.flyMediumBus.count} placeholder={editingdata.placeholder9} />
+                      <p className="x-small mb-3 op-7">{editingdata.placeholder9}</p>
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
+              <hr/>
+
+              <Row>
+                <Col className="col-10 col-xl-4 mb-2 bold">{editingdata.travelLong}</Col>
+                <Col className="col-12 col-xl-8">
+                  <Row>
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelLong1}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
+                      <input onChange={calculateFlightCount} name="flyLongEco" type="number" min="0" value={flightArray.flyLongEco.count} placeholder={editingdata.placeholder9} />
+                      <p className="x-small mb-3 op-7">{editingdata.placeholder9}</p>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelLong2}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
+                      <input onChange={calculateFlightCount} name="flyLongEcoPlus" type="number" min="0" value={flightArray.flyLongEcoPlus.count} placeholder={editingdata.placeholder9} />
+                      <p className="x-small mb-3 op-7">{editingdata.placeholder9}</p>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelLong3}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
+                      <input onChange={calculateFlightCount} name="flyLongBus" type="number" min="0" value={flightArray.flyLongBus.count} placeholder={editingdata.placeholder9} />
+                      <p className="x-small mb-3 op-7">{editingdata.placeholder9}</p>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelLong4}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
+                      <input onChange={calculateFlightCount} name="flyLongFirst" type="number" min="0" value={flightArray.flyLongFirst.count} placeholder={editingdata.placeholder9} />
+                      <p className="x-small mb-3 op-7">{editingdata.placeholder9}</p>
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
             </div>
           </Col>
 
@@ -1211,26 +1191,37 @@ export default function App({ file, href, children}) {
             <div className="text-white p-5 innerShadow roundedBox bg-green">
               <h4 className="mb-0">{editingdata.dataHeader}</h4>
               <hr/>
-              <Row><Col>{editingdata.dataType1}</Col><Col className="text-right bold">{subtotalBuild > 0 ? subtotalBuild : "--"}
-                  </Col>
-                </Row>
+              <Row>
+                <Col>
+                  {editingdata.dataType1}</Col><Col className="text-right bold">{subtotalBuild > 0 ? subtotalBuild : "--"}
+                </Col>
+              </Row>
               <hr/>
-              <Row><Col>{editingdata.dataType2}</Col><Col className="text-right bold">{transitSub > 0 ? transitSub : "--"}
-                  </Col>
-                </Row>
+              <Row>
+                <Col>
+                  {editingdata.dataType2}</Col><Col className="text-right bold">{transitSub > 0 ? transitSub : "--"}
+                </Col>
+              </Row>
               <hr/>
-              <Row><Col>{editingdata.dataType3}</Col><Col className="text-right bold">{studentCommute > 0 ? studentCommute : "--"}
-                  </Col>
-                </Row>
+              <Row>
+                <Col>
+                  {editingdata.dataType3}</Col><Col className="text-right bold">{studentCommute > 0 ? studentCommute : "--"}
+                </Col>
+              </Row>
               <hr/>
-              <Row><Col>{editingdata.dataType4}</Col><Col className="text-right bold">{vehicleSub > 0 ? vehicleSub : "--"}
-                  </Col>
-                </Row>
+              <Row>
+                <Col>
+                {editingdata.dataType4}</Col><Col className="text-right bold">{vehicleSub > 0 ? vehicleSub : "--"}
+                </Col>
+              </Row>
               <hr/>
-              <Row><Col>{editingdata.dataType6}</Col><Col className="text-right bold">{flightSub > 0 ? flightSub : "--"}
-                  </Col>
-                </Row>
+              <Row>
+                <Col>
+                  {editingdata.dataType6}</Col><Col className="text-right bold">{flightSub > 0 ? flightSub : "--"}
+                </Col>
+              </Row>
               <hr/>
+
               <span className="smallCaps text-small">{editingdata.dataTotal}</span><br/>
               <span className="h2 bold">{total > 0 ? total : "--"}</span>
               <p>{total > 0 ? "(Metric Tonnes of CO2 per Year)" : ""}</p>
@@ -1247,35 +1238,32 @@ export default function App({ file, href, children}) {
               </Row>
 
               <Row className="justify-content-center text-center">
-              <Col>
-              <div className="">
-                <p className="smallCaps text-white mb-3">Share your results</p>
-                {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
-                
-                <FacebookShareButton url={sharingPrefix + sharingUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareFacebook} hashtag={editingdata.shareFacebookTags}className="mx-2">
-                  <FacebookIcon size={40} round />
-                </FacebookShareButton>
+                <Col>
+                  <div className="">
+                    <p className="smallCaps text-white mb-3">Share your results</p>
+                    {shareError ? <p style={{color: 'red' }}>{shareError}</p> : null}
+                    
+                    <FacebookShareButton url={sharingPrefix + sharingUrl} beforeOnClick={shareBeforeClick} quote={editingdata.shareFacebook} hashtag={editingdata.shareFacebookTags}className="mx-2">
+                      <FacebookIcon size={40} round />
+                    </FacebookShareButton>
 
-                <TwitterShareButton url={sharingPrefix + sharingUrl} beforeOnClick={shareBeforeClick} title={editingdata.shareTwitter} className="mx-2">
-                  <TwitterIcon size={40} round />
-                </TwitterShareButton>
+                    <TwitterShareButton url={sharingPrefix + sharingUrl} beforeOnClick={shareBeforeClick} title={editingdata.shareTwitter} className="mx-2">
+                      <TwitterIcon size={40} round />
+                    </TwitterShareButton>
 
-                {/* <LinkedinShareButton url={sharingPrefix + sharingUrl} beforeOnClick={shareBeforeClick} summary={editingdata.shareLinkedIn} className="mx-2">
-                  <LinkedinIcon size={40} round />
-                </LinkedinShareButton> */}
+                    {/* <LinkedinShareButton url={sharingPrefix + sharingUrl} beforeOnClick={shareBeforeClick} summary={editingdata.shareLinkedIn} className="mx-2">
+                      <LinkedinIcon size={40} round />
+                    </LinkedinShareButton> */}
 
-                <EmailShareButton url={sharingPrefix + sharingUrl} beforeOnClick={shareBeforeClick} body={editingdata.shareEmailBody} subject={editingdata.shareEmailSubject} className="mx-2">
-                  <EmailIcon size={40} round />
-                </EmailShareButton>
-              </div>
-              </Col>
-            </Row>
-
+                    <EmailShareButton url={sharingPrefix + sharingUrl} beforeOnClick={shareBeforeClick} body={editingdata.shareEmailBody} subject={editingdata.shareEmailSubject} className="mx-2">
+                      <EmailIcon size={40} round />
+                    </EmailShareButton>
+                  </div>
+                </Col>
+              </Row>
             </div>
-
           </Col>
         </Row>
-
 
         <Row className="justify-content-center">
           <Col className="col-11 col-lg-10 align-items-center text-center p-3">
@@ -1294,22 +1282,22 @@ export default function App({ file, href, children}) {
         </Row>
 
         <Row className="justify-content-center pb-5">
-            <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
-              <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
-                <h4 className="text-white tight-drop-light">{editingdata.otherbox1Header}</h4>
-                <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox1Para}</p>
-                <Link href="/business-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox1button}</a></Link>
-              </div>
-            </Col>
+          <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
+            <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
+              <h4 className="text-white tight-drop-light">{editingdata.otherbox1Header}</h4>
+              <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox1Para}</p>
+              <Link href="/business-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox1button}</a></Link>
+            </div>
+          </Col>
 
-            <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
-              <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
-                <h4 className="text-white tight-drop-light">{editingdata.otherbox2Header}</h4>
-                <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox2Para}</p>\
-                <Link href="/personal-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox2button}</a></Link>
-              </div>
-            </Col>
-          </Row>
+          <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
+            <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
+              <h4 className="text-white tight-drop-light">{editingdata.otherbox2Header}</h4>
+              <p className="flex-fill pb-3 text-white tight-drop">{editingdata.otherbox2Para}</p>\
+              <Link href="/personal-calculator"><a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.otherbox2button}</a></Link>
+            </div>
+          </Col>
+        </Row>
       </Container>
     </div>
   );
