@@ -17,7 +17,7 @@ import Head from "next/head";
 import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon, LinkedinShareButton, LinkedinIcon, EmailShareButton, EmailIcon } from "react-share";
 
 let sessionID = randomstring.generate(12);
-let sharingPrefix = '';
+let sharingPrefix = 'https://www.canadasforesttrust.ca';
 if (typeof window !== 'undefined') {
   sharingPrefix = location.hostname;
   if (sharingPrefix.startsWith('localhost')) {
@@ -413,7 +413,22 @@ export default function App({ file, href, children}) {
       <Head>
         <title>{editingdata.header}</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="theme-color" content="#054218"></meta>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="theme-color" content="#054218"/>
+
+        <meta name="twitter:site" content="@CanadasForest" />
+        <meta name="twitter:title" content={editingdata.header} />
+        <meta name="twitter:description" content={editingdata.dataDisclaimer} />
+        <meta name="twitter:image" content={sharingPrefix + '/logo-share-preview-twitter.png'} />
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <meta property='og:title' content={editingdata.header}/>
+        <meta property='og:description' content={editingdata.dataDisclaimer}/>
+        <meta property='og:image' content={sharingPrefix + '/logo-share-preview-twitter.png'}/>
+        <meta property='og:image:width' content='800'/>
+        <meta property='og:image:height' content='800'/>
+        <meta property='og:url' content={sharingPrefix + sharingUrl}/>
+        <meta property='og:type' content='website'/>
       </Head>
 
       <Container className="p-4 pt-5">
