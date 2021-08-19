@@ -419,7 +419,7 @@ hr.white {
 }
 
 .intro-cta {
-  box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.3)!important;
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.2)!important;
   transition: all .5s;
 }
 
@@ -437,7 +437,7 @@ hr.white {
 }
 
 .intro-cta:hover {
-  box-shadow: 0px 1px 25px rgba(0, 0, 0, 0.5)!important;
+  box-shadow: 0px 1px 25px rgba(0, 0, 0, 0.4)!important;
   transition: all .5s;
 }
 
@@ -529,12 +529,12 @@ hr.white {
 }
 
 .intro-card {
-  box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.15);
   transition: all .5s;
 }
 
 .intro-card:hover {
-  box-shadow: 0px 1px 30px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 1px 25px rgba(0, 0, 0, 0.4);
   transition: all .5s;
 }
 
