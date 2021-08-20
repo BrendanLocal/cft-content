@@ -445,6 +445,10 @@ hr.white {
   box-shadow: none!important;
 }
 
+.no-drop:hover {
+  box-shadow: none!important;
+}
+
 .signin-btn {
   padding: 10px 20px 10px 20px;
   border-radius: 6px;
