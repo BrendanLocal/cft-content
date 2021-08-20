@@ -441,6 +441,10 @@ hr.white {
   transition: all .5s;
 }
 
+.no-drop {
+  box-shadow: none!important;
+}
+
 .signin-btn {
   padding: 10px 20px 10px 20px;
   border-radius: 6px;
