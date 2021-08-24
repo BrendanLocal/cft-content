@@ -54,12 +54,6 @@ const Lang = () => {
         <meta name="theme-color" content="#054218"></meta>
       </Head>
 
-      <div>
-      <Head>
-        <title>{editingdata.title}</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="theme-color" content="#054218"></meta>
-      </Head>
 
       <main id="intro">   
         <Container fluid className="v-full justify-content-center z-999">
@@ -91,8 +85,6 @@ const Lang = () => {
         </Container>
       </main>
     </div>  
-      
-    </div>
   )
 }
 /**
