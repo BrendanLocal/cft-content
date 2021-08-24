@@ -24,6 +24,7 @@ const Lang = () => {
     return (language)
   }
 
+
   export default function Splash({ file, href, children}) {
   
     const formOptions = {
@@ -46,6 +47,14 @@ const Lang = () => {
 
   return (
     <div>
+      <Header/>
+      <Head>
+        <title>{editingdata.title}</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content="#054218"></meta>
+      </Head>
+
+      <div>
       <Head>
         <title>{editingdata.title}</title>
         <link rel="icon" href="/favicon.ico" />
@@ -82,10 +91,10 @@ const Lang = () => {
         </Container>
       </main>
     </div>  
- 
+      
+    </div>
   )
 }
-
 /**
 * Fetch data with getStaticProps based on 'preview' mode
 */
