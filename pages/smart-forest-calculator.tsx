@@ -67,8 +67,6 @@ export default function CarbonCalc({ file, href, children}) {
     <div>
       <Header/>
       <Container className="py-5 mb-5">
-        
-
         <Row className="justify-content-center mt-5">
           <Col className="col-11 col-lg-10 pt-5">
             <h1 className="h2 text-orange text-center pt-5 bold mb-4">Select a Net-Zero Calculator</h1>
@@ -76,7 +74,7 @@ export default function CarbonCalc({ file, href, children}) {
         </Row>
 
         <Row className="justify-content-center pb-5 mb-5">
-        <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
+          <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop corporate-card">
               <h4 className="text-white tight-drop-light">Corporate</h4>
               <p className="flex-fill pb-3 text-white tight-drop">Calculate how many acres your corporation must invest in to reach a net-zero emissions target</p>

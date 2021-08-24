@@ -559,555 +559,513 @@ export default function BusinessCalc({ file, href, children}) {
         </Row>
         <Row className="justify-content-center">
           <Col className="p-3 col-12 col-lg-7 col-xl-6">
-          <div className="card roundedBox no-border bg-green p-4 innerShadow cardSpacing">
-            <p className="lead text-white m-2 calc-intro">Shared results</p>
-          </div>
+            <div className="card roundedBox no-border bg-green p-4 innerShadow cardSpacing">
+              <p className="lead text-white m-2 calc-intro">Shared results</p>
+            </div>
 
-          <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
-            <Row>
-              <Col>
-              {sessionDataError ? <p style={{ color: 'red' }}>{sessionDataError}</p> : null}
-              <h3 className="text-green">
-                Building Types
-              </h3>
-              <hr/>
-              </Col>
-            </Row>
-            <Row>
-              <Col> 
-              <label htmlFor="business">{editingdata.businessTypeHeader}</label><br />
-              <p>{business}</p>
-              </Col>
-            </Row>
-            <Row>
-              <Col> 
+            <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
+              <Row>
+                <Col>
+                  {sessionDataError ? <p style={{ color: 'red' }}>{sessionDataError}</p> : null}
+                  <h3 className="text-green">Building Types</h3>
+                  <hr/>
+                </Col>
+              </Row>
+              <Row>
+                <Col> 
+                  <label htmlFor="business">{editingdata.businessTypeHeader}</label><br />
+                  <p>{business}</p>
+                </Col>
+              </Row>
+              <Row>
+                <Col> 
+                  <hr className="mb-4"/>
+                  <h5 className="smallCaps text-small text-green">Primary Building</h5>
+                  <label htmlFor="building">What kind of building do you have?</label><br />
+                  <p>{selectBuild}</p>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="size">{editingdata.squareFeetHeader}</label><br />
+                  <p>{selectSize}</p>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <label htmlFor="number">{editingdata.buildingNumberHeader}</label><br />
+                  <p>{selectNum}</p>
+                  <p className="x-small mb-3 op-7">Number of buildings of this type</p>
+                </Col>
+              </Row>
+
               <hr className="mb-4"/>
-              <h5 className="smallCaps text-small text-green">Primary Building</h5>
-              <label htmlFor="building">What kind of building do you have?</label><br />
-              <p>{selectBuild}</p>
-              </Col>
-            </Row>
-
-
-            <Row>
-              <Col>
-              <label htmlFor="size">{editingdata.squareFeetHeader}</label><br />
-              <p>{selectSize}</p>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <label htmlFor="number">{editingdata.buildingNumberHeader}</label><br />
-                <p>{selectNum}</p>
-                <p className="x-small mb-3 op-7">Number of buildings of this type</p>
-              </Col>
-            </Row>
-          <hr className="mb-4"/>
               <h5 className="smallCaps text-small text-green">Additional Buildings</h5>
-
+              
               <Accordion>
-
-              {/* Building Type 2 */}
-              <Card>
-                            <Accordion.Toggle as={Card.Header} eventKey="0">
-                              <p>
-                                Building Type 2
-                                </p>
-                            </Accordion.Toggle>
-                            <Accordion.Collapse eventKey="0">
-                              <div>
-                             
-            <Row>
-              <Col> 
-              <label htmlFor="building">What kind of building is this?</label><br />
-              <p>{selectBuildTwo}</p>
-             
-              <label htmlFor="size">{editingdata.squareFeetHeader}</label><br />
-              <p>{selectSizeTwo}</p>
-             
-                <label htmlFor="number">{editingdata.buildingNumberHeader}</label><br />
-                <p>{selectNumTwo}</p>
-              
-                <p className="x-small mb-3 op-7">Number of buildings of this type</p>
-              </Col>
-            </Row>
-          
-
-                              </div>
-         </Accordion.Collapse>
-         </Card>
-
-
- {/* Building Type 3 */}
- <Card>
-                            <Accordion.Toggle as={Card.Header} eventKey="1">
-                              <p>
-                                Building Type 3
-                                </p>
-                            </Accordion.Toggle>
-                            <Accordion.Collapse eventKey="1">
-                              <div>
-                             
-            <Row>
-              <Col> 
-              <label htmlFor="building">What kind of building is this?</label><br />
-              <p>{selectBuildThree}</p>
-              
-              
-              <label htmlFor="size">{editingdata.squareFeetHeader}</label><br />
-              <p>{selectSizeThree}</p>
-                <label htmlFor="number">{editingdata.buildingNumberHeader}</label><br />
-                <p>{selectNumThree}</p>
-               
-                <p className="x-small mb-3 op-7">Number of buildings of this type</p>
-              </Col>
-            </Row>
-          
-
-                              </div>
-         </Accordion.Collapse>
-         </Card>
-
- {/* Building Type 4 */}
- <Card>
-                            <Accordion.Toggle as={Card.Header} eventKey="2">
-                              <p>
-                                Building Type 4
-                                </p>
-                            </Accordion.Toggle>
-                            <Accordion.Collapse eventKey="2">
-                              <div>
-                             
-            <Row>
-              <Col> 
-              <label htmlFor="building">What kind of building is this?</label><br />
-              <p>{selectBuildFour}</p>
-              
-              <label htmlFor="size">{editingdata.squareFeetHeader}</label><br />
-              <p>{selectSizeFour} </p>
-                <label htmlFor="number">{editingdata.buildingNumberHeader}</label><br />
-                <p>{selectNumFour}</p>
-                
-                <p className="x-small mb-3 op-7">Number of buildings of this type</p>
-              </Col>
-            </Row>
-          
-
-                              </div>
-         </Accordion.Collapse>
-         </Card>
-
-          {/* Building Type 5 */}
-          <Card>
-                            <Accordion.Toggle as={Card.Header} eventKey="3">
-                              <p>
-                                Building Type 5
-                                
-                              </p>
-                              
-                            </Accordion.Toggle>
-                            <Accordion.Collapse eventKey="3">
-                              <div>
-                             
-            <Row>
-              <Col> 
-              <label htmlFor="building">What kind of building is this?</label><br />
-              <p>{selectBuildFive}</p>
-              
-              <label htmlFor="size">{editingdata.squareFeetHeader}</label><br />
-              <p>{selectSizeFive}</p>
-                <label htmlFor="number">{editingdata.buildingNumberHeader}</label><br />
-                <p>{selectNumFive}</p>
-               
-                <p className="x-small mb-3 op-7">Number of buildings of this type</p>
-              </Col>
-            </Row>
-          
-
-                              </div>
-         </Accordion.Collapse>
-         </Card>
-</Accordion>
-
-          </div>
-
-          <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
-            <Row>
-              <Col className="col-12">
-                <h3 className="text-green">{editingdata.vehicleHeader}</h3>
-                <hr/>
-                <p className="text-grey mb-3">{editingdata.vehiclepara}</p>
-                
-            
-                <Accordion>
-                  <Card>
-                    <Accordion.Toggle as={Card.Header} eventKey="0">
-                      <p>Cars</p>
-                      
-                    </Accordion.Toggle>
-                      
-                    <Accordion.Collapse eventKey="0">
-                      <div>
-                        <Row>
-                          <Col className="col-12 col-xl-4">
-                            {editingdata.vehiclecarGas}
-                          </Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                              <p>{vehicleArray.carGas.count}</p>
-                            <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
-                          </Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                            <p>{vehicleArray.carGas.miles}</p>
-                            <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
-                          </Col>
-                        </Row> 
-
-                        <Row>
-                          <Col  className="col-12 col-xl-4">
-                            {editingdata.vehiclecarDiesel}
-                          </Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                            <p>{vehicleArray.carDiesel.count}</p>
-                            <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
-                          </Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                            <p>{vehicleArray.carDiesel.miles}</p>
-                            <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
-                          </Col>
-                        </Row>
-
-                        <Row>
-                          <Col className="col-12 col-xl-4">
-                            {editingdata.vehiclecarHybrid}
-                          </Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                            <p>{vehicleArray.carHybrid.count}</p>
-                            <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
-                          </Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                                 <p>{vehicleArray.carHybrid.miles}</p>
-                <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
-                          </Col>
-                        </Row>
-
-                        <Row>
-                          <Col className="col-12 col-xl-4">
-                            Plug-In Hybrid
-                          </Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                            <p>{vehicleArray.carPlug.count}</p>
-                             <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
-                          </Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                              <p>{vehicleArray.carPlug.miles}</p>
-                            <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
-                          </Col>
-                        </Row>
+                {/* Building Type 2 */}
+                <Card>
+                  <Accordion.Toggle as={Card.Header} eventKey="0">
+                    <p>Building Type 2</p>
+                  </Accordion.Toggle>
+                  <Accordion.Collapse eventKey="0">
+                    <div>    
+                      <Row>
+                        <Col> 
+                          <label htmlFor="building">What kind of building is this?</label><br />
+                          <p>{selectBuildTwo}</p>
                         
-                        <Row>
-                          <Col className="col-12 col-xl-4">
-                            Plug-In Electric
-                          </Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                            <p>{vehicleArray.carElectric.count}</p> 
-                            <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
-                          </Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                            <p>{vehicleArray.carElectric.miles}</p>
-                            <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
-                          </Col>
-                        </Row>
-                      </div>
-                    </Accordion.Collapse>
-                  </Card>
-                  <Card>
-                    
-                    <Accordion.Toggle as={Card.Header} eventKey="1">
-                      <p>
-                      {editingdata.vehiclepickupHeader}
-                        </p>
-                      
-                    </Accordion.Toggle>
-                    <Accordion.Collapse eventKey="1">
-                      <div>
-                        <Row>
-                          <Col className="col-12 col-xl-4">{editingdata.vehiclepickupGas}</Col>
-                          <Col className="col-12 col-xl-4 col-sm-6 ">
-                           <p>{vehicleArray.truckGas.count}</p>
-                            <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
-                          </Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                            <p>{vehicleArray.truckGas.miles}</p>
-                <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col  className="col-12 col-xl-4">{editingdata.vehiclepickupDiesel}</Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                            <p>{vehicleArray.truckDiesel.count}</p>
-                            <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
-                          </Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                           <p>{vehicleArray.truckDiesel.miles}</p>
-                    <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col className="col-12 col-xl-4">{editingdata.vehiclepickupHybrid}</Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                            <p>{vehicleArray.truckHybrid.count}</p>
-                            <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
-                          </Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                  <p>{vehicleArray.truckHybrid.miles} </p>
-                <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col className="col-12 col-xl-4">Plug-In Hybrid</Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                           <p>{vehicleArray.truckPlug.count} </p>
-                            <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
-                          </Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
+                          <label htmlFor="size">{editingdata.squareFeetHeader}</label><br />
+                          <p>{selectSizeTwo}</p>
+                        
+                          <label htmlFor="number">{editingdata.buildingNumberHeader}</label><br />
+                          <p>{selectNumTwo}</p>
+                        
+                          <p className="x-small mb-3 op-7">Number of buildings of this type</p>
+                        </Col>
+                      </Row>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+
+                {/* Building Type 3 */}
+                <Card>
+                  <Accordion.Toggle as={Card.Header} eventKey="1">
+                    <p>Building Type 3</p>
+                  </Accordion.Toggle>
+                  <Accordion.Collapse eventKey="1">
+                    <div>
+                      <Row>
+                        <Col> 
+                          <label htmlFor="building">What kind of building is this?</label><br />
+                          <p>{selectBuildThree}</p>
+
+                          <label htmlFor="size">{editingdata.squareFeetHeader}</label><br />
+                          <p>{selectSizeThree}</p>
+
+                          <label htmlFor="number">{editingdata.buildingNumberHeader}</label><br />
+                          <p>{selectNumThree}</p>
+                        
+                          <p className="x-small mb-3 op-7">Number of buildings of this type</p>
+                        </Col>
+                      </Row>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+
+                {/* Building Type 4 */}
+                <Card>
+                  <Accordion.Toggle as={Card.Header} eventKey="2">
+                    <p>Building Type 4</p>
+                  </Accordion.Toggle>
+                  <Accordion.Collapse eventKey="2">
+                    <div>
+                      <Row>
+                        <Col> 
+                          <label htmlFor="building">What kind of building is this?</label><br />
+                          <p>{selectBuildFour}</p>
+                          
+                          <label htmlFor="size">{editingdata.squareFeetHeader}</label><br />
+                          <p>{selectSizeFour} </p>
+
+                          <label htmlFor="number">{editingdata.buildingNumberHeader}</label><br />
+                          <p>{selectNumFour}</p>
+                          
+                          <p className="x-small mb-3 op-7">Number of buildings of this type</p>
+                        </Col>
+                      </Row>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+
+                {/* Building Type 5 */}
+                <Card>
+                  <Accordion.Toggle as={Card.Header} eventKey="3">
+                    <p>Building Type 5</p>
+                  </Accordion.Toggle>
+                  <Accordion.Collapse eventKey="3">
+                    <div>
+                      <Row>
+                        <Col> 
+                          <label htmlFor="building">What kind of building is this?</label><br />
+                          <p>{selectBuildFive}</p>
+                        
+                          <label htmlFor="size">{editingdata.squareFeetHeader}</label><br />
+                          <p>{selectSizeFive}</p>
+
+                          <label htmlFor="number">{editingdata.buildingNumberHeader}</label><br />
+                          <p>{selectNumFive}</p>
+                        
+                          <p className="x-small mb-3 op-7">Number of buildings of this type</p>
+                        </Col>
+                      </Row>
+                    </div>
+                  </Accordion.Collapse>
+                </Card>
+              </Accordion>
+            </div>
+
+            <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
+              <Row>
+                <Col className="col-12">
+                  <h3 className="text-green">{editingdata.vehicleHeader}</h3>
+                  <hr/>
+                  <p className="text-grey mb-3">{editingdata.vehiclepara}</p>
+                  
+                  <Accordion>
+                    <Card>
+                      <Accordion.Toggle as={Card.Header} eventKey="0">
+                        <p>Cars</p>
+                      </Accordion.Toggle>
+                      <Accordion.Collapse eventKey="0">
+                        <div>
+                          <Row>
+                            <Col className="col-12 col-xl-4">
+                              {editingdata.vehiclecarGas}
+                            </Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                                <p>{vehicleArray.carGas.count}</p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
+                            </Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.carGas.miles}</p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col  className="col-12 col-xl-4">
+                              {editingdata.vehiclecarDiesel}
+                            </Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.carDiesel.count}</p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
+                            </Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.carDiesel.miles}</p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
+                            </Col>
+                          </Row>
+
+                          <Row>
+                            <Col className="col-12 col-xl-4">
+                              {editingdata.vehiclecarHybrid}
+                            </Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.carHybrid.count}</p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
+                            </Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.carHybrid.miles}</p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
+                            </Col>
+                          </Row>
+
+                          <Row>
+                            <Col className="col-12 col-xl-4">
+                              Plug-In Hybrid
+                            </Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.carPlug.count}</p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
+                            </Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.carPlug.miles}</p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col className="col-12 col-xl-4">
+                              Plug-In Electric
+                            </Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.carElectric.count}</p> 
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
+                            </Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.carElectric.miles}</p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
+                            </Col>
+                          </Row>
+                        </div>
+                      </Accordion.Collapse>
+                    </Card>
+
+                    <Card>  
+                      <Accordion.Toggle as={Card.Header} eventKey="1">
+                        <p>{editingdata.vehiclepickupHeader}</p>
+                      </Accordion.Toggle>
+                      <Accordion.Collapse eventKey="1">
+                        <div>
+                          <Row>
+                            <Col className="col-12 col-xl-4">{editingdata.vehiclepickupGas}</Col>
+                            <Col className="col-12 col-xl-4 col-sm-6 ">
+                              <p>{vehicleArray.truckGas.count}</p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
+                            </Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.truckGas.miles}</p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col  className="col-12 col-xl-4">{editingdata.vehiclepickupDiesel}</Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.truckDiesel.count}</p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
+                            </Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.truckDiesel.miles}</p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col className="col-12 col-xl-4">{editingdata.vehiclepickupHybrid}</Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.truckHybrid.count}</p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
+                            </Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.truckHybrid.miles} </p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col className="col-12 col-xl-4">Plug-In Hybrid</Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                            <p>{vehicleArray.truckPlug.count} </p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
+                            </Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
                               <p>{vehicleArray.truckPlug.miles}</p>
-                <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col className="col-12 col-xl-4">Plug-In Electric</Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                            <p>{vehicleArray.truckElectric.count}</p>
-                            <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
-                          </Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                            <p>{vehicleArray.truckElectric.miles}</p>
-                <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
-                          </Col>
-                        </Row>
-                      </div>
-                    </Accordion.Collapse>
-                  </Card>
-                  <Card>
-                    <Accordion.Toggle as={Card.Header} eventKey="3">
-                      <p>
-                      {editingdata.vehicletruckHeader}
-                      </p>
-                      
-                      <h5 className="text-small smallCaps op-6">(up to 3.5 tonnes)</h5>
-                    </Accordion.Toggle>
-                     
-                    <Accordion.Collapse eventKey="3">
-                      <div>
-                        <Row>
-                          <Col className="col-12 col-xl-4">{editingdata.vehicletruckGas}</Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                            <p>{vehicleArray.deliveryGas.count}</p>
-                            <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
-                          </Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                            
-                            <p>{vehicleArray.deliveryGas.miles} </p>
-                            <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col className="col-12 col-xl-4">{editingdata.vehicletruckDiesel}</Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                           <p>{vehicleArray.deliveryDiesel.count}</p>
-                            <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
-                          </Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                            <p>{vehicleArray.deliveryDiesel.miles}</p>
-                <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
-                          </Col>
-                        </Row>
-                      </div>
-                    </Accordion.Collapse>
-                  </Card>
-                  <Card>
-                    <Accordion.Toggle as={Card.Header} eventKey="4">
-                      <p>
-                      {editingdata.vehicleSemiHeader}
-                        </p>
-                    </Accordion.Toggle>
-                    <Accordion.Collapse eventKey="4">
-                      <div>
-                        <Row>
-                          <Col className="col-12 col-xl-4">{editingdata.vehiclesemiFridge}</Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                            <p>{vehicleArray.semiFrig.count}</p>
-                            <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
-                          </Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                        <p>{vehicleArray.semiFrig.miles}</p>
-                        <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col className="col-12 col-xl-4">{editingdata.vehiclesemiNonFridge}</Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                            <p>{vehicleArray.semiNonFrig.count}</p>
-                            <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
-                          </Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                             <p>{vehicleArray.semiNonFrig.miles}</p>
-                <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
-                          </Col>
-                        </Row>
-                      </div>
-                    </Accordion.Collapse>
-                  </Card>
-                  <Card>
-                    <Accordion.Toggle as={Card.Header} eventKey="5">
-                      <p>
-                      Air Travel
-                      </p>
-                      <h5 className="text-small smallCaps op-6">aircrafts, prop planes, helicopters, jets, etc.</h5>
-                    </Accordion.Toggle>
-                    
-                    <Accordion.Collapse eventKey="5">
-                      <div>
-                        <Row>
-                          <Col className="col-12 col-xl-4">
-                            <p>Private Jet</p>
-                          </Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                            <p>{vehicleArray.jetNum.count}</p>
-                            <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
-                          </Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col className="col-12 col-xl-4">Plug-In Electric</Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.truckElectric.count}</p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
+                            </Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.truckElectric.miles}</p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
+                            </Col>
+                          </Row>
+                        </div>
+                      </Accordion.Collapse>
+                    </Card>
+
+                    <Card>
+                      <Accordion.Toggle as={Card.Header} eventKey="3">
+                        <p>{editingdata.vehicletruckHeader}</p>
+                        <h5 className="text-small smallCaps op-6">(up to 3.5 tonnes)</h5>
+                      </Accordion.Toggle> 
+                      <Accordion.Collapse eventKey="3">
+                        <div>
+                          <Row>
+                            <Col className="col-12 col-xl-4">{editingdata.vehicletruckGas}</Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.deliveryGas.count}</p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
+                            </Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.deliveryGas.miles} </p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col className="col-12 col-xl-4">{editingdata.vehicletruckDiesel}</Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.deliveryDiesel.count}</p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
+                            </Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.deliveryDiesel.miles}</p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
+                            </Col>
+                          </Row>
+                        </div>
+                      </Accordion.Collapse>
+                    </Card>
+                    <Card>
+                      <Accordion.Toggle as={Card.Header} eventKey="4">
+                        <p>{editingdata.vehicleSemiHeader}</p>
+                      </Accordion.Toggle>
+                      <Accordion.Collapse eventKey="4">
+                        <div>
+                          <Row>
+                            <Col className="col-12 col-xl-4">{editingdata.vehiclesemiFridge}</Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.semiFrig.count}</p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
+                            </Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.semiFrig.miles}</p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col className="col-12 col-xl-4">{editingdata.vehiclesemiNonFridge}</Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.semiNonFrig.count}</p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
+                            </Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.semiNonFrig.miles}</p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
+                            </Col>
+                          </Row>
+                        </div>
+                      </Accordion.Collapse>
+                    </Card>
+                    <Card>
+                      <Accordion.Toggle as={Card.Header} eventKey="5">
+                        <p>Air Travel</p>
+                        <h5 className="text-small smallCaps op-6">aircrafts, prop planes, helicopters, jets, etc.</h5>
+                      </Accordion.Toggle>
+                      <Accordion.Collapse eventKey="5">
+                        <div>
+                          <Row>
+                            <Col className="col-12 col-xl-4">
+                              <p>Private Jet</p>
+                            </Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.jetNum.count}</p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
+                            </Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
                               <p>{vehicleArray.jetNum.miles}</p>
-                <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
-                          </Col>
-                        </Row>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
+                            </Col>
+                          </Row>
 
-                        <Row>
-                          <Col className="col-12 col-xl-4">
-                            <p>Private Plane</p>
-                          </Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                             <p>{vehicleArray.planeGas.count}</p>
-                            <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
-                          </Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
+                          <Row>
+                            <Col className="col-12 col-xl-4">
+                              <p>Private Plane</p>
+                            </Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.planeGas.count}</p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
+                            </Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
                               <p>{vehicleArray.planeGas.miles}</p>
-                <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
-                          </Col>
-                        </Row>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
+                            </Col>
+                          </Row>
 
-                        <Row>
-                          <Col className="col-12 col-xl-4">
-                            <p>Private Helicopter</p>
-                          </Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                            <p>{vehicleArray.heliGas.count}</p>
-                            <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
-                          </Col>
-                          <Col className="col-12 col-xl-4 col-sm-6">
-                           <p>{vehicleArray.heliGas.miles}</p>
-                <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
-                          </Col>
-                        </Row>
-                      </div>
-                    </Accordion.Collapse>
-                  </Card>              
-                </Accordion>
-              </Col>
-            </Row>
+                          <Row>
+                            <Col className="col-12 col-xl-4">
+                              <p>Private Helicopter</p>
+                            </Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.heliGas.count}</p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
+                            </Col>
+                            <Col className="col-12 col-xl-4 col-sm-6">
+                              <p>{vehicleArray.heliGas.miles}</p>
+                              <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
+                            </Col>
+                          </Row>
+                        </div>
+                      </Accordion.Collapse>
+                    </Card>
+                  </Accordion>
+                </Col>
+              </Row>
+            </div>
 
-            
-          </div>
-          <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
-            <Row>
-              <Col>
-              <h3 className="text-green">{editingdata.commuteHeader}</h3>
+            <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
+              <Row>
+                <Col>
+                <h3 className="text-green">{editingdata.commuteHeader}</h3>
+                <hr/>
+                <p className="text-grey mb-3">{editingdata.commutePara}</p>
+                </Col>
+              </Row>
+              <Row>
+                <Col className="col-12 col-xl-4 bold">{editingdata.commuteCar}</Col>
+                <Col className="col-12 col-xl-4 col-sm-6">
+                  <p>{transitArray.transitCar.count}</p>
+                  <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
+                </Col>
+                <Col className="col-12 col-xl-4 col-sm-6">
+                  <p>{transitArray.transitCar.miles}</p>
+                  <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
+                </Col>
+              </Row>
+              <Row>
+                <Col className="col-12 col-xl-4 bold">{editingdata.commuteBus}</Col>
+                <Col className="col-12 col-xl-4 col-sm-6">
+                  <p>{transitArray.transitBus.count}</p>
+                  <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
+                </Col>
+                <Col className="col-12 col-xl-4 col-sm-6">
+                <p>{transitArray.transitBus.miles}</p>
+                  <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
+                </Col>
+              </Row>
+              <Row>
+                <Col className="col-12 col-xl-4 bold">{editingdata.commuteTrain}</Col>
+                <Col className="col-12 col-xl-4 col-sm-6">
+                <p>{transitArray.transitTrain.count}</p>
+                  <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
+                </Col>
+                <Col className="col-12 col-xl-4 col-sm-6">
+                  <p>{transitArray.transitTrain.miles}</p>
+                  <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
+                </Col>
+              </Row>
+            </div>
+
+            <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
+              <Row>
+                <Col>
+                <h3 className="text-green">{editingdata.travelHeader}</h3>
+                <hr/>
+                <p className="text-grey mb-3">{editingdata.travelPara}</p>
+                </Col>
+              </Row>
+              
+              <Row>
+                <Col className="col-12 col-xl-4 col-sm-6 bold">{editingdata.travelEmp}</Col>
+                <Col className="col-12 col-xl-8 col-sm-6">
+                  <p>{flightEmp}</p>
+                  <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder1}</p>
+                </Col>
+              </Row>
               <hr/>
-              <p className="text-grey mb-3">{editingdata.commutePara}</p>
-              </Col>
-            </Row>
-            <Row>
-              <Col className="col-12 col-xl-4 bold">{editingdata.commuteCar}</Col>
-              <Col className="col-12 col-xl-4 col-sm-6">
-                <p>{transitArray.transitCar.count}</p>
-                <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
-              </Col>
-              <Col className="col-12 col-xl-4 col-sm-6">
-                <p>{transitArray.transitCar.miles}</p>
-                <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
-              </Col>
-            </Row>
-            <Row>
-              <Col className="col-12 col-xl-4 bold">{editingdata.commuteBus}</Col>
-              <Col className="col-12 col-xl-4 col-sm-6">
-                <p>{transitArray.transitBus.count}</p>
-                <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
-              </Col>
-              <Col className="col-12 col-xl-4 col-sm-6">
-               <p>{transitArray.transitBus.miles}</p>
-                <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
-              </Col>
-            </Row>
-            <Row>
-              <Col className="col-12 col-xl-4 bold">{editingdata.commuteTrain}</Col>
-              <Col className="col-12 col-xl-4 col-sm-6">
-               <p>{transitArray.transitTrain.count}</p>
-                <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
-              </Col>
-              <Col className="col-12 col-xl-4 col-sm-6">
-                <p>{transitArray.transitTrain.miles}</p>
-                <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
-              </Col>
-            </Row>
-          </div>
-
-          <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
-            <Row>
-              <Col>
-              <h3 className="text-green">{editingdata.travelHeader}</h3>
+              <Row>
+                <Col className="col-12 col-xl-4 mb-2 bold">{editingdata.travelShort}</Col>
+                <Col>
+                  <Row>
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelShort1}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
+                      <p>{flightArray.flyShort.count}</p>
+                      <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder2}</p>
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
               <hr/>
-              <p className="text-grey mb-3">{editingdata.travelPara}</p>
-              </Col>
-            </Row>
-            
-            <Row>
-              <Col className="col-12 col-xl-4 col-sm-6 bold">{editingdata.travelEmp}</Col>
-              <Col className="col-12 col-xl-8 col-sm-6">
-                <p>{flightEmp}</p>
-                <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder1}</p>
-              </Col>
-            </Row>
-            <hr/>
-            <Row>
-              <Col className="col-12 col-xl-4 mb-2 bold">{editingdata.travelShort}</Col>
-              <Col>
-                <Row>
-                  <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelShort1}</Col>
-                  <Col className="col-12 col-xl-8 col-sm-6">
-                    <p>{flightArray.flyShort.count}</p>
-                    <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder2}</p>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-            <hr/>
-            <Row>
-              <Col className="col-12 col-xl-4 mb-2 bold">{editingdata.travelMed}</Col>
+              <Row>
+                <Col className="col-12 col-xl-4 mb-2 bold">{editingdata.travelMed}</Col>
                 <Col>
                   <Row>
                     <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelMed1}</Col>
-                      <Col className="col-12 col-xl-8 col-sm-6">
-                        <p>{flightArray.flyMediumEco.count}</p>
-                        <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder2}</p>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelMed2}</Col>
-                      <Col className="col-12 col-xl-8 col-sm-6">
-                       <p>{flightArray.flyMediumBus.count}</p>
-                        <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder2}</p>
-                  </Col>
-                </Row>
+                    <Col className="col-12 col-xl-8 col-sm-6">
+                      <p>{flightArray.flyMediumEco.count}</p>
+                      <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder2}</p>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelMed2}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
+                      <p>{flightArray.flyMediumBus.count}</p>
+                      <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder2}</p>
+                    </Col>
+                  </Row>
                 </Col>
               </Row>
               <hr/>
@@ -1119,186 +1077,180 @@ export default function BusinessCalc({ file, href, children}) {
                     <Col className="col-12 col-xl-8 col-sm-6">
                       <p>{flightArray.flyLongEco.count}</p>
                       <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder2}</p>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelLong2}</Col>
-                  <Col className="col-12 col-xl-8 col-sm-6">
-                    <p>{flightArray.flyLongEcoPlus.count} </p>
-                    <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder2}</p>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelLong3}</Col>
-                  <Col className="col-12 col-xl-8 col-sm-6">
-                    <p>{flightArray.flyLongBus.count}</p>
-                    <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder2}</p>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelLong4}</Col>
-                  <Col className="col-12 col-xl-8 col-sm-6">
-                      <p>{flightArray.flyLongFirst.count}</p>
-                    <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder2}</p>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-            <hr/>
-            <Row>
-              <Col className="col-12 col-xl-4 col-sm-6 bold">{editingdata.travelNights}</Col>
-              <Col className="col-12 col-xl-8 col-sm-6">
-                 <p>{flightArray.flyHotels.count}</p>
-                <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder3}</p>
-              </Col>
-            </Row>
-          </div>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelLong2}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
+                      <p>{flightArray.flyLongEcoPlus.count} </p>
+                      <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder2}</p>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelLong3}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
+                      <p>{flightArray.flyLongBus.count}</p>
+                      <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder2}</p>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col className="col-12 col-xl-4 col-sm-6">{editingdata.travelLong4}</Col>
+                    <Col className="col-12 col-xl-8 col-sm-6">
+                        <p>{flightArray.flyLongFirst.count}</p>
+                      <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder2}</p>
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
+              <hr/>
+              <Row>
+                <Col className="col-12 col-xl-4 col-sm-6 bold">{editingdata.travelNights}</Col>
+                <Col className="col-12 col-xl-8 col-sm-6">
+                  <p>{flightArray.flyHotels.count}</p>
+                  <p className="x-small mb-3 op-7">{editingdata.travelPlaceholder3}</p>
+                </Col>
+              </Row>
+            </div>
 
-          <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
-            <Row>
-              <Col>
-                <h3 className="text-green">{editingdata.freightHeader}</h3>
-                <hr/>
-                <p className="text-grey mb-3">{editingdata.freightPara}</p>
-              </Col>
-            </Row>
-           
-            <Row>
-              <Col className="col-12 col-xl-4 bold">{editingdata.freightVan}</Col>
-              <Col className="col-12 col-xl-4 col-sm-6">
-                        <p>{freightArray.freightVan.count}</p>
-                <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder1}</p>
-              </Col>
-              <Col className="col-12 col-xl-4 col-sm-6">
-                <p>{freightArray.freightVan.miles}</p>
-                <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder2}</p>
-              </Col>
-            </Row>
-            <hr/>
-            <Row>
-              <Col className="col-12 col-xl-4 bold">{editingdata.freightSemiNon}</Col>
-              <Col className="col-12 col-xl-4 col-sm-6">
-                <p>{freightArray.freightSemiNonFrig.count}</p>
-                <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder1}</p>
-              </Col>
-              <Col className="col-12 col-xl-4 col-sm-6">
-                <p>{freightArray.freightSemiNonFrig.miles}</p>
-                <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder2}</p>
-              </Col>
-            </Row>
-            <hr/>
-            <Row>
-              <Col className="col-12 col-xl-4 bold">{editingdata.freightSemiFridge}</Col>
-              <Col className="col-12 col-xl-4 col-sm-6">
-                <p>{freightArray.freightSemiFrig.count}</p>
-                <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder1}</p>
-              </Col>
-              <Col className="col-12 col-xl-4 col-sm-6">
-                <p>{freightArray.freightSemiFrig.miles}</p>
-                <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder2}</p>
-              </Col>
-            </Row>
-            <hr/>
-            <Row>
-              <Col className="col-12 col-xl-4 bold">{editingdata.freightShip}</Col>
-              <Col className="col-12 col-xl-4 col-sm-6">
-                <p>{freightArray.freightCargo.count}</p>
-                <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder1}</p>
-              </Col>
-              <Col className="col-12 col-xl-4 col-sm-6">
-                <p>{freightArray.freightCargo.miles}</p>
-                <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder2}</p>
-              </Col>
-            </Row>
-            <hr/>
-            <Row>
-              <Col className="col-12 col-xl-4 bold">{editingdata.freightAirLow}</Col>
-              <Col className="col-12 col-xl-4 col-sm-6">
-                <p>{freightArray.freightAirLess.count} </p>
-                <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder1}</p>
-              </Col>
-              <Col className="col-12 col-xl-4 col-sm-6">
-                <p>{freightArray.freightAirLess.miles}</p>
-                <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder2}</p>
-              </Col>
-            </Row>
-            <hr/>
-            <Row>
-              <Col className="col-12 col-xl-4 bold">{editingdata.freightAirHigh}</Col>
-              <Col className="col-12 col-xl-4 col-sm-6">
-                 <p>{freightArray.freightAirMore.count}</p>
-                <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder1}</p>
-              </Col>
-              <Col className="col-12 col-xl-4 col-sm-6">
-                <p>{freightArray.freightAirMore.miles}</p>
-                <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder2}</p>
-              </Col> 
-            </Row>
-          </div>
-        </Col>
-        <Col className=" p-3  col-11 col-lg-5 col-xl-4 stickyCalc mb-4">
-          <div className="text-white p-5 innerShadow roundedBox bg-green">
-            <h4 className="mb-0">{editingdata.dataHeader}</h4>
-            <hr/>
-            <Row>
-              <Col>{editingdata.dataType1}</Col>
-              <Col className="text-right bold">{subtotalBuild > 0 ? subtotalBuild : "--"}</Col>
-            </Row>
-            <hr/>
-            <Row>
-              <Col>{editingdata.dataType2}</Col>
-              <Col className="text-right bold">{vehicleSub > 0 ? vehicleSub : "--"}</Col>
-            </Row>
-            <hr/>
-            <Row>
-              <Col>{editingdata.dataType3}</Col>
-              <Col className="text-right bold">{transitSub > 0 ? transitSub : "--"}</Col>
-            </Row>
-            <hr/>
-            <Row>
-              <Col>{editingdata.dataType4}</Col>
-              <Col className="text-right bold">{flightSub > 0 ? flightSub : "--"}</Col>
-            </Row>
-            <hr/>
-            <Row>
-              <Col>{editingdata.dataType5}</Col>
-              <Col className="text-right bold">{freightSub > 0 ? freightSub : "--"}</Col>
-            </Row>
-            <hr/>
-            <span className="smallCaps text-small">{editingdata.dataTotal}</span><br/>
-            <span className="h2 bold">{total > 0 ? total : "--"}</span>
-            <p>{total > 0 ? "(Metric Tonnes of CO2 per Year)" : ""}</p>
-            <p className="text-small">{editingdata.dataDisclaimer}</p>
+            <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
+              <Row>
+                <Col>
+                  <h3 className="text-green">{editingdata.freightHeader}</h3>
+                  <hr/>
+                  <p className="text-grey mb-3">{editingdata.freightPara}</p>
+                </Col>
+              </Row>
+              <Row>
+                <Col className="col-12 col-xl-4 bold">{editingdata.freightVan}</Col>
+                <Col className="col-12 col-xl-4 col-sm-6">
+                  <p>{freightArray.freightVan.count}</p>
+                  <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder1}</p>
+                </Col>
+                <Col className="col-12 col-xl-4 col-sm-6">
+                  <p>{freightArray.freightVan.miles}</p>
+                  <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder2}</p>
+                </Col>
+              </Row>
+              <hr/>
+              <Row>
+                <Col className="col-12 col-xl-4 bold">{editingdata.freightSemiNon}</Col>
+                <Col className="col-12 col-xl-4 col-sm-6">
+                  <p>{freightArray.freightSemiNonFrig.count}</p>
+                  <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder1}</p>
+                </Col>
+                <Col className="col-12 col-xl-4 col-sm-6">
+                  <p>{freightArray.freightSemiNonFrig.miles}</p>
+                  <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder2}</p>
+                </Col>
+              </Row>
+              <hr/>
+              <Row>
+                <Col className="col-12 col-xl-4 bold">{editingdata.freightSemiFridge}</Col>
+                <Col className="col-12 col-xl-4 col-sm-6">
+                  <p>{freightArray.freightSemiFrig.count}</p>
+                  <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder1}</p>
+                </Col>
+                <Col className="col-12 col-xl-4 col-sm-6">
+                  <p>{freightArray.freightSemiFrig.miles}</p>
+                  <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder2}</p>
+                </Col>
+              </Row>
+              <hr/>
+              <Row>
+                <Col className="col-12 col-xl-4 bold">{editingdata.freightShip}</Col>
+                <Col className="col-12 col-xl-4 col-sm-6">
+                  <p>{freightArray.freightCargo.count}</p>
+                  <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder1}</p>
+                </Col>
+                <Col className="col-12 col-xl-4 col-sm-6">
+                  <p>{freightArray.freightCargo.miles}</p>
+                  <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder2}</p>
+                </Col>
+              </Row>
+              <hr/>
+              <Row>
+                <Col className="col-12 col-xl-4 bold">{editingdata.freightAirLow}</Col>
+                <Col className="col-12 col-xl-4 col-sm-6">
+                  <p>{freightArray.freightAirLess.count} </p>
+                  <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder1}</p>
+                </Col>
+                <Col className="col-12 col-xl-4 col-sm-6">
+                  <p>{freightArray.freightAirLess.miles}</p>
+                  <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder2}</p>
+                </Col>
+              </Row>
+              <hr/>
+              <Row>
+                <Col className="col-12 col-xl-4 bold">{editingdata.freightAirHigh}</Col>
+                <Col className="col-12 col-xl-4 col-sm-6">
+                  <p>{freightArray.freightAirMore.count}</p>
+                  <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder1}</p>
+                </Col>
+                <Col className="col-12 col-xl-4 col-sm-6">
+                  <p>{freightArray.freightAirMore.miles}</p>
+                  <p className="x-small mb-3 op-7">{editingdata.freightPlaceholder2}</p>
+                </Col> 
+              </Row>
+            </div>
+          </Col>
+          <Col className=" p-3  col-11 col-lg-5 col-xl-4 stickyCalc mb-4">
+            <div className="text-white p-5 innerShadow roundedBox bg-green">
+              <h4 className="mb-0">{editingdata.dataHeader}</h4>
+              <hr/>
+              <Row>
+                <Col>{editingdata.dataType1}</Col>
+                <Col className="text-right bold">{subtotalBuild > 0 ? subtotalBuild : "--"}</Col>
+              </Row>
+              <hr/>
+              <Row>
+                <Col>{editingdata.dataType2}</Col>
+                <Col className="text-right bold">{vehicleSub > 0 ? vehicleSub : "--"}</Col>
+              </Row>
+              <hr/>
+              <Row>
+                <Col>{editingdata.dataType3}</Col>
+                <Col className="text-right bold">{transitSub > 0 ? transitSub : "--"}</Col>
+              </Row>
+              <hr/>
+              <Row>
+                <Col>{editingdata.dataType4}</Col>
+                <Col className="text-right bold">{flightSub > 0 ? flightSub : "--"}</Col>
+              </Row>
+              <hr/>
+              <Row>
+                <Col>{editingdata.dataType5}</Col>
+                <Col className="text-right bold">{freightSub > 0 ? freightSub : "--"}</Col>
+              </Row>
+              <hr/>
+              <span className="smallCaps text-small">{editingdata.dataTotal}</span><br/>
+              <span className="h2 bold">{total > 0 ? total : "--"}</span>
+              <p>{total > 0 ? "(Metric Tonnes of CO2 per Year)" : ""}</p>
+              <p className="text-small">{editingdata.dataDisclaimer}</p>
+              <hr className="my-4"/>
+              <Row className="justify-content-center text-center">
+                <Col>
+                  <div className="mt-3">
+                    <p className="smallCaps text-center text-white mb-3">Share These Results</p>
+                    
+                    <FacebookShareButton url={sharingPrefix + sharingUrl} quote={editingdata.shareFacebook} hashtag={editingdata.shareFacebookTags} className="mx-2">
+                      <FacebookIcon size={40} round />
+                    </FacebookShareButton>
 
-            <hr className="my-4"/>
+                    <TwitterShareButton url={sharingPrefix + sharingUrl} title={editingdata.shareTwitter} className="mx-2">
+                      <TwitterIcon size={40} round />
+                    </TwitterShareButton>
 
-<Row className="justify-content-center text-center">
-<Col>
-<div className="mt-3">
-                <p className="smallCaps text-center text-white mb-3">Share These Results</p>
-                
-                <FacebookShareButton url={sharingPrefix + sharingUrl} quote={editingdata.shareFacebook} hashtag={editingdata.shareFacebookTags} className="mx-2">
-                  <FacebookIcon size={40} round />
-                </FacebookShareButton>
+                    {/* <LinkedinShareButton url={sharingPrefix + sharingUrl} summary={editingdata.shareLinkedIn} className="mx-2">
+                      <LinkedinIcon size={40} round />
+                    </LinkedinShareButton> */}
 
-                <TwitterShareButton url={sharingPrefix + sharingUrl} title={editingdata.shareTwitter} className="mx-2">
-                  <TwitterIcon size={40} round />
-                </TwitterShareButton>
-
-                {/* <LinkedinShareButton url={sharingPrefix + sharingUrl} summary={editingdata.shareLinkedIn} className="mx-2">
-                  <LinkedinIcon size={40} round />
-                </LinkedinShareButton> */}
-
-                <EmailShareButton url={sharingPrefix + sharingUrl} body={editingdata.shareEmailBody} subject={editingdata.shareEmailSubject} className="mx-2">
-                  <EmailIcon size={40} round />
-                </EmailShareButton>
-              </div>
-              </Col>
-            </Row>
-            
-
-          </div>
-
+                    <EmailShareButton url={sharingPrefix + sharingUrl} body={editingdata.shareEmailBody} subject={editingdata.shareEmailSubject} className="mx-2">
+                      <EmailIcon size={40} round />
+                    </EmailShareButton>
+                  </div>
+                </Col>
+              </Row>
+            </div>
           </Col>
         </Row>
         

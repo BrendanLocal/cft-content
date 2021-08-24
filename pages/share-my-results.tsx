@@ -589,8 +589,8 @@ export default function App({ file, href, children}) {
               </Row>
               <Row className="mb-3">
                 <Col>
-                <p>{getFam == 'myself'? "Myself" : "My family"}</p>
-                <p className="x-small mb-3 op-7">Who are you filling this out for</p>
+                  <p>{getFam == 'myself'? "Myself" : "My family"}</p>
+                  <p className="x-small mb-3 op-7">Who are you filling this out for</p>
                 
                   <p>{selectNum}</p>
                   <p className="x-small mb-3 op-7">Number of people in your household</p>
@@ -601,8 +601,8 @@ export default function App({ file, href, children}) {
                   <p>{selectSize}</p>
                   <p className="x-small mb-3 op-7">Square feet of your home</p>
                 
-                <p>{selectHeat}</p>
-                <p className="x-small mb-3 op-7">Main source of heat for your home</p>
+                  <p>{selectHeat}</p>
+                  <p className="x-small mb-3 op-7">Main source of heat for your home</p>
                 
                   <p>{selectEnergy}</p>
                   <p className="x-small mb-3 op-7">Energy savings</p>
@@ -611,438 +611,404 @@ export default function App({ file, href, children}) {
 
               {/* residence 2 */}
               <Accordion>
-              <Card>
-                            <Accordion.Toggle as={Card.Header} eventKey="0">
-                            
-                  
-                            <p>2nd Residence</p>
-
-                            </Accordion.Toggle>
-                            <Accordion.Collapse eventKey="0">
-                              <div>
-              
-                              <Row>
-                <Col>
-                  {sessionDataError ? <p style={{ color: 'red' }}>{sessionDataError}</p> : null}
-                  <h3 className="text-green">{editingdata.heat1Title}</h3>
-                  <hr className="mb-4"/>
-                </Col>
-                <h5 className="smallCaps text-small text-green">{editingdata.heat1Para}</h5>
-              </Row>
-              <Row className="mb-3">
-                <Col>
-                <p>{getFamTwo == 'myself'? "Myself" : "My family"}</p>
-                <p className="x-small mb-3 op-7">Who are you filling this out for</p>
-                
-                  <p>{Number(selectNumTwo)>0 ? selectNumTwo : ''}</p>
-                  {selectNumTwo ? '<p className="x-small mb-3 op-7">Number of people in your household</p>' : ''}
-                  
-                  <p>{Number(selectYearTwo) >0 ? selectYearTwo : ''}</p>
-                  {selectYearTwo? '<p className="x-small mb-3 op-7">Month(s) per year spent living at this residence</p>' :''}
-                
-                  <p>{selectSizeTwo}</p>
-                  {selectSizeTwo? '<p className="x-small mb-3 op-7">Square feet of your home</p>' : ''}
-                
-                <p>{selectHeatTwo}</p>
-                {selectHeatTwo? '<p className="x-small mb-3 op-7">Main source of heat for your home</p>' : ''}
-               
-                  <p>{selectEnergyTwo}</p>
-                  {selectEnergyTwo? '<p className="x-small mb-3 op-7">Energy savings</p>' : ''}
-                </Col>
-              </Row> 
-              </div>
-</Accordion.Collapse>
-
-</Card>
-                {/* residence 3 */}
-                <Card>
-                  <Accordion.Toggle as={Card.Header} eventKey="1">
-                  <p>3rd Residence</p>
-                  </Accordion.Toggle>
-                  <Accordion.Collapse eventKey="1">
-                    <div>
-                    <Row className="mb-3">
-                <Col>
-                <p>{getFamThree == 'myself'? "Myself" : "My family"}</p>
-                <p className="x-small mb-3 op-7">Who are you filling this out for</p>
-                
-                  <p>{Number(selectNumThree)>0 ? selectNumThree : ''}</p>
-                  {selectNumThree ? '<p className="x-small mb-3 op-7">Number of people in your household</p>' : ''}
-                  
-                  <p>{Number(selectYearThree) >0 ? selectYearThree : ''}</p>
-                  {selectYearThree? '<p className="x-small mb-3 op-7">Month(s) per year spent living at this residence</p>' :''}
-                
-                  <p>{selectSizeThree}</p>
-                  {selectSizeThree? '<p className="x-small mb-3 op-7">Square feet of your home</p>' : ''}
-                
-                <p>{selectHeatThree}</p>
-                {selectHeatThree? '<p className="x-small mb-3 op-7">Main source of heat for your home</p>' : ''}
-               
-                  <p>{selectEnergyThree}</p>
-                  {selectEnergyThree? '<p className="x-small mb-3 op-7">Energy savings</p>' : ''}
-                </Col>
-              </Row> 
-                  </div>
-                </Accordion.Collapse>
-              </Card>
-
-              {/* residence 4 */}
-              <Card>
-                <Accordion.Toggle as={Card.Header} eventKey="2">
-                <p>4th Residence</p>
-                </Accordion.Toggle>
-                <Accordion.Collapse eventKey="2">
-                  <div>
-                  <Row className="mb-3">
-                <Col>
-                <p>{getFamThree == 'myself'? "Myself" : "My family"}</p>
-                <p className="x-small mb-3 op-7">Who are you filling this out for</p>
-                
-                  <p>{Number(selectNumFour)>0 ? selectNumFour : ''}</p>
-                  {selectNumFour ? '<p className="x-small mb-3 op-7">Number of people in your household</p>' : ''}
-                  
-                  <p>{Number(selectYearFour) >0 ? selectYearFour : ''}</p>
-                  {selectYearFour? '<p className="x-small mb-3 op-7">Month(s) per year spent living at this residence</p>' :''}
-                
-                  <p>{selectSizeFour}</p>
-                  {selectSizeFour? '<p className="x-small mb-3 op-7">Square feet of your home</p>' : ''}
-                
-                <p>{selectHeatFour}</p>
-                {selectHeatFour? '<p className="x-small mb-3 op-7">Main source of heat for your home</p>' : ''}
-               
-                  <p>{selectEnergyFour}</p>
-                  {selectEnergyFour? '<p className="x-small mb-3 op-7">Energy savings</p>' : ''}
-                </Col>
-              </Row> 
-                </div>
-              </Accordion.Collapse>
-            </Card>
-
-            {/* residence 5 */}
-            <Card>
-                            <Accordion.Toggle as={Card.Header} eventKey="3">
-                            
-                  
-                            <p>5th Residence</p>
-
-                            </Accordion.Toggle>
-                            <Accordion.Collapse eventKey="3">
-                              <div>
-              
-                              <Row className="mb-3">
-                <Col>
-                <p>{getFamFive == 'myself'? "Myself" : "My family"}</p>
-                <p className="x-small mb-3 op-7">Who are you filling this out for</p>
-                
-                  <p>{Number(selectNumFive)>0 ? selectNumFive : ''}</p>
-                  {selectNumFive ? '<p className="x-small mb-3 op-7">Number of people in your household</p>' : ''}
-                  
-                  <p>{Number(selectYearFive) >0 ? selectYearFive : ''}</p>
-                  {selectYearFive? '<p className="x-small mb-3 op-7">Month(s) per year spent living at this residence</p>' :''}
-                
-                  <p>{selectSizeFive}</p>
-                  {selectSizeFive? '<p className="x-small mb-3 op-7">Square feet of your home</p>' : ''}
-                
-                <p>{selectHeatFive}</p>
-                {selectHeatFive? '<p className="x-small mb-3 op-7">Main source of heat for your home</p>' : ''}
-               
-                  <p>{selectEnergyFive}</p>
-                  {selectEnergyFive? '<p className="x-small mb-3 op-7">Energy savings</p>' : ''}
-                </Col>
-              </Row> 
-           </div>
-         </Accordion.Collapse>
-         </Card>
-     
-        
-         </Accordion>
-
-            </div>
-
-        <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
-          <Row>
-            <Col className="col-12">
-              <h3 className="text-green">{editingdata.vehicleHeader}</h3>
-              <hr/>
-              <p className="text-grey mb-3">{editingdata.vehiclePara1}</p>
-            </Col>
-            <Col>
-              <Accordion>
                 <Card>
                   <Accordion.Toggle as={Card.Header} eventKey="0">
-                    <p>
-                    {editingdata.vehicleSmall}
-                      </p>
-                    
-                    </Accordion.Toggle>
-
+                    <p>2nd Residence</p>
+                  </Accordion.Toggle>
                   <Accordion.Collapse eventKey="0">
                     <div>
                       <Row>
-                        <Col className="col">
-                          {editingdata.vehicleGas}
-                          <p>{vehicleArray.smallGas.miles}</p>
-                          
-                <p className="x-small mb-3 op-7">Annual KM (gas)</p>
-                       
-                          {editingdata.vehicleDiesel}
-                          <p>{vehicleArray.smallDiesel.miles}</p>
-                <p className="x-small mb-3 op-7">Annual KM (diesel)</p>
-                       
-                          {editingdata.vehicleHybrid}
-                          <p>{vehicleArray.smallHybrid.miles}</p>
-                <p className="x-small mb-3 op-7">Annual KM (hybrid)</p>
-                        
-                        {editingdata.vehiclePlug}
-                          <p>{vehicleArray.smallPlug.miles}</p>
-                <p className="x-small mb-3 op-7">Annual KM (plug-in hybrid)</p>
-                        
-                          {editingdata.vehicleElectric}
-                         <p>{vehicleArray.smallElectric.miles}</p>
-                <p className="x-small mb-3 op-7">Annual KM (battery electric)</p>
+                        <Col>
+                          {sessionDataError ? <p style={{ color: 'red' }}>{sessionDataError}</p> : null}
+                          <h3 className="text-green">{editingdata.heat1Title}</h3>
+                          <hr className="mb-4"/>
                         </Col>
+                        <h5 className="smallCaps text-small text-green">{editingdata.heat1Para}</h5>
                       </Row>
+                      
+                      <Row className="mb-3">
+                        <Col>
+                          <p>{getFamTwo == 'myself'? "Myself" : "My family"}</p>
+                          <p className="x-small mb-3 op-7">Who are you filling this out for</p>
+                        
+                          <p>{Number(selectNumTwo)>0 ? selectNumTwo : ''}</p>
+                          {selectNumTwo ? '<p className="x-small mb-3 op-7">Number of people in your household</p>' : ''}
+                          
+                          <p>{Number(selectYearTwo) >0 ? selectYearTwo : ''}</p>
+                          {selectYearTwo? '<p className="x-small mb-3 op-7">Month(s) per year spent living at this residence</p>' :''}
+                        
+                          <p>{selectSizeTwo}</p>
+                          {selectSizeTwo? '<p className="x-small mb-3 op-7">Square feet of your home</p>' : ''}
+                        
+                          <p>{selectHeatTwo}</p>
+                          {selectHeatTwo? '<p className="x-small mb-3 op-7">Main source of heat for your home</p>' : ''}
+                      
+                          <p>{selectEnergyTwo}</p>
+                          {selectEnergyTwo? '<p className="x-small mb-3 op-7">Energy savings</p>' : ''}
+                        </Col>
+                      </Row> 
                     </div>
                   </Accordion.Collapse>
                 </Card>
 
+                {/* residence 3 */}
                 <Card>
                   <Accordion.Toggle as={Card.Header} eventKey="1">
-                    <p>
-                    {editingdata.vehicleMed}
-                    </p>
-                    <h5 className="text-small smallCaps op-6">4-door sedans, SUVs</h5>
+                    <p>3rd Residence</p>
                   </Accordion.Toggle>
-                  
                   <Accordion.Collapse eventKey="1">
                     <div>
-                      <Row>
-                        <Col className="col">
-                          {editingdata.vehicleGas}
-                         <p>{vehicleArray.mediumGas.miles}</p>
-                <p className="x-small mb-3 op-7">Annual KM (gas)</p>
+                      <Row className="mb-3">
+                        <Col>
+                          <p>{getFamThree == 'myself'? "Myself" : "My family"}</p>
+                          <p className="x-small mb-3 op-7">Who are you filling this out for</p>
+                          
+                          <p>{Number(selectNumThree)>0 ? selectNumThree : ''}</p>
+                          {selectNumThree ? '<p className="x-small mb-3 op-7">Number of people in your household</p>' : ''}
+                          
+                          <p>{Number(selectYearThree) >0 ? selectYearThree : ''}</p>
+                          {selectYearThree? '<p className="x-small mb-3 op-7">Month(s) per year spent living at this residence</p>' :''}
+                        
+                          <p>{selectSizeThree}</p>
+                          {selectSizeThree? '<p className="x-small mb-3 op-7">Square feet of your home</p>' : ''}
+                          
+                          <p>{selectHeatThree}</p>
+                          {selectHeatThree? '<p className="x-small mb-3 op-7">Main source of heat for your home</p>' : ''}
+                        
+                          <p>{selectEnergyThree}</p>
+                          {selectEnergyThree? '<p className="x-small mb-3 op-7">Energy savings</p>' : ''}
                         </Col>
                       </Row> 
-                      <Row>
-                        <Col className="col">
-                        {editingdata.vehicleDiesel}
-                          <p>{vehicleArray.mediumDiesel.miles}</p>
-                <p className="x-small mb-3 op-7">Annual KM (diesel)</p>
-                        </Col>
-                      </Row>
-                      <Row>
-                        <Col className="col">
-                        {editingdata.vehicleHybrid}
-                          <p>{vehicleArray.mediumHybrid.miles}</p>
-                <p className="x-small mb-3 op-7">Annual KM (hybrid)</p>
-                        </Col>
-                      </Row>
-                      <Row>
-                        <Col className="col">
-                        {editingdata.vehiclePlug}
-                          <p>{vehicleArray.mediumPlug.miles}</p>
-                <p className="x-small mb-3 op-7">Annual KM (plug-in hybrid)</p>
-                        </Col>
-                      </Row>
-
-                      <Row>
-                        <Col className="col">
-                          {editingdata.vehicleElectric}
-                          <p>{vehicleArray.mediumElectric.miles}</p>
-                <p className="x-small mb-3 op-7">Annual KM (battery electric)</p>
-                        </Col>
-                      </Row>
                     </div>
                   </Accordion.Collapse>
                 </Card>
+
+                {/* residence 4 */}
                 <Card>
                   <Accordion.Toggle as={Card.Header} eventKey="2">
-                    <p>
-                    {editingdata.vehicleLarge}
-                    </p>
-                    <h5 className="text-small smallCaps op-6">Pickup Trucks</h5>
+                    <p>4th Residence</p>
                   </Accordion.Toggle>
-                    
                   <Accordion.Collapse eventKey="2">
                     <div>
-                      <Row>
-                        <Col className="col">
-                          {editingdata.vehicleGas}
-                         <p>{vehicleArray.largeGas.miles}</p>
-                <p className="x-small mb-3 op-7">Annual KM (gas)</p>
-                        </Col>
-                      </Row> 
-
-                      <Row>
-                        <Col className="col">
-                          {editingdata.vehicleDiesel}
-                          <p>{vehicleArray.largeDiesel.miles}</p>
-                <p className="x-small mb-3 op-7">Annual KM (diesel)</p>
-                        </Col>
-                      </Row>
-
-                      <Row>
-                        <Col className="col">
-                          {editingdata.vehicleHybrid}
-                          <p>{vehicleArray.largeHybrid.miles}</p>
-                <p className="x-small mb-3 op-7">Annual KM (hybrid)</p>
-                        </Col>
-                      </Row>
-
-                      <Row>
-                        <Col className="col">
-                        {editingdata.vehiclePlug}
-                          <p>{vehicleArray.largePlug.miles}</p>
-                <p className="x-small mb-3 op-7">Annual KM (plug-in hybrid)</p>
-                        </Col>
-                      </Row>
-
-                      <Row>
-                        <Col className="col">
-                          {editingdata.vehicleElectric}
-                          <p>{vehicleArray.largeElectric.miles}</p>
-                <p className="x-small mb-3 op-7">Annual KM (battery electric)</p>
-                        </Col>
-                      </Row>
-                      <hr/>
-
-                      <h5 className="smallCaps text-small text-green">{editingdata.vehicleMoto}</h5>
-                      <p className="text-small op-6">{editingdata.vehicleMotoDesc}</p>
-                      <Row>
-                        <Col className="col">
-                          {editingdata.vehicleGas}
-                          <p>{vehicleArray.motorbikeGas.miles}</p>
-                <p className="x-small mb-3 op-7">Annual KM (gas)</p>
+                      <Row className="mb-3">
+                        <Col>
+                          <p>{getFamThree == 'myself'? "Myself" : "My family"}</p>
+                          <p className="x-small mb-3 op-7">Who are you filling this out for</p>
+                    
+                          <p>{Number(selectNumFour)>0 ? selectNumFour : ''}</p>
+                          {selectNumFour ? '<p className="x-small mb-3 op-7">Number of people in your household</p>' : ''}
+                          
+                          <p>{Number(selectYearFour) >0 ? selectYearFour : ''}</p>
+                          {selectYearFour? '<p className="x-small mb-3 op-7">Month(s) per year spent living at this residence</p>' :''}
+                        
+                          <p>{selectSizeFour}</p>
+                          {selectSizeFour? '<p className="x-small mb-3 op-7">Square feet of your home</p>' : ''}
+                    
+                          <p>{selectHeatFour}</p>
+                          {selectHeatFour? '<p className="x-small mb-3 op-7">Main source of heat for your home</p>' : ''}
+                  
+                          <p>{selectEnergyFour}</p>
+                          {selectEnergyFour? '<p className="x-small mb-3 op-7">Energy savings</p>' : ''}
                         </Col>
                       </Row> 
                     </div>
                   </Accordion.Collapse>
                 </Card>
+
+                {/* residence 5 */}
                 <Card>
                   <Accordion.Toggle as={Card.Header} eventKey="3">
-                    <p>
-                    Private Aircraft
-                      </p>
-                    <h5 className="text-small smallCaps op-6">Personally owned aircraft, prop planes, helicopters, jets, etc.</h5>
+                    <p>5th Residence</p>
                   </Accordion.Toggle>
-
-
                   <Accordion.Collapse eventKey="3">
                     <div>
-                      <Row>
-                        <Col className="col">
-                          {editingdata.vehiclePlane}
-                          <p>{vehicleArray.jetGas.miles}</p>
-                          <p className="x-small mb-3 op-7">Annual litres of fuel</p>
-                        </Col>
-                      </Row> 
+                      <Row className="mb-3">
+                        <Col>
+                          <p>{getFamFive == 'myself'? "Myself" : "My family"}</p>
+                          <p className="x-small mb-3 op-7">Who are you filling this out for</p>
                     
-                      <Row>
-                        <Col className="col">
-                          {editingdata.vehicleJet}
-                          <p>{vehicleArray.planeGas.miles}</p>
-                          <p className="x-small mb-3 op-7">Annual litres of fuel</p>
+                          <p>{Number(selectNumFive)>0 ? selectNumFive : ''}</p>
+                          {selectNumFive ? '<p className="x-small mb-3 op-7">Number of people in your household</p>' : ''}
+                      
+                          <p>{Number(selectYearFive) >0 ? selectYearFive : ''}</p>
+                          {selectYearFive? '<p className="x-small mb-3 op-7">Month(s) per year spent living at this residence</p>' :''}
+                    
+                          <p>{selectSizeFive}</p>
+                          {selectSizeFive? '<p className="x-small mb-3 op-7">Square feet of your home</p>' : ''}
+                    
+                          <p>{selectHeatFive}</p>
+                          {selectHeatFive? '<p className="x-small mb-3 op-7">Main source of heat for your home</p>' : ''}
+                  
+                          <p>{selectEnergyFive}</p>
+                          {selectEnergyFive? '<p className="x-small mb-3 op-7">Energy savings</p>' : ''}
                         </Col>
                       </Row> 
-
-                      <Row>
-                        <Col className="col">
-                          {editingdata.vehicleHeli}
-                          <p>{vehicleArray.heliGas.miles}</p>
-                          <p className="x-small mb-3 op-7">Annual litres of fuel</p>
-                        </Col>
-                      </Row>
                     </div>
-                  </Accordion.Collapse>
-                </Card>
-
-                <Card>
-                  <Accordion.Toggle as={Card.Header} eventKey="4">
-                    
-                    <p>
-                    Recreational Vehicles
-                      </p>
-                    <h5 className="text-small smallCaps op-6">Personally owned recreational vehicles, such as yachts, ATVs, etc.</h5>
-                  </Accordion.Toggle>
-                  <Accordion.Collapse eventKey="4">
-                    <div>
-                      <p className="mb-3">{editingdata.VehicleOther}</p>
-                      <Row>
-                        <Col className="col">
-                          {editingdata.vechileYacht}
-                          <p>{vehicleArray.yachtGas.miles}</p>
-                          <p className="x-small mb-3 op-7">Marine Diesel Litres per year</p>
-
-                          <p>{vehicleArray.yachtDiesel.miles}</p>
-                          <p className="x-small mb-3 op-7">Marine Diesel Litres per year</p>
-                        </Col>
-                      </Row> 
-
-                      <Row>
-                        <Col className="col">
-                          {editingdata.vehicleATV}
-                          <p>{vehicleArray.atvGas.miles}</p>
-                          <p className="x-small mb-3 op-7">Litres per year</p>
-                        </Col>
-                      </Row> 
-
-                      <Row>
-                        <Col className="col">
-                          {editingdata.vehicleSide}
-                          <p>{vehicleArray.sbsGas.miles}</p>
-                          <p className="x-small mb-3 op-7">Litres per year</p>
-                        </Col>
-                      </Row> 
-
-                      <Row>
-                        <Col className="col">
-                          {editingdata.vehicleSnow}
-                          <p>{vehicleArray.snowGas.miles}</p>
-                          <p className="x-small mb-3 op-7">Litres per year</p>
-                        </Col>
-                      </Row> 
-
-                      <Row>
-                        <Col className="col">
-                          Seadoo
-                          <p>{vehicleArray.seaGas.miles}</p>
-                          <p className="x-small mb-3 op-7">Litres per year</p>
-                        </Col>
-                      </Row> 
-
-                      <Row>
-                        <Col className="col">
-                          Scooter
-                          <p>{vehicleArray.scootGas.miles}</p>
-                          <p className="x-small mb-3 op-7">Litres per year</p>
-                        </Col>
-                      </Row> 
-
-                      <Row>
-                        <Col className="col">
-                          Lawn Mower/Tractor
-                          <p>{vehicleArray.lawnGas.miles} </p>
-                          <p className="x-small mb-3 op-7">Litres per year</p>
-                        </Col>
-                      </Row> 
-
-                      <Row>
-                        <Col className="col">
-                          Tractor/Farm Equipment
-                          <p>{vehicleArray.tractorGas.miles}</p>
-                          <p className="x-small mb-3 op-7">Litres per year</p>
-                        </Col>
-                      </Row> 
-                      </div>
                   </Accordion.Collapse>
                 </Card>
               </Accordion>
-            </Col>
-          </Row>
-        </div>
+            </div>
+
+            <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
+              <Row>
+                <Col className="col-12">
+                  <h3 className="text-green">{editingdata.vehicleHeader}</h3>
+                  <hr/>
+                  <p className="text-grey mb-3">{editingdata.vehiclePara1}</p>
+                </Col>
+                <Col>
+                  <Accordion>
+                    <Card>
+                      <Accordion.Toggle as={Card.Header} eventKey="0">
+                        <p>{editingdata.vehicleSmall}</p>
+                      </Accordion.Toggle>
+                      <Accordion.Collapse eventKey="0">
+                        <div>
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleGas}
+                              <p>{vehicleArray.smallGas.miles}</p>
+                              <p className="x-small mb-3 op-7">Annual KM (gas)</p>
+                              
+                              {editingdata.vehicleDiesel}
+                              <p>{vehicleArray.smallDiesel.miles}</p>
+                              <p className="x-small mb-3 op-7">Annual KM (diesel)</p>
+                          
+                              {editingdata.vehicleHybrid}
+                              <p>{vehicleArray.smallHybrid.miles}</p>
+                              <p className="x-small mb-3 op-7">Annual KM (hybrid)</p>
+                            
+                              {editingdata.vehiclePlug}
+                              <p>{vehicleArray.smallPlug.miles}</p>
+                              <p className="x-small mb-3 op-7">Annual KM (plug-in hybrid)</p>
+                            
+                              {editingdata.vehicleElectric}
+                              <p>{vehicleArray.smallElectric.miles}</p>
+                              <p className="x-small mb-3 op-7">Annual KM (battery electric)</p>
+                            </Col>
+                          </Row>
+                        </div>
+                      </Accordion.Collapse>
+                    </Card>
+
+                    <Card>
+                      <Accordion.Toggle as={Card.Header} eventKey="1">
+                        <p>{editingdata.vehicleMed}</p>
+                        <h5 className="text-small smallCaps op-6">4-door sedans, SUVs</h5>
+                      </Accordion.Toggle>
+                      <Accordion.Collapse eventKey="1">
+                        <div>
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleGas}
+                              <p>{vehicleArray.mediumGas.miles}</p>
+                              <p className="x-small mb-3 op-7">Annual KM (gas)</p>
+                            </Col>
+                          </Row> 
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleDiesel}
+                              <p>{vehicleArray.mediumDiesel.miles}</p>
+                              <p className="x-small mb-3 op-7">Annual KM (diesel)</p>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleHybrid}
+                              <p>{vehicleArray.mediumHybrid.miles}</p>
+                              <p className="x-small mb-3 op-7">Annual KM (hybrid)</p>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehiclePlug}
+                              <p>{vehicleArray.mediumPlug.miles}</p>
+                              <p className="x-small mb-3 op-7">Annual KM (plug-in hybrid)</p>
+                            </Col>
+                          </Row>
+
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleElectric}
+                              <p>{vehicleArray.mediumElectric.miles}</p>
+                              <p className="x-small mb-3 op-7">Annual KM (battery electric)</p>
+                            </Col>
+                          </Row>
+                        </div>
+                      </Accordion.Collapse>
+                    </Card>
+
+                    <Card>
+                      <Accordion.Toggle as={Card.Header} eventKey="2">
+                        <p>
+                        {editingdata.vehicleLarge}
+                        </p>
+                        <h5 className="text-small smallCaps op-6">Pickup Trucks</h5>
+                      </Accordion.Toggle>
+                      <Accordion.Collapse eventKey="2">
+                        <div>
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleGas}
+                              <p>{vehicleArray.largeGas.miles}</p>
+                              <p className="x-small mb-3 op-7">Annual KM (gas)</p>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleDiesel}
+                              <p>{vehicleArray.largeDiesel.miles}</p>
+                              <p className="x-small mb-3 op-7">Annual KM (diesel)</p>
+                            </Col>
+                          </Row>
+
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleHybrid}
+                              <p>{vehicleArray.largeHybrid.miles}</p>
+                              <p className="x-small mb-3 op-7">Annual KM (hybrid)</p>
+                            </Col>
+                          </Row>
+
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehiclePlug}
+                              <p>{vehicleArray.largePlug.miles}</p>
+                              <p className="x-small mb-3 op-7">Annual KM (plug-in hybrid)</p>
+                            </Col>
+                          </Row>
+
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleElectric}
+                              <p>{vehicleArray.largeElectric.miles}</p>
+                              <p className="x-small mb-3 op-7">Annual KM (battery electric)</p>
+                            </Col>
+                          </Row>
+                          <hr/>
+
+                          <h5 className="smallCaps text-small text-green">{editingdata.vehicleMoto}</h5>
+                          <p className="text-small op-6">{editingdata.vehicleMotoDesc}</p>
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleGas}
+                              <p>{vehicleArray.motorbikeGas.miles}</p>
+                              <p className="x-small mb-3 op-7">Annual KM (gas)</p>
+                            </Col>
+                          </Row> 
+                        </div>
+                      </Accordion.Collapse>
+                    </Card>
+
+                    <Card>
+                      <Accordion.Toggle as={Card.Header} eventKey="3">
+                        <p>Private Aircraft</p>
+                        <h5 className="text-small smallCaps op-6">Personally owned aircraft, prop planes, helicopters, jets, etc.</h5>
+                      </Accordion.Toggle>
+                      <Accordion.Collapse eventKey="3">
+                        <div>
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehiclePlane}
+                              <p>{vehicleArray.jetGas.miles}</p>
+                              <p className="x-small mb-3 op-7">Annual litres of fuel</p>
+                            </Col>
+                          </Row> 
+                        
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleJet}
+                              <p>{vehicleArray.planeGas.miles}</p>
+                              <p className="x-small mb-3 op-7">Annual litres of fuel</p>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleHeli}
+                              <p>{vehicleArray.heliGas.miles}</p>
+                              <p className="x-small mb-3 op-7">Annual litres of fuel</p>
+                            </Col>
+                          </Row>
+                        </div>
+                      </Accordion.Collapse>
+                    </Card>
+
+                    <Card>
+                      <Accordion.Toggle as={Card.Header} eventKey="4">
+                        <p>Recreational Vehicles</p>
+                        <h5 className="text-small smallCaps op-6">Personally owned recreational vehicles, such as yachts, ATVs, etc.</h5>
+                      </Accordion.Toggle>
+                      <Accordion.Collapse eventKey="4">
+                        <div>
+                          <p className="mb-3">{editingdata.VehicleOther}</p>
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vechileYacht}
+                              <p>{vehicleArray.yachtGas.miles}</p>
+                              <p className="x-small mb-3 op-7">Marine Diesel Litres per year</p>
+
+                              <p>{vehicleArray.yachtDiesel.miles}</p>
+                              <p className="x-small mb-3 op-7">Marine Diesel Litres per year</p>
+                            </Col>
+                          </Row> 
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleATV}
+                              <p>{vehicleArray.atvGas.miles}</p>
+                              <p className="x-small mb-3 op-7">Litres per year</p>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleSide}
+                              <p>{vehicleArray.sbsGas.miles}</p>
+                              <p className="x-small mb-3 op-7">Litres per year</p>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col className="col">
+                              {editingdata.vehicleSnow}
+                              <p>{vehicleArray.snowGas.miles}</p>
+                              <p className="x-small mb-3 op-7">Litres per year</p>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col className="col">
+                              Seadoo
+                              <p>{vehicleArray.seaGas.miles}</p>
+                              <p className="x-small mb-3 op-7">Litres per year</p>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col className="col">
+                              Scooter
+                              <p>{vehicleArray.scootGas.miles}</p>
+                              <p className="x-small mb-3 op-7">Litres per year</p>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col className="col">
+                              Lawn Mower/Tractor
+                              <p>{vehicleArray.lawnGas.miles} </p>
+                              <p className="x-small mb-3 op-7">Litres per year</p>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col className="col">
+                              Tractor/Farm Equipment
+                              <p>{vehicleArray.tractorGas.miles}</p>
+                              <p className="x-small mb-3 op-7">Litres per year</p>
+                            </Col>
+                          </Row> 
+                          </div>
+                      </Accordion.Collapse>
+                    </Card>
+                  </Accordion>
+                </Col>
+              </Row>
+            </div>
           
             <div className="card roundedBox no-border bg-white p-4 card-drop cardSpacing">
-            
               <Row>
                 <Col>
                   <h3 className="text-green">{editingdata.flightHeader}</h3>
@@ -1058,7 +1024,7 @@ export default function App({ file, href, children}) {
                     <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightShort1}</Col>
                     <Col className="col-12 col-xl-8 col-sm-6">
                       <p>{flightArray.flyShort.count}</p>
-                          <p className="x-small mb-3 op-7">Number of flights</p>
+                      <p className="x-small mb-3 op-7">Number of flights</p>
                     </Col>
                   </Row>
                 </Col>
@@ -1107,14 +1073,14 @@ export default function App({ file, href, children}) {
                     <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightLong3}</Col>
                     <Col className="col-12 col-xl-8 col-sm-6">
                       <p>{flightArray.flyLongBus.count}</p>
-                       <p className="x-small mb-3 op-7">Number of flights</p>
+                      <p className="x-small mb-3 op-7">Number of flights</p>
                     </Col>
                   </Row>
                   <Row>
                     <Col className="col-12 col-xl-4 col-sm-6">{editingdata.flightLong4}</Col>
                     <Col className="col-12 col-xl-8 col-sm-6">
                       <p>{flightArray.flyLongFirst.count}</p>
-                       <p className="x-small mb-3 op-7">Number of flights</p>
+                      <p className="x-small mb-3 op-7">Number of flights</p>
                     </Col>
                   </Row>
                 </Col>
@@ -1125,7 +1091,7 @@ export default function App({ file, href, children}) {
                 <Col className="col-12 col-xl-4 col-sm-6 bold">{editingdata.flightNights}</Col>
                 <Col className="col-12 col-xl-8 col-sm-6">
                   <p>{flightArray.flyHotels.count}</p>
-                    <p className="x-small mb-3 op-7">Number of nights</p>
+                  <p className="x-small mb-3 op-7">Number of nights</p>
                 </Col>
               </Row>
               <hr/>
@@ -1133,7 +1099,7 @@ export default function App({ file, href, children}) {
                 <Col className="col-12 col-xl-4 col-sm-6 bold">{editingdata.flightCars}</Col>
                 <Col className="col-12 col-xl-8 col-sm-6">
                   <p>{vehicleArray.rentalGas.miles}</p>
-                <p className="x-small mb-3 op-7">Annual Km (gas)</p>
+                  <p className="x-small mb-3 op-7">Annual Km (gas)</p>
                 </Col>
               </Row> 
             </div>
@@ -1144,7 +1110,6 @@ export default function App({ file, href, children}) {
                   <h3 className="text-green">{editingdata.publicHeader}</h3>
                   <hr/>
                   <p className="text-grey mb-3">{editingdata.publicPara}</p>
-                  
                 </Col>
               </Row>
               
@@ -1196,33 +1161,30 @@ export default function App({ file, href, children}) {
               <span className="h2 bold">{total > 0 ? total : "--"}</span>
               <p>{total > 0 ? "(Metric Tonnes of CO2 per Year)" : ""}</p>
               <p className="text-small">{editingdata.dataDisclaimer}</p>
-
               <hr className="my-4"/>
-
               <Row className="justify-content-center text-center">
-              <Col>
-              <div className="mt-3">
-                <p className="smallCaps text-white mb-3">Share these results</p>
-                
-                <FacebookShareButton url={sharingPrefix + sharingUrl} quote={editingdata.shareFacebook} hashtag={editingdata.shareFacebookTags} className="mx-2">
-                  <FacebookIcon size={40} round />
-                </FacebookShareButton>
+                <Col>
+                  <div className="mt-3">
+                    <p className="smallCaps text-white mb-3">Share these results</p>
+                    
+                    <FacebookShareButton url={sharingPrefix + sharingUrl} quote={editingdata.shareFacebook} hashtag={editingdata.shareFacebookTags} className="mx-2">
+                      <FacebookIcon size={40} round />
+                    </FacebookShareButton>
 
-                <TwitterShareButton url={sharingPrefix + sharingUrl} title={editingdata.shareTwitter} className="mx-2">
-                  <TwitterIcon size={40} round />
-                </TwitterShareButton>
+                    <TwitterShareButton url={sharingPrefix + sharingUrl} title={editingdata.shareTwitter} className="mx-2">
+                      <TwitterIcon size={40} round />
+                    </TwitterShareButton>
 
-                {/* <LinkedinShareButton url={sharingPrefix + sharingUrl} summary={editingdata.shareLinkedIn} className="mx-2">
-                  <LinkedinIcon size={40} round />
-                </LinkedinShareButton> */}
+                    {/* <LinkedinShareButton url={sharingPrefix + sharingUrl} summary={editingdata.shareLinkedIn} className="mx-2">
+                      <LinkedinIcon size={40} round />
+                    </LinkedinShareButton> */}
 
-                <EmailShareButton url={sharingPrefix + sharingUrl} body={editingdata.shareEmailBody} subject={editingdata.shareEmailSubject} className="mx-2">
-                  <EmailIcon size={40} round />
-                </EmailShareButton>
-              </div>
-              </Col>
-            </Row>
-
+                    <EmailShareButton url={sharingPrefix + sharingUrl} body={editingdata.shareEmailBody} subject={editingdata.shareEmailSubject} className="mx-2">
+                      <EmailIcon size={40} round />
+                    </EmailShareButton>
+                  </div>
+                </Col>
+              </Row>
             </div>
           </Col>
         </Row>  

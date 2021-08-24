@@ -1124,8 +1124,7 @@ export default function BusinessCalc({ file, href, children}) {
                               <input onChange={calculateMiles} name="carGas" type="number" min="0" value={vehicleArray.carGas.miles} placeholder={editingdata.vehiclePlaceholder2} />
                               <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder2}</p>
                             </Col>
-                          </Row> 
-
+                          </Row>
                           <Row>
                             <Col  className="col-12 col-xl-4">
                               {editingdata.vehiclecarDiesel}

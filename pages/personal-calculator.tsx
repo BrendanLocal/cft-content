@@ -1507,8 +1507,7 @@ export default function App({ file, href, children}) {
                               <input onChange={calculateMiles} name="largeGas" type="number" min="0" value={vehicleArray.largeGas.miles} placeholder="Annual KM (gas)"/>
                               <p className="x-small mb-3 op-7">Annual KM (gas)</p>
                             </Col>
-                          </Row> 
-
+                          </Row>
                           <Row>
                             <Col className="col">
                               {editingdata.vehicleDiesel}
@@ -1576,8 +1575,7 @@ export default function App({ file, href, children}) {
                               <input onChange={calculateMiles} name="planeGas" type="number" min="0" value={vehicleArray.planeGas.miles} placeholder="Annual litres of fuel"/>
                               <p className="x-small mb-3 op-7">Annual litres of fuel</p>
                             </Col>
-                          </Row> 
-
+                          </Row>
                           <Row>
                             <Col className="col">
                               {editingdata.vehicleHeli}
@@ -1606,56 +1604,49 @@ export default function App({ file, href, children}) {
                               <input onChange={calculateMiles} name="yachtDiesel" type="number" min="0" value={vehicleArray.yachtDiesel.miles} placeholder="Marine Unleaded Litres per year"/>
                               <p className="x-small mb-3 op-7">Marine Diesel Litres per year</p>
                             </Col>
-                          </Row> 
-
+                          </Row>
                           <Row>
                             <Col className="col">
                               {editingdata.vehicleATV}
                               <input onChange={calculateMiles} name="atvGas" type="number" min="0" value={vehicleArray.atvGas.miles} placeholder="Litres per year"/>
                               <p className="x-small mb-3 op-7">Litres per year</p>
                             </Col>
-                          </Row> 
-
+                          </Row>
                           <Row>
                             <Col className="col">
                               {editingdata.vehicleSide}
                               <input onChange={calculateMiles} name="sbsGas" type="number" min="0" value={vehicleArray.sbsGas.miles} placeholder="Litres per year"/>
                               <p className="x-small mb-3 op-7">Litres per year</p>
                             </Col>
-                          </Row> 
-
+                          </Row>
                           <Row>
                             <Col className="col">
                               {editingdata.vehicleSnow}
                               <input onChange={calculateMiles} name="snowGas" type="number" min="0" value={vehicleArray.snowGas.miles} placeholder="Litres per year"/>
                               <p className="x-small mb-3 op-7">Litres per year</p>
                             </Col>
-                          </Row> 
-
+                          </Row>
                           <Row>
                             <Col className="col">
                               Seadoo
                               <input onChange={calculateMiles} name="seaGas" type="number" min="0" value={vehicleArray.seaGas.miles} placeholder="Litres per year"/>
                               <p className="x-small mb-3 op-7">Litres per year</p>
                             </Col>
-                          </Row> 
-
+                          </Row>
                           <Row>
                             <Col className="col">
                               Scooter
                               <input onChange={calculateMiles} name="scootGas" type="number" min="0" value={vehicleArray.scootGas.miles} placeholder="Litres per year"/>
                               <p className="x-small mb-3 op-7">Litres per year</p>
                             </Col>
-                          </Row> 
-
+                          </Row>
                           <Row>
                             <Col className="col">
                               Lawn Mower/Tractor
                               <input onChange={calculateMiles} name="lawnGas" type="number" min="0" value={vehicleArray.lawnGas.miles} placeholder="Litres per year"/>
                               <p className="x-small mb-3 op-7">Litres per year</p>
                             </Col>
-                          </Row> 
-
+                          </Row>
                           <Row>
                             <Col className="col">
                               Tractor/Farm Equipment

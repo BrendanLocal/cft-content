@@ -215,7 +215,7 @@ export default function App({ file, href, children}) {
                   <label htmlFor="type">In which region is your corporation based?</label>
                   <br />
                   <p>{region}</p>
-                   </Col>
+                </Col>
               </Row>
               <hr/>
               <Row>
@@ -231,47 +231,42 @@ export default function App({ file, href, children}) {
             <div className="text-white p-5 innerShadow roundedBox bg-green">
               <h4 className="mb-0">{editingdata.dataHeader}</h4>
               <hr/>
-                <Row>
-                  <Col className="pb-3">{editingdata.dataType} {plantAcres > 0 ? plantAcres.toLocaleString('en-US', {maximumFractionDigits: 2}) : "--"} {editingdata.dataType1}
-                  </Col>
-                </Row>
+              <Row>
+                <Col className="pb-3">{editingdata.dataType} {plantAcres > 0 ? plantAcres.toLocaleString('en-US', {maximumFractionDigits: 2}) : "--"} {editingdata.dataType1}
+                </Col>
+              </Row>
               <hr/>
-                <Row>
-                  <Col className="pb-3">{editingdata.dataType} {plantTrees > 0 ? Math.ceil(plantTrees).toLocaleString("en-US") : "--"} {editingdata.dataType2}
-                  </Col>
-                </Row>
-
-
+              <Row>
+                <Col className="pb-3">{editingdata.dataType} {plantTrees > 0 ? Math.ceil(plantTrees).toLocaleString("en-US") : "--"} {editingdata.dataType2}
+                </Col>
+              </Row>
               <hr className="my-4"/>
+              <Row className="justify-content-center text-center">
+                <Col>
+                  <div className="mt-3">
+                    <p className="smallCaps text-white mb-3">Share these results</p>
+                    
+                    <FacebookShareButton url={sharingPrefix + sharingUrl} quote={editingdata.shareCorpFacebook} hashtag={editingdata.shareCorpFacebookTags} className="mx-2">
+                      <FacebookIcon size={40} round />
+                    </FacebookShareButton>
 
-<Row className="justify-content-center text-center">
-<Col>
-<div className="mt-3">
-                <p className="smallCaps text-white mb-3">Share these results</p>
-                
-                <FacebookShareButton url={sharingPrefix + sharingUrl} quote={editingdata.shareCorpFacebook} hashtag={editingdata.shareCorpFacebookTags} className="mx-2">
-                  <FacebookIcon size={40} round />
-                </FacebookShareButton>
+                    <TwitterShareButton url={sharingPrefix + sharingUrl} title={editingdata.shareCorpTwitter} className="mx-2">
+                      <TwitterIcon size={40} round />
+                    </TwitterShareButton>
 
-                <TwitterShareButton url={sharingPrefix + sharingUrl} title={editingdata.shareCorpTwitter} className="mx-2">
-                  <TwitterIcon size={40} round />
-                </TwitterShareButton>
+                    {/* <LinkedinShareButton url={sharingPrefix + sharingUrl} summary={editingdata.shareCorpLinkedIn} className="mx-2">
+                      <LinkedinIcon size={40} round />
+                    </LinkedinShareButton> */}
 
-                {/* <LinkedinShareButton url={sharingPrefix + sharingUrl} summary={editingdata.shareCorpLinkedIn} className="mx-2">
-                  <LinkedinIcon size={40} round />
-                </LinkedinShareButton> */}
-
-                <EmailShareButton url={sharingPrefix + sharingUrl} body={editingdata.shareCorpEmailBody} subject={editingdata.shareCorpEmailSubject} className="mx-2">
-                  <EmailIcon size={40} round />
-                </EmailShareButton>
-              </div>
-              </Col>
-            </Row>
-
+                    <EmailShareButton url={sharingPrefix + sharingUrl} body={editingdata.shareCorpEmailBody} subject={editingdata.shareCorpEmailSubject} className="mx-2">
+                      <EmailIcon size={40} round />
+                    </EmailShareButton>
+                  </div>
+                </Col>
+              </Row>
             </div>
           </Col>
         </Row>
-
 
         <Row className="justify-content-center mt-5">
           <Col className="col-11 col-lg-10 pt-5">
