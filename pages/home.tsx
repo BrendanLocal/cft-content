@@ -189,24 +189,24 @@ export default function Home({ file, href, children}) {
                   </Col>
                 </Row>
                 <Row className="justify-content-center pb-5 align-items-stretch mb-5 mb-sm-0 px-lg-3 mx-lg-3 px-xl-5 mx-xl-5">
-                  <Col className="col-10 col-md-8 col-lg-5 col-xl-3 mb-4">
-                    <div className="roundedBox card no-border bg-white mx-1 p-4 h-100">
-                      <ReactMarkdown className="text-grey m-2">{editingdata.part1_box1para}</ReactMarkdown>
+                <Col className="col-10 col-md-8 col-lg-5 col-xl-3 mb-4">
+                  <div className="roundedBox card intro-card no-border bg-white mx-1 p-4 h-100">
+                  <ReactMarkdown className="text-grey m-2">{editingdata.part1_box1para}</ReactMarkdown>
                     </div>
                   </Col>
                   <Col className="col-10 col-md-8 col-lg-5 col-xl-3 mb-4">
-                    <div className="roundedBox card no-border bg-white mx-1 p-4 h-100">
-                      <ReactMarkdown className="text-grey m-2">{editingdata.part1_box2para}</ReactMarkdown>
+                    <div className="roundedBox card intro-card no-border bg-white mx-1 p-4 h-100">
+                    <ReactMarkdown className="text-grey m-2">{editingdata.part1_box2para}</ReactMarkdown>
                     </div>
                   </Col>
                   <Col className="col-10 col-md-8 col-lg-5 col-xl-3 mb-4">
-                    <div className="roundedBox card no-border bg-white mx-1 p-4 h-100">
-                      <ReactMarkdown className="text-grey m-2">{editingdata.part1_box3para}</ReactMarkdown>
+                    <div className="roundedBox card intro-card no-border bg-white mx-1 p-4 h-100">
+                    <ReactMarkdown className="text-grey m-2">{editingdata.part1_box3para}</ReactMarkdown>
                     </div>
                   </Col>
                   <Col className="col-10 col-md-8 col-lg-5 col-xl-3 mb-4">
-                    <div className="roundedBox card no-border bg-white mx-1 p-4 h-100">
-                      <ReactMarkdown className="text-grey m-2">{editingdata.part1_box4para}</ReactMarkdown>
+                    <div className="roundedBox card intro-card no-border bg-white mx-1 p-4 h-100">
+                    <ReactMarkdown className="text-grey m-2">{editingdata.part1_box4para}</ReactMarkdown>
                     </div>
                   </Col>
                   <Col className="text-center col-10 col-lg-12 pb-5 mt-4">

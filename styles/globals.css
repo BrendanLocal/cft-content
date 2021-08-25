@@ -418,6 +418,11 @@ hr.white {
   transition: all .5s;
 }
 
+.intro-cta {
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.2)!important;
+  transition: all .5s;
+}
+
 .intro-cta:before {
   content:"";
   background: url("/play-icon.svg");
@@ -429,6 +434,19 @@ hr.white {
   display: inline-block;
   margin: 0 10px 0 -2px;
   top: 3px;
+}
+
+.intro-cta:hover {
+  box-shadow: 0px 1px 25px rgba(0, 0, 0, 0.4)!important;
+  transition: all .5s;
+}
+
+.no-drop {
+  box-shadow: none!important;
+}
+
+.no-drop:hover {
+  box-shadow: none!important;
 }
 
 .signin-btn {
@@ -515,6 +533,16 @@ hr.white {
 .btn:hover {
   color: #fff;
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+  transition: all .5s;
+}
+
+.intro-card {
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.15);
+  transition: all .5s;
+}
+
+.intro-card:hover {
+  box-shadow: 0px 1px 25px rgba(0, 0, 0, 0.4);
   transition: all .5s;
 }
 
@@ -1796,9 +1824,9 @@ transition: transform .5s;
   position: fixed;
   bottom: 0;
   height: 10vh;
-background: #054217;
-box-shadow: 0px -1px 10px rgba(0,0,0,.5);
-z-index:999;
+  background: #054217;
+  box-shadow: 0px -1px 10px rgba(0,0,0,.5);
+  z-index:999;
 }
 
 .tickerHead {

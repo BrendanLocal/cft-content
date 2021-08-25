@@ -12,8 +12,9 @@ import CookieConsent, { Cookies, getCookieConsentValue } from "react-cookie-cons
 
 
 import ReactGA from 'react-ga';
-ReactGA.initialize('G-9ELPSR6C5L');
 if (typeof window !== 'undefined') {
+
+ReactGA.initialize('G-9ELPSR6C5L');
 ReactGA.pageview(window.location.pathname + window.location.search);
 }
 
@@ -194,7 +195,7 @@ const Header = ()=> {
               <Link href={ user? "/portal-user" : "/portal" } ><a className="smallCaps textButton">{ user? "Your Portal" : "Sign in" }</a></Link>
             </div>
             <div className="mt-2">
-              <a href="/portal-demo" className="smallCaps text-white no-underline textButton">DEMO PORTAL</a>
+              <Link href="/portal-demo"><a className="smallCaps text-white no-underline textButton">DEMO PORTAL</a></Link>
             </div>
           </div>
         </div>
@@ -267,7 +268,7 @@ const Header = ()=> {
           <div className="col-12 col-md-6 d-flex flex-column gx-1 gx-lg-3 fixed">
             <div className="row align-self-top">
               <div className="col d-flex align-items-center justify-content-end menuInterface">
-              <a href="/portal-demo" className="smallCaps text-white no-underline textButton me-4 d-none d-sm-block">DEMO PORTAL</a>
+              <Link href="/portal-demo"><a className="smallCaps text-white no-underline textButton me-4 d-none d-sm-block">DEMO PORTAL</a></Link>
                 <Link href={ user? "/portal-user" : "/portal" } ><a className="smallCaps textButton me-2 d-none d-sm-block">{ user? "Your Portal" : "Sign in" }</a></Link>
                 <div id="menuIcon" className={isActive ? 'open' : null} onClick={toggleClass}>
                   <span></span>

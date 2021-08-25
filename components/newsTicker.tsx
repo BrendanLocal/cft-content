@@ -6,7 +6,6 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import ReactPlayer from 'react-player';
 
-
 const newsItems = [
   {
     key: "newsItem1",
@@ -15,41 +14,40 @@ const newsItems = [
   },
   {
     key: "newsItem2",
-    label: "Costs of Climate Tipping Points ",
-    path: "https://insideclimatenews.org/news/16082021/climate-tipping-points/"
+    label: "IPCC report warning: what this means for Canadians",
+    path: "https://www.cbc.ca/news/science/ipcc-report-canada-1.6134879"
   },
   {
     key: "newsItem3",
-  label: "Carbon Calculators",
-  path: "/carbon-calculator"
+    label: "Calculate Your Carbon Footprint",
+    path: "/carbon-calculator"
   },
   {
     key: "newsItem4",
-  label: "A 'preview' of Earth's coming climate crisis",
-  path: "https://www.nbcnews.com/science/environment/heat-wave-2021-climate-scientists-warn-new-normal-rcna1664"
+    label: "‘This is a crisis’: Yukon minister urges action",
+    path: "https://www.thestar.com/news/canada/2021/08/20/this-is-a-crisis-yukon-minister-urges-action-on-climate-change.html"
   },
   {
     key: "newsItem5",
-    label: "Net-Zero Calculators",
+    label: "Grow to Net-Zero",
     path: "/smart-forest-calculator"
   },
   {
     key: "newsItem6",
-  label: "Build a Smart Forest",
-  path: "/build-your-smart-forest"
+    label: "Build a Smart Forest",
+    path: "/build-your-smart-forest"
   },
   {
     key: "newsItem7",
-  label: "Can healthcare save the public from climate change?",
-  path: "https://www.corporateknights.com/channels/climate-and-carbon/after-covid-can-healthcare-save-the-public-from-climate-change-16273026/"
+    label: "Cancelled trips and climate change",
+    path: "https://www.cbc.ca/news/canada/british-columbia/cancelled-trip-climate-change-backcountry-1.6147128"
   },
   {
     key: "newsItem8",
-    label: "No Part of the Planet Will be Spared",
-    path: "https://insideclimatenews.org/news/09082021/global-climate-panels-report-no-part-of-the-planet-will-be-spared-ipcc-science-cop-extremes/"
+    label: "Polling: Canadians worry about climate change's impact on their health",
+    path: "https://abacusdata.ca/extreme-weather-climate-change-choices/"
   }
-  ]
-
+];
 
 const NewsTicker = ()=> {
 
@@ -57,12 +55,34 @@ const NewsTicker = ()=> {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-return(
-  
- 
-<React.Fragment>
+  const [showTicker, setShowTicker] = useState(false);
+  const [moveTicker, setMoveTicker] = useState(false);
+  useEffect(() => {
+    const WebFont = require('webfontloader');
+    WebFont.load({
+      custom: {
+        families: ['GT-America'],
+        urls: [
+          '/GT-America-Extended-Bold.woff',
+          '/GT-America-Extended-Light.woff',
+          '/GT-America-Extended-Medium.woff',
+          '/GT-America-Extended-Thin.woff',
+          '/GT-America-Standard-Medium.woff'
+        ]
+      },
+      active: () => {
+        setShowTicker(true);
 
-<Modal show={show} className=" d-flex align-items-center" onHide={handleClose}>
+        setTimeout(() => {
+          setMoveTicker(true);
+        }, 500);
+      }
+    });
+  }, []);
+
+  return(
+    <React.Fragment>
+      <Modal show={show} className=" d-flex align-items-center" onHide={handleClose}>
         <Modal.Header className="d-none" closeButton>
           <Modal.Title className="d-none"></Modal.Title>
         </Modal.Header>
@@ -83,36 +103,35 @@ return(
         </Modal.Footer>
       </Modal>
 
-<div id="ticker" className="container-fluid">
-
-
-
-  <div className="row">
-    <div className="tickerHead v-10 col-3 col-sm-2 col-md-2 col-lg-1 px-4">
-      <span className="tickerTitle smallCaps">Latest News</span>
-    </div>
-    <div className="tickerMain col p-0">
-    <Ticker>
-      
-    {({ index }) => (
-              <><p className=" d-flex align-items-center v-10 justify-content-center">
-              {newsItems.map(function(item){
-                return (
-                  
-                  <a className={item.type? item.type+" newsItem" : "newsItem"} key={item.key} href={item.path? item.path : null} target="_blank" onClick={item.type? handleShow : null} >{item.label}</a>
-                  
-                )
-                })}
-                </p>
-              </>
-          )}
-    </Ticker>
-    </div>
-  </div>
-</div>
-</React.Fragment>
-)
+      <div id="ticker" className="container-fluid">
+        <div className="row">
+          <div className="tickerHead v-10 col-3 col-sm-2 col-md-2 col-lg-1 px-4">
+            <span className="tickerTitle smallCaps">Latest News</span>
+          </div>
+          <div className="tickerMain col p-0">
+          {
+            showTicker &&
+            <Ticker move={moveTicker}>
+              {({ index }) => (
+                <>
+                  <p className=" d-flex align-items-center v-10 justify-content-center">
+                  {
+                    newsItems.map(function(item){
+                      return (
+                        <a className={item.type? item.type+" newsItem" : "newsItem"} key={item.key} href={item.path? item.path : null} target="_blank" onClick={item.type? handleShow : null} >{item.label}</a>
+                      )
+                    })
+                  }
+                  </p>
+                </>
+              )}
+            </Ticker>
+          }
+          </div>
+        </div>
+      </div>
+    </React.Fragment>
+  )
 }
-
 
 export default NewsTicker

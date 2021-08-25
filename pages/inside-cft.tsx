@@ -355,7 +355,7 @@ export default function Power({ file }) {
                   </Row>
                   <Row className="justify-content-center align-items-stretch">
                   <Col className="mt-4">
-                    <div className="text-orange medium text-center text-orange bold intro-cta ">
+                    <div className="text-orange medium text-center text-orange bold intro-cta no-drop">
                       <a className="crsr-pntr" onClick={handleShow}>A message from our founder</a>
                     </div>
                     </Col>

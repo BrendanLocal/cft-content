@@ -91,6 +91,15 @@ export default class Site extends App {
             skipInitialTransition={true}
           >
             <div key={router.route}>
+              <script async src="https://www.googletagmanager.com/gtag/js?id=G-9ELPSR6C5L"></script>
+              <script dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtag/js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','G-9ELPSR6C5L');`}}></script>
+         <noscript dangerouslySetInnerHTML={{ __html: `<iframe src="https://www.googletagmanager.com/gtag/js?id=G-9ELPSR6C5L"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>`}}></noscript>
+          
               <link
                 rel="preload"
                 href="/GT-America-Extended-Light.woff"
@@ -138,9 +147,15 @@ export default class Site extends App {
             }
           `}
         </style>
-        <Footer/>
+
+        {
+          router.route !== '/' &&
+          <React.Fragment>
+            <Footer/>
+            <NewsTicker />
+          </React.Fragment>
+        }
         
-        <NewsTicker />
       {/* <EditLink cms={this.cms} /> */}
         </TinacmsGithubProvider>
       </TinaProvider>
