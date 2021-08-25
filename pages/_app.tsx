@@ -76,7 +76,6 @@ export default class Site extends App {
     const history = createMemoryHistory();
     const { Component, pageProps, router} = this.props
 
-
     return (
       
       <TinaProvider cms={this.cms}>

@@ -29,7 +29,7 @@ const newsItems = [
   },
   {
     key: "newsItem5",
-    label: "Grow to New-Zero",
+    label: "Grow to Net-Zero",
     path: "/smart-forest-calculator"
   },
   {
