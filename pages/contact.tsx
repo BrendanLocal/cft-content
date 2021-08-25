@@ -80,7 +80,7 @@ const Lang = () => {
             
             <div className="socialIcons text-center">
               {socialIcons.map(item =>
-                <a key={item.label} href={item.path} target="_blank" className="text-center mx-2 mx-md-3"><img src={item.icon}></img></a>
+                <a key={item.label} href={item.path} target="_blank" className="text-center mx-2 mx-md-3"><img src={item.icon} alt={item.alt}></img></a>
               )}
             </div>
           </Col>

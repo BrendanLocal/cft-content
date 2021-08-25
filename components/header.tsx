@@ -300,7 +300,7 @@ const Header = ()=> {
           <ul className="socialIcons">
             {socialIcons.map(item =>
               <li key={item.label}>
-                <a href={item.path} target="_blank"><img src={item.icon}></img></a>
+                <a href={item.path} target="_blank"><img src={item.icon} alt={item.alt}></img></a>
               </li>
             )}
           </ul>
