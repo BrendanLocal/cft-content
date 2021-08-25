@@ -72,7 +72,7 @@ const Lang = () => {
 
             <Row className="justify-content-center d-none d-lg-block">
                 <Col className="col-12 text-center">
-                <Link href="/home" ><a className="intro-btn btn btn-text text-orange large tight-drop-light no-underline">{editingdata.enter}</a></Link>
+                <a href="/home" className="intro-btn btn btn-text text-orange large tight-drop-light no-underline">{editingdata.enter}</a>
                 </Col>    
             </Row>
 
