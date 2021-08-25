@@ -14,22 +14,22 @@ const newsItems = [
   },
   {
     key: "newsItem2",
-    label: "Costs of Climate Tipping Points ",
-    path: "https://insideclimatenews.org/news/16082021/climate-tipping-points/"
+    label: "IPCC report warning: what this means for Canadians",
+    path: "https://www.cbc.ca/news/science/ipcc-report-canada-1.6134879"
   },
   {
     key: "newsItem3",
-    label: "Carbon Calculators",
+    label: "Calculate Your Carbon Footprint",
     path: "/carbon-calculator"
   },
   {
     key: "newsItem4",
-    label: "A 'preview' of Earth's coming climate crisis",
-    path: "https://www.nbcnews.com/science/environment/heat-wave-2021-climate-scientists-warn-new-normal-rcna1664"
+    label: "‘This is a crisis’: Yukon minister urges action",
+    path: "https://www.thestar.com/news/canada/2021/08/20/this-is-a-crisis-yukon-minister-urges-action-on-climate-change.html"
   },
   {
     key: "newsItem5",
-    label: "Net-Zero Calculators",
+    label: "Grow to New-Zero",
     path: "/smart-forest-calculator"
   },
   {
@@ -39,13 +39,13 @@ const newsItems = [
   },
   {
     key: "newsItem7",
-    label: "Can healthcare save the public from climate change?",
-    path: "https://www.corporateknights.com/channels/climate-and-carbon/after-covid-can-healthcare-save-the-public-from-climate-change-16273026/"
+    label: "Cancelled trips and climate change",
+    path: "https://www.cbc.ca/news/canada/british-columbia/cancelled-trip-climate-change-backcountry-1.6147128"
   },
   {
     key: "newsItem8",
-    label: "No Part of the Planet Will be Spared",
-    path: "https://insideclimatenews.org/news/09082021/global-climate-panels-report-no-part-of-the-planet-will-be-spared-ipcc-science-cop-extremes/"
+    label: "Polling: Canadians worry about climate change's impact on their health",
+    path: "https://abacusdata.ca/extreme-weather-climate-change-choices/"
   }
 ];
 
