@@ -139,21 +139,21 @@ return(
         <Link href="/inside-cft"><a className="btn text-orange textButton text-left d-block no-underline footer-links">Inside CFT</a></Link>
         <Link href="/inside-cft#what"><a className="btn text-orange textButton text-left d-block no-underline footer-links">What is a Smart Forest?</a></Link>
         <Link href="/build-your-smart-forest"><a className="btn text-orange textButton text-left d-block no-underline footer-links">Build Your Smart Forest</a></Link>
-        <Link href="/build-your-smart-forest#corporate"><a className="btn text-orange textButtonAlt arrow-before text-left d-block ms-3 no-bold footer-links">CORPORATE</a></Link>
-        <Link href="/build-your-smart-forest#school"><a className="btn text-orange textButtonAlt text-left d-block ms-3 no-bold footer-links">SCHOOL</a></Link>
-        <Link href="/build-your-smart-forest#legacy"><a className="btn text-orange textButtonAlt text-left d-block ms-3 no-bold footer-links">LEGACY</a></Link>
-        <Link href="/build-your-smart-forest#communal"><a className="btn text-orange textButtonAlt text-left d-block ms-3 no-bold footer-links">COMMUNAL</a></Link>
+        <Link href="/build-your-smart-forest#corporate"><a className="btn text-orange textButtonAlt arrow-before text-left d-block ms-3 no-bold footer-links-alt">CORPORATE</a></Link>
+        <Link href="/build-your-smart-forest#school"><a className="btn text-orange textButtonAlt text-left d-block ms-3 no-bold footer-links-alt">SCHOOL</a></Link>
+        <Link href="/build-your-smart-forest#legacy"><a className="btn text-orange textButtonAlt text-left d-block ms-3 no-bold footer-links-alt">LEGACY</a></Link>
+        <Link href="/build-your-smart-forest#communal"><a className="btn text-orange textButtonAlt text-left d-block ms-3 no-bold footer-links-alt">COMMUNAL</a></Link>
       </Col>
       <Col className="col-12 col-md-6 col-lg-3 p-3">
         <h3 className="h4">Calculate Your Impact</h3>
         <Link href="/carbon-calculator"><a className="btn text-orange textButton text-left d-block no-underline footer-links">Carbon Calculators</a></Link>
-        <Link href="/business-calculator"><a className="btn text-orange textButtonAlt arrow-before text-left d-block ms-3 no-bold footer-links">Corporate</a></Link>
-        <Link href="/school-calculator"><a className="btn text-orange textButtonAlt text-left d-block ms-3 no-bold footer-links">School</a></Link>
-        <Link href="/personal-calculator"><a className="btn text-orange textButtonAlt text-left d-block ms-3 no-bold footer-links">Personal</a></Link>
+        <Link href="/business-calculator"><a className="btn text-orange textButtonAlt arrow-before text-left d-block ms-3 no-bold footer-links-alt">Corporate</a></Link>
+        <Link href="/school-calculator"><a className="btn text-orange textButtonAlt text-left d-block ms-3 no-bold footer-links-alt">School</a></Link>
+        <Link href="/personal-calculator"><a className="btn text-orange textButtonAlt text-left d-block ms-3 no-bold footer-links-alt mb-3">Personal</a></Link>
         <Link href="/smart-forest-calculator"><a className="btn text-orange textButton text-left d-block no-underline footer-links">Net-Zero Calculators</a></Link>
-        <Link href="/smart-forest-corp"><a className="btn text-orange textButtonAlt arrow-before text-left d-block ms-3 no-bold footer-links">Corporate</a></Link>
-        <Link href="/smart-forest-school"><a className="btn text-orange textButtonAlt text-left d-block ms-3 no-bold footer-links">School</a></Link>
-        <Link href="/smart-forest-personal"><a className="btn text-orange textButtonAlt text-left d-block ms-3 no-bold footer-links">Personal</a></Link>
+        <Link href="/smart-forest-corp"><a className="btn text-orange textButtonAlt arrow-before text-left d-block ms-3 no-bold footer-links-alt">Corporate</a></Link>
+        <Link href="/smart-forest-school"><a className="btn text-orange textButtonAlt text-left d-block ms-3 no-bold footer-links-alt">School</a></Link>
+        <Link href="/smart-forest-personal"><a className="btn text-orange textButtonAlt text-left d-block ms-3 no-bold footer-links-alt">Personal</a></Link>
       </Col>
       <Col className="col-12 col-md-6 col-lg-3 p-3">
         <h3 className="h4">Other</h3>
