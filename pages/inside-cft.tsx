@@ -19,6 +19,7 @@ import Header from "../components/header";
 import PDFViewer from '../components/PDFViewer';
 import PDFJSBackend from '../middlewares/pdfjs';
 import ReactPlayer from 'react-player';
+import ReactMarkdown from "react-markdown";
 
 export default function Power({ file }) {
   const [show, setShow] = useState(false);
@@ -168,15 +169,15 @@ export default function Power({ file }) {
                 <li className="large mb-3">{editingdata.para6}</li>
               </ul>
               <p className="text-white text-left smallcaps intro-links-header op-5 mt-5 mb-3">{editingdata.header2}</p>
-              <a href="#video" className="btn btn-text text-left intro-links text-orange bold no-underline me-4">Watch our video</a>
+              <a href="#video" className="btn btn-text text-left intro-links text-orange bold no-underline me-4">{editingdata.link1}</a>
               <br/>
-              <a href="#the-plan" className="btn btn-text text-left intro-links text-orange bold no-underline me-4">5 Phase Approach</a>
+              <a href="#the-plan" className="btn btn-text text-left intro-links text-orange bold no-underline me-4">{editingdata.link2}</a>
               <br/>
-              <a href="#what" className="btn btn-text text-left intro-links text-orange bold no-underline me-4">What is a Smart Forest?</a>
+              <a href="#what" className="btn btn-text text-left intro-links text-orange bold no-underline me-4">{editingdata.link3}</a>
               <br/>
-              <a href="#team" className="btn btn-text text-left intro-links text-orange bold no-underline me-4">Meet our team</a>
+              <a href="#team" className="btn btn-text text-left intro-links text-orange bold no-underline me-4">{editingdata.link4}</a>
               <br/>
-              <a href="#qna" className="btn btn-text text-left intro-links text-orange bold no-underline me-5">Q & A</a>
+              <a href="#qna" className="btn btn-text text-left intro-links text-orange bold no-underline me-5">{editingdata.link5}</a>
             </Col>
           </Row>
         </Container>
@@ -185,7 +186,11 @@ export default function Power({ file }) {
           <Fade bottom>
             <Row className="justify-content-center align-items-center my-4">
               <Col className="col-12 col-md-11 col-lg-10 col-xl-8 text-center text-white">
-                <h2 className="text-orange bold px-md-3 px-lg-0">Watch our video</h2>
+                <h2 className="text-orange bold px-md-3 px-lg-0">
+                  <ReactMarkdown>
+                    {editingdata.header3}
+                  </ReactMarkdown>
+                </h2>
               </Col>
             </Row>
           </Fade>
@@ -196,18 +201,18 @@ export default function Power({ file }) {
               </Col>
               <Col className="col-10 col-lg-3 col-xl-3 d-flex">
                 
-              <p className="text-white d-none d-lg-block d-xl-none">
-                CFT was established <br/>by <span className="bold">Gary Zed</span>, an entrepreneur with a reputation for taking on tough challenges and getting things done. A leader with a national vision, Gary heads up a team that is committed to making CFT the most talked about climate success story in the decades ahead.
-                </p>
-                <p className="text-white d-none d-xl-block d-xxl-none medium">
-                CFT was established by <span className="bold">Gary Zed</span>, an entrepreneur with a reputation for taking on tough challenges and getting things done. A leader with a national vision, Gary heads up a team that is committed to making CFT the most talked about climate success story in the decades ahead.
-                </p>
-                <p className="text-white d-none d-xxl-block spec-lg">
-                CFT was established <br/>by <span className="bold">Gary Zed</span>, an entrepreneur with a reputation for taking on tough challenges and getting things done. A leader with a national vision, Gary heads up a team that is committed to making CFT the most talked about climate success story in the decades ahead.
-                </p>
-                <p className="text-white text-center mt-3 large d-lg-none">
-                CFT was established by <span className="bold">Gary Zed</span>, an entrepreneur with a reputation for taking on tough challenges and getting things done. A leader with a national vision, Gary heads up a team that is committed to making CFT the most talked about climate success story in the decades ahead.
-                </p>
+              <ReactMarkdown className="text-white d-none d-lg-block d-xl-none">
+              {editingdata.header3para}
+              </ReactMarkdown>
+                <ReactMarkdown className="text-white d-none d-xl-block d-xxl-none medium">
+                {editingdata.header3para}
+                </ReactMarkdown>
+                <ReactMarkdown className="text-white d-none d-xxl-block spec-lg">
+                {editingdata.header3para}
+                </ReactMarkdown>
+                <ReactMarkdown className="text-white text-center mt-3 large d-lg-none">
+                {editingdata.header3para}
+                </ReactMarkdown>
               </Col>
             </Row>
           </Fade> 
@@ -217,8 +222,14 @@ export default function Power({ file }) {
           <Fade bottom>
             <Row className="justify-content-center align-items-center my-4">
               <Col className="col-12 col-md-11 col-lg-10 col-xl-9 text-center text-white">
-                <h2 className="text-orange bold mb-2 px-md-3 px-lg-0">CFT’s Smart Forest Action Plan</h2>
-                <p className="medium mt-0 mb-0 px-lg-4 mb-2">When you invest in a Smart Forest, we keep you informed on its progress - from site selection to planting to ongoing maintenance and carbon and biodiversity footprint impact as well as building meaningful relationships with our Indigenous peoples. CFT manages the forest landscape from the moment you buy your forest.</p>
+                <h2 className="text-orange bold mb-2 px-md-3 px-lg-0">
+                  <ReactMarkdown>
+                    {editingdata.header4}
+                  </ReactMarkdown>
+                </h2>
+                <ReactMarkdown className="medium mt-0 mb-0 px-lg-4 mb-2">
+                  {editingdata.header4para}
+                </ReactMarkdown>
               </Col>
             </Row>
           </Fade>
@@ -284,32 +295,46 @@ export default function Power({ file }) {
           <Fade bottom>
             <Row className="pt-5 align-items-center justify-content-center">
               <Col className="col-10 col-lg-8 col-xl-7 pt-3 px-lg-4 px-xl-0">
-                <h2 className="text-center text-orange bold mb-2">What is a Smart Forest?</h2>
-                <p className="text-center text-white mb-3">A Smart Forest combines the resilience of a natural ecosystem, developed over millennia, with the predictive capabilities of today’s technologies and Canada’s First Peoples. Inside a Smart Forest, biodiversity thrives; outside of it, scientists, students, investors, and conservationists use digital instruments to understand and activate the forest’s role in cleaning our water, purifying our air, and restoring our country’s vast and vital ecosystems.</p>
+                <h2 className="text-center text-orange bold mb-2">
+                  <ReactMarkdown>
+                    {editingdata.header5}
+                  </ReactMarkdown>
+                </h2>
+                <ReactMarkdown className="text-center text-white mb-3">
+                  {editingdata.header5para}
+                </ReactMarkdown>
               </Col>
             </Row>
           </Fade>
           <Fade bottom>
             <Row className="justify-content-center d-flex pb-5 mx-4 px-lg-5">
               <Col className="col-12 col-md-5 bg-brown roundedBox innerShadow px-5 pt-5 pb-4 m-4">          
-                <h3 className="h2 text-orange">A forest</h3>
+                <h3 className="lead text-orange tight-drop-light">
+                  <ReactMarkdown>
+                    {editingdata.subheader1}
+                  </ReactMarkdown>
+                </h3>
                 <ul className="text-white checkMark ms-3">
-                  <li className="mb-3">Mitigates climate change by sequestering carbon</li>
-                  <li className="mb-3">Purifies the air and improves soil quality Regulates, filters, and moderates water flow</li>
-                  <li className="mb-3">Supports wildlife and plant species that would otherwise disappear</li>
-                  <li className="mb-3">Helps mitigate and prevent natural disasters</li>
+                  <li className="mb-3">{editingdata.subheader1list1}</li>
+                  <li className="mb-3">{editingdata.subheader1list2}</li>
+                  <li className="mb-3">{editingdata.subheader1list3}</li>
+                  <li className="mb-3">{editingdata.subheader1list4}</li>
                 </ul>
               </Col>
               <Col className="col-12 col-md-5 roundedBox card card-drop px-5 pt-5 pb-4 m-4">
-                <h3 className="h2 text-orange">A <span className="italic">Smart</span> Forest</h3>
+                <h3 className="lead text-orange mb-0">
+                  <ReactMarkdown>
+                    {editingdata.subheader2}
+                  </ReactMarkdown>
+                </h3>
                 <ul className="text-grey plus ms-3">
-                  <li className="mb-3">Is a forest and an investment in the health of our planet</li>
-                  <li className="mb-3">Offers a tangible way to offset a large carbon footprints</li>
-                  <li className="mb-3">Maximizes its impact through expert forest management and Indigenous oversight</li>
-                  <li className="mb-3">Proves its effectiveness via proprietary digital tools</li>
-                  <li className="mb-3">Boosts the green economy</li>
-                  <li className="mb-3">Empowers the Indigenous economy</li>
-                  <li className="mb-3">Is protected forever with a no clear-cut guarantee</li>
+                  <li className="mb-3">{editingdata.subheader2list1}</li>
+                  <li className="mb-3">{editingdata.subheader2list2}</li>
+                  <li className="mb-3">{editingdata.subheader2list3}</li>
+                  <li className="mb-3">{editingdata.subheader2list4}</li>
+                  <li className="mb-3">{editingdata.subheader2list5}</li>
+                  <li className="mb-3">{editingdata.subheader2list6}</li>
+                  <li className="mb-3">{editingdata.subheader2list7}</li>
                 </ul>
               </Col>
             </Row>
@@ -319,23 +344,27 @@ export default function Power({ file }) {
         <Container fluid id="team" className="bg-brown innerShadow-heavy py-6 page-section">
           <Row className="justify-content-center pt-5 mb-2">
             <Col className="col-11 col-lg-8 text-center pt-3 ">
-              <h2 className="text-orange bold">{editingdata.part2_header1}</h2>
+              <h2 className="text-orange bold tight-drop-light">
+                <ReactMarkdown>
+                    {editingdata.header6}
+                </ReactMarkdown>
+              </h2>
             </Col>
           </Row>
           <Row className="justify-content-center align-items-center pb-5">
             <Col className="col-11 col-lg-7">
               <Tabs>
                 <TabList className="horizTab px-3">
-                  <Tab className="text-orange btn-text smallCaps small letterspace no-underline mx-3 my-2">
+                  <Tab className="text-orange btn-text smallCaps small letterspace no-underline mx-3 my-2 text-drop-tight">
                     LEADERSHIP
                   </Tab>
-                  <Tab className="text-orange btn-text smallCaps small letterspace no-underline mx-3 my-2">
+                  <Tab className="text-orange btn-text smallCaps small letterspace no-underline mx-3 my-2 text-drop-tight">
                     TEAM
                   </Tab>
-                  <Tab className="text-orange btn-text smallCaps small letterspace no-underline mx-3 my-2">
+                  <Tab className="text-orange btn-text smallCaps small letterspace no-underline mx-3 my-2 text-drop-tight">
                     ADVISORS
                   </Tab>
-                  <Tab className="text-orange btn-text smallCaps small letterspace no-underline mx-3 my-2">
+                  <Tab className="text-orange btn-text smallCaps small letterspace no-underline mx-3 my-2 text-drop-tight">
                     GROWING WITH US
                   </Tab>
                 </TabList>
@@ -355,8 +384,8 @@ export default function Power({ file }) {
                   </Row>
                   <Row className="justify-content-center align-items-stretch">
                   <Col className="mt-4">
-                    <div className="text-orange medium text-center text-orange bold intro-cta no-drop">
-                      <a className="crsr-pntr" onClick={handleShow}>A message from our founder</a>
+                    <div className="text-orange medium text-center bold intro-cta no-drop">
+                      <a className="crsr-pntr text-drop-tight" onClick={handleShow}>A message from our founder</a>
                     </div>
                     </Col>
                   </Row>
@@ -419,8 +448,14 @@ export default function Power({ file }) {
           <Fade bottom>
             <Row className="align-items-center justify-content-center pt-5 mb-4 ">
               <Col className="col-10 col-lg-8 col-xl-7 pt-3">
-                <h2 className="text-center text-orange bold mb-2">Questions & Answers</h2>
-                <p className="text-center text-white">Canada’s Forest Trust will plant millions of acres of Smart Forests across Canada by 2040. We will build on deforested land located in ecologically diverse regions across the country, and will protect some of our nation’s most imperilled plants and animals.</p>
+                <h2 className="text-center text-orange bold mb-2">
+                  <ReactMarkdown>
+                    {editingdata.header7}
+                  </ReactMarkdown>
+                </h2>
+                <ReactMarkdown className="text-center text-white">
+                  {editingdata.header7para}
+                </ReactMarkdown>
               </Col>
             </Row>
           </Fade>
