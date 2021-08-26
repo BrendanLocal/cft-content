@@ -585,7 +585,6 @@ hr.white {
     text-shadow: none;
     padding: 0;
     border-radius: 0;
-    font-weight: 600!important;
 }
 
 .textButton.text-orange, .btn-text.text-orange {
@@ -1576,8 +1575,22 @@ footer {
 }
 
 .footer-links {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 18px;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.6);
+  font-weight: 900!important;
+}
+
+.footer-links-alt {
+  font-size: 14px;
+  line-height: 18px;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.6);
+  font-weight: 600!important;
+}
+
+.footer-links-alt:hover {
+  transform: translateX(3px)!important;
+transition: all .5s ease;
 }
 
 .intro-links{
