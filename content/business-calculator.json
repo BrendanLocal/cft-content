@@ -33,6 +33,9 @@
     "businessType26":"Retail (Clothing, Furniture, Books, etc)",
     "businessType27":"Transportation (Bus, Taxi, etc)",
     "businessType28":"Utility Provider (Electrical, Hydro, Natural Gas, etc.)",
+  "primaryHeader":"",
+  "primaryType":"What kind of building do you have?",
+  "buildingType":"What kind of building is this?",
   "commercialSpaceHeader":"Which type of commercial space is the building?",
     "commercialSpace1":"Office Building (Non-Medical)",
     "commercialSpace2":"Medical Office Building",
@@ -57,9 +60,12 @@
     "squareFeet9":"200,000-350,000",
     "squareFeet10":"500,000+",
   "buildingNumberHeader":"How many buildings of this type are in the organization?",
+  "buildingNumberPlaceholder":"Number of buildings of this type",
 
   "vehicleHeader":"Vehicle Fleet",
   "vehiclepara":"Please input the following information for all company-owned fleet vehicles:",
+  "vehiclePlugHybrid":"Plug-In Hybrid",
+  "vehiclePlugElec":"Plug-In Electric",
   "vehiclecarHeader":"CARS",
   "vehiclecarGas":"Gas",
   "vehiclecarDiesel":"Diesel",
@@ -112,6 +118,12 @@
   "freightAirHigh":"Air (3700+ km)",
   "freightPlaceholder1":"Tonnes Shipped",
   "freightPlaceholder2":"Average distance",
+  
+  "airHeader":"Air Travel",
+  "airExample":"aircrafts, prop planes, helicopters, jets, etc.",
+  "airJet":"Private Jet",
+  "airPlane":"Private Plane",
+  "airHeli":"Private Helicopter",
     
   "dataHeader":"Subtotals",
   "dataType1":"Heating & Electricity",
@@ -121,6 +133,7 @@
   "dataType5":"Freight Shipments",
   "dataTotal":"TOTAL",
   "dataDisclaimer":"This is an estimate of your average carbon footprint per year.",
+  "dataContinue":"To continue editing your results in the future, save or bookmark this link:",
   
   "box1Header":"NEXT STEP",
   "box1Para":"Calculate how many acres of Smart Forest you need to invest in to reach a Net-Zero emissions target.",

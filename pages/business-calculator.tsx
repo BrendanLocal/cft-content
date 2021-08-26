@@ -151,6 +151,11 @@ export default function BusinessCalc({ file, href, children}) {
       {name: 'freightAirHigh', component: 'markdown' },
       {name: 'freightPlaceholder1', component: 'markdown' },
       {name: 'freightPlaceholder2', component: 'markdown' },
+      {name: 'airHeader', component: 'markdown' },
+      {name: 'airExample', component: 'markdown' },
+      {name: 'airJet', component: 'markdown' },
+      {name: 'airPlane', component: 'markdown' },
+      {name: 'airHeli', component: 'markdown' },
       {name: 'dataHeader', component: 'markdown' },
       {name: 'dataType1', component: 'markdown' },
       {name: 'dataType2', component: 'markdown' },
@@ -159,6 +164,7 @@ export default function BusinessCalc({ file, href, children}) {
       {name: 'dataType5', component: 'markdown' },
       {name: 'dataTotal', component: 'markdown' },
       {name: 'dataDisclaimer', component: 'markdown' },
+      {name: 'dataContinue', component: 'markdown' },
       {name: 'box1Header', component: 'markdown' },
       {name: 'box1Para', component: 'markdown' },
       {name: 'box1Button', component: 'markdown' },
@@ -831,8 +837,8 @@ export default function BusinessCalc({ file, href, children}) {
               <Row>
                 <Col> 
                   <hr className="mb-4"/>
-                  <h5 className="smallCaps text-small text-green">Primary Building</h5>
-                  <label htmlFor="building">What kind of building do you have?</label><br />
+                  <h5 className="smallCaps text-small text-green">{editingdata.primaryHeader}</h5>
+                  <label htmlFor="building">{editingdata.primaryType}</label><br />
                   <select name="building" onChange={changeBuild} value={selectBuild}>
                     <option value="" hidden>{editingdata.select}</option>
                     <option value='Office'>{editingdata.commercialSpace1}</option>
@@ -870,8 +876,8 @@ export default function BusinessCalc({ file, href, children}) {
               <Row>
                 <Col>
                   <label htmlFor="number">{editingdata.buildingNumberHeader}</label><br />
-                  <input onChange={changeNum} type="number" min="0" value={selectNum} placeholder="Number of buildings of this type"/>
-                  <p className="x-small mb-3 op-7">Number of buildings of this type</p>
+                  <input onChange={changeNum} type="number" min="0" value={selectNum} placeholder={editingdata.buildingNumberPlaceholder}/>
+                  <p className="x-small mb-3 op-7">{editingdata.buildingNumberPlaceholder}</p>
                 </Col>
               </Row>
               <hr className="mb-4"/>
@@ -886,7 +892,7 @@ export default function BusinessCalc({ file, href, children}) {
                     <div>
                       <Row>
                         <Col> 
-                          <label htmlFor="building">What kind of building is this?</label><br />
+                          <label htmlFor="building">{editingdata.buildingType}</label><br />
                           <select name="building" onChange={changeBuildTwo} value={selectBuildTwo}>
                             <option value="" hidden>{editingdata.select}</option>
                             <option value='Office'>{editingdata.commercialSpace1}</option>
@@ -908,24 +914,24 @@ export default function BusinessCalc({ file, href, children}) {
                           <label htmlFor="size">{editingdata.squareFeetHeader}</label><br />
                           <select name="size" value={selectSizeTwo} onChange={changeSizeTwo}>
                             <option value="" hidden>{editingdata.select}</option>
-                            <option value='5000'>less than 5000</option>
-                            <option value='10000'>5000-10,000</option>
-                            <option value='25000'>10,000-25,000</option>
-                            <option value='50000'>25,000-50,000</option>
-                            <option value='75000'>50,000-75,000</option>
-                            <option value='100000'>75,000-100,000</option>
-                            <option value='125000'>100,000-125,000</option>
-                            <option value='200000'>150,000-200,000</option>
-                            <option value='350000'>200,000-350,000</option>
-                            <option value='500000'>500,000+</option>
+                            <option value='5000'>{editingdata.squareFeet1}</option>
+                            <option value='10000'>{editingdata.squareFeet2}</option>
+                            <option value='25000'>{editingdata.squareFeet3}</option>
+                            <option value='50000'>{editingdata.squareFeet4}</option>
+                            <option value='75000'>{editingdata.squareFeet5}</option>
+                            <option value='100000'>{editingdata.squareFeet6}</option>
+                            <option value='125000'>{editingdata.squareFeet7}</option>
+                            <option value='200000'>{editingdata.squareFeet8}</option>
+                            <option value='350000'>{editingdata.squareFeet9}</option>
+                            <option value='500000'>{editingdata.squareFeet10}</option>
                           </select>
                         </Col>
                       </Row>
                       <Row>
                         <Col>
                           <label htmlFor="number">{editingdata.buildingNumberHeader}</label><br />
-                          <input  onChange={changeNumTwo} type="number" min="0" value={selectNumTwo} placeholder="Number of buildings of this type"/>
-                          <p className="x-small mb-3 op-7">Number of buildings of this type</p>
+                          <input  onChange={changeNumTwo} type="number" min="0" value={selectNumTwo} placeholder={editingdata.buildingNumberPlaceholder}/>
+                          <p className="x-small mb-3 op-7">{editingdata.buildingNumberPlaceholder}</p>
                         </Col>
                       </Row>
                     </div>
@@ -941,7 +947,7 @@ export default function BusinessCalc({ file, href, children}) {
                     <div>    
                       <Row>
                         <Col> 
-                        <label htmlFor="building">What kind of building is this?</label><br />
+                        <label htmlFor="building">{editingdata.buildingType}</label><br />
                         <select name="building" onChange={changeBuildThree} value={selectBuildThree}>
                           <option value="" hidden>{editingdata.select}</option>
                           <option value='Office'>{editingdata.commercialSpace1}</option>
@@ -962,25 +968,26 @@ export default function BusinessCalc({ file, href, children}) {
                         <Col>
                         <label htmlFor="size">{editingdata.squareFeetHeader}</label><br />
                         <select name="size" value={selectSizeThree} onChange={changeSizeThree}>
-                        <option value="" hidden>{editingdata.select}</option>
-                          <option value='5000'>less than 5000</option>
-                          <option value='10000'>5000-10,000</option>
-                          <option value='25000'>10,000-25,000</option>
-                          <option value='50000'>25,000-50,000</option>
-                          <option value='75000'>50,000-75,000</option>
-                          <option value='100000'>75,000-100,000</option>
-                          <option value='125000'>100,000-125,000</option>
-                          <option value='200000'>150,000-200,000</option>
-                          <option value='350000'>200,000-350,000</option>
-                          <option value='500000'>500,000+</option>
+                          <option value="" hidden>{editingdata.select}</option>
+                          <option value="" hidden>{editingdata.select}</option>
+                          <option value='5000'>{editingdata.squareFeet1}</option>
+                          <option value='10000'>{editingdata.squareFeet2}</option>
+                          <option value='25000'>{editingdata.squareFeet3}</option>
+                          <option value='50000'>{editingdata.squareFeet4}</option>
+                          <option value='75000'>{editingdata.squareFeet5}</option>
+                          <option value='100000'>{editingdata.squareFeet6}</option>
+                          <option value='125000'>{editingdata.squareFeet7}</option>
+                          <option value='200000'>{editingdata.squareFeet8}</option>
+                          <option value='350000'>{editingdata.squareFeet9}</option>
+                          <option value='500000'>{editingdata.squareFeet10}</option>
                         </select>
                         </Col>
                       </Row>
                       <Row>
                         <Col>
                           <label htmlFor="number">{editingdata.buildingNumberHeader}</label><br />
-                          <input  onChange={changeNumThree} type="number" min="0" value={selectNumThree} placeholder="Number of buildings of this type"/>
-                          <p className="x-small mb-3 op-7">Number of buildings of this type</p>
+                          <input  onChange={changeNumThree} type="number" min="0" value={selectNumThree} placeholder={editingdata.buildingNumberPlaceholder}/>
+                          <p className="x-small mb-3 op-7">{editingdata.buildingNumberPlaceholder}</p>
                         </Col>
                       </Row>
                     </div>
@@ -996,7 +1003,7 @@ export default function BusinessCalc({ file, href, children}) {
                     <div>
                       <Row>
                         <Col> 
-                        <label htmlFor="building">What kind of building is this?</label><br />
+                        <label htmlFor="building">{editingdata.buildingType}</label><br />
                         <select name="building" onChange={changeBuildFour} value={selectBuildFour}>
                           <option value="" hidden>{editingdata.select}</option>
                           <option value='Office'>{editingdata.commercialSpace1}</option>
@@ -1017,25 +1024,26 @@ export default function BusinessCalc({ file, href, children}) {
                         <Col>
                         <label htmlFor="size">{editingdata.squareFeetHeader}</label><br />
                         <select name="size" value={selectSizeFour} onChange={changeSizeFour}>
-                        <option value="" hidden>{editingdata.select}</option>
-                          <option value='5000'>less than 5000</option>
-                          <option value='10000'>5000-10,000</option>
-                          <option value='25000'>10,000-25,000</option>
-                          <option value='50000'>25,000-50,000</option>
-                          <option value='75000'>50,000-75,000</option>
-                          <option value='100000'>75,000-100,000</option>
-                          <option value='125000'>100,000-125,000</option>
-                          <option value='200000'>150,000-200,000</option>
-                          <option value='350000'>200,000-350,000</option>
-                          <option value='500000'>500,000+</option>
+                          <option value="" hidden>{editingdata.select}</option>
+                          <option value="" hidden>{editingdata.select}</option>
+                          <option value='5000'>{editingdata.squareFeet1}</option>
+                          <option value='10000'>{editingdata.squareFeet2}</option>
+                          <option value='25000'>{editingdata.squareFeet3}</option>
+                          <option value='50000'>{editingdata.squareFeet4}</option>
+                          <option value='75000'>{editingdata.squareFeet5}</option>
+                          <option value='100000'>{editingdata.squareFeet6}</option>
+                          <option value='125000'>{editingdata.squareFeet7}</option>
+                          <option value='200000'>{editingdata.squareFeet8}</option>
+                          <option value='350000'>{editingdata.squareFeet9}</option>
+                          <option value='500000'>{editingdata.squareFeet10}</option>
                         </select>
                         </Col>
                       </Row>
                       <Row>
                         <Col>
                           <label htmlFor="number">{editingdata.buildingNumberHeader}</label><br />
-                          <input  onChange={changeNumFour} type="number" min="0" value={selectNumFour} placeholder="Number of buildings of this type"/>
-                          <p className="x-small mb-3 op-7">Number of buildings of this type</p>
+                          <input  onChange={changeNumFour} type="number" min="0" value={selectNumFour} placeholder={editingdata.buildingNumberPlaceholder}/>
+                          <p className="x-small mb-3 op-7">{editingdata.buildingNumberPlaceholder}</p>
                         </Col>
                       </Row>
                     </div>
@@ -1051,7 +1059,7 @@ export default function BusinessCalc({ file, href, children}) {
                     <div>  
                       <Row>
                         <Col> 
-                        <label htmlFor="building">What kind of building is this?</label><br />
+                        <label htmlFor="building">{editingdata.buildingType}</label><br />
                         <select name="building" onChange={changeBuildFive} value={selectBuildFive}>
                           <option value="" hidden>{editingdata.select}</option>
                           <option value='Office'>{editingdata.commercialSpace1}</option>
@@ -1073,24 +1081,25 @@ export default function BusinessCalc({ file, href, children}) {
                         <label htmlFor="size">{editingdata.squareFeetHeader}</label><br />
                         <select name="size" value={selectSizeFive} onChange={changeSizeFive}>
                         <option value="" hidden>{editingdata.select}</option>
-                          <option value='5000'>less than 5000</option>
-                          <option value='10000'>5000-10,000</option>
-                          <option value='25000'>10,000-25,000</option>
-                          <option value='50000'>25,000-50,000</option>
-                          <option value='75000'>50,000-75,000</option>
-                          <option value='100000'>75,000-100,000</option>
-                          <option value='125000'>100,000-125,000</option>
-                          <option value='200000'>150,000-200,000</option>
-                          <option value='350000'>200,000-350,000</option>
-                          <option value='500000'>500,000+</option>
+                            <option value="" hidden>{editingdata.select}</option>
+                            <option value='5000'>{editingdata.squareFeet1}</option>
+                            <option value='10000'>{editingdata.squareFeet2}</option>
+                            <option value='25000'>{editingdata.squareFeet3}</option>
+                            <option value='50000'>{editingdata.squareFeet4}</option>
+                            <option value='75000'>{editingdata.squareFeet5}</option>
+                            <option value='100000'>{editingdata.squareFeet6}</option>
+                            <option value='125000'>{editingdata.squareFeet7}</option>
+                            <option value='200000'>{editingdata.squareFeet8}</option>
+                            <option value='350000'>{editingdata.squareFeet9}</option>
+                            <option value='500000'>{editingdata.squareFeet10}</option>
                         </select>
                         </Col>
                       </Row>
                       <Row>
                         <Col>
                           <label htmlFor="number">{editingdata.buildingNumberHeader}</label><br />
-                          <input  onChange={changeNumFive} type="number" min="0" value={selectNumFive} placeholder="Number of buildings of this type"/>
-                          <p className="x-small mb-3 op-7">Number of buildings of this type</p>
+                          <input  onChange={changeNumFive} type="number" min="0" value={selectNumFive} placeholder={editingdata.buildingNumberPlaceholder}/>
+                          <p className="x-small mb-3 op-7">{editingdata.buildingNumberPlaceholder}</p>
                         </Col>
                       </Row>
                     </div>
@@ -1155,7 +1164,7 @@ export default function BusinessCalc({ file, href, children}) {
 
                           <Row>
                             <Col className="col-12 col-xl-4">
-                              Plug-In Hybrid
+                              {editingdata.vehiclePlugHybrid}
                             </Col>
                             <Col className="col-12 col-xl-4 col-sm-6">
                               <input onChange={calculateCount} name="carPlug" type="number" min="0" value={vehicleArray.carPlug.count} placeholder={editingdata.vehiclePlaceholder1} />
@@ -1169,7 +1178,7 @@ export default function BusinessCalc({ file, href, children}) {
                         
                           <Row>
                             <Col className="col-12 col-xl-4">
-                              Plug-In Electric
+                              {editingdata.vehiclePlugElec}
                             </Col>
                             <Col className="col-12 col-xl-4 col-sm-6">
                               <input onChange={calculateCount} name="carElectric" type="number" min="0" value={vehicleArray.carElectric.count} placeholder={editingdata.vehiclePlaceholder1} />
@@ -1227,7 +1236,7 @@ export default function BusinessCalc({ file, href, children}) {
                           </Row>
 
                           <Row>
-                            <Col className="col-12 col-xl-4">Plug-In Hybrid</Col>
+                            <Col className="col-12 col-xl-4">{editingdata.vehiclePlugHybrid}</Col>
                             <Col className="col-12 col-xl-4 col-sm-6">
                               <input onChange={calculateCount} name="truckPlug" type="number" min="0" value={vehicleArray.truckPlug.count} placeholder={editingdata.vehiclePlaceholder1} />
                               <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
@@ -1239,7 +1248,7 @@ export default function BusinessCalc({ file, href, children}) {
                           </Row>
 
                           <Row>
-                            <Col className="col-12 col-xl-4">Plug-In Electric</Col>
+                            <Col className="col-12 col-xl-4">{editingdata.vehiclePlugElec}</Col>
                             <Col className="col-12 col-xl-4 col-sm-6">
                               <input onChange={calculateCount} name="truckElectric" type="number" min="0" value={vehicleArray.truckElectric.count} placeholder={editingdata.vehiclePlaceholder1} />
                               <p className="x-small mb-3 op-7">{editingdata.vehiclePlaceholder1}</p>
@@ -1322,14 +1331,14 @@ export default function BusinessCalc({ file, href, children}) {
                     <Card>
                       <Accordion.Toggle as={Card.Header} eventKey="5">
                         <p>Air Travel</p>
-                        <h5 className="text-small smallCaps op-6">aircrafts, prop planes, helicopters, jets, etc.</h5>
+                        <h5 className="text-small smallCaps op-6">{editingdata.airExample}</h5>
                       </Accordion.Toggle>
                     
                       <Accordion.Collapse eventKey="5">
                         <div>
                           <Row>
                             <Col className="col-12 col-xl-4">
-                              <p>Private Jet</p>
+                              <p>{editingdata.airJet}</p>
                             </Col>
                             <Col className="col-12 col-xl-4 col-sm-6">
                               <input onChange={calculateCount} name="jetNum" type="number" min="0" value={vehicleArray.jetNum.count} placeholder={editingdata.vehiclePlaceholder1} />
@@ -1343,7 +1352,7 @@ export default function BusinessCalc({ file, href, children}) {
 
                           <Row>
                             <Col className="col-12 col-xl-4">
-                              <p>Private Plane</p>
+                              <p>{editingdata.airPlane}</p>
                             </Col>
                             <Col className="col-12 col-xl-4 col-sm-6">
                               <input onChange={calculateCount} name="planeGas" type="number" min="0" value={vehicleArray.planeGas.count} placeholder={editingdata.vehiclePlaceholder1} />
@@ -1357,7 +1366,7 @@ export default function BusinessCalc({ file, href, children}) {
 
                           <Row>
                             <Col className="col-12 col-xl-4">
-                              <p>Private Helicopter</p>
+                              <p>{editingdata.airHeli}</p>
                             </Col>
                             <Col className="col-12 col-xl-4 col-sm-6">
                               <input onChange={calculateCount} name="heliGas" type="number" min="0" value={vehicleArray.heliGas.count} placeholder={editingdata.vehiclePlaceholder1} />
@@ -1632,7 +1641,7 @@ export default function BusinessCalc({ file, href, children}) {
 
               <Row>
                 <Col className="whiteBorder rounded mt-3 p-3 mb-5">
-                  <p className="text-small">To continue editing your results in the future, save or bookmark this link:</p>
+                  <p className="text-small">{editingdata.dataContinue}</p>
                   <p className="pt-2 text-small">
                     {editUrlError ? <p style={{ color: 'red' }}>{editUrlError}</p> : null}
                     <a href={editUrl} onClick={editUrlClick}>{editUrl}</a>
