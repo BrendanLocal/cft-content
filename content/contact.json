@@ -1,11 +1,7 @@
 {
   "title":"Canada's Forest Trust - Contact",
-  "leftHeader":"Canada's Forest Trust",
-  "leftAddress":"Street Address, Ottawa, Ontario, CANADA",
-  "leftPara":"info tbd",
-  "leftEmail":"Email TBD",
-  "leftPhone":"Phone TBD",
   "header": "Contact Us",
+  "headerPar": "Interested in buying and building a Smart Forest with Canada's Forest Trust? Please complete the form so that we can plan your path to net-zero carbon emissions.",
 
   "name":"Your Name",
   "email":"Your Email",
@@ -18,5 +14,7 @@
   "messagePlaceholder":"Tell us about yourself, the organization, school, or community that you represent, and the impact you would like to make...",
   "submit":"Submit",
   
-  "contactSuccess": "Thank you for reaching out."
+  "contactSuccess": "Thank you for contacting us!",
+  "contactSuccessPar": "A member of our team will reach out to you shortly. In the meantime, please watch this video from our founder:",
+  "contactSuccessFollow": "Follow us on social media:"
 }

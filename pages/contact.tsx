@@ -13,6 +13,7 @@ import { useRouter } from 'next/router';
 import Header from "../components/header";
 import Modal from "react-bootstrap/Modal";
 import ReactPlayer from 'react-player';
+import ReactMarkdown from"react-markdown";
 
 const Lang = () => {
   var language ="en";
@@ -73,10 +74,14 @@ const Lang = () => {
       return (
         <Row className="justify-content-center align-items-center">
           <Col className="p-4">
-            <h3 className="text-white text-center">Thank you for contacting us!</h3>
-            <p className="text-white large text-center mb-4 px-2 px-md-4">A member of our team will reach out to you shortly. In the meantime, please watch this video from our founder:</p>          
+            <h3 className="text-white text-center">
+              <ReactMarkdown>
+                {editingdata.contactSuccess}
+              </ReactMarkdown>
+            </h3>
+            <ReactMarkdown className="text-white large text-center mb-4 px-2 px-md-4">{editingdata.contactSuccessPar}</ReactMarkdown>         
             <ReactPlayer playsinline controls url='./ceo-message.mp4' className="video-size mb-4"/>
-            <p className="text-white large text-center mb-3">Follow us on social media:</p>
+            <ReactMarkdown className="text-white large text-center mb-3">{editingdata.contactSuccessFollow}</ReactMarkdown>
             
             <div className="socialIcons text-center">
               {socialIcons.map(item =>
@@ -146,10 +151,14 @@ const Lang = () => {
         <Container className="v-full pt-5">
           <Row className="text-center py-3 justify-content-center">
             <Col className="col-11 col-lg-8 col-xl-6" >
-              <h1 className="bold emphasis text-orange">{editingdata.header}</h1>
-              <p className="medium text-white">
-                Interested in buying and building a Smart Forest with Canada's Forest Trust? Please complete the form so that we can plan your path to net-zero carbon emissions.
-              </p>
+              <h1 className="bold emphasis text-orange">
+                <ReactMarkdown>
+                  {editingdata.header}
+                </ReactMarkdown>
+              </h1>
+              <ReactMarkdown className="medium text-white">
+              {editingdata.headerPar}
+              </ReactMarkdown>
             </Col>
           </Row>
           <Row className="justify-content-center">
@@ -160,23 +169,6 @@ const Lang = () => {
             </Col>
           </Row>
         </Container>
-
-        <Modal show={show} className="d-flex align-items-center" onHide={handleClose}>
-          <Modal.Header className="d-none" closeButton>
-            <Modal.Title className="d-none"></Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Row className="justify-content-center align-items-center mb-0">
-              <Col>
-                <h3 className="text-green smallCaps text-center">A MESSAGE FROM OUR FOUNDER</h3>
-              </Col>
-            </Row>
-          </Modal.Body>
-
-          <Modal.Footer className="p-0">
-            <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleClose}>CLOSE</Button>
-          </Modal.Footer>
-        </Modal>
       </main>
     </div>
   )
