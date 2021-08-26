@@ -170,7 +170,7 @@ const Header = ()=> {
         <h3 className="text-center text-white">
         Use of Cookies
         </h3>
-        We use cookies and other technologies to offer you the best experience online. By continuing to use our website, you agree to the use of cookies and other technologies. If you would like to know more about cookies and other technologies and how to manage them, please view our <a className="underline" href="/privacy">Privacy Policy.</a>
+        We use cookies and other technologies to offer you the best experience online. By continuing to use our website, you agree to the use of cookies and other technologies. If you would like to know more about cookies and other technologies and how to manage them, please view our <Link href="/privacy"><a className="underline" >Privacy Policy.</a></Link>
         </CookieConsent>
       <div id="searchComponent" className={ showSearch ? "searchOpen" : "searchClosed"}>
         <Container className="v-80 d-flex justify-content-center align-items-start pt-5">

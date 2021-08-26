@@ -69,11 +69,23 @@ const Lang = () => {
             </Col>
           </Row>
 
-          <Row className="justify-content-center d-none d-lg-block">
-            <Col className="col-12 text-center">
-              <Link href="/home" ><a className="intro-btn btn btn-text text-orange large tight-drop-light no-underline">{editingdata.enter}</a></Link>
-            </Col>
-          </Row>
+            <Row className="justify-content-center mt-5 mb-2 d-lg-none">
+                <Col className="col-12">
+                <object className="" type="image/svg+xml" data="/intro-animation.svg"/> 
+                </Col>    
+            </Row>
+
+            <Row className="justify-content-center d-none d-lg-block">
+                <Col className="col-12 text-center">
+                <a href="/home" className="intro-btn btn btn-text text-orange large tight-drop-light no-underline">{editingdata.enter}</a>
+                </Col>    
+            </Row>
+
+            <Row className="justify-content-center d-lg-none">
+                <Col className="col-8 text-center">
+                <a href="/home" className="intro-btn btn btn-text text-orange large tight-drop-light no-underline">{editingdata.enter}</a>
+                </Col>    
+            </Row>
 
           <Row className="justify-content-center d-lg-none">
             <Col className="col-8 text-center">
