@@ -25,6 +25,16 @@
 
   "header4": "CFT’s Smart Forest Action Plan",
   "header4para": "When you invest in a Smart Forest, we keep you informed on its progress - from site selection to planting to ongoing maintenance and carbon and biodiversity footprint impact as well as building meaningful relationships with our Indigenous peoples. CFT manages the forest landscape from the moment you buy your forest.",
+  "phase1header": "PROCURE",
+  "phase1para": "Acquire land across Canada.",
+  "phase2header": "PREPARE",
+  "phase2para": "Assess, plan, and complete site preparation for planting.",
+  "phase3header": "PLANT",
+  "phase3para": "Strategically plant seedlings to ensure optimal growth and carbon sequestration.",
+  "phase4header": "PRESERVE",
+  "phase4para": "Perform innovative forest management activities to maintain the forest and maximize its impact.",
+  "phase5header": "PROTECT",
+  "phase5para": "Audit and set a no clear-cut guarantee on every forest.",
 
   "header5": "What is a Smart Forest?",
   "header5para": "A Smart Forest combines the resilience of a natural ecosystem, developed over millennia, with the predictive capabilities of today’s technologies and Canada’s First Peoples. Inside a Smart Forest, biodiversity thrives; outside of it, scientists, students, investors, and conservationists use digital instruments to understand and activate the forest’s role in cleaning our water, purifying our air, and restoring our country’s vast and vital ecosystems.",
@@ -34,7 +44,7 @@
   "subheader1list2": "Purifies the air and improves soil quality Regulates, filters, and moderates water flow",
   "subheader1list3": "Supports wildlife and plant species that would otherwise disappear",
   "subheader1list4": "Helps mitigate and prevent natural disasters",
-  "subheader2list1": "Is a forest and an investment in the health of our planet",
+  "subheader2list1": "Is a forest _and_ an investment in the health of our planet",
   "subheader2list2": "Offers a tangible way to offset a large carbon footprint",
   "subheader2list3": "Maximizes its impact through expert forest management and Indigenous oversight",
   "subheader2list4": "Proves its effectiveness via proprietary digital tools",
@@ -43,8 +53,131 @@
   "subheader2list7": "Is protected forever with a no clear-cut guarantee",
 
   "header6": "Meet Our Team",
+  "tab1": "LEADERSHIP",
+  "tab2": "TEAM",
+  "tab3": "ADVISORS",
+  "tab4": "GROWING WITH US",
+  "founderName": "Gary Zed",
+  "founderTitle": "Founder & CEO",
+  "founderCTA": "A MESSAGE FROM OUR FOUNDER",
+  "teamName1": "Don Finless",
+  "teamTitle1": "Land Acquisition & Planning",
+  "teamName2": "Zoebelle Flores",
+  "teamTitle2": "Research & Analytics",
+  "teamName3": "Neeraj Joshi",
+  "teamTitle3": "Information Technology",
+  "teamName4": "John Jussup",
+  "teamTitle4": "General Counsel",
+  "teamName5": "Farah Mohamed",
+  "teamTitle5": "Operations & Strategy",
+  "teamName6": "Taylor Piotrowski",
+  "teamTitle6": "Communications & Creative",
+  "teamName7": "Nicholas Tanton",
+  "teamTitle7": "Forester",
+  "teamName8": "Laura Wukitsch",
+  "teamTitle8": "Forester",
+  "advisorName1": "JP Gladu",
+  "advisorTitle1": "Indigenous People & Communities",
+  "advisorName2": "Tam Matthews",
+  "advisorTitle2": "School Leadership & Engagement",
+  "advisorName3": "Laura Zizzo",
+  "advisorTitle3": "Climate Strategy",
+  "advisorName4": "Jasen Golding",
+  "advisorTitle4": "Forestry and Environmental Management",
+  "growing1": "KPMG",
+  "growing2": "PRT",
+  "growing3": "MT Ventures",
+  "growing4": "Ferguson Tree Nursery",
 
   "header7": "Questions & Answers",
-  "header7para": "Canada’s Forest Trust will plant millions of acres of Smart Forests across Canada by 2040. We will build on deforested land located in ecologically diverse regions across the country, and will protect some of our nation’s most imperilled plants and animals."
+  "header7para": "Canada’s Forest Trust will plant millions of acres of Smart Forests across Canada by 2040. We will build on deforested land located in ecologically diverse regions across the country, and will protect some of our nation’s most imperilled plants and animals.",
+
+  "q1": "What is a Smart Forest?",
+  "a1": "A Smart Forest is more than a collection of trees. It has a significant impact on climate change.",
+  "a1list1": "Supports wildlife, improves air quality, and regulates water flow",
+  "a1list2": "Offers a tangible way to offset a large carbon footprint",
+  "a1list3": "Maximizes its impact through expert forest management",
+  "a1list4": "Proves its effectiveness via proprietary digital tools",
+  "a1list5": "Boosts the green economy",
+  "a1list6": "Promotes the health and wellbeing of all Canadians",
+  "a1list7": "Is protected forever with a no-clear-cut harvest guarantee",
+
+  "q2": "Who can build a Smart Forest?",
+  "a2": "Anyone can build a Smart Forest:",
+  "a2list1": "Corporations looking to meet ESG goals",
+  "a2list2": "Students who want to make a positive impact on their future",
+  "a2list3": "Individuals and families with a goal of protecting the planet for future generations or building a memorial in someone’s honour",
+
+  "q3": "Why did we establish Canada’s Forest Trust?",
+  "a3a": "We saw a gap to do something truly impactful and sustainable in an area that needs resources, patience and bold action to combat climate change.",
+  "a3b": "Under the right conditions, a forest will become a force of nature—quite literally. As the threat of climate change closes in, forests are one of our last and best chances to save our planet before it’s too late.",
+  "a3c": "Our Smart Forests will capture millions of tonnes of CO2, rehabilitate ecosystems and create jobs, country-wide. And we will never clear-cut.",
+
+  "q4": "How do you build a Smart Forest?",
+  "a4": "We build Smart Forests with our 5 Phase Action Plan:",
+  "a4list1title": "PROCURE",
+  "a4list1para": "Acquire land across Canada",
+  "a4list2title": "PREPARE",
+  "a4list2para": "Assess, plan, and complete site preparation for planting",
+  "a4list3title": "PLANT",
+  "a4list3para": "Strategically plant seedlings to ensure optimal growth and carbon sequestration",
+  "a4list4title": "PRESERVE",
+  "a4list4para": "Perform innovative forest management activities to maintain the forest and maximize its impact",
+  "a4list5title": "PROTECT",
+  "a4list5para": "Audit, and set a no clear-cut guarantee on every forest",
+
+  "q5": "How is Canada’s Forest Trust different from other tree planting organizations?",
+  "a5a": "CFT takes a holistic approach to forestry that doesn't stop at planting trees. We ensure the long term health of our forests with certifiable monitoring and expert management. And we will protect our forests forever. We will tell you exactly where in Canada your seedlings are planted, the health of the land, the impact your seedlings / forest is having on biodiversity, etc.",
+  "a5b": "We provide all of this information through a private portal with state of the art monitoring and measuring technology.",
+  
+  "q6": "Is CFT a Charitable Organization?",
+  "a6": "Our choice to be a for profit at this point in our journey allows us the flexibility to enter into partnerships and make investments which we may not be able to do as a registered charity. We have structured CFT so that the lands can never be exploited for commercial reasons.",
+
+  "q7": "When does a Smart Forest start to offset carbon?",
+  "a7": "Within the first year of planting, forests will have already begun sequestering carbon in their roots and stems. The younger the tree, the more carbon it sequesters.",
+
+  "q8": "What is a carbon offset?",
+  "a8": "You offset your Carbon Footprint by making the amount of carbon you release in a year equal to the amount of carbon stored in your CFT Smart Forest.",
+
+  "q9": "What does it cost to buy a Smart Forest?",
+  "a9": "",
+
+  "q10": "Is there a minimum amount to ‘own’ a Smart Forest?",
+  "a10": "Yes. 1 Forest Trust Unit is measured in 5 acres, or at least 5,000 seedlings trees. Our communal forest allows for much lower than 5 acres so you are part of a forest.",
+
+  "q11": "Can I buy a Smart Forest as a gift?",
+  "a11": "",
+
+  "q12": "Where does my money go?",
+  "a12a": "CFT uses funds to acquire land, prepare it for planting, purchase seedlings, hire planters, perform forest management, insure the land and pay land tax, provide reporting and annual audits.",
+  "a12b": "When you invest in a Smart Forest, you stay informed on its progress - from site selection to planting to ongoing maintenance and carbon footprint impact.",
+
+  "q13": "How do you choose where to build Smart Forests?",
+  "a13": "CFT sources lands across the country that are suitable for reforestation and will have maximum impact on the environment.",
+
+  "q14": "How many trees will Canada’s Forest Trust plant per acre?",
+  "a14": "The ideal number for a successful forest is approximately 1,000 seedlings per acre. Depending on the species and land, we can plant up to 1200 seedlings per acre. CFT is proud to pledge a no clear cut guarantee on every acre of forest we build.",
+
+  "q15": "How do you choose where to build Smart Forests?",
+  "a15a": "Our forestry experts will advise on the right mix of species for the soil and climate of each forest location.",
+  "a15b": "As a common practice, CFT Smart Forests will be built with softwood species (conifers). These species are fast-growing and have needles that are kept year-round. Some examples of softwood species include: douglas fir, lodgepole pine, and whitespruce. We will also implement management practices that will promote hardwood growth.",
+
+  "q16": "Can I visit my Smart Forest?",
+  "a16": "",
+
+  "q17": "Will you cut down a Smart Forest?",
+  "a17": "CFT will NEVER clear cut a forest or sell the land. We will manage our forests to create healthy ecosystems.",
+
+  "q18": "How will you protect the forests?",
+  "a18": "CFT has hired experts to plan and build our forests and provide extensive monitoring systems.",
+
+  "q19": "How many jobs will Canada’s Forest Trust create?",
+  "a19": "Our business plan is to create thousands of jobs across Canada. Each phase of our 5 Phase Action Plan will require person-power. There will be opportunities for nursery workers, truck drivers, tree planters, crew managers, auditors, monitoring/silviculture workers, brush saw operators, foresters for assessment, planning block layout (marking boundaries) workers, site prep operators, and more.",
+
+  "q20": "Why should I invest with CFT and not a charity?",
+  "a20": "We encourage all Canadians to find a way to combat climate change. There is an important role for private sector companies to play. CFT is pleased to offer turnkey solutions that engage all individuals, families, schools and corporations to reach net-zero.",
+
+  "q21": "What corporate benefits does CFT offer?",
+  "a21": ""
 
 }

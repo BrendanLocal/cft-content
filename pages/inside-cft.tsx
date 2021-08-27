@@ -250,40 +250,70 @@ export default function Power({ file }) {
                 <Carousel.Item interval={100000}>
                   <div className="d-block w-100 phase1"></div>
                   <Carousel.Caption className="col-9 col-md-6 col-xl-4">
-                    <h3 className="smallCaps text-left tight-drop bold mb-1">PROCURE</h3>
-                    <p className="h3 text-left tight-drop mb-4">Acquire land across Canada.</p>
+                    <h3 className="smallCaps text-left tight-drop bold mb-1">
+                      <ReactMarkdown>
+                        {editingdata.phase1header}
+                      </ReactMarkdown>
+                    </h3>
+                    <ReactMarkdown className="h3 text-left tight-drop mb-4">
+                      {editingdata.phase1para}
+                    </ReactMarkdown>
                   </Carousel.Caption>
                 </Carousel.Item>
 
                 <Carousel.Item interval={100000}>
                   <div className="d-block w-100 phase2"></div>
                   <Carousel.Caption className="col-9 col-md-6 col-xl-4">
-                    <h3 className="smallCaps text-left tight-drop bold mb-1">PREPARE</h3>
-                    <p className="h3 text-left tight-drop mb-4">Assess, plan, and complete site preparation for planting.</p>
+                  <h3 className="smallCaps text-left tight-drop bold mb-1">
+                      <ReactMarkdown>
+                        {editingdata.phase2header}
+                      </ReactMarkdown>
+                    </h3>
+                    <ReactMarkdown className="h3 text-left tight-drop mb-4">
+                      {editingdata.phase2para}
+                    </ReactMarkdown>
                   </Carousel.Caption>
                 </Carousel.Item>
 
                 <Carousel.Item interval={100000}>
                   <div className="d-block w-100 phase3"></div>
                   <Carousel.Caption className="col-9 col-md-6 col-xl-4">
-                    <h3 className="smallCaps text-left tight-drop bold mb-1">PLANT</h3>
-                    <p className="h3 text-left tight-drop mb-4">Strategically plant seedlings to ensure optimal growth and carbon sequestration.</p>
+                  <h3 className="smallCaps text-left tight-drop bold mb-1">
+                      <ReactMarkdown>
+                        {editingdata.phase3header}
+                      </ReactMarkdown>
+                    </h3>
+                    <ReactMarkdown className="h3 text-left tight-drop mb-4">
+                      {editingdata.phase3para}
+                    </ReactMarkdown>
                   </Carousel.Caption>
                 </Carousel.Item>
 
                 <Carousel.Item interval={100000}>
                   <div className="d-block w-100 phase4"></div>
                   <Carousel.Caption className="col-9 col-md-6 col-xl-4">
-                    <h3 className="smallCaps text-left tight-drop bold mb-1">PRESERVE</h3>
-                    <p className="h3 text-left tight-drop mb-4">Perform innovative forest management activities to maintain the forest and maximize its impact</p>
+                    <h3 className="smallCaps text-left tight-drop bold mb-1">
+                      <ReactMarkdown>
+                        {editingdata.phase4header}
+                      </ReactMarkdown>
+                    </h3>
+                    <ReactMarkdown className="h3 text-left tight-drop mb-4">
+                      {editingdata.phase4para}
+                    </ReactMarkdown>
                     </Carousel.Caption>
                 </Carousel.Item>
 
                 <Carousel.Item interval={100000}>
                   <div className="d-block w-100 phase5"></div>
                   <Carousel.Caption className="col-9 col-md-6 col-xl-4">
-                    <h3 className="smallCaps text-left tight-drop bold mb-1">PROTECT</h3>
-                    <p className="h3 text-left tight-drop mb-4">Audit, and set a no clear-cut guarantee on every forest.</p>
+                  <h3 className="smallCaps text-left tight-drop bold mb-1">
+                      <ReactMarkdown>
+                        {editingdata.phase5header}
+                      </ReactMarkdown>
+                    </h3>
+                    <ReactMarkdown className="h3 text-left tight-drop mb-4">
+                      {editingdata.phase5para}
+                    </ReactMarkdown>
                   </Carousel.Caption>
                 </Carousel.Item>
               </Carousel>
@@ -328,7 +358,7 @@ export default function Power({ file }) {
                   </ReactMarkdown>
                 </h3>
                 <ul className="text-grey plus ms-3">
-                  <li className="mb-3">{editingdata.subheader2list1}</li>
+                  <li className="mb-3"><ReactMarkdown className="mb-0">{editingdata.subheader2list1}</ReactMarkdown></li>
                   <li className="mb-3">{editingdata.subheader2list2}</li>
                   <li className="mb-3">{editingdata.subheader2list3}</li>
                   <li className="mb-3">{editingdata.subheader2list4}</li>
@@ -356,25 +386,30 @@ export default function Power({ file }) {
               <Tabs>
                 <TabList className="horizTab px-3">
                   <Tab className="text-orange btn-text smallCaps small letterspace no-underline mx-3 my-2 text-drop-tight">
-                    LEADERSHIP
+                    {editingdata.tab1}
                   </Tab>
                   <Tab className="text-orange btn-text smallCaps small letterspace no-underline mx-3 my-2 text-drop-tight">
-                    TEAM
+                    {editingdata.tab2}
                   </Tab>
                   <Tab className="text-orange btn-text smallCaps small letterspace no-underline mx-3 my-2 text-drop-tight">
-                    ADVISORS
+                    {editingdata.tab3}
                   </Tab>
                   <Tab className="text-orange btn-text smallCaps small letterspace no-underline mx-3 my-2 text-drop-tight">
-                    GROWING WITH US
+                    {editingdata.tab4}
                   </Tab>
                 </TabList>
                 <TabPanel>
                   {/* First panel starts here */}
                   <Row className="justify-content-center align-items-center">
                     <Col className="col-12 pt-5">
-                      <h2 className="text-center bold text-white mb-1">Gary Zed</h2>
-                      <p className="text-center text-white mb-4">Founder & CEO</p>
-
+                      <h2 className="text-center bold text-white mb-1">
+                      <ReactMarkdown>  
+                        {editingdata.founderName}
+                      </ReactMarkdown>
+                      </h2>
+                      <ReactMarkdown className="text-center text-white mb-4">
+                        {editingdata.founderTitle}
+                      </ReactMarkdown>
                     </Col>
                   </Row>
                   <Row className="justify-content-center align-items-center">
@@ -384,8 +419,8 @@ export default function Power({ file }) {
                   </Row>
                   <Row className="justify-content-center align-items-stretch">
                   <Col className="mt-4">
-                    <div className="text-orange medium text-center bold intro-cta no-drop">
-                      <a className="crsr-pntr text-drop-tight" onClick={handleShow}>A message from our founder</a>
+                    <div className="text-orange smallCaps text-center bold intro-cta no-drop">
+                      <a className="crsr-pntr text-drop-tight" onClick={handleShow}>{editingdata.founderCTA}</a>
                     </div>
                     </Col>
                   </Row>
@@ -394,22 +429,70 @@ export default function Power({ file }) {
                   <Row>
                     {/* Second panel starts here */}
                     <Col className="col-12 p-5">
-                    <h2 className="text-center bold text-white mb-1">Don Finless</h2>
-                    <p className="text-center text-white mb-4">Land Acquisition & Planning</p>
-                    <h2 className="text-center bold text-white mb-1 mt-5">Zoebelle Flores</h2>
-                    <p className="text-center text-white mb-4">Research & Analytics</p>
-                    <h2 className="text-center bold text-white mb-1 mt-5">Neeraj Joshi</h2>
-                    <p className="text-center text-white mb-4">Information Technology</p>
-                    <h2 className="text-center bold text-white mb-1 mt-5">John Jussup</h2>
-                    <p className="text-center text-white mb-4">General Counsel</p>
-                    <h2 className="text-center bold text-white mb-1 mt-5">Farah Mohamed</h2>
-                    <p className="text-center text-white mb-4">Operations & Strategy</p>
-                    <h2 className="text-center bold text-white mb-1 mt-5">Taylor Piotrowski</h2>
-                    <p className="text-center text-white mb-4">Communications & Creative</p>
-                    <h2 className="text-center bold text-white mb-1 mt-5">Nicholas Tanton</h2>
-                    <p className="text-center text-white mb-4">Forester</p>
-                    <h2 className="text-center bold text-white mb-1 mt-5">Laura Wukitsch</h2>
-                    <p className="text-center text-white mb-4">Forester</p>
+                    <h2 className="text-center bold text-white mb-1">
+                      <ReactMarkdown>
+                        {editingdata.teamName1}
+                      </ReactMarkdown>
+                    </h2>
+                    <ReactMarkdown className="text-center text-white mb-4 ">
+                      {editingdata.teamTitle1}
+                    </ReactMarkdown>
+                    <h2 className="text-center bold text-white mb-0 mt-5">
+                      <ReactMarkdown>
+                        {editingdata.teamName2}
+                      </ReactMarkdown>
+                    </h2>
+                    <ReactMarkdown className="text-center text-white mb-4">
+                      {editingdata.teamTitle2}
+                    </ReactMarkdown>
+                    <h2 className="text-center bold text-white mb-0 mt-5">
+                      <ReactMarkdown>
+                        {editingdata.teamName3}
+                      </ReactMarkdown>
+                    </h2>
+                    <ReactMarkdown className="text-center text-white mb-4">
+                      {editingdata.teamTitle3}
+                    </ReactMarkdown>
+                    <h2 className="text-center bold text-white mb-0 mt-5">
+                      <ReactMarkdown>
+                        {editingdata.teamName4}
+                      </ReactMarkdown>
+                    </h2>
+                    <ReactMarkdown className="text-center text-white mb-4">
+                      {editingdata.teamTitle4}
+                    </ReactMarkdown>
+                    <h2 className="text-center bold text-white mb-0 mt-5">
+                      <ReactMarkdown>
+                        {editingdata.teamName5}
+                      </ReactMarkdown>
+                    </h2>
+                    <ReactMarkdown className="text-center text-white mb-4">
+                      {editingdata.teamTitle5}
+                    </ReactMarkdown>
+                    <h2 className="text-center bold text-white mb-0 mt-5">
+                      <ReactMarkdown>
+                        {editingdata.teamName6}
+                      </ReactMarkdown>
+                    </h2>
+                    <ReactMarkdown className="text-center text-white mb-4">
+                      {editingdata.teamTitle6}
+                    </ReactMarkdown>
+                    <h2 className="text-center bold text-white mb-0 mt-5">
+                      <ReactMarkdown>
+                        {editingdata.teamName7}
+                      </ReactMarkdown>
+                    </h2>
+                    <ReactMarkdown className="text-center text-white mb-4">
+                      {editingdata.teamTitle7}
+                    </ReactMarkdown>
+                    <h2 className="text-center bold text-white mb-0 mt-5">
+                      <ReactMarkdown>
+                        {editingdata.teamName8}
+                      </ReactMarkdown>
+                    </h2>
+                    <ReactMarkdown className="text-center text-white mb-4">
+                      {editingdata.teamTitle8}
+                    </ReactMarkdown>
                     </Col>
                   </Row>
                 </TabPanel>
@@ -417,14 +500,38 @@ export default function Power({ file }) {
                   {/* Third panel starts here */}
                   <Row>
                     <Col className="col-12 p-5">
-                    <h2 className="text-center bold text-white mb-1">JP Gladu</h2>
-                    <p className="text-center text-white mb-4">Indigenous People & Communities</p>
-                    <h2 className="text-center bold text-white mb-1 mt-5">Tam Matthews</h2>
-                    <p className="text-center text-white mb-4">School Leadership & Engagement</p>
-                    <h2 className="text-center bold text-white mb-1 mt-5">Laura Zizzo</h2>
-                    <p className="text-center text-white mb-4">Climate Strategy</p>
-                    <h2 className="text-center bold text-white mb-1 mt-5">Jasen Golding</h2>
-                    <p className="text-center text-white mb-4">Forestry and Environmental Management</p>
+                    <h2 className="text-center bold text-white">
+                      <ReactMarkdown>
+                        {editingdata.advisorName1}
+                      </ReactMarkdown>
+                    </h2>
+                    <ReactMarkdown className="text-center text-white mb-4">
+                      {editingdata.advisorTitle1}
+                    </ReactMarkdown>
+                    <h2 className="text-center bold text-white mb-0 mt-5">
+                      <ReactMarkdown>
+                        {editingdata.advisorName2}
+                      </ReactMarkdown>
+                    </h2>
+                    <ReactMarkdown className="text-center text-white mb-4">
+                      {editingdata.advisorTitle2}
+                    </ReactMarkdown>
+                    <h2 className="text-center bold text-white mb-0 mt-5">
+                      <ReactMarkdown>
+                        {editingdata.advisorName3}
+                      </ReactMarkdown>
+                    </h2>
+                    <ReactMarkdown className="text-center text-white mb-4">
+                      {editingdata.advisorTitle3}
+                    </ReactMarkdown>
+                    <h2 className="text-center bold text-white mb-0 mt-5">
+                      <ReactMarkdown>
+                        {editingdata.advisorName4}
+                      </ReactMarkdown>
+                    </h2>
+                    <ReactMarkdown className="text-center text-white mb-4">
+                      {editingdata.advisorTitle4}
+                    </ReactMarkdown>
                     </Col>
                   </Row>
                 </TabPanel>
@@ -432,10 +539,26 @@ export default function Power({ file }) {
                   {/* Fourth panel starts here */}
                   <Row>
                     <Col className="col-12 p-5">
-                    <h2 className="text-center bold text-white mb-1">KPMG</h2>
-                    <h2 className="text-center bold text-white mb-1 mt-5">PRT</h2>
-                    <h2 className="text-center bold text-white mb-1 mt-5">MT Ventures</h2>
-                    <h2 className="text-center bold text-white mb-1 mt-5">Ferguson Tree Nursery</h2>
+                    <h2 className="text-center bold text-white ">
+                      <ReactMarkdown>
+                        {editingdata.growing1}
+                      </ReactMarkdown>
+                    </h2>
+                    <h2 className="text-center bold text-white mb-0 mt-5">
+                      <ReactMarkdown>
+                      {editingdata.growing2}
+                      </ReactMarkdown>
+                    </h2>
+                    <h2 className="text-center bold text-white mb-0 mt-5">
+                      <ReactMarkdown>
+                      {editingdata.growing3}
+                      </ReactMarkdown>
+                    </h2>
+                    <h2 className="text-center bold text-white mb-0 mt-5">
+                      <ReactMarkdown>
+                      {editingdata.growing4}
+                      </ReactMarkdown>
+                    </h2>
                     </Col>
                   </Row>
                 </TabPanel>
@@ -465,124 +588,162 @@ export default function Power({ file }) {
             <Col className="col-10 col-lg-8 roundedBox innerShadow bg-brown p-4 p-md-5"> 
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">
-                  What is a Smart Forest?
+                  <h3 className="text-orange bold tight-drop-light">
+                  <ReactMarkdown>
+                    {editingdata.q1}
+                  </ReactMarkdown>
                   </h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 bold ms-lg-4 ms-xl-0">
-                  A Smart Forest is more than a collection of trees. It has a significant impact on climate change.
-                  </p>
+                  <ReactMarkdown className="text-white medium mb-3 bold ms-lg-4 ms-xl-0">
+                  {editingdata.a1}
+                  </ReactMarkdown>
 
                   <ul className="checkMark text-white ms-5 ms-xl-3 pe-3">
-                    <li className="py-2">Supports wildlife, improves air quality, and regulates water flow</li>
-                    <li className="py-2">Offers a tangible way to offset a large carbon footprint</li>
-                    <li className="py-2">Maximizes its impact through expert forest management</li>
-                    <li className="py-2">Proves its effectiveness via proprietary digital tools</li>           
-                    <li className="py-2">Boosts the green economy</li>
-                    <li className="py-2">Promotes the health and wellbeing of all Canadians</li>
-                    <li className="py-2">Is protected forever with a no-clear-cut harvest guarantee</li>
+                    <li className="py-2">{editingdata.a1list1}</li>
+                    <li className="py-2">{editingdata.a1list2}</li>
+                    <li className="py-2">{editingdata.a1list3}</li>
+                    <li className="py-2">{editingdata.a1list4}</li>           
+                    <li className="py-2">{editingdata.a1list5}</li>
+                    <li className="py-2">{editingdata.a1list6}</li>
+                    <li className="py-2">{editingdata.a1list7}</li>
                   </ul>
                 </Col>
               </Row>
               <hr className="white mb-5 mt-4"/>
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">Who can build a Smart Forest?</h3>
+                <h3 className="text-orange bold tight-drop-light">
+                  <ReactMarkdown>
+                    {editingdata.q2}
+                  </ReactMarkdown>
+                  </h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 bold ms-lg-4 ms-xl-0">Anyone can build a Smart Forest:</p>
+                <ReactMarkdown className="text-white medium mb-3 bold ms-lg-4 ms-xl-0">
+                  {editingdata.a2}
+                  </ReactMarkdown>
                   <ul className="checkMark text-white ms-5  ms-xl-3 pe-3">
-                    <li className="py-2">Corporations looking to meet ESG goals</li>
-                    <li className="py-2">Students who want to make a positive impact on their future</li>
-                    <li className="py-2">Individuals and families with a goal of protecting the planet for future generations or building a memorial in someone’s honour</li>
+                    <li className="py-2">{editingdata.a2list1}</li>
+                    <li className="py-2">{editingdata.a2list2}</li>
+                    <li className="py-2">{editingdata.a2list3}</li>
                   </ul>
                 </Col>
               </Row>
               <hr className="white mb-5 mt-4"/>
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold mb-3">Why did we establish Canada’s Forest Trust?</h3>
+                <h3 className="text-orange bold tight-drop-light">
+                  <ReactMarkdown>
+                    {editingdata.q3}
+                  </ReactMarkdown>
+                  </h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                    We saw a gap to do something truly impactful and sustainable in an area that needs resources, patience and bold action to combat climate change.
-                  </p>
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                    Under the right conditions, a forest will become a force of nature—quite literally. As the threat of climate change closes in, forests are one of our last and best chances to save our planet before it’s too late.
-                  </p>
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                    Our Smart Forests will capture millions of tonnes of CO2, rehabilitate ecosystems and create jobs, country-wide. And we will never clear-cut.
-                  </p>
+                  <ReactMarkdown className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                  {editingdata.a3a}
+                  </ReactMarkdown>
+                  <ReactMarkdown className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                  {editingdata.a3b}
+                  </ReactMarkdown>
+                  <ReactMarkdown className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                  {editingdata.a3c}
+                  </ReactMarkdown>
                 </Col>
               </Row>
               <hr className="white mb-5 mt-4"/>
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">How do you build a Smart Forest?</h3>
+                  <h3 className="text-orange bold tight-drop-light">
+                  <ReactMarkdown>
+                    {editingdata.q4}
+                  </ReactMarkdown>
+                  </h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 bold ms-lg-4 ms-xl-0">We build Smart Forests with our 5 Phase Action Plan:</p>
+                  <ReactMarkdown className="text-white medium mb-3 bold ms-lg-4 ms-xl-0">
+                  {editingdata.a4}
+                  </ReactMarkdown>
                   <ul className="text-white ms-lg-4 ms-xl-0 pe-3">
-                    <li className="py-2">1. <span className="bold">PROCURE</span><br/> Acquire land across Canada </li>
-                    <li className="py-2">2. <span className="bold">PREPARE</span><br/> Assess, plan, and complete site preparation for planting</li>
-                    <li className="py-2">3. <span className="bold">PLANT</span><br/> Strategically plant seedlings to ensure optimal growth and carbon sequestration</li>
-                    <li className="py-2">4. <span className="bold">PRESERVE</span><br/> Perform innovative forest management activities to maintain the forest and maximize its impact</li>
-                    <li className="py-2">5. <span className="bold">PROTECT</span><br/> Audit, and set a no clear-cut guarantee on every forest</li>
+                    <li className="py-2">1. <span className="bold">{editingdata.a4list1title}</span><br/> {editingdata.a4list1para}</li>
+                    <li className="py-2">2. <span className="bold">{editingdata.a4list2title}</span><br/> {editingdata.a4list2para}</li>
+                    <li className="py-2">3. <span className="bold">{editingdata.a4list3title}</span><br/> {editingdata.a4list3para}</li>
+                    <li className="py-2">4. <span className="bold">{editingdata.a4list4title}</span><br/> {editingdata.a4list4para}</li>
+                    <li className="py-2">5. <span className="bold">{editingdata.a4list5title}</span><br/> {editingdata.a4list5para}</li>
                   </ul>
                 </Col>
               </Row>
               <hr className="white mb-5 mt-4"/>
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">How is Canada’s Forest Trust different from other tree planting organizations?</h3>
+                <h3 className="text-orange bold tight-drop-light">
+                  <ReactMarkdown>
+                    {editingdata.q5}
+                  </ReactMarkdown>
+                  </h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                    CFT takes a holistic approach to forestry that doesn't stop at planting trees. We ensure the long term health of our forests with certifiable monitoring and expert management. And we will protect our forests forever. We will tell you exactly where in Canada your seedlings are planted, the health of the land, the impact your seedlings / forest is having on biodiversity, etc.
-                  </p>
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                    We provide all of this information through a private portal with state of the art monitoring and measuring technology.
-                  </p>
+                <ReactMarkdown className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                  {editingdata.a5a}
+                  </ReactMarkdown>
+                  <ReactMarkdown className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                  {editingdata.a5b}
+                  </ReactMarkdown>
                 </Col>
               </Row>
               <hr className="white mb-5 mt-4"/>
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">Is CFT a Charitable Organization?</h3>
+                <h3 className="text-orange bold tight-drop-light">
+                  <ReactMarkdown>
+                    {editingdata.q6}
+                  </ReactMarkdown>
+                  </h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                    Our choice to be a for profit at this point in our journey allows us the flexibility to enter into partnerships and make investments which we may not be able to do as a registered charity. We have structured CFT so that the lands can never be exploited for commercial reasons.
-                  </p>
+                  <ReactMarkdown className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    {editingdata.a6}
+                  </ReactMarkdown>
                 </Col>
               </Row>
               <hr className="white mb-5 mt-4"/>
               <Row className="mb-lg-4" >
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">When does a Smart Forest start to offset carbon?</h3>
+                <h3 className="text-orange bold tight-drop-light">
+                  <ReactMarkdown>
+                    {editingdata.q7}
+                  </ReactMarkdown>
+                  </h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                    Within the first year of planting, forests will have already begun sequestering carbon in their roots and stems. The younger the tree, the more carbon it sequesters.
-                  </p>
+                <ReactMarkdown className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    {editingdata.a7}
+                  </ReactMarkdown>
                 </Col>
               </Row>
               <hr className="white mb-5 mt-4"/>
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">What is a carbon offset?</h3>
+                <h3 className="text-orange bold tight-drop-light">
+                  <ReactMarkdown>
+                    {editingdata.q8}
+                  </ReactMarkdown>
+                  </h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                    You offset your Carbon Footprint by making the amount of carbon you release in a year equal to the amount of carbon stored in your CFT Smart Forest.
-                  </p>
+                <ReactMarkdown className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    {editingdata.a8}
+                  </ReactMarkdown>
                 </Col>
               </Row>
               <hr className="white mb-5 mt-4"/>
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">What does it cost to buy a Smart Forest?</h3>
+                <h3 className="text-orange bold tight-drop-light">
+                  <ReactMarkdown>
+                    {editingdata.q9}
+                  </ReactMarkdown>
+                  </h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
@@ -593,18 +754,26 @@ export default function Power({ file }) {
               <hr className="white mb-5 mt-4"/>
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">Is there a minimum amount to ‘own’ a Smart Forest?</h3>
+                <h3 className="text-orange bold tight-drop-light">
+                  <ReactMarkdown>
+                    {editingdata.q10}
+                  </ReactMarkdown>
+                  </h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                    Yes. 1 Forest Trust Unit is measured in 5 acres, or at least 5,000 seedlings trees. Our communal forest allows for much lower than 5 acres so you are part of a forest.
-                  </p>
+                  <ReactMarkdown className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    {editingdata.a10}
+                  </ReactMarkdown>
                 </Col>
               </Row>
               <hr className="white mb-5 mt-4"/>
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">Can I buy a Smart Forest as a gift?</h3>
+                <h3 className="text-orange bold tight-drop-light">
+                  <ReactMarkdown>
+                    {editingdata.q11}
+                  </ReactMarkdown>
+                  </h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
@@ -615,57 +784,77 @@ export default function Power({ file }) {
               <hr className="white mb-5 mt-4"/>
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">Where does my money go?</h3>
+                <h3 className="text-orange bold tight-drop-light">
+                  <ReactMarkdown>
+                    {editingdata.q12}
+                  </ReactMarkdown>
+                  </h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                    CFT uses funds to acquire land, prepare it for planting, purchase seedlings, hire planters, perform forest management, insure the land and pay land tax, provide reporting and annual audits.
-                  </p>
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                    When you invest in a Smart Forest, you stay informed on its progress - from site selection to planting to ongoing maintenance and carbon footprint impact.
-                  </p>
+                <ReactMarkdown className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    {editingdata.a12a}
+                  </ReactMarkdown>
+                  <ReactMarkdown className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    {editingdata.a12b}
+                  </ReactMarkdown>
                 </Col>
               </Row>
               <hr className="white mb-5 mt-4"/>
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">How do you choose where to build Smart Forests?</h3>
+                <h3 className="text-orange bold tight-drop-light">
+                  <ReactMarkdown>
+                    {editingdata.q13}
+                  </ReactMarkdown>
+                  </h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                    CFT sources lands across the country that are suitable for reforestation and will have maximum impact on the environment.
-                  </p>
+                <ReactMarkdown className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    {editingdata.a13}
+                  </ReactMarkdown>
                 </Col>
               </Row>
               <hr className="white mb-5 mt-4"/>
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">How many trees will Canada’s Forest Trust plant per acre?</h3>
+                <h3 className="text-orange bold tight-drop-light">
+                  <ReactMarkdown>
+                    {editingdata.q14}
+                  </ReactMarkdown>
+                  </h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                    The ideal number for a successful forest is approximately 1,000 seedlings per acre. Depending on the species and land, we can plant up to 1200 seedlings per acre. CFT is proud to pledge a no clear cut guarantee on every acre of forest we build.
-                  </p>
+                <ReactMarkdown className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    {editingdata.a14}
+                  </ReactMarkdown>
                 </Col>
               </Row>
               <hr className="white mb-5 mt-4"/>
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">How do you choose where to build Smart Forests?</h3>
+                <h3 className="text-orange bold tight-drop-light">
+                  <ReactMarkdown>
+                    {editingdata.q15}
+                  </ReactMarkdown>
+                  </h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                    Our forestry experts will advise on the right mix of species for the soil and climate of each forest location.
-                  </p>
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                    As a common practice, CFT Smart Forests will be built with softwood species (conifers). These species are fast-growing and have needles that are kept year-round. Some examples of softwood species include: douglas fir, lodgepole pine, and whitespruce. We will also implement management practices that will promote hardwood growth.
-                  </p>
+                <ReactMarkdown className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    {editingdata.a15a}
+                  </ReactMarkdown>
+                  <ReactMarkdown className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    {editingdata.a15b}
+                  </ReactMarkdown>
                 </Col>
               </Row>
               <hr className="white mb-5 mt-4"/>
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">Can I visit my Smart Forest?</h3>
+                  <h3 className="text-orange bold tight-drop-light">
+                  <ReactMarkdown>
+                    {editingdata.q16}
+                  </ReactMarkdown>
+                  </h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
@@ -676,51 +865,71 @@ export default function Power({ file }) {
               <hr className="white mb-5 mt-4"/>
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">Will you cut down a Smart Forest</h3>
+                <h3 className="text-orange bold tight-drop-light">
+                  <ReactMarkdown>
+                    {editingdata.q17}
+                  </ReactMarkdown>
+                  </h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                    CFT will NEVER clear cut a forest or sell the land. We will manage our forests to create healthy ecosystems.
-                  </p>
+                <ReactMarkdown className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    {editingdata.a17}
+                  </ReactMarkdown>
                 </Col>
               </Row>
               <hr className="white mb-5 mt-4"/>
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">How will you protect the forests?</h3>
+                <h3 className="text-orange bold tight-drop-light">
+                  <ReactMarkdown>
+                    {editingdata.q18}
+                  </ReactMarkdown>
+                  </h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                    CFT has hired experts to plan and build our forests and provide extensive monitoring systems.
-                  </p>
+                <ReactMarkdown className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    {editingdata.a18}
+                  </ReactMarkdown>
                 </Col>
               </Row>
               <hr className="white mb-5 mt-4"/>
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">How many jobs will Canada’s Forest Trust create?</h3>
+                <h3 className="text-orange bold tight-drop-light">
+                  <ReactMarkdown>
+                    {editingdata.q19}
+                  </ReactMarkdown>
+                  </h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                    Our business plan is to create thousands of jobs across Canada. Each phase of our 5 Phase Action Plan will require person-power. There will be opportunities for nursery workers, truck drivers, tree planters, crew managers, auditors, monitoring/silviculture workers, brush saw operators, foresters for assessment, planning block layout (marking boundaries) workers, site prep operators, and more.
-                  </p>
+                <ReactMarkdown className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    {editingdata.a19}
+                  </ReactMarkdown>
                 </Col>
               </Row>
               <hr className="white mb-5 mt-4"/>
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">Why should I invest with CFT and not a charity?</h3>
+                <h3 className="text-orange bold tight-drop-light">
+                  <ReactMarkdown>
+                    {editingdata.q20}
+                  </ReactMarkdown>
+                  </h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                    We encourage all Canadians to find a way to combat climate change. There is an important role for private sector companies to play. CFT is pleased to offer turnkey solutions that engage all individuals, families, schools and corporations to reach net-zero.
-                  </p>
+                <ReactMarkdown className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    {editingdata.a20}
+                  </ReactMarkdown>
                 </Col>
               </Row>
               <hr className="white mb-5 mt-4"/>
               <Row>
                 <Col className="col-12 col-lg-4">
-                  <h3 className="text-orange bold">What corporate benefits does CFT offer?</h3>
+                <h3 className="text-orange bold tight-drop-light">
+                  <ReactMarkdown>
+                    {editingdata.q21}
+                  </ReactMarkdown>
+                  </h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
                   <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
