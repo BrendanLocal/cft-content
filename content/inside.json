@@ -140,13 +140,13 @@
   "a8": "You offset your Carbon Footprint by making the amount of carbon you release in a year equal to the amount of carbon stored in your CFT Smart Forest.",
 
   "q9": "What does it cost to buy a Smart Forest?",
-  "a9": "",
+  "a9": "Using our <a href='/carbon-calculator' className='text-orange'>carbon calculator</a>, we help you understand your carbon footprint. Then, using our <a href='/smart-forest-calculator' className='text-orange'>net-zero calculator</a>, you can determine the size of forest you will need to build and over what period of time. This is measured in Forest Trust Units (FTUs). An FTU is 5 acres. The cost will be calculated based on the number of FTUs you need. For more information please contact <a href='mailto:grow@canadasforesttrust.ca' className='text-orange'>grow@canadasforesttrust.ca</a>",
 
   "q10": "Is there a minimum amount to ‘own’ a Smart Forest?",
   "a10": "Yes. 1 Forest Trust Unit is measured in 5 acres, or at least 5,000 seedlings trees. Our communal forest allows for much lower than 5 acres so you are part of a forest.",
 
   "q11": "Can I buy a Smart Forest as a gift?",
-  "a11": "",
+  "a11": "Yes. You can create a <a href='/build-your-smart-forest#legacy' className='text-orange'>Legacy or Memorial Forest</a> or you can contribute to a <a href='/build-your-smart-forest#communal' className='text-orange'>Communal Forest</a> in someone’s name.",
 
   "q12": "Where does my money go?",
   "a12a": "CFT uses funds to acquire land, prepare it for planting, purchase seedlings, hire planters, perform forest management, insure the land and pay land tax, provide reporting and annual audits.",
@@ -163,7 +163,7 @@
   "a15b": "As a common practice, CFT Smart Forests will be built with softwood species (conifers). These species are fast-growing and have needles that are kept year-round. Some examples of softwood species include: douglas fir, lodgepole pine, and whitespruce. We will also implement management practices that will promote hardwood growth.",
 
   "q16": "Can I visit my Smart Forest?",
-  "a16": "",
+  "a16": "Absolutely. Given that not everyone can physically visit a forest and in the first few years there is not much to see, you can see and monitor your forest in real time via your personal portal. If you wish to visit your forest, contact <a href='mailto:grow@canadasforesttrust.ca' className='text-orange'>grow@canadasforesttrust.ca</a>",
 
   "q17": "Will you cut down a Smart Forest?",
   "a17": "CFT will NEVER clear cut a forest or sell the land. We will manage our forests to create healthy ecosystems.",
@@ -178,6 +178,5 @@
   "a20": "We encourage all Canadians to find a way to combat climate change. There is an important role for private sector companies to play. CFT is pleased to offer turnkey solutions that engage all individuals, families, schools and corporations to reach net-zero.",
 
   "q21": "What corporate benefits does CFT offer?",
-  "a21": ""
-
+  "a21": "CFT offers a variety of benefits that can be customized to meet your needs. Contact us at <a href='mailto:grow@canadasforesttrust.ca' className='text-orange'>grow@canadasforesttrust.ca</a> for more information."
 }

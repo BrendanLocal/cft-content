@@ -20,6 +20,7 @@ import PDFViewer from '../components/PDFViewer';
 import PDFJSBackend from '../middlewares/pdfjs';
 import ReactPlayer from 'react-player';
 import ReactMarkdown from "react-markdown";
+import rehypeRaw from 'rehype-raw'
 
 export default function Power({ file }) {
   const [show, setShow] = useState(false);
@@ -746,9 +747,9 @@ export default function Power({ file }) {
                   </h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                    Using our <a href="/carbon-calculator" className="text-orange">carbon calculator</a>, we help you understand your carbon footprint. Then, using our <a href="/smart-forest-calculator" className="text-orange">net-zero calculator</a>, you can determine the size of forest you will need to build and over what period of time. This is measured in Forest Trust Units (FTUs). An FTU is 5 acres. The cost will be calculated based on the number of FTUs you need. For more information please contact <a href="mailto:grow@canadasforesttrust.ca" className="text-orange">grow@canadasforesttrust.ca</a>
-                  </p>
+                  <ReactMarkdown rehypePlugins={[rehypeRaw]} className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    {editingdata.a9}
+                  </ReactMarkdown>
                 </Col>
               </Row>
               <hr className="white mb-5 mt-4"/>
@@ -776,9 +777,9 @@ export default function Power({ file }) {
                   </h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                    Yes. You can create a <a href="/build-your-smart-forest#legacy" className="text-orange">Legacy or Memorial Forest</a> or you can contribute to a <a href="/build-your-smart-forest#communal" className="text-orange">Communal Forest</a> in someone’s name.
-                  </p>
+                  <ReactMarkdown rehypePlugins={[rehypeRaw]} className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                  {editingdata.a11}
+                  </ReactMarkdown>
                 </Col>
               </Row>
               <hr className="white mb-5 mt-4"/>
@@ -857,9 +858,9 @@ export default function Power({ file }) {
                   </h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                    Absolutely. Given that not everyone can physically visit a forest and in the first few years there is not much to see, you can see and monitor your forest in real time via your personal portal. If you wish to visit your forest, contact <a href="mailto:grow@canadasforesttrust.ca" className="text-orange">grow@canadasforesttrust.ca</a>
-                  </p>
+                  <ReactMarkdown rehypePlugins={[rehypeRaw]} className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                  {editingdata.a16}
+                  </ReactMarkdown>
                 </Col>
               </Row>
               <hr className="white mb-5 mt-4"/>
@@ -932,9 +933,9 @@ export default function Power({ file }) {
                   </h3>
                 </Col>
                 <Col className="col-12 col-lg-8">
-                  <p className="text-white medium mb-3 ms-lg-4 ms-xl-0">
-                    CFT offers a variety of benefits that can be customized to meet your needs. Contact us at <a href="mailto:grow@canadasforesttrust.ca" className="text-orange">grow@canadasforesttrust.ca</a> for more information.
-                  </p>
+                  <ReactMarkdown rehypePlugins={[rehypeRaw]} className="text-white medium mb-3 ms-lg-4 ms-xl-0">
+                    {editingdata.a21}
+                  </ReactMarkdown>
                 </Col>
               </Row>              
             </Col>
