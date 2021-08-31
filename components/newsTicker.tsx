@@ -14,38 +14,38 @@ const newsItems = [
   },
   {
     key: "newsItem2",
-    label: "IPCC report warning: what this means for Canadians",
-    path: "https://www.cbc.ca/news/science/ipcc-report-canada-1.6134879"
+    label: "Humans are, beyond any reasonable scientific doubt, the primary cause of climate change",
+    path: "https://www.theglobeandmail.com/canada/article-humans-to-blame-for-acceleration-in-climate-change-report/"
   },
   {
     key: "newsItem3",
+    label: "The single most effective “device” we have to pull carbon out of the atmosphere",
+    path: "https://time.com/6093342/1-trillion-trees-climate-change/"
+  },
+  {
+    key: "newsItem4",
     label: "Calculate Your Carbon Footprint",
     path: "/carbon-calculator"
   },
   {
-    key: "newsItem4",
-    label: "‘This is a crisis’: Yukon minister urges action",
-    path: "https://www.thestar.com/news/canada/2021/08/20/this-is-a-crisis-yukon-minister-urges-action-on-climate-change.html"
-  },
-  {
     key: "newsItem5",
-    label: "Grow to Net-Zero",
-    path: "/smart-forest-calculator"
+    label: "Climate crisis a municipal obligation",
+    path: "https://ca.news.yahoo.com/climate-crisis-municipal-obligation-135333468.html?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAAyeymMIxc_8EZrGaj9FyUM_sNkE9Ib0PYwfozcY_kANIqslCVbOBILUgHr4sXeGfAAfJ1bnX9v-MieMYUKsiG5HAFnSDKrRzDl-Sn7djxISt5xQLyn4Bv2lwgljS36LcyhMluIFa1b57rrbIPv90Hbc5kea4gLG_cAKyVtpRKcU"
   },
   {
     key: "newsItem6",
-    label: "Build a Smart Forest",
-    path: "/build-your-smart-forest"
+    label: "Calculate Your Net-Zero",
+    path: "/smart-forest-calculator"
   },
   {
     key: "newsItem7",
-    label: "Cancelled trips and climate change",
-    path: "https://www.cbc.ca/news/canada/british-columbia/cancelled-trip-climate-change-backcountry-1.6147128"
+    label: "Greenland’s crucial tipping point is driven by human-induced climate change",
+    path: "https://www.nationalobserver.com/2021/08/30/news/ghostly-satellite-image-captures-arctic-losing-its-soul"
   },
   {
     key: "newsItem8",
-    label: "Polling: Canadians worry about climate change's impact on their health",
-    path: "https://abacusdata.ca/extreme-weather-climate-change-choices/"
+    label: "Become a Forest Builder",
+    path: "/build-your-smart-forest"
   }
 ];
 
