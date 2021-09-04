@@ -115,7 +115,7 @@
     "react-ticker": "^1.2.2",
     "react-tiger-transition": "^4.1.2",
     "react-tinacms-editor": "^0.41.0",
-    "react-tinacms-github": "^0.40.0",
+    "react-tinacms-github": "^0.50.8",
     "react-tinacms-inline": "^0.41.0",
     "react-transition-group": "^4.4.1",
     "react-visibility-sensor": "^5.1.1",

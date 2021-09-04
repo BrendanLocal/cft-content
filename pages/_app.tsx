@@ -149,14 +149,20 @@ export default class Site extends App {
         </style>
 
         {
-          router.route !== '/' &&
+          router.route !== '/' || '/admin' &&
           <React.Fragment>
             <Footer/>
             <NewsTicker />
           </React.Fragment>
         }
+
+{
+          router.route == '/admin' &&
+          <EditLink cms={this.cms} /> 
+          
+        }
         
-      {/* <EditLink cms={this.cms} /> */}
+      
         </TinacmsGithubProvider>
       </TinaProvider>
     )
