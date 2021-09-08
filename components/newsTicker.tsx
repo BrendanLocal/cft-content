@@ -14,13 +14,8 @@ const newsItems = [
   },
   {
     key: "newsItem2",
-    label: "Humans are, beyond any reasonable scientific doubt, the primary cause of climate change",
-    path: "https://www.theglobeandmail.com/canada/article-humans-to-blame-for-acceleration-in-climate-change-report/"
-  },
-  {
-    key: "newsItem3",
-    label: "The single most effective “device” we have to pull carbon out of the atmosphere",
-    path: "https://time.com/6093342/1-trillion-trees-climate-change/"
+    label: "The path to net-zero runs through Canada’s forests",
+    path: "https://bit.ly/the-path-to-net-zero-through-canadas-forests"
   },
   {
     key: "newsItem4",
@@ -28,23 +23,28 @@ const newsItems = [
     path: "/carbon-calculator"
   },
   {
+    key: "newsItem4",
+    label: "‘Use your voice’: A teen climate activist on fighting for change",
+    path: "https://www.dw.com/en/pakistan-environmentalists-slam-10-billion-trees-project/a-59062200?utm_source=ActiveCampaign&utm_medium=email&utm_content=Top+news%3A&utm_campaign=ATF+Daily"
+  },
+  {
     key: "newsItem5",
-    label: "Climate crisis a municipal obligation",
-    path: "https://ca.news.yahoo.com/climate-crisis-municipal-obligation-135333468.html?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAAyeymMIxc_8EZrGaj9FyUM_sNkE9Ib0PYwfozcY_kANIqslCVbOBILUgHr4sXeGfAAfJ1bnX9v-MieMYUKsiG5HAFnSDKrRzDl-Sn7djxISt5xQLyn4Bv2lwgljS36LcyhMluIFa1b57rrbIPv90Hbc5kea4gLG_cAKyVtpRKcU"
+    label: "Let's talk land sinks: Are they enough to beat global warming",
+    path: "https://www.downtoearth.org.in/blog/forests/let-s-talk-land-sinks-are-they-enough-to-beat-global-warming-78765"
   },
   {
     key: "newsItem6",
-    label: "Calculate Your Net-Zero",
+    label: "Grow to Net-Zero",
     path: "/smart-forest-calculator"
   },
   {
     key: "newsItem7",
-    label: "Greenland’s crucial tipping point is driven by human-induced climate change",
-    path: "https://www.nationalobserver.com/2021/08/30/news/ghostly-satellite-image-captures-arctic-losing-its-soul"
+    label: "The Cost Of Ignoring ESG",
+    path: "https://www.forbes.com/sites/rrapier/2021/08/25/the-cost-of-ignoring-esg/?sh=af54ad73d285"
   },
   {
     key: "newsItem8",
-    label: "Become a Forest Builder",
+    label: "Build a Smart Forest",
     path: "/build-your-smart-forest"
   }
 ];
