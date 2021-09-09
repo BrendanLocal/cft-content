@@ -2,6 +2,7 @@ import * as React from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Head from 'next/head'
 import Button from 'react-bootstrap/Button';
 import Link from 'next/link'
 import { useRouter } from "next/router";
@@ -45,7 +46,17 @@ export default function CarbonCalc({ file, href, children}) {
   useGithubToolbarPlugins()
 
   return (
+    
     <div>
+      <Head>
+        <title>{editingdata.pageTitle}</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content="#054218"></meta>
+        <meta name="keywords" content="Canada's Forest Trust Calculator, CFT Calculator, ESG investing, Carbon Footprint, Carbon Calculator, Environmental Footprint, Smart Forest Calculator, Carbon emissions calculator, GHG calculator,  Corporate Carbon Footprint, Carbon Offset Canada, Offset my Carbon Footprint"></meta>
+        <meta name="description" content="Canada's Forest Trust's proprietary carbon calculator will help determine your personal, school and corporate carbon footprint. Once you have calculated your carbon emissions, we will help you determine how many acres of Smart forest to plant to achieve net-zero."></meta>
+      </Head>
+
+      <main>
       <Header/>
       <Container className="py-5 mb-5">
         <Row className="justify-content-center mt-5">
@@ -86,6 +97,7 @@ export default function CarbonCalc({ file, href, children}) {
           </Col>
         </Row>
       </Container>
+      </main>
     </div>
   );
 }

@@ -183,10 +183,11 @@ const [sliderData,setSliderData] = React.useState({
 
     <div>
       <Head>
-        <title>Canada's Forest Trust</title>
+        <title>Canada's Forest Trust - Try Our Demo Private Portal</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="theme-color" content="#054218">
-        </meta>
+        <meta name="theme-color" content="#054218"></meta>
+        <meta name="keywords" content="Smart Forest Dashboard Forest Monitoring Canada, Measure Forests Impact, Forests impact on the Climate, Canadian Forests, plant a forest in Canada, Forest dashboard, Monitor Smart Forests Impact, Forest Software, Forest Technology, Environmental Technology, Forest Data, Forest Statistics Canada, Forest Facts Canada, Tree Facts Canada, Climate Change Mitigation Canada"></meta>
+        <meta name="description" content="Experience the dynamic Private Portal that is offered to all Smart Forest Builders in Canada. Through this interactive experience, users will leverage technologies, analytics and reporting to monitor their Smart Forest in real time. This is a sample of what you will invest in with CFT."></meta>
       </Head>
 
       <main className="bg-green">

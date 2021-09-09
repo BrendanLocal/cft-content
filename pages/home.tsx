@@ -128,6 +128,8 @@ export default function Home({ file, href, children}) {
         <title>{editingdata.title}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#054218"></meta>
+        <meta name="keywords" content="CFT, Canada's Forest Trust, Smart Forest, sustainable investing, Corporate Canada, Highschools in Canada, Communities in Canada, Legacies In Canada, carbon offset, ESG Canada,  Environment-Society-Governance, plant a tree, tree planting Canada, socially responsible investing, foresters in Canada, climate change mitigation, global warming Canada, Climate Change Solution, Carbon sink canada, Forestry Canada, managing climate risks and opportunities, eco-schools canada, school forest, school fundriaser, student opportunities in canada, land canada, invest canada, what is climate-smart forestry, reforest Canada, reverse climate change, environmentalists in Canada, Greenhouse Gas Emissions Canada, carbon sequestration Canada, carbon emissions in Canada, acres, reforest millions of acres, Carbon Sink, Carbon Bathtub"></meta>
+        <meta name="description" content="Canada's Forest Trust (CFT) is on a mission to build millions of acres of Smart Forests across Canada by 2040. Join this opportunity for youth, individuals, families, farmers, landowners, Indigenous communities, and corporate Canada to come together to build a better environment and achieve a net-zero future."></meta>
       </Head>
 
       <Modal show={show} className=" d-flex align-items-center" onHide={handleClose}>

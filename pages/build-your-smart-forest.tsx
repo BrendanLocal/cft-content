@@ -414,10 +414,12 @@ export default function Build({ file }) {
   return (
     <div>
       <Header/>
-      <Head>
+      <Head> 
         <title>{editingdata.title}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#054218"></meta>
+        <meta name="keywords" content="CFT, Canada's Forest Trust, Smart Forest,  Canada's Carbon Sink, corporate, legacy, community, high schools, sustainable investing, carbon offset, ESG Canada,Plant a tree, tree planting Canada, socially responsible investing, climate change mitigation, global warming Canada, Climate Change Solution, Carbon sink canada, Forestry Canada, managing climate risks and opportunities, corporate cananda, eco-schools canada, school forest, school fundriaser, student fundraiser student opportunities in canada, land canada, invest canada, tree planted, reforestation in canada, deforestation canada, environment canada, environment society and governance, climate risk, climate code red, protecting ecosystems in canada, preserving the environment, 2050, 2040"></meta>
+        <meta name="description" content="Canada's Forest Trust (CFT) has a turnkey solution to climate change that is both large scale and big in impact. Through the engagement of employees, students and communities, CFT will help meet ESG targets, engage employees, activate students and provide a way for every Canadian to mitigate climate change."></meta>
       </Head>
 
       {/* MODAL */}

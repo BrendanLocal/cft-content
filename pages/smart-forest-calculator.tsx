@@ -1,4 +1,5 @@
 import * as React from "react";
+import Head from 'next/head'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -65,6 +66,15 @@ export default function CarbonCalc({ file, href, children}) {
 
   return (
     <div>
+      <Head>
+        <title>Canada's Forest Trust Net-Zero Carbon Calculator</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content="#054218"></meta>
+        <meta name="keywords" content="Net Zero Calculator, Net-Zero, Offset Carbon Emissions, Carbon Offset, impact calculator, Canada's Forest Trust Calculator, CFT Calculator, ESG investing, my carbon emissions, carbon sequestration, carbon footprint, What is net-zero, net-zero companies in Canada"></meta>
+        <meta name="description" content="Calculate how you, your family, school or corporation can achieve net-zero carbon emissions with Canada's Forest Trusts proprietary net-zero carbon calculator."></meta>
+      </Head>
+
+      <main>
       <Header/>
       <Container className="py-5 mb-5">
         <Row className="justify-content-center mt-5">
@@ -105,6 +115,7 @@ export default function CarbonCalc({ file, href, children}) {
           </Col>
         </Row>
       </Container>
+      </main>
     </div>
   );
 }

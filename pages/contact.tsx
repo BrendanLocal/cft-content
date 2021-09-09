@@ -145,6 +145,8 @@ const Lang = () => {
         <title>{editingdata.title}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#054218"></meta>
+        <meta name="keywords" content="Contact Canada's Forest Trust, Work with Canada's Forest Trust, Invest in Canada's Forest Trust, Build a Smart Forest, Plant a Smart Forest, Contact Canada's Forest Trust, CFT, What is a Smart Forest"></meta>
+        <meta name="description" content="Contact Canada's Forest Trust to learn how you, your corporation, school, community and family can achieve net-zero carbon emissions by building a Smart Forest."></meta>
       </Head>
 
       <main className="bg-green py-5">

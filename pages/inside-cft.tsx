@@ -124,9 +124,11 @@ export default function Power({ file }) {
     <div>
       <Header/>
       <Head>
-        <title>Canada's Forest Trust</title>
+      <title>{editingdata.pageTitle}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#054218"></meta>
+        <meta name="keywords" content="CFT, Canada's Forest Trust, Who is Canada's Forest Trust (CFT), Gary Zed, Reforestation Canada, Forestry in Canada, Forests in Canada, Carbon Offset Canada, Tree Planting Company, Plant a tree Canada, what is climate-smart forestry, what is a smart forest? net-zero, net-negative, carbon calculator, protecting ecosystems in canada, preserving the environment, 2050, 2040,  Forest Data, Forest Statistics Canada, Forest Facts Canada, Tree Facts Canada, plan millions of acres"></meta>
+        <meta name="description" content="Canada's Forest Trust is making the green economy accessible to everyone – from individuals to schools to corporations, we are building  a greener, cleaner and more sustainable planet. Through a 5-phase strategic action plan, Canada's Forest Trust offers turnkey solutions to achieve net-zero carbon emissions, meet ESG targets and build a climate resilient country."></meta>
       </Head>
 
       <Row className="justify-content-left p-0 m-0 d-none d-lg-block d-xl-block">

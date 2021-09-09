@@ -55,10 +55,11 @@ export default function Portal({ file }) {
     <div>
       <Header/>
       <Head>
-        <title>Canada's Forest Trust</title>
+        <title>Canada's Forest Trust - Login to your Smart Forest Portal</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="theme-color" content="#054218">
-        </meta>
+        <meta name="theme-color" content="#054218"></meta>
+        <meta name="keywords" content="Canada's Forest Trust Login, Sign in to Canada's Forest Trust, Canada's Forest Trust Portal, my CFT Portal, CFT login, CFT signin, CFT Dashboard, Sign up for CFT?"></meta>
+        <meta name="description" content="Enter your unique Smart Forest Portal that provides Smart Forest Builders with 24/7 access to their forest, in real time. You will also be able to measure and monitor the growth of your forest and understand the benefits it provides to the planet."></meta>
       </Head>
 
       <main className="bg-green">
