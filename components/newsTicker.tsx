@@ -14,36 +14,56 @@ const newsItems = [
   },
   {
     key: "newsItem2",
-    label: "The path to net-zero runs through Canada’s forests",
-    path: "https://bit.ly/the-path-to-net-zero-through-canadas-forests"
+    label: "Announcing IMI as a Smart Forest Builder",
+    path: "https://youtu.be/eCMCqScS0XM"
+  },
+  {
+    key: "newsItem3",
+    label: "When the Climate Crisis Becomes Unignorable",
+    path: "https://www.theatlantic.com/science/archive/2021/09/summer-climate-disaster/620004/?utm_source=ActiveCampaign&utm_medium=email&utm_content=Top+news%3A&utm_campaign=ATF+Daily"
   },
   {
     key: "newsItem4",
+    label: "Toronto is designed for a climate that doesn't exist",
+    path: "https://www.cbc.ca/news/canada/toronto/climate-change-toronto-adaptation-1.6138067"
+  },
+  {
+    key: "newsItem5",
     label: "Calculate Your Carbon Footprint",
     path: "/carbon-calculator"
   },
   {
-    key: "newsItem4",
-    label: "‘Use your voice’: A teen climate activist on fighting for change",
-    path: "https://www.dw.com/en/pakistan-environmentalists-slam-10-billion-trees-project/a-59062200?utm_source=ActiveCampaign&utm_medium=email&utm_content=Top+news%3A&utm_campaign=ATF+Daily"
-  },
-  {
-    key: "newsItem5",
-    label: "Let's talk land sinks: Are they enough to beat global warming",
-    path: "https://www.downtoearth.org.in/blog/forests/let-s-talk-land-sinks-are-they-enough-to-beat-global-warming-78765"
-  },
-  {
     key: "newsItem6",
-    label: "Grow to Net-Zero",
-    path: "/smart-forest-calculator"
+    label: "Global warming spares no country says UN climate chief",
+    path: "https://www.nationalobserver.com/2021/09/07/news/un-climate-chief-country-global-warming"
   },
   {
     key: "newsItem7",
-    label: "The Cost Of Ignoring ESG",
-    path: "https://www.forbes.com/sites/rrapier/2021/08/25/the-cost-of-ignoring-esg/?sh=af54ad73d285"
+    label: "Why climate change matters in Election 2021",
+    path: "https://globalnews.ca/news/8140651/wildfires-drought-and-record-heat-why-climate-change-matters-in-election-2021/"
   },
   {
     key: "newsItem8",
+    label: "Sequester carbon emissions - grow to net-zero",
+    path: "/smart-forest-calculator"
+  },
+  {
+    key: "newsItem9",
+    label: "Climate change: Animals shapeshifting to stay cool",
+    path: "https://www.bbc.com/news/newsbeat-58487050"
+  },
+  {
+    key: "newsItem10",
+    label: "Oil patch workers believe Canada needs to pivot to a net-zero economy",
+    path: "https://www.corporateknights.com/energy/just-transition/"
+  },
+  {
+    key: "newsItem11",
+    label: "Climate change puts a source of Arctic life in imminent danger",
+    path: "https://www.cbc.ca/news/canada/north/north-water-polynya-under-threat-1.6140307"
+  },
+  {
+    key: "newsItem12",
     label: "Build a Smart Forest",
     path: "/build-your-smart-forest"
   }
