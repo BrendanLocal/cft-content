@@ -1260,7 +1260,7 @@ export default function Build({ file }) {
                   </Col>
                   <Col className="col-10 col-lg-4 my-2">
                     <a className="text-orange dropdown-links tight-drop-light" onClick={handleShowSchoolModal3} data-dest="school-involved">
-                      {editingdata.bottomLine}
+                      {editingdata.schooldropdown_menuheader3}
                     </a>                 
                   </Col>
                 </Row>
