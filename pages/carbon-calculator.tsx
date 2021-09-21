@@ -89,7 +89,7 @@ export default function CarbonCalc({ file, href, children}) {
           <Col className="col-11 col-md-10 col-lg-3 pe-lg-0 m-3">
             <div className="roundedBox card bg-green no-border p-4 h-100 d-flex flex-column drop legacy-card">
             <h2 className="h4 text-white tight-drop-light">{editingdata.box3Header}</h2>
-              <p className="flex-fill pb-3 text-white tight-drop">{editingdata.box2Para}</p>
+              <p className="flex-fill pb-3 text-white tight-drop">{editingdata.box3Para}</p>
               <Link href="/personal-calculator">
                 <a className="btn btn-text text-left text-orange bold no-underline tight-drop">{editingdata.select}</a>
               </Link>
