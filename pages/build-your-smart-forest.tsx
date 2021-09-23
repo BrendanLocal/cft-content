@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from"react";
 import Head from"next/head";
-import Dropdown from "react-bootstrap/Dropdown";
 import Fade from"react-reveal/Fade";
 import Link from"next/link";
 import { getGithubPreviewProps, parseJson } from"next-tinacms-github";
 import { GetStaticProps } from"next";
 import { usePlugin } from"tinacms";
 import Container from"react-bootstrap/Container";
+import Table from"react-bootstrap/Table";
+import Accordion from "react-bootstrap/Accordion";
+import Card from "react-bootstrap/Card";
 import Row from"react-bootstrap/Row";
 import Col from"react-bootstrap/Col";
 import Button from"react-bootstrap/Button";
@@ -21,6 +23,8 @@ import {
 import DigitalSign from "../components/digitalSign";
 import { useRouter } from "next/router";
 import Header from "../components/header";
+import AccordionToggle from "react-bootstrap/esm/AccordionToggle";
+import AccordionCollapse from "react-bootstrap/esm/AccordionCollapse";
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
@@ -1033,113 +1037,286 @@ export default function Build({ file }) {
           </Fade>
 
           <Fade bottom>
-            <Row className="text-center justify-content-center py-3 mt-5">
-              <Col className="col-11 col-md-10 col-lg-9">
-                <h2 className="text-orange tight-drop-light mb-4 bold px-2">{editingdata.corp_header2}</h2>
-                {/* FTU units */}
-                {/* Desktop */}
+            <Row className="justify-content-center py-3 mt-5">
+              <Col className="col-11 col-lg-10 px-lg-4 px-xl-0">
+                <h2 className="text-orange tight-drop-light mb-4 bold px-2 text-center">{editingdata.corp_header2}</h2>
+                
+                {/* BENEFITS CHART */}
 
-                <Container className="d-none d-lg-block">
-                  <Row className="roundedBox card-drop-heavy">
-                    <Col className="col-12 col-lg-8 col-xl-9 px-0 bg-offwhite roundedBoxLeft">
-                      <div className="p-5 pb-4 bg-brown roundedBoxTopLeft">
-                        <Row className="justify-content-center align-items-center mb-3">
-                          <Col className="col-lg-4 col-xl-3 d-flex">
-                            <img src="../../cft-icon-white.svg" alt="CFT logo in white"/>
+                <Container className="">
+                  <Row className="roundedBox bg-brown card-drop-heavy">
+                    
+                      <div className="p-4 p-md-5 pb-md-4 roundedBoxTop bg-green-circle">        
+                        <Row className="p-2">
+                          <hr className="bg-white thick mb-4"/>
+                          <Col className="col-12 col-md-5 ps-0">
+                            <img src="../../cft-logo-white.svg" className="mb-5 pb-3 mb-lg-0 pb-lg-0" alt="CFT logo in white" width="180px"/>
                           </Col>
-                          <Col className="col-lg-8 col-xl-9 d-flex">
-                            <h3 className="text-left x-large mt-3 text-white bold d-none d-xl-block">{editingdata.corpGraphicHeader}</h3>
-                            <h3 className="text-left lead mt-3 text-white bold d-xl-none">{editingdata.corpGraphicHeader}</h3>
+                          <Col className="col-12 col-md-7 ps-0">
+                            <h3 className="text-left text-white bold mb-lg-5 pb-lg-3">{editingdata.corp_benefitsgrid_title}</h3>
+                            <ReactMarkdown className="text-white text-small thin mb-4">
+                            {editingdata.corp_benefitsgrid_para}
+                            </ReactMarkdown>
                           </Col>
+                          <hr className="bg-white thick"/>
                         </Row>
-                        <p className="text-white text-left">{editingdata.corpGraphicDesc}</p>
                       </div>
-                      <div className="p-5 py-4 bg-offwhite roundedBoxBottomLeft">
-                        <h4 className="h5 text-left text-green medium">{editingdata.corpGraphicPackageHeader}</h4>
-                        <ul className="text-grey dropdown-text checkMark px-1 mx-3">
-                          <li className="py-1">{editingdata.corpGraphicPackage1}</li>
-                          <li className="py-1">{editingdata.corpGraphicPackage2}</li>
-                          <li className="py-1">{editingdata.corpGraphicPackage3}</li>
-                          <li className="py-1">{editingdata.corpGraphicPackage4}</li>
-                          <li className="py-1">{editingdata.corpGraphicPackage5}</li>
-                          <li className="py-1">{editingdata.corpGraphicPackage6}</li>
-                          <li className="py-1">{editingdata.corpGraphicPackage7}</li>
-                          <li className="py-1">{editingdata.corpGraphicPackage8}</li>
-                          <li className="py-1">{editingdata.corpGraphicPackage9}</li>
-                        </ul>
-                      </div>
-                    </Col>
-                    <Col className="col-lg-4 col-xl-3 bg-mildgreen text-white text-left p-4 roundedBoxRight">
-                      <h5 className="6 bold mt-lg-5 mt-xl-4">{editingdata.graphicInfoHeader}</h5>
-                      <p>{editingdata.graphicInfo1}</p>
-                      <p>{editingdata.graphicInfo2}</p>
-                      <p className="mb-2">{editingdata.graphicInfo3}</p>
-                      <p className="ftu-par mb-2">{editingdata.graphicInfo4}</p>
-                      <p className="ftu-par">{editingdata.graphicInfo5}</p>
-                      <ul className="ftu-list">
-                        <li>{editingdata.graphicInfo6}</li>
-                        <li>{editingdata.graphicInfo7}</li>
-                        <li>{editingdata.graphicInfo8}</li>
-                      </ul>
-                      <p className="ftu-par">{editingdata.graphicInfo9}</p>
-                    </Col>
-                  </Row>
-                </Container>
 
-                {/* Mobile */}
-                <Container className="d-lg-none">
-                  <Row className="roundedBox card-drop-heavy">
-                    <Col className="col-12 px-0">
-                      <div className="p-4 p-md-5 pb-4 bg-brown roundedBoxTop">
+                      <div className="p-3 p-md-5 bg-offwhite">
                         
-                        <Row className="justify-content-center align-items-center mb-2 mb-md-3">
-                          <Col className="col-12 col-md-3 d-flex">
-                            <img src="../../cft-icon-white.svg" alt="CFT logo in white"/>
-                          </Col>
-                          <Col className="col-12 col-md-9 col-xl-9 d-flex">
-                            <p className="text-left lead text-white bold d-none d-md-block">
-                            {editingdata.corpGraphicHeader}
-                            </p>
-                            <h3 className="text-left text-white mt-3 bold d-md-none">
-                            {editingdata.corpGraphicHeader}
-                            </h3>
-                          </Col>
-                        </Row>
-                        <p className="text-white text-left">
-                        {editingdata.corpGraphicDesc}
-                        </p>
+                          <Table hover responsive size="sm" className="text-small text-center">
+                            <thead>
+                              <tr>
+                                <th className="w-19"></th>
+                                <th className="x-large copper no-border pb-2 w-9">●</th>
+                                <th className="x-large bronze no-border pb-2 w-9">●</th>
+                                <th className="x-large silver no-border pb-2 w-9">●</th>
+                                <th className="x-large gold no-border pb-2 w-9">●</th>
+                                <th className="x-large platinum no-border pb-2 w-9">●</th>
+                                <th className="x-large sapphire no-border pb-2 w-9">●</th>
+                                <th className="x-large ruby no-border pb-2 w-9">●</th>
+                                <th className="x-large diamond no-border pb-2 w-9">●</th>
+                                <th className="x-large emerald no-border pb-2 w-9">●</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr className="bg-black text-white x-small">
+                                <td></td>
+                                <td className="py-2">COPPER</td>
+                                <td className="py-2">BRONZE</td>
+                                <td className="py-2">SILVER</td>
+                                <td className="py-2">GOLD</td>
+                                <td className="py-2">PLATINUM</td>
+                                <td className="py-2">SAPPHIRE</td>
+                                <td className="py-2">RUBY</td>
+                                <td className="py-2">DIAMOND</td>
+                                <td className="py-2">EMERALD</td>
+                              </tr>
+                              <tr>
+                                <td className="bg-palegreen text-left"># of Acres</td>
+                                <td>0.5 - 4</td>
+                                <td>5</td>
+                                <td>10</td>
+                                <td>25</td>
+                                <td>50</td>
+                                <td>100</td>
+                                <td>250</td>
+                                <td>500</td>
+                                <td>1,000</td>
+                              </tr>
+                              <tr>
+                                <td className="bg-palegreen text-left">Number of Seedlings</td>
+                                <td>500 - 4,000</td>
+                                <td>5,000+</td>
+                                <td>10,000+</td>
+                                <td>25,000+</td>
+                                <td>50,000+</td>
+                                <td>100,000+</td>
+                                <td>250,000+</td>
+                                <td>500,000+</td>
+                                <td>1,000,000+</td>
+                              </tr>
+                            </tbody>
+                          </Table>
+
+                          <Accordion>
+
+                            {/* Core Benefits */}
+                            <Card className="no-border hard-edge mb-3">
+                              <Accordion.Toggle as={Card.Header} eventKey="0" className="bg-black text-white text-small hard-edge p-2">
+                                <p className="benefits-grid">Core Benefits</p>
+                              </Accordion.Toggle>
+                              <Accordion.Collapse eventKey="0" className="bg-offwhite text-small hard-edge p-0">
+                                <div>
+                                <Table hover responsive size="sm" className="text-small text-center mb-0">
+                                  <tbody>
+                                    <tr>
+                                      <td className="w-19 bg-palegreen text-left">Tier Recognition</td>
+                                      <td className="w-9 copper large p-0">●</td>
+                                      <td className="w-9 bronze large p-0">●</td>
+                                      <td className="w-9 silver large p-0">●</td>
+                                      <td className="w-9 gold large p-0">●</td>
+                                      <td className="w-9 platinum large p-0">●</td>
+                                      <td className="w-9 sapphire large p-0">●</td>
+                                      <td className="w-9 ruby large p-0">●</td>
+                                      <td className="w-9 diamond large p-0">●</td>
+                                      <td className="w-9 emerald large p-0">●</td>
+                                    </tr>
+                                    <tr>
+                                    <td className="bg-palegreen text-left">Carbon Offsetting</td>
+                                      <td className="w-9 copper large p-0">●</td>
+                                      <td className="w-9 bronze large p-0">●</td>
+                                      <td className="w-9 silver large p-0">●</td>
+                                      <td className="w-9 gold large p-0">●</td>
+                                      <td className="w-9 platinum large p-0">●</td>
+                                      <td className="w-9 sapphire large p-0">●</td>
+                                      <td className="w-9 ruby large p-0">●</td>
+                                      <td className="w-9 diamond large p-0">●</td>
+                                      <td className="w-9 emerald large p-0">●</td>
+                                    </tr>
+                                    <tr>
+                                      <td className="bg-palegreen text-left">Net-Zero Carbon Calculator</td>
+                                      <td className="w-9 copper large p-0">●</td>
+                                      <td className="w-9 bronze large p-0">●</td>
+                                      <td className="w-9 silver large p-0">●</td>
+                                      <td className="w-9 gold large p-0">●</td>
+                                      <td className="w-9 platinum large p-0">●</td>
+                                      <td className="w-9 sapphire large p-0">●</td>
+                                      <td className="w-9 ruby large p-0">●</td>
+                                      <td className="w-9 diamond large p-0">●</td>
+                                      <td className="w-9 emerald large p-0">●</td>
+                                    </tr>
+                                    <tr>
+                                      <td className="bg-palegreen text-left">Net-Negative Carbon Calculator</td>
+                                      <td className="w-9 copper large p-0">●</td>
+                                      <td className="w-9 bronze large p-0">●</td>
+                                      <td className="w-9 silver large p-0">●</td>
+                                      <td className="w-9 gold large p-0">●</td>
+                                      <td className="w-9 platinum large p-0">●</td>
+                                      <td className="w-9 sapphire large p-0">●</td>
+                                      <td className="w-9 ruby large p-0">●</td>
+                                      <td className="w-9 diamond large p-0">●</td>
+                                      <td className="w-9 emerald large p-0">●</td>
+                                    </tr>
+                                    <tr>
+                                      <td className="bg-palegreen text-left">Forest Calculator</td>
+                                      <td className="w-9 copper large p-0">●</td>
+                                      <td className="w-9 bronze large p-0">●</td>
+                                      <td className="w-9 silver large p-0">●</td>
+                                      <td className="w-9 gold large p-0">●</td>
+                                      <td className="w-9 platinum large p-0">●</td>
+                                      <td className="w-9 sapphire large p-0">●</td>
+                                      <td className="w-9 ruby large p-0">●</td>
+                                      <td className="w-9 diamond large p-0">●</td>
+                                      <td className="w-9 emerald large p-0">●</td>
+                                    </tr>
+                                    <tr>
+                                      <td className="bg-palegreen text-left">Access to daily CFT Bulletin</td>
+                                      <td className="w-9 copper large p-0">●</td>
+                                      <td className="w-9 bronze large p-0">●</td>
+                                      <td className="w-9 silver large p-0">●</td>
+                                      <td className="w-9 gold large p-0">●</td>
+                                      <td className="w-9 platinum large p-0">●</td>
+                                      <td className="w-9 sapphire large p-0">●</td>
+                                      <td className="w-9 ruby large p-0">●</td>
+                                      <td className="w-9 diamond large p-0">●</td>
+                                      <td className="w-9 emerald large p-0">●</td>
+                                    </tr>
+                                    <tr>
+                                      <td className="bg-palegreen text-left">Official Shareable Digital Signage</td>
+                                      <td className="w-9 copper large p-0">●</td>
+                                      <td className="w-9 bronze large p-0">●</td>
+                                      <td className="w-9 silver large p-0">●</td>
+                                      <td className="w-9 gold large p-0">●</td>
+                                      <td className="w-9 platinum large p-0">●</td>
+                                      <td className="w-9 sapphire large p-0">●</td>
+                                      <td className="w-9 ruby large p-0">●</td>
+                                      <td className="w-9 diamond large p-0">●</td>
+                                      <td className="w-9 emerald large p-0">●</td>
+                                    </tr>      
+                                  </tbody>
+                                  </Table> 
+                                </div>
+                              </Accordion.Collapse>
+                            </Card>
+
+                            {/* Governance & Reporting */}
+                            <Card className="no-border hard-edge mb-3">
+                              <Accordion.Toggle as={Card.Header} eventKey="1" className="bg-black text-white text-small hard-edge p-2">
+                                <p className="benefits-grid">Governance & Reporting</p>
+                              </Accordion.Toggle>
+                              <Accordion.Collapse eventKey="1" className="bg-offwhite text-small hard-edge p-0">
+                                <div>
+                                <Table hover responsive size="sm" className="text-small text-center mb-0">
+                                  <tbody>
+                                    <tr>
+                                      <td className="w-19 bg-palegreen text-left">Forest Insurance</td>
+                                      <td className="w-9 copper large p-0">●</td>
+                                      <td className="w-9 bronze large p-0">●</td>
+                                      <td className="w-9 silver large p-0">●</td>
+                                      <td className="w-9 gold large p-0">●</td>
+                                      <td className="w-9 platinum large p-0">●</td>
+                                      <td className="w-9 sapphire large p-0">●</td>
+                                      <td className="w-9 ruby large p-0">●</td>
+                                      <td className="w-9 diamond large p-0">●</td>
+                                      <td className="w-9 emerald large p-0">●</td>
+                                    </tr>
+                                    <tr>
+                                    <td className="bg-palegreen text-left">Custom Smart Forest Intelligence Dashboard</td>
+                                      <td className="w-9 copper large p-0">●</td>
+                                      <td className="w-9 bronze large p-0">●</td>
+                                      <td className="w-9 silver large p-0">●</td>
+                                      <td className="w-9 gold large p-0">●</td>
+                                      <td className="w-9 platinum large p-0">●</td>
+                                      <td className="w-9 sapphire large p-0">●</td>
+                                      <td className="w-9 ruby large p-0">●</td>
+                                      <td className="w-9 diamond large p-0">●</td>
+                                      <td className="w-9 emerald large p-0">●</td>
+                                    </tr>
+                                    <tr>
+                                      <td className="bg-palegreen text-left">Forestcaster™</td>
+                                      <td className="w-9 copper large p-0">●</td>
+                                      <td className="w-9 bronze large p-0">●</td>
+                                      <td className="w-9 silver large p-0">●</td>
+                                      <td className="w-9 gold large p-0">●</td>
+                                      <td className="w-9 platinum large p-0">●</td>
+                                      <td className="w-9 sapphire large p-0">●</td>
+                                      <td className="w-9 ruby large p-0">●</td>
+                                      <td className="w-9 diamond large p-0">●</td>
+                                      <td className="w-9 emerald large p-0">●</td>
+                                    </tr>
+                                    <tr>
+                                      <td className="bg-palegreen text-left">Custom Online Portal</td>
+                                      <td className="w-9 copper large p-0">●</td>
+                                      <td className="w-9 bronze large p-0">●</td>
+                                      <td className="w-9 silver large p-0">●</td>
+                                      <td className="w-9 gold large p-0">●</td>
+                                      <td className="w-9 platinum large p-0">●</td>
+                                      <td className="w-9 sapphire large p-0">●</td>
+                                      <td className="w-9 ruby large p-0">●</td>
+                                      <td className="w-9 diamond large p-0">●</td>
+                                      <td className="w-9 emerald large p-0">●</td>
+                                    </tr>
+                                    <tr>
+                                      <td className="bg-palegreen text-left">Forever No Clear-Cut Guarantee</td>
+                                      <td className="w-9 copper large p-0">●</td>
+                                      <td className="w-9 bronze large p-0">●</td>
+                                      <td className="w-9 silver large p-0">●</td>
+                                      <td className="w-9 gold large p-0">●</td>
+                                      <td className="w-9 platinum large p-0">●</td>
+                                      <td className="w-9 sapphire large p-0">●</td>
+                                      <td className="w-9 ruby large p-0">●</td>
+                                      <td className="w-9 diamond large p-0">●</td>
+                                      <td className="w-9 emerald large p-0">●</td>
+                                    </tr>
+                                    <tr>
+                                      <td className="bg-palegreen text-left">Custom Annual Audit</td>
+                                      <td className="w-9 copper large p-0"></td>
+                                      <td className="w-9 bronze large p-0">●</td>
+                                      <td className="w-9 silver large p-0">●</td>
+                                      <td className="w-9 gold large p-0">●</td>
+                                      <td className="w-9 platinum large p-0">●</td>
+                                      <td className="w-9 sapphire large p-0">●</td>
+                                      <td className="w-9 ruby large p-0">●</td>
+                                      <td className="w-9 diamond large p-0">●</td>
+                                      <td className="w-9 emerald large p-0">●</td>
+                                    </tr>   
+                                  </tbody>
+                                  </Table> 
+                                </div>
+                              </Accordion.Collapse>
+                            </Card>
+
+                            
+                          </Accordion>
+
                       </div>
-                      <div className="px-4 px-md-5 pt-4 pb-3 bg-offwhite">
-                        <h4 className="h5 text-left text-green medium">{editingdata.corpGraphicPackageHeader}</h4>
-                        <ul className="text-grey dropdown-text checkMark px-1 mx-3">
-                          <li className="py-1">{editingdata.corpGraphicPackage1}</li>
-                          <li className="py-1">{editingdata.corpGraphicPackage2}</li>
-                          <li className="py-1">{editingdata.corpGraphicPackage3}</li>
-                          <li className="py-1">{editingdata.corpGraphicPackage4}</li>
-                          <li className="py-1">{editingdata.corpGraphicPackage5}</li>
-                          <li className="py-1">{editingdata.corpGraphicPackage6}</li>
-                          <li className="py-1">{editingdata.corpGraphicPackage7}</li>
-                          <li className="py-1">{editingdata.corpGraphicPackage8}</li>
-                          <li className="py-1">{editingdata.corpGraphicPackage9}</li>
-                        </ul>
-                      </div>
-                    </Col>
-                    <Col className="col-12 bg-mildgreen text-white text-left p-4 p-md-5 roundedBoxBottom">
-                      <h5 className="h6 bold ">{editingdata.graphicInfoHeader}</h5>
-                      <p>{editingdata.graphicInfo1}</p>
-                      <p>{editingdata.graphicInfo2}</p>
-                      <p className="mb-2">{editingdata.graphicInfo3}</p>
-                      <p className="ftu-par mb-2">{editingdata.graphicInfo4}</p>
-                      <p className="ftu-par">{editingdata.graphicInfo5}</p>
-                      <ul className="ftu-list">
-                        <li>{editingdata.graphicInfo6}</li>
-                        <li>{editingdata.graphicInfo7}</li>
-                        <li>{editingdata.graphicInfo8}</li>
-                      </ul>
-                      <p className="ftu-par">{editingdata.graphicInfo9}</p>
-                    </Col>
+                    
                   </Row>
                 </Container>
+
+                
+            
               </Col>
             </Row>
           </Fade>
