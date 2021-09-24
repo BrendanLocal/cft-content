@@ -1151,10 +1151,17 @@ div>p {
   color: #fff;
 }
 
-@media screen and (max-width: 1300px){
+.scroll:after {
+  content: url("/navarrowgrey.svg");
+  margin-left: 5px;
+  display: inline-block;
+  height: 0px!important;
+}
+
+@media screen and (max-width: 1199px){
 
   Table {
-    width: 1000px!important;
+    width: 950px!important;
   }
 
 }

@@ -1064,10 +1064,10 @@ export default function Build({ file }) {
 
                       <div className="p-3 p-md-5 bg-offwhite">
                         
-                          <Table hover responsive size="sm" className="text-small text-center">
+                          <Table hover responsive size="sm" className="text-small text-center mb-2">
                             <thead>
                               <tr>
-                                <th className="w-19"></th>
+                                <th className="w-19 no-border"></th>
                                 <th className="x-large copper no-border pb-2 w-9">●</th>
                                 <th className="x-large bronze no-border pb-2 w-9">●</th>
                                 <th className="x-large silver no-border pb-2 w-9">●</th>
@@ -1118,17 +1118,18 @@ export default function Build({ file }) {
                               </tr>
                             </tbody>
                           </Table>
+                          <p className="text-grey x-small d-xl-none scroll mb-3 ms-1">SCROLL</p>
 
                           <Accordion>
 
                             {/* Core Benefits */}
-                            <Card className="no-border hard-edge mb-3">
+                            <Card className="no-border hard-edge mb-2">
                               <Accordion.Toggle as={Card.Header} eventKey="0" className="bg-black text-white text-small hard-edge p-2">
                                 <p className="benefits-grid">Core Benefits</p>
                               </Accordion.Toggle>
                               <Accordion.Collapse eventKey="0" className="bg-offwhite text-small hard-edge p-0">
                                 <div>
-                                <Table hover responsive size="sm" className="text-small text-center mb-0">
+                                <Table hover responsive size="sm" className="text-small text-center mb-2">
                                   <tbody>
                                     <tr>
                                       <td className="w-19 bg-palegreen text-left">Tier Recognition</td>
@@ -1215,19 +1216,21 @@ export default function Build({ file }) {
                                       <td className="w-9 emerald large p-0">●</td>
                                     </tr>      
                                   </tbody>
-                                  </Table> 
+                                  
+                                  </Table>
+                                  <p className="text-grey x-small d-xl-none scroll mb-3 ms-1">SCROLL</p>                           
                                 </div>
                               </Accordion.Collapse>
                             </Card>
 
                             {/* Governance & Reporting */}
-                            <Card className="no-border hard-edge mb-3">
+                            <Card className="no-border hard-edge mb-2">
                               <Accordion.Toggle as={Card.Header} eventKey="1" className="bg-black text-white text-small hard-edge p-2">
                                 <p className="benefits-grid">Governance & Reporting</p>
                               </Accordion.Toggle>
                               <Accordion.Collapse eventKey="1" className="bg-offwhite text-small hard-edge p-0">
                                 <div>
-                                <Table hover responsive size="sm" className="text-small text-center mb-0">
+                                <Table hover responsive size="sm" className="text-small text-center mb-2">
                                   <tbody>
                                     <tr>
                                       <td className="w-19 bg-palegreen text-left">Forest Insurance</td>
@@ -1302,7 +1305,8 @@ export default function Build({ file }) {
                                       <td className="w-9 emerald large p-0">●</td>
                                     </tr>   
                                   </tbody>
-                                  </Table> 
+                                  </Table>
+                                  <p className="text-grey x-small d-xl-none scroll mb-3 ms-1">SCROLL</p> 
                                 </div>
                               </Accordion.Collapse>
                             </Card>
