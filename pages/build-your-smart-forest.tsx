@@ -1038,10 +1038,115 @@ export default function Build({ file }) {
 
           <Fade bottom>
             <Row className="justify-content-center py-3 mt-5">
-              <Col className="col-11 col-lg-10 px-lg-4 px-xl-0">
-                <h2 className="text-orange tight-drop-light mb-4 bold px-2 text-center">{editingdata.corp_header2}</h2>
+              <Col className="col-11 col-md-10 col-lg-9">{/* <Col className="col-11 col-lg-10 px-lg-4 px-xl-0"> */}
+                <h2 className="text-orange tight-drop-light mb-4 bold text-center">{editingdata.corp_header2}</h2>
+
+                {/* FTU units */}
+                {/* Desktop */}
+
+                <Container className="d-none d-lg-block">
+                  <Row className="roundedBox card-drop-heavy">
+                    <Col className="col-12 col-lg-8 col-xl-9 px-0 bg-offwhite roundedBoxLeft">
+                      <div className="p-5 pb-4 bg-brown roundedBoxTopLeft">
+                        <Row className="justify-content-center align-items-center mb-3">
+                          <Col className="col-lg-4 col-xl-3 d-flex">
+                            <img src="../../cft-icon-white.svg" alt="CFT logo in white"/>
+                          </Col>
+                          <Col className="col-lg-8 col-xl-9 d-flex">
+                            <h3 className="text-left x-large mt-3 text-white bold d-none d-xl-block">{editingdata.corpGraphicHeader}</h3>
+                            <h3 className="text-left lead mt-3 text-white bold d-xl-none">{editingdata.corpGraphicHeader}</h3>
+                          </Col>
+                        </Row>
+                        <p className="text-white text-left">{editingdata.corpGraphicDesc}</p>
+                      </div>
+                      <div className="p-5 py-4 bg-offwhite roundedBoxBottomLeft">
+                        <h4 className="h5 text-left text-green medium">{editingdata.corpGraphicPackageHeader}</h4>
+                        <ul className="text-grey dropdown-text checkMark px-1 mx-3">
+                          <li className="py-1">{editingdata.corpGraphicPackage1}</li>
+                          <li className="py-1">{editingdata.corpGraphicPackage2}</li>
+                          <li className="py-1">{editingdata.corpGraphicPackage3}</li>
+                          <li className="py-1">{editingdata.corpGraphicPackage4}</li>
+                          <li className="py-1">{editingdata.corpGraphicPackage5}</li>
+                          <li className="py-1">{editingdata.corpGraphicPackage6}</li>
+                          <li className="py-1">{editingdata.corpGraphicPackage7}</li>
+                          <li className="py-1">{editingdata.corpGraphicPackage8}</li>
+                          <li className="py-1">{editingdata.corpGraphicPackage9}</li>
+                        </ul>
+                      </div>
+                    </Col>
+                    <Col className="col-lg-4 col-xl-3 bg-mildgreen text-white text-left p-4 roundedBoxRight">
+                      <h5 className="6 bold mt-lg-5 mt-xl-4">{editingdata.graphicInfoHeader}</h5>
+                      <p>{editingdata.graphicInfo1}</p>
+                      <p>{editingdata.graphicInfo2}</p>
+                      <p className="mb-2">{editingdata.graphicInfo3}</p>
+                      <p className="ftu-par mb-2">{editingdata.graphicInfo4}</p>
+                      <p className="ftu-par">{editingdata.graphicInfo5}</p>
+                      <ul className="ftu-list">
+                        <li>{editingdata.graphicInfo6}</li>
+                        <li>{editingdata.graphicInfo7}</li>
+                        <li>{editingdata.graphicInfo8}</li>
+                      </ul>
+                      <p className="ftu-par">{editingdata.graphicInfo9}</p>
+                    </Col>
+                  </Row>
+                </Container>
+
+                {/* Mobile */}
+                <Container className="d-lg-none">
+                  <Row className="roundedBox card-drop-heavy">
+                    <Col className="col-12 px-0">
+                      <div className="p-4 p-md-5 pb-4 bg-brown roundedBoxTop">
+                        
+                        <Row className="justify-content-center align-items-center mb-2 mb-md-3">
+                          <Col className="col-12 col-md-3 d-flex">
+                            <img src="../../cft-icon-white.svg" alt="CFT logo in white"/>
+                          </Col>
+                          <Col className="col-12 col-md-9 col-xl-9 d-flex">
+                            <p className="text-left lead text-white bold d-none d-md-block">
+                            {editingdata.corpGraphicHeader}
+                            </p>
+                            <h3 className="text-left text-white mt-3 bold d-md-none">
+                            {editingdata.corpGraphicHeader}
+                            </h3>
+                          </Col>
+                        </Row>
+                        <p className="text-white text-left">
+                        {editingdata.corpGraphicDesc}
+                        </p>
+                      </div>
+                      <div className="px-4 px-md-5 pt-4 pb-3 bg-offwhite">
+                        <h4 className="h5 text-left text-green medium">{editingdata.corpGraphicPackageHeader}</h4>
+                        <ul className="text-grey dropdown-text checkMark px-1 mx-3">
+                          <li className="py-1">{editingdata.corpGraphicPackage1}</li>
+                          <li className="py-1">{editingdata.corpGraphicPackage2}</li>
+                          <li className="py-1">{editingdata.corpGraphicPackage3}</li>
+                          <li className="py-1">{editingdata.corpGraphicPackage4}</li>
+                          <li className="py-1">{editingdata.corpGraphicPackage5}</li>
+                          <li className="py-1">{editingdata.corpGraphicPackage6}</li>
+                          <li className="py-1">{editingdata.corpGraphicPackage7}</li>
+                          <li className="py-1">{editingdata.corpGraphicPackage8}</li>
+                          <li className="py-1">{editingdata.corpGraphicPackage9}</li>
+                        </ul>
+                      </div>
+                    </Col>
+                    <Col className="col-12 bg-mildgreen text-white text-left p-4 p-md-5 roundedBoxBottom">
+                      <h5 className="h6 bold ">{editingdata.graphicInfoHeader}</h5>
+                      <p>{editingdata.graphicInfo1}</p>
+                      <p>{editingdata.graphicInfo2}</p>
+                      <p className="mb-2">{editingdata.graphicInfo3}</p>
+                      <p className="ftu-par mb-2">{editingdata.graphicInfo4}</p>
+                      <p className="ftu-par">{editingdata.graphicInfo5}</p>
+                      <ul className="ftu-list">
+                        <li>{editingdata.graphicInfo6}</li>
+                        <li>{editingdata.graphicInfo7}</li>
+                        <li>{editingdata.graphicInfo8}</li>
+                      </ul>
+                      <p className="ftu-par">{editingdata.graphicInfo9}</p>
+                    </Col>
+                  </Row>
+                </Container>
                 
-                {/* BENEFITS CHART */}
+                {/* BENEFITS CHART 
 
                 <Container className="">
                   <Row className="roundedBox bg-brown card-drop-heavy">
@@ -1122,7 +1227,7 @@ export default function Build({ file }) {
 
                           <Accordion>
 
-                            {/* Core Benefits */}
+                            {/* Core Benefits 
                             <Card className="no-border hard-edge mb-2">
                               <Accordion.Toggle as={Card.Header} eventKey="0" className="bg-black text-white text-small hard-edge p-2">
                                 <p className="benefits-grid">Core Benefits</p>
@@ -1223,7 +1328,7 @@ export default function Build({ file }) {
                               </Accordion.Collapse>
                             </Card>
 
-                            {/* Governance & Reporting */}
+                            {/* Governance & Reporting 
                             <Card className="no-border hard-edge mb-2">
                               <Accordion.Toggle as={Card.Header} eventKey="1" className="bg-black text-white text-small hard-edge p-2">
                                 <p className="benefits-grid">Governance & Reporting</p>
@@ -1309,18 +1414,13 @@ export default function Build({ file }) {
                                   <p className="text-grey x-small d-xl-none scroll mb-3 ms-1">SCROLL</p> 
                                 </div>
                               </Accordion.Collapse>
-                            </Card>
-
-                            
+                            </Card>                            
                           </Accordion>
-
-                      </div>
-                    
+                      </div>      
                   </Row>
                 </Container>
+                */}
 
-                
-            
               </Col>
             </Row>
           </Fade>

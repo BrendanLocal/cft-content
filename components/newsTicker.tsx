@@ -14,58 +14,38 @@ const newsItems = [
   },
   {
     key: "newsItem2",
-    label: "Announcing IMI as a Smart Forest Builder",
-    path: "https://youtu.be/eCMCqScS0XM"
+    label: "How Smart Forests Grow towards Net-Zero",
+    path: "/home"
   },
   {
     key: "newsItem3",
-    label: "When the Climate Crisis Becomes Unignorable",
+    label: "Will Canada be ready when extreme, deadly heat returns?",
     path: "https://www.theatlantic.com/science/archive/2021/09/summer-climate-disaster/620004/?utm_source=ActiveCampaign&utm_medium=email&utm_content=Top+news%3A&utm_campaign=ATF+Daily"
   },
   {
     key: "newsItem4",
-    label: "Toronto is designed for a climate that doesn't exist",
-    path: "https://www.cbc.ca/news/canada/toronto/climate-change-toronto-adaptation-1.6138067"
+    label: "Corporate Canada’s Path to Net-Zero",
+    path: "/build-your-smart-forest#corporate"
   },
   {
     key: "newsItem5",
-    label: "Calculate Your Carbon Footprint",
-    path: "/carbon-calculator"
+    label: "Children today will live through three times more climate disasters",
+    path: "https://www.masslive.com/news/2021/09/children-today-will-live-through-three-times-more-climate-disasters-than-their-grandparents-study-suggests.html"
   },
   {
     key: "newsItem6",
-    label: "Global warming spares no country says UN climate chief",
-    path: "https://www.nationalobserver.com/2021/09/07/news/un-climate-chief-country-global-warming"
+    label: "Net-zero isn’t enough. We need to get to net negative.",
+    path: "https://fortune.com/2021/09/23/net-zero-emissions-carbon-removal-net-negative-cop26/"
   },
   {
     key: "newsItem7",
-    label: "Why climate change matters in Election 2021",
-    path: "https://globalnews.ca/news/8140651/wildfires-drought-and-record-heat-why-climate-change-matters-in-election-2021/"
+    label: "The new Net Zero Financial Service Providers Alliance",
+    path: "https://www.netzeroserviceproviders.com/"
   },
   {
     key: "newsItem8",
-    label: "Sequester carbon emissions - grow to net-zero",
-    path: "/smart-forest-calculator"
-  },
-  {
-    key: "newsItem9",
-    label: "Climate change: Animals shapeshifting to stay cool",
-    path: "https://www.bbc.com/news/newsbeat-58487050"
-  },
-  {
-    key: "newsItem10",
-    label: "Oil patch workers believe Canada needs to pivot to a net-zero economy",
-    path: "https://www.corporateknights.com/energy/just-transition/"
-  },
-  {
-    key: "newsItem11",
-    label: "Climate change puts a source of Arctic life in imminent danger",
-    path: "https://www.cbc.ca/news/canada/north/north-water-polynya-under-threat-1.6140307"
-  },
-  {
-    key: "newsItem12",
-    label: "Build a Smart Forest",
-    path: "/build-your-smart-forest"
+    label: "What is your Carbon Footprint?",
+    path: "/personal-calculator"
   }
 ];
 
