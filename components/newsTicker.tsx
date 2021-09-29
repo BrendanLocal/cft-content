@@ -15,7 +15,7 @@ const newsItems = [
   {
     key: "newsItem2",
     label: "How Smart Forests Grow towards Net-Zero",
-    path: "/home"
+    path: "/carbon-calculator"
   },
   {
     key: "newsItem3",
