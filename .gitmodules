@@ -1,0 +1,3 @@
+[submodule "contentrepo"]
+	path = contentrepo
+	url = https://github.com/BrendanLocal/nextjs-vercel-cft
