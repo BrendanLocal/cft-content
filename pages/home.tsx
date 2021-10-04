@@ -125,7 +125,7 @@ export default function Home({ file, href, children}) {
     <div className={styles.homeParallax}>
       <Header/>
       <Head>
-        <title>{editingdata.title}</title>
+        <title>{editingdata[Lang()].title}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#054218"></meta>
         <meta name="keywords" content="CFT, Canada's Forest Trust, Smart Forest, sustainable investing, Corporate Canada, Highschools in Canada, Communities in Canada, Legacies In Canada, carbon offset, ESG Canada,  Environment-Society-Governance, plant a tree, tree planting Canada, socially responsible investing, foresters in Canada, climate change mitigation, global warming Canada, Climate Change Solution, Carbon sink canada, Forestry Canada, managing climate risks and opportunities, eco-schools canada, school forest, school fundriaser, student opportunities in canada, land canada, invest canada, what is climate-smart forestry, reforest Canada, reverse climate change, environmentalists in Canada, Greenhouse Gas Emissions Canada, carbon sequestration Canada, carbon emissions in Canada, acres, reforest millions of acres, Carbon Sink, Carbon Bathtub"></meta>
@@ -139,7 +139,7 @@ export default function Home({ file, href, children}) {
         <Modal.Body>
           <Row className="justify-content-center align-items-center mb-0">
             <Col>
-              <h3 className="text-green smallCaps text-center">{editingdata.modal1_header}</h3>
+              <h3 className="text-green smallCaps text-center">{editingdata[Lang()].modal1_header}</h3>
             </Col>
           </Row>
           <Row className="justify-content-center align-items-center">
@@ -149,19 +149,19 @@ export default function Home({ file, href, children}) {
           </Row>
         </Modal.Body>
         <Modal.Footer className="p-0">
-          <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleClose}>{editingdata.modal1_close}</Button>
+          <Button className="modal-btn mt-2 me-3 p-0" variant="text-btn" onClick={handleClose}>{editingdata[Lang()].modal1_close}</Button>
         </Modal.Footer>
       </Modal>
 
       <Row className="justify-content-left p-0 m-0 d-none d-lg-block d-xl-block">
         <Col className="col-lg-2 pe-lg-0 p-0 m-0 left-sidenav">
-          <ReactMarkdown className="text-white m-2 bold op-6 d-none">{editingdata.home}</ReactMarkdown>
+          <ReactMarkdown className="text-white m-2 bold op-6 d-none">{editingdata[Lang()].home}</ReactMarkdown>
           <ul className="mt-5">
             <li className="p-0" data-dest="#intro">
-              <a href="#intro" className="text-white bold no-underline">{editingdata.menu1}</a>
+              <a href="#intro" className="text-white bold no-underline">{editingdata[Lang()].menu1}</a>
             </li>
             <li className="p-0" data-dest="#you">
-              <a href="#you" className="text-white bold no-underline">{editingdata.menu5}</a>
+              <a href="#you" className="text-white bold no-underline">{editingdata[Lang()].menu5}</a>
             </li>
           </ul>
         </Col>
@@ -180,39 +180,39 @@ export default function Home({ file, href, children}) {
             <Container id="intro" fluid className="v-full d-flex py-5 flex-column z-0 page-section">
               <Row className="justify-content-center align-items-center py-6">
                 <Col className="col-11 col-lg-8 col-xl-6 py-5 p-md-1">
-                  <h1 className="text-center text-white drop hero mt-5 mb-4"><ReactMarkdown>{editingdata.part1_header1}</ReactMarkdown></h1>
-                  <h2 className="h1 text-center mb-5 pb-5 text-white hero bold"><ReactMarkdown>{editingdata.part1_header2}</ReactMarkdown></h2>
+                  <h1 className="text-center text-white drop hero mt-5 mb-4"><ReactMarkdown>{editingdata[Lang()].part1_header1}</ReactMarkdown></h1>
+                  <h2 className="h1 text-center mb-5 pb-5 text-white hero bold"><ReactMarkdown>{editingdata[Lang()].part1_header2}</ReactMarkdown></h2>
                 </Col>
               </Row>
               <Fade bottom>
                 <Row className="justify-content-center pb-4">
                   <Col className="col-10 col-md-6 col-lg-8 pe-lg-0 p-0">
-                    <h2 className="intro-par text-center text-white bold pb-0"><ReactMarkdown>{editingdata.part1_header4}</ReactMarkdown></h2>
+                    <h2 className="intro-par text-center text-white bold pb-0"><ReactMarkdown>{editingdata[Lang()].part1_header4}</ReactMarkdown></h2>
                   </Col>
                 </Row>
                 <Row className="justify-content-center pb-5 align-items-stretch mb-5 mb-sm-0 px-lg-3 mx-lg-3 px-xl-5 mx-xl-5">
                 <Col className="col-10 col-md-8 col-lg-5 col-xl-3 mb-4">
                   <div className="roundedBox card intro-card no-border bg-white mx-1 p-4 h-100">
-                  <ReactMarkdown className="text-grey m-2">{editingdata.part1_box1para}</ReactMarkdown>
+                  <ReactMarkdown className="text-grey m-2">{editingdata[Lang()].part1_box1para}</ReactMarkdown>
                     </div>
                   </Col>
                   <Col className="col-10 col-md-8 col-lg-5 col-xl-3 mb-4">
                     <div className="roundedBox card intro-card no-border bg-white mx-1 p-4 h-100">
-                    <ReactMarkdown className="text-grey m-2">{editingdata.part1_box2para}</ReactMarkdown>
+                    <ReactMarkdown className="text-grey m-2">{editingdata[Lang()].part1_box2para}</ReactMarkdown>
                     </div>
                   </Col>
                   <Col className="col-10 col-md-8 col-lg-5 col-xl-3 mb-4">
                     <div className="roundedBox card intro-card no-border bg-white mx-1 p-4 h-100">
-                    <ReactMarkdown className="text-grey m-2">{editingdata.part1_box3para}</ReactMarkdown>
+                    <ReactMarkdown className="text-grey m-2">{editingdata[Lang()].part1_box3para}</ReactMarkdown>
                     </div>
                   </Col>
                   <Col className="col-10 col-md-8 col-lg-5 col-xl-3 mb-4">
                     <div className="roundedBox card intro-card no-border bg-white mx-1 p-4 h-100">
-                    <ReactMarkdown className="text-grey m-2">{editingdata.part1_box4para}</ReactMarkdown>
+                    <ReactMarkdown className="text-grey m-2">{editingdata[Lang()].part1_box4para}</ReactMarkdown>
                     </div>
                   </Col>
                   <Col className="text-center col-10 col-lg-12 pb-5 mt-4">
-                    <a className="btn btn-xl btn-green intro-cta" onClick={handleShow}>{editingdata.part1_button1}</a>
+                    <a className="btn btn-xl btn-green intro-cta" onClick={handleShow}>{editingdata[Lang()].part1_button1}</a>
                   </Col>
                 </Row>
               </Fade>
@@ -224,63 +224,63 @@ export default function Home({ file, href, children}) {
           <Fade bottom>
             <Row  className="align-items-center justify-content-center pt-5 mt-0">
               <Col className="col-10 col-lg-6 pe-lg-0 mb-2 pt-0 mt-0">
-                <h2 className="text-center text-orange bold pt-0 mt-0"><ReactMarkdown>{editingdata.part5_header1}</ReactMarkdown></h2>
+                <h2 className="text-center text-orange bold pt-0 mt-0"><ReactMarkdown>{editingdata[Lang()].part5_header1}</ReactMarkdown></h2>
               </Col>
             </Row>
             <Row className="justify-content-center align-items-stretch pb-5">
               <Col className="col-10 col-md-8 pe-lg-0 m-3">
                 <div className="roundedBox card bg-mildgreen no-border py-3 px-3 d-flex flex-column drop action-card">
                   <Link href="/build-your-smart-forest">
-                    <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button1}</a>
+                    <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata[Lang()].part5_button1}</a>
                   </Link>
                 </div>
              </Col>
               <Col className="col-10 col-md-8 pe-lg-0 m-3">
                 <div className="roundedBox card bg-mildgreen no-border py-3 px-3 d-flex flex-column drop action-card">
                   <Link href="/build-your-smart-forest#corporate">
-                    <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button2}</a>
+                    <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata[Lang()].part5_button2}</a>
                   </Link>
                 </div>
               </Col>
               <Col className="col-10 col-md-8 pe-lg-0 m-3">
                 <div className="roundedBox card  bg-mildgreen  no-border py-3 px-5 px-md-3 d-flex flex-column drop action-card">
                   <Link href="/build-your-smart-forest#school">
-                    <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button3}</a>
+                    <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata[Lang()].part5_button3}</a>
                   </Link>
                 </div>
               </Col>
               <Col className="col-10 col-md-8 pe-lg-0 m-3">
                 <div className="roundedBox card bg-mildgreen no-border py-3 px-3 d-flex flex-column drop action-card">
                   <Link href="/build-your-smart-forest#legacy" >
-                    <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button4}</a>
+                    <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata[Lang()].part5_button4}</a>
                   </Link>
                 </div>
               </Col>
               <Col className="col-10 col-md-8 pe-lg-0 m-3">
                 <div className="roundedBox card bg-mildgreen no-border py-3 px-3 d-flex flex-column drop action-card">
                   <Link href="/build-your-smart-forest#communal" >
-                    <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop 1">{editingdata.part5_button5}</a>
+                    <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop 1">{editingdata[Lang()].part5_button5}</a>
                   </Link>
                 </div>
               </Col>
               <Col className="col-10 col-md-8 pe-lg-0 m-3 d-none">
                 <div className="roundedBox card bg-mildgreen no-border py-3 px-3 d-flex flex-column drop action-card">
                   <Link href="/build-your-smart-forest#school">
-                    <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button6}</a>
+                    <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata[Lang()].part5_button6}</a>
                   </Link>
                 </div>
               </Col>
               <Col className="col-10 col-md-8 pe-lg-0 m-3">
                 <div className="roundedBox card bg-mildgreen no-border py-3 px-3 d-flex flex-column drop action-card">
                   <Link href="/carbon-calculator">
-                    <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button7}</a>
+                    <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata[Lang()].part5_button7}</a>
                   </Link>
                 </div>
               </Col>
               <Col className="col-10 col-md-8 pe-lg-0 m-3">
                 <div className="roundedBox card bg-mildgreen no-border py-3 px-3 d-flex flex-column drop action-card">
                   <Link href="/inside-cft">
-                    <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata.part5_button8}</a>
+                    <a className="forest-choice btn btn-text text-center text-white no-underline tight-drop">{editingdata[Lang()].part5_button8}</a>
                   </Link>
                 </div>
               </Col>
