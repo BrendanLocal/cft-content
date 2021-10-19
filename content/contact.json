@@ -1,4 +1,5 @@
-{
+{ "en": {
+
   "title":"Contact Canada's Forest Trust",
   "header": "Contact Us",
   "headerPar": "Interested in buying and building a Smart Forest with Canada's Forest Trust? Please complete the form so that we can plan your path to net-zero carbon emissions.",
@@ -17,4 +18,27 @@
   "contactSuccess": "Thank you for contacting us!",
   "contactSuccessPar": "A member of our team will reach out to you shortly. In the meantime, please watch this video from our founder:",
   "contactSuccessFollow": "Follow us on social media:"
+
+  }, "fr": {
+
+    "title":"Communiquer avec nous",
+  "header": "Communiquer avec nous",
+  "headerPar": "Interested in buying and building a Smart Forest with Canada's Forest Trust? Please complete the form so that we can plan your path to net-zero carbon emissions.",
+
+  "name":"Votre nom ",
+  "email":"Votre courriel",
+  "intHeader":"Votre ou vos intérêts",
+  "intCorp":"Forêts d’entreprise",
+  "intSchool":"Forêts scolaires",
+  "intLeg":"Forêts patrimoniales",
+  "intComm":"Forêts communautaires",
+  "messageHeader":"Votre message",
+  "messagePlaceholder":"Parlez-nous de vous ou de l’organisation, de l’école ou de la collectivité que vous représentez, et de la différence que vous souhaitez faire. ",
+  "submit":"Envoyer",
+  
+  "contactSuccess": "Merci d’avoir communiqué avec nous.",
+  "contactSuccessPar": "Un membre de notre équipe communiquera avec vous sous peu. Entre-temps, nous vous invitons à regarder cette vidéo de notre fondateur.",
+  "contactSuccessFollow": "Suivez-nous sur les réseaux sociaux"
+
+}
 }

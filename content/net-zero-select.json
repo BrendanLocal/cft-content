@@ -1,0 +1,25 @@
+{ "en":
+    {
+    "pageTitle":"Canada's Forest Trust Net-Zero Calculator",
+    "header1":"Select a Net-zero Calculator",
+    "box1Header":"Corporate",
+    "box1Para":"Calculate how many acres your corporation must invest in to reach a net-zero emissions target",
+    "box2Header":"School",
+    "box2Para":"Calculate how many acres your school must invest in to reach a net-zero emissions target",
+    "box3Header":"Personal",
+    "box3Para":"Calculate how many acres you must invest in to reach a net-zero emissions target",
+    "select":"SELECT"     
+}, "fr": 
+    {
+    "pageTitle":"Calculateur de carboneutralité",
+    "header1":"Sélectionnez un calculateur de carboneutralité",
+    "box1Header":"Entreprises",
+    "box1Para":"Calculez le nombre d’hectares de forêt dans lesquels votre entreprise doit investir pour atteindre la carboneutralité.",
+    "box2Header":"Écoles",
+    "box2Para":"Calculez le nombre d’hectares de forêt dans lesquels votre école doit investir pour atteindre la carboneutralité.",
+    "box3Header":"Particulier",
+    "box3Para":"Calculez le nombre d’hectares dans lesquels vous, votre famille, votre entreprise ou votre école devez investir pour atteindre la carboneutralité.",
+    "select":"SÉLECTIONNER"  
+
+    }
+}

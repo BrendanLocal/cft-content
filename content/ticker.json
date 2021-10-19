@@ -1,0 +1,108 @@
+{ "en":{
+
+  "latest": "LATEST NEWS",
+  "modal1_header":"THE SMART FOREST INITIATIVE",
+  "modal1_close":"Close",
+  "video": "./CFT_Rev8_DDC_ForApproval.mp4",
+  
+  "newsItems": [
+
+    {
+      "key": "newsItem1",
+      "label": "What is a Smart Forest?",
+      "type": "button tickerButton"
+    },
+    {
+      "key": "newsItem2",
+      "label": "How Smart Forests Grow towards Net-Zero",
+      "path": "/carbon-calculator"
+    },
+    {
+      "key": "newsItem3",
+      "label": "Will Canada be ready when extreme, deadly heat returns?",
+      "path": "https://www.theatlantic.com/science/archive/2021/09/summer-climate-disaster/620004/?utm_source=ActiveCampaign&utm_medium=email&utm_content=Top+news%3A&utm_campaign=ATF+Daily"
+    },
+    {
+      "key": "newsItem4",
+      "label": "Corporate Canada’s Path to Net-Zero",
+      "path": "/build-your-smart-forest#corporate"
+    },
+    {
+      "key": "newsItem5",
+      "label": "Children today will live through three times more climate disasters",
+      "path": "https://www.masslive.com/news/2021/09/children-today-will-live-through-three-times-more-climate-disasters-than-their-grandparents-study-suggests.html"
+    },
+    {
+      "key": "newsItem6",
+      "label": "Net-zero isn’t enough. We need to get to net negative.",
+      "path": "https://fortune.com/2021/09/23/net-zero-emissions-carbon-removal-net-negative-cop26/"
+    },
+    {
+      "key": "newsItem7",
+      "label": "The new Net Zero Financial Service Providers Alliance",
+      "path": "https://www.netzeroserviceproviders.com/"
+    },
+    {
+      "key": "newsItem8",
+      "label": "What is your Carbon Footprint?",
+      "path": "/personal-calculator"
+    }
+  
+  ]
+    
+  
+
+}, "fr": {
+
+  "latest": "DERNIÈRES NOUVELLES",
+  "modal1_header":"L'initiative forêt intelligente",
+  "modal1_close":"FERMER", 
+  "video": "./CFT-video-fr.mp4",
+
+  "newsItems": [
+
+    {
+      "key": "newsItem1",
+      "label": "Qu’est-ce qu’une forêt intelligente?",
+      "type": "button tickerButton"
+    },
+    {
+      "key": "newsItem2",
+      "label": "How Smart Forests Grow towards Net-Zerofr",
+      "path": "/carbon-calculator"
+    },
+    {
+      "key": "newsItem3",
+      "label": "Will Canada be ready when extreme, deadly heat returns?fr",
+      "path": "https://www.theatlantic.com/science/archive/2021/09/summer-climate-disaster/620004/?utm_source=ActiveCampaign&utm_medium=email&utm_content=Top+news%3A&utm_campaign=ATF+Daily"
+    },
+    {
+      "key": "newsItem4",
+      "label": "Corporate Canada’s Path to Net-Zerofr",
+      "path": "/build-your-smart-forest#corporate"
+    },
+    {
+      "key": "newsItem5",
+      "label": "Children today will live through three times more climate disastersfr",
+      "path": "https://www.masslive.com/news/2021/09/children-today-will-live-through-three-times-more-climate-disasters-than-their-grandparents-study-suggests.html"
+    },
+    {
+      "key": "newsItem6",
+      "label": "Net-zero isn’t enough. We need to get to net negative.fr",
+      "path": "https://fortune.com/2021/09/23/net-zero-emissions-carbon-removal-net-negative-cop26/"
+    },
+    {
+      "key": "newsItem7",
+      "label": "The new Net Zero Financial Service Providers Alliancefr",
+      "path": "https://www.netzeroserviceproviders.com/"
+    },
+    {
+      "key": "newsItem8",
+      "label": "What is your Carbon Footprint?fr",
+      "path": "/personal-calculator"
+    }
+  
+  ]
+}
+}
+

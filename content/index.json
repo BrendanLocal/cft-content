@@ -1,6 +1,16 @@
-{
-    "pageName":"Canada's Forest Trust - Home",
+{ "en":
+  {
+    "pageName":"Canada's Forest Trust - Welcome",
     "pageURL":"Home",
     "title": "Canada's Forest Trust",
-    "enter": "CLICK TO GET TO NET-ZERO"
+    "enter": "CLICK TO GET TO NET-ZERO",
+    "animation": "/intro-animation.svg"
+  }, "fr":
+  {
+    "pageName":"Canada's Forest Trust - Welcome",
+    "pageURL":"Home",
+    "title": "Canada's Forest Trust",
+    "enter": "CLIQUEZ POUR OBTENIR CARBONEUTRALITÉ",
+    "animation": "/INTRO-ASSETS-FR.svg"
   }
+}

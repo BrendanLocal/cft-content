@@ -1,0 +1,45 @@
+{ "en":{
+  "nav1": "Home",
+  "nav2": "Inside CFT",
+  "nav3": "Build Your Smart Forest",
+  "nav4": "Corporate",
+  "nav5": "School",
+  "nav6": "Legacy",
+  "nav7": "Communal",
+  "nav8": "Carbon Calculator",
+  "nav9": "Corporate",
+  "nav10": "School",
+  "nav11": "Personal",
+  "nav12": "Net-Zero Calculators",
+  "nav13": "Corporate",
+  "nav14": "School",
+  "nav15": "Personal",
+  "nav16": "Smart Forest Portal",
+  "nav17": "Contact Us",
+  "portal": "DEMO PORTAL",
+  "signin": "SIGN IN"
+
+}, "fr": {
+  "nav1": "Accueil",
+  "nav2": "À propos du Fonds pour les forêts canadiennes",
+  "nav3": "Planter votre forêt intelligente",
+  "nav4": "Pour une entreprise",
+  "nav5": "Pour une école",
+  "nav6": "Pour le patrimoine",
+  "nav7": "Pour une collectivité",
+  "nav8": "Calculateurs d’émissions de carbone",
+  "nav9": "Entreprises",
+  "nav10": "Écoles",
+  "nav11": "Particulier",
+  "nav12": "Calculateurs de carboneutralité",
+  "nav13": "Entreprises",
+  "nav14": "Écoles",
+  "nav15": "Particulier",
+  "nav16": "Portail de forêt intelligente",
+  "nav17": "Nous contacter",
+  "portal": "Démonstration",
+  "signin": "Ouvrir session"
+
+}
+  
+}

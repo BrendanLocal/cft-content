@@ -1,4 +1,5 @@
-{
+{ "en":
+    {
     "pageTitle":"Canada's Forest Trust Carbon Calculator",
     "header1":"Select a Carbon Calculator",
     "box1Header":"Corporate",
@@ -8,4 +9,17 @@
     "box3Header":"Personal",
     "box3Para":"Calculate how much carbon you must offset to reach net-zero.",
     "select":"SELECT"     
+}, "fr": 
+    {
+    "pageTitle":"Calculateur de carbone",
+    "header1":"Sélectionnez un calculateur d'émissions de carbone",
+    "box1Header":"Entreprises",
+    "box1Para":"Calculez la quantité de carbone que votre entreprise doit séquestrer pour atteindre la carboneutralité.",
+    "box2Header":"Écoles",
+    "box2Para":"Calculez la quantité de carbone que votre école primaire ou secondaire doit compenser pour atteindre la carboneutralité.",
+    "box3Header":"Particulier",
+    "box3Para":"Calculez la quantité de carbone que vous devez personnellement compenser pour atteindre la carboneutralité.",
+    "select":"SÉLECTIONNER"  
+
+    }
 }

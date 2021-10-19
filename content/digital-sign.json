@@ -1,0 +1,48 @@
+{ "en":{
+  "background": "Select a background for your image:",
+  "select": "Select…",
+  "fall": "Fall",
+  "spring": "Spring",
+  "summer": "Summer",
+  "choosename": "Choose a name for your forest:",
+  "forestName": "Forest name",
+  "limit1": "* 40 character limit",
+  "limit2": "* 8 character limit",
+  "acres": "How many acres is your forest?",
+  "numbacres": "Number of acres",
+  "copybottom": "Select copy for the bottom of the sign",
+  "option1": "This Smart Forest is Growing to Net-Zero",
+  "option2": "Growing to Net-Zero",
+  "option3": "Smart Forest - Breathing Made Easy",
+  "option4": "Smart Forest - for the sake of wildlife",
+  "option5": "Smart Forest – It is easy being green!",
+  "upload": "Upload an image for your sign",
+  "best": "For best results, use .png format with a transparent background.",
+  "optimal": "* Optimal dimensions: 300 X 300",
+  "export": "Export as PNG"
+
+}, "fr": {
+  "background": "Sélectionnez un arrière-plan pour votre image",
+  "select": "Sélectionner…",
+  "fall": "Automne",
+  "spring": "Printemps",
+  "summer": "Été",
+  "choosename": "Choisissez un nom pour votre forêt",
+  "forestName": "Nom de forêt",
+  "limit1": "* Limite de 40 caractères",
+  "limit2": "* Limite de 8 caractères",
+  "acres": "Quelle est la superficie en hectares de votre forêt?",
+  "numbacres": "Nombre d'hectares",
+  "copybottom": "Select copy for the bottom of the sign",
+  "option1": "Cette forêt intelligente pousse pour notre carboneutralité",
+  "option2": "Pousse pour notre carboneutralité",
+  "option3": "Forêt intelligente –Respirez mieux",
+  "option4": "Forêt intelligente –Protégeons la faune et la flore",
+  "option5": "Forêt intelligente –Être vert, c’est facile!",
+  "upload": "Téléchargez une image pour votre affiche",
+  "best": "Pour de meilleurs résultats, utilisez un format .png avec un arrière-plan transparent.",
+  "optimal": "* Dimensions optimales : 300 X 300",
+  "export": "Exporter au format PNG"
+
+}  
+}
